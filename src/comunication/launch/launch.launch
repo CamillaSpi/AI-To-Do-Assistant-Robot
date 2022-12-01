@@ -1,0 +1,20 @@
+<launch>
+    
+    <arg name="node_start_delay" default="50.0" />  
+    <node pkg="rasa_ros" name="rasa_action" type="rasa_action.sh" output="screen"/>
+    <node pkg="rasa_ros" name="rasa_server" type="rasa_server.sh" output="screen"/> 
+    <node pkg="rasa_ros" name="dialogue_server" type="dialogue_server.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' "/>
+    <node pkg="rasa_ros" name="dialogue_interface" type="dialogue_interface.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' "/>
+    
+    <arg name="node_start_delay2" default="70.0" />  
+    
+    <node pkg="comunication" name="voice_detection" type="voice_detection.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@' "/> 
+    <node pkg="comunication" name="asr" type="asr.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@' "/>
+    <node pkg="comunication" name="text_to_pepper" type="text_to_pepper.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@' "/>
+    
+
+    
+
+</launch>
+
+
