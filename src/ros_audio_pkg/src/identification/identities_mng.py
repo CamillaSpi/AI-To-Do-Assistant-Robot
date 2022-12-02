@@ -26,3 +26,21 @@ def get_identities(ids_folder, read_file, id_file_name='ids.json'):
             ths.append(id['th'])
 
     return X, y, ths
+
+def save_identities(X,y, path):
+    to_save = {'X':X, 'y':y}
+    print("sono in save")
+    with open(path + '/json_data.json','w') as out_file:
+        json.dump(to_save,out_file)
+
+
+def load_identities(path):
+    print("sono in load")
+    try:
+        with open(path + '/json_data.json','r') as in_file:
+            tmp= json.load(in_file)
+        X = tmp['X']
+        y = tmp['y']
+        return X, y
+    except:
+        return [],[]

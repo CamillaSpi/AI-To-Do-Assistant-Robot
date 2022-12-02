@@ -9,7 +9,8 @@ import os
 from identification.deep_speaker.audio import get_mfcc
 from identification.deep_speaker.model import get_deep_speaker
 from identification.utils import batch_cosine_similarity, dist2id
-
+from std_msgs.msg import Int16MultiArray, String
+from identification.identities_mng import save_identities, load_identities
 
 REF_PATH = os.path.dirname(os.path.abspath(__file__))
 RATE = 16000
@@ -25,24 +26,49 @@ y = []
 TH = 0.75
 
 
+pub1 = rospy.Publisher('id_user', String, queue_size=10)
+pub2 = rospy.Publisher('toSpeech', String, queue_size=10)
+
+def elaboration(data):
+    
+    audio_data = np.array(data.data)
+    # to float32, casto!
+    audio_data = audio_data.astype(np.float32, order='C') / 32768.0
+    # Processing, prenod lo spettrogramma di MEL(simile all'orecchio umano.)
+    ukn = get_mfcc(audio_data, RATE)
+    # Prediction
+    ukn = model.predict(np.expand_dims(ukn, 0))
+    return ukn
+
+phrases = ["I feel like I don't know you, repeat after me: Hi Pepper", "add activity run in category gym for tomorrow", "add study in university"]
+
+def registration(id):
+    for msg in phrases:
+        pub2.publish(msg)
+        print(msg)
+        data = rospy.wait_for_message("voice_data",Int16MultiArray) 
+        ukn = elaboration(data)
+        X.append(ukn[0])
+        y.append(id)
+    pub2.publish("Stop to repeat with me, let say your name!")
+    print("Stop to repeat with me, let say your name!")
+    return X,y
+    
+
+
+
 def listener():
     rospy.init_node('reidentification_node', anonymous=True)
+    X,y = load_identities(REF_PATH)
+    actual_id = max(y)+1
 
     while not rospy.is_shutdown():
+        print(X,y)
         #mi vado a checkare che si tratti di testo, altrimenti ptrei riconocere il rumore, o comunque avere problemi.
         # co wwait for message, ascolto solo qando voglio, ho operazione "sincrona"
         data = rospy.wait_for_message("voice_data",Int16MultiArray) 
 
-        audio_data = np.array(data.data)
-
-        # to float32, casto!
-        audio_data = audio_data.astype(np.float32, order='C') / 32768.0
-
-        # Processing, prenod lo spettrogramma di MEL(simile all'orecchio umano.)
-        ukn = get_mfcc(audio_data, RATE)
-
-        # Prediction
-        ukn = model.predict(np.expand_dims(ukn, 0))
+        ukn = elaboration(data)
 
         if len(X) > 0:
             # Distance between the sample and the support set, caolcolo distanza coseno e quelle che ho memorizzato finora.
@@ -52,16 +78,18 @@ def listener():
             
             # Matching, in base alle label e tresh dice distanza.
             # quindi ukn restituisce tutti i valori distanza dei campioni rispetto a ukn. e calcolo la distanza media tra tutti i campioni. 
-            id_label = dist2id(cos_dist, y, TH, mode='avg')
+            id_label = dist2id(cos_dist, y, TH, mode='avg') #id_label saranno id incrementali
         
         if len(X) == 0 or id_label is None:
-            c = input("Voce non conosciuta. Vuoi inserire un nuovo campione? (S/N):")
-            if c.lower() == 's':
-                name = input("Inserisci il nome dello speaker:").lower()
-                X.append(ukn[0])
-                y.append(name)
+            #eventuale face recognition
+            X_ret,y_ret = registration(actual_id)
+            X = X + X_ret
+            y= y +y_ret
+            
         else:
             print("Ha parlato:", id_label)
+
+    save_identities(X,y,REF_PATH)
         
 if __name__ == '__main__':
     listener()
