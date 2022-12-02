@@ -28,7 +28,9 @@ def get_identities(ids_folder, read_file, id_file_name='ids.json'):
     return X, y, ths
 
 def save_identities(X,y, path):
+    print(type(X),type(y))
     to_save = {'X':X, 'y':y}
+    print(type(to_save))
     print("sono in save")
     with open(path + '/json_data.json','w') as out_file:
         json.dump(to_save,out_file)

@@ -60,36 +60,41 @@ def registration(id):
 def listener():
     rospy.init_node('reidentification_node', anonymous=True)
     X,y = load_identities(REF_PATH)
-    actual_id = max(y)+1
+    try:
+        actual_id = max(y)+1
+        print("find some things")
+    except:
+        print("empty folder ")
+        actual_id = 0
+    try:
+        while not rospy.is_shutdown():
+            #mi vado a checkare che si tratti di testo, altrimenti ptrei riconocere il rumore, o comunque avere problemi.
+            # co wwait for message, ascolto solo qando voglio, ho operazione "sincrona"
+            data = rospy.wait_for_message("voice_data",Int16MultiArray) 
 
-    while not rospy.is_shutdown():
-        print(X,y)
-        #mi vado a checkare che si tratti di testo, altrimenti ptrei riconocere il rumore, o comunque avere problemi.
-        # co wwait for message, ascolto solo qando voglio, ho operazione "sincrona"
-        data = rospy.wait_for_message("voice_data",Int16MultiArray) 
+            ukn = elaboration(data)
 
-        ukn = elaboration(data)
-
-        if len(X) > 0:
-            # Distance between the sample and the support set, caolcolo distanza coseno e quelle che ho memorizzato finora.
-            emb_voice = np.repeat(ukn, len(X), 0)
-            # faccio distanza coseno con tutti quanti gli elementi.
-            cos_dist = batch_cosine_similarity(np.array(X), emb_voice)
+            if len(X) > 0:
+                # Distance between the sample and the support set, caolcolo distanza coseno e quelle che ho memorizzato finora.
+                emb_voice = np.repeat(ukn, len(X), 0)
+                # faccio distanza coseno con tutti quanti gli elementi.
+                cos_dist = batch_cosine_similarity(np.array(X), emb_voice)
+                
+                # Matching, in base alle label e tresh dice distanza.
+                # quindi ukn restituisce tutti i valori distanza dei campioni rispetto a ukn. e calcolo la distanza media tra tutti i campioni. 
+                id_label = dist2id(cos_dist, y, TH, mode='avg') #id_label saranno id incrementali
             
-            # Matching, in base alle label e tresh dice distanza.
-            # quindi ukn restituisce tutti i valori distanza dei campioni rispetto a ukn. e calcolo la distanza media tra tutti i campioni. 
-            id_label = dist2id(cos_dist, y, TH, mode='avg') #id_label saranno id incrementali
-        
-        if len(X) == 0 or id_label is None:
-            #eventuale face recognition
-            X_ret,y_ret = registration(actual_id)
-            X = X + X_ret
-            y= y +y_ret
-            
-        else:
-            print("Ha parlato:", id_label)
-
-    save_identities(X,y,REF_PATH)
+            if len(X) == 0 or id_label is None:
+                #eventuale face recognition
+                X_ret,y_ret = registration(actual_id)
+                X = X + X_ret
+                y= y +y_ret
+                
+            else:
+                print("Ha parlato:", id_label)
+    except rospy.exceptions.ROSInterruptException:
+        print("vado in close")
+        save_identities(X,y,REF_PATH)
         
 if __name__ == '__main__':
     listener()
