@@ -1,0 +1,5 @@
+comunication
+/home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/.private/comunication/cmake.lock /home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/./cmake.lock
+/home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/.private/comunication/lib/pkgconfig/comunication.pc /home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/lib/pkgconfig/comunication.pc
+/home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/.private/comunication/share/comunication/cmake/comunicationConfig-version.cmake /home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/share/comunication/cmake/comunicationConfig-version.cmake
+/home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/.private/comunication/share/comunication/cmake/comunicationConfig.cmake /home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/share/comunication/cmake/comunicationConfig.cmake

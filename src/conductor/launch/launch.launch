@@ -8,9 +8,10 @@
     
     <arg name="node_start_delay2" default="70.0" />  
     
-    <node pkg="comunication" name="voice_detection" type="voice_detection.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@' "/> 
-    <node pkg="comunication" name="asr" type="asr.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@' "/>
-    <node pkg="comunication" name="text_to_pepper" type="text_to_pepper.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@' "/>
+    <node pkg="ros_audio_pkg" name="voice_detection" type="voice_detection.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@' "/> 
+    <node pkg="ros_audio_pkg" name="asr" type="asr.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@' "/>
+    <node pkg="conductor" name="speech" type="text2speech_node.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@' "/>
+    <node pkg="conductor" name="text_to_pepper" type="text_to_pepper.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@' "/>
     
 
     
