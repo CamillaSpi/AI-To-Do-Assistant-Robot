@@ -20,10 +20,8 @@ RATE = 16000
 model = get_deep_speaker(os.path.join(REF_PATH,'deep_speaker.h5'))
 
 n_embs = 0
-X = []
-y = []
 # treshold
-TH = 0.75
+TH = 0.60 #0.75 prima
 
 
 pub1 = rospy.Publisher('id_user', String, queue_size=10)
@@ -43,16 +41,18 @@ def elaboration(data):
 phrases = ["I feel like I don't know you, repeat after me: Hi Pepper", "add activity run in category gym for tomorrow", "add study in university"]
 
 def registration(id):
+    X_new=[]
+    y_new=[]
     for msg in phrases:
         pub2.publish(msg)
         print(msg)
         data = rospy.wait_for_message("voice_data",Int16MultiArray) 
         ukn = elaboration(data)
-        X.append(ukn[0])
-        y.append(id)
+        X_new.append(ukn[0])
+        y_new.append(id)
     pub2.publish("Stop to repeat with me, let say your name!")
     print("Stop to repeat with me, let say your name!")
-    return X,y
+    return X_new,y_new
     
 
 
@@ -77,11 +77,13 @@ def listener():
             if len(X) > 0:
                 # Distance between the sample and the support set, caolcolo distanza coseno e quelle che ho memorizzato finora.
                 emb_voice = np.repeat(ukn, len(X), 0)
+                print("len emb voice: ", len(emb_voice))
                 # faccio distanza coseno con tutti quanti gli elementi.
                 cos_dist = batch_cosine_similarity(np.array(X), emb_voice)
                 
                 # Matching, in base alle label e tresh dice distanza.
                 # quindi ukn restituisce tutti i valori distanza dei campioni rispetto a ukn. e calcolo la distanza media tra tutti i campioni. 
+                print("feature: ", y)
                 id_label = dist2id(cos_dist, y, TH, mode='avg') #id_label saranno id incrementali
             
             if len(X) == 0 or id_label is None:
@@ -89,7 +91,7 @@ def listener():
                 X_ret,y_ret = registration(actual_id)
                 X = X + X_ret
                 y= y +y_ret
-                
+                actual_id+=1
             else:
                 print("Ha parlato:", id_label)
     except rospy.exceptions.ROSInterruptException:
