@@ -2,6 +2,8 @@ import json
 import os
 import numpy as np
 
+from json import JSONEncoder
+
 def get_json(path):
     with open(path) as json_file:
         data = json.load(json_file)
@@ -27,13 +29,17 @@ def get_identities(ids_folder, read_file, id_file_name='ids.json'):
 
     return X, y, ths
 
+class NumpyArrayEncoder(JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+        return JSONEncoder.default(self, obj)
+
 def save_identities(X,y, path):
-    print(type(X),type(y))
     to_save = {'X':X, 'y':y}
-    print(type(to_save))
     print("sono in save")
     with open(path + '/json_data.json','w') as out_file:
-        json.dump(to_save,out_file)
+        json.dump(to_save,out_file,cls=NumpyArrayEncoder)
 
 
 def load_identities(path):
@@ -41,7 +47,7 @@ def load_identities(path):
     try:
         with open(path + '/json_data.json','r') as in_file:
             tmp= json.load(in_file)
-        X = tmp['X']
+        X = np.asarray(tmp['X'])
         y = tmp['y']
         return X, y
     except:
