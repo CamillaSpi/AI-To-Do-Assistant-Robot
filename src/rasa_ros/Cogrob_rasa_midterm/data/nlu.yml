@@ -88,35 +88,35 @@ nlu:
 
 - intent: presentation
   examples: |
-    - hi, i'm [mattia99](username) 
-    - hi, i'm [ferdinando1907](username) 
-    - hi, i'm [nando33](username)
-    - hi, i'm [camilla2](username) 
-    - hi, i'm [marcoMars](username)
-    - hi, i'm [mattia](username) 
-    - hello, i am [mattia99](username)
-    - hello, i am [ferdinando1907](username)
-    - hi, i am [nando33](username)
-    - hi, i am [camilla@2](username)
-    - hello, i am [marcoMars](username)
-    - hi, i am [mattia](username)
-    - my username is [mattia92](username) 
-    - my username is [alessia19_07](username) 
-    - my username is [nando21](username)
-    - i'm [giorgio99](username) 
-    - i'm [carla](username) 
-    - i'm [simone!](username) 
-    - i'm [antonio68](username) 
-    - i'm [giorgio_99](username) 
-    - i am [giorgio](username) 
-    - i am [carla02](username)  
-    - i am [simone](username) 
-    - i am [antonio1](username) 
-    - i am [giorgio_](username) 
+    - hi, i'm [mattia](name) 
+    - hi, i'm [ferdinando](name) 
+    - hi, i'm [nando](name)
+    - hi, i'm [camilla](name) 
+    - hi, i'm [marco](name)
+    - hi, i'm [matteo](name) 
+    - hello, i am [michele](name)
+    - hello, i am [pierfrancesco](name)
+    - hi, i am [ferdi](name)
+    - hi, i am [cami](name)
+    - hello, i am [alex](name)
+    - hi, i am [marcello](name)
+    - my name is [matti](name) 
+    - my name is [alessia](name) 
+    - my name is [ferdi](name)
+    - i'm [giorgio](name) 
+    - i'm [carla](name) 
+    - i'm [simone](name) 
+    - i'm [antonio](name) 
+    - i'm [giorgino](name) 
+    - i am [giorgia](name) 
+    - i am [carolina](name)  
+    - i am [simo](name) 
+    - i am [antonino](name) 
+    - i am [giulio](name) 
     - let me create an account
     - i want to signup
     - i want to sign up
-    - hi my name is [Kevin](username)
+    - hi my name is [Kevin](name)
     - let me signup
     - signup
     - account
@@ -141,11 +141,143 @@ nlu:
     - let me be a user
     - sign up a new user
     - new registration 
-    - my name is [Ugo](username)
-    - hi bot, my name is [Gianluca](username)
-    - my name is [Xavier](username)
-    - hi, my name is [Simonetto56](username)
-    - my name [Dario](username)
+    - my name is [Ugo](name)
+    - hi bot, my name is [Gianluca](name)
+    - my name is [Xavier](name)
+    - hi, my name is [Simonetta](name)
+    - my name [Dario](name)
+    - [nino](name)
+    - [adele](name)
+    - [alberigo](name)
+    - [christian](name)
+    - [amadeo](name)
+    - [anacleto](name)
+    - [anita](name)
+    - [andrea](name)
+    - [kikka](name)
+    - [nik](name)
+    - [liliana](name)
+    - [aristide](name)
+    - [astra](name)
+    - [betti](name)
+    - [benino](name)
+    - [michelle](name)
+    - [cafiero](name)
+    - [andrew](name)
+    - [azzurra](name)
+    - [clerice](name)
+    - [clarissa](name)
+    - [federico](name)
+    - [diodato](name)
+    - [vinci](name)
+    - [donatello](name)
+    - [edvige](name)
+    - [elga](name)
+    - [elza](name)
+    - [ercole](name)
+    - [erode](name)
+    - [ernesto](name)
+    - [fabiano](name)
+    - [filomena](name)
+    - [riccardo](name)
+    - [lorenzo](name)
+    - [sonia](name)
+    - [fiordalise](name)
+    - [flaviano](name)
+    - [Foca](name)
+    - [faustino](name)
+    - [galatea](name)
+    - [eugenio](name)
+    - [geppy](name)
+    - [giberto](name)
+    - [laura](name)
+    - [gizio](name)
+    - [guendalina](name)
+    - [nerone](name)
+    - [edmondo](name)
+    - [isolda](name)
+    - [isabella](name)
+    - [isa](name)
+    - [edoardo](name)
+    - [ale](name)
+    - [lucilla](name)
+    - [lilly](name)
+    - [marianna](name)
+    - [marzia](name)
+    - [memo](name)
+    - [mimmo](name)
+    - [monia](name)
+    - [natascia](name)
+    - [fabio](name)
+    - [vincenzo](name)
+    - [chicca](name)
+    - [orlando](name)
+    - [olivia](name)
+    - [adriana](name)
+    - [ursola](name)
+    - [ornella](name)
+    - [cathrine](name)
+    - [annamaria](name)
+    - [pierino](name)
+    - [paolo](name)
+    - [paola](name)
+    - [giustino](name)
+    - [rossana](name)
+    - [rametta](name)
+    - [riccardino](name)
+    - [riziero](name)
+    - [romi](name)
+    - [rosa](name)
+    - [tina](name)
+    - [benedetto](name)
+    - [silviero](name)
+    - [stefano](name)
+    - [teresa](name)
+    - [tiziano](name)
+    - [antonella](name)
+    - [pino](name)
+    - [venturino](name)
+    - [violeta](name)
+    - [lorella](name)
+    - [arisa](name)
+    - [raimondo](name)
+    - [gianni](name)
+    - [lucio](name)
+    - [speranza](name)
+    - [lucia](name)
+    - [arianna](name)
+    - [chiara](name)
+    - [giovanni](name)
+    - [pierluigi](name)
+    - [valerio](name)
+    - [anna](name)
+    - [molly](name)
+    - [gerry](name)
+    - [gerardo](name)
+    - [gisel](name)
+    - [ermanno](name)
+    - [raffaella](name)
+    - [michi](name)
+    - [amichela](name)
+    - [jhon](name)
+    - [roberto](name)
+    - [mirella](name)
+    - [grazia](name)
+    - [cinzia](name)
+    - [roberto](name)
+    - [alessandra](name)
+    - [vito](name)
+    - [alberto](name)
+    - [francesca](name)
+    - [marta](name)
+    - [salvatore](name)
+    - [giuseppe](name)
+    - [peppe](name)
+    - [piero](name)
+    - [giusy](name)
+    - [cristina](name)
+    - [giorgina](name)
+
 
 - intent: bot_challenge
   examples: |
@@ -168,137 +300,6 @@ nlu:
 
 - intent: inform
   examples: |
-    - [Adelmaro](username)
-    - [Agide](username)
-    - [Alderigo](username)
-    - [Aliberto](username)
-    - [Amadeo](username)
-    - [Anacleto](username)
-    - [Annito](username)
-    - [Arceo](username)
-    - [kikka](username)
-    - [nik](username)
-    - [lilly](username)
-    - [Armerina](username)
-    - [Astrea](username)
-    - [Bachisia](username)
-    - [Benigna](username)
-    - [Boerio](username)
-    - [Cafiera](username)
-    - [Castorino](username)
-    - [Chiaffredo](username)
-    - [Clerice](username)
-    - [Corallina](username)
-    - [Cuono](username)
-    - [Decimino](username)
-    - [Dilla](username)
-    - [Donillo](username)
-    - [Edmonda](username)
-    - [Elga](username)
-    - [Elza](username)
-    - [Ercoliano](username)
-    - [Erode](username)
-    - [Eunice](username)
-    - [Fabiano](username)
-    - [Favilla](username)
-    - [Felsina](username)
-    - [Ferriero](username)
-    - [Filina](username)
-    - [Fiordalise](username)
-    - [Flamiano](username)
-    - [Foca](username)
-    - [Fraulina](username)
-    - [Galatea](username)
-    - [Genio](username)
-    - [Gettulia](username)
-    - [Giberto](username)
-    - [Giosofatto](username)
-    - [Gizio](username)
-    - [Guendalina](username)
-    - [Ierone](username)
-    - [Ingenuino](username)
-    - [Isolda](username)
-    - [Ladislao](username)
-    - [Lelmo](username)
-    - [Liberante](username)
-    - [Lisio](username)
-    - [Lucilla](username)
-    - [Mamante](username)
-    - [Marianna](username)
-    - [Marzilio](username)
-    - [Memo](username)
-    - [Mima](username)
-    - [Monia](username)
-    - [Natascia](username)
-    - [Niccolino](username)
-    - [Nordina](username)
-    - [Odeida](username)
-    - [Olando](username)
-    - [Olivetto](username)
-    - [Onilio](username)
-    - [Orfilia](username)
-    - [Ormella](username)
-    - [Osasco](username)
-    - [Ottavino](username)
-    - [Paoluccio](username)
-    - [Piccarda](username)
-    - [Popola](username)
-    - [Quartilia](username)
-    - [Rambo](username)
-    - [Rema](username)
-    - [Ricciardetto](username)
-    - [Riziero](username)
-    - [Romi](username)
-    - [Rossi](username)
-    - [Salverino](username)
-    - [Semiramide](username)
-    - [Silviero](username)
-    - [Speranza](username)
-    - [Telesfora](username)
-    - [Tiziano](username)
-    - [Udillo](username)
-    - [Valfrido](username)
-    - [Venturino](username)
-    - [Violeta](username)
-    - [Wilfredo](username)
-    - [Zino](username)
-    - [mattia99](username)
-    - [ferdinando1907](username)
-    - [nando33](username)
-    - [camilla2](username)
-    - [marcoMars](username)
-    - [mattia](username)
-    - [mattia99](username)
-    - [ferdinando1907](username)
-    - [nando](username)
-    - [camilla@2](username)
-    - [marco12](username)
-    - [mattia15](username)
-    - [mattia92](username)
-    - [alessia19_07](username)
-    - [nando21](username)
-    - [giorgio99](username)
-    - [carla](username)
-    - [simone!](username)
-    - [antonio68](username)
-    - [giorgio_99](username)
-    - [giorgio](username)
-    - [carla02](username)
-    - [Simone](username)
-    - [antonio1](username)
-    - [giorgio_](username)
-    - [alessia19_07](username)
-    - [nando21](username)
-    - [alberto3](username)
-    - [francesca88](username)
-    - [marta02](username)
-    - [dario04](username)
-    - [giuseppe05](username)
-    - [peppe](username)
-    - [piero](username)
-    - [Giusy_5](username)
-    - [cristina06](username)
-    - [Giorgio00](username)
     - [run](activity)
     - [bed](activity)
     - [stand_up](activity)
@@ -872,126 +873,126 @@ nlu:
     
 - intent: presentation+set_status_activity
   examples: |
-    - i am [mattia21](username) , set activity [complete](activity_status) 
-    - Hi, i'm [f5rdinOndo1907](username) set activity [complete](activity_status)
-    - i'm [ferdinando1907](username) , set up [complete](activity_status) [run](activity)
-    - i'm [Giusy_5](username) , set done [bed](activity)
-    - I'm [ferdinando1907](username) , set [complete](activity_status) [stand_up](activity)
-    - i am [mattia21](username) , set up [completed](activity_status) [swimmming](activity)
-    - i'm [Giusy_5](username) , set [complete](activity_status) [play](activity)
-    - I'm [alessia19_07](username) , set done [jogging](activity)
-    - I am [mattia21](username) , set [complete](activity_status) [run](activity) in [daily](category)
-    - i am [camilla@2](username) and set [completed](activity_status) [bed](activity) in [projects](category)
-    - i'm [nando](username) set up [complete](activity_status) [stand_up](activity) in [weekly](category)
-    - i am [Al3ssia53_07](username) set [complete](activity_status) [swimmming](activity) in [monthly](category)
-    - I'm [alessia19_07](username) , set done [play](activity) in [commitments](category)
-    - i am [Al3ssia53_07](username) set [complete](activity_status) [jogging](activity) in [quickly](category)
-    - I am [mattia21](username) , set [completed](activity_status) activity [run](activity) in [weekly](category)
-    - I'm [nando](username) , set [complete](activity_status) activity [bed](activity) in [daily](category)
-    - I am [mattia21](username) set [completed](activity_status) activity [study](activity) in [commitments](category)
-    - i am [Al3ssia53_07](username) set done activity [swimmming](activity) in [projects](category)
-    - I'm [alessia19_07](username) set [complete](activity_status) activity [play](activity) in [monthly](category)
-    - I am [Al3ssia53_07](username) , set [completed](activity_status) activity [jogging](activity) in [quickly](category)
-    - I am [mattia21](username) set done [run](activity) in category [commitments](category)
-    - i'm [ferdinando1907](username) , set [complete](activity_status) [bed](activity) in category [weekly](category)
-    - I'm [alessia19_07](username) set up [completed](activity_status) [stand_up](activity) in category [daily](category)
-    - i'm [ferdinando1907](username) , set [complete](activity_status) [swimmming](activity) in category [quickly](category)
-    - I am [Al3ssia53_07](username) , set [completed](activity_status) [play](activity) in category [projects](category)
-    - I am [mattia21](username) , set done [jogging](activity) in category [monthly](category)
-    - i'm [f5rdinOndo1907](username) set [complete](activity_status) activity [run](activity) in category [monthly](category)
-    - I'm [Giusy_5](username) , set [complete](activity_status) activity [bed](activity) in category [quickly](category)
-    - i'm [f5rdinOndo1907](username) , set done activity [stand_up](activity) in category [projects](category)
-    - I'm [ferdinando1907](username) , set [completed](activity_status) activity [swimmming](activity) in category [commitments](category)
-    - i am [mattia21](username) , set [complete](activity_status) activity [play](activity) in category [daily](category)
-    - I'm [f5rdinOndo1907](username) set [completed](activity_status) activity [jogging](activity) in category [weekly](category)
-    - i am [camilla@2](username) and I want to set [complete](activity_status) an activity 
-    - I am [mattia21](username) and I want to set done an activity in a list 
-    - i'm [alessia19_07](username) and I want to set [completed](activity_status) an activity in [weekly](category) list 
-    - i'm [f5rdinOndo1907](username) I want to set [complete](activity_status) an activity in [daily](category) list
-    - i'm [nando](username) , I want to set done an activity in [commitments](category) list 
-    - I'm [ferdinando1907](username) , I want to set [complete](activity_status) an activity in [projects](category) list 
-    - I am [mattia21](username) and I want to set [complete](activity_status) an activity in [monthly](category) list
-    - I am [mattia21](username) , I want to set done an activity in [quickly](category) list
-    - hi, I am [Al3ssia53_07](username) and I want to set [completed](activity_status) an activity in [weekly](category) list 
-    - hi, i am [camilla@2](username) and I want to set [complete](activity_status) an activity in [daily](category) list 
-    - hi, I am [mattia21](username) , I want to set done an activity in [commitments](category) list 
-    - hi, i'm [alessia19_07](username) and I want to set [completed](activity_status) an activity in [projects](category) list 
-    - hello, i'm [f5rdinOndo1907](username) and I want to set done an activity in [monthly](category) list 
-    - I'm [Giusy_5](username) , hello, I want to set [complete](activity_status) an activity in [quickly](category) list
-    - hello i am [mattia21](username) , I want to set [complete](activity_status) an activity in my list 
-    - I am [camilla@2](username) hi I want to set up [complete](activity_status) an activity in my list 
-    - Hi i'm [nando](username) and I want to set done all activity in [monthly](category) list
-    - i am [Al3ssia53_07](username) and I have [complete](activity_status) activity [swimming](activity) in category [gym](category)
-    - I'm [Giusy_5](username) , I have done activity [run](activity) in category [commitments](category)
-    - I am [Al3ssia53_07](username) and I have [completed](activity_status) activity [play](activity) in category [projects](category)
-    - I am [mattia21](username) , I have [complete](activity_status) activity [stand_up](activity) in category [daily](category)
-    - I am [camilla@2](username) and I have done activity [jogging](activity) in category [gym](category)
-    - I'm [antonio68](username) and set activity [incomplete](activity_status) 
-    - Hi, I'm [Giusy_5](username) set activity [incomplete](activity_status)
-    - I am [camilla@2](username) set [incomplete](activity_status) [run](activity)
-    - I'm [ferdinando1907](username) , set [incomplete](activity_status) [bed](activity)
-    - I am [mattia21](username) set undone [stand_up](activity)
-    - i'm [Giusy_5](username) set [incomplete](activity_status) [swimmming](activity)
-    - i'm [alessia19_07](username) set [incomplete](activity_status) [play](activity)
-    - I'm [antonio68](username) and set undone [jogging](activity)
-    - I'm [nando](username) , set [incomplete](activity_status) [run](activity) in [daily](category)
-    - I'm [antonio68](username) and set [incomplete](activity_status) [bed](activity) in [projects](category)
-    - I am [mattia21](username) set [incomplete](activity_status) [stand_up](activity) in [weekly](category)
-    - i am [camilla@2](username) set undone [swimmming](activity) in [monthly](category)
-    - I am [mattia21](username) set [incomplete](activity_status) [play](activity) in [commitments](category)
-    - I'm [ferdinando1907](username) , set [incomplete](activity_status) [jogging](activity) in [quickly](category)
-    - i'm [nando](username) set [incomplete](activity_status) activity [run](activity) in [weekly](category)
-    - i'm [antonio68](username) and set [incomplete](activity_status) activity [study](activity) in [daily](category)
-    - I am [mattia21](username) , set undone activity [stand_up](activity) in [commitments](category)
-    - i'm [nando](username) set [incomplete](activity_status) activity [swimmming](activity) in [projects](category)
-    - I'm [Giusy_5](username) , set [incomplete](activity_status) activity [play](activity) in [monthly](category)
-    - i'm [alessia19_07](username) , set [incomplete](activity_status) activity [jogging](activity) in [quickly](category)
-    - i'm [alessia19_07](username) set [incomplete](activity_status) [run](activity) in category [commitments](category)
-    - I am [camilla@2](username) set undone [bed](activity) in category [weekly](category)
-    - I'm [Giusy_5](username) set [incomplete](activity_status) [stand_up](activity) in category [daily](category)
-    - I'm [Giusy_5](username) , set [incomplete](activity_status) [swimmming](activity) in category [quickly](category)
-    - i am [camilla@2](username) set [incomplete](activity_status) [play](activity) in category [projects](category)
-    - i'm [antonio68](username) set [incomplete](activity_status) [jogging](activity) in category [monthly](category)
-    - I'm [ferdinando1907](username) , set [incomplete](activity_status) activity [run](activity) in category [monthly](category)
-    - I'm [Giusy_5](username) , set [incomplete](activity_status) activity [bed](activity) in category [quickly](category)
-    - i'm [f5rdinOndo1907](username) set [incomplete](activity_status) activity [stand_up](activity) in category [projects](category)
-    - I am [mattia21](username) , set [incomplete](activity_status) activity [swimmming](activity) in category [commitments](category)
-    - i'm [alessia19_07](username) set undone activity [play](activity) in category [daily](category)
-    - I'm [Giusy_5](username) , set [incomplete](activity_status) activity [jogging](activity) in category [weekly](category)
-    - i am [camilla@2](username) I want to set [incomplete](activity_status) an activity 
-    - i'm [antonio68](username) and I want to set [incomplete](activity_status) an activity in a list 
-    - I'm [nando](username) , I want to set [incomplete](activity_status) an activity in [weekly](category) list 
-    - I am [camilla@2](username) , I want to set [incomplete](activity_status) an activity in [daily](category) list
-    - I'm [ferdinando1907](username) , I want to set undone an activity in [study](category) list 
-    - I'm [Giusy_5](username) , I want to set [incomplete](activity_status) an activity in [projects](category) list 
-    - i'm [alessia19_07](username) I want to set [incomplete](activity_status) an activity in [monthly](category) list
-    - i'm [f5rdinOndo1907](username) I want to set [incomplete](activity_status) an activity in [quickly](category) list
-    - I am [mattia21](username) , hi, I want to set [incomplete](activity_status) an activity in [weekly](category) list 
-    - hi, i'm [f5rdinOndo1907](username) and I want to set undone an activity in [daily](category) list 
-    - i'm [alessia19_07](username) hi, I want to set undone an activity in [commitments](category) list 
-    - hi, I'm [Giusy_5](username) and I want to set [incomplete](activity_status) an activity in [projects](category) list 
-    - hello, i'm [antonio68](username) and I want to set [incomplete](activity_status) an activity in [monthly](category) list 
-    - hello, i'm [antonio68](username) and I want to set [incomplete](activity_status) an activity in [quickly](category) list
-    - i am [camilla@2](username) hello I want to set [incomplete](activity_status) an activity in my list 
-    - hi I am [mattia21](username) and I want to set [incomplete](activity_status) an activity in my list 
-    - Hi I'm [nando](username) , I want to set undone all activity in [monthly](category) list
-    - i'm [antonio68](username) undo [complete](activity_status) [run](activity)
-    - I'm [ferdinando1907](username) , undo [complete](activity_status) [bed](activity)
-    - I am [camilla@2](username) , undo [complete](activity_status) [stand_up](activity)
-    - i'm [antonio68](username) , undo [complete](activity_status) [swimmming](activity)
-    - i'm [alessia19_07](username) undo [complete](activity_status) [play](activity)
-    - I am [mattia21](username) and undo [complete](activity_status) [jogging](activity)
-    - I'm [ferdinando1907](username) , undo [complete](activity_status) [run](activity) in [daily](category)
-    - i'm [antonio68](username) undo [complete](activity_status) [bed](activity) in [projects](category)
-    - I'm [Giusy_5](username) undo [complete](activity_status) [stand_up](activity) in [weekly](category)
-    - I am [mattia21](username) , undo [complete](activity_status) [swimmming](activity) in [monthly](category)
-    - i'm [antonio68](username) undo [complete](activity_status) [play](activity) in [commitments](category)
-    - I'm [nando](username) , undo [complete](activity_status) [study](activity) in [quickly](category)
-    - i'm [alessia19_07](username) undo [complete](activity_status) activity [run](activity) in [weekly](category)
-    - i'm [antonio68](username) undo [complete](activity_status) activity [bed](activity) in [daily](category)
-    - I'm [Giusy_5](username) , undo [complete](activity_status) activity [stand_up](activity) in [commitments](category)
-    - I'm [ferdinando1907](username) , undo [complete](activity_status) activity [swimmming](activity) in [projects](category)
-    - i am [camilla@2](username) undo [complete](activity_status) activity [play](activity) in [monthly](category)
+    - i am [mattia21](name) , set activity [complete](activity_status) 
+    - Hi, i'm [f5rdinOndo1907](name) set activity [complete](activity_status)
+    - i'm [ferdinando1907](name) , set up [complete](activity_status) [run](activity)
+    - i'm [Giusy_5](name) , set done [bed](activity)
+    - I'm [ferdinando1907](name) , set [complete](activity_status) [stand_up](activity)
+    - i am [mattia21](name) , set up [completed](activity_status) [swimmming](activity)
+    - i'm [Giusy_5](name) , set [complete](activity_status) [play](activity)
+    - I'm [alessia19_07](name) , set done [jogging](activity)
+    - I am [mattia21](name) , set [complete](activity_status) [run](activity) in [daily](category)
+    - i am [camilla@2](name) and set [completed](activity_status) [bed](activity) in [projects](category)
+    - i'm [nando](name) set up [complete](activity_status) [stand_up](activity) in [weekly](category)
+    - i am [Al3ssia53_07](name) set [complete](activity_status) [swimmming](activity) in [monthly](category)
+    - I'm [alessia19_07](name) , set done [play](activity) in [commitments](category)
+    - i am [Al3ssia53_07](name) set [complete](activity_status) [jogging](activity) in [quickly](category)
+    - I am [mattia21](name) , set [completed](activity_status) activity [run](activity) in [weekly](category)
+    - I'm [nando](name) , set [complete](activity_status) activity [bed](activity) in [daily](category)
+    - I am [mattia21](name) set [completed](activity_status) activity [study](activity) in [commitments](category)
+    - i am [Al3ssia53_07](name) set done activity [swimmming](activity) in [projects](category)
+    - I'm [alessia19_07](name) set [complete](activity_status) activity [play](activity) in [monthly](category)
+    - I am [Al3ssia53_07](name) , set [completed](activity_status) activity [jogging](activity) in [quickly](category)
+    - I am [mattia21](name) set done [run](activity) in category [commitments](category)
+    - i'm [ferdinando1907](name) , set [complete](activity_status) [bed](activity) in category [weekly](category)
+    - I'm [alessia19_07](name) set up [completed](activity_status) [stand_up](activity) in category [daily](category)
+    - i'm [ferdinando1907](name) , set [complete](activity_status) [swimmming](activity) in category [quickly](category)
+    - I am [Al3ssia53_07](name) , set [completed](activity_status) [play](activity) in category [projects](category)
+    - I am [mattia21](name) , set done [jogging](activity) in category [monthly](category)
+    - i'm [f5rdinOndo1907](name) set [complete](activity_status) activity [run](activity) in category [monthly](category)
+    - I'm [Giusy_5](name) , set [complete](activity_status) activity [bed](activity) in category [quickly](category)
+    - i'm [f5rdinOndo1907](name) , set done activity [stand_up](activity) in category [projects](category)
+    - I'm [ferdinando1907](name) , set [completed](activity_status) activity [swimmming](activity) in category [commitments](category)
+    - i am [mattia21](name) , set [complete](activity_status) activity [play](activity) in category [daily](category)
+    - I'm [f5rdinOndo1907](name) set [completed](activity_status) activity [jogging](activity) in category [weekly](category)
+    - i am [camilla@2](name) and I want to set [complete](activity_status) an activity 
+    - I am [mattia21](name) and I want to set done an activity in a list 
+    - i'm [alessia19_07](name) and I want to set [completed](activity_status) an activity in [weekly](category) list 
+    - i'm [f5rdinOndo1907](name) I want to set [complete](activity_status) an activity in [daily](category) list
+    - i'm [nando](name) , I want to set done an activity in [commitments](category) list 
+    - I'm [ferdinando1907](name) , I want to set [complete](activity_status) an activity in [projects](category) list 
+    - I am [mattia21](name) and I want to set [complete](activity_status) an activity in [monthly](category) list
+    - I am [mattia21](name) , I want to set done an activity in [quickly](category) list
+    - hi, I am [Al3ssia53_07](name) and I want to set [completed](activity_status) an activity in [weekly](category) list 
+    - hi, i am [camilla@2](name) and I want to set [complete](activity_status) an activity in [daily](category) list 
+    - hi, I am [mattia21](name) , I want to set done an activity in [commitments](category) list 
+    - hi, i'm [alessia19_07](name) and I want to set [completed](activity_status) an activity in [projects](category) list 
+    - hello, i'm [f5rdinOndo1907](name) and I want to set done an activity in [monthly](category) list 
+    - I'm [Giusy_5](name) , hello, I want to set [complete](activity_status) an activity in [quickly](category) list
+    - hello i am [mattia21](name) , I want to set [complete](activity_status) an activity in my list 
+    - I am [camilla@2](name) hi I want to set up [complete](activity_status) an activity in my list 
+    - Hi i'm [nando](name) and I want to set done all activity in [monthly](category) list
+    - i am [Al3ssia53_07](name) and I have [complete](activity_status) activity [swimming](activity) in category [gym](category)
+    - I'm [Giusy_5](name) , I have done activity [run](activity) in category [commitments](category)
+    - I am [Al3ssia53_07](name) and I have [completed](activity_status) activity [play](activity) in category [projects](category)
+    - I am [mattia21](name) , I have [complete](activity_status) activity [stand_up](activity) in category [daily](category)
+    - I am [camilla@2](name) and I have done activity [jogging](activity) in category [gym](category)
+    - I'm [antonio68](name) and set activity [incomplete](activity_status) 
+    - Hi, I'm [Giusy_5](name) set activity [incomplete](activity_status)
+    - I am [camilla@2](name) set [incomplete](activity_status) [run](activity)
+    - I'm [ferdinando1907](name) , set [incomplete](activity_status) [bed](activity)
+    - I am [mattia21](name) set undone [stand_up](activity)
+    - i'm [Giusy_5](name) set [incomplete](activity_status) [swimmming](activity)
+    - i'm [alessia19_07](name) set [incomplete](activity_status) [play](activity)
+    - I'm [antonio68](name) and set undone [jogging](activity)
+    - I'm [nando](name) , set [incomplete](activity_status) [run](activity) in [daily](category)
+    - I'm [antonio68](name) and set [incomplete](activity_status) [bed](activity) in [projects](category)
+    - I am [mattia21](name) set [incomplete](activity_status) [stand_up](activity) in [weekly](category)
+    - i am [camilla@2](name) set undone [swimmming](activity) in [monthly](category)
+    - I am [mattia21](name) set [incomplete](activity_status) [play](activity) in [commitments](category)
+    - I'm [ferdinando1907](name) , set [incomplete](activity_status) [jogging](activity) in [quickly](category)
+    - i'm [nando](name) set [incomplete](activity_status) activity [run](activity) in [weekly](category)
+    - i'm [antonio68](name) and set [incomplete](activity_status) activity [study](activity) in [daily](category)
+    - I am [mattia21](name) , set undone activity [stand_up](activity) in [commitments](category)
+    - i'm [nando](name) set [incomplete](activity_status) activity [swimmming](activity) in [projects](category)
+    - I'm [Giusy_5](name) , set [incomplete](activity_status) activity [play](activity) in [monthly](category)
+    - i'm [alessia19_07](name) , set [incomplete](activity_status) activity [jogging](activity) in [quickly](category)
+    - i'm [alessia19_07](name) set [incomplete](activity_status) [run](activity) in category [commitments](category)
+    - I am [camilla@2](name) set undone [bed](activity) in category [weekly](category)
+    - I'm [Giusy_5](name) set [incomplete](activity_status) [stand_up](activity) in category [daily](category)
+    - I'm [Giusy_5](name) , set [incomplete](activity_status) [swimmming](activity) in category [quickly](category)
+    - i am [camilla@2](name) set [incomplete](activity_status) [play](activity) in category [projects](category)
+    - i'm [antonio68](name) set [incomplete](activity_status) [jogging](activity) in category [monthly](category)
+    - I'm [ferdinando1907](name) , set [incomplete](activity_status) activity [run](activity) in category [monthly](category)
+    - I'm [Giusy_5](name) , set [incomplete](activity_status) activity [bed](activity) in category [quickly](category)
+    - i'm [f5rdinOndo1907](name) set [incomplete](activity_status) activity [stand_up](activity) in category [projects](category)
+    - I am [mattia21](name) , set [incomplete](activity_status) activity [swimmming](activity) in category [commitments](category)
+    - i'm [alessia19_07](name) set undone activity [play](activity) in category [daily](category)
+    - I'm [Giusy_5](name) , set [incomplete](activity_status) activity [jogging](activity) in category [weekly](category)
+    - i am [camilla@2](name) I want to set [incomplete](activity_status) an activity 
+    - i'm [antonio68](name) and I want to set [incomplete](activity_status) an activity in a list 
+    - I'm [nando](name) , I want to set [incomplete](activity_status) an activity in [weekly](category) list 
+    - I am [camilla@2](name) , I want to set [incomplete](activity_status) an activity in [daily](category) list
+    - I'm [ferdinando1907](name) , I want to set undone an activity in [study](category) list 
+    - I'm [Giusy_5](name) , I want to set [incomplete](activity_status) an activity in [projects](category) list 
+    - i'm [alessia19_07](name) I want to set [incomplete](activity_status) an activity in [monthly](category) list
+    - i'm [f5rdinOndo1907](name) I want to set [incomplete](activity_status) an activity in [quickly](category) list
+    - I am [mattia21](name) , hi, I want to set [incomplete](activity_status) an activity in [weekly](category) list 
+    - hi, i'm [f5rdinOndo1907](name) and I want to set undone an activity in [daily](category) list 
+    - i'm [alessia19_07](name) hi, I want to set undone an activity in [commitments](category) list 
+    - hi, I'm [Giusy_5](name) and I want to set [incomplete](activity_status) an activity in [projects](category) list 
+    - hello, i'm [antonio68](name) and I want to set [incomplete](activity_status) an activity in [monthly](category) list 
+    - hello, i'm [antonio68](name) and I want to set [incomplete](activity_status) an activity in [quickly](category) list
+    - i am [camilla@2](name) hello I want to set [incomplete](activity_status) an activity in my list 
+    - hi I am [mattia21](name) and I want to set [incomplete](activity_status) an activity in my list 
+    - Hi I'm [nando](name) , I want to set undone all activity in [monthly](category) list
+    - i'm [antonio68](name) undo [complete](activity_status) [run](activity)
+    - I'm [ferdinando1907](name) , undo [complete](activity_status) [bed](activity)
+    - I am [camilla@2](name) , undo [complete](activity_status) [stand_up](activity)
+    - i'm [antonio68](name) , undo [complete](activity_status) [swimmming](activity)
+    - i'm [alessia19_07](name) undo [complete](activity_status) [play](activity)
+    - I am [mattia21](name) and undo [complete](activity_status) [jogging](activity)
+    - I'm [ferdinando1907](name) , undo [complete](activity_status) [run](activity) in [daily](category)
+    - i'm [antonio68](name) undo [complete](activity_status) [bed](activity) in [projects](category)
+    - I'm [Giusy_5](name) undo [complete](activity_status) [stand_up](activity) in [weekly](category)
+    - I am [mattia21](name) , undo [complete](activity_status) [swimmming](activity) in [monthly](category)
+    - i'm [antonio68](name) undo [complete](activity_status) [play](activity) in [commitments](category)
+    - I'm [nando](name) , undo [complete](activity_status) [study](activity) in [quickly](category)
+    - i'm [alessia19_07](name) undo [complete](activity_status) activity [run](activity) in [weekly](category)
+    - i'm [antonio68](name) undo [complete](activity_status) activity [bed](activity) in [daily](category)
+    - I'm [Giusy_5](name) , undo [complete](activity_status) activity [stand_up](activity) in [commitments](category)
+    - I'm [ferdinando1907](name) , undo [complete](activity_status) activity [swimmming](activity) in [projects](category)
+    - i am [camilla@2](name) undo [complete](activity_status) activity [play](activity) in [monthly](category)
 
 - intent: add_category
   examples: |
@@ -1144,25 +1145,25 @@ nlu:
 
 - intent: presentation+view_activities
   examples: |
-    - i'm [Giusy_5](username) and I want to see all my activities
-    - I'm [Simone](username) , want to see all my [uncompleted](activity_status) activities
-    - I'm [antonio68](username) ,I want to see all my [[completed](activity_status) activities
-    - i am [alessia19_07](username) , show my [undeveloped](activity_status) activities
-    - i am [mattia21](username) Show my [done](activity_status) activities
-    - I'm [antonio68](username) , Which are my activities?
-    - I'm [Simone](username) which are [concluded](activity_status) my activities?
-    - i am [mattia21](username) what are my [uncompleted](activity_status) activities?
-    - i am [mattia21](username) what are my activities?
-    - i'm [camilla@2](username) What are my [finished](activity_status) activities?
-    - I am [mattia21](username) , What are my [unexecuted](activity_status) activities?
-    - i am [alessia19_07](username) , show activity in [gym](category) category
-    - I'm [antonio68](username) show all my [developed](activity_status) activity in [monthly](category) category
-    - i'm [Giusy_5](username) show my [undone](activity_status) activity in [commitments](category) category
-    - I'm [Giusy_5](username) show [executed](activity_status) activity in [work](category) category
-    - i'm [camilla@2](username) show activity in [projects](category) category
-    - I am [alessia19_07](username) , show [unfinished](activity_status) activity in [work](category) category
-    - I'm [Simone](username) show [completed](activity_status) activities
-    - i'm [Giusy_5](username) show [completed](activity_status) activity
+    - i'm [Giusy_5](name) and I want to see all my activities
+    - I'm [Simone](name) , want to see all my [uncompleted](activity_status) activities
+    - I'm [antonio68](name) ,I want to see all my [[completed](activity_status) activities
+    - i am [alessia19_07](name) , show my [undeveloped](activity_status) activities
+    - i am [mattia21](name) Show my [done](activity_status) activities
+    - I'm [antonio68](name) , Which are my activities?
+    - I'm [Simone](name) which are [concluded](activity_status) my activities?
+    - i am [mattia21](name) what are my [uncompleted](activity_status) activities?
+    - i am [mattia21](name) what are my activities?
+    - i'm [camilla@2](name) What are my [finished](activity_status) activities?
+    - I am [mattia21](name) , What are my [unexecuted](activity_status) activities?
+    - i am [alessia19_07](name) , show activity in [gym](category) category
+    - I'm [antonio68](name) show all my [developed](activity_status) activity in [monthly](category) category
+    - i'm [Giusy_5](name) show my [undone](activity_status) activity in [commitments](category) category
+    - I'm [Giusy_5](name) show [executed](activity_status) activity in [work](category) category
+    - i'm [camilla@2](name) show activity in [projects](category) category
+    - I am [alessia19_07](name) , show [unfinished](activity_status) activity in [work](category) category
+    - I'm [Simone](name) show [completed](activity_status) activities
+    - i'm [Giusy_5](name) show [completed](activity_status) activity
 
 - intent: clean_activities
   examples: |
@@ -1304,25 +1305,25 @@ nlu:
 
 - intent: presentation+view_categories
   examples: |
-    - i'm [Giusy_5](username) and I want to see all my categories
-    - I'm [Simone](username) , Which are my categories?
-    - i'm [Giusy_5](username) Show my categories
-    - i am [mattia21](username) Which are my categories?
-    - i'm [camilla@2](username) which are my categories?
-    - I'm [antonio68](username) , which are my categories?
-    - I'm [Simone](username) , I want to see all my categories
-    - i am [alessia19_07](username) , what are my categories?
-    - I'm [antonio68](username) What are my categories?
-    - I'm [antonio68](username) show all my categories
-    - i am [alessia19_07](username) , what are my categories?
-    - i'm [Simone](username) , What are my categories?
-    - i'm [camilla@2](username) show my categories
-    - I am [mattia21](username) show all my categories
-    - i'm [antonio68](username) what are my categories?
-    - i'm [antonio68](username) show my categories
-    - i am [alessia19_07](username) , Show all my categories
-    - I'm [antonio68](username) Show my categories
-    - i am [mattia21](username) Show all my categories
+    - i'm [Giusy_5](name) and I want to see all my categories
+    - I'm [Simone](name) , Which are my categories?
+    - i'm [Giusy_5](name) Show my categories
+    - i am [mattia21](name) Which are my categories?
+    - i'm [camilla@2](name) which are my categories?
+    - I'm [antonio68](name) , which are my categories?
+    - I'm [Simone](name) , I want to see all my categories
+    - i am [alessia19_07](name) , what are my categories?
+    - I'm [antonio68](name) What are my categories?
+    - I'm [antonio68](name) show all my categories
+    - i am [alessia19_07](name) , what are my categories?
+    - i'm [Simone](name) , What are my categories?
+    - i'm [camilla@2](name) show my categories
+    - I am [mattia21](name) show all my categories
+    - i'm [antonio68](name) what are my categories?
+    - i'm [antonio68](name) show my categories
+    - i am [alessia19_07](name) , Show all my categories
+    - I'm [antonio68](name) Show my categories
+    - i am [mattia21](name) Show all my categories
 
 - intent: remind_me_of
   examples: |
@@ -1340,19 +1341,19 @@ nlu:
 
 - intent: presentation+remind_me_of
   examples: |
-    - i am [mattia21](username) emind me to [shopping](activity) into the category [household](category) at 8:30
-    - i'm [camilla@2](username) set a reminder for the activiy [call](activity) into the category [relations](category) of next morning
-    - I'm [Simone](username) , help me to not forget the activity [study](activity) in the category [university](category) for Tomorrow
-    - i am [mattia21](username) help me to remind my [birtday](activity) on 12/18/2022
-    - i'm [camilla@2](username) remind me the [exam](activity) on tomorrow morning
-    - i am [alessia19_07](username) , don't forget of [shopping](activity) at 19:00
-    - I'm [Simone](username) , I want to set a reminder 
-    - I'm [Simone](username) , I want you help me to remind
-    - my username is [luigi](username) , please remind me of [shopping](activity) tomorrow evening
-    - I'm [Salvo](username) , please help me to don't forget the activity [project](activity) in the category [work](category) of next Friday
-    - i'm [camilla@2](username) I can't forget to do the activity [exam](activity) of the category [university](category) of next Monday
-    - i'm [camilla@2](username) I want to set a reminder for the actvivity [hairdresser](activity)
-    - i am [alessia19_07](username) , remind me the [dinner](activity)
+    - i am [mattia21](name) emind me to [shopping](activity) into the category [household](category) at 8:30
+    - i'm [camilla@2](name) set a reminder for the activiy [call](activity) into the category [relations](category) of next morning
+    - I'm [Simone](name) , help me to not forget the activity [study](activity) in the category [university](category) for Tomorrow
+    - i am [mattia21](name) help me to remind my [birtday](activity) on 12/18/2022
+    - i'm [camilla@2](name) remind me the [exam](activity) on tomorrow morning
+    - i am [alessia19_07](name) , don't forget of [shopping](activity) at 19:00
+    - I'm [Simone](name) , I want to set a reminder 
+    - I'm [Simone](name) , I want you help me to remind
+    - my name is [luigi](name) , please remind me of [shopping](activity) tomorrow evening
+    - I'm [Salvo](name) , please help me to don't forget the activity [project](activity) in the category [work](category) of next Friday
+    - i'm [camilla@2](name) I can't forget to do the activity [exam](activity) of the category [university](category) of next Monday
+    - i'm [camilla@2](name) I want to set a reminder for the actvivity [hairdresser](activity)
+    - i am [alessia19_07](name) , remind me the [dinner](activity)
 
 - synonym: add
   examples: |

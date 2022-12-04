@@ -35,7 +35,7 @@ entities:
   - activity
   - category
   - time
-  - username
+  - name
   - activity_status
 
 actions:
