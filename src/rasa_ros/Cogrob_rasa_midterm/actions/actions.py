@@ -19,7 +19,7 @@ from datetime import datetime, timedelta
 
 from . import Database
 
-#da rivedere
+
 class actionCreateUser(Action):
 
     def name(self) -> Text:
@@ -32,14 +32,11 @@ class actionCreateUser(Action):
         id=tracker.current_state()["sender_id"]
         if(Database.doesUserExists(id) == False):
             returnedValue = Database.createUser(id,name)
-            #aggiunta
-            associated_name = Database.getName(id)
-            if(returnedValue):
-                dispatcher.utter_message(text=f"Congratulation {associated_name} your account has been correctly created") 
-            else:
-                dispatcher.utter_message(text=f"Oh no {associated_name} your account already exists") #ma serve questa?
+
+            dispatcher.utter_message(text=f"Congratulation {name} your account has been correctly created") 
+            
         else:
-            dispatcher.utter_message(text=f"Congratulation {associated_name} you're logged in") 
+            dispatcher.utter_message(text=f"Congratulation {name} you're logged in") 
         return []
 
 
@@ -52,9 +49,9 @@ class actionAddItem(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         name = tracker.get_slot("name")
-        #aggiunta
-        associated_name = Database.getName(id)
+        
         id=tracker.current_state()["sender_id"]
+        associated_name = Database.getName(id)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
         reminder = tracker.get_slot("reminder")
@@ -86,7 +83,7 @@ class actionRemoveItem(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
         name = tracker.get_slot("name")
-        #aggiunta
+      
         associated_name = Database.getName(id)
         id=tracker.current_state()["sender_id"]
         activity = tracker.get_slot("activity")
@@ -112,7 +109,7 @@ class actionAddCategory(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
         name = tracker.get_slot("name")
-        #aggiunta
+        
         associated_name = Database.getName(id)
         id=tracker.current_state()["sender_id"]
         category = tracker.get_slot("category")
@@ -138,7 +135,7 @@ class actionRemoveCategory(Action):
         
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
-        #aggiunta
+        
         associated_name = Database.getName(id)
         category = tracker.get_slot("category")
 
@@ -197,7 +194,7 @@ class actionSetInComplete(Action):
 
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
-        #aggiunta
+        
         associated_name = Database.getName(id)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
@@ -242,10 +239,11 @@ class showCategories(Action):
 
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
-        #aggiunta
+       
         associated_name = Database.getName(id)
-
-        dispatcher.utter_message(text=f" {associated_name} , these are all your categories:\n{Database.selectPossessions(id)}") #qua non va fatto pure il caso in cui non ne ha?
+        list_of_categories = Database.selectPossessions(id)
+        
+        dispatcher.utter_message(text=(f" {associated_name} , this are tyour categories:\n{list_of_activity}" if list_of_activity else " No category found for you!")) 
 
         return [SlotSet("activity", None)]
 
@@ -259,7 +257,7 @@ class actionModifyCategory(Action):
 
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
-        #aggiunta
+    
         associated_name = Database.getName(id)
         category_old = tracker.get_slot("category_old")
         category_new = tracker.get_slot("category_new")
@@ -293,7 +291,7 @@ class actionModifyActivity(Action):
         category = tracker.get_slot("category")
         activity = tracker.get_slot("activity")
         time = tracker.get_slot("time")
-        #aggiunta
+      
         associated_name = Database.getName(id)
        
         if(activity_old!=None):
@@ -368,7 +366,7 @@ class actionCleanCompletedActivities(Action):
 
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"] 
-        #aggiunta
+       
         associated_name = Database.getName(id)         
         
         returnedValue = Database.cleanCompletedActivities(id)
@@ -412,7 +410,7 @@ class actionRemindItem(Action):
         category = tracker.get_slot("category")
         reminder = tracker.get_slot("reminder")
         time = tracker.get_slot("time")
-        #aggiunta
+       
         associated_name = Database.getName(id) 
 
         if (Database.doesUnfoldingsExists(id,category,activity,time)):
