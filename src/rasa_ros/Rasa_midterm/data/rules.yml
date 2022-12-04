@@ -1,0 +1,38 @@
+version: "2.0"
+rules:
+
+- rule: help user
+  steps:
+    - intent: help
+    - action: utter_help
+    
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+#################################### Show Stories ######################################
+- rule: Show my Activities 
+  steps:
+  - intent: view_activities
+  - action: view_activities_form
+  - active_loop: view_activities_form
+  - active_loop: null
+  - slot_was_set:
+    - username: true
+  - action: action_view_activities
+
+- rule: Show my Categories 
+  steps:
+  - intent: view_categories
+  - action: view_categories_form
+  - active_loop: view_categories_form
+  - active_loop: null
+  - slot_was_set:
+    - username: true
+  - action: action_view_categories

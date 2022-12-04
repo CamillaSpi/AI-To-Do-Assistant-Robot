@@ -1,0 +1,333 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - add_item
+  - remove_item
+  - set_status_activity
+  - add_category
+  - remove_category
+  - inform
+  - view_activities
+  - view_categories
+  - presentation
+  - help
+  - modify_category
+  - clean_activities
+  - nlu_fallback
+  - modify_activity_category
+  - modify_activity_deadline
+  - modify_activity_name
+  - presentation+remove_item
+  - remind_me_of
+  - presentation+remind_me_of
+  - presentation+view_categories
+  - presentation+view_activities
+  - presentation+set_status_activity
+
+entities:
+  - activity
+  - category
+  - time
+  - username
+  - activity_status
+
+actions:
+  - utter_greet
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_happy
+  - utter_goodbye
+  - utter_iamabot
+  - utter_ask_time
+  - utter_ask_category
+  - utter_ask_activity
+  - utter_confirm_choice
+  - utter_deny_choice
+  - utter_modification_choice
+  - utter_ask_if_deadline
+  - utter_choice_what_to_modify
+  - utter_ask_if_reminder
+  - action_add_item
+  - action_remove_item
+  - action_set_status_activity
+  - action_add_category
+  - action_remove_category
+  - action_view_activities
+  - action_view_categories
+  - action_recognize_user
+  - action_modify_category
+  - action_modify_activity
+  - action_set_reminder_slot
+  - action_clean_all_completed
+  - action_reset_slot
+  - action_reminder_item
+  - action_ask_category_old
+  - action_ask_category_new
+  - action_ask_activity_old
+  - action_ask_activity_new
+  - my_action_fallback
+
+
+slots:
+  activity_old:
+    type: text
+    influence_conversation: false
+  activity_new:
+    type: text
+    influence_conversation: false
+  activity:
+    type: text
+    influence_conversation: false
+  category_old:
+    type: text
+    influence_conversation: false
+  category_new:
+    type: text
+    influence_conversation: false
+  category:
+    type: text
+    influence_conversation: false
+  username:
+    type: text
+    influence_conversation: true
+  time:
+    type: text
+    influence_conversation: true
+  activity_status:
+    type: text
+    influence_conversation: false
+  reminder:
+    type: bool
+    influence_conversation: false
+    initial_value: False
+
+#sono tutti uguali non possono essere raggruppati in uno slot che richede queste tre entity? No!
+forms:
+  recognize_user_form:
+    required_slots:
+      username:
+        - type: from_entity
+          entity: username
+
+  add_item_form:
+    required_slots:
+      username:
+        - type: from_entity
+          entity: username
+      activity:
+        - type: from_entity
+          entity: activity
+      category:
+        - type: from_entity
+          entity: category
+  
+  add_deadline_form: 
+    required_slots:
+      time:
+        - type: from_entity
+          entity: time
+     
+  remove_item_form:
+    required_slots:
+      username:
+        - type: from_entity
+          entity: username
+      activity:
+        - type: from_entity
+          entity: activity
+      category:
+        - type: from_entity
+          entity: category
+
+  set_status_activity_form:
+    required_slots:
+      username:
+        - type: from_entity
+          entity: username
+      activity:
+        - type: from_entity
+          entity: activity
+      category:
+        - type: from_entity
+          entity: category
+
+  add_category_form:
+    required_slots:
+      username:
+        - type: from_entity
+          entity: username
+      category:
+        - type: from_entity
+          entity: category
+          
+  remove_category_form:
+    required_slots:
+      username:
+        - type: from_entity
+          entity: username
+      category:
+        - type: from_entity
+          entity: category
+    
+  view_activities_form:
+    required_slots:
+      username:
+        - type: from_entity
+          entity: username
+
+  view_categories_form:
+    required_slots:
+      username:
+        - type: from_entity
+          entity: username
+              
+  modify_category_form:
+    required_slots:
+      username:
+        - type: from_entity
+          entity: username
+      category_old:
+        - type: from_entity
+          entity: category
+          role: old
+      category_new:
+        - type: from_entity
+          entity: category  
+          role: new 
+      
+
+  modify_activity_category_form:
+    required_slots:
+      username:
+        - type: from_entity
+          entity: username
+      activity:
+        - type: from_entity
+          entity: activity
+      category_old:
+        - type: from_entity
+          entity: category
+          role: old
+      category_new:
+        - type: from_entity
+          entity: category
+          role: new
+      
+
+  modify_activity_name_form:
+    required_slots:
+      username:
+        - type: from_entity
+          entity: username
+      category:
+        - type: from_entity
+          entity: category
+      activity_old:
+        - type: from_entity
+          entity: activity
+          role: old
+      activity_new:
+        - type: from_entity
+          entity: activity
+          role: new
+      
+  modify_activity_deadline_form:
+    required_slots:
+      username:
+        - type: from_entity
+          entity: username
+      time:
+        - type: from_entity
+          entity: time
+      activity:
+        - type: from_entity
+          entity: activity
+      category:
+        - type: from_entity
+          entity: category
+
+  clean_activities_form: 
+    required_slots:
+      username:
+        - type: from_entity
+          entity: username
+
+
+
+
+responses:
+  utter_greet:
+  - text: "Hey! Who are you?"
+
+  utter_help:
+  - text: "Hey, i'm your personal assistant, you can create To-Do list and i'll manage that :D"
+  - text: "Ask me to add a new activity or to create a new cateogory list!"
+  - text: "Have you try to ask me to show your activities?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Gruppo16."
+
+  utter_ask_time:
+  - text: "Please insert the time"
+
+  utter_ask_if_deadline:
+  - text: "Does this item have a deadline?"
+
+  utter_ask_if_reminder:
+  - text: "Do you want to set a reminder for the activity?"
+
+  utter_ask_activity:
+  - text: "Please insert the activity"
+  utter_ask_add_item_form_activity:
+  - text: "Please insert the new activity"
+
+  utter_ask_category:
+    - text: "Please insert the category of the item"
+
+  utter_ask_add_category_form_category:
+  - text: "Please insert the new category"
+ 
+  utter_confirm_choice:
+  - text: "Are you sure to complete this action!?"
+  utter_ask_username:
+  - text: "Please insert the username"
+  utter_deny_choice:
+  - text: "Ok cancelled"
+
+  utter_modification_choice:
+  - text: "Which info do you weant to modify?"
+  utter_choice_what_to_modify:
+  - text: "What campo vuoi modiffare?"
+  utter_confirmed:
+  - text: " Changfed "
+
+  utter_default:
+  - text: I'm sorry, I can't help you. 
+
+  
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

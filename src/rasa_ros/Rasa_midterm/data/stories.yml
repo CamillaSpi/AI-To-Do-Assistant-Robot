@@ -1,0 +1,541 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: Later Login or SignUp
+  steps:  
+  - intent: greet
+  - action: utter_greet
+  - intent: inform
+  - slot_was_set:
+    - username: true
+  - slot_was_set:
+    - username: group12
+  - action: action_recognize_user
+
+- story: Login o SignUp
+  steps:  
+  - intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - slot_was_set:
+    - username: group12
+  - action: action_recognize_user
+
+#################################### Submit new Activity Stories ######################################
+- story: Submit generic activity
+  steps:  
+  - intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - active_loop: null
+  - slot_was_set:
+    - username: true
+  - checkpoint: Submit_generic
+
+- story: Submit new activity ask and without deadline
+  steps:  
+  - checkpoint: Submit_generic
+  - action: utter_ask_if_deadline
+  - intent: deny
+  - action: action_add_item
+
+- story: Submit new activity ask and with deadline
+  steps:  
+  - checkpoint: Submit_generic
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - active_loop: null
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - checkpoint: submit_generic_deadline
+
+- story: Submit new activity with deadline
+  steps:  
+  - checkpoint: Submit_generic
+  - slot_was_set:
+    - time: true
+    - username: true
+  - checkpoint: submit_generic_deadline
+
+- story: Submit new activity maybe deadline with reminder
+  steps:
+  - checkpoint: submit_generic_deadline
+  - action: utter_ask_if_reminder
+  - intent: affirm
+  - action: action_set_reminder_slot
+  - action: action_add_item
+
+- story: Submit new activity maybe deadline with no reminder
+  steps:
+  - checkpoint: submit_generic_deadline
+  - action: utter_ask_if_reminder
+  - intent: deny
+  - action: action_add_item
+
+#################################### Remove Activity Stories ######################################
+- story: Remove generic activity
+  steps:
+  - intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - active_loop: null
+  - checkpoint: Remove_generic
+
+- story: Remove from my Activities without deadline and negation
+  steps:
+  - checkpoint: Remove_generic
+  - slot_was_set:
+    - username: true
+  - action: utter_ask_if_deadline
+  - intent: deny
+  - action: utter_confirm_choice
+  - intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+
+- story: Remove from my Activities with deadline with negation
+  steps:
+  - checkpoint: Remove_generic
+  - slot_was_set:
+    - username: true
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - active_loop: null
+  - slot_was_set:
+    - time: true
+  - action: utter_confirm_choice
+  - intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+
+- story: Remove from my Activities without deadline with confirmation
+  steps:
+  - checkpoint: Remove_generic
+  - slot_was_set:
+    - username: true
+  - action: utter_ask_if_deadline
+  - intent: deny
+  - action: utter_confirm_choice
+  - intent: affirm
+  - action: action_remove_item
+
+- story: Remove from my Activities with deadline with affirmation
+  steps:
+  - checkpoint: Remove_generic
+  - slot_was_set:
+    - username: true
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - active_loop: null
+  - slot_was_set:
+    - time: true
+  - action: utter_confirm_choice
+  - intent: affirm
+  - action: action_remove_item
+
+- story: Remove from my Activities already deadline with confirmation
+  steps:
+  - checkpoint: Remove_generic
+  - slot_was_set:
+    - time: true
+    - username: true
+  - action: utter_confirm_choice
+  - intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+
+- story: Remove from my Activities already deadline with confirmation
+  steps:
+  - checkpoint: Remove_generic
+  - slot_was_set:
+    - time: true
+  - action: utter_confirm_choice
+  - intent: affirm
+  - action: action_remove_item
+
+
+#################################### Set Completed and unCompleted Stories ######################################
+
+- story: Set status Activity Generic
+  steps:
+    - intent: set_status_activity
+    - action: set_status_activity_form
+    - active_loop: set_status_activity_form
+    - active_loop: null
+    - checkpoint: set_status_generic
+
+- story: Set status Activity with Deadline
+  steps:
+    - checkpoint: set_status_generic
+    - slot_was_set:
+      - username: true
+    - action: utter_ask_if_deadline
+    - intent: affirm
+    - action: add_deadline_form
+    - active_loop: add_deadline_form
+    - active_loop: null
+    - slot_was_set:
+      - time: true
+    - action: action_set_status_activity
+
+- story: Set status Activity without deadline
+  steps:
+    - checkpoint: set_status_generic
+    - slot_was_set:
+      - username: true
+    - action: utter_ask_if_deadline
+    - intent: deny
+    - action: action_set_status_activity
+
+- story: Set status Activity already inserted deadline
+  steps:
+    - checkpoint: set_status_generic
+    - slot_was_set:
+      - time: True
+      - username: true
+    - action: action_set_status_activity
+
+#################################### Submit new Category Stories ######################################
+- story: Add new Category
+  steps:
+    - intent: add_category
+    - action: add_category_form
+    - active_loop: add_category_form
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    - action: action_add_category
+
+- story: Remove generic Category
+  steps:
+    - intent: remove_category
+    - action: remove_category_form
+    - active_loop: remove_category_form
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    - action: utter_confirm_choice
+    - checkpoint: Remove_generic_Category
+
+#################################### Remove Category Stories ######################################
+- story: Remove new Category with deny
+  steps:
+    - checkpoint: Remove_generic_Category
+    - intent: deny
+    - action: utter_deny_choice
+    - action: action_reset_slot
+
+- story: Remove new Category with affirm
+  steps:
+    - checkpoint: Remove_generic_Category
+    - intent: affirm
+    - action: action_remove_category
+    
+#################################### Modify Category Stories ######################################
+- story: Modify the category confirmed
+  steps:
+    - intent: modify_category
+    - action: modify_category_form
+    - active_loop: modify_category_form
+    - active_loop: null
+    - slot_was_set:
+      - username: true
+    - action: utter_confirm_choice
+    - intent: affirm
+    - action: action_modify_category
+
+- story: Modify the category denied
+  steps:
+    - intent: modify_category
+    - action: modify_category_form
+    - active_loop: modify_category_form
+    - active_loop: null
+    - slot_was_set:
+      - username: true
+    - action: utter_confirm_choice
+    - intent: deny
+    - action: utter_deny_choice
+    - action: action_reset_slot
+
+
+#################################### Modify Activity Category ######################################
+- story: Modify the activity category generic
+  steps:
+    - intent: modify_activity_category
+    - action: modify_activity_category_form
+    - active_loop: modify_activity_category_form
+    - active_loop: null
+    - checkpoint: modify_activity_category_generic
+
+- story: Modify the activity category with Deadline
+  steps:
+    - checkpoint: modify_activity_category_generic
+    - slot_was_set:
+      - username: true
+    - action: utter_ask_if_deadline
+    - intent: affirm
+    - action: add_deadline_form
+    - active_loop: add_deadline_form
+    - active_loop: null
+    - slot_was_set:
+      - time: true
+    - action: action_modify_activity
+
+- story: Modify the activity category without Deadline
+  steps:
+    - checkpoint: modify_activity_category_generic
+    - slot_was_set:
+      - username: true
+    - action: utter_ask_if_deadline
+    - intent: deny
+    - action: action_modify_activity
+
+- story: Modify the activity category already Deadline
+  steps:
+    - checkpoint: modify_activity_category_generic
+    - slot_was_set:
+      - time: true
+      - username: true
+    - action: action_modify_activity
+
+
+#################################### Modify Activity Deadline ######################################
+- story: Modify the activity category generic
+  steps:
+    - intent: modify_activity_deadline
+    - action: modify_activity_deadline_form
+    - active_loop: modify_activity_deadline_form
+    - active_loop: null
+    - action: action_modify_activity
+
+#################################### Modify Activity name ######################################
+- story: Modify the activity name generic
+  steps:
+    - intent: modify_activity_name
+    - action: modify_activity_name_form
+    - active_loop: modify_activity_name_form
+    - active_loop: null
+    - checkpoint: modify_activity_name_generic
+
+- story: Modify the activity name with Deadline
+  steps:
+    - checkpoint: modify_activity_name_generic
+    - slot_was_set:
+      - username: true
+    - action: utter_ask_if_deadline
+    - intent: affirm
+    - action: add_deadline_form
+    - active_loop: add_deadline_form
+    - active_loop: null
+    - slot_was_set:
+      - time: true
+    - action: action_modify_activity
+
+- story: Modify the activity name without Deadline
+  steps:
+    - checkpoint: modify_activity_name_generic
+    - slot_was_set:
+      - username: true
+    - action: utter_ask_if_deadline
+    - intent: deny
+    - action: action_modify_activity
+
+- story: Modify the activity name already Deadline
+  steps:
+    - checkpoint: modify_activity_name_generic
+    - slot_was_set:
+      - time: true
+      - username: true
+    - action: action_modify_activity
+
+
+#################################### Clean Stories ######################################
+- story: Clean Complete Activities confirmed 
+  steps:
+    - intent: clean_activities
+    - action: clean_activities_form
+    - active_loop: clean_activities_form
+    - active_loop: null
+    - slot_was_set:
+      - username: true
+    - action: utter_confirm_choice
+    - intent: affirm
+    - action: action_clean_all_completed
+
+
+- story: Clean Complete Activities denied 
+  steps:
+    - intent: clean_activities
+    - action: clean_activities_form
+    - active_loop: clean_activities_form
+    - active_loop: null
+    - slot_was_set:
+      - username: true
+    - action: utter_confirm_choice
+    - intent: deny
+    - action: utter_deny_choice
+    - action: action_reset_slot
+
+#################################### Stories Reminder ######################################
+# - story: Reminder Generic
+#   steps:
+#     - intent: remind_me_of
+#     - action: action_set_reminder_slot
+#     - action: add_item_form
+#     - active_loop: add_item_form
+#     - active_loop: null
+#     - slot_was_set:
+#       - username: true
+#     - checkpoint: reminder_generic
+
+- story: Reminder activity and without deadline
+  steps:  
+    - intent: remind_me_of
+    - action: action_set_reminder_slot
+    - action: add_item_form
+    - active_loop: add_item_form
+    - active_loop: null
+    - slot_was_set:
+      - username: true
+    - action: add_deadline_form
+    - active_loop: add_deadline_form
+    - active_loop: null
+    - slot_was_set:
+      - time: true
+    - action: action_reminder_item
+
+- story: Reminder activity with deadline
+  steps:  
+    - intent: remind_me_of
+    - action: action_set_reminder_slot
+    - action: add_item_form
+    - active_loop: add_item_form
+    - active_loop: null
+    - slot_was_set:
+      - username: true
+      - time: true
+    - action: action_reminder_item
+
+#################################### Stories Miste ######################################
+
+- story: Presentation and Remind me of with deadline
+  steps:
+  - intent: presentation+remind_me_of
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - slot_was_set:
+    - username: group12
+  - action: action_recognize_user
+  - action: action_set_reminder_slot
+  - action: add_item_form
+  - active_loop: add_item_form
+  - active_loop: null
+  - slot_was_set:
+    - username: true
+    - time: true
+  - action: action_reminder_item
+
+- story: Presentation and Remind me of without deadline
+  steps:
+  - intent: presentation+remind_me_of
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - slot_was_set:
+    - username: group12
+  - action: action_recognize_user
+  - action: action_set_reminder_slot
+  - action: add_item_form
+  - active_loop: add_item_form
+  - active_loop: null
+  - slot_was_set:
+    - username: true
+    - time: false
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - active_loop: null
+  - slot_was_set:
+    - time: true
+  - action: action_reminder_item
+
+- story: Presentation and Set Activity Status
+  steps:
+  - intent: presentation+set_status_activity
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - slot_was_set:
+    - username: group12
+  - action: action_recognize_user
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - active_loop: null
+  - checkpoint: set_status_generic
+
+- story: Presentation and View Activities
+  steps:
+  - intent: presentation+view_activities
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - slot_was_set:
+    - username: group12
+  - action: action_recognize_user
+  - action: view_activities_form
+  - active_loop: view_activities_form
+  - active_loop: null
+  - slot_was_set:
+    - username: true
+  - action: action_view_activities
+
+- story: Presentation and View categories
+  steps:
+  - intent: presentation+view_categories
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - slot_was_set:
+    - username: group12
+  - action: action_recognize_user
+  - action: view_categories_form
+  - active_loop: view_categories_form
+  - active_loop: null
+  - slot_was_set:
+    - username: true
+  - action: action_view_categories
