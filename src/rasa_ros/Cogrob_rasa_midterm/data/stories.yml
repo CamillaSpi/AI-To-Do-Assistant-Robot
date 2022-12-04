@@ -34,10 +34,6 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: inform
-  - slot_was_set:
-    - username: true
-  - slot_was_set:
-    - username: group12
   - action: action_recognize_user
 
 - story: Login o SignUp
@@ -47,7 +43,7 @@ stories:
   - active_loop: recognize_user_form
   - active_loop: null
   - slot_was_set:
-    - username: group12
+    - requested_slot: null
   - action: action_recognize_user
 
 #################################### Submit new Activity Stories ######################################
@@ -58,7 +54,7 @@ stories:
   - active_loop: add_item_form
   - active_loop: null
   - slot_was_set:
-    - username: true
+    - requested_slot: null
   - checkpoint: Submit_generic
 
 - story: Submit new activity ask and without deadline
@@ -85,7 +81,7 @@ stories:
   - checkpoint: Submit_generic
   - slot_was_set:
     - time: true
-    - username: true
+    - requested_slot: null
   - checkpoint: submit_generic_deadline
 
 - story: Submit new activity maybe deadline with reminder
@@ -116,7 +112,7 @@ stories:
   steps:
   - checkpoint: Remove_generic
   - slot_was_set:
-    - username: true
+    - requested_slot: null
   - action: utter_ask_if_deadline
   - intent: deny
   - action: utter_confirm_choice
@@ -128,7 +124,7 @@ stories:
   steps:
   - checkpoint: Remove_generic
   - slot_was_set:
-    - username: true
+    - requested_slot: null
   - action: utter_ask_if_deadline
   - intent: affirm
   - action: add_deadline_form
@@ -145,7 +141,7 @@ stories:
   steps:
   - checkpoint: Remove_generic
   - slot_was_set:
-    - username: true
+    - requested_slot: null
   - action: utter_ask_if_deadline
   - intent: deny
   - action: utter_confirm_choice
@@ -156,7 +152,7 @@ stories:
   steps:
   - checkpoint: Remove_generic
   - slot_was_set:
-    - username: true
+    - requested_slot: null
   - action: utter_ask_if_deadline
   - intent: affirm
   - action: add_deadline_form
@@ -173,7 +169,6 @@ stories:
   - checkpoint: Remove_generic
   - slot_was_set:
     - time: true
-    - username: true
   - action: utter_confirm_choice
   - intent: deny
   - action: utter_deny_choice
@@ -203,7 +198,7 @@ stories:
   steps:
     - checkpoint: set_status_generic
     - slot_was_set:
-      - username: true
+      - requested_slot: null
     - action: utter_ask_if_deadline
     - intent: affirm
     - action: add_deadline_form
@@ -217,7 +212,7 @@ stories:
   steps:
     - checkpoint: set_status_generic
     - slot_was_set:
-      - username: true
+      - requested_slot: null
     - action: utter_ask_if_deadline
     - intent: deny
     - action: action_set_status_activity
@@ -227,7 +222,6 @@ stories:
     - checkpoint: set_status_generic
     - slot_was_set:
       - time: True
-      - username: true
     - action: action_set_status_activity
 
 #################################### Submit new Category Stories ######################################
@@ -274,7 +268,7 @@ stories:
     - active_loop: modify_category_form
     - active_loop: null
     - slot_was_set:
-      - username: true
+      - requested_slot: null
     - action: utter_confirm_choice
     - intent: affirm
     - action: action_modify_category
@@ -286,7 +280,7 @@ stories:
     - active_loop: modify_category_form
     - active_loop: null
     - slot_was_set:
-      - username: true
+      - requested_slot: null
     - action: utter_confirm_choice
     - intent: deny
     - action: utter_deny_choice
@@ -306,7 +300,7 @@ stories:
   steps:
     - checkpoint: modify_activity_category_generic
     - slot_was_set:
-      - username: true
+      - requested_slot: null
     - action: utter_ask_if_deadline
     - intent: affirm
     - action: add_deadline_form
@@ -320,7 +314,7 @@ stories:
   steps:
     - checkpoint: modify_activity_category_generic
     - slot_was_set:
-      - username: true
+      - requested_slot: null
     - action: utter_ask_if_deadline
     - intent: deny
     - action: action_modify_activity
@@ -330,7 +324,6 @@ stories:
     - checkpoint: modify_activity_category_generic
     - slot_was_set:
       - time: true
-      - username: true
     - action: action_modify_activity
 
 
@@ -356,7 +349,7 @@ stories:
   steps:
     - checkpoint: modify_activity_name_generic
     - slot_was_set:
-      - username: true
+      - requested_slot: null
     - action: utter_ask_if_deadline
     - intent: affirm
     - action: add_deadline_form
@@ -370,7 +363,7 @@ stories:
   steps:
     - checkpoint: modify_activity_name_generic
     - slot_was_set:
-      - username: true
+      - requested_slot: null
     - action: utter_ask_if_deadline
     - intent: deny
     - action: action_modify_activity
@@ -380,7 +373,7 @@ stories:
     - checkpoint: modify_activity_name_generic
     - slot_was_set:
       - time: true
-      - username: true
+      - requested_slot: null
     - action: action_modify_activity
 
 
@@ -392,7 +385,7 @@ stories:
     - active_loop: clean_activities_form
     - active_loop: null
     - slot_was_set:
-      - username: true
+      - requested_slot: null
     - action: utter_confirm_choice
     - intent: affirm
     - action: action_clean_all_completed
@@ -405,7 +398,7 @@ stories:
     - active_loop: clean_activities_form
     - active_loop: null
     - slot_was_set:
-      - username: true
+      - requested_slot: null
     - action: utter_confirm_choice
     - intent: deny
     - action: utter_deny_choice
@@ -420,7 +413,7 @@ stories:
 #     - active_loop: add_item_form
 #     - active_loop: null
 #     - slot_was_set:
-#       - username: true
+#           - requested_slot: null
 #     - checkpoint: reminder_generic
 
 - story: Reminder activity and without deadline
@@ -431,7 +424,7 @@ stories:
     - active_loop: add_item_form
     - active_loop: null
     - slot_was_set:
-      - username: true
+      - requested_slot: null
     - action: add_deadline_form
     - active_loop: add_deadline_form
     - active_loop: null
@@ -447,7 +440,6 @@ stories:
     - active_loop: add_item_form
     - active_loop: null
     - slot_was_set:
-      - username: true
       - time: true
     - action: action_reminder_item
 
@@ -460,14 +452,13 @@ stories:
   - active_loop: recognize_user_form
   - active_loop: null
   - slot_was_set:
-    - username: group12
+    - requested_slot: null
   - action: action_recognize_user
   - action: action_set_reminder_slot
   - action: add_item_form
   - active_loop: add_item_form
   - active_loop: null
   - slot_was_set:
-    - username: true
     - time: true
   - action: action_reminder_item
 
@@ -478,14 +469,13 @@ stories:
   - active_loop: recognize_user_form
   - active_loop: null
   - slot_was_set:
-    - username: group12
+    - requested_slot: null
   - action: action_recognize_user
   - action: action_set_reminder_slot
   - action: add_item_form
   - active_loop: add_item_form
   - active_loop: null
   - slot_was_set:
-    - username: true
     - time: false
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -501,7 +491,7 @@ stories:
   - active_loop: recognize_user_form
   - active_loop: null
   - slot_was_set:
-    - username: group12
+    - requested_slot: null
   - action: action_recognize_user
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
@@ -515,13 +505,13 @@ stories:
   - active_loop: recognize_user_form
   - active_loop: null
   - slot_was_set:
-    - username: group12
+    - requested_slot: null
   - action: action_recognize_user
   - action: view_activities_form
   - active_loop: view_activities_form
   - active_loop: null
   - slot_was_set:
-    - username: true
+    - requested_slot: null
   - action: action_view_activities
 
 - story: Presentation and View categories
@@ -531,11 +521,11 @@ stories:
   - active_loop: recognize_user_form
   - active_loop: null
   - slot_was_set:
-    - username: group12
+    - requested_slot: null
   - action: action_recognize_user
   - action: view_categories_form
   - active_loop: view_categories_form
   - active_loop: null
   - slot_was_set:
-    - username: true
+    - requested_slot: null
   - action: action_view_categories
