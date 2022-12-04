@@ -28,6 +28,7 @@ TH = 0.75
 
 pub1 = rospy.Publisher('id_user', String, queue_size=10)
 pub2 = rospy.Publisher('toSpeech', String, queue_size=10)
+pub3 = rospy.Publisher('recognized_msg', String, queue_size=10)
 
 def elaboration(data):
     
@@ -71,6 +72,7 @@ def listener():
             #mi vado a checkare che si tratti di testo, altrimenti ptrei riconocere il rumore, o comunque avere problemi.
             # co wwait for message, ascolto solo qando voglio, ho operazione "sincrona"
             data = rospy.wait_for_message("voice_data",Int16MultiArray) 
+            message = rospy.wait_for_message("spoken_text",String)
 
             ukn = elaboration(data)
 
@@ -92,6 +94,8 @@ def listener():
                 
             else:
                 print("Ha parlato:", id_label)
+                pub3.publish(message)
+
     except rospy.exceptions.ROSInterruptException:
         print("vado in close")
         save_identities(X,y,REF_PATH)

@@ -30,7 +30,7 @@ def main():
     terminal = TerminalInterface()
 
     while not rospy.is_shutdown():
-        message = rospy.wait_for_message("spoken_text",String)
+        message = rospy.wait_for_message("text_to_elaborate",String)
         if message == 'exit': 
             break
         try:
