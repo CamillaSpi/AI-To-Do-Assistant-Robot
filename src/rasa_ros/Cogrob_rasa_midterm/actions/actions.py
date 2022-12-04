@@ -19,6 +19,7 @@ from datetime import datetime, timedelta
 
 from . import Database
 
+#da rivedere
 class actionCreateUser(Action):
 
     def name(self) -> Text:
@@ -31,12 +32,14 @@ class actionCreateUser(Action):
         id=tracker.current_state()["sender_id"]
         if(Database.doesUserExists(id) == False):
             returnedValue = Database.createUser(id,name)
+            #aggiunta
+            associated_name = Database.getName(id)
             if(returnedValue):
-                dispatcher.utter_message(text=f"Congratulation {name} your account has been correctly created:P") 
+                dispatcher.utter_message(text=f"Congratulation {associated_name} your account has been correctly created") 
             else:
-                dispatcher.utter_message(text=f"Oh no {name} your account already exists")
+                dispatcher.utter_message(text=f"Oh no {associated_name} your account already exists") #ma serve questa?
         else:
-            dispatcher.utter_message(text=f"Congratulation {name} you're logged in!!!") 
+            dispatcher.utter_message(text=f"Congratulation {associated_name} you're logged in") 
         return []
 
 
@@ -49,6 +52,8 @@ class actionAddItem(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         name = tracker.get_slot("name")
+        #aggiunta
+        associated_name = Database.getName(id)
         id=tracker.current_state()["sender_id"]
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
@@ -57,22 +62,19 @@ class actionAddItem(Action):
         if(time != None and len(time) == 2):
             time = time['to']
 
-        if(Database.doesUserExists(id)):
-            if(Database.doesPossessionExists(id,category)):
-                returnedValue= Database.insertItem(id,activity ,category,reminder,time)
-                if (returnedValue):  
-                    text = f"Congratulation {name}, {activity} added to {category}" + (f", complete before {time[:10]} at {time[11:16]}." if time else ".") + (" I will remind you, dont worry :P " if reminder else "") 
-                    dispatcher.utter_message(text=text) 
-                else:
-                    dispatcher.utter_message(text=f"Ops! {name} something went wrong, you already inserted this activity :(") 
+        
+        if(Database.doesPossessionExists(id,category)):
+            returnedValue= Database.insertItem(id,activity ,category,reminder,time)
+            if (returnedValue):  
+                text = f"Congratulation {associated_name}, {activity} added to {category}" + (f", complete before {time[:10]} at {time[11:16]}." if time else ".") + (" I will remind you, dont worry " if reminder else "") 
+                dispatcher.utter_message(text=text) 
             else:
-                dispatcher.utter_message(text=f"The category does not exists! I'm creating it!") 
-                actionAddCategory.run(self, dispatcher,tracker,domain)
-                actionAddItem.run(self, dispatcher,tracker,domain)
+                dispatcher.utter_message(text=f"Ops {associated_name}, this activity already exists.") 
         else:
-            dispatcher.utter_message(text=f"This username does not exists!") 
-            return [SlotSet("name",None),SlotSet("activity", None),SlotSet("category", None), SlotSet("reminder",False), SlotSet("time",None)]
-
+            dispatcher.utter_message(text=f"The category does not exists! I'm creating it!") 
+            actionAddCategory.run(self, dispatcher,tracker,domain)
+            actionAddItem.run(self, dispatcher,tracker,domain)
+        
         return [SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None),SlotSet("reminder",False)]
 
 class actionRemoveItem(Action):
@@ -84,23 +86,19 @@ class actionRemoveItem(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
         name = tracker.get_slot("name")
+        #aggiunta
+        associated_name = Database.getName(id)
         id=tracker.current_state()["sender_id"]
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
         time = tracker.get_slot("time")
 
-        
-        if(Database.doesUserExists(id)):
-            returnedValue = Database.deleteItem(id,activity ,category,time)
-
-            if (returnedValue):  
-                dispatcher.utter_message(text=f"Congratulation {name}, {activity} removed from {category}") 
-            else:
-                dispatcher.utter_message(text=f"Ops! {name} something went wrong, I didn't find this activity :(") 
-
+        returnedValue = Database.deleteItem(id,activity ,category,time)
+        if (returnedValue):  
+            dispatcher.utter_message(text=f"Congratulation {associated_name}, {activity} removed from {category}") 
         else:
-            dispatcher.utter_message(text=f"This username does not exists!") 
-            return [SlotSet("name",None),SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None)]
+            dispatcher.utter_message(text=f"Ops {associated_name}, this activity does not exists.") 
+
 
         return [SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None)]
             
@@ -114,20 +112,18 @@ class actionAddCategory(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
         name = tracker.get_slot("name")
+        #aggiunta
+        associated_name = Database.getName(id)
         id=tracker.current_state()["sender_id"]
         category = tracker.get_slot("category")
 
-        if(Database.doesUserExists(id)):
-            returnedValue = Database.insertCategoryAndPossession(id,category)
-            if (returnedValue):  
-                dispatcher.utter_message(text=f"Congratulation {name}, {category} added as a new Category") 
-            else:
-                dispatcher.utter_message(text=f"Ops! {name} something went wrong, you already inserted this category") 
-
+        returnedValue = Database.insertCategoryAndPossession(id,category)
+        if (returnedValue):  
+            dispatcher.utter_message(text=f"Congratulation {associated_name}, {category} added as a new category") 
         else:
-            dispatcher.utter_message(text=f"This username does not exists!") 
-            return [SlotSet("name",None),SlotSet("category", None)]
+            dispatcher.utter_message(text=f"Ops {associated_name}, this category already exists.") 
 
+    
         return [SlotSet("category", None)]
             
 
@@ -142,19 +138,17 @@ class actionRemoveCategory(Action):
         
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
+        #aggiunta
+        associated_name = Database.getName(id)
         category = tracker.get_slot("category")
 
-        
-        if(Database.doesUserExists(id)):
-            returnedValue = Database.deleteCategory(id,category)
-            if (returnedValue):  
-                dispatcher.utter_message(text=f"Congratulation {name}, category {category} removed") 
-            else:
-                dispatcher.utter_message(text=f"Ops! {name} something went wrong,I didn't find this category :(") 
-
+    
+        returnedValue = Database.deleteCategory(id,category)
+        if (returnedValue):  
+            dispatcher.utter_message(text=f"Congratulation {associated_name}, category {category} removed") 
         else:
-            dispatcher.utter_message(text=f"This username does not exists!") 
-            return [SlotSet("name",None),SlotSet("category", None)]
+            dispatcher.utter_message(text=f"Ops {associated_name}, this  category does not exists.") 
+
 
         return [SlotSet("category", None)]
 
@@ -169,29 +163,26 @@ class actionSetStatusActivity(Action):
 
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
+        #aggiunta
+        associated_name = Database.getName(id)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
         activity_status = tracker.get_slot("activity_status")
         time = tracker.get_slot("time")
 
-        
-        if(Database.doesUserExists(id)):
-            if activity_status == 'completed':
-                returnedValue = Database.setItemStatus(id,activity ,category,time,True)
-            elif activity_status == 'uncompleted':
-                returnedValue = Database.setItemStatus(id,activity ,category,time,False)
-            else:
-                dispatcher.utter_message(text=f"Ops! {name} something went wrong, I didn't understand what u want to do with this activity :(") 
-                return [SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None),SlotSet("activity_status",None)]
-
-            if (returnedValue):  
-                dispatcher.utter_message(text=f"Congratulation {name}, {activity} in {category} set as {activity_status} !") 
-            else:
-                dispatcher.utter_message(text=f"Ops! {name} something went wrong, I didn't find this activity :(") 
-
+    
+        if activity_status == 'completed':
+            returnedValue = Database.setItemStatus(id,activity ,category,time,True)
+        elif activity_status == 'uncompleted':
+            returnedValue = Database.setItemStatus(id,activity ,category,time,False)
         else:
-            dispatcher.utter_message(text=f"This username does not exists!") 
-            return [SlotSet("name",None),SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None),SlotSet("activity_status",None)]
+            dispatcher.utter_message(text=f"Ops {associated_name}, I didn't understand what you want to do with this activity") 
+            return [SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None),SlotSet("activity_status",None)]
+
+        if (returnedValue):  
+            dispatcher.utter_message(text=f"Congratulation {associated_name}, {activity} in {category} set as {activity_status} !") 
+        else:
+            dispatcher.utter_message(text=f"Ops {associated_name}, this activity does not exists.") 
 
         return [SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -206,22 +197,18 @@ class actionSetInComplete(Action):
 
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
+        #aggiunta
+        associated_name = Database.getName(id)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
         time = tracker.get_slot("time")
 
-          
-        if(Database.doesUserExists(id)):
-            returnedValue = Database.setItemStatus(id,activity ,category,time,False)
+        returnedValue = Database.setItemStatus(id,activity ,category,time,False)
 
-            if (returnedValue):  
-                dispatcher.utter_message(text=f"Congratulation {name}, {activity} in {category} set as incompleted !") 
-            else:
-                dispatcher.utter_message(text=f"Ops! {name} something went wrong, I didn't find this activity :(") 
-
+        if (returnedValue):  
+            dispatcher.utter_message(text=f"Congratulation {associated_name}, {activity} in {category} set as incompleted") 
         else:
-            dispatcher.utter_message(text=f"This username does not exists!") 
-            return [SlotSet("name",None),SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None),SlotSet("activity_status",None)]
+            dispatcher.utter_message(text=f"Ops {associated_name}, this activity does not exists.") 
 
         return [SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -235,15 +222,13 @@ class showActivities(Action):
 
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
+        #aggiunta
+        associated_name = Database.getName(id)
         category = tracker.get_slot("category")
         activity_status = tracker.get_slot("activity_status")
 
-        if(Database.doesUserExists(id)):
-            list_of_activity = Database.selectItems(id,category, activity_status)
-            dispatcher.utter_message(text=(f"This are the requested activity:\n{list_of_activity}" if list_of_activity else "No activity found!")) 
-        else:
-            dispatcher.utter_message(text=f"This username does not exists!") 
-            return [SlotSet("name",None),SlotSet("category", None),SlotSet("activity_status", None)]
+        list_of_activity = Database.selectItems(id,category, activity_status)
+        dispatcher.utter_message(text=(f" {associated_name} , this are the requested activity:\n{list_of_activity}" if list_of_activity else " No activity found for you!")) 
 
         return [SlotSet("category", None),SlotSet("activity_status", None)]
 
@@ -257,12 +242,10 @@ class showCategories(Action):
 
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
+        #aggiunta
+        associated_name = Database.getName(id)
 
-        if(Database.doesUserExists(id)):
-            dispatcher.utter_message(text=f"These are all your categories:\n{Database.selectPossessions(id)}") 
-        else:
-            dispatcher.utter_message(text=f"This username does not exists!") 
-            return [SlotSet("name",None), SlotSet("activity", None)]
+        dispatcher.utter_message(text=f" {associated_name} , these are all your categories:\n{Database.selectPossessions(id)}") #qua non va fatto pure il caso in cui non ne ha?
 
         return [SlotSet("activity", None)]
 
@@ -276,22 +259,21 @@ class actionModifyCategory(Action):
 
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
+        #aggiunta
+        associated_name = Database.getName(id)
         category_old = tracker.get_slot("category_old")
         category_new = tracker.get_slot("category_new")
         
-        if(Database.doesUserExists(id)):
-            if (Database.doesPossessionExists(id,category_new) == False):
+        if (Database.doesPossessionExists(id,category_new) == False):
 
-                returnedValue = Database.modifyCategory(id, category_old, category_new)
-                if (returnedValue):  
-                    dispatcher.utter_message(text=f"Congratulation {name}, {category_old} modified in {category_new} !") 
-                else:
-                    dispatcher.utter_message(text=f"Ops! {name} something went wrong, I didn't find this category :(") 
+            returnedValue = Database.modifyCategory(id, category_old, category_new)
+            if (returnedValue):  
+                dispatcher.utter_message(text=f"Congratulation {associated_name}, {category_old} modified in {category_new}") 
             else:
-                dispatcher.utter_message(text=f"Ops! {name} the {category_new} already exists!") 
+                dispatcher.utter_message(text=f"Ops {associated_name} , the category {category_old} does not exists") 
         else:
-            dispatcher.utter_message(text=f"This username does not exists!") 
-            return [SlotSet("name",None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("category", None)]
+            dispatcher.utter_message(text=f"Ops {associated_name} , the {category_new} already exists") 
+        
         return [SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("category", None)]
 
 class actionModifyActivity(Action):
@@ -311,6 +293,8 @@ class actionModifyActivity(Action):
         category = tracker.get_slot("category")
         activity = tracker.get_slot("activity")
         time = tracker.get_slot("time")
+        #aggiunta
+        associated_name = Database.getName(id)
        
         if(activity_old!=None):
             act_to_modify = activity_old
@@ -342,7 +326,7 @@ class actionModifyActivity(Action):
             timenew = time
             timeold = time
         if possibleDeadlineErrorFlag is True and activity_old is None and category_old is None:
-            dispatcher.utter_message(text=f"please insert old and new deadline in the next request to allow me to change the deadline of the activity!!")
+            dispatcher.utter_message(text=f"please insert old and new deadline in the next request to allow me to change the deadline of the activity")
             return [SlotSet("category", None),SlotSet("category_old", None),SlotSet("activity_old", None),SlotSet("category_new", None),SlotSet("activity_new", None),SlotSet("activity", None),SlotSet("time", None)]
     
 
@@ -350,18 +334,16 @@ class actionModifyActivity(Action):
             category_new = category
         if(activity_new == None):
             activity_new = activity
-        if(Database.doesUserExists(id)):
-            if (Database.doesUnfoldingsExists(id,category_new,activity_new,timenew) == False):
-                returnedValue = Database.modifyActivity(id, cat_to_modify, act_to_modify, timeold, category_new, activity_new, timenew)
-                if (returnedValue):  
-                    dispatcher.utter_message(text=f"Congratulation {name}, the activity {act_to_modify} has been updated !") 
-                else:
-                    dispatcher.utter_message(text=f"Ops! {name} something went wrong, I didn't find the activity to be updated :(") 
+      
+        if (Database.doesUnfoldingsExists(id,category_new,activity_new,timenew) == False):
+            returnedValue = Database.modifyActivity(id, cat_to_modify, act_to_modify, timeold, category_new, activity_new, timenew)
+            if (returnedValue):  
+                dispatcher.utter_message(text=f"Congratulation {associated_name}, the activity {act_to_modify} has been updated") 
             else:
-                dispatcher.utter_message(text=f"Ops! {name} the {act_to_modify} already exists, it makes no sense to update that!") 
+                dispatcher.utter_message(text=f"Ops {associated_name} , the activity to be updated does not exists.") 
         else:
-            dispatcher.utter_message(text=f"This username does not exists!") 
-            return [SlotSet("name", None),SlotSet("category_old", None),SlotSet("activity_old", None),SlotSet("time", None),SlotSet("category_new", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("activity", None)]
+            dispatcher.utter_message(text=f"Ops {associated_name} the  activity {act_to_modify} already exists, it makes no sense to update that") 
+    
         return [SlotSet("category_old", None),SlotSet("activity_old", None),SlotSet("time", None),SlotSet("category_new", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("activity", None)]
 
 
@@ -385,16 +367,16 @@ class actionCleanCompletedActivities(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         name = tracker.get_slot("name")
-        id=tracker.current_state()["sender_id"]          
-        if(Database.doesUserExists(id)):
-            returnedValue = Database.cleanCompletedActivities(id)
-            if (returnedValue):  
-                dispatcher.utter_message(text=f"Congratulation {name}, I've removed all you completed activity !") 
-            else:
-                dispatcher.utter_message(text=f"Ops! {name} something went wrong! I dont know, check it !")
+        id=tracker.current_state()["sender_id"] 
+        #aggiunta
+        associated_name = Database.getName(id)         
+        
+        returnedValue = Database.cleanCompletedActivities(id)
+        if (returnedValue):  
+            dispatcher.utter_message(text=f"Congratulation {associated_name}, I've removed all you completed activity") 
         else:
-            dispatcher.utter_message(text=f"This username does not exists!") 
-            return [SlotSet("name",None)]
+            dispatcher.utter_message(text=f"Ops! {associated_name} something went wrong! I dont know, check it !") #??
+    
         return []
 
 class actionResetSlot(Action):
@@ -430,6 +412,8 @@ class actionRemindItem(Action):
         category = tracker.get_slot("category")
         reminder = tracker.get_slot("reminder")
         time = tracker.get_slot("time")
+        #aggiunta
+        associated_name = Database.getName(id) 
 
         if (Database.doesUnfoldingsExists(id,category,activity,time)):
             
@@ -437,7 +421,7 @@ class actionRemindItem(Action):
             if (returnedValue):
                 dispatcher.utter_message(text=f"Activity Updated!")
             else:
-                dispatcher.utter_message(text=f"Soome problem with the update occurred!")
+                dispatcher.utter_message(text=f"{associated_name}, some problem with the update occurred!")
         else:
             actionAddItem.run(self,dispatcher,tracker,domain)
         
