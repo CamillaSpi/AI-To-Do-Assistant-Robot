@@ -240,7 +240,7 @@ class showActivities(Action):
 
         if(Database.doesUserExists(id)):
             list_of_activity = Database.selectItems(id,category, activity_status)
-            dispatcher.utter_message(text=(f"This are the requested activity:\n{list_of_activity}" if list_of_activity else "No activity found!")) 
+            dispatcher.utter_message(text=(f"You have to:\n{list_of_activity}" if list_of_activity else "No activity found!")) 
         else:
             dispatcher.utter_message(text=f"This username does not exists!") 
             return [SlotSet("name",None),SlotSet("category", None),SlotSet("activity_status", None)]

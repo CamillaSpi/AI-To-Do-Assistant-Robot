@@ -97,7 +97,7 @@ slots:
     influence_conversation: false
   name:
     type: text
-    influence_conversation: true
+    influence_conversation: false
   time:
     type: text
     influence_conversation: true

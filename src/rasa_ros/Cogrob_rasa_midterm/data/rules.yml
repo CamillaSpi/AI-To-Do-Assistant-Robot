@@ -24,7 +24,7 @@ rules:
   - active_loop: view_activities_form
   - active_loop: null
   - slot_was_set:
-    - username: true
+    - requested_slot: null
   - action: action_view_activities
 
 - rule: Show my Categories 
@@ -34,5 +34,5 @@ rules:
   - active_loop: view_categories_form
   - active_loop: null
   - slot_was_set:
-    - username: true
+    - requested_slot: null
   - action: action_view_categories
