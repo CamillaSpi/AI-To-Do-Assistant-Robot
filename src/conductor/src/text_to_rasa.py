@@ -9,7 +9,7 @@ pub = rospy.Publisher('text2answer', RecognizedSpoke, queue_size=10)
 # Init node
 rospy.init_node('text_to_rasa', anonymous=True)
 
-# this is called from the background thread
+# this is called from the background thread.
 def callback(msg):
     try:
         #resp = tts(msg.data)
