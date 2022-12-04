@@ -1,5 +1,5 @@
 ros_audio_pkg
-/home/camilla/Scrivania/DefinitivoCog/devel/.private/ros_audio_pkg/cmake.lock /home/camilla/Scrivania/DefinitivoCog/devel/./cmake.lock
-/home/camilla/Scrivania/DefinitivoCog/devel/.private/ros_audio_pkg/share/ros_audio_pkg/cmake/ros_audio_pkgConfig.cmake /home/camilla/Scrivania/DefinitivoCog/devel/share/ros_audio_pkg/cmake/ros_audio_pkgConfig.cmake
-/home/camilla/Scrivania/DefinitivoCog/devel/.private/ros_audio_pkg/share/ros_audio_pkg/cmake/ros_audio_pkgConfig-version.cmake /home/camilla/Scrivania/DefinitivoCog/devel/share/ros_audio_pkg/cmake/ros_audio_pkgConfig-version.cmake
-/home/camilla/Scrivania/DefinitivoCog/devel/.private/ros_audio_pkg/lib/pkgconfig/ros_audio_pkg.pc /home/camilla/Scrivania/DefinitivoCog/devel/lib/pkgconfig/ros_audio_pkg.pc
+/home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/.private/ros_audio_pkg/cmake.lock /home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/./cmake.lock
+/home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/.private/ros_audio_pkg/lib/pkgconfig/ros_audio_pkg.pc /home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/lib/pkgconfig/ros_audio_pkg.pc
+/home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/.private/ros_audio_pkg/share/ros_audio_pkg/cmake/ros_audio_pkgConfig.cmake /home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/share/ros_audio_pkg/cmake/ros_audio_pkgConfig.cmake
+/home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/.private/ros_audio_pkg/share/ros_audio_pkg/cmake/ros_audio_pkgConfig-version.cmake /home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/share/ros_audio_pkg/cmake/ros_audio_pkgConfig-version.cmake

@@ -11,6 +11,7 @@ from identification.deep_speaker.model import get_deep_speaker
 from identification.utils import batch_cosine_similarity, dist2id
 from std_msgs.msg import Int16MultiArray, String
 from identification.identities_mng import save_identities, load_identities
+from ros_audio_pkg.msg import RecognizedSpoke
 
 REF_PATH = os.path.dirname(os.path.abspath(__file__))
 RATE = 16000
@@ -23,10 +24,8 @@ n_embs = 0
 # treshold
 TH = 0.60 #0.75 prima
 
-
-pub1 = rospy.Publisher('id_user', String, queue_size=10)
-pub2 = rospy.Publisher('toSpeech', String, queue_size=10)
-pub3 = rospy.Publisher('recognized_msg', String, queue_size=10)
+pub1 = rospy.Publisher('toSpeech', String, queue_size=10)
+pub2 = rospy.Publisher('recognized_msg', RecognizedSpoke, queue_size=10)
 
 def elaboration(data):
     
@@ -45,13 +44,13 @@ def registration(id):
     X_new=[]
     y_new=[]
     for msg in phrases:
-        pub2.publish(msg)
+        pub1.publish(msg)
         print(msg)
         data = rospy.wait_for_message("voice_data",Int16MultiArray) 
         ukn = elaboration(data)
         X_new.append(ukn[0])
         y_new.append(id)
-    pub2.publish("Stop to repeat with me, let say your name!")
+    pub1.publish("Stop to repeat with me, let say your name!")
     print("Stop to repeat with me, let say your name!")
     return X_new,y_new
     
@@ -96,7 +95,7 @@ def listener():
                 actual_id+=1
             else:
                 print("Ha parlato:", id_label)
-                pub3.publish(message)
+                pub2.publish(message)
 
     except rospy.exceptions.ROSInterruptException:
         print("vado in close")
