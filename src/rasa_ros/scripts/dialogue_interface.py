@@ -3,6 +3,7 @@
 import rospy
 from std_msgs.msg import String
 from rasa_ros.srv import Dialogue, DialogueResponse
+from ros_audio_pkg.msg import RecognizedSpoke
 
 pub = rospy.Publisher('toSpeech', String, queue_size=10)
 
@@ -30,12 +31,12 @@ def main():
     terminal = TerminalInterface()
 
     while not rospy.is_shutdown():
-        message = rospy.wait_for_message("text_to_elaborate",String)
+        message = rospy.wait_for_message("text2answer",RecognizedSpoke)
         if message == 'exit': 
             break
         try:
-            bot_answer = dialogue_service(message.data)
-            terminal.set_text(bot_answer.answer)
+            bot_answer = dialogue_service(message.msg,message.id)
+            pub.publish(bot_answer.answer)
         except rospy.ServiceException as e:
             print("Service call failed: %s"%e)
 

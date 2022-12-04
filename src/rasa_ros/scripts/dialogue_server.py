@@ -6,12 +6,12 @@ import requests
 
 
 def handle_service(req):
-    input_text = req.input_text   
-
-    # Get answer        
+    input_text = req.input_text
+    id = req.id
+    # # Get answer        
     get_answer_url = 'http://localhost:5002/webhooks/rest/webhook'
     message = {
-        "sender": 'bot',
+        "sender": id,
         "message": input_text
     }
 

@@ -1,2 +1,2 @@
-string name
-int32 age
+string msg
+int32 id

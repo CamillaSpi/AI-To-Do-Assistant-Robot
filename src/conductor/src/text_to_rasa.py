@@ -3,8 +3,9 @@ import rospy
 from std_msgs.msg import String
 import numpy as np
 from pepper_nodes.srv import *
+from ros_audio_pkg.msg import RecognizedSpoke
 
-pub = rospy.Publisher('text_to_elaborate', String, queue_size=10)
+pub = rospy.Publisher('text2answer', RecognizedSpoke, queue_size=10)
 # Init node
 rospy.init_node('text_to_rasa', anonymous=True)
 
@@ -12,15 +13,14 @@ rospy.init_node('text_to_rasa', anonymous=True)
 def callback(msg):
     try:
         #resp = tts(msg.data)
-        if resp!= 'ACK':
-            print("There is an error in msg, maybe")
+        print(msg, ' sono callback')
+        pub.publish(msg)
     except rospy.ServiceException as e:
         print("Service call failed: %s", e)
     
 def listener():
     #qua fare un'array in cui mandiamo entrambe le cose 
-    rospy.Subscriber("id_user", String, callback)
-    rospy.Subscriber("recognized_msg", String, callback)
+    rospy.Subscriber("recognized_msg", RecognizedSpoke, callback)
     
     rospy.spin()
 

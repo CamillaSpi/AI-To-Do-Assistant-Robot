@@ -11,7 +11,7 @@ from identification.deep_speaker.model import get_deep_speaker
 from identification.utils import batch_cosine_similarity, dist2id
 from std_msgs.msg import Int16MultiArray, String
 from identification.identities_mng import save_identities, load_identities
-from ros_audio_pkg.msg import RecognizedSpoke
+from ros_audio_pkg.msg import RecognizedSpoke,AudioAndText
 
 REF_PATH = os.path.dirname(os.path.abspath(__file__))
 RATE = 16000
@@ -28,8 +28,7 @@ pub1 = rospy.Publisher('toSpeech', String, queue_size=10)
 pub2 = rospy.Publisher('recognized_msg', RecognizedSpoke, queue_size=10)
 
 def elaboration(data):
-    
-    audio_data = np.array(data.data)
+    audio_data = np.array(data)
     # to float32, casto!
     audio_data = audio_data.astype(np.float32, order='C') / 32768.0
     # Processing, prenod lo spettrogramma di MEL(simile all'orecchio umano.)
@@ -37,8 +36,8 @@ def elaboration(data):
     # Prediction
     ukn = model.predict(np.expand_dims(ukn, 0))
     return ukn
-
-phrases = ["I feel like I don't know you, repeat after me: Hi Pepper", "add activity run in category gym for tomorrow", "add study in university"]
+# "add activity run in category gym for tomorrow", "add study in university"
+phrases = ["I feel like I don't know you, repeat after me: Hi Pepper"]
 
 def registration(id):
     X_new=[]
@@ -46,13 +45,14 @@ def registration(id):
     for msg in phrases:
         pub1.publish(msg)
         print(msg)
-        data = rospy.wait_for_message("voice_data",Int16MultiArray) 
+        audioAndData = rospy.wait_for_message("AudioAndText",AudioAndText) 
+        data = audioAndData.audioData
         ukn = elaboration(data)
         X_new.append(ukn[0])
         y_new.append(id)
     pub1.publish("Stop to repeat with me, let say your name!")
     print("Stop to repeat with me, let say your name!")
-    return X_new,y_new
+    return np.array(X_new),y_new
     
 
 
@@ -70,8 +70,9 @@ def listener():
         while not rospy.is_shutdown():
             #mi vado a checkare che si tratti di testo, altrimenti ptrei riconocere il rumore, o comunque avere problemi.
             # co wwait for message, ascolto solo qando voglio, ho operazione "sincrona"
-            data = rospy.wait_for_message("voice_data",Int16MultiArray) 
-            message = rospy.wait_for_message("spoken_text",String)
+            audioAndData = rospy.wait_for_message("AudioAndText",AudioAndText) 
+            data = audioAndData.audioData
+            message = audioAndData.spoken_text
 
             ukn = elaboration(data)
 
@@ -90,12 +91,15 @@ def listener():
             if len(X) == 0 or id_label is None:
                 #eventuale face recognition
                 X_ret,y_ret = registration(actual_id)
-                X = X + X_ret
+                X = np.concatenate((X,X_ret))
                 y= y +y_ret
                 actual_id+=1
             else:
                 print("Ha parlato:", id_label)
-                pub2.publish(message)
+                toSend = RecognizedSpoke()
+                toSend.msg = message
+                toSend.id = id_label
+                pub2.publish(toSend)
 
     except rospy.exceptions.ROSInterruptException:
         print("vado in close")
