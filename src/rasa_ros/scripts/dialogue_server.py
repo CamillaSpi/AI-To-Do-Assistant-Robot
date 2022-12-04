@@ -23,6 +23,31 @@ def handle_service(req):
     print(response)
     return response
 
+def testFunctionality():
+    dialogue = Dialogue()  
+    dialogue.input_text = "Hi i am Vito"
+    dialogue.id = 5
+    handle_service(dialogue)
+    dialogue.input_text = "add run in gym"
+    handle_service(dialogue)
+    dialogue.input_text = "no"
+    handle_service(dialogue)
+    dialogue.input_text = "yes"
+    handle_service(dialogue)
+    dialogue.input_text = "show my activities"
+    handle_service(dialogue)
+    dialogue.input_text = "remove run in gym"
+    handle_service(dialogue)
+    dialogue.input_text = "no"
+    handle_service(dialogue)
+    dialogue.input_text = "modify the category gym into personal"
+    handle_service(dialogue)
+    dialogue.input_text = "yes"
+    handle_service(dialogue)
+    dialogue.input_text = "show my categories"
+    handle_service(dialogue)
+
+
 def main():
 
     # Server Initialization
@@ -30,47 +55,7 @@ def main():
 
     s = rospy.Service('dialogue_server',
                         Dialogue, handle_service)
-
-    dialogue = Dialogue()  
-    dialogue.input_text = "Hi i am Vito"
-    dialogue.id = 5
-    handle_service(dialogue)
-    dialogue = Dialogue()  
-    dialogue.input_text = "add run in gym"
-    dialogue.id = 5
-    handle_service(dialogue)
-    dialogue = Dialogue()  
-    dialogue.input_text = "no"
-    dialogue.id = 5
-    handle_service(dialogue)
-    dialogue = Dialogue()  
-    dialogue.input_text = "yes"
-    dialogue.id = 5
-    handle_service(dialogue)
-    dialogue = Dialogue()  
-    dialogue.input_text = "show my activities"
-    dialogue.id = 5
-    handle_service(dialogue)
-    dialogue = Dialogue()  
-    dialogue.input_text = "remove run in gym"
-    dialogue.id = 5
-    handle_service(dialogue)
-    dialogue = Dialogue()  
-    dialogue.input_text = "no"
-    dialogue.id = 5
-    handle_service(dialogue)
-    dialogue = Dialogue()  
-    dialogue.input_text = "modify the category gym into personal"
-    dialogue.id = 5
-    handle_service(dialogue)
-    dialogue = Dialogue()  
-    dialogue.input_text = "yes"
-    dialogue.id = 5
-    handle_service(dialogue)
-    dialogue = Dialogue()  
-    dialogue.input_text = "show my categories"
-    dialogue.id = 5
-    handle_service(dialogue)
+    testFunctionality()
     rospy.logdebug('Dialogue server READY.')
     rospy.spin()
 
