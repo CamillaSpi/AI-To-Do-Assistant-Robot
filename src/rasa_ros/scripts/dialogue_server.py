@@ -20,7 +20,7 @@ def handle_service(req):
     response.answer = ""
     for i in r.json():
         response.answer += i['text'] + ' ' if 'text' in i else ''
-
+    print(response)
     return response
 
 def main():
@@ -33,6 +33,42 @@ def main():
 
     dialogue = Dialogue()  
     dialogue.input_text = "Hi i am Vito"
+    dialogue.id = 5
+    handle_service(dialogue)
+    dialogue = Dialogue()  
+    dialogue.input_text = "add run in gym"
+    dialogue.id = 5
+    handle_service(dialogue)
+    dialogue = Dialogue()  
+    dialogue.input_text = "no"
+    dialogue.id = 5
+    handle_service(dialogue)
+    dialogue = Dialogue()  
+    dialogue.input_text = "yes"
+    dialogue.id = 5
+    handle_service(dialogue)
+    dialogue = Dialogue()  
+    dialogue.input_text = "show my activities"
+    dialogue.id = 5
+    handle_service(dialogue)
+    dialogue = Dialogue()  
+    dialogue.input_text = "remove run in gym"
+    dialogue.id = 5
+    handle_service(dialogue)
+    dialogue = Dialogue()  
+    dialogue.input_text = "no"
+    dialogue.id = 5
+    handle_service(dialogue)
+    dialogue = Dialogue()  
+    dialogue.input_text = "modify the category gym into personal"
+    dialogue.id = 5
+    handle_service(dialogue)
+    dialogue = Dialogue()  
+    dialogue.input_text = "yes"
+    dialogue.id = 5
+    handle_service(dialogue)
+    dialogue = Dialogue()  
+    dialogue.input_text = "show my categories"
     dialogue.id = 5
     handle_service(dialogue)
     rospy.logdebug('Dialogue server READY.')

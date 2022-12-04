@@ -106,11 +106,11 @@ class Database:
     return False
 
   @staticmethod
-  def createUser(ID):
+  def createUser(ID,name):
     try:
       conn.execute('''
-        INSERT INTO users (ID) VALUES (?);
-      ''', (ID,))
+        INSERT INTO users (ID,name) VALUES (?,?);
+      ''', (ID,name))
       conn.commit()
       return True
     except sqlite3.IntegrityError as e:
