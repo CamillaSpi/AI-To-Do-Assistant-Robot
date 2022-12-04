@@ -146,7 +146,7 @@ class Database:
       completed = True
     elif(activity_status == "uncompleted"):
       completed = False
-    base_query = "SELECT activity,category,deadline,completed FROM unfoldings WHERE ID == ?"
+    base_query = "SELECT activity,category,deadline,completed,reminder FROM unfoldings WHERE ID == ?"
     base_list = [ID,]
     if(category != None):
       base_query = base_query + " AND category == ?"
@@ -160,17 +160,13 @@ class Database:
     rows = cur.fetchall()
     if(len(rows)>0):
       category = ["Activities","Category","DeadLine","Completed"]
-      # number = [i for i in range(1,len(rows)+1)]
-      # row_format ="{:>20}" * (len(category) + 1)
-      # toPrint = ""
-      # toPrint += (row_format.format("", *category)) + "\n"
-      # for team, row in zip(number, rows):
-      #     if (row[2]):
-      #       row = (row[0],row[1],row[2][:10]+ " "+row[2][11:16],row[3])
-      #     else:
-      #       row = (row[0],row[1],"None",row[3])
-      #     toPrint += (row_format.format(team, *row)) + "\n"
-      toPrint = rows
+      toPrint = ""
+      for row in rows:
+          if (row[2]):
+            row = ("Remind to" if row[4]==1 else "") + row[0] + ' in ' + row[1] + ' at ' + row[2][:10] + " " + row[2][11:16]
+          else:
+            row = row[0] + ' in ' + row[1]
+          toPrint += str(row)+ "\n"
 
 
     return toPrint if len(rows) > 0 else None
@@ -397,6 +393,7 @@ class Database:
       cur.execute('''
         SELECT name FROM users WHERE ID == ?
       ''', (ID, ))
-      if(len( cur.fetchall()) > 0 ):
-        return cur.fetchall()
+      toReturn = cur.fetchall()
+      if(len( toReturn) > 0 ):
+        return toReturn[0][0]
     return None

@@ -37,16 +37,22 @@ def testFunction():
     handle_service(dialogue) 
     dialogue.input_text = "show my activities"
     handle_service(dialogue) 
-    dialogue.input_text = "remove run in gym"
+    dialogue.input_text = "set run in gym as completed"
     handle_service(dialogue) 
     dialogue.input_text = "no"
     handle_service(dialogue) 
-    dialogue.input_text = "modify the category gym into personal"
+    dialogue.input_text = "show my activities"
+    handle_service(dialogue) 
+    # dialogue.input_text = "remove all my completed activities"
+    # handle_service(dialogue) 
+    dialogue.input_text = "add walk in personal for tomorrow at 10:00"
     handle_service(dialogue) 
     dialogue.input_text = "yes"
     handle_service(dialogue) 
-    dialogue.input_text = "show my categories"
-    handle_service(dialogue)
+
+    dialogue.input_text = "show my activities"
+    handle_service(dialogue) 
+    
 
 def main():
 

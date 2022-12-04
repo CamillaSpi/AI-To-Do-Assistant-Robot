@@ -84,8 +84,8 @@ class actionRemoveItem(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
         name = tracker.get_slot("name")
       
-        associated_name = Database.getName(id)
         id=tracker.current_state()["sender_id"]
+        associated_name = Database.getName(id)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
         time = tracker.get_slot("time")
@@ -110,8 +110,8 @@ class actionAddCategory(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
         name = tracker.get_slot("name")
         
-        associated_name = Database.getName(id)
         id=tracker.current_state()["sender_id"]
+        associated_name = Database.getName(id)
         category = tracker.get_slot("category")
 
         returnedValue = Database.insertCategoryAndPossession(id,category)
@@ -404,7 +404,6 @@ class actionRemindItem(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
