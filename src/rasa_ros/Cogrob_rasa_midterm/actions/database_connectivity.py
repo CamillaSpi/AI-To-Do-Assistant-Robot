@@ -15,7 +15,8 @@ class Database:
     #users table
     conn.execute('''
         CREATE TABLE IF NOT EXISTS users (
-            username VARCHAR(50) PRIMARY KEY
+            ID INTEGER PRIMARY KEY,
+            name VARCHAR(50)
         );
     ''')
     #categories table
@@ -34,13 +35,13 @@ class Database:
     conn.execute('''
         CREATE TABLE IF NOT EXISTS unfoldings (
             id_unfolding VARCHAR(256) NOT NULL,
-            username VARCHAR(50) NOT NULL,
+            ID INTEGER NOT NULL,
             activity VARCHAR(50) NOT NULL,
             category VARCHAR(50) NOT NULL,
             deadline DATETIME,
             completed BOOLEAN NOT NULL,
             reminder BOOLEAN NOT NULL,
-            FOREIGN KEY (username) REFERENCES users(username) ON DELETE CASCADE ON UPDATE CASCADE,
+            FOREIGN KEY (ID) REFERENCES users(ID) ON DELETE CASCADE ON UPDATE CASCADE,
             FOREIGN KEY (activity) REFERENCES activities(name) ON DELETE CASCADE ON UPDATE CASCADE,
             FOREIGN KEY (category) REFERENCES categories(name) ON DELETE CASCADE ON UPDATE CASCADE,
             PRIMARY KEY (id_unfolding) 
@@ -49,21 +50,21 @@ class Database:
     #categories table relate users to possessions
     conn.execute('''
         CREATE TABLE IF NOT EXISTS possessions (
-            username VARCHAR(50) NOT NULL,
+            ID INTEGER NOT NULL,
             category VARCHAR(50) NOT NULL,
-            FOREIGN KEY (username) REFERENCES users(username) ON DELETE CASCADE ON UPDATE CASCADE,
+            FOREIGN KEY (ID) REFERENCES users(ID) ON DELETE CASCADE ON UPDATE CASCADE,
             FOREIGN KEY (category) REFERENCES categories(name) ON DELETE CASCADE ON UPDATE CASCADE,
-            PRIMARY KEY (username,category)
+            PRIMARY KEY (ID,category)
         );
     ''')
     conn.commit()
 
   @staticmethod
-  def doesPossessionExists(username,category):
-    if category != None and username != None:
+  def doesPossessionExists(ID,category):
+    if category != None and ID != None:
       cur.execute('''
-        SELECT * FROM possessions WHERE username == ? AND category == ?
-      ''', (username, category))
+        SELECT * FROM possessions WHERE ID == ? AND category == ?
+      ''', (ID, category))
       if(len( cur.fetchall()) > 0 ):
         return True
     return False
@@ -79,9 +80,9 @@ class Database:
     return False
 
   @staticmethod
-  def doesUnfoldingsExists(username,category,activity,deadline=None):
+  def doesUnfoldingsExists(ID,category,activity,deadline=None):
     m = hashlib.sha256()
-    m.update(str(username).encode())
+    m.update(str(ID).encode())
     m.update(str(activity).encode())
     m.update(str(category).encode())
     m.update(str(deadline).encode())
@@ -105,11 +106,11 @@ class Database:
     return False
 
   @staticmethod
-  def createUser(username):
+  def createUser(ID):
     try:
       conn.execute('''
-        INSERT INTO users (username) VALUES (?);
-      ''', (username,))
+        INSERT INTO users (ID) VALUES (?);
+      ''', (ID,))
       conn.commit()
       return True
     except sqlite3.IntegrityError as e:
@@ -117,10 +118,10 @@ class Database:
         return False
 
   @staticmethod
-  def insertItem(username, activity ,category, reminder,deadline=None):
+  def insertItem(ID, activity ,category, reminder,deadline=None):
     try:
       m = hashlib.sha256()
-      m.update(str(username).encode())
+      m.update(str(ID).encode())
       m.update(str(activity).encode())
       m.update(str(category).encode())
       m.update(str(deadline).encode())
@@ -131,22 +132,22 @@ class Database:
         INSERT INTO activities (name) VALUES (?);
         ''', (activity,))
       conn.execute('''
-        INSERT INTO unfoldings (id_unfolding, username, activity, category, deadline, completed, reminder) VALUES (?, ?, ?, ?, ?, ?, ?);
-      ''', (id_unfolding,username, activity ,category,deadline,False,reminder))
+        INSERT INTO unfoldings (id_unfolding, ID, activity, category, deadline, completed, reminder) VALUES (?, ?, ?, ?, ?, ?, ?);
+      ''', (id_unfolding,ID, activity ,category,deadline,False,reminder))
       conn.commit()
       return True
     except sqlite3.IntegrityError as e :
       return False
 
   @staticmethod
-  def selectItems(username, category=None, activity_status=None):
-    if username == None: return None
+  def selectItems(ID, category=None, activity_status=None):
+    if ID == None: return None
     if(activity_status == "completed"):
       completed = True
     elif(activity_status == "uncompleted"):
       completed = False
-    base_query = "SELECT activity,category,deadline,completed FROM unfoldings WHERE username == ?"
-    base_list = [username,]
+    base_query = "SELECT activity,category,deadline,completed FROM unfoldings WHERE ID == ?"
+    base_list = [ID,]
     if(category != None):
       base_query = base_query + " AND category == ?"
       base_list.append(category)
@@ -174,9 +175,9 @@ class Database:
     return toPrint if len(rows) > 0 else None
 
   @staticmethod
-  def deleteItem(username, activity ,category,deadline):
+  def deleteItem(ID, activity ,category,deadline):
     m = hashlib.sha256()
-    m.update(str(username).encode())
+    m.update(str(ID).encode())
     m.update(str(activity).encode())
     m.update(str(category).encode())
     m.update(str(deadline).encode())
@@ -217,16 +218,16 @@ class Database:
     return False
 
   @staticmethod
-  def insertCategoryAndPossession(username, category):
-    if username != None and category != None:
+  def insertCategoryAndPossession(ID, category):
+    if ID != None and category != None:
       try:
         if(not Database.doesCategoryExists(category)):
           conn.execute('''
             INSERT INTO categories (name) VALUES (?);
           ''', (category,))
         conn.execute('''
-          INSERT INTO possessions (username, category) VALUES (?,?);
-        ''', (username,category))
+          INSERT INTO possessions (ID, category) VALUES (?,?);
+        ''', (ID,category))
         conn.commit()
         return True
       except sqlite3.IntegrityError:
@@ -234,11 +235,11 @@ class Database:
     return False
 
   @staticmethod
-  def selectPossessions(username):
-    if username != None:
+  def selectPossessions(ID):
+    if ID != None:
       cur.execute('''
-      SELECT * FROM possessions WHERE username == (?);
-      ''',(username,)) 
+      SELECT * FROM possessions WHERE ID == (?);
+      ''',(ID,)) 
 
       rows = cur.fetchall()
       if len(rows) > 0:
@@ -254,24 +255,24 @@ class Database:
     return "No activity found"
 
   @staticmethod
-  def deleteCategory(username, category):
-    if username!= None and category != None:
+  def deleteCategory(ID, category):
+    if ID!= None and category != None:
       cur.execute('''
-        SELECT * FROM possessions WHERE username == ? AND category == ? 
-      ''', (username, category))
+        SELECT * FROM possessions WHERE ID == ? AND category == ? 
+      ''', (ID, category))
       
       if(len(cur.fetchall()) > 0 ):
         conn.execute('''
-        DELETE FROM possessions WHERE username == ? AND category == ? 
-      ''', (username, category))
+        DELETE FROM possessions WHERE ID == ? AND category == ? 
+      ''', (ID, category))
         conn.commit()
         return True
     return False
 
   @staticmethod
-  def setItemStatus(username, activity ,category,deadline,completed):
+  def setItemStatus(ID, activity ,category,deadline,completed):
     m = hashlib.sha256()
-    m.update(str(username).encode())
+    m.update(str(ID).encode())
     m.update(str(activity).encode())
     m.update(str(category).encode())
     m.update(str(deadline).encode())
@@ -282,39 +283,39 @@ class Database:
     ''', (id_unfolding, ))
 
     if(len(cur.fetchall()) > 0 ):
-      conn.execute('''UPDATE unfoldings SET completed = ? WHERE username == ? AND activity == ? AND category == ? AND deadline == ?
-      ''', (completed, username, activity ,category,deadline))
+      conn.execute('''UPDATE unfoldings SET completed = ? WHERE ID == ? AND activity == ? AND category == ? AND deadline == ?
+      ''', (completed, ID, activity ,category,deadline))
       conn.commit()
       return True
     else:
       return False
 
   @staticmethod
-  def modifyCategory(username, category, category_new):
+  def modifyCategory(ID, category, category_new):
     cur.execute('''
-      SELECT * FROM possessions WHERE username == ? AND category == ?
-    ''', (username, category))
+      SELECT * FROM possessions WHERE ID == ? AND category == ?
+    ''', (ID, category))
     if(len(cur.fetchall()) > 0 ):
       if category_new != None:
         if not Database.doesCategoryExists(category_new):
           #Andrebbe comunicato che è stata creata tale categoria
           Database.insertCategory(category_new)
       conn.execute('''
-        UPDATE possessions SET category = ? WHERE username == ? AND category == ?;
-      ''', (category_new,username,category))
+        UPDATE possessions SET category = ? WHERE ID == ? AND category == ?;
+      ''', (category_new,ID,category))
       conn.execute('''
-        UPDATE unfoldings SET category = ? WHERE username == ? AND category == ?;
-      ''', (category_new,username,category))
+        UPDATE unfoldings SET category = ? WHERE ID == ? AND category == ?;
+      ''', (category_new,ID,category))
       conn.commit()
       return True
     else:
       return False
 
   @staticmethod
-  def modifyActivity(username, category, activity, deadline, newcategory = None, newactivity = None, newdeadline = None):
+  def modifyActivity(ID, category, activity, deadline, newcategory = None, newactivity = None, newdeadline = None):
     try:
       m = hashlib.sha256()
-      m.update(str(username).encode())
+      m.update(str(ID).encode())
       m.update(str(activity).encode())
       m.update(str(category).encode())
       m.update(str(deadline).encode())
@@ -325,9 +326,9 @@ class Database:
       ''', (id_unfolding,))
       if(len(cur.fetchall()) > 0 ):
         if newcategory != None:
-          if newcategory!=None and not Database.doesPossessionExists(username,newcategory):
+          if newcategory!=None and not Database.doesPossessionExists(ID,newcategory):
             #Andrebbe comunicato che è stata creata tale categoria
-            Database.insertCategoryAndPossession(username, newcategory)
+            Database.insertCategoryAndPossession(ID, newcategory)
           if newactivity!=None and not Database.doesActivityExists(newactivity):
             #Andrebbe comunicato che è stata creata tale activity
             Database.insertActivity(newactivity)
@@ -338,7 +339,7 @@ class Database:
         queryParam=""
         tupleParam = ()
         p = hashlib.sha256()
-        p.update(str(username).encode())
+        p.update(str(ID).encode())
         for param in paramList:
           if param[1] is not None:
             tupleParam += (param[1],)
@@ -361,9 +362,9 @@ class Database:
       return False
 
   @staticmethod
-  def updateReminder(username, category, activity, deadline,reminder):
+  def updateReminder(ID, category, activity, deadline,reminder):
       m = hashlib.sha256()
-      m.update(str(username).encode())
+      m.update(str(ID).encode())
       m.update(str(activity).encode())
       m.update(str(category).encode())
       m.update(str(deadline).encode())
@@ -380,12 +381,21 @@ class Database:
 
 
   @staticmethod
-  def doesUserExists(username):
-    if username != None:
+  def doesUserExists(ID):
+    if ID != None:
       cur.execute('''
-        SELECT * FROM users WHERE username == ?
-      ''', (username, ))
+        SELECT * FROM users WHERE ID == ?
+      ''', (ID, ))
       if(len( cur.fetchall()) > 0 ):
         return True
     return False
 
+  @staticmethod
+  def getName(ID):
+    if ID != None:
+      cur.execute('''
+        SELECT name FROM users WHERE ID == ?
+      ''', (ID, ))
+      if(len( cur.fetchall()) > 0 ):
+        return cur.fetchall()
+    return None

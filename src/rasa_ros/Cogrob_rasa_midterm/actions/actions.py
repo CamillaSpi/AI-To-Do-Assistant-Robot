@@ -28,7 +28,7 @@ class actionCreateUser(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         username = tracker.get_slot("username")
-        
+        print(tracker.current_state()["sender_id"],"tacker value")
         if(Database.doesUserExists(username) == False):
             returnedValue = Database.createUser(username)
             if(returnedValue):

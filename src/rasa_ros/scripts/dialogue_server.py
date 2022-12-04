@@ -31,6 +31,10 @@ def main():
     s = rospy.Service('dialogue_server',
                         Dialogue, handle_service)
 
+    dialogue = Dialogue()  
+    dialogue.input_text = "Hi i am Vito"
+    dialogue.id = 5
+    handle_service(dialogue)
     rospy.logdebug('Dialogue server READY.')
     rospy.spin()
 
