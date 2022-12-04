@@ -35,7 +35,7 @@ entities:
   - activity
   - category
   - time
-  - username
+  - name
   - activity_status
 
 actions:
@@ -54,6 +54,7 @@ actions:
   - utter_ask_if_deadline
   - utter_choice_what_to_modify
   - utter_ask_if_reminder
+  - utter_ask_name
   - action_add_item
   - action_remove_item
   - action_set_status_activity
@@ -94,7 +95,7 @@ slots:
   category:
     type: text
     influence_conversation: false
-  username:
+  name:
     type: text
     influence_conversation: true
   time:
@@ -112,15 +113,15 @@ slots:
 forms:
   recognize_user_form:
     required_slots:
-      username:
+      name:
         - type: from_entity
-          entity: username
+          entity: name
 
   add_item_form:
     required_slots:
-      username:
+      name:
         - type: from_entity
-          entity: username
+          entity: name
       activity:
         - type: from_entity
           entity: activity
@@ -136,9 +137,9 @@ forms:
      
   remove_item_form:
     required_slots:
-      username:
+      name:
         - type: from_entity
-          entity: username
+          entity: name
       activity:
         - type: from_entity
           entity: activity
@@ -148,9 +149,9 @@ forms:
 
   set_status_activity_form:
     required_slots:
-      username:
+      name:
         - type: from_entity
-          entity: username
+          entity: name
       activity:
         - type: from_entity
           entity: activity
@@ -160,39 +161,39 @@ forms:
 
   add_category_form:
     required_slots:
-      username:
+      name:
         - type: from_entity
-          entity: username
+          entity: name
       category:
         - type: from_entity
           entity: category
           
   remove_category_form:
     required_slots:
-      username:
+      name:
         - type: from_entity
-          entity: username
+          entity: name
       category:
         - type: from_entity
           entity: category
     
   view_activities_form:
     required_slots:
-      username:
+      name:
         - type: from_entity
-          entity: username
+          entity: name
 
   view_categories_form:
     required_slots:
-      username:
+      name:
         - type: from_entity
-          entity: username
+          entity: name
               
   modify_category_form:
     required_slots:
-      username:
+      name:
         - type: from_entity
-          entity: username
+          entity: name
       category_old:
         - type: from_entity
           entity: category
@@ -205,9 +206,9 @@ forms:
 
   modify_activity_category_form:
     required_slots:
-      username:
+      name:
         - type: from_entity
-          entity: username
+          entity: name
       activity:
         - type: from_entity
           entity: activity
@@ -223,9 +224,9 @@ forms:
 
   modify_activity_name_form:
     required_slots:
-      username:
+      name:
         - type: from_entity
-          entity: username
+          entity: name
       category:
         - type: from_entity
           entity: category
@@ -240,9 +241,9 @@ forms:
       
   modify_activity_deadline_form:
     required_slots:
-      username:
+      name:
         - type: from_entity
-          entity: username
+          entity: name
       time:
         - type: from_entity
           entity: time
@@ -255,9 +256,9 @@ forms:
 
   clean_activities_form: 
     required_slots:
-      username:
+      name:
         - type: from_entity
-          entity: username
+          entity: name
 
 
 
@@ -309,8 +310,8 @@ responses:
  
   utter_confirm_choice:
   - text: "Are you sure to complete this action!?"
-  utter_ask_username:
-  - text: "Please insert the username"
+  utter_ask_name:
+  - text: "Please insert the name"
   utter_deny_choice:
   - text: "Ok cancelled"
 
