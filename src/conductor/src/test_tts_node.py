@@ -7,7 +7,7 @@ import rospy
 
 def handle_speech(req):
     print(req)
-    return 'ack'
+    return 'ACK'
 
 def add_two_ints_server():
     rospy.init_node('tts_service')

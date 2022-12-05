@@ -12,5 +12,6 @@
     <node pkg="conductor" name="text2rasa" type="text_to_rasa.py" output="screen"/>
     <node pkg="conductor" name="text2pepper" type="text_to_pepper.py" output="screen"/>
     <node pkg="conductor" name="url2pepper" type="url_to_pepper.py" output="screen"/>
+    <node pkg="conductor" name="test_tts_node" type="test_tts_node.py" output="screen"/>
 
 </launch>

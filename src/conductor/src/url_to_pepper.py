@@ -7,13 +7,14 @@ from pepper_nodes.srv import *
 
 # Init node
 rospy.init_node('url_to_pepper', anonymous=True)
-rospy.wait_for_service('load_url')
-load_url = rospy.ServiceProxy('load_url', LoadUrl)
+# rospy.wait_for_service('load_url')
+# load_url = rospy.ServiceProxy('load_url', LoadUrl)
 # this is called from the background thread
 def callback(msg):
-    print('avrei detto a pepper ' + msg.data)
+    print('Send url to pepper ' + msg.data)
     try:
-        resp = load_url(msg.data)
+        # resp = load_url(msg.data)
+        resp = 'ACK'
         if resp!= 'ACK':
             print("There is an error in msg, maybe")
     except rospy.ServiceException as e:

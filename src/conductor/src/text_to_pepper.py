@@ -12,7 +12,7 @@ tts = rospy.ServiceProxy('tts', Text2Speech)
 # this is called from the background thread
 def callback(msg):
     try:
-        resp = tts(msg.data)
+        resp = tts(msg.data).ack
         if resp!= 'ACK':
             print("There is an error in msg, maybe")
     except rospy.ServiceException as e:
