@@ -12,7 +12,7 @@ from unicodedata import category
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet, ReminderScheduled
 from rasa_sdk.forms import FormValidationAction
 from rasa_sdk.types import DomainDict
 from datetime import datetime, timedelta
@@ -411,6 +411,16 @@ class actionRemindItem(Action):
         time = tracker.get_slot("time")
        
         associated_name = Database.getName(id) 
+        #aggiunte per reminder
+        #magari settare anche il nome dell utente nllo slot
+        entities = tracker.latest-message.get("entities")
+        date = time - datetime.timedelta(seconds = 60)
+        reminder = ReminderScheduled(
+            "EXTERNAL_reminder",
+            trigger_date_time = date,
+            entities = entities,
+            kill_on_user_message = False,
+        )
 
         if (Database.doesUnfoldingsExists(id,category,activity,time)):
             
@@ -422,7 +432,10 @@ class actionRemindItem(Action):
         else:
             actionAddItem.run(self,dispatcher,tracker,domain)
         
-        return [SlotSet("activity",None), SlotSet("time",None), SlotSet("category",None),SlotSet("reminder",False)]
+        #aggiunte per reminder
+        actionResetSlot.run()
+        #return [SlotSet("activity",None), SlotSet("time",None), SlotSet("category",None),SlotSet("reminder",False)]
+        return [reminder]
 
 
 
@@ -539,3 +552,15 @@ class actionDefaultFallBack(Action):
 #     ) -> Dict[Text, Any]:
 
 #         dispatcher.utter_message(text=f"Mario")
+
+
+class actionReactToReminder(Action):
+    def name(self) -> Text:
+        return "action_react_to_reminder"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message("Sono entrato nella react for Reminder call!")
+        return[]

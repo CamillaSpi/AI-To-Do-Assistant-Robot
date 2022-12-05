@@ -74,6 +74,7 @@ actions:
   - action_ask_activity_old
   - action_ask_activity_new
   - my_action_fallback
+  - EXTERNAL_reminder
 
 
 slots:

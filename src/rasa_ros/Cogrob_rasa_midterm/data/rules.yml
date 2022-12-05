@@ -36,3 +36,9 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_view_categories
+
+  ####aggiunta per reminder
+- rule: react to remind
+  steps: 
+  - intent: EXTERNAL_reminder
+  - action: action_react_to_reminder
