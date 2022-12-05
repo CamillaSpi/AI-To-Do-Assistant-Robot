@@ -4,6 +4,7 @@ import rospy
 from std_msgs.msg import String
 from rasa_ros.srv import Dialogue, DialogueResponse
 from ros_audio_pkg.msg import RecognizedSpoke
+import time
 
 pub = rospy.Publisher('toSpeech', String, queue_size=10)
 pub2 = rospy.Publisher("toShow", String,  queue_size=10)
@@ -24,7 +25,7 @@ class TerminalInterface:
         if text.answer[0:2] == '-1':
             pub2.publish('www.google.it')
             text.answer = text.answer[2:]
-        if text.answer[0:2] == '-2':
+        elif text.answer[0:2] == '-2':
             pub2.publish('www.google.it')
             text.answer = text.answer[2:]
         pub.publish(text.answer)
@@ -37,42 +38,51 @@ def testFunction():
     message.id = 5
     bot_answer = dialogue_service(message.msg,message.id) 
     terminal.set_text(bot_answer,message.id)
+    time.sleep(0.5)
+    time.sleep(0.5)
     message.msg = "add run in gym"
     bot_answer = dialogue_service(message.msg,message.id) 
     terminal.set_text(bot_answer,message.id)
+    time.sleep(0.5)
     message.msg = "no"
     bot_answer = dialogue_service(message.msg,message.id) 
     terminal.set_text(bot_answer,message.id)
-    message.msg = "yes"
-    bot_answer = dialogue_service(message.msg,message.id) 
-    terminal.set_text(bot_answer,message.id)
+    time.sleep(0.5)
     message.msg = "show my activities"
     bot_answer = dialogue_service(message.msg,message.id) 
     terminal.set_text(bot_answer,message.id)
+    time.sleep(0.5)
     message.msg = "set run in gym as completed"
     bot_answer = dialogue_service(message.msg,message.id) 
     terminal.set_text(bot_answer,message.id)
+    time.sleep(0.5)
     message.msg = "no"
     bot_answer = dialogue_service(message.msg,message.id) 
     terminal.set_text(bot_answer,message.id)
+    time.sleep(0.5)
     message.msg = "show my activities"
     bot_answer = dialogue_service(message.msg,message.id) 
     terminal.set_text(bot_answer,message.id)
+    time.sleep(0.5)
     # message.msg = "remove all my completed activities"
     # bot_answer = dialogue_service(message.msg,message.id) 
-    terminal.set_text(bot_answer,message.id)
+    # terminal.set_text(bot_answer,message.id)
     message.msg = "add walk in personal for tomorrow at 10:00"
     bot_answer = dialogue_service(message.msg,message.id) 
     terminal.set_text(bot_answer,message.id)
+    time.sleep(0.5)
     message.msg = "yes"
     bot_answer = dialogue_service(message.msg,message.id) 
     terminal.set_text(bot_answer,message.id)
+    time.sleep(0.5)
     message.msg = "show my activities"
     bot_answer = dialogue_service(message.msg,message.id) 
     terminal.set_text(bot_answer,message.id)
+    time.sleep(0.5)
     message.msg = "show my category"
     bot_answer = dialogue_service(message.msg,message.id) 
     terminal.set_text(bot_answer,message.id)
+    time.sleep(0.5)
 
 def main():
     rospy.init_node('writing')

@@ -8,6 +8,7 @@ import requests
 def handle_service(req):
     input_text = req.input_text
     id = req.id
+    print('USER:' , input_text)
     # # Get answer        
     get_answer_url = 'http://localhost:5002/webhooks/rest/webhook'
     message = {
