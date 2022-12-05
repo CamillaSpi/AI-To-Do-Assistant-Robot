@@ -158,18 +158,8 @@ class Database:
     cur.execute(base_query,base_list)
     
     rows = cur.fetchall()
-    if(len(rows)>0):
-      category = ["Activities","Category","DeadLine","Completed"]
-      toPrint = ""
-      for row in rows:
-          if (row[2]):
-            row = ("Remind to" if row[4]==1 else "") + row[0] + ' in ' + row[1] + ' at ' + row[2][:10] + " " + row[2][11:16]
-          else:
-            row = row[0] + ' in ' + row[1]
-          toPrint += str(row)+ "\n"
-
-
-    return toPrint if len(rows) > 0 else None
+    
+    return len(rows) if len(rows) > 0 else None
 
   @staticmethod
   def deleteItem(ID, activity ,category,deadline):
@@ -237,19 +227,10 @@ class Database:
       cur.execute('''
       SELECT * FROM possessions WHERE ID == (?);
       ''',(ID,)) 
-
-      rows = cur.fetchall()
-      if len(rows) > 0:
-        categories_list = ""
-        for category in rows:
-          if category is not None:
-            categories_list +=  str(category[1]) + ", "
-        categories_list = categories_list[:-2]
-      else:
-        categories_list = "No activity found"
       
-      return categories_list
-    return "No activity found"
+    rows = cur.fetchall()
+    
+    return len(rows) if len(rows) > 0 else None
 
   @staticmethod
   def deleteCategory(ID, category):

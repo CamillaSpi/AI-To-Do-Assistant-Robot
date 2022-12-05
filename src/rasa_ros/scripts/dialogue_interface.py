@@ -24,11 +24,13 @@ class TerminalInterface:
         if text.answer[0:2] == '-1':
             print('rilevato show activity')
             pub2.publish('www.google.it')
+            text.answer = text.answer[2:]
         if text.answer[0:2] == '-2':
             print('rilevato show category')
             pub2.publish('www.google.it')
-        pub.publish(text.answer[2:])
-        print("[OUT]:",text.answer[2:])
+            text.answer = text.answer[2:]
+        pub.publish(text.answer)
+        print("[OUT]:",text.answer)
 
 dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
 terminal = TerminalInterface()
