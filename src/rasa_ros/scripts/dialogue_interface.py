@@ -38,51 +38,11 @@ def testFunction():
     message.id = 5
     bot_answer = dialogue_service(message.msg,message.id) 
     terminal.set_text(bot_answer,message.id)
-    time.sleep(0.5)
-    time.sleep(0.5)
-    message.msg = "add run in gym"
-    bot_answer = dialogue_service(message.msg,message.id) 
-    terminal.set_text(bot_answer,message.id)
-    time.sleep(0.5)
-    message.msg = "no"
-    bot_answer = dialogue_service(message.msg,message.id) 
-    terminal.set_text(bot_answer,message.id)
-    time.sleep(0.5)
+    time.sleep(2)
     message.msg = "show my activities"
     bot_answer = dialogue_service(message.msg,message.id) 
     terminal.set_text(bot_answer,message.id)
-    time.sleep(0.5)
-    message.msg = "set run in gym as completed"
-    bot_answer = dialogue_service(message.msg,message.id) 
-    terminal.set_text(bot_answer,message.id)
-    time.sleep(0.5)
-    message.msg = "no"
-    bot_answer = dialogue_service(message.msg,message.id) 
-    terminal.set_text(bot_answer,message.id)
-    time.sleep(0.5)
-    message.msg = "show my activities"
-    bot_answer = dialogue_service(message.msg,message.id) 
-    terminal.set_text(bot_answer,message.id)
-    time.sleep(0.5)
-    # message.msg = "remove all my completed activities"
-    # bot_answer = dialogue_service(message.msg,message.id) 
-    # terminal.set_text(bot_answer,message.id)
-    message.msg = "add walk in personal for tomorrow at 10:00"
-    bot_answer = dialogue_service(message.msg,message.id) 
-    terminal.set_text(bot_answer,message.id)
-    time.sleep(0.5)
-    message.msg = "yes"
-    bot_answer = dialogue_service(message.msg,message.id) 
-    terminal.set_text(bot_answer,message.id)
-    time.sleep(0.5)
-    message.msg = "show my activities"
-    bot_answer = dialogue_service(message.msg,message.id) 
-    terminal.set_text(bot_answer,message.id)
-    time.sleep(0.5)
-    message.msg = "show my category"
-    bot_answer = dialogue_service(message.msg,message.id) 
-    terminal.set_text(bot_answer,message.id)
-    time.sleep(0.5)
+    time.sleep(2)
 
 def main():
     rospy.init_node('writing')
