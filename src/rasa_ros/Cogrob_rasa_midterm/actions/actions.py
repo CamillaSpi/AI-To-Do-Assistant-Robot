@@ -30,6 +30,8 @@ class actionCreateUser(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
+        id = 5
+
         if(Database.doesUserExists(id) == False):
             returnedValue = Database.createUser(id,name)
 
@@ -51,6 +53,8 @@ class actionAddItem(Action):
         name = tracker.get_slot("name")
         
         id=tracker.current_state()["sender_id"]
+
+        id = 5
         associated_name = Database.getName(id)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
@@ -111,6 +115,7 @@ class actionAddCategory(Action):
         name = tracker.get_slot("name")
         
         id=tracker.current_state()["sender_id"]
+        id = 5
         associated_name = Database.getName(id)
         category = tracker.get_slot("category")
 
@@ -409,12 +414,13 @@ class actionRemindItem(Action):
         category = tracker.get_slot("category")
         reminder = tracker.get_slot("reminder")
         time = tracker.get_slot("time")
-       
+        id = 5
         associated_name = Database.getName(id) 
         #aggiunte per reminder
         #magari settare anche il nome dell utente nllo slot
-        entities = tracker.latest-message.get("entities")
-        date = time - datetime.timedelta(seconds = 60)
+        entities = tracker.latest_message.get("entities")
+        date = datetime.now() + timedelta(seconds = 5)
+        print(date, ' mario', datetime.now())
         reminder = ReminderScheduled(
             "EXTERNAL_reminder",
             trigger_date_time = date,
@@ -433,9 +439,8 @@ class actionRemindItem(Action):
             actionAddItem.run(self,dispatcher,tracker,domain)
         
         #aggiunte per reminder
-        actionResetSlot.run()
-        #return [SlotSet("activity",None), SlotSet("time",None), SlotSet("category",None),SlotSet("reminder",False)]
-        return [reminder]
+        return [SlotSet("activity",None), SlotSet("time",None), SlotSet("category",None),SlotSet("reminder",False),reminder]
+        
 
 
 
@@ -562,5 +567,6 @@ class actionReactToReminder(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+        print('sono enettrato qua dentro reminder call')
         dispatcher.utter_message("Sono entrato nella react for Reminder call!")
         return[]
