@@ -38,11 +38,19 @@ def testFunction():
     message.id = 5
     bot_answer = dialogue_service(message.msg,message.id) 
     terminal.set_text(bot_answer,message.id)
-    time.sleep(2)
+    time.sleep(0.5)
     message.msg = "show my activities"
     bot_answer = dialogue_service(message.msg,message.id) 
     terminal.set_text(bot_answer,message.id)
-    time.sleep(2)
+    time.sleep(0.5)
+    message.msg = "clean activity"
+    bot_answer = dialogue_service(message.msg,message.id) 
+    terminal.set_text(bot_answer,message.id)
+    time.sleep(0.5)
+    message.msg = "yes"
+    bot_answer = dialogue_service(message.msg,message.id) 
+    terminal.set_text(bot_answer,message.id)
+    time.sleep(0.5)
 
 def main():
     rospy.init_node('writing')

@@ -378,3 +378,13 @@ class Database:
       if(len( toReturn) > 0 ):
         return toReturn[0][0]
     return None
+    
+  @staticmethod
+  def cleanCompletedActivities(ID):
+    if ID != None:
+      conn.execute('''
+        DELETE FROM unfoldings WHERE ID == ? and completed == True
+      ''', (ID,))
+      conn.commit()
+      return True
+    return None
