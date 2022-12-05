@@ -11,5 +11,6 @@
     <node pkg="ros_audio_pkg" type="speaker_identification.py" name="speaker_identification" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@' "/>
     <node pkg="conductor" name="text2rasa" type="text_to_rasa.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@' "/>
     <node pkg="conductor" name="text2pepper" type="text_to_pepper.py" output="screen launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@' ""/>
+    <node pkg="conductor" name="url2pepper" type="url_to_pepper.py" output="screen launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@' ""/>
 
 </launch>

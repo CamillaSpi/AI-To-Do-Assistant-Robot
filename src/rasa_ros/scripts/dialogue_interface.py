@@ -6,6 +6,7 @@ from rasa_ros.srv import Dialogue, DialogueResponse
 from ros_audio_pkg.msg import RecognizedSpoke
 
 pub = rospy.Publisher('toSpeech', String, queue_size=10)
+pub2 = rospy.Publisher("toShow", String,  queue_size=10)
 
 class TerminalInterface:
     '''Class implementing a terminal i/o interface. 
@@ -19,16 +20,65 @@ class TerminalInterface:
     def get_text(self):
         return input("[IN]:  ") 
 
-    def set_text(self,text):
-        pub.publish(text)
-        print("[OUT]:",text)
+    def set_text(self,text,id):
+        if text.answer[0:2] == '-1':
+            print('rilevato show activity')
+            pub2.publish('www.google.it')
+        if text.answer[0:2] == '-2':
+            print('rilevato show category')
+            pub2.publish('www.google.it')
+        pub.publish(text.answer[2:])
+        print("[OUT]:",text.answer[2:])
+
+dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
+terminal = TerminalInterface()
+def testFunction():
+    message = RecognizedSpoke()  
+    message.msg = "Hi i am Vito"
+    message.id = 5
+    bot_answer = dialogue_service(message.msg,message.id) 
+    terminal.set_text(bot_answer,message.id)
+    message.msg = "add run in gym"
+    bot_answer = dialogue_service(message.msg,message.id) 
+    terminal.set_text(bot_answer,message.id)
+    message.msg = "no"
+    bot_answer = dialogue_service(message.msg,message.id) 
+    terminal.set_text(bot_answer,message.id)
+    message.msg = "yes"
+    bot_answer = dialogue_service(message.msg,message.id) 
+    terminal.set_text(bot_answer,message.id)
+    message.msg = "show my activities"
+    bot_answer = dialogue_service(message.msg,message.id) 
+    terminal.set_text(bot_answer,message.id)
+    message.msg = "set run in gym as completed"
+    bot_answer = dialogue_service(message.msg,message.id) 
+    terminal.set_text(bot_answer,message.id)
+    message.msg = "no"
+    bot_answer = dialogue_service(message.msg,message.id) 
+    terminal.set_text(bot_answer,message.id)
+    message.msg = "show my activities"
+    bot_answer = dialogue_service(message.msg,message.id) 
+    terminal.set_text(bot_answer,message.id)
+    # message.msg = "remove all my completed activities"
+    # bot_answer = dialogue_service(message.msg,message.id) 
+    terminal.set_text(bot_answer,message.id)
+    message.msg = "add walk in personal for tomorrow at 10:00"
+    bot_answer = dialogue_service(message.msg,message.id) 
+    terminal.set_text(bot_answer,message.id)
+    message.msg = "yes"
+    bot_answer = dialogue_service(message.msg,message.id) 
+    terminal.set_text(bot_answer,message.id)
+    message.msg = "show my activities"
+    bot_answer = dialogue_service(message.msg,message.id) 
+    terminal.set_text(bot_answer,message.id)
+    message.msg = "show my category"
+    bot_answer = dialogue_service(message.msg,message.id) 
+    terminal.set_text(bot_answer,message.id)
 
 def main():
     rospy.init_node('writing')
     rospy.wait_for_service('dialogue_server')
-    dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
-
-    terminal = TerminalInterface()
+    testFunction()
 
     while not rospy.is_shutdown():
         message = rospy.wait_for_message("text2answer",RecognizedSpoke)
@@ -36,7 +86,8 @@ def main():
             break
         try:
             bot_answer = dialogue_service(message.msg,message.id)
-            pub.publish(bot_answer.answer)
+            print('risposta ricevuta')
+            terminal.set_text(bot_answer,message.id)
         except rospy.ServiceException as e:
             print("Service call failed: %s"%e)
 
