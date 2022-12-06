@@ -30,6 +30,7 @@ intents:
   - presentation+view_categories
   - presentation+view_activities
   - presentation+set_status_activity
+  - EXTERNAL_reminder
 
 entities:
   - activity
@@ -74,6 +75,7 @@ actions:
   - action_ask_activity_old
   - action_ask_activity_new
   - my_action_fallback
+  - action_react_to_reminder
 
 
 slots:
