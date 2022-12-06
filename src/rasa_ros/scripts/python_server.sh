@@ -2,5 +2,5 @@
 BOT_DIR=$( cd -- "$(dirname "${0}")" >/dev/null 2>&1 ; pwd -P )
 
 cd "${BOT_DIR}/../Cogrob_rasa_midterm"
-
-rasa run -m models --endpoints endpoints.yml --credentials credentials.yml --enable-api
+conda deactivate
+python3 callback_server.py

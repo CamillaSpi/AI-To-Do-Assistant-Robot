@@ -10,9 +10,9 @@ def handle_service(req):
     id = req.id
     print('USER:' , input_text)
     # # Get answer        
-    get_answer_url = 'http://localhost:5002/webhooks/rest/webhook'
+    get_answer_url = 'http://localhost:5005/webhooks/rest/webhook'
     message = {
-        "sender": id,
+        "sender": 'bot',
         "message": input_text
     }
 

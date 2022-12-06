@@ -412,7 +412,7 @@ class actionRemindItem(Action):
         id=tracker.current_state()["sender_id"]
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
-        reminder = tracker.get_slot("reminder")
+        reminderSlot = tracker.get_slot("reminder")
         time = tracker.get_slot("time")
         id = 5
         associated_name = Database.getName(id) 
@@ -430,7 +430,7 @@ class actionRemindItem(Action):
 
         if (Database.doesUnfoldingsExists(id,category,activity,time)):
             
-            returnedValue = Database.updateReminder(id,category,activity,time,reminder)
+            returnedValue = Database.updateReminder(id,category,activity,time,reminderSlot)
             if (returnedValue):
                 dispatcher.utter_message(text=f"Activity Updated!")
             else:
@@ -534,39 +534,22 @@ class actionDefaultFallBack(Action):
         SlotSet("activity_new",None),
         SlotSet("category_new",None)]
 
-# class ValidateModifyCategoryForm(FormValidationAction):
-#     def name(self) -> Text:
-#         return "validate_modify_category_form"
 
-#     def validate_category_old(
-#         self,
-#         value: Text,
-#         dispatcher: CollectingDispatcher,
-#         tracker: Tracker,
-#         domain: DomainDict,
-#     ) -> Dict[Text, Any]:
+class ActionReactToReminder(Action):
+    """Reminds the user to call someone."""
 
-#         dispatcher.utter_message(text=f"Alfredo")
-
-#     def validate_category(
-#         self,
-#         value: Text,
-#         dispatcher: CollectingDispatcher,
-#         tracker: Tracker,
-#         domain: DomainDict,
-#     ) -> Dict[Text, Any]:
-
-#         dispatcher.utter_message(text=f"Mario")
-
-
-class actionReactToReminder(Action):
     def name(self) -> Text:
         return "action_react_to_reminder"
-    
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        print('sono enettrato qua dentro reminder call')
-        dispatcher.utter_message("Sono entrato nella react for Reminder call!")
-        return[]
+    async def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        name = "mario"
+        print('mario')
+        dispatcher.utter_message(f"Remember to call {name}!")
+
+        return []

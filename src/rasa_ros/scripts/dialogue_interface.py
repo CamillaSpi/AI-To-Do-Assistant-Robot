@@ -51,6 +51,17 @@ def testFunction():
     bot_answer = dialogue_service(message.msg,message.id) 
     terminal.set_text(bot_answer,message.id)
     time.sleep(0.5)
+    message.msg = "remind me to walk in gym"
+    bot_answer = dialogue_service(message.msg,message.id) 
+    terminal.set_text(bot_answer,message.id)
+    time.sleep(0.5)
+    message.msg = "tomorrow"
+    bot_answer = dialogue_service(message.msg,message.id) 
+    terminal.set_text(bot_answer,message.id)
+    time.sleep(0.5)
+
+
+
 
 def main():
     rospy.init_node('writing')
