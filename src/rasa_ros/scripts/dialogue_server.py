@@ -10,17 +10,17 @@ def handle_service(req):
     id = req.id
     print('USER:' , input_text)
     # # Get answer        
-    get_answer_url = 'http://localhost:5005/webhooks/rest/webhook'
+    get_answer_url = 'http://localhost:5005/webhooks/callback/webhook'
     message = {
-        "sender": 'bot',
+        "sender": id,
         "message": input_text
     }
 
     r = requests.post(get_answer_url, json=message)
     response = DialogueResponse()
-    response.answer = ""
-    for i in r.json():
-        response.answer += i['text'] + ' ' if 'text' in i else ''
+    response.answer = "mario"
+    # for i in r.json():
+    #     response.answer += i['text'] + ' ' if 'text' in i else ''
     
     return response
     
