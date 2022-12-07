@@ -1,4 +1,4 @@
 /home/nando/.local/share/Trash/files/DefinitivoCog/DefinitivoCog/devel/./cmake.lock 2
 /home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/./cmake.lock 64
 /home/camilla/Scrivania/DefinitivoCog/devel/./cmake.lock 1
-/home/vito/Documenti/DefinitivoCog/devel/./cmake.lock 4
+/home/nando/Scrivania/DefinitivoCog/devel/./cmake.lock 4

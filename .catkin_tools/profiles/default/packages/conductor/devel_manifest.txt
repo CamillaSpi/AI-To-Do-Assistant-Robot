@@ -1,5 +1,5 @@
 conductor
-/home/vito/Documenti/DefinitivoCog/devel/.private/conductor/cmake.lock /home/vito/Documenti/DefinitivoCog/devel/./cmake.lock
-/home/vito/Documenti/DefinitivoCog/devel/.private/conductor/lib/pkgconfig/conductor.pc /home/vito/Documenti/DefinitivoCog/devel/lib/pkgconfig/conductor.pc
-/home/vito/Documenti/DefinitivoCog/devel/.private/conductor/share/conductor/cmake/conductorConfig.cmake /home/vito/Documenti/DefinitivoCog/devel/share/conductor/cmake/conductorConfig.cmake
-/home/vito/Documenti/DefinitivoCog/devel/.private/conductor/share/conductor/cmake/conductorConfig-version.cmake /home/vito/Documenti/DefinitivoCog/devel/share/conductor/cmake/conductorConfig-version.cmake
+/home/nando/Scrivania/DefinitivoCog/devel/.private/conductor/cmake.lock /home/nando/Scrivania/DefinitivoCog/devel/./cmake.lock
+/home/nando/Scrivania/DefinitivoCog/devel/.private/conductor/lib/pkgconfig/conductor.pc /home/nando/Scrivania/DefinitivoCog/devel/lib/pkgconfig/conductor.pc
+/home/nando/Scrivania/DefinitivoCog/devel/.private/conductor/share/conductor/cmake/conductorConfig-version.cmake /home/nando/Scrivania/DefinitivoCog/devel/share/conductor/cmake/conductorConfig-version.cmake
+/home/nando/Scrivania/DefinitivoCog/devel/.private/conductor/share/conductor/cmake/conductorConfig.cmake /home/nando/Scrivania/DefinitivoCog/devel/share/conductor/cmake/conductorConfig.cmake
