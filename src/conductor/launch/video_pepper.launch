@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="conductor" name="save_video_from_pepper" type="save_video_from_pepper.py" output="screen"/>
+</launch>
+
+
