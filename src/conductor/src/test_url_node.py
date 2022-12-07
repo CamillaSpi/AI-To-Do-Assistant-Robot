@@ -6,7 +6,6 @@ from pepper_nodes.srv import LoadUrl
 import rospy
 
 def handle_speech(req):
-    print(req,'sono service url')
     return 'ACK'
 
 def add_two_ints_server():
