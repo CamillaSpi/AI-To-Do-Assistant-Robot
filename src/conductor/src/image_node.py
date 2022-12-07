@@ -17,7 +17,7 @@ def callback(msg):
         # pub.publish(msg)
         msg = bridge.imgmsg_to_cv2(msg)
         cv2.imshow("Emotion Demo", msg)
-        k = cv2.waitKey(0)
+        k = cv2.waitKey(5) 
     except rospy.ServiceException as e:
         print("Service call failed: %s", e)
     
