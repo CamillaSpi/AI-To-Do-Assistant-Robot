@@ -420,6 +420,8 @@ class actionRemindItem(Action):
         #magari settare anche il nome dell utente nllo slot
         entities = tracker.latest_message.get("entities")
         date = datetime.now() + timedelta(seconds = 5)
+        print(date, ' mario', datetime.now())
+        print(entities)
         reminder = ReminderScheduled(
             "EXTERNAL_reminder",
             trigger_date_time = date,
