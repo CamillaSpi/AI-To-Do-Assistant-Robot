@@ -262,6 +262,21 @@ forms:
         - type: from_entity
           entity: name
 
+  reminder_form: 
+    required_slots:
+      name: 
+        - type: from_entity
+          entity: name
+      activity:
+        - type: from_entity
+          entity: activity
+      category: 
+        - type: from_entity
+          entity: category
+      time:
+        - type: from_entity
+          entity: time
+
 
 
 
@@ -288,7 +303,7 @@ responses:
   - text: "Bye"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Gruppo16."
+  - text: "I am a bot, powered by Gruppo12."
 
   utter_ask_time:
   - text: "Please insert the time"
