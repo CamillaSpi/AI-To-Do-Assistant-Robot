@@ -37,6 +37,17 @@ rules:
     - requested_slot: null
   - action: action_view_categories
 
+- rule: Remind me
+  steps: 
+  - intent: remind_me_of
+  - action: action_set_reminder_slot
+  - action: reminder_form
+  - active_loop: reminder_form
+  - active_loop: null
+  - slot_was_set: 
+    - requested_slot: null
+  - action: action_reminder_item
+
   ####aggiunta per reminder
 - rule: react to remind
   steps: 

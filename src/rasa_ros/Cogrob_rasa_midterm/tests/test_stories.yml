@@ -1340,24 +1340,6 @@ stories:
   - active_loop: null
   - action: action_set_status_activity
 
-#################################### Test Stories Remind me of all ######################################
-- story: remind me of later presentation
-  steps:
-  - user: |
-     remind me to [shopping](activity) into the category [household](category) on 18th november 2022
-    intent: remind_me_of
-  - slot_was_set:
-    - time: "2022-11-18T00:00:00.000+01:00"
-  - action: action_set_reminder_slot
-  - action: add_item_form
-  - active_loop: add_item_form
-  - user: |
-      im [marc3ll0](username)
-    intent: presentation
-  - action: add_item_form
-  - active_loop: null
-  - action: action_reminder_item
-
 #################################### Test Stories Modify the category of an activity  ######################################
 - story: later presentation and modify the category of an activity without deadline
   steps:
