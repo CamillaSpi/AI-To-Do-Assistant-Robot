@@ -45,7 +45,7 @@ rules:
   - active_loop: reminder_form
   - active_loop: null
   - slot_was_set: 
-    - requested_slot: null
+    - time: true 
   - action: action_reminder_item
 
   ####aggiunta per reminder
