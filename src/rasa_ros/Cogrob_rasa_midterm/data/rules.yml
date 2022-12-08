@@ -42,3 +42,7 @@ rules:
   steps: 
   - intent: EXTERNAL_reminder
   - action: action_react_to_reminder
+- rule: start session
+  steps:
+  - intent: start_session
+  - action: action_session_start
