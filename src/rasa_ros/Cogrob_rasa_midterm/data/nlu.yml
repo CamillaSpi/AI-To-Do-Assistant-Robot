@@ -1435,14 +1435,25 @@ nlu:
     - remind me to [shopping](activity) into the category [household](category) at 8:30
     - set a reminder for the activiy [call](activity) into the category [relations](category) of next morning
     - help me to not forget the activity [study](activity) in the category [university](category) for Tomorrow
-    - help me to remind my [birtday](activity) on 12/18/2022
+    - help me to remind my [birthday](activity) on 12/18/2022
     - remind me the [exam](activity) on tomorrow morning
     - don't forget of [shopping](activity) at 19:00
     - I want to set a reminder 
     - want you help me to remind
     - I can't forget to do the activity [exam](activity) of the category [university](category) of next Monday
-    - I want to set a reminder for the actvivity [hairdresser](activity)
+    - I want to set a reminder for the activity [hairdresser](activity)
     - remind me the [dinner](activity)
+    - remind me to [cook the dinner](activity) into the category [household](category) at 8:30
+    - set a reminder for the activiy [call my girlfriend](activity) into the category [relations](category) of next morning
+    - help me to not forget the activity [listen the lesson registration](activity) in the category [university](category) for Tomorrow
+    - help me to remind my [go to the birthday](activity) on 12/18/2022
+    - remind me the [guitar lesson](activity) on tomorrow morning
+    - don't forget of [do the exercises](activity) at 19:00
+    - set a reminder 
+    - help me to remind an activity
+    - I can't forget to do the activity [talk with the professor](activity) of the category [university](category) of next Monday
+    - I want to set a reminder for the activity [book the plane](activity)
+    - remind me the [eat some fruits](activity)
 
 - intent: presentation+remind_me_of
   examples: |
@@ -1459,6 +1470,19 @@ nlu:
     - i'm [camilla](name) I can't forget to do the activity [exam](activity) of the category [university](category) of next Monday
     - i'm [camilla](name) I want to set a reminder for the actvivity [hairdresser](activity)
     - i am [alessia](name) , remind me the [dinner](activity)
+    - i am [mattia](name) remind me to [buy the gifts](activity) into the category [household](category) at 8:30
+    - i'm [camilla](name) set a reminder for the activiy [videocall with friends](activity) into the category [relations](category) of next morning
+    - I'm [Simone](name) , help me to not forget the activity [study for the exam](activity) in the category [university](category) for Tomorrow
+    - i am [mattia](name) help me to remind my [prepare the launch](activity) on 12/18/2022
+    - i'm [camilla](name) remind me the [go to the doctor](activity) on tomorrow morning
+    - i am [alessia](name) , don't forget of [buy a gift](activity) at 19:00
+    - I'm [Simone](name) , I want to set a reminder 
+    - I'm [Simone](name) , I want you help me to remind
+    - my name is [luigi](name) , please remind me of [do yoga](activity) tomorrow evening
+    - I'm [Salvo](name) , please help me to don't forget the activity [fix some issues](activity) in the category [work](category) of next Friday
+    - i'm [camilla](name) I can't forget to do the activity [send the e-mail](activity) of the category [university](category) of next Monday
+    - i'm [camilla](name) I want to set a reminder for the actvivity [clean home](activity)
+    - i am [alessia](name) , remind me the [buy some food](activity)
 
 - synonym: add
   examples: |
