@@ -1,0 +1,5 @@
+<launch>
+
+    <node pkg="conductor" name="sd" type="url_to_pepper.py" output="screen"/>
+    <node pkg="conductor" name="rasa_action" type="prova.py" output="screen"/>
+</launch>

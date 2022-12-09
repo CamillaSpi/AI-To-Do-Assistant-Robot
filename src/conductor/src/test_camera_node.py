@@ -6,7 +6,7 @@ import cv2
 import time
 
 from cv_bridge import CvBridge
-pub = rospy.Publisher('in_rgb', Image, queue_size=10)
+pub = rospy.Publisher('test_in_rgb', Image, queue_size=10)
 # Init node
 rospy.init_node('test_camera_input', anonymous=True)
 bridge = CvBridge()

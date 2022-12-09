@@ -15,24 +15,24 @@ def testFunction():
     message.msg = "Hi i am Vito"
     message.id = 5
     dialogue_service(message.msg,message.id) 
-    time.sleep(0.5)
-    message.msg = "show my activities"
-    dialogue_service(message.msg,message.id) 
-    time.sleep(0.5)
-    message.msg = "clean activity"
-    dialogue_service(message.msg,message.id) 
-    time.sleep(0.5)
-    message.msg = "yes"
-    dialogue_service(message.msg,message.id) 
-    time.sleep(0.5)
-    message.msg = "remind me to walk in gym"
-    dialogue_service(message.msg,message.id) 
-    time.sleep(0.5)
-    message.msg = "tomorrow"
-    dialogue_service(message.msg,message.id) 
-    time.sleep(0.5)
-    dialogue_service("/session_start",5)
-    time.sleep(0.5)
+    # time.sleep(0.5)
+    # message.msg = "show my activities"
+    # dialogue_service(message.msg,message.id) 
+    # time.sleep(0.5)
+    # message.msg = "clean activity"
+    # dialogue_service(message.msg,message.id) 
+    # time.sleep(0.5)
+    # message.msg = "yes"
+    # dialogue_service(message.msg,message.id) 
+    # time.sleep(0.5)
+    # message.msg = "remind me to walk in gym"
+    # dialogue_service(message.msg,message.id) 
+    # time.sleep(0.5)
+    # message.msg = "tomorrow"
+    # dialogue_service(message.msg,message.id) 
+    # time.sleep(0.5)
+    # dialogue_service("/session_start",5)
+    # time.sleep(0.5)
 
 
 
