@@ -719,7 +719,6 @@ nlu:
     - hi, and I want to put an activity to my list at 12:37
     - hi, I want to insert an activity to my list at 18:14
 
-    
 - intent: remove_item
   examples: |
     - remove [run](activity)
@@ -875,7 +874,6 @@ nlu:
     - set [completed](activity_status) activity [help my grandfather](activity) in category [volunteering](category)
     - set [complete](activity_status) activity [play guitar](activity) in category [daily](category)
     - set [completed](activity_status) activity [jogging](activity) in category [weekly](category)
-
     - I want to set [complete](activity_status) an activity 
     - I want to set done an activity in a list 
     - I want to set [completed](activity_status) an activity in [weekly](category) list 
@@ -925,15 +923,14 @@ nlu:
     - set [incomplete](activity_status) [pik up of the package](activity) in category [personal](category)
     - set [incomplete](activity_status) [play](activity) in category [projects](category)
     - set [incomplete](activity_status) [jogging](activity) in category [monthly](category)
-
-    - set [incomplete](activity_status) activity [run](activity) in category [monthly](category)
-    - set [incomplete](activity_status) activity [bed](activity) in category [quickly](category)
+    - set [incomplete](activity_status) activity [go to gym](activity) in category [sport](category)
+    - set [incomplete](activity_status) activity [clean my bedroom](activity) in category [households](category)
     - set [incomplete](activity_status) activity [stand_up](activity) in category [projects](category)
     - set [incomplete](activity_status) activity [swimmming](activity) in category [commitments](category)
-
     - set undone activity [play](activity) in category [daily](category)
     - set [incomplete](activity_status) activity [jogging](activity) in category [weekly](category)
-
+    - set undone activity [cookies for children](activity) in category [households](category)
+    - set [incomplete](activity_status) activity [present for grandmother](activity) in category [event](category)
     - I want to set [incomplete](activity_status) an activity 
     - I want to set [incomplete](activity_status) an activity in a list 
     - I want to set [incomplete](activity_status) an activity in [weekly](category) list 
@@ -951,26 +948,24 @@ nlu:
     - hello I want to set [incomplete](activity_status) an activity in my list 
     - hi I want to set [incomplete](activity_status) an activity in my list 
     - Hi I want to set undone all activity in [monthly](category) list
-
     - undo [complete](activity_status) [run](activity)
     - undo [complete](activity_status) [bed](activity)
     - undo [complete](activity_status) [stand_up](activity)
-    - undo [complete](activity_status) [swimmming](activity)
-    - undo [complete](activity_status) [play](activity)
-    - undo [complete](activity_status) [jogging](activity)
-
+    - undo [complete](activity_status) [post office](activity)
+    - undo [complete](activity_status) [banck count](activity)
+    - undo [complete](activity_status) [bills in bank](activity)
     - undo [complete](activity_status) [run](activity) in [daily](category)
     - undo [complete](activity_status) [bed](activity) in [projects](category)
     - undo [complete](activity_status) [stand_up](activity) in [weekly](category)
-    - undo [complete](activity_status) [swimmming](activity) in [monthly](category)
-    - undo [complete](activity_status) [play](activity) in [commitments](category)
-    - undo [complete](activity_status) [study](activity) in [quickly](category)
-    
+    - undo [complete](activity_status) [go swimming](activity) in [monthly](category)
+    - undo [complete](activity_status) [answer to the email](activity) in [commitments](category)
+    - undo [complete](activity_status) [answer to the call](activity) in [personal](category)
     - undo [complete](activity_status) activity [run](activity) in [weekly](category)
     - undo [complete](activity_status) activity [bed](activity) in [daily](category)
     - undo [complete](activity_status) activity [stand_up](activity) in [commitments](category)
-    - undo [complete](activity_status) activity [swimmming](activity) in [projects](category)
-    - undo [complete](activity_status) activity [play](activity) in [monthly](category)
+    - undo [complete](activity_status) activity [doctor appointment](activity) in [personal](category)
+    - undo [complete](activity_status) activity [take the pills](activity) in [health](category)
+    - undo [complete](activity_status) activity [take the medicine](activity) in [health](category)
     
 - intent: presentation+set_status_activity
   examples: |
@@ -1282,9 +1277,6 @@ nlu:
     - clean activity
     - clean table
     
-    
-
-
 - intent: modify_activity_category   
   examples: |
     - I want to change the category [holiday]{"entity": "category", "role": "old"} of the activity [sport](activity) in [gym]{"entity": "category", "role": "new"}
@@ -1307,26 +1299,26 @@ nlu:
     - For the activity [cards](activity) transform the category [medical]{"entity": "category", "role": "old"} in [household]{"entity": "category", "role": "new"}
     - For the activity [stand_up](activity) update the category [sport]{"entity": "category", "role": "old"} in [commitments]{"entity": "category", "role": "new"}
     - For the activity [stand_up](activity) update the category [commitments]{"entity": "category", "role": "old"} in [sport]{"entity": "category", "role": "new"}
-    - I want to change the category [holiday]{"entity": "category", "role": "old"} of the activity [run](activity) in [wishes]{"entity": "category", "role": "new"}
-    - I want to change the category [wishes]{"entity": "category", "role": "old"} of the activity [run](activity) in [holiday]{"entity": "category", "role": "new"}
-    - modify the category [finance]{"entity": "category", "role": "old"} of [walk](activity) into [diet]{"entity": "category", "role": "new"}
-    - modify the category [diet]{"entity": "category", "role": "old"} of [walk](activity) into [finance]{"entity": "category", "role": "new"}
-    - replace the category [personal]{"entity": "category", "role": "old"} of the activity [stand_up](activity) into category [job]{"entity": "category", "role": "new"}
-    - replace the category [job]{"entity": "category", "role": "old"} of the activity [stand_up](activity) into category [personal]{"entity": "category", "role": "new"}
-    - For the activity [cooking](activity) modify the category [exams]{"entity": "category", "role": "old"} in [diet]{"entity": "category", "role": "new"}
-    - For the activity [cooking](activity) modify the category [diet]{"entity": "category", "role": "old"} in [exams]{"entity": "category", "role": "new"}
-    - For the activity [study](activity) into the category [volunteering]{"entity": "category", "role": "old"} replace the category with [quickly]{"entity": "category", "role": "new"}
-    - For the activity [study](activity) into the category [quickly]{"entity": "category", "role": "old"} replace the category with [volunteering]{"entity": "category", "role": "new"}
-    - convert the category [household]{"entity": "category", "role": "old"} of the activity [sport](activity) with [medications]{"entity": "category", "role": "new"}
-    - convert the category [medications]{"entity": "category", "role": "old"} of the activity [sport](activity) with [household]{"entity": "category", "role": "new"}
-    - transform the category [holiday]{"entity": "category", "role": "old"} of the activity [reed](activity) into category [carriage]{"entity": "category", "role": "new"}
-    - transform the category [carriage]{"entity": "category", "role": "old"} of the activity [reed](activity) into category [holiday]{"entity": "category", "role": "new"}
-    - For the activity [walk](activity) set the category [carriage]{"entity": "category", "role": "old"} in [commitments]{"entity": "category", "role": "new"}
-    - For the activity [walk](activity) set the category [commitments]{"entity": "category", "role": "old"} in [carriage]{"entity": "category", "role": "new"}
-    - For the activity [study](activity) transform the category [household]{"entity": "category", "role": "old"} in [bank]{"entity": "category", "role": "new"}
-    - For the activity [study](activity) transform the category [bank]{"entity": "category", "role": "old"} in [household]{"entity": "category", "role": "new"}
-    - For the activity [study](activity) update the category [quickly]{"entity": "category", "role": "old"} in [volunteering]{"entity": "category", "role": "new"}
-    - For the activity [study](activity) update the category [volunteering]{"entity": "category", "role": "old"} in [quickly]{"entity": "category", "role": "new"}
+    - I want to change the category [holiday]{"entity": "category", "role": "old"} of the activity [book the hotel](activity) in [wishes]{"entity": "category", "role": "new"}
+    - I want to change the category [wishes]{"entity": "category", "role": "old"} of the activity [book the hotel](activity) in [holiday]{"entity": "category", "role": "new"}
+    - modify the category [freetime]{"entity": "category", "role": "old"} of [walk in open air](activity) into [diet]{"entity": "category", "role": "new"}
+    - modify the category [diet]{"entity": "category", "role": "old"} of [walk in open air](activity) into [freetime]{"entity": "category", "role": "new"}
+    - replace the category [personal]{"entity": "category", "role": "old"} of the activity [prepare the breakfast](activity) into category [households]{"entity": "category", "role": "new"}
+    - replace the category [households]{"entity": "category", "role": "old"} of the activity [prepare the breakfast](activity) into category [personal]{"entity": "category", "role": "new"}
+    - For the activity [cooking for the husband](activity) modify the category [personal]{"entity": "category", "role": "old"} in [diet]{"entity": "category", "role": "new"}
+    - For the activity [cooking for the husband](activity) modify the category [diet]{"entity": "category", "role": "old"} in [personal]{"entity": "category", "role": "new"}
+    - For the activity [clean the house](activity) into the category [daily]{"entity": "category", "role": "old"} replace the category with [quickly]{"entity": "category", "role": "new"}
+    - For the activity [clean the house](activity) into the category [quickly]{"entity": "category", "role": "old"} replace the category with [daily]{"entity": "category", "role": "new"}    
+    - convert the category [commitments]{"entity": "category", "role": "old"} of the activity [adjust the motorcycle](activity) with [personal]{"entity": "category", "role": "new"}
+    - convert the category [personal]{"entity": "category", "role": "old"} of the activity [adjust the motorcycle](activity) with [commitments]{"entity": "category", "role": "new"}    
+    - transform the category [commitments]{"entity": "category", "role": "old"} of the activity [prepare the exam](activity) into category [university]{"entity": "category", "role": "new"}
+    - transform the category [university]{"entity": "category", "role": "old"} of the activity [prepare the exam](activity) into category [commitments]{"entity": "category", "role": "new"}
+    - For the activity [launch with family](activity) set the category [personal]{"entity": "category", "role": "old"} in [events]{"entity": "category", "role": "new"}
+    - For the activity [launch with family](activity) set the category [events]{"entity": "category", "role": "old"} in [personal]{"entity": "category", "role": "new"}
+    - For the activity [attend the conference](activity) transform the category [work]{"entity": "category", "role": "old"} in [job]{"entity": "category", "role": "new"}
+    - For the activity [attend the conference](activity) transform the category [job]{"entity": "category", "role": "old"} in [work]{"entity": "category", "role": "new"}    
+    - For the activity [fruit at market](activity) update the category [households]{"entity": "category", "role": "old"} in [personal]{"entity": "category", "role": "new"}
+    - For the activity [fruit at market](activity) update the category [personal]{"entity": "category", "role": "old"} in [households]{"entity": "category", "role": "new"}
 
 
 - intent: modify_activity_deadline  
@@ -1334,36 +1326,38 @@ nlu:
     - I want to modify the deadline of an activity
     - alter the deadline
     - I want to change the deadline of the activity [stand_up](activity) in the cateogry [personal](category) from 25 September to 27th september 1998
-    - I want to change the deadline of the activity [stand_up](activity) in the cateogry [personal](category) with 27th september 1998
+    - I want to change the deadline of the activity [listen the poadcast](activity) in the cateogry [personal](category) with 27th september 1998
     - I want to modify the deadline of the activity [match](activity) in the cateogry [payments](category) for tomorrow at 18:00
-    - I want to modify the deadline of the activity [match](activity) in the cateogry [payments](category) with tomorrow at 18:00
+    - I want to modify the deadline of the activity [match with dad](activity) in the cateogry [freetime](category) with tomorrow at 18:00
     - modify the deadline of the activity [reed](activity) in the cateogry [university](category) form Friday to Sunday 
-    - modify the deadline of the activity [reed](activity) in the cateogry [university](category) with Sunday 
+    - modify the deadline of the activity [read the journal](activity) in the cateogry [daily](category) with Sunday 
     - alter the deadline of the activity [exit](activity) in the cateogry [bank](category) to Sunday 
-    - alter the deadline of the activity [exit](activity) in the cateogry [bank](category) with Sunday 
+    - alter the deadline of the activity [pay the supermarket](activity) in the cateogry [payments](category) with Sunday 
+    - In the cateogry [culture](category) replace the deadline of the activity [painting exhibition](activity) from 22th september to 25th september
     - In the cateogry [subjects](category) replace the deadline of the activity [draw](activity) from 22th september to 25th september
+    - In the cateogry [subjects](category) modify the deadline of the activity [repeat science](activity) from 22th september to 25th september
     - In the cateogry [subjects](category) modify the deadline of the activity [draw](activity) from 22th september to 25th september
-    - Alter the deadline of the activity [stand_up](activity) in the cateogry [work](category) with Monday
+    - Alter the deadline of the activity [help grandmother](activity) in the cateogry [volunteering](category) with Monday
     - Alter the deadline of the activity [stand_up](activity) in the cateogry [work](category) to Monday
-    - For the activity [stand_up](activity) in the cateogry [bank](category) modify the deadline with 22th october 1922
+    - For the activity [go to church](activity) in the cateogry [culture](category) modify the deadline with 22th october 1922
     - For the activity [stand_up](activity) in the cateogry [bank](category) modify the deadline from 4 Novemner to 22th october 1922
+    - For the activity [book the airplane](activity) in the cateogry [holiday](category) transform the deadline into Monday
     - For the activity [note](activity) in the cateogry [school](category) transform the deadline into Monday
-    - For the activity [note](activity) in the cateogry [school](category) transform the deadline into Monday
-    - I want to change the deadline of the activity [exit](activity) in the cateogry [times](category) with 27th september 1998
+    - I want to change the deadline of the activity [go out with friends](activity) in the cateogry [events](category) with 27th september 1998
     - I want to change the deadline of the activity [exit](activity) in the cateogry [times](category) to 27th september 1998
-    - I want to modify the deadline of the activity [draw](activity) in the cateogry [job](category) with tomorrow at 18:00
+    - I want to modify the deadline of the activity [draw a portrait](activity) in the cateogry [job](category) with tomorrow at 18:00
     - I want to modify the deadline of the activity [draw](activity) in the cateogry [job](category) in tomorrow at 18:00
+    - modify the deadline of the activity [cook for the family](activity) in the cateogry [households](category) with Sunday 
     - modify the deadline of the activity [draw](activity) in the cateogry [calendary](category) with Sunday 
-    - modify the deadline of the activity [draw](activity) in the cateogry [calendary](category) with Sunday 
-    - alter the deadline of the activity [travel](activity) in the cateogry [household](category) from 07/11/2022 to Sunday 
+    - alter the deadline of the activity [travel with mum](activity) in the cateogry [holiday](category) from 07/11/2022 to Sunday 
     - alter the deadline of the activity [travel](activity) in the cateogry [household](category) with Sunday 
-    - In the cateogry [exams](category) replace the deadline of the activity [cards](activity) from 22th september to 25th september
+    - In the cateogry [exams](category) replace the deadline of the activity [repeat cognitive](activity) from 22th september to 25th september
     - In the cateogry [exams](category) replace the deadline of the activity [cards](activity) from 10/12/2022 to 12/13/2022
-    - Alter the deadline of the activity [runbed](activity) in the cateogry [monthly](category) from Today to 04/21/2023
-    - Alter the deadline of the activity [runbed](activity) in the cateogry [monthly](category) with Monday
-    - For the activity [play](activity) in the cateogry [university](category) modify the deadline with 22th october 1922
+    - Alter the deadline of the activity [bed](activity) in the cateogry [monthly](category) from Today to 04/21/2023
+    - Alter the deadline of the activity [christmas eve](activity) in the cateogry [events](category) with Monday
+    - For the activity [birthday invitation](activity) in the cateogry [events](category) modify the deadline with 22th october 1922
     - For the activity [play](activity) in the cateogry [university](category) modify the deadline in the 22th october 1922
-    - For the activity [stand_up](activity) in the cateogry [holiday](category) transform the deadline into Monday
+    - For the activity [clean my bedroom](activity) in the cateogry [households](category) transform the deadline into Monday
     - For the activity [stand_up](activity) in the cateogry [holiday](category) transform the deadline into Monday
 
 - intent: modify_activity_name  
