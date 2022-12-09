@@ -28,19 +28,19 @@ class ActionSessionStart(Action):
     ) -> List[EventType]:
         # the session should begin with a `session_started` event
         events = [SessionStarted()]
-        lista = Database.getAllReminder()
-        print(len(lista), 'reminder ripristinati')
-        for element in lista:
-            time = datetime.now() + timedelta(seconds = 5) # time = datetime.fromisoformat(element[3])
-            entities = [{'name':Database.getName(element[0]), 'activity':element[1], 'category':element[2]}] # 'time':time
-            events.append(ReminderScheduled(
-                "EXTERNAL_reminder",
-                trigger_date_time = time,
-                entities = entities,
-                kill_on_user_message = False,
-            ))
+        # lista = Database.getAllReminder()
+        # print(len(lista), 'reminder ripristinati')
+        # for element in lista:
+        #     time = datetime.now() + timedelta(seconds = 20000) # time = datetime.fromisoformat(element[3])
+        #     entities = [{'name':Database.getName(element[0]), 'activity':element[1], 'category':element[2]}] # 'time':time
+        #     events.append(ReminderScheduled(
+        #         "EXTERNAL_reminder",
+        #         trigger_date_time = time,
+        #         entities = entities,
+        #         kill_on_user_message = False,
+        #     ))
         # an `action_listen` should be added at the end as a user message follows
-        events.append(ActionExecuted("action_listen"))
+        # events.append(ActionExecuted("action_listen"))
 
         return events
 

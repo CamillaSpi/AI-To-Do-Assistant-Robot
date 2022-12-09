@@ -15,9 +15,9 @@ def testFunction():
     message.msg = "Hi i am Vito"
     message.id = 5
     dialogue_service(message.msg,message.id) 
-    # time.sleep(0.5)
-    # message.msg = "show my activities"
-    # dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "show my activities"
+    dialogue_service(message.msg,message.id) 
     # time.sleep(0.5)
     # message.msg = "clean activity"
     # dialogue_service(message.msg,message.id) 
