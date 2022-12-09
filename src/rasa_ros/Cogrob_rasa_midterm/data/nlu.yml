@@ -925,15 +925,14 @@ nlu:
     - set [incomplete](activity_status) [pik up of the package](activity) in category [personal](category)
     - set [incomplete](activity_status) [play](activity) in category [projects](category)
     - set [incomplete](activity_status) [jogging](activity) in category [monthly](category)
-
-    - set [incomplete](activity_status) activity [run](activity) in category [monthly](category)
-    - set [incomplete](activity_status) activity [bed](activity) in category [quickly](category)
+    - set [incomplete](activity_status) activity [go to gym](activity) in category [sport](category)
+    - set [incomplete](activity_status) activity [clean my bedroom](activity) in category [households](category)
     - set [incomplete](activity_status) activity [stand_up](activity) in category [projects](category)
     - set [incomplete](activity_status) activity [swimmming](activity) in category [commitments](category)
-
     - set undone activity [play](activity) in category [daily](category)
     - set [incomplete](activity_status) activity [jogging](activity) in category [weekly](category)
-
+    - set undone activity [cookies for children](activity) in category [households](category)
+    - set [incomplete](activity_status) activity [present for grandmother](activity) in category [event](category)
     - I want to set [incomplete](activity_status) an activity 
     - I want to set [incomplete](activity_status) an activity in a list 
     - I want to set [incomplete](activity_status) an activity in [weekly](category) list 
@@ -951,26 +950,24 @@ nlu:
     - hello I want to set [incomplete](activity_status) an activity in my list 
     - hi I want to set [incomplete](activity_status) an activity in my list 
     - Hi I want to set undone all activity in [monthly](category) list
-
     - undo [complete](activity_status) [run](activity)
     - undo [complete](activity_status) [bed](activity)
     - undo [complete](activity_status) [stand_up](activity)
-    - undo [complete](activity_status) [swimmming](activity)
-    - undo [complete](activity_status) [play](activity)
-    - undo [complete](activity_status) [jogging](activity)
-
+    - undo [complete](activity_status) [post office](activity)
+    - undo [complete](activity_status) [banck count](activity)
+    - undo [complete](activity_status) [bills in bank](activity)
     - undo [complete](activity_status) [run](activity) in [daily](category)
     - undo [complete](activity_status) [bed](activity) in [projects](category)
     - undo [complete](activity_status) [stand_up](activity) in [weekly](category)
-    - undo [complete](activity_status) [swimmming](activity) in [monthly](category)
-    - undo [complete](activity_status) [play](activity) in [commitments](category)
-    - undo [complete](activity_status) [study](activity) in [quickly](category)
-    
+    - undo [complete](activity_status) [go swimming](activity) in [monthly](category)
+    - undo [complete](activity_status) [answer to the email](activity) in [commitments](category)
+    - undo [complete](activity_status) [answer to the call](activity) in [personal](category)
     - undo [complete](activity_status) activity [run](activity) in [weekly](category)
     - undo [complete](activity_status) activity [bed](activity) in [daily](category)
     - undo [complete](activity_status) activity [stand_up](activity) in [commitments](category)
-    - undo [complete](activity_status) activity [swimmming](activity) in [projects](category)
-    - undo [complete](activity_status) activity [play](activity) in [monthly](category)
+    - undo [complete](activity_status) activity [doctor appointment](activity) in [personal](category)
+    - undo [complete](activity_status) activity [take the pills](activity) in [health](category)
+    - undo [complete](activity_status) activity [take the medicine](activity) in [health](category)
     
 - intent: presentation+set_status_activity
   examples: |
