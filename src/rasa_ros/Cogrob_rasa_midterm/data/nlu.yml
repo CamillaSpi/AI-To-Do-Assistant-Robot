@@ -1362,38 +1362,45 @@ nlu:
 - intent: modify_activity_name  
   examples: |
     - I want to change the name of the activity [study]{"entity": "activity", "role": "old"} in [sport](category) with name [fuel]{"entity": "activity", "role": "new"}
-    - I want to change the name of the activity [fuel]{"entity": "activity", "role": "old"} in the cateogry [sport](category) with name [study]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [ring]{"entity": "activity", "role": "old"} in the cateogry [bank](category) with [exit]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [exit]{"entity": "activity", "role": "old"} in [bank](category) with [ring]{"entity": "activity", "role": "new"}
-    - modify the name of the activity [study]{"entity": "activity", "role": "old"} in the cateogry [times](category) with name [draw]{"entity": "activity", "role": "new"}
-    - modify the name of the activity [draw]{"entity": "activity", "role": "old"} in the cateogry [times](category) with name [study]{"entity": "activity", "role": "new"}
-    - In the cateogry [university](category) change the name of the activity [fuel]{"entity": "activity", "role": "old"}  with name [walk]{"entity": "activity", "role": "new"}
-    - In the cateogry [university](category) change the name of the activity [walk]{"entity": "activity", "role": "old"}  with name [fuel]{"entity": "activity", "role": "new"}
-    - In the cateogry [exams](category) replace the name of the activity [walk]{"entity": "activity", "role": "old"}  with name [fuel]{"entity": "activity", "role": "new"}
-    - In the cateogry [exams](category) replace the name of the activity [fuel]{"entity": "activity", "role": "old"}  with name [walk]{"entity": "activity", "role": "new"}
-    - Alter the name of the activity [jogging]{"entity": "activity", "role": "old"} in the cateogry [holiday](category) with name [travel]{"entity": "activity", "role": "new"}
-    - Alter the name of the activity [travel]{"entity": "activity", "role": "old"} in the cateogry [holiday](category) with name [run]{"entity": "activity", "role": "new"}
-    - For the activity [sport]{"entity": "activity", "role": "old"} in the cateogry [wishes](category) modify the name with [walk]{"entity": "activity", "role": "new"}
-    - For the activity [walk]{"entity": "activity", "role": "old"} in the cateogry [wishes](category) modify the name with [sport]{"entity": "activity", "role": "new"}
-    - For the activity [shopping]{"entity": "activity", "role": "old"} in the cateogry [work](category) transform the name with [study]{"entity": "activity", "role": "new"}
-    - For the activity [study]{"entity": "activity", "role": "old"} in the cateogry [work](category) transform the name with [shopping]{"entity": "activity", "role": "new"}
-    - I want to change the name of the activity [sport]{"entity": "activity", "role": "old"} in the cateogry [exams](category) with name [swimmming]{"entity": "activity", "role": "new"}
-    - I want to change the name of the activity [swimmming]{"entity": "activity", "role": "old"} in the cateogry [exams](category) with name [sport]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [ring]{"entity": "activity", "role": "old"} in the cateogry [carriage](category) with [runbed]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [runbed]{"entity": "activity", "role": "old"} in the cateogry [carriage](category) with [ring]{"entity": "activity", "role": "new"}
-    - modify the name of the activity [ring]{"entity": "activity", "role": "old"} in the cateogry [medical](category) with name [note]{"entity": "activity", "role": "new"}
-    - modify the name of the activity [note]{"entity": "activity", "role": "old"} in the cateogry [medical](category) with name [ring]{"entity": "activity", "role": "new"}
-    - In the cateogry [events](category) change the name of the activity [fuel]{"entity": "activity", "role": "old"}  with name [jogging]{"entity": "activity", "role": "new"}
-    - In the cateogry [events](category) change the name of the activity [jogging]{"entity": "activity", "role": "old"}  with name [fuel]{"entity": "activity", "role": "new"}
-    - In the cateogry [exams](category) replace the name of the activity [study]{"entity": "activity", "role": "old"}  with name [stand_up]{"entity": "activity", "role": "new"}
-    - In the cateogry [exams](category) replace the name of the activity [stand_up]{"entity": "activity", "role": "old"}  with name [study]{"entity": "activity", "role": "new"}
-    - Alter the name of the activity [refuel]{"entity": "activity", "role": "old"} in the cateogry [research](category) with name [travel]{"entity": "activity", "role": "new"}
-    - Alter the name of the activity [travel]{"entity": "activity", "role": "old"} in the cateogry [research](category) with name [refuel]{"entity": "activity", "role": "new"}
-    - For the activity [refuel]{"entity": "activity", "role": "old"} in the cateogry [wishes](category) modify the name with [swimmming]{"entity": "activity", "role": "new"}
-    - For the activity [swimmming]{"entity": "activity", "role": "old"} in the cateogry [wishes](category) modify the name with [refuel]{"entity": "activity", "role": "new"}
-    - For the activity [reed]{"entity": "activity", "role": "old"} in [vacation](category) transform the name with [walk]{"entity": "activity", "role": "new"}
-    - For the activity [walk]{"entity": "activity", "role": "old"} in the cateogry [vacation](category) transform the name with [reed]{"entity": "activity", "role": "new"}
-
+    - I want to change the name of the activity [fuel]{"entity": "activity", "role": "old"} in [sport](category) with name [study]{"entity": "activity", "role": "new"}
+    - I want to change the name of the activity [sport]{"entity": "activity", "role": "old"} in the category [exams](category) with name [swimmming]{"entity": "activity", "role": "new"}
+    - I want to change the name of the activity [swimmming]{"entity": "activity", "role": "old"} in the category [exams](category) with name [sport]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [ring]{"entity": "activity", "role": "old"} in the category [carriage](category) with [runbed]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [runbed]{"entity": "activity", "role": "old"} in the category [carriage](category) with [ring]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [help my mum]{"entity": "activity", "role": "old"} in the category [volunteering](category) with [help my dad]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [help my dad]{"entity": "activity", "role": "old"} in the category [volunteering](category) with [help my mum]{"entity": "activity", "role": "new"}
+    - modify the name of the activity [study]{"entity": "activity", "role": "old"} in the category [times](category) with name [draw]{"entity": "activity", "role": "new"}
+    - modify the name of the activity [draw]{"entity": "activity", "role": "old"} in the category [times](category) with name [study]{"entity": "activity", "role": "new"}
+    - In the category [university](category) change the name of the activity [fuel]{"entity": "activity", "role": "old"}  with name [walk]{"entity": "activity", "role": "new"}
+    - In the category [university](category) change the name of the activity [walk]{"entity": "activity", "role": "old"}  with name [fuel]{"entity": "activity", "role": "new"}
+    - In the category [exams](category) replace the name of the activity [walk]{"entity": "activity", "role": "old"}  with name [fuel]{"entity": "activity", "role": "new"}
+    - In the category [exams](category) replace the name of the activity [fuel]{"entity": "activity", "role": "old"}  with name [walk]{"entity": "activity", "role": "new"}
+    - Alter the name of the activity [jogging]{"entity": "activity", "role": "old"} in the category [holiday](category) with name [travel]{"entity": "activity", "role": "new"}
+    - Alter the name of the activity [travel]{"entity": "activity", "role": "old"} in the category [holiday](category) with name [run]{"entity": "activity", "role": "new"}
+    - For the activity [sport]{"entity": "activity", "role": "old"} in the category [wishes](category) modify the name with [walk]{"entity": "activity", "role": "new"}
+    - For the activity [walk]{"entity": "activity", "role": "old"} in the category [wishes](category) modify the name with [sport]{"entity": "activity", "role": "new"}
+    - For the activity [shopping]{"entity": "activity", "role": "old"} in the category [work](category) transform the name with [study]{"entity": "activity", "role": "new"}
+    - For the activity [study]{"entity": "activity", "role": "old"} in the category [work](category) transform the name with [shopping]{"entity": "activity", "role": "new"}
+    - I want to change the name of the activity [walk in open air]{"entity": "activity", "role": "old"} in [personal](category) with name [compile the module]{"entity": "activity", "role": "new"}
+    - I want to change the name of the activity [compile the module]{"entity": "activity", "role": "old"} in [personal](category) with name [walk in open air]{"entity": "activity", "role": "new"}
+    - I want to change the name of the activity [do sport]{"entity": "activity", "role": "old"} in the category [sport](category) with name [go swimmming]{"entity": "activity", "role": "new"}
+    - I want to change the name of the activity [go swimmming]{"entity": "activity", "role": "old"} in the category [sport](category) with name [do sport]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [help my mum]{"entity": "activity", "role": "old"} in the category [volunteering](category) with [help my dad]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [help my dad]{"entity": "activity", "role": "old"} in the category [volunteering](category) with [help my mum]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [go out with cat]{"entity": "activity", "role": "old"} in the category [personal](category) with [go out with dog]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [go out with dog]{"entity": "activity", "role": "old"} in the category [personal](category) with [go out with cat]{"entity": "activity", "role": "new"}
+    - modify the name of the activity [call grandfather]{"entity": "activity", "role": "old"} in the category [personal](category) with name [take medicines]{"entity": "activity", "role": "new"}
+    - modify the name of the activity [take medicines]{"entity": "activity", "role": "old"} in the category [personal](category) with name [call grandfather]{"entity": "activity", "role": "new"}
+    - In the category [events](category) change the name of the activity [cut hair]{"entity": "activity", "role": "old"}  with name [go to hairdresser]{"entity": "activity", "role": "new"}
+    - In the category [events](category) change the name of the activity [go to hairdresser]{"entity": "activity", "role": "old"}  with name [cut hair]{"entity": "activity", "role": "new"}
+    - In the category [exams](category) replace the name of the activity [study for exam]{"entity": "activity", "role": "old"}  with name [learn maths]{"entity": "activity", "role": "new"}
+    - In the category [exams](category) replace the name of the activity [learn maths]{"entity": "activity", "role": "old"}  with name [study for exam]{"entity": "activity", "role": "new"}
+    - Alter the name of the activity [cook dinner]{"entity": "activity", "role": "old"} in the category [households](category) with name [clean house]{"entity": "activity", "role": "new"}
+    - Alter the name of the activity [clean house]{"entity": "activity", "role": "old"} in the category [households](category) with name [cook dinner]{"entity": "activity", "role": "new"}
+    - For the activity [play guitar]{"entity": "activity", "role": "old"} in the category [freetime](category) modify the name with [go swimmming]{"entity": "activity", "role": "new"}
+    - For the activity [go swimmming]{"entity": "activity", "role": "old"} in the category [freetime](category) modify the name with [play guitar]{"entity": "activity", "role": "new"}
+    - For the activity [read a book]{"entity": "activity", "role": "old"} in the category [commitments](category) transform the name with [study]{"entity": "activity", "role": "new"}
+    - For the activity [study]{"entity": "activity", "role": "old"} in the category [commitments](category) transform the name with [read a book]{"entity": "activity", "role": "new"}
 
 - intent: view_categories
   examples: |
