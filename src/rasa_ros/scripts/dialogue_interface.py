@@ -45,7 +45,7 @@ def main():
 
 
     while not rospy.is_shutdown():
-        message = rospy.wait_for_message(" ",RecognizedSpoke)
+        message = rospy.wait_for_message("text2answer",RecognizedSpoke)
         if message == 'exit': 
             break
         try:
