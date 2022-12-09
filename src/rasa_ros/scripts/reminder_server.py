@@ -21,10 +21,10 @@ def create_app() -> Sanic:
         """Print bot response to the console."""
         text = request.json.get("text")
         if text[0:2] == '-1':
-            pub2.publish('www.google.it')
+            pub2.publish(r'http://http://172.19.215.10:80/webPage/')
             text = text[2:]
         elif text[0:2] == '-2':
-            pub2.publish('www.google.it')
+            pub2.publish(r'http://http://172.19.215.10:80/webPage/')
             text = text[2:]
         pub.publish(text)
 

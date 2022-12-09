@@ -9,12 +9,12 @@ def handle_speech(req):
     print(req)
     return 'ACK'
 
-def add_two_ints_server():
+def tts_server():
     rospy.init_node('tts_service')
     s = rospy.Service('tts', Text2Speech, handle_speech)
     print("talk")
     rospy.spin()
 
 if __name__ == "__main__":
-    add_two_ints_server()
+    tts_server()
 

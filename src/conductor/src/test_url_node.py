@@ -8,12 +8,12 @@ import rospy
 def handle_speech(req):
     return 'ACK'
 
-def add_two_ints_server():
+def url_server():
     rospy.init_node('url_service')
     s = rospy.Service('load_url', LoadUrl, handle_speech)
     print("url")
     rospy.spin()
 
 if __name__ == "__main__":
-    add_two_ints_server()
+    url_server()
 
