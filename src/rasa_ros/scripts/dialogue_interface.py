@@ -6,8 +6,7 @@ from rasa_ros.srv import Dialogue, DialogueResponse
 from ros_audio_pkg.msg import RecognizedSpoke
 import time
 
-pub = rospy.Publisher('toSpeech', String, queue_size=10)
-pub2 = rospy.Publisher("toShow", String,  queue_size=10)
+                                           
 
 
 dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
@@ -42,7 +41,7 @@ def main():
     testFunction()
 
     while not rospy.is_shutdown():
-        message = rospy.wait_for_message("text2answer",RecognizedSpoke)
+        message = rospy.wait_for_message(" ",RecognizedSpoke)
         if message == 'exit': 
             break
         try:
