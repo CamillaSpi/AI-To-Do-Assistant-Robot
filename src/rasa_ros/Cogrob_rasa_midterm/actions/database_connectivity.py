@@ -387,4 +387,13 @@ class Database:
       ''', (ID,))
       conn.commit()
       return True
-    return None
+    return None   
+
+
+  @staticmethod
+  def getAllReminder():
+    cur.execute('''
+          SELECT ID,activity,category,deadline FROM unfoldings WHERE reminder == True
+        ''')
+    toReturn = cur.fetchall()
+    return toReturn

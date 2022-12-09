@@ -12,13 +12,37 @@ from unicodedata import category
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet, ReminderScheduled
+from rasa_sdk.events import SlotSet, ReminderScheduled,SessionStarted,ActionExecuted,EventType
 from rasa_sdk.forms import FormValidationAction
 from rasa_sdk.types import DomainDict
 from datetime import datetime, timedelta
 
 from . import Database
 
+class ActionSessionStart(Action):
+    def name(self) -> Text:
+        return "action_session_start"
+
+    async def run(
+      self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]
+    ) -> List[EventType]:
+        # the session should begin with a `session_started` event
+        events = [SessionStarted()]
+        lista = Database.getAllReminder()
+        print(len(lista), 'reminder ripristinati')
+        for element in lista:
+            time = datetime.now() + timedelta(seconds = 5) # time = datetime.fromisoformat(element[3])
+            entities = [{'name':Database.getName(element[0]), 'activity':element[1], 'category':element[2]}] # 'time':time
+            events.append(ReminderScheduled(
+                "EXTERNAL_reminder",
+                trigger_date_time = time,
+                entities = entities,
+                kill_on_user_message = False,
+            ))
+        # an `action_listen` should be added at the end as a user message follows
+        events.append(ActionExecuted("action_listen"))
+
+        return events
 
 class actionCreateUser(Action):
 
@@ -416,11 +440,8 @@ class actionRemindItem(Action):
         time = tracker.get_slot("time")
         id = 5
         associated_name = Database.getName(id) 
-        #aggiunte per reminder
-        #magari settare anche il nome dell utente nllo slot
-        entities = tracker.latest_message.get("entities")
-        date = datetime.now() + timedelta(seconds = 5)
-        print(date, ' mario', datetime.now())
+        date = datetime.now() + timedelta(seconds = 120)
+        entities = [{'name':associated_name, 'activity':activity, 'category':category,'time':time}]
         reminder = ReminderScheduled(
             "EXTERNAL_reminder",
             trigger_date_time = date,
@@ -548,8 +569,16 @@ class ActionReactToReminder(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
-        name = "mario"
-        print('mario')
-        dispatcher.utter_message(f"Remember to call {name}!")
-
+        entities = tracker.latest_message.get("entities")[0]
+        name = entities['name']
+        activity = entities['activity']
+        category = entities['category']
+        # time = entities['time']
+        # time = datetime.fromisoformat(time)
+        # date = datetime.now()
+        # if time <= date:
+        #     dispatcher.utter_message(f"Hei {name}, the reminder  for {activity} in {category} is expired!!!")
+        # else:
+        #     dispatcher.utter_message(f"Hei {name}, remember to {activity} in {category} in 5 minutes!")
+        dispatcher.utter_message(f"Hei {name}, remember to {activity} in {category} in 5 minutes!")
         return []

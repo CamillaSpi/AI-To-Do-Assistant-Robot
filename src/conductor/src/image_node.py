@@ -9,7 +9,6 @@ pub = rospy.Publisher('image_analysis', Image, queue_size=10)
 # Init node
 rospy.init_node('image_node', anonymous=True)
 bridge = CvBridge()
-
 # this is called from the background thread.
 def callback(msg):
     try:
@@ -17,15 +16,18 @@ def callback(msg):
         # pub.publish(msg)
         msg = bridge.imgmsg_to_cv2(msg)
         cv2.imshow("Emotion Demo", msg)
-        k = cv2.waitKey(5) 
+        k = cv2.waitKey(0)
     except rospy.ServiceException as e:
         print("Service call failed: %s", e)
     
 def listener():
     #qua fare un'array in cui mandiamo entrambe le cose 
-    rospy.Subscriber("in_rgb", Image, callback)
+    try:
+        rospy.Subscriber("in_rgb", Image, callback)
+        rospy.spin()
+    except rospy.exceptions.ROSInterruptException:
+        print("vado in close in massiccianza")
     
-    rospy.spin()
 
 if __name__ == '__main__':
     listener()

@@ -31,6 +31,8 @@ def testFunction():
     message.msg = "tomorrow"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
+    dialogue_service("/session_start",5)
+    time.sleep(0.5)
 
 
 
@@ -38,7 +40,9 @@ def testFunction():
 def main():
     rospy.init_node('writing')
     rospy.wait_for_service('dialogue_server')
+    dialogue_service("/session_start",-1)
     testFunction()
+
 
     while not rospy.is_shutdown():
         message = rospy.wait_for_message(" ",RecognizedSpoke)
