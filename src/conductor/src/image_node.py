@@ -12,11 +12,10 @@ bridge = CvBridge()
 # this is called from the background thread.
 def callback(msg):
     try:
-        print(' sono callback')
         # pub.publish(msg)
         msg = bridge.imgmsg_to_cv2(msg)
         cv2.imshow("Emotion Demo", msg)
-        k = cv2.waitKey(0)
+        k = cv2.waitKey(5)
     except rospy.ServiceException as e:
         print("Service call failed: %s", e)
     
