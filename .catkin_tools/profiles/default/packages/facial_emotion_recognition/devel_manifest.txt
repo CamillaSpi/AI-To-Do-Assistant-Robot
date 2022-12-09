@@ -1,0 +1,5 @@
+facial_emotion_recognition
+/home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/.private/facial_emotion_recognition/cmake.lock /home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/./cmake.lock
+/home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/.private/facial_emotion_recognition/lib/pkgconfig/facial_emotion_recognition.pc /home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/lib/pkgconfig/facial_emotion_recognition.pc
+/home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/.private/facial_emotion_recognition/share/facial_emotion_recognition/cmake/facial_emotion_recognitionConfig.cmake /home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/share/facial_emotion_recognition/cmake/facial_emotion_recognitionConfig.cmake
+/home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/.private/facial_emotion_recognition/share/facial_emotion_recognition/cmake/facial_emotion_recognitionConfig-version.cmake /home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/share/facial_emotion_recognition/cmake/facial_emotion_recognitionConfig-version.cmake

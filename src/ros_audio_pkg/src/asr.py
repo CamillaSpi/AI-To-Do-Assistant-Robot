@@ -6,6 +6,7 @@ import numpy as np
 from speech_recognition import AudioData
 import speech_recognition as sr
 from ros_audio_pkg.msg import AudioAndText
+#from datetime import datetime
 
 # Initialize a Recognizer
 r = sr.Recognizer()
@@ -18,10 +19,15 @@ pub1 = rospy.Publisher('AudioAndText', AudioAndText, queue_size=10)
 def callback(audio):
     data = np.array(audio.data,dtype=np.int16)
     audio_data = AudioData(data.tobytes(), 16000, 2)
-
+    
     try:
+
+        #t1 = datetime.now()
         spoken_text= r.recognize_google(audio_data)
         print("Google Speech Recognition pensa tu abbia detto: " + spoken_text)
+        #t2 = datetime.now()
+        #delta = t2-t1
+        #print('inference time ' , delta.total_seconds())
         audioAndText = AudioAndText()
         audioAndText.spoken_text = spoken_text
         audioAndText.audioData = audio.data
