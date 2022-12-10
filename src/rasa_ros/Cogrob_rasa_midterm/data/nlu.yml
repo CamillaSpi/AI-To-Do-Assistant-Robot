@@ -1247,20 +1247,20 @@ nlu:
     - I'm [antonio](name) ,I want to see all my [[completed](activity_status) activities
     - i am [alessia](name) , show my [undeveloped](activity_status) activities
     - i am [mattia](name) Show my [done](activity_status) activities
-    - I'm [antonio](name) , Which are my activities?
-    - I'm [Simone](name) which are [concluded](activity_status) my activities?
-    - i am [mattia](name) what are my [uncompleted](activity_status) activities?
-    - i am [mattia](name) what are my activities?
+    - I'm [vito](name) , Which are my activities?
+    - I'm [giovanni](name) which are [concluded](activity_status) my activities?
+    - i am [nando](name) what are my [uncompleted](activity_status) activities?
+    - i am [Ferdinando](name) what are my activities?
     - i'm [camilla](name) What are my [finished](activity_status) activities?
-    - I am [mattia](name) , What are my [unexecuted](activity_status) activities?
-    - i am [alessia](name) , show activity in [gym](category) category
-    - I'm [antonio](name) show all my [developed](activity_status) activity in [monthly](category) category
-    - i'm [Giusy](name) show my [undone](activity_status) activity in [commitments](category) category
-    - I'm [Giusy](name) show [executed](activity_status) activity in [work](category) category
-    - i'm [camilla](name) show activity in [projects](category) category
-    - I am [alessia](name) , show [unfinished](activity_status) activity in [work](category) category
-    - I'm [Simone](name) show [completed](activity_status) activities
-    - i'm [Giusy](name) show [completed](activity_status) activity
+    - I am [daniele](name) , What are my [unexecuted](activity_status) activities?
+    - i am [valeria](name) , show activity in [gym](category) category
+    - I'm [gianluca](name) show all my [developed](activity_status) activity in [monthly](category) category
+    - i'm [paola](name) show my [undone](activity_status) activity in [commitments](category) category
+    - I'm [carla](name) show [executed](activity_status) activity in [work](category) category
+    - i'm [sara](name) show activity in [projects](category) category
+    - I am [francesca](name) , show [unfinished](activity_status) activity in [school](category) category
+    - I'm [lorenzo](name) show [completed](activity_status) activities
+    - i'm [enza](name) show [completed](activity_status) activity
 
 - intent: clean_activities
   examples: |
