@@ -1170,41 +1170,41 @@ nlu:
     - substitute the category [school]{"entity": "category", "role": "old"} with [events]{"entity": "category", "role": "new"}
     - transform the category [holiday]{"entity": "category", "role": "old"} to [bank]{"entity": "category", "role": "new"}
     - replace the category [bank]{"entity": "category", "role": "old"} with [holiday]{"entity": "category", "role": "new"}
-    - alter the category [carriage]{"entity": "category", "role": "old"} in [subjects]{"entity": "category", "role": "new"}
-    - change the category [subjects]{"entity": "category", "role": "old"} in [carriage]{"entity": "category", "role": "new"}
+    - alter the category [carriage]{"entity": "category", "role": "old"} in [fun]{"entity": "category", "role": "new"}
+    - change the category [fun]{"entity": "category", "role": "old"} in [carriage]{"entity": "category", "role": "new"}
     - I want to change the category [work]{"entity": "category", "role": "old"} with [commitments]{"entity": "category", "role": "new"}
     - I want to substitute the category [commitments]{"entity": "category", "role": "old"} with [work]{"entity": "category", "role": "new"}
     - substitute the category [monthly]{"entity": "category", "role": "old"} in [finance]{"entity": "category", "role": "new"}
     - please, vary the category [finance]{"entity": "category", "role": "old"} in [monthly]{"entity": "category", "role": "new"}
-    - convert the category [work]{"entity": "category", "role": "old"} in [household]{"entity": "category", "role": "new"}
-    - replace the category [household]{"entity": "category", "role": "old"} with [work]{"entity": "category", "role": "new"}
+    - convert the category [well-being]{"entity": "category", "role": "old"} in [household]{"entity": "category", "role": "new"}
+    - replace the category [household]{"entity": "category", "role": "old"} with [well-being]{"entity": "category", "role": "new"}
     - transform the category [gym]{"entity": "category", "role": "old"} in [leisure]{"entity": "category", "role": "new"}
     - alter the category [leisure]{"entity": "category", "role": "old"} with [gym]{"entity": "category", "role": "new"}
-    - I want to  transform the category [finance]{"entity": "category", "role": "old"} in [projects]{"entity": "category", "role": "new"}
-    - I want to vary the category [projects]{"entity": "category", "role": "old"} to [finance]{"entity": "category", "role": "new"}
+    - I want to  transform the category [plannings]{"entity": "category", "role": "old"} in [projects]{"entity": "category", "role": "new"}
+    - I want to vary the category [projects]{"entity": "category", "role": "old"} to [plannings]{"entity": "category", "role": "new"}
     - alter the category [vacation]{"entity": "category", "role": "old"} in [volunteering]{"entity": "category", "role": "new"}
     - modify the category [volunteering]{"entity": "category", "role": "old"} in [vacation]{"entity": "category", "role": "new"}
-    - vary the category [personal]{"entity": "category", "role": "old"} in [gym]{"entity": "category", "role": "new"}
-    - convert the category [gym]{"entity": "category", "role": "old"} in [personal]{"entity": "category", "role": "new"}
-    - change the category [school]{"entity": "category", "role": "old"} in [events]{"entity": "category", "role": "new"}
-    - please, change the category [events]{"entity": "category", "role": "old"} in [school]{"entity": "category", "role": "new"}
-    - I want to replace the category [payments]{"entity": "category", "role": "old"} in [finance]{"entity": "category", "role": "new"}
-    - please, I want to change the category [finance]{"entity": "category", "role": "old"} in [payments]{"entity": "category", "role": "new"}
-    - modify the category [projects]{"entity": "category", "role": "old"} in [quickly]{"entity": "category", "role": "new"}
-    - transform the category [quickly]{"entity": "category", "role": "old"} with [projects]{"entity": "category", "role": "new"}
-    - please, I want to convert the category [times]{"entity": "category", "role": "old"} in [volunteering]{"entity": "category", "role": "new"}
-    - please, i want to replace the category [volunteering]{"entity": "category", "role": "old"} to [times]{"entity": "category", "role": "new"}
-    - i want to alter the category [monthly]{"entity": "category", "role": "old"} to [carriage]{"entity": "category", "role": "new"}
-    - substitute the category [carriage]{"entity": "category", "role": "old"} in [monthly]{"entity": "category", "role": "new"}
-    - I want to modify the category [events]{"entity": "category", "role": "old"} in [medications]{"entity": "category", "role": "new"}
-    - I want to transform the category [medications]{"entity": "category", "role": "old"} in [events]{"entity": "category", "role": "new"}
-    - modify the category [dailyweekly]{"entity": "category", "role": "old"} in [events]{"entity": "category", "role": "new"}
-    - vary the category [events]{"entity": "category", "role": "old"} with [dailyweekly]{"entity": "category", "role": "new"}
-    - I want to convert the category [work]{"entity": "category", "role": "old"} in [carriage]{"entity": "category", "role": "new"}
-    - convert the category [carriage]{"entity": "category", "role": "old"} with [work]{"entity": "category", "role": "new"}
+    - vary the category [personal]{"entity": "category", "role": "old"} in [sport]{"entity": "category", "role": "new"}
+    - convert the category [sport]{"entity": "category", "role": "old"} in [personal]{"entity": "category", "role": "new"}
+    - change the category [university]{"entity": "category", "role": "old"} in [healthcare]{"entity": "category", "role": "new"}
+    - please, change the category [healthcare]{"entity": "category", "role": "old"} in [university]{"entity": "category", "role": "new"}
+    - I want to replace the category [payments]{"entity": "category", "role": "old"} in [theater]{"entity": "category", "role": "new"}
+    - please, I want to change the category [theater]{"entity": "category", "role": "old"} in [payments]{"entity": "category", "role": "new"}
+    - modify the category [morning]{"entity": "category", "role": "old"} in [quickly]{"entity": "category", "role": "new"}
+    - transform the category [quickly]{"entity": "category", "role": "old"} with [morning]{"entity": "category", "role": "new"}
+    - please, I want to convert the category [lifestyle]{"entity": "category", "role": "old"} in [caring]{"entity": "category", "role": "new"}
+    - please, i want to replace the category [caring]{"entity": "category", "role": "old"} to [lifestyle]{"entity": "category", "role": "new"}
+    - i want to alter the category [annual]{"entity": "category", "role": "old"} to [summer]{"entity": "category", "role": "new"}
+    - substitute the category [summer]{"entity": "category", "role": "old"} in [annual]{"entity": "category", "role": "new"}
+    - I want to modify the category [entertainment]{"entity": "category", "role": "old"} in [medications]{"entity": "category", "role": "new"}
+    - I want to transform the category [medications]{"entity": "category", "role": "old"} in [entertainment]{"entity": "category", "role": "new"}
+    - modify the category [dailyweekly]{"entity": "category", "role": "old"} in [family]{"entity": "category", "role": "new"}
+    - vary the category [family]{"entity": "category", "role": "old"} with [dailyweekly]{"entity": "category", "role": "new"}
+    - I want to convert the category [home]{"entity": "category", "role": "old"} in [parents]{"entity": "category", "role": "new"}
+    - convert the category [parents]{"entity": "category", "role": "old"} with [home]{"entity": "category", "role": "new"}
     - replace the category [exams]{"entity": "category", "role": "old"} in [calendary]{"entity": "category", "role": "new"}
     - change the category [calendary]{"entity": "category", "role": "old"} in [exams]{"entity": "category", "role": "new"}
-    - I want to alter the category [medications]{"entity": "category", "role": "old"} in [events]{"entity": "category", "role": "new"}
+    - I want to alter the category [animals]{"entity": "category", "role": "old"} in [finance]{"entity": "category", "role": "new"}
     - I want to convert a category
     - convert a category
     - convert one category
