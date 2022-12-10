@@ -1439,19 +1439,19 @@ nlu:
 
 - intent: remind_me_of
   examples: |
-    - remind me to [shopping](activity) into the category [household](category) at 8:30
-    - set a reminder for the activiy [call](activity) into the category [relations](category) of next morning
-    - help me to not forget the activity [study](activity) in the category [university](category) for Tomorrow
+    - remind me to [shopping](activity) into the category [life](category) at 8:30
+    - set a reminder for the activity [call](activity) into the category [relations](category) of next morning
+    - help me to not forget the activity [study](activity) in the category [school](category) for Tomorrow
     - help me to remind my [birthday](activity) on 12/18/2022
     - remind me the [exam](activity) on tomorrow morning
-    - don't forget of [shopping](activity) at 19:00
+    - don't forget of [run](activity) at 19:00
     - I want to set a reminder 
     - want you help me to remind
-    - I can't forget to do the activity [exam](activity) of the category [university](category) of next Monday
+    - I can't forget to do the activity [boxe](activity) of the category [sport](category) of next Monday
     - I want to set a reminder for the activity [hairdresser](activity)
     - remind me the [dinner](activity)
     - remind me to [cook the dinner](activity) into the category [household](category) at 8:30
-    - set a reminder for the activiy [call my girlfriend](activity) into the category [relations](category) of next morning
+    - set a reminder for the activity [call my girlfriend](activity) into the category [social](category) of next morning
     - help me to not forget the activity [listen the lesson registration](activity) in the category [university](category) for Tomorrow
     - help me to remind my [go to the birthday](activity) on 12/18/2022
     - remind me the [guitar lesson](activity) on tomorrow morning
