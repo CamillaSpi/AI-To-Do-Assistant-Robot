@@ -1125,7 +1125,7 @@ nlu:
     - hi, I want to insert the category [daily](category)
     - hi, I want to insert the category [projects](category)
     - new category to add: [projects](category)
-    - new category to insert: [bills](category)
+    - new category to insert: [finances](category)
     - hi, please insert the following [medical](category)
     - hi, please put the following [finance](category)
     - hi, please enter the following [shopping](category)
@@ -1133,11 +1133,11 @@ nlu:
     - category: [payments](category)
     - hello, I want to add the category [household](category)
     - I want to add a category [bank](category)
-    - hi, please insert the following [diet](category)
-    - I want to add  the category [commitments](category) 
-    - hello, I want to add the category [work](category)
-    - hello, I want to put the category [research](category)
-    - I want to insert the category [sports](category) 
+    - hi, please insert the following [fun](category)
+    - I want to add  the category [lifestyle](category) 
+    - hello, I want to add the category [life](category)
+    - hello, I want to put the category [parents](category)
+    - I want to insert the category [family](category) 
 
 - intent: remove_category
   examples: |
