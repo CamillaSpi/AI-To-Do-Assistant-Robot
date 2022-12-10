@@ -846,125 +846,125 @@ nlu:
     - set [complete](activity_status) [play](activity)
     - set done [dinner with friends](activity)
     - set [complete](activity_status) [turn off the oven](activity) in [households](category)
-    - set [completed](activity_status) [bed](activity) in [projects](category)
-    - set up [complete](activity_status) [stand_up](activity) in [weekly](category)
+    - set [completed](activity_status) [bed](activity) in [health](category)
+    - set up [complete](activity_status) [stand_up](activity) in [daily](category)
     - set up [complete](activity_status) [call my mother](activity) in [weekly](category)
-    - set [complete](activity_status) [swimming](activity) in [monthly](category)
-    - set done [play](activity) in [commitments](category)
+    - set [complete](activity_status) [swimming](activity) in [sport](category)
+    - set done [play](activity) in [entertainment](category)
     - set [complete](activity_status) [listen to music](activity) in [personal](category)
-    - set done [clean the bathroom](activity) in [commitments](category)
+    - set done [clean the bathroom](activity) in [home](category)
     - set [completed](activity_status) [go to the sea](activity) in [travel](category)
-    - set [completed](activity_status) activity [play the piano](activity) in [personal](category)
-    - set [complete](activity_status) activity [buy a bike](activity) in [sport](category)
+    - set [completed](activity_status) activity [play the piano](activity) in [music](category)
+    - set [complete](activity_status) activity [buy a bike](activity) in [shop](category)
     - set done activity [cook pizza](activity) in [households](category)
-    - set done activity [swimming](activity) in [projects](category)
-    - set [complete](activity_status) activity [play](activity) in [monthly](category)
+    - set done activity [match](activity) in [gym](category)
+    - set [complete](activity_status) activity [selfie](activity) in [social](category)
     - set [completed](activity_status) activity [jogging](activity) in [quickly](category)
     - set done [repeat math](activity) in category [school](category)
-    - set [complete](activity_status) [call the boss](activity) in category [projects](category)
-    - set up [completed](activity_status) [stand_up](activity) in category [daily](category)
-    - set up [completed](activity_status) [clean the kitchen](activity) in category [households](category)
-    - set [complete](activity_status) [swimming](activity) in category [quickly](category)
-    - set [completed](activity_status) [play](activity) in category [projects](category)
+    - set [complete](activity_status) [call the boss](activity) in category [work](category)
+    - set up [completed](activity_status) [repetitions](activity) in category [graduance](category)
+    - set up [completed](activity_status) [clean the kitchen](activity) in category [house](category)
+    - set [complete](activity_status) [hairdresser](activity) in category [well-being](category)
+    - set [completed](activity_status) [gardening](activity) in category [garden](category)
     - set [completed](activity_status) [repeat the presentation](activity) in category [projects](category)
-    - set done [jogging](activity) in category [monthly](category)
-    - set [complete](activity_status) activity [run](activity) in category [monthly](category)
-    - set done activity [go to pharmacy](activity) in category [projects](category)
-    - set done activity [stand_up](activity) in category [projects](category)
-    - set [completed](activity_status) activity [help my grandfather](activity) in category [volunteering](category)
-    - set [complete](activity_status) activity [play guitar](activity) in category [daily](category)
-    - set [completed](activity_status) activity [jogging](activity) in category [weekly](category)
+    - set done [powerpoint](activity) in category [programs](category)
+    - set [complete](activity_status) activity [propose](activity) in category [girlfriend](category)
+    - set done activity [go to pharmacy](activity) in category [well-being](category)
+    - set done activity [shampoo](activity) in category [daily](category)
+    - set [completed](activity_status) activity [help my grandfather](activity) in category [parents](category)
+    - set [complete](activity_status) activity [play guitar](activity) in category [music](category)
+    - set [completed](activity_status) activity [taekwondo](activity) in category [martial-arts](category)
     - I want to set [complete](activity_status) an activity 
     - I want to set done an activity in a list 
-    - I want to set [completed](activity_status) an activity in [weekly](category) list 
-    - I want to set [complete](activity_status) an activity in [daily](category) list
-    - I want to set done an activity in [commitments](category) list 
-    - I want to set [complete](activity_status) an activity in [projects](category) list 
-    - I want to set [complete](activity_status) an activity in [monthly](category) list
-    - I want to set done an activity in [quickly](category) list
-    - hi, I want to set [completed](activity_status) an activity in [weekly](category) list 
-    - hi, I want to set [complete](activity_status) an activity in [daily](category) list 
-    - hi, I want to set done an activity in [commitments](category) list 
-    - hi, I want to set [completed](activity_status) an activity in [projects](category) list 
+    - I want to set [completed](activity_status) an activity in [business](category) list 
+    - I want to set [complete](activity_status) an activity in [errands](category) list
+    - I want to set done an activity in [upcoming](category) list 
+    - I want to set [complete](activity_status) an activity in [coaching](category) list 
+    - I want to set [complete](activity_status) an activity in [groceries](category) list
+    - I want to set done an activity in [communication](category) list
+    - hi, I want to set [completed](activity_status) an activity in [society](category) list 
+    - hi, I want to set [complete](activity_status) an activity in [marketing](category) list 
+    - hi, I want to set done an activity in [classroom](category) list 
+    - hi, I want to set [completed](activity_status) an activity in [paperworks](category) list 
     - hello, I want to set done an activity in [monthly](category) list 
-    - hello, I want to set [complete](activity_status) an activity in [quickly](category) list
+    - hello, I want to set [complete](activity_status) an activity in [places](category) list
     - hello I want to set [complete](activity_status) an activity in my list 
     - hi I want to set up [complete](activity_status) an activity in my list 
-    - Hi I want to set done all activity in [monthly](category) list
-    - I have [complete](activity_status) activity [go to the vet](activity) in category [gym](category)
-    - I have done activity [fix the code](activity) in category [projects](category)
-    - I have [completed](activity_status) activity [play](activity) in category [projects](category)
-    - I have [completed](activity_status) activity [reserve a table](activity) in category [freetime](category)
-    - I have [complete](activity_status) activity [stand_up](activity) in category [daily](category)
-    - I have done activity [jogging](activity) in category [gym](category)
+    - Hi I want to set done all activity in [sooner](category) list
+    - I have [complete](activity_status) activity [go to the vet](activity) in category [animals](category)
+    - I have done activity [fix the code](activity) in category [university](category)
+    - I have [completed](activity_status) activity [pub](activity) in category [friends](category)
+    - I have [completed](activity_status) activity [reserve a table](activity) in category [evening](category)
+    - I have [complete](activity_status) activity [ski](activity) in category [winter](category)
+    - I have done activity [medicines](activity) in category [weekly](category)
     - set activity [incomplete](activity_status) 
     - Hi, set activity [incomplete](activity_status)
-    - set [incomplete](activity_status) [run](activity)
+    - set [incomplete](activity_status) [read](activity)
     - set [incomplete](activity_status) [prepare the dinner](activity)
-    - set undone [stand_up](activity)
-    - set [incomplete](activity_status) [swimming](activity)
+    - set undone [ppt](activity)
+    - set [incomplete](activity_status) [train](activity)
     - set [incomplete](activity_status) [send an email](activity)
     - set undone [turn off the light](activity)
-    - set [incomplete](activity_status) [run](activity) in [daily](category)
-    - set [incomplete](activity_status) [bed](activity) in [projects](category)
-    - set [incomplete](activity_status) [stand_up](activity) in [weekly](category)
-    - set undone [swimming](activity) in [monthly](category)
-    - set undone [collect the package](activity) in [monthly](category)
+    - set [incomplete](activity_status) [paint](activity) in [creativeness](category)
+    - set [incomplete](activity_status) [write](activity) in [hobby](category)
+    - set [incomplete](activity_status) [windsurf](activity) in [summer](category)
+    - set undone [checkbox](activity) in [plan](category)
+    - set undone [collect the package](activity) in [organization](category)
     - set [incomplete](activity_status) [have a wash](activity) in [daily](category)
-    - set [incomplete](activity_status) activity [listen the music](activity) in [personal](category)
+    - set [incomplete](activity_status) activity [listen the music](activity) in [fun](category)
     - set [incomplete](activity_status) activity [watch a concert](activity) in [event](category)
-    - set [incomplete](activity_status) activity [vet for the dog](activity) in [projects](commitments)
-    - set [incomplete](activity_status) activity [play](activity) in [monthly](category)
+    - set [incomplete](activity_status) activity [vet for the dog](activity) in [urgent](commitments)
+    - set [incomplete](activity_status) activity [party](activity) in [entertainment](category)
     - set [incomplete](activity_status) activity [car from the machanic](activity) in category [quickly](category)
-    - set [incomplete](activity_status) [run](activity) in category [commitments](category)
-    - set undone [bed](activity) in category [doctor's appointment](category)
-    - set undone [bed](activity) in category [weekly](category)
-    - set [incomplete](activity_status) [bank's appointments](activity) in category [commitments](category)
-    - set [incomplete](activity_status) [pik up of the package](activity) in category [personal](category)
-    - set [incomplete](activity_status) [play](activity) in category [projects](category)
-    - set [incomplete](activity_status) [jogging](activity) in category [monthly](category)
+    - set [incomplete](activity_status) [search](activity) in category [scheme](category)
+    - set undone [appointment](activity) in category [doctor](category)
+    - set undone [video-conference](activity) in category [community](category)
+    - set [incomplete](activity_status) [bank's appointments](activity) in category [finance](category)
+    - set [incomplete](activity_status) [pik up of the package](activity) in category [organization](category)
+    - set [incomplete](activity_status) [bills](activity) in category [important](category)
+    - set [incomplete](activity_status) [update](activity) in category [team](category)
     - set [incomplete](activity_status) activity [go to gym](activity) in category [sport](category)
     - set [incomplete](activity_status) activity [clean my bedroom](activity) in category [households](category)
-    - set [incomplete](activity_status) activity [stand_up](activity) in category [projects](category)
-    - set [incomplete](activity_status) activity [swimming](activity) in category [commitments](category)
-    - set undone activity [play](activity) in category [daily](category)
-    - set [incomplete](activity_status) activity [jogging](activity) in category [weekly](category)
+    - set [incomplete](activity_status) activity [stand_up](activity) in category [health](category)
+    - set [incomplete](activity_status) activity [swimming](activity) in category [pleasure](category)
+    - set undone activity [visits](activity) in category [parent](category)
+    - set [incomplete](activity_status) activity [junkfood](activity) in category [weekly](category)
     - set undone activity [cookies for children](activity) in category [households](category)
-    - set [incomplete](activity_status) activity [present for grandmother](activity) in category [event](category)
+    - set [incomplete](activity_status) activity [present for grandmother](activity) in category [christmas](category)
     - I want to set [incomplete](activity_status) an activity 
     - I want to set [incomplete](activity_status) an activity in a list 
-    - I want to set [incomplete](activity_status) an activity in [weekly](category) list 
-    - I want to set [incomplete](activity_status) an activity in [daily](category) list
-    - I want to set undone an activity in [study](category) list 
-    - I want to set [incomplete](activity_status) an activity in [projects](category) list 
-    - I want to set [incomplete](activity_status) an activity in [monthly](category) list
-    - I want to set [incomplete](activity_status) an activity in [quickly](category) list
-    - hi, I want to set [incomplete](activity_status) an activity in [weekly](category) list 
-    - hi, I want to set undone an activity in [daily](category) list 
-    - hi, I want to set undone an activity in [commitments](category) list 
-    - hi, I want to set [incomplete](activity_status) an activity in [projects](category) list 
-    - hello, I want to set [incomplete](activity_status) an activity in [monthly](category) list 
-    - hello, I want to set [incomplete](activity_status) an activity in [quickly](category) list
+    - I want to set [incomplete](activity_status) an activity in [deepwork](category) list 
+    - I want to set [incomplete](activity_status) an activity in [chores](category) list
+    - I want to set undone an activity in [learning](category) list 
+    - I want to set [incomplete](activity_status) an activity in [mind-care](category) list 
+    - I want to set [incomplete](activity_status) an activity in [body-care](category) list
+    - I want to set [incomplete](activity_status) an activity in [people](category) list
+    - hi, I want to set [incomplete](activity_status) an activity in [summer](category) list 
+    - hi, I want to set undone an activity in [someday](category) list 
+    - hi, I want to set undone an activity in [movies](category) list 
+    - hi, I want to set [incomplete](activity_status) an activity in [places](category) list 
+    - hello, I want to set [incomplete](activity_status) an activity in [sooner](category) list 
+    - hello, I want to set [incomplete](activity_status) an activity in [critical](category) list
     - hello I want to set [incomplete](activity_status) an activity in my list 
     - hi I want to set [incomplete](activity_status) an activity in my list 
-    - Hi I want to set undone all activity in [monthly](category) list
-    - undo [complete](activity_status) [run](activity)
-    - undo [complete](activity_status) [bed](activity)
-    - undo [complete](activity_status) [stand_up](activity)
+    - Hi I want to set undone all activity in [leadership](category) list
+    - undo [complete](activity_status) [exit](activity)
+    - undo [complete](activity_status) [guardrobe](activity)
+    - undo [complete](activity_status) [booking](activity)
     - undo [complete](activity_status) [post office](activity)
-    - undo [complete](activity_status) [banck count](activity)
+    - undo [complete](activity_status) [bank count](activity)
     - undo [complete](activity_status) [bills in bank](activity)
-    - undo [complete](activity_status) [run](activity) in [daily](category)
-    - undo [complete](activity_status) [bed](activity) in [projects](category)
-    - undo [complete](activity_status) [stand_up](activity) in [weekly](category)
-    - undo [complete](activity_status) [go swimming](activity) in [monthly](category)
+    - undo [complete](activity_status) [blog](activity) in [daily](category)
+    - undo [complete](activity_status) [refuel](activity) in [afternoon](category)
+    - undo [complete](activity_status) [stand_up](activity) in [daily](category)
+    - undo [complete](activity_status) [go swimming](activity) in [journey](category)
     - undo [complete](activity_status) [answer to the email](activity) in [commitments](category)
-    - undo [complete](activity_status) [answer to the call](activity) in [personal](category)
-    - undo [complete](activity_status) activity [run](activity) in [weekly](category)
-    - undo [complete](activity_status) activity [bed](activity) in [daily](category)
-    - undo [complete](activity_status) activity [stand_up](activity) in [commitments](category)
+    - undo [complete](activity_status) [answer to the call](activity) in [work](category)
+    - undo [complete](activity_status) activity [search](activity) in [scheme](category)
+    - undo [complete](activity_status) activity [robotic](activity) in [electronic](category)
+    - undo [complete](activity_status) activity [meeting](activity) in [course](category)
     - undo [complete](activity_status) activity [doctor appointment](activity) in [personal](category)
-    - undo [complete](activity_status) activity [take the pills](activity) in [health](category)
+    - undo [complete](activity_status) activity [take the pills](activity) in [healthcare](category)
     - undo [complete](activity_status) activity [take the medicine](activity) in [health](category)
     
 - intent: presentation+set_status_activity
