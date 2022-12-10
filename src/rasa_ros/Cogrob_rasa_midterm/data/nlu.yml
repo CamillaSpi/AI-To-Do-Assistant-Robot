@@ -1419,23 +1419,23 @@ nlu:
   examples: |
     - i'm [Giusy](name) and I want to see all my categories
     - I'm [Simone](name) , Which are my categories?
-    - i'm [Giusy](name) Show my categories
+    - i'm [Paola](name) Show my categories
     - i am [mattia](name) Which are my categories?
     - i'm [camilla](name) which are my categories?
     - I'm [antonio](name) , which are my categories?
-    - I'm [Simone](name) , I want to see all my categories
+    - I'm [gerardo](name) , I want to see all my categories
     - i am [alessia](name) , what are my categories?
-    - I'm [antonio](name) What are my categories?
-    - I'm [antonio](name) show all my categories
-    - i am [alessia](name) , what are my categories?
-    - i'm [Simone](name) , What are my categories?
-    - i'm [camilla](name) show my categories
-    - I am [mattia](name) show all my categories
-    - i'm [antonio](name) what are my categories?
-    - i'm [antonio](name) show my categories
-    - i am [alessia](name) , Show all my categories
-    - I'm [antonio](name) Show my categories
-    - i am [mattia](name) Show all my categories
+    - I'm [nando](name) What are my categories?
+    - I'm [ferdinando](name) show all my categories
+    - i am [francesca](name) , what are my categories?
+    - i'm [marco](name) , What are my categories?
+    - i'm [Simona](name) show my categories
+    - I am [lorenzo](name) show all my categories
+    - i'm [gianluca](name) what are my categories?
+    - i'm [daniele](name) show my categories
+    - i am [sara](name) , Show all my categories
+    - I'm [davide](name) Show my categories
+    - i am [vito](name) Show all my categories
 
 - intent: remind_me_of
   examples: |
