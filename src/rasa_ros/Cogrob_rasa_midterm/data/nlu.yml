@@ -1222,7 +1222,7 @@ nlu:
   examples: |
     - I want to see all my activities
     - I want to see all my [uncompleted](activity_status) activities
-    - I want to see all my [[completed](activity_status) activities
+    - I want to see all my [completed](activity_status) activities
     - Show my [undeveloped](activity_status) activities
     - Show my [done](activity_status) activities
     - Which are my activities?
@@ -1234,7 +1234,7 @@ nlu:
     - show activity in [gym](category) category
     - show all my [developed](activity_status) activity in [monthly](category) category
     - show my [undone](activity_status) activity in [commitments](category) category
-    - show [executed](activity_status) activity in [work](category) category
+    - show [executed](activity_status) activity in [school](category) category
     - show activity in [projects](category) category
     - show [unfinished](activity_status) activity in [work](category) category
     - show [completed](activity_status) activities
