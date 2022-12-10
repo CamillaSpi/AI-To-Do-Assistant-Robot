@@ -1325,40 +1325,40 @@ nlu:
   examples: |
     - I want to modify the deadline of an activity
     - alter the deadline
-    - I want to change the deadline of the activity [stand up](activity) in the cateogry [personal](category) from 25 September to 27th september 1998
-    - I want to change the deadline of the activity [listen the poadcast](activity) in the cateogry [personal](category) with 27th september 1998
-    - I want to modify the deadline of the activity [match](activity) in the cateogry [payments](category) for tomorrow at 18:00
-    - I want to modify the deadline of the activity [match with dad](activity) in the cateogry [freetime](category) with tomorrow at 18:00
-    - modify the deadline of the activity [reed](activity) in the cateogry [university](category) form Friday to Sunday 
-    - modify the deadline of the activity [read the journal](activity) in the cateogry [daily](category) with Sunday 
-    - alter the deadline of the activity [exit](activity) in the cateogry [bank](category) to Sunday 
-    - alter the deadline of the activity [pay the supermarket](activity) in the cateogry [payments](category) with Sunday 
-    - In the cateogry [culture](category) replace the deadline of the activity [painting exhibition](activity) from 22th september to 25th september
-    - In the cateogry [subjects](category) replace the deadline of the activity [draw](activity) from 22th september to 25th september
-    - In the cateogry [subjects](category) modify the deadline of the activity [repeat science](activity) from 22th september to 25th september
-    - In the cateogry [subjects](category) modify the deadline of the activity [draw](activity) from 22th september to 25th september
-    - Alter the deadline of the activity [help grandmother](activity) in the cateogry [volunteering](category) with Monday
-    - Alter the deadline of the activity [stand up](activity) in the cateogry [work](category) to Monday
-    - For the activity [go to church](activity) in the cateogry [culture](category) modify the deadline with 22th october 1922
-    - For the activity [stand up](activity) in the cateogry [bank](category) modify the deadline from 4 Novemner to 22th october 1922
-    - For the activity [book the airplane](activity) in the cateogry [holiday](category) transform the deadline into Monday
-    - For the activity [note](activity) in the cateogry [school](category) transform the deadline into Monday
-    - I want to change the deadline of the activity [go out with friends](activity) in the cateogry [events](category) with 27th september 1998
-    - I want to change the deadline of the activity [exit](activity) in the cateogry [times](category) to 27th september 1998
-    - I want to modify the deadline of the activity [draw a portrait](activity) in the cateogry [job](category) with tomorrow at 18:00
-    - I want to modify the deadline of the activity [draw](activity) in the cateogry [job](category) in tomorrow at 18:00
-    - modify the deadline of the activity [cook for the family](activity) in the cateogry [households](category) with Sunday 
-    - modify the deadline of the activity [draw](activity) in the cateogry [calendary](category) with Sunday 
-    - alter the deadline of the activity [travel with mum](activity) in the cateogry [holiday](category) from 07/11/2022 to Sunday 
-    - alter the deadline of the activity [travel](activity) in the cateogry [household](category) with Sunday 
-    - In the cateogry [exams](category) replace the deadline of the activity [repeat cognitive](activity) from 22th september to 25th september
-    - In the cateogry [exams](category) replace the deadline of the activity [cards](activity) from 10/12/2022 to 12/13/2022
-    - Alter the deadline of the activity [bed](activity) in the cateogry [monthly](category) from Today to 04/21/2023
-    - Alter the deadline of the activity [christmas eve](activity) in the cateogry [events](category) with Monday
-    - For the activity [birthday invitation](activity) in the cateogry [events](category) modify the deadline with 22th october 1922
-    - For the activity [play](activity) in the cateogry [university](category) modify the deadline in the 22th october 1922
-    - For the activity [clean my bedroom](activity) in the cateogry [households](category) transform the deadline into Monday
-    - For the activity [stand up](activity) in the cateogry [holiday](category) transform the deadline into Monday
+    - I want to change the deadline of the activity [stand up](activity) in the category [personal](category) from 25 September to 27th september 1998
+    - I want to change the deadline of the activity [listen the poadcast](activity) in the category [music](category) with 27th september 1998
+    - I want to modify the deadline of the activity [match](activity) in the category [sport](category) for tomorrow at 18:00
+    - I want to modify the deadline of the activity [match with dad](activity) in the category [freetime](category) with tomorrow at 18:00
+    - modify the deadline of the activity [reed](activity) in the category [university](category) form Friday to Sunday 
+    - modify the deadline of the activity [read the journal](activity) in the category [daily](category) with Sunday 
+    - alter the deadline of the activity [exit](activity) in the category [bank](category) to Sunday 
+    - alter the deadline of the activity [pay the supermarket](activity) in the category [payments](category) with Sunday 
+    - In the category [culture](category) replace the deadline of the activity [painting exhibition](activity) from 22th september to 25th september
+    - In the category [subjects](category) replace the deadline of the activity [draw](activity) from 22th september to 25th september
+    - In the category [health](category) modify the deadline of the activity [repeat science](activity) from 22th september to 25th september
+    - In the category [healthcare](category) modify the deadline of the activity [paint](activity) from 22th september to 25th september
+    - Alter the deadline of the activity [help grandmother](activity) in the category [volunteering](category) with Monday
+    - Alter the deadline of the activity [drink](activity) in the category [work](category) to Monday
+    - For the activity [go to church](activity) in the category [commitments](category) modify the deadline with 22th october 1922
+    - For the activity [bills](activity) in the category [finance](category) modify the deadline from 4 Novemner to 22th october 1922
+    - For the activity [book the airplane](activity) in the category [holiday](category) transform the deadline into Monday
+    - For the activity [note](activity) in the category [school](category) transform the deadline into Monday
+    - I want to change the deadline of the activity [go out with friends](activity) in the category [events](category) with 27th september 1998
+    - I want to change the deadline of the activity [pub](activity) in the category [times](category) to 27th september 1998
+    - I want to modify the deadline of the activity [draw a portrait](activity) in the category [job](category) with tomorrow at 18:00
+    - I want to modify the deadline of the activity [play guitar](activity) in the category [groceries](category) in tomorrow at 18:00
+    - modify the deadline of the activity [cook for the family](activity) in the category [households](category) with Sunday 
+    - modify the deadline of the activity [review](activity) in the category [calendary](category) with Sunday 
+    - alter the deadline of the activity [travel with mum](activity) in the category [lifestyle](category) from 07/11/2022 to Sunday 
+    - alter the deadline of the activity [travel](activity) in the category [house](category) with Sunday 
+    - In the category [education](category) replace the deadline of the activity [repeat cognitive](activity) from 22th september to 25th september
+    - In the category [courses](category) replace the deadline of the activity [cards](activity) from 10/12/2022 to 12/13/2022
+    - Alter the deadline of the activity [bed](activity) in the category [monthly](category) from Today to 04/21/2023
+    - Alter the deadline of the activity [christmas dinner](activity) in the category [fun](category) with Monday
+    - For the activity [birthday invitation](activity) in the category [summer](category) modify the deadline with 22th october 1922
+    - For the activity [play](activity) in the category [journey](category) modify the deadline in the 22th october 1922
+    - For the activity [clean my bedroom](activity) in the category [home](category) transform the deadline into Monday
+    - For the activity [medicines](activity) in the category [urgent](category) transform the deadline into Monday
 
 - intent: modify_activity_name  
   examples: |
