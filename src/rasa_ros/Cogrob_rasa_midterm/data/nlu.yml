@@ -1279,46 +1279,46 @@ nlu:
     
 - intent: modify_activity_category   
   examples: |
-    - I want to change the category [holiday]{"entity": "category", "role": "old"} of the activity [sport](activity) in [gym]{"entity": "category", "role": "new"}
-    - I want to change the category [gym]{"entity": "category", "role": "old"} of the activity [sport](activity) in [holiday]{"entity": "category", "role": "new"}
-    - modify the category [holiday]{"entity": "category", "role": "old"} of [walk](activity) into [commitments]{"entity": "category", "role": "new"}
-    - modify the category [commitments]{"entity": "category", "role": "old"} of [walk](activity) into [holiday]{"entity": "category", "role": "new"}
-    - replace the category [wishes]{"entity": "category", "role": "old"} of the activity [jogging](activity) into category [leisure]{"entity": "category", "role": "new"}
-    - replace the category [leisure]{"entity": "category", "role": "old"} of the activity [jogging](activity) into category [wishes]{"entity": "category", "role": "new"}
-    - For the activity [refuel](activity) modify the category [gym]{"entity": "category", "role": "old"} in [diet]{"entity": "category", "role": "new"}
-    - For the activity [refuel](activity) modify the category [diet]{"entity": "category", "role": "old"} in [gym]{"entity": "category", "role": "new"}
-    - For the activity [draw](activity) into the category [household]{"entity": "category", "role": "old"} replace the category with [wishes]{"entity": "category", "role": "new"}
-    - For the activity [draw](activity) into the category [wishes]{"entity": "category", "role": "old"} replace the category with [household]{"entity": "category", "role": "new"}
+    - I want to change the category [holiday]{"entity": "category", "role": "old"} of the activity [yoga](activity) in [gym]{"entity": "category", "role": "new"}
+    - I want to change the category [gym]{"entity": "category", "role": "old"} of the activity [boxe](activity) in [holiday]{"entity": "category", "role": "new"}
+    - modify the category [vacations]{"entity": "category", "role": "old"} of [walk](activity) into [commitments]{"entity": "category", "role": "new"}
+    - modify the category [commitments]{"entity": "category", "role": "old"} of [walk](activity) into [vacations]{"entity": "category", "role": "new"}
+    - replace the category [christmas]{"entity": "category", "role": "old"} of the activity [jogging](activity) into category [leisure]{"entity": "category", "role": "new"}
+    - replace the category [leisure]{"entity": "category", "role": "old"} of the activity [jogging](activity) into category [christmas]{"entity": "category", "role": "new"}
+    - For the activity [refuel](activity) modify the category [lifestyle]{"entity": "category", "role": "old"} in [diet]{"entity": "category", "role": "new"}
+    - For the activity [refuel](activity) modify the category [diet]{"entity": "category", "role": "old"} in [lifestyle]{"entity": "category", "role": "new"}
+    - For the activity [draw](activity) into the category [household]{"entity": "category", "role": "old"} replace the category with [life]{"entity": "category", "role": "new"}
+    - For the activity [draw](activity) into the category [life]{"entity": "category", "role": "old"} replace the category with [household]{"entity": "category", "role": "new"}
     - convert the category [sport]{"entity": "category", "role": "old"} of the activity [cards](activity) with [dailyweekly]{"entity": "category", "role": "new"}
     - convert the category [dailyweekly]{"entity": "category", "role": "old"} of the activity [cards](activity) with [sport]{"entity": "category", "role": "new"}
-    - transform the category [projects]{"entity": "category", "role": "old"} of the activity [study](activity) into category [gym]{"entity": "category", "role": "new"}
-    - transform the category [gym]{"entity": "category", "role": "old"} of the activity [study](activity) into category [projects]{"entity": "category", "role": "new"}
-    - For the activity [sleep](activity) set the category [exams]{"entity": "category", "role": "old"} in [sport]{"entity": "category", "role": "new"}
-    - For the activity [sleep](activity) set the category [sport]{"entity": "category", "role": "old"} in [exams]{"entity": "category", "role": "new"}
-    - For the activity [cards](activity) transform the category [household]{"entity": "category", "role": "old"} in [medical]{"entity": "category", "role": "new"}
-    - For the activity [cards](activity) transform the category [medical]{"entity": "category", "role": "old"} in [household]{"entity": "category", "role": "new"}
-    - For the activity [stand up](activity) update the category [sport]{"entity": "category", "role": "old"} in [commitments]{"entity": "category", "role": "new"}
-    - For the activity [stand up](activity) update the category [commitments]{"entity": "category", "role": "old"} in [sport]{"entity": "category", "role": "new"}
-    - I want to change the category [holiday]{"entity": "category", "role": "old"} of the activity [book the hotel](activity) in [wishes]{"entity": "category", "role": "new"}
-    - I want to change the category [wishes]{"entity": "category", "role": "old"} of the activity [book the hotel](activity) in [holiday]{"entity": "category", "role": "new"}
-    - modify the category [freetime]{"entity": "category", "role": "old"} of [walk in open air](activity) into [diet]{"entity": "category", "role": "new"}
-    - modify the category [diet]{"entity": "category", "role": "old"} of [walk in open air](activity) into [freetime]{"entity": "category", "role": "new"}
+    - transform the category [projects]{"entity": "category", "role": "old"} of the activity [study](activity) into category [home]{"entity": "category", "role": "new"}
+    - transform the category [home]{"entity": "category", "role": "old"} of the activity [study](activity) into category [projects]{"entity": "category", "role": "new"}
+    - For the activity [sleep](activity) set the category [exams]{"entity": "category", "role": "old"} in [coaching]{"entity": "category", "role": "new"}
+    - For the activity [sleep](activity) set the category [coaching]{"entity": "category", "role": "old"} in [exams]{"entity": "category", "role": "new"}
+    - For the activity [cards](activity) transform the category [trip]{"entity": "category", "role": "old"} in [medical]{"entity": "category", "role": "new"}
+    - For the activity [cards](activity) transform the category [medical]{"entity": "category", "role": "old"} in [trip]{"entity": "category", "role": "new"}
+    - For the activity [stand up](activity) update the category [educational]{"entity": "category", "role": "old"} in [school]{"entity": "category", "role": "new"}
+    - For the activity [stand up](activity) update the category [school]{"entity": "category", "role": "old"} in [educational]{"entity": "category", "role": "new"}
+    - I want to change the category [journey]{"entity": "category", "role": "old"} of the activity [book the hotel](activity) in [wishes]{"entity": "category", "role": "new"}
+    - I want to change the category [wishes]{"entity": "category", "role": "old"} of the activity [book the hotel](activity) in [journey]{"entity": "category", "role": "new"}
+    - modify the category [freetime]{"entity": "category", "role": "old"} of [walk in open air](activity) into [feeding]{"entity": "category", "role": "new"}
+    - modify the category [feeding]{"entity": "category", "role": "old"} of [walk in open air](activity) into [freetime]{"entity": "category", "role": "new"}
     - replace the category [personal]{"entity": "category", "role": "old"} of the activity [prepare the breakfast](activity) into category [households]{"entity": "category", "role": "new"}
     - replace the category [households]{"entity": "category", "role": "old"} of the activity [prepare the breakfast](activity) into category [personal]{"entity": "category", "role": "new"}
-    - For the activity [cooking for the husband](activity) modify the category [personal]{"entity": "category", "role": "old"} in [diet]{"entity": "category", "role": "new"}
-    - For the activity [cooking for the husband](activity) modify the category [diet]{"entity": "category", "role": "old"} in [personal]{"entity": "category", "role": "new"}
+    - For the activity [cooking for the husband](activity) modify the category [groceries]{"entity": "category", "role": "old"} in [social]{"entity": "category", "role": "new"}
+    - For the activity [cooking for the husband](activity) modify the category [social]{"entity": "category", "role": "old"} in [groceries]{"entity": "category", "role": "new"}
     - For the activity [clean the house](activity) into the category [daily]{"entity": "category", "role": "old"} replace the category with [quickly]{"entity": "category", "role": "new"}
     - For the activity [clean the house](activity) into the category [quickly]{"entity": "category", "role": "old"} replace the category with [daily]{"entity": "category", "role": "new"}    
-    - convert the category [commitments]{"entity": "category", "role": "old"} of the activity [adjust the motorcycle](activity) with [personal]{"entity": "category", "role": "new"}
-    - convert the category [personal]{"entity": "category", "role": "old"} of the activity [adjust the motorcycle](activity) with [commitments]{"entity": "category", "role": "new"}    
-    - transform the category [commitments]{"entity": "category", "role": "old"} of the activity [prepare the exam](activity) into category [university]{"entity": "category", "role": "new"}
-    - transform the category [university]{"entity": "category", "role": "old"} of the activity [prepare the exam](activity) into category [commitments]{"entity": "category", "role": "new"}
-    - For the activity [launch with family](activity) set the category [personal]{"entity": "category", "role": "old"} in [events]{"entity": "category", "role": "new"}
-    - For the activity [launch with family](activity) set the category [events]{"entity": "category", "role": "old"} in [personal]{"entity": "category", "role": "new"}
+    - convert the category [afternoon]{"entity": "category", "role": "old"} of the activity [adjust the motorcycle](activity) with [urgent]{"entity": "category", "role": "new"}
+    - convert the category [urgent]{"entity": "category", "role": "old"} of the activity [adjust the motorcycle](activity) with [afternoon]{"entity": "category", "role": "new"}    
+    - transform the category [parents]{"entity": "category", "role": "old"} of the activity [prepare the exam](activity) into category [university]{"entity": "category", "role": "new"}
+    - transform the category [university]{"entity": "category", "role": "old"} of the activity [prepare the exam](activity) into category [parents]{"entity": "category", "role": "new"}
+    - For the activity [launch with family](activity) set the category [music]{"entity": "category", "role": "old"} in [events]{"entity": "category", "role": "new"}
+    - For the activity [launch with family](activity) set the category [events]{"entity": "category", "role": "old"} in [music]{"entity": "category", "role": "new"}
     - For the activity [attend the conference](activity) transform the category [work]{"entity": "category", "role": "old"} in [job]{"entity": "category", "role": "new"}
     - For the activity [attend the conference](activity) transform the category [job]{"entity": "category", "role": "old"} in [work]{"entity": "category", "role": "new"}    
-    - For the activity [fruit at market](activity) update the category [households]{"entity": "category", "role": "old"} in [personal]{"entity": "category", "role": "new"}
-    - For the activity [fruit at market](activity) update the category [personal]{"entity": "category", "role": "old"} in [households]{"entity": "category", "role": "new"}
+    - For the activity [fruit at market](activity) update the category [culture]{"entity": "category", "role": "old"} in [entertainment]{"entity": "category", "role": "new"}
+    - For the activity [fruit at market](activity) update the category [entertainment]{"entity": "category", "role": "old"} in [culture]{"entity": "category", "role": "new"}
 
 
 - intent: modify_activity_deadline  
