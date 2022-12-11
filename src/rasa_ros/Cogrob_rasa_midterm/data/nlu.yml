@@ -586,9 +586,9 @@ nlu:
     - hi, I want to add an activity to [theater](category) list at 18:30
     - hi, I want to enter an activity to [politic](category) list at 17:30
     - hi, I want to put an activity to [justice](category) category at 22:20
-    - hi, I want to insert an activity to [morning](category) list at 16:00
-    - hello, I want to enter an activity to [afternoon](category) category at 14:50
-    - hello, I want to add an activity to [evening](category) list at 3:29
+    - hi, I want to insert an activity to [culture](category) list at 16:00
+    - hello, I want to enter an activity to [diet](category) category at 14:50
+    - hello, I want to add an activity to [hobbies](category) list at 3:29
     - hello I want to insert an activity to my list at 12:37
     - hi I want to add an activity to my list at 18:14
     - hi, enter [read](activity)
@@ -617,7 +617,7 @@ nlu:
     - hi, insert the activity [football tournament](activity) in [soccer](category)
     - hi, enter an activity [coffee](activity) in [friends](category)
     - hi, put [singing lesson](activity) in category [freetime](category)
-    - hi, add a [pub](activity) in category [night](category)
+    - hi, add a [pub](activity) in category [diet](category)
     - hi, add a [buy a pizza](activity) in category [eat](category)
     - hi, insert [taekwondo](activity) in the category [martial-arts](category)
     - hi, create [call](activity) in category [group](category)
@@ -642,7 +642,7 @@ nlu:
     - hello, I want to add the activity [powerpoint](activity) to [programs](category) list
     - hello, I want to add the activity [send email](activity) to [planned](category) list
     - hello, I want to enter a new activity [propose](activity) to [girlfriend](category) category
-    - hello, I want to enter a new activity [dinner with friends](activity) to [evening](category) category
+    - hello, I want to enter a new activity [dinner with friends](activity) to [friends](category) category
     - hello, I want to put an activity [ski](activity) to [winter](category) list
     - hello, and I want to create the activity [gardening](activity) to [garden](category) list
     - hello, and I want to create the activity [go in the city center](activity) to [households](category) list
@@ -680,7 +680,7 @@ nlu:
     - add [go skiing](activity) in [hobby](category) at 20:00
     - enter [push](activity) in [informatic](category) at 22:20
     - enter [my friend birthday](activity) in [events](category) at 14:50
-    - insert activity [book the pub](activity) in [morning](category) at 19:41
+    - insert activity [book the pub](activity) in [friends](category) at 19:41
     - add new activity [update](activity) in [team](category) at 12:35
     - add new activity [go to theatre](activity) in [culture](category) at 12:35
     - enter the activity [review](activity) in [commitments](category) at 17:30
@@ -803,7 +803,7 @@ nlu:
     - delete [buy bread](activity) in category [food](category) at 8:00
     - remove [push](activity) in category [work](category) at 10:25
     - remove [tidy up the wardrobe](activity) in category [monthly](category) at 10:25
-    - del [prepare the breakfast](activity) in category [morning](category) at 7:30
+    - del [prepare the breakfast](activity) in category [diet](category) at 7:30
     - cancel [studying](activity) in category [school](category) at 19:00
     - cancel [clean house](activity) in category [households](category) at 19:00
     - delete [cleaning](activity) in category [house](category) at 20:30
@@ -893,7 +893,7 @@ nlu:
     - I have [complete](activity_status) activity [go to the vet](activity) in category [animals](category)
     - I have done activity [fix the code](activity) in category [university](category)
     - I have [completed](activity_status) activity [pub](activity) in category [friends](category)
-    - I have [completed](activity_status) activity [reserve a table](activity) in category [evening](category)
+    - I have [completed](activity_status) activity [reserve a table](activity) in category [fun](category)
     - I have [complete](activity_status) activity [ski](activity) in category [winter](category)
     - I have done activity [medicines](activity) in category [weekly](category)
     - set activity [incomplete](activity_status) 
@@ -954,7 +954,7 @@ nlu:
     - undo [complete](activity_status) [bank count](activity)
     - undo [complete](activity_status) [bills in bank](activity)
     - undo [complete](activity_status) [blog](activity) in [daily](category)
-    - undo [complete](activity_status) [refuel](activity) in [afternoon](category)
+    - undo [complete](activity_status) [refuel](activity) in [car](category)
     - undo [complete](activity_status) [stand up](activity) in [daily](category)
     - undo [complete](activity_status) [go swimming](activity) in [journey](category)
     - undo [complete](activity_status) [answer to the email](activity) in [commitments](category)
@@ -996,7 +996,7 @@ nlu:
     - I am [lucia](name) , set [completed](activity_status) [volunteering](activity) in category [caring](category)
     - I am [luciano](name) , set done [help dad](activity) in category [parents](category)
     - i'm [piero](name) set [complete](activity_status) activity [pub](activity) in category [friends](category)
-    - I'm [giovanna](name) , set [complete](activity_status) activity [pizza](activity) in category [evening](category)
+    - I'm [giovanna](name) , set [complete](activity_status) activity [pizza](activity) in category [diet](category)
     - i'm [gerardo](name) , set done activity [call grandfather](activity) in category [family](category)
     - I'm [marco](name) , set [completed](activity_status) activity [eat some fruits](activity) in category [health](category)
     - i am [eugenio](name) , set [complete](activity_status) activity [play football](activity) in category [hobby](category)
@@ -1008,9 +1008,9 @@ nlu:
     - i'm [fernando](name) , I want to set done an activity in [healthcare](category) list 
     - I'm [emilio](name) , I want to set [complete](activity_status) an activity in [school](category) list 
     - I am [tommaso](name) and I want to set [complete](activity_status) an activity in [university](category) list
-    - I am [gianmarco](name) , I want to set done an activity in [morning](category) list
-    - hi, I am [ilenia](name) and I want to set [completed](activity_status) an activity in [evening](category) list 
-    - hi, i am [ilaria](name) and I want to set [complete](activity_status) an activity in [afternoon](category) list 
+    - I am [gianmarco](name) , I want to set done an activity in [friends](category) list
+    - hi, I am [ilenia](name) and I want to set [completed](activity_status) an activity in [work](category) list 
+    - hi, i am [ilaria](name) and I want to set [complete](activity_status) an activity in [parents](category) list 
     - hi, I am [dario](name) , I want to set done an activity in [commitments](category) list 
     - hi, i'm [pia](name) and I want to set [completed](activity_status) an activity in [journey](category) list 
     - hello, i'm [renato](name) and I want to set done an activity in [summer](category) list 
@@ -1078,14 +1078,14 @@ nlu:
     - i'm [javier](name) , undo [complete](activity_status) [nails](activity)
     - i'm [mirco](name) undo [complete](activity_status) [call my mother](activity)
     - I am [mirko](name) and undo [complete](activity_status) [cook for dinner](activity)
-    - I'm [miriana](name) , undo [complete](activity_status) [disco](activity) in [night](category)
+    - I'm [miriana](name) , undo [complete](activity_status) [disco](activity) in [fun](category)
     - i'm [adriano](name) undo [complete](activity_status) [github](activity) in [projects](category)
     - I'm [adriana](name) undo [complete](activity_status) [book the holiday](activity) in [summers](category)
     - I am [massimo](name) , undo [complete](activity_status) [stroll](activity) in [monthly](category)
     - i'm [bruno](name) undo [complete](activity_status) [ring](activity) in [commitments](category)
     - I'm [daniel](name) , undo [complete](activity_status) [match](activity) in [gym](category)
     - i'm [orietta](name) undo [complete](activity_status) activity [guardrobe](activity) in [weekly](category)
-    - i'm [thomas](name) undo [complete](activity_status) activity [book the restaurant](activity) in [afternoon](category)
+    - i'm [thomas](name) undo [complete](activity_status) activity [book the restaurant](activity) in [events](category)
     - I'm [tina](name) , undo [complete](activity_status) activity [call the group](activity) in [team](category)
     - I'm [orlando](name) , undo [complete](activity_status) activity [do a repetition of math](activity) in [school](category)
     - i am [Nadia](name) undo [complete](activity_status) activity [dentist](activity) in [health](category)
@@ -1189,8 +1189,8 @@ nlu:
     - please, change the category [healthcare]{"entity": "category", "role": "old"} in [university]{"entity": "category", "role": "new"}
     - I want to replace the category [payments]{"entity": "category", "role": "old"} in [theater]{"entity": "category", "role": "new"}
     - please, I want to change the category [theater]{"entity": "category", "role": "old"} in [payments]{"entity": "category", "role": "new"}
-    - modify the category [morning]{"entity": "category", "role": "old"} in [quickly]{"entity": "category", "role": "new"}
-    - transform the category [quickly]{"entity": "category", "role": "old"} with [morning]{"entity": "category", "role": "new"}
+    - modify the category [friends]{"entity": "category", "role": "old"} in [quickly]{"entity": "category", "role": "new"}
+    - transform the category [quickly]{"entity": "category", "role": "old"} with [friends]{"entity": "category", "role": "new"}
     - please, I want to convert the category [lifestyle]{"entity": "category", "role": "old"} in [caring]{"entity": "category", "role": "new"}
     - please, i want to replace the category [caring]{"entity": "category", "role": "old"} to [lifestyle]{"entity": "category", "role": "new"}
     - i want to alter the category [annual]{"entity": "category", "role": "old"} to [summer]{"entity": "category", "role": "new"}
@@ -1308,8 +1308,8 @@ nlu:
     - For the activity [cooking for the husband](activity) modify the category [social]{"entity": "category", "role": "old"} in [groceries]{"entity": "category", "role": "new"}
     - For the activity [clean the house](activity) into the category [daily]{"entity": "category", "role": "old"} replace the category with [quickly]{"entity": "category", "role": "new"}
     - For the activity [clean the house](activity) into the category [quickly]{"entity": "category", "role": "old"} replace the category with [daily]{"entity": "category", "role": "new"}    
-    - convert the category [afternoon]{"entity": "category", "role": "old"} of the activity [adjust the motorcycle](activity) with [urgent]{"entity": "category", "role": "new"}
-    - convert the category [urgent]{"entity": "category", "role": "old"} of the activity [adjust the motorcycle](activity) with [afternoon]{"entity": "category", "role": "new"}    
+    - convert the category [important]{"entity": "category", "role": "old"} of the activity [adjust the motorcycle](activity) with [urgent]{"entity": "category", "role": "new"}
+    - convert the category [urgent]{"entity": "category", "role": "old"} of the activity [adjust the motorcycle](activity) with [important]{"entity": "category", "role": "new"}    
     - transform the category [parents]{"entity": "category", "role": "old"} of the activity [prepare the exam](activity) into category [university]{"entity": "category", "role": "new"}
     - transform the category [university]{"entity": "category", "role": "old"} of the activity [prepare the exam](activity) into category [parents]{"entity": "category", "role": "new"}
     - For the activity [launch with family](activity) set the category [music]{"entity": "category", "role": "old"} in [events]{"entity": "category", "role": "new"}
