@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
-import os
-import cv2
-import rospy
-import ros_numpy # pip3 install git+https://github.com/eric-wieser/ros_numpy
 import numpy as np
-from vision_msgs.msg import Detection2DArray, ObjectHypothesisWithPose
+import cv2
+import os
+import rospy
+from sensor_msgs.msg import Image
+from vision_msgs.msg import Detection2D, Detection2DArray, ObjectHypothesisWithPose
+import ros_numpy # pip3 install git+https://github.com/eric-wieser/ros_numpy
 
 from facial_emotion_recognition.srv import video_detect_user
 from std_msgs.msg import Int32MultiArray
 
 import json
 from json import JSONEncoder
+
 from keras_vggface.vggface import VGGFace
 from keras_vggface.utils import preprocess_input
 
@@ -19,6 +21,7 @@ REF_PATH = os.path.dirname(os.path.abspath(__file__))
 # Server Initialization
 rospy.init_node('reidentification_face_node')
 global actualLabels
+from datetime import datetime
 
 class NumpyArrayEncoder(JSONEncoder):
     def default(self, obj):
@@ -26,21 +29,17 @@ class NumpyArrayEncoder(JSONEncoder):
             return obj.tolist()
         return JSONEncoder.default(self, obj)
 
-
-def save_identities():
-    global database
-    global labels
-    to_save = {'dataset':database, 'labels': labels}
+def save_identities(dataset,labels, path):
+    to_save = {'dataset':dataset,'labels':labels}
     print("sono in save")
-    with open(REF_PATH + '/../dataBase/json_data.json','w') as out_file:
+    with open(path + '/json_data.json','w') as out_file:
         json.dump(to_save,out_file,cls=NumpyArrayEncoder)
-        
 
-def load_identities():
+ 
+def load_identities(path):
     print("sono in load")
-    global database, labels
     try:
-        with open(REF_PATH + '/../dataBase/json_data.json','r') as in_file:
+        with open(path + '/json_data.json','r') as in_file:
             tmp= json.load(in_file)
         dataset = np.asarray(tmp['dataset'])
         labels = np.asarray(tmp['labels'])
@@ -55,13 +54,9 @@ pub = rospy.Publisher('identity', Detection2DArray, queue_size=2)
 face_reco_model = VGGFace(model='resnet50', include_top=False, pooling='avg')
 padding = 0.2
 INPUT_SIZE = (224,224)
-global database 
-global labels
-global actual_id
-database,labels = load_identities()
-actual_id = 0
-if len(labels):
-    actual_id = max(labels) + 1
+X,y = load_identities('/home/nando-child/Scrivania/emotion_det_ws/emotion_det_ws' )
+
+
 
 def batch_cosine_similarity(x1, x2):
     '''
@@ -111,6 +106,7 @@ def dist2id(distance, y, ths, norm=False, mode='avg', filter_under_th=True):
     ids_prob = np.array(ids_prob)
     return ids[np.argmax(ids_prob)]
 
+
 def extract_features(face_reco_model, filename):
     if type(filename) == 'str':
         faceim = cv2.imread(filename)
@@ -120,58 +116,42 @@ def extract_features(face_reco_model, filename):
     faceim = preprocess_input([faceim.astype(np.float32)], version=2)
     feature_vector = (face_reco_model.predict(faceim)).flatten()
     return feature_vector
-from datetime import datetime
-
-def registration():
-    t1 = datetime.now()
-    print('non ti conosco... Rimani fermo ')
-    for _ in range(10):
-        msg = rospy.wait_for_message('face_reidentification',Detection2DArray)
-        im = ros_numpy.numpify(msg.detections[0].source_img)
-        for d in msg.detections:
-            # Preprocess image
-            d,resized_face = elaboration(d,im)
-            feature_vector = extract_features(face_reco_model, resized_face)
-            database.append(feature_vector)
-            labels.append(actual_id)
-    # Predict
-    t2 = datetime.now()
-    print('la procedura di registrazione ha impiegato' ,(t2-t1))
-
-def elaboration(d,im):
-    bbox_0 = d.bbox.center.y - d.bbox.size_y/2
-    bbox_1 = d.bbox.center.x - d.bbox.size_x/2
-    bbox_2 = d.bbox.size_x + bbox_0
-    bbox_3 = d.bbox.size_y + bbox_1
-    padding_px = int(padding*max(d.bbox.size_y,d.bbox.size_x))
-    face = im[round(max(0,bbox_1-padding_px)):round(min(bbox_3+padding_px,im.shape[0]-1)),round(max(0,bbox_0-padding_px)):round(min(bbox_2+padding_px, im.shape[1]-1))]
-    face = face[ face.shape[0]//2 - face.shape[1]//2 : face.shape[0]//2 + face.shape[1]//2, :, :]
-    resized_face = cv2.resize(face,INPUT_SIZE)
-    return d,resized_face
 
 
-def predict_identity(resized_face,rejection_threshold=0.5):
-    global actual_id
-    if len(database) > 0 :
-        feature_vector = extract_features(face_reco_model, resized_face).reshape(-1,2048)
-        emb_face = np.repeat(feature_vector, len(database), 0).reshape(-1,2048)
-        cos_dist = batch_cosine_similarity(np.array(database), emb_face)
-        id_label = dist2id(cos_dist, labels, rejection_threshold, mode='avg')
-    else:
-        registration()
-        id_label = actual_id
-    return (id_label)
+def faceReidentification(frame,rejection_threshold=0.5):
+    t7 = datetime.now()
+    feature_vector = extract_features(face_reco_model, frame)
+    t8 = datetime.now()
+    print("Ho fatto la extract feature e ci ho messo", t8-t7)
+    #min_distance = [10, 1000000000000]
+    print(len(X))
+    emb_face = np.repeat(feature_vector, len(X), 0)
+    # faccio distanza coseno con tutti quanti gli elementi.
+    cos_dist = batch_cosine_similarity(np.array(X), emb_face)
+    id_label = dist2id(cos_dist, y, rejection_threshold, mode='avg') #id_label saranno id incrementali
+    print(id_label)
+    return int(id_label)
 
 def face_reidentification(msg):
     global actualLabels
     actualLabels = []
+    t3 = datetime.now()
     im = ros_numpy.numpify(msg.detections[0].source_img)
     for d in msg.detections:
+        bbox_0 = d.bbox.center.y - d.bbox.size_y/2
+        bbox_1 = d.bbox.center.x - d.bbox.size_x/2
+        bbox_2 = d.bbox.size_x + bbox_0
+        bbox_3 = d.bbox.size_y + bbox_1
+        padding_px = int(padding*max(d.bbox.size_y,d.bbox.size_x))
+        face = im[round(max(0,bbox_1-padding_px)):round(min(bbox_3+padding_px,im.shape[0]-1)),round(max(0,bbox_0-padding_px)):round(min(bbox_2+padding_px, im.shape[1]-1))]
+        face = face[ face.shape[0]//2 - face.shape[1]//2 : face.shape[0]//2 + face.shape[1]//2, :, :]
         # Preprocess image
-        d,resized_face = elaboration(d,im)
+        resized_face = cv2.resize(face,INPUT_SIZE)
         # Predict
         o = ObjectHypothesisWithPose()
-        o.id = predict_identity(resized_face)
+        t5 = datetime.now()
+        o.id = faceReidentification(resized_face)
+        t6 = datetime.now()
         d.results.append(o)
         print("sto per stampare", d.results[0].id)
         actualLabels.append(d.results[0].id)
@@ -206,8 +186,6 @@ def handle_service(req):
             return actualLabels
     except NameError:
         return []
-
-
 if __name__ == '__main__':
     recognize()
 

@@ -14,11 +14,13 @@ from identification.identities_mng import save_identities, load_identities
 from ros_audio_pkg.msg import RecognizedSpoke,AudioAndText
 from ros_audio_pkg.srv import idLabel
 import rospy
+from threading import Lock
 
 
 
 REF_PATH = os.path.dirname(os.path.abspath(__file__))
 RATE = 16000
+lock = Lock()
 global id_label
 # Load model, rete siamese basata su resnet/vgg. addestrata con triplette loss. disponibile pubblicamente su keras, non e la migliore
 # la maggior parte implementate in pytorch.
@@ -29,7 +31,6 @@ n_embs = 0
 TH = 0.60 #0.75 prima
 
 pub1 = rospy.Publisher('toSpeech', String, queue_size=10)
-pub2 = rospy.Publisher('recognized_msg', RecognizedSpoke, queue_size=10)
 
 def elaboration(data):
     audio_data = np.array(data)
@@ -49,8 +50,8 @@ def registration(id):
     for msg in phrases:
         pub1.publish(msg)
         print(msg)
-        audioAndData = rospy.wait_for_message("AudioAndText",AudioAndText) 
-        data = audioAndData.audioData
+        audioAndData = rospy.wait_for_message("RecivedAudio",Int16MultiArray) 
+        data = audioAndData.data
         ukn = elaboration(data)
         X_new.append(ukn[0])
         y_new.append(id)
@@ -75,11 +76,10 @@ def listener():
         while not rospy.is_shutdown():
             #mi vado a checkare che si tratti di testo, altrimenti ptrei riconocere il rumore, o comunque avere problemi.
             # co wwait for message, ascolto solo qando voglio, ho operazione "sincrona"
-            audioAndData = rospy.wait_for_message("AudioAndText",AudioAndText) 
-            data = audioAndData.audioData
-            message = audioAndData.spoken_text
+            recivedAudio = rospy.wait_for_message("RecivedAudio",Int16MultiArray) 
+            lock.acquire()
 
-            ukn = elaboration(data)
+            ukn = elaboration(recivedAudio.data)
 
             if len(X) > 0:
                 # Distance between the sample and the support set, caolcolo distanza coseno e quelle che ho memorizzato finora.
@@ -93,26 +93,34 @@ def listener():
                 id_label = dist2id(cos_dist, y, TH, mode='avg') #id_label saranno id incrementali
             
             if len(X) == 0 or id_label is None:
+                print("in if")
                 #eventuale face recognition
                 X_ret,y_ret = registration(actual_id)
-                X = np.concatenate((X,X_ret))
+                try:
+                    X = np.concatenate((X,X_ret))
+                except:
+                    X = X_ret
                 y= y +y_ret
                 actual_id+=1
             else:
                 print("Ha parlato:", id_label)
-                toSend = RecognizedSpoke()
-                toSend.msg = message
-                toSend.id = id_label
-                pub2.publish(toSend)
+            lock.release()
 
     except rospy.exceptions.ROSInterruptException:
         print("vado in close")
-        # save_identities(X,y,REF_PATH)
+        save_identities(X,y,REF_PATH)
 
 def return_idLabel(req):
     global id_label
-    print(req)
-    return id_label
+    lock.acquire()
+    try:
+        toReturn = id_label
+    except:
+        print("in except")
+        toReturn = 0
+    lock.release()
+    return toReturn
+    
 
 def voiceLabelServer():
     s = rospy.Service('voiceLabelServices', idLabel, return_idLabel)
