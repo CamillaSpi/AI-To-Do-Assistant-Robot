@@ -12,10 +12,14 @@ from identification.utils import batch_cosine_similarity, dist2id
 from std_msgs.msg import Int16MultiArray, String
 from identification.identities_mng import save_identities, load_identities
 from ros_audio_pkg.msg import RecognizedSpoke,AudioAndText
+from ros_audio_pkg.srv import idLabel
+import rospy
+
+
 
 REF_PATH = os.path.dirname(os.path.abspath(__file__))
 RATE = 16000
-
+global id_label
 # Load model, rete siamese basata su resnet/vgg. addestrata con triplette loss. disponibile pubblicamente su keras, non e la migliore
 # la maggior parte implementate in pytorch.
 model = get_deep_speaker(os.path.join(REF_PATH,'deep_speaker.h5'))
@@ -58,6 +62,7 @@ def registration(id):
 
 
 def listener():
+    global id_label
     rospy.init_node('reidentification_node', anonymous=True)
     X,y = load_identities(REF_PATH)
     try:
@@ -79,13 +84,12 @@ def listener():
             if len(X) > 0:
                 # Distance between the sample and the support set, caolcolo distanza coseno e quelle che ho memorizzato finora.
                 emb_voice = np.repeat(ukn, len(X), 0)
-                print("len emb voice: ", len(emb_voice))
                 # faccio distanza coseno con tutti quanti gli elementi.
                 cos_dist = batch_cosine_similarity(np.array(X), emb_voice)
                 
                 # Matching, in base alle label e tresh dice distanza.
                 # quindi ukn restituisce tutti i valori distanza dei campioni rispetto a ukn. e calcolo la distanza media tra tutti i campioni. 
-                print("feature: ", y)
+
                 id_label = dist2id(cos_dist, y, TH, mode='avg') #id_label saranno id incrementali
             
             if len(X) == 0 or id_label is None:
@@ -103,7 +107,17 @@ def listener():
 
     except rospy.exceptions.ROSInterruptException:
         print("vado in close")
-        save_identities(X,y,REF_PATH)
-        
+        # save_identities(X,y,REF_PATH)
+
+def return_idLabel(req):
+    global id_label
+    print(req)
+    return id_label
+
+def voiceLabelServer():
+    s = rospy.Service('voiceLabelServices', idLabel, return_idLabel)
+    print("readyToGiveLabels")
+
 if __name__ == '__main__':
+    voiceLabelServer()
     listener()
