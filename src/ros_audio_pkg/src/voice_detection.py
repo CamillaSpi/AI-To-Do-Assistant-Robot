@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import rospy
-from std_msgs.msg import Int16MultiArray
+from std_msgs.msg import Int16MultiArray, Bool
 import numpy as np
 
 import time
@@ -8,6 +8,11 @@ import speech_recognition as sr
 
 pub = rospy.Publisher('mic_data', Int16MultiArray, queue_size=10)
 rospy.init_node('voice_detection_node', anonymous=True)
+
+
+global old_bool
+global stop_listening
+old_bool = True
 
 # this is called from the background thread
 def callback(recognizer, audio):
@@ -38,5 +43,19 @@ print("Calibration finished")
 # `stop_listening` is now a function that, when called, stops background listening
 print("Recording...")
 stop_listening = r.listen_in_background(m, callback)
+
+
+def rcv_person(msg):
+    global old_bool
+    global stop_listening
+    if msg.data != old_bool:
+        if not msg.data:
+            stop_listening()
+        else:
+            stop_listening = r.listen_in_background(m, callback)
+        old_bool = msg.data
+        
+
+pub2 = rospy.Subscriber('thereIsPerson', Bool,rcv_person)
 
 rospy.spin()

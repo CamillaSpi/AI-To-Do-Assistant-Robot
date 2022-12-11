@@ -3,6 +3,7 @@ import cv2
 import os
 import rospy
 from sensor_msgs.msg import Image
+from std_msgs.msg import Bool
 from vision_msgs.msg import Detection2D, Detection2DArray
 import ros_numpy # pip3 install git+https://github.com/eric-wieser/ros_numpy
 
@@ -40,8 +41,8 @@ faceNet = cv2.dnn.readNet(faceModel, faceProto)
 
 rospy.init_node('detector_face_node')
 pub = rospy.Publisher('face_reidentification', Detection2DArray, queue_size=2)
-padding = 0.2
-count = 10
+
+pub2 = rospy.Publisher('thereIsPerson', Bool, queue_size=10)
 
 def detect_face(msg):
     global count
@@ -59,7 +60,9 @@ def detect_face(msg):
     if len(message.detections)>0:
         message.detections[0].source_img = ros_numpy.msgify(Image,frameFace,encoding ='rgb8')
         pub.publish(message)
+        pub2.publish(Bool(True))
     else:
+        pub2.publish(Bool(False))
         print('no face found')
 
 si = rospy.Subscriber("image", Image, detect_face)
