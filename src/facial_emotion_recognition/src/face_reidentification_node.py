@@ -21,20 +21,20 @@ class NumpyArrayEncoder(JSONEncoder):
         return JSONEncoder.default(self, obj)
 
 
-def save_identities(path):
+def save_identities():
     global database
     global labels
     to_save = {'dataset':database, 'labels': labels}
     print("sono in save")
-    with open(path + '/json_data.json','w') as out_file:
+    with open(REF_PATH + '/../dataBase/json_data.json','w') as out_file:
         json.dump(to_save,out_file,cls=NumpyArrayEncoder)
         
 
-def load_identities(path):
+def load_identities():
     print("sono in load")
     global database, labels
     try:
-        with open(path + '/json_data.json','r') as in_file:
+        with open(REF_PATH + '/../dataBase/json_data.json','r') as in_file:
             tmp= json.load(in_file)
         dataset = np.asarray(tmp['dataset'])
         labels = np.asarray(tmp['labels'])
@@ -53,7 +53,7 @@ INPUT_SIZE = (224,224)
 global database 
 global labels
 global actual_id
-database,labels = load_identities(REF_PATH)
+database,labels = load_identities()
 actual_id = 0
 if len(labels):
     actual_id = max(labels) + 1
