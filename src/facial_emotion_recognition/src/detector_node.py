@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
-import numpy as np
 import cv2
-import tensorflow as tf
 import os
 import rospy
 from sensor_msgs.msg import Image
-from vision_msgs.msg import Detection2D, Detection2DArray, ObjectHypothesisWithPose
+from vision_msgs.msg import Detection2D, Detection2DArray
 import ros_numpy # pip3 install git+https://github.com/eric-wieser/ros_numpy
 
 
@@ -14,12 +12,6 @@ def getFaceBox(net, frame, conf_threshold=0.8):
     frameOpencvDnn = frame.copy()
     frameHeight = frameOpencvDnn.shape[0]
     frameWidth = frameOpencvDnn.shape[1]
-    
-    #swapRB =True
-    # flag which indicates that swap first and last channels in 3-channel image is necessary.
-    #crop = False
-    # flag which indicates whether image will be cropped after resize or not
-    # If crop is false, direct resize without cropping and preserving aspect ratio is performed
     blob = cv2.dnn.blobFromImage(frameOpencvDnn, 1.0, (300, 300), [104, 117, 123], True, False)
 
     net.setInput(blob)
@@ -47,13 +39,13 @@ faceNet = cv2.dnn.readNet(faceModel, faceProto)
 
 
 rospy.init_node('detector_face_node')
-pub = rospy.Publisher('detection', Detection2DArray, queue_size=2)
-
-
+pub = rospy.Publisher('face_reidentification', Detection2DArray, queue_size=2)
+padding = 0.2
+count = 10
 
 def detect_face(msg):
+    global count
     frame = ros_numpy.numpify(msg)                    # Read frame
-    #_,frame = cap.read()                    # Read frame
     frameFace, bboxes = getFaceBox(faceNet, frame)     # Get face
     message = Detection2DArray()
     for i,bbox in enumerate(bboxes):
@@ -64,14 +56,13 @@ def detect_face(msg):
         d.bbox.center.x = bbox[1]+d.bbox.size_x/2
         d.bbox.center.y = bbox[0]+d.bbox.size_y/2
         message.detections.append(d)
-    if len(message.detections) > 0:
+    if len(message.detections)>0:
         message.detections[0].source_img = ros_numpy.msgify(Image,frameFace,encoding ='rgb8')
         pub.publish(message)
-        cv2.imshow("mario",frameFace)
-        k = cv2.waitKey(5)
-        rospy.loginfo("published")
+    else:
+        print('no face found')
 
-si = rospy.Subscriber("image_analysis", Image, detect_face)
+si = rospy.Subscriber("image", Image, detect_face)
 
 try:
     rospy.spin()
