@@ -86,6 +86,25 @@ nlu:
     - so saad
     - so sad
 
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: help
+  examples: |
+    - what you can do?
+    - what we do now?
+    - help
+    - help me
+    - I dont know what to do
+    - I need help
+    - please help
+    - pls help
+    - I need assistance
+
 - intent: presentation
   examples: |
     - hi, i'm [mattia](name) 
@@ -278,26 +297,6 @@ nlu:
     - [cristina](name)
     - [giorgina](name)
 
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-
-- intent: help
-  examples: |
-    - what you can do?
-    - what we do now?
-    - help
-    - help me
-    - I dont know what to do
-    - I need help
-    - please help
-    - pls help
-    - I need assistance
-
 - intent: inform
   examples: |
     - [run](activity)
@@ -324,6 +323,7 @@ nlu:
     - [fuel](activity)
     - [refuel](activity)
     - [search](activity)
+    - [soccer](activity)
     - [play guitar](activity)
     - [play football](activity)
     - [dinner with friends](activity)
@@ -613,7 +613,7 @@ nlu:
     - hi, add the activity [letters](activity) in [christmas](category)
     - hi, enter activity [play cards](activity) in [fun](category)
     - hi, add new activity [check the match](activity) in [interesting](category)
-    - hi, insert the activity [football tournament](activity) in [soccer](category)
+    - hi, insert the activity [football tournament](activity) in [sport](category)
     - hi, enter an activity [coffee](activity) in [friendship](category)
     - hi, put [singing lesson](activity) in category [freetime](category)
     - hi, add a [pub](activity) in category [diet](category)
@@ -1113,12 +1113,12 @@ nlu:
     - category: [bills](category)
     - I want to add a category
     - I want to insert a category
-    - I want to use  a new category
+    - I want to use a new category
     - new category: [school](category)
     - I want to put a new category [vacation](category)
     - I want to add a new category [leisure](category)
-    - hi, I want to enter a new category [research] (category)
-    - hi, I want to put a new category [events] (category)
+    - hi, I want to enter a new category [research](category)
+    - hi, I want to put a new category [events](category)
     - hi, I want to add a category [weekly](category)
     - hi, I want to insert the category [daily](category)
     - hi, I want to insert the category [projects](category)
@@ -1136,6 +1136,14 @@ nlu:
     - hello, I want to add the category [life](category)
     - hello, I want to put the category [parents](category)
     - I want to insert the category [family](category) 
+    - add [sport](category)
+    - insert [freetime](category)
+    - enter [friends](category)
+    - put [sport](category)
+    - add [sport](category) category
+    - insert [freetime](category) category
+    - enter [friends](category) category
+    - put [sport](category) category
 
 - intent: remove_category
   examples: |
@@ -1159,6 +1167,42 @@ nlu:
     - I want to remove the category [university](category) 
     - I want to delete the category [personal](category) 
     - hi, I want to cancel the category [work](category) 
+    - cancel the category [study](category)
+    - delete category [relations](category)
+    - remove the category [medications](category)
+    - rem the category [engineering](category)
+    - category to cancel: [school](category)
+    - I want to dislodge [university](category) category
+    - I want to dismiss [profession](category) category
+    - I want to obliterate [vacation](category) category
+    - remove old [personal](category) category
+    - delete old [bank](category) category
+    - cancel old [diet](category) category
+    - the category to eliminate is [household](category)
+    - the category to dismiss is [university](category)
+    - the category to deter is [volunteering](category)
+    - I don't want to use the category [events](category)
+    - I don't want to use the category [medical](category)
+    - I don't want to use the category [sports](category)
+    - I want to del a category
+    - I want to remove a category
+    - I want to dissuade a category
+    - I want to eliminate the category [vacation](category)
+    - I want to cancel a category [leisure](category)
+    - hi, I want to del a category [research](category)
+    - hi, I want to canc a category [events](category)
+    - hi, I want to remove a category [weekly](category)
+    - hi, I want to delete the category [daily](category)
+    - hi, I want to cancel the category [projects](category)
+    - category to trash: [projects](category)
+    - category to deter: [finances](category)
+    - hi, please dismiss the following [medical](category)
+    - hi, please trash the following [finance](category)
+    - hi, please remove the following [shopping](category)
+    - hello, I want to delete the category [household](category)
+    - hi, please cancel the following [fun](category) category
+    - hello, I want to remove the category [life](category)
+    - hello, I want to delete the category [parents](category)
 
 - intent: modify_category
   examples: |
@@ -1209,7 +1253,7 @@ nlu:
     - transform a category
     - let me change a category
     - i want to modify a category
-    - alter a categoryù
+    - alter a category
     - substitute a category
     - vary one category
     - vary a category
@@ -1224,7 +1268,7 @@ nlu:
     - Show my [undeveloped](activity_status) activities
     - Show my [done](activity_status) activities
     - Which are my activities?
-    - which are [concluded](activity_status) my activities?
+    - which are my [concluded](activity_status) activities?
     - what are my [uncompleted](activity_status) activities?
     - What are my activities?
     - What are my [finished](activity_status) activities?
@@ -1237,6 +1281,13 @@ nlu:
     - show [unfinished](activity_status) activity in [work](category) category
     - show [completed](activity_status) activities
     - show [completed](activity_status) activity
+    - I want to see all my inserted activities
+    - I want to see all my added activities
+    - I want to see all my created activities
+    - Which are my inserted activities?
+    - What are my added activities?
+    - Which are my added activities?
+    - What are my created activities?
 
 - intent: presentation+view_activities
   examples: |
@@ -1259,6 +1310,13 @@ nlu:
     - I am [francesca](name) , show [unfinished](activity_status) activity in [school](category) category
     - I'm [lorenzo](name) show [completed](activity_status) activities
     - i'm [enza](name) show [completed](activity_status) activity
+    - Hello i'm [paolo](name), want to see all my inserted activities
+    - Hello i'm [pierpaolo](name), want to see all my added activities
+    - Hello i'm [javier](name), want to see all my created activities
+    - i'm [eugenio](name),which are my inserted activities?
+    - i am [daniele](name), what are my added activities?
+    - i'm [tommaso](name),which are my added activities?
+    - i am [simone](name), what are my created activities?
 
 - intent: clean_activities
   examples: |
@@ -1271,8 +1329,8 @@ nlu:
     - please clean all completed activities
     - please remove all completed activities
     - please clean activities
-    - clean my actiivty
-    - clean activity
+    - clean my activities
+    - clean activities
     - clean table
     
 - intent: modify_activity_category   
@@ -1412,6 +1470,14 @@ nlu:
     - which are my categories?
     - what are my categories?
     - What are my categories?
+    - show categories
+    - let me see all my inserted categories
+    - i want to watch my added categories
+    - I want to show all my created categories
+    - Which are my inserted categories?
+    - What are my added categories?
+    - Which are my added categories?
+    - What are my created categories?
 
 - intent: presentation+view_categories
   examples: |
@@ -1473,7 +1539,7 @@ nlu:
     - my name is [luigi](name) , please remind me of [shampoo](activity) tomorrow evening
     - I'm [Salvo](name) , please help me to don't forget the activity [project](activity) in the category [work](category) of next Friday
     - i'm [francesca](name) I can't forget to do the activity [exercises](activity) of the category [school](category) of next Monday
-    - i'm [sara](name) I want to set a reminder for the actvivity [hairdresser](activity)
+    - i'm [sara](name) I want to set a reminder for the activity [hairdresser](activity)
     - i am [iris](name) , remind me the [dinner](activity)
     - i am [ferdinando](name) remind me to [buy the gifts](activity) into the category [household](category) at 8:30
     - i'm [giovanna](name) set a reminder for the activiy [videocall with friends](activity) into the category [social](category) of next morning
@@ -1486,19 +1552,9 @@ nlu:
     - my name is [salvatore](name) , please remind me of [do yoga](activity) tomorrow evening
     - I'm [orazio](name) , please help me to don't forget the activity [fix some issues](activity) in the category [projects](category) of next Friday
     - i'm [orietta](name) I can't forget to do the activity [send the e-mail](activity) of the category [work](category) of next Monday
-    - i'm [silvia](name) I want to set a reminder for the actvivity [clean home](activity)
+    - i'm [silvia](name) I want to set a reminder for the activity [clean home](activity)
     - i am [silvana](name) , remind me the [buy some food](activity)
 
-- synonym: add
-  examples: |
-    - insert
-    - put
-    
-- synonym: remove
-  examples: |
-    - take off
-    - drop
-    
 - synonym: uncompleted
   examples: |
     - undone
