@@ -1,0 +1,5 @@
+facial_emotion_recognition
+/home/mattia/Desktop/DefinitivoCog/devel/.private/facial_emotion_recognition/cmake.lock /home/mattia/Desktop/DefinitivoCog/devel/./cmake.lock
+/home/mattia/Desktop/DefinitivoCog/devel/.private/facial_emotion_recognition/share/facial_emotion_recognition/cmake/facial_emotion_recognitionConfig.cmake /home/mattia/Desktop/DefinitivoCog/devel/share/facial_emotion_recognition/cmake/facial_emotion_recognitionConfig.cmake
+/home/mattia/Desktop/DefinitivoCog/devel/.private/facial_emotion_recognition/share/facial_emotion_recognition/cmake/facial_emotion_recognitionConfig-version.cmake /home/mattia/Desktop/DefinitivoCog/devel/share/facial_emotion_recognition/cmake/facial_emotion_recognitionConfig-version.cmake
+/home/mattia/Desktop/DefinitivoCog/devel/.private/facial_emotion_recognition/lib/pkgconfig/facial_emotion_recognition.pc /home/mattia/Desktop/DefinitivoCog/devel/lib/pkgconfig/facial_emotion_recognition.pc

@@ -3,39 +3,54 @@
 import rospy
 from std_msgs.msg import String
 from rasa_ros.srv import Dialogue, DialogueResponse
+from ros_audio_pkg.msg import RecognizedSpoke
+import time
 
-pub = rospy.Publisher('toSpeech', String, queue_size=10)
+                                           
 
-class TerminalInterface:
-    '''Class implementing a terminal i/o interface. 
 
-    Methods
-    - get_text(self): return a string read from the terminal
-    - set_text(self, text): prints the text on the terminal
+dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
+def testFunction():
+    message = RecognizedSpoke()  
+    message.msg = "Hi i am Vito"
+    message.id = 5
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "show my activities"
+    dialogue_service(message.msg,message.id) 
+    # time.sleep(0.5)
+    # message.msg = "clean activity"
+    # dialogue_service(message.msg,message.id) 
+    # time.sleep(0.5)
+    # message.msg = "yes"
+    # dialogue_service(message.msg,message.id) 
+    # time.sleep(0.5)
+    # message.msg = "remind me to walk in gym"
+    # dialogue_service(message.msg,message.id) 
+    # time.sleep(0.5)
+    # message.msg = "tomorrow"
+    # dialogue_service(message.msg,message.id) 
+    # time.sleep(0.5)
+    # dialogue_service("/session_start",5)
+    # time.sleep(0.5)
 
-    '''
 
-    def get_text(self):
-        return input("[IN]:  ") 
 
-    def set_text(self,text):
-        pub.publish(text)
-        print("[OUT]:",text)
 
 def main():
     rospy.init_node('writing')
     rospy.wait_for_service('dialogue_server')
-    dialogue_service = rospy.ServiceProxy('dialogue_server', Dialogue)
+    dialogue_service("/session_start",-1)
+    testFunction()
 
-    terminal = TerminalInterface()
 
     while not rospy.is_shutdown():
-        message = rospy.wait_for_message("spoken_text",String)
+        message = rospy.wait_for_message("text2answer",RecognizedSpoke)
         if message == 'exit': 
             break
         try:
-            bot_answer = dialogue_service(message.data)
-            terminal.set_text(bot_answer.answer)
+            dialogue_service(message.msg,message.id)
+            print('risposta ricevuta')
         except rospy.ServiceException as e:
             print("Service call failed: %s"%e)
 

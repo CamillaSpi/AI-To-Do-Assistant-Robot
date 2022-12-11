@@ -1,0 +1,13 @@
+<launch>
+    
+    <arg name="node_start_delay2" default="1.0" />  
+    
+    <node pkg="conductor" name="speech" type="text2speech_node.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@' "/>
+    <node pkg="conductor" name="text_to_pepper" type="text_to_pepper.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@' "/>
+    
+
+    
+
+</launch>
+
+
