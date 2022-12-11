@@ -6,6 +6,9 @@ import ros_numpy # pip3 install git+https://github.com/eric-wieser/ros_numpy
 import numpy as np
 from vision_msgs.msg import Detection2DArray, ObjectHypothesisWithPose
 
+from facial_emotion_recognition.srv import video_detect_user
+from std_msgs.msg import Int32MultiArray
+
 import json
 from json import JSONEncoder
 from keras_vggface.vggface import VGGFace
@@ -13,6 +16,9 @@ from keras_vggface.utils import preprocess_input
 
 REF_PATH = os.path.dirname(os.path.abspath(__file__))
 
+# Server Initialization
+rospy.init_node('reidentification_face_node')
+global actualLabels
 
 class NumpyArrayEncoder(JSONEncoder):
     def default(self, obj):
@@ -43,7 +49,6 @@ def load_identities():
     except:
         return [],[]
 
-rospy.init_node('reidentification_face_node')
 pub = rospy.Publisher('identity', Detection2DArray, queue_size=2)
 
 # Load the VGG-Face model based on ResNet-50
@@ -158,6 +163,8 @@ def predict_identity(resized_face,rejection_threshold=0.5):
     return (id_label)
 
 def face_reidentification(msg):
+    global actualLabels
+    actualLabels = []
     im = ros_numpy.numpify(msg.detections[0].source_img)
     for d in msg.detections:
         # Preprocess image
@@ -166,12 +173,20 @@ def face_reidentification(msg):
         o = ObjectHypothesisWithPose()
         o.id = predict_identity(resized_face)
         d.results.append(o)
+        print("sto per stampare", d.results[0].id)
+        actualLabels.append(d.results[0].id)
     return msg
 
    
 def recognize():
+    s = rospy.Service('video_user_server',video_detect_user, handle_service)
+    rospy.logdebug('image server READY.')
+    print("vado sotto lo spin")
+
+
     try:
         while not rospy.is_shutdown():
+
             msg = rospy.wait_for_message('face_reidentification',Detection2DArray)
             to_publish = face_reidentification(msg)
             pub.publish(to_publish)
@@ -180,7 +195,21 @@ def recognize():
         print("vado in close")
         # save_identities()
 
+#aggiunte da me
+def handle_service(req):
+    global actualLabels
+    
+    try: 
+        if type(actualLabels) == list:
+            return [actualLabels]
+        else:
+            return actualLabels
+    except NameError:
+        return []
+
 
 if __name__ == '__main__':
     recognize()
+
+
 
