@@ -254,7 +254,7 @@ class showActivities(Action):
         activity_status = tracker.get_slot("activity_status")
 
         list_of_activity = Database.selectItems(id,category, activity_status)
-        dispatcher.utter_message(text=(f"-1 {associated_name} , you have {list_of_activity} activities" if list_of_activity else " No activity found for you!")) 
+        dispatcher.utter_message(text=(f"-1 {associated_name} , you have {list_of_activity} activities" if list_of_activity else " No activities found for you!")) 
 
         return [SlotSet("category", None),SlotSet("activity_status", None)]
 
@@ -272,7 +272,7 @@ class showCategories(Action):
         associated_name = Database.getName(id)
         list_of_categories = Database.selectPossessions(id)
         
-        dispatcher.utter_message(text=(f"-1 {associated_name} , you have {list_of_categories} category" if list_of_categories else " No activity found for you!")) 
+        dispatcher.utter_message(text=(f"-1 {associated_name} , you have {list_of_categories} category" if list_of_categories else " No categories found for you!")) 
 
         return [SlotSet("activity", None)]
 
