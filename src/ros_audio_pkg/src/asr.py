@@ -13,7 +13,8 @@ r = sr.Recognizer()
 
 # Init node
 rospy.init_node('speech_recognition', anonymous=True)
-pub1 = rospy.Publisher('AudioAndText', AudioAndText, queue_size=10)
+pub1 = rospy.Publisher('RecivedAudio', Int16MultiArray, queue_size=10) #publish the recived audio
+pub2 = rospy.Publisher('InterpretedText', String, queue_size=10) #publish the recognized text
 
 # this is called from the background thread
 def callback(audio):
@@ -21,17 +22,17 @@ def callback(audio):
     audio_data = AudioData(data.tobytes(), 16000, 2)
     
     try:
-
         #t1 = datetime.now()
         spoken_text= r.recognize_google(audio_data)
         print("Google Speech Recognition pensa tu abbia detto: " + spoken_text)
         #t2 = datetime.now()
         #delta = t2-t1
         #print('inference time ' , delta.total_seconds())
-        audioAndText = AudioAndText()
-        audioAndText.spoken_text = spoken_text
-        audioAndText.audioData = audio.data
-        pub1.publish(audioAndText)
+        #audioAndText = AudioAndText()
+        #audioAndText.spoken_text = spoken_text
+        #audioAndText.audioData = audio.data
+        pub1.publish(audio)
+        pub2.publish(spoken_text)
     except sr.UnknownValueError:
         print("Google Speech Recognition non riesce a capire da questo file audio")
     except sr.RequestError as e:
