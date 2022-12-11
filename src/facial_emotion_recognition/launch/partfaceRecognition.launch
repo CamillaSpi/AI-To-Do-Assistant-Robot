@@ -1,9 +1,14 @@
 <launch>
+
+        <node pkg="ros_audio_pkg" type="voice_detection.py" name="mario" output="screen"/>
+        <node pkg="ros_audio_pkg" type="asr.py" name="asdasdasd" output="screen"/>
+        <node pkg="ros_audio_pkg" type="speaker_identification.py" name="speaker_identification" output="screen"/>
         <node pkg="facial_emotion_recognition" type="acquisition_node.py" name="voice_detection" output="screen"/>
         <node pkg="facial_emotion_recognition" type="detector_node.py" name="asr" output="screen"/>
         <node pkg="facial_emotion_recognition" type="face_reidentification_node.py" name="asdASD" output="screen"/>
-        <node pkg="facial_emotion_recognition" type="visualization_node.py" name="qwe" output="screen"/>
-        <node pkg="facial_emotion_recognition" type="Testforvideorecognize_user_node.py" name="werweq" output="screen"/>
+        <!-- <node pkg="facial_emotion_recognition" type="visualization_node.py" name="qwe" output="screen"/> -->
+        <node pkg="conductor" type="recognize_user_node.py" name="werweq" output="screen"/>
+
 </launch>
 
 

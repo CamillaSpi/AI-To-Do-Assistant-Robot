@@ -108,7 +108,7 @@ def listener():
 
     except rospy.exceptions.ROSInterruptException:
         print("vado in close")
-        save_identities(X,y,REF_PATH)
+        # save_identities(X,y,REF_PATH)
 
 def return_idLabel(req):
     global id_label
