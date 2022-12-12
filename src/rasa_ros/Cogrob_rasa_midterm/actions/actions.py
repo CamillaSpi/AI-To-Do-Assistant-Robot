@@ -40,7 +40,7 @@ class ActionSessionStart(Action):
         #         kill_on_user_message = False,
         #     ))
         # an `action_listen` should be added at the end as a user message follows
-        # events.append(ActionExecuted("action_listen"))
+        events.append(ActionExecuted("action_listen"))
 
         return events
 
