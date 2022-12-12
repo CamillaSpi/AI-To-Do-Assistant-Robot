@@ -86,6 +86,25 @@ nlu:
     - so saad
     - so sad
 
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: help
+  examples: |
+    - what you can do?
+    - what we do now?
+    - help
+    - help me
+    - I dont know what to do
+    - I need help
+    - please help
+    - pls help
+    - I need assistance
+
 - intent: presentation
   examples: |
     - hi, i'm [mattia](name) 
@@ -278,32 +297,12 @@ nlu:
     - [cristina](name)
     - [giorgina](name)
 
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-
-- intent: help
-  examples: |
-    - what you can do?
-    - what we do now?
-    - help
-    - help me
-    - I dont know what to do
-    - I need help
-    - please help
-    - pls help
-    - I need assistance
-
 - intent: inform
   examples: |
     - [run](activity)
     - [bed](activity)
-    - [stand_up](activity)
-    - [swimmming](activity)
+    - [stand up](activity)
+    - [swimming](activity)
     - [play](activity)
     - [jogging](activity)
     - [study](activity)
@@ -324,7 +323,32 @@ nlu:
     - [fuel](activity)
     - [refuel](activity)
     - [search](activity)
-    - [sport](activity)
+    - [soccer](activity)
+    - [play guitar](activity)
+    - [play football](activity)
+    - [dinner with friends](activity)
+    - [launch with family](activity)
+    - [attend a conference](activity)
+    - [play videogames](activity)
+    - [do a refresher of maths](activity)
+    - [study for the exam](activity)
+    - [pay the bills](activity)
+    - [pick up the package](activity)
+    - [call the doctor](activity)
+    - [go shopping](activity)
+    - [go out with friends](activity)
+    - [go to the bank](activity)
+    - [book the restaurant](activity)
+    - [send an e-mail to the boss](activity)
+    - [book the holiday](activity)
+    - [pack the suitcase](activity)
+    - [write a letter](activity)
+    - [call my mother](activity)
+    - [go to cinema](activity)
+    - [cook for dinner](activity)
+    - [listen to music](activity)
+    - [bake cookies](activity)
+    - [watch a movie](activity)
     - [daily](category)
     - [health](category)
     - [weekly](category)
@@ -363,7 +387,6 @@ nlu:
     - [weekly](category)
     - [projects](category)
     - [monthly](category)
-    - [commitments](category)
     - [quickly](category)
     - [calendary](category)
     - [wishes](category)
@@ -413,338 +436,398 @@ nlu:
     - on friday
     - on next monday
 
-
+    
 - intent: add_item
   examples: |
     - add [run](activity)
     - add the activity [singing](activity)
-    - add [pilates](activity)
-    - add the activity [yoga](activity)
-    - insert the activity [football](activity)
+    - add [do pilates](activity)
+    - add the activity [go swimming](activity)
+    - insert the activity [play basketball](activity)
     - insert the activity [working](activity)
-    - insert activity [pharmacy](activity)
+    - insert activity [go to pharmacy](activity)
     - add activity [painting](activity)
     - enter new activity [gardening](activity)
-    - enter new activity [match](activity)
-    - insert [bed](activity)
-    - enter [stand_up](activity)
-    - put [swimmming](activity)
-    - add [beauty](activity)
-    - put in the activity [swimming](activity)
-    - insert [jogging](activity)
-    - add [run](activity) in [daily](category)
-    - put [bed](activity) in [projects](category)
-    - add [stand_up](activity) in [weekly](category)
-    - enter [swimmming](activity) in [monthly](category)
-    - add [play](activity) in [commitments](category)
-    - put [jogging](activity) in [quickly](category)
-    - put in the activity [wash](activity) in [quickly](category)
-    - put in activity [study](activity) in [school](category)
-    - insert activity [run](activity) in [beauty](category)
-    - add activity [bed](activity) in [daily](category)
-    - enter activity [stand_up](activity) in [commitments](category)
-    - add activity [study](activity) in [projects](category)
-    - put activity [play](activity) in [monthly](category)
-    - put activity [jogging](activity) in [quickly](category)
-    - create the activity [dinner](activity) in [personal](category)
-    - add [run](activity) in category [commitments](category)
-    - insert [bed](activity) in category [weekly](category)
-    - add [stand_up](activity) in the category [daily](category)
-    - add [swimmming](activity) in category [quickly](category)
-    - enter [play](activity) in category [projects](category)
-    - put in [jogging](activity) in category [monthly](category)
-    - insert activity [run](activity) in the category [monthly](category)
-    - put activity [bed](activity) in category [quickly](category)
-    - put in activity [stand_up](activity) in category [projects](category)
-    - add activity [swimmming](activity) in the category [commitments](category)
-    - enter activity [play](activity) in category [daily](category)
-    - put activity [jogging](activity) in category [weekly](category)
+    - enter new activity [watch the match](activity)
+    - insert [yoga](activity)
+    - enter [stand up](activity)
+    - enter [go to gym](activity)
+    - put [swimming](activity)
+    - put [do shopping](activity)
+    - add [go to beautician](activity)
+    - put the activity [pool](activity)
+    - put the activity [go to the dentist](activity)
+    - insert [do jogging](activity)
+    - add [pack the suitcase](activity) in [journey](category)
+    - put [prepare the presentation](activity) in [projects](category)
+    - put [study](activity) in [university](category)
+    - add [do house cleaning](activity) in [weekly](category)
+    - enter [swimming](activity) in [sport](category)
+    - enter [have a walk](activity) in [daily](category)
+    - add [play piano](activity) in [music](category)
+    - put [jogging](activity) in [sport](category)
+    - put the activity [having a wash](activity) in [healthcare](category)
+    - put activity [studying](activity) in [school](category)
+    - insert activity [conference](activity) in [work](category)
+    - add activity [cleaning](activity) in [home](category)
+    - enter activity [stretching](activity) in [gym](category)
+    - add activity [push code](activity) in [commitments](category)
+    - put activity [do gradening](activity) in [house](category)
+    - put activity [stretch](activity) in [daily](category)
+    - create the activity [dinner](activity) in [food](category)
+    - create the activity [do volunteering](activity) in [charity](category)
+    - add [boxe](activity) in category [sport](category)
+    - insert activity [do yoga](activity) in the category [welfare](category)
+    - insert [organize the wardrobe](activity) in category [clothing](category)
+    - insert [sleep](activity) in category [well-being](category)
+    - add [clean home](activity) in the category [home](category)
+    - add [organize the kitchen](activity) in category [households](category)
+    - enter [play](activity) in category [fun](category)
+    - enter [read a book](activity) in category [culture](category)
+    - put [clean-up](activity) in category [daily](category)
+    - enter activity [repeat the speech](activity) in category [university](category)
+    - put activity [do routine exercises](activity) in category [sport](category)
+    - put activity [reading](activity) in category [culture](category)
+    - put activity [swim](activity) in the category [sport](category)
+    - put activity [water the plants](activity) in the category [house](category)
     - in the category [university](category) add the activity [exam](activity)
-    - in the category [households](category) insert the new activity [cleaning](activity)
-    - in the category [sport](category) insert an activity [climbing](activity)
-    - in the category [sport](category) create a new activity [walking](activity)
+    - in the category [households](category) insert the new activity [clean the bathroom](activity)
+    - in the category [health](category) insert an activity [go to the doctor](activity)
+    - in the category [day](category) create a new activity [walking](activity)
     - I want to add an activity
     - I want to add a new activity
     - I want to insert an activity to a list
     - I want to create a new activity 
-    - I want to add an activity [run](activity) to [weekly](category) category
-    - I want to enter a new activity [swimmming](activity) to [daily](category) list
-    - I want to create the activity [play](activity) to [commitments](category) list
-    - I want to enter an activity [stand_up](activity) to [projects](category) list
-    - I want to insert the new activity [jogging](activity) to [monthly](category) category
-    - I want to put a new activity [shopping](activity) to [quickly](category) list
-    - I want to put in the activity [run](activity) to [weekly](category)
-    - I want to put an activity [study](activity) to [daily](category)
-    - I want to enter an activity [payments](activity) to [commitments](category)
-    - I want to add the new activity [stand_up](activity) to [projects](category)
-    - I want to add a new activity [jogging](activity) to [monthly](category)
-    - I want to put an activity [shopping](activity) to [quickly](category)
-    - I want to add an activity to [weekly](category) list
-    - I want to insert an activity to [daily](category) category
-    - I want to put the activity to [commitments](category) list
-    - I want to enter an activity to [projects](category) category
-    - I want to add an activity to [monthly](category) list
-    - I want to insert an activity to [quickly](category) category
-    - in the category [gym](category) , i want to add the activity [climbing](activity)
-    - in the category [utils](category) , i want to insert an activity [shopping](activity)
-    - hi, I want to create an activity to [weekly](category) list
-    - hi, I want to put a new activity to [daily](category) category
+    - I want to add an activity [stroll](activity) to [daily](category) category
+    - I want to enter a new activity [nails](activity) to [esthetics](category) list
+    - I want to create the activity [github](activity) to [projects](category) list
+    - I want to create the activity [birthday party](activity) to [events](category) list
+    - I want to enter an activity [go to cinema](activity) to [friendship](category) list
+    - I want to insert the new activity [disco](activity) to [fun](category) category
+    - I want to insert the new activity [play videogames](activity) to [weekly](category)
+    - I want to put a new activity [study for the exam](activity) to [university](category) list
+    - I want to put a new activity [shopping](activity) to [personal](category) list
+    - I want to put the activity [ring](activity) to [weekly](category)
+    - I want to put the activity [pay the bills](activity) to [bank](category)
+    - I want to put an activity [exercises](activity) to [daily](category)
+    - I want to enter an activity [payments](activity) to [finance](category)
+    - I want to add the new activity [checks](activity) to [projects](category)
+    - I want to add the new activity [go to the bank](activity) to [finances](category)
+    - I want to put an activity [dinner with friends](activity) to [friendship](category)
+    - I want to add an activity to [deepwork](category) list
+    - I want to insert an activity to [chores](category) category
+    - I want to put the activity to [learning](category) list
+    - I want to enter an activity to [mind-care](category) category
+    - I want to add a activity to [body-care](category) list
+    - I want to insert an activity to [people](category) category
+    - in the category [summer](category) , i want to add the activity [climbing](activity)
+    - in the category [holiday](category) , i want to insert an activity [christmas dinner](activity)
+    - hi, I want to create an activity to [spring](category) list
+    - hi, I want to put a new activity to [autumn](category) category
     - hi, I want to insert an activity to [commitments](category) list
-    - hi, I want to enter an activity to [projects](category) list
-    - hello, I want to put in an activity to [monthly](category) list
-    - hello, in category [personal](category) I want to put the activity[beauty] 
-    - hello, I want to add an activity to [quickly](category) category
+    - hi, I want to enter an activity to [urgent](category) list
+    - hello, I want to put an activity to [annual](category) list
+    - hello, in category [personal](category) I want to put the activity [beauty](activity)
+    - hello, in category [health](category) I want to put the activity [go to dentist](activity)
+    - hello, I want to add an activity to [educational](category) category
     - hello I want to enter an activity to my list
     - hi I want to insert an activity to my list
-    - insert [run](activity) at 11:00
-    - enter [bed](activity) at 13:00
-    - put [stand_up](activity) at 9:30
-    - add [swimmming](activity) at 01:45
-    - enter [play](activity) at 00:00
-    - insert [jogging](activity) at 3:00
-    - put in [jogging](activity) at 3:00
-    - put [run](activity) in [daily](category) at 4:25
-    - add [bed](activity) in [projects](category) at 2:55
-    - enter [stand_up](activity) in [weekly](category) at 16:00
-    - create [swimmming](activity) in [monthly](category) at 20:00
-    - insert [play](activity) in [commitments](category) at 22:20
-    - put [jogging](activity) in [quickly](category) at 14:50
-    - add activity [run](activity) in [weekly](category) at 19:41
-    - enter activity [bed](activity) in [daily](category) at 12:35
-    - insert activity [stand_up](activity) in [commitments](category) at 17:30
-    - put activity [swimmming](activity) in [projects](category) at 18:30
-    - create activity [play](activity) in [monthly](category) at 9:40
-    - enter activity [jogging](activity) in [quickly](category) at 7:00
-    - put [run](activity) in category [commitments](category) at 6:30
-    - add [bed](activity) in category [weekly](category) at 8:00
-    - insert [stand_up](activity) in category [daily](category) at 10:25
-    - add [swimmming](activity) in category [quickly](category) at 16:30
-    - enter [play](activity) in category [projects](category) at 19:00
-    - in category [work](category) put [meeting](activity) at 20:30
-    - in category [personal](category) add activity [hairdresser](activity) at 21:10
-    - put in [jogging](activity) in category [monthly](category) at 20:30
-    - add activity [run](activity) in category [monthly](category) at 21:10
-    - put activity [bed](activity) in category [quickly](category) at 9:40
-    - insert activity [stand_up](activity) in category [projects](category) at 5:12
-    - put activity [swimmming](activity) in category [commitments](category) at 13:39
-    - add activity [play](activity) in category [daily](category) at 3:29
-    - enter activity [jogging](activity) in category [weekly](category) at 11:00
+    - insert [watch a movie](activity) at 11:00
+    - enter [bake coookies](activity) at 13:00
+    - put [exit](activity) at 9:30
+    - add [guardrobe](activity) at 01:45
+    - enter [booking](activity) at 00:00
+    - insert [blog](activity) at 3:00
+    - put [listen to music](activity) at 3:00
+    - add [cook for dinner](activity) at 01:45
+    - put [book the holiday](activity) in [vacation](category) at 4:25
+    - add [bed](activity) in [mindcare](category) at 2:55
+    - enter [refuel](activity) in [car](category) at 16:00
+    - create [dentist](activity) in [monthly](category) at 20:00
+    - insert [executions](activity) in [exam](category) at 22:20
+    - enter [send an email](activity) in [work](category) at 16:00
+    - create [attend a conference](activity) in [extracurricular](category) at 20:00
+    - insert [call the doctor](activity) in [health](category) at 22:20
+    - put [video-conference](activity) in [community](category) at 14:50
+    - add the activity [go out with friends](activity) in [society](category) at 19:41
+    - enter activity [teeth](activity) in [health](category) at 12:35
+    - insert activity [tests](activity) in [plan](category) at 17:30
+    - put activity [merge](activity) in [design](category) at 18:30
+    - insert activity [play the violin](activity) in [music](category) at 17:30
+    - put activity [prepare the backpack](activity) in [organization](category) at 18:30
+    - create activity [go shopping](activity) in [house](category) at 9:40
+    - enter activity [book the restaurant](activity) in [event](category) at 7:00
+    - put [search](activity) in category [scheme](category) at 6:30
+    - put [go to supermarket](activity) in category [food](category) at 6:30
+    - add [robotic](activity) in category [electronic](category) at 8:00
+    - insert [party](activity) in category [entertainment](category) at 10:25
+    - in category [course](category) put [meeting](activity) at 20:30
+    - in category [wellness](category) add the activity [go to hairdresser](activity) at 21:10
+    - add [do a refresh of math](activity) in category [lessons](category) at 16:30
+    - enter [checkbox](activity) in category [plan](category) at 19:00
+    - enter [call my mother](activity) in category [family](category) at 19:00
+    - put [windsurf](activity) in category [summer](category) at 20:30
+    - add activity [cook](activity) in category [today](category) at 21:10
+    - put activity [e-mail](activity) in category [quickly](category) at 9:40
+    - insert activity [buy a book](activity) in category [learn](category) at 5:12
+    - insert activity [draw](activity) in category [creativity](category) at 5:12
+    - put activity [buy flowers](activity) in category [hobbies](category) at 13:39
+    - add activity [turn off the light](activity) in category [savings](category) at 3:29
+    - enter activity [bills](activity) in category [important](category) at 11:00
     - I want to add an activity at 11:00
     - I want to insert a new activity to a category at 13:39
-    - I want to add an activity to [weekly](category) list at 21:10
-    - I want to insert an activity to [daily](category) list at 9:40
-    - I want to add an activity to [commitments](category) list at 19:00
-    - I want to enter an activity to [projects](category) category at 16:30
-    - I want to put an activity to [monthly](category) list at 7:00
-    - I want to create an activity to [quickly](category) category at 6:30
-    - hi, I want to add an activity to [weekly](category) list at 18:30
-    - hi, I want to enter an activity to [daily](category) list at 17:30
-    - hi, I want to put an activity to [commitments](category) category at 22:20
-    - hi, I want to insert an activity to [projects](category) list at 16:00
-    - hello, I want to enter an activity to [monthly](category) category at 14:50
-    - hello, I want to add an activity to [quickly](category) list at 3:29
+    - I want to add an activity to [enjoyment](category) list at 21:10
+    - I want to insert an activity to [pleasure](category) list at 9:40
+    - I want to add an activity to [amusement](category) list at 19:00
+    - I want to enter an activity to [recreation](category) category at 16:30
+    - I want to put an activity to [parents](category) list for tomorrow
+    - I want to create an activity to [plannings](category) category at 6:30
+    - hi, I want to add an activity to [theater](category) list at 18:30
+    - hi, I want to enter an activity to [politic](category) list at 17:30
+    - hi, I want to put an activity to [justice](category) category at 22:20
+    - hi, I want to insert an activity to [culture](category) list at 16:00
+    - hello, I want to enter an activity to [diet](category) category at 14:50
+    - hello, I want to add an activity to [hobbies](category) list at 3:29
     - hello I want to insert an activity to my list at 12:37
     - hi I want to add an activity to my list at 18:14
-    - hi, enter [run](activity)
-    - hi, insert [bed](activity)
-    - hi, put [stand_up](activity)
-    - hi, add [swimmming](activity)
-    - hi, put in [play](activity)
-    - hi, add new [jogging](activity)
-    - hi, enter [run](activity) in [daily](category)
-    - hi, in [daily](category) enter [run](activity) 
-    - hi, [personal](category) add [beautician](activity) 
-    - hi, put [bed](activity) in [projects](category)
-    - hi, insert [stand_up](activity) in [weekly](category)
-    - hi, add [swimmming](activity) in [monthly](category)
-    - hi, enter [play](activity) in [commitments](category)
-    - hi, put [jogging](activity) in [quickly](category)
-    - hi, insert activity [run](activity) in [weekly](category)
-    - hi, add activity [bed](activity) in [daily](category)
-    - hi, enter activity [stand_up](activity) in [commitments](category)
-    - hi, add new activity [study](activity) in [projects](category)
-    - hi, insert the activity [play](activity) in [monthly](category)
-    - hi, enter an activity [jogging](activity) in [quickly](category)
-    - hi, put [run](activity) in category [commitments](category)
-    - hi, add a [bed](activity) in category [weekly](category)
-    - hi, insert [stand_up](activity) in category [daily](category)
-    - hi, create [swimmming](activity) in category [quickly](category)
-    - hi, enter [play](activity) in category [projects](category)
-    - hi, put [jogging](activity) in the category [monthly](category)
-    - hi, add activity [run](activity) in category [monthly](category)
-    - hi, insert activity [bed](activity) in the category [quickly](category)
-    - hi, enter activity [stand_up](activity) in category [projects](category)
-    - hi, add activity [swimmming](activity) in category [commitments](category)
-    - hi, put activity [play](activity) in category [daily](category)
-    - hi, insert activity [jogging](activity) in category [weekly](category)
+    - hi, enter [read](activity)
+    - hi, enter [go running](activity)
+    - hi, insert [ppt](activity)
+    - hi, insert [listen to music](activity)
+    - hi, put [train](activity)
+    - hi, add [training](activity)
+    - hi, put [dinner with grandparents](activity)
+    - hi, add [write a message](activity)
+    - hi, in [creativeness](category) enter [paint](activity) 
+    - hi, in [travel](category) enter [pack the luggage](activity) 
+    - hi, enter [prepare the bag](activity) in [voyage](category)
+    - hi, put [word](activity) in [programs](category)
+    - hi, insert [medicines](activity) in [weekly](category)
+    - hi, add [psychologist](activity) in [mind](category)
+    - hi, enter [write](activity) in [hobby](category)
+    - hi, insert [attend the lesson](activity) in [courses](category)
+    - hi, add [cook the dinner](activity) in [now](category)
+    - hi, enter [watch the conference](activity) in [interest](category)
+    - hi, put [repeat the speech](activity) in [urgent](category)
+    - hi, insert the activity [e-commerce](activity) in [technology](category)
+    - hi, add the activity [letters](activity) in [christmas](category)
+    - hi, enter activity [play cards](activity) in [fun](category)
+    - hi, add new activity [check the match](activity) in [interesting](category)
+    - hi, insert the activity [football tournament](activity) in [sport](category)
+    - hi, enter an activity [coffee](activity) in [friendship](category)
+    - hi, put [singing lesson](activity) in category [freetime](category)
+    - hi, add a [pub](activity) in category [diet](category)
+    - hi, add a [buy a pizza](activity) in category [eat](category)
+    - hi, insert [taekwondo](activity) in the category [martial-arts](category)
+    - hi, create [call](activity) in category [group](category)
+    - hi, enter [writing](activity) in category [team](category)
+    - hi, insert [go to sing](activity) in the category [freetime](category)
+    - hi, create [attend a course](activity) in category [degree](category)
+    - hi, enter [learn english](activity) in category [languages](category)
+    - hi, put [see the match](activity) in the category [personal](category)
+    - hi, add activity [e-reading](activity) in category [university](category)
+    - hi, insert activity [cut](activity) in the category [art](category)
+    - hi, enter activity [email](activity) in category [projects](category)
+    - hi, enter activity [study philosophy](activity) in category [entertainings](category)
+    - hi, add activity [prepare pasta](activity) in category [food](category)
+    - hi, put activity [shampoo](activity) in category [daily](category)
+    - hi, put activity [fix the car](activity) in category [home](category)
+    - hi, insert activity [do a refresh of science](activity) in category [school](category)
     - hello, and I want to add an activity
     - hello, I want to enter an activity to a list
-    - hello, and I want to insert an activity [run](activity) to [weekly](category) category
-    - hello, I want to put a new activity [swimmming](activity) in [daily](category) list
-    - hello, I want to add the activity [play](activity) to [commitments](category) list
-    - hello, I want to enter a new activity [stand_up](activity) to [projects](category) category
-    - hello, I want to put in an activity [jogging](activity) to [monthly](category) list
-    - hello, and I want to create the activity [shopping](activity) to [quickly](category) list
-    - hello, I want to add an activity [run](activity) to [weekly](category)
-    - hello, I want to insert an activity [study](activity) to [daily](category)
-    - hello, I want to insert an activity [payments](activity) to [commitments](category)
-    - hello, and I want to enter an activity [stand_up](activity) to [projects](category)
-    - hello, and I want to add an activity [jogging](activity) to [monthly](category)
-    - hello, I want to enter an activity [shopping](activity) to [quickly](category)
-    - hello, I want to put an activity to [weekly](category) list
-    - hello, I want to insert an activity to [daily](category) list
-    - hello, and I want to insert an activity to [commitments](category) list
-    - hello, I want to insert an activity to [projects](category) list
-    - hello, I want to add an activity to [monthly](category) list
-    - hello, I want to add an activity to [quickly](category) list
-    - hello, I want to enter an activity to [weekly](category) list
-    - I want to add an activity to [daily](category) list
-    - I want to insert an activity to [commitments](category) list
-    - and I want to put a new activity to [projects](category) list
-    - I want to add a activity to [monthly](category) list
-    - I want to enter an activity to [quickly](category) list
+    - hello, and I want to insert an activity [judo](activity) to [gym](category) category
+    - hello, and I want to insert an activity [study spanish](activity) to [cultures](category) category
+    - hello, I want to put a new activity [read a paper](activity) in [research](category) list
+    - hello, I want to add the activity [powerpoint](activity) to [programs](category) list
+    - hello, I want to add the activity [send email](activity) to [planned](category) list
+    - hello, I want to enter a new activity [propose](activity) to [girlfriend](category) category
+    - hello, I want to enter a new activity [dinner with friends](activity) to [friendship](category) category
+    - hello, I want to put an activity [ski](activity) to [winter](category) list
+    - hello, and I want to create the activity [gardening](activity) to [garden](category) list
+    - hello, and I want to create the activity [go in the city center](activity) to [households](category) list
+    - hello, I want to add an activity [hairdresser](activity) to [well-being](category)
+    - hello, I want to insert an activity [repetitions](activity) to [graduance](category)
+    - hello, I want to insert an activity [pay the bills](activity) to [finance](category)
+    - hello, and I want to enter an activity [webcall](activity) to [parents](category)
+    - hello, and I want to add an activity [pharmacy](activity) to [health](category)
+    - hello, I want to enter an activity [go to boxe](activity) to [sport](category)
+    - hello, I want to put an activity to [business](category) list
+    - hello, I want to insert an activity to [priority](category) list
+    - hello, and I want to insert an activity to [someday](category) list
+    - hello, I want to insert an activity to [movies](category) list
+    - hello, I want to add an activity to [places](category) list
+    - hello, I want to add an activity to [sooner](category) list
+    - hello, I want to enter an activity to [critical](category) list
+    - I want to add an activity to [classroom](category) list
+    - I want to insert an activity to [paperwork](category) list
+    - and I want to put a new activity to [show](category) list
+    - I want to add a activity to [leadership](category) list
+    - I want to enter an activity to [computer](category) list
     - and I want to insert an activity to my list
     - I want to create an activity to my list
-    - add [run](activity) at 11:00
-    - add [bed](activity) at 13:00
-    - insert [stand_up](activity) at 9:30
-    - add [swimmming](activity) at 01:45
-    - , insert [play](activity) at 00:00
-    - enter [jogging](activity) at 3:00
-    - put [run](activity) in [daily](category) at 4:25
-    - put [bed](activity) in [projects](category) at 2:55
-    - insert [stand_up](activity) in [weekly](category) at 16:00
-    - add [swimmming](activity) in [monthly](category) at 20:00
-    - enter [play](activity) in [commitments](category) at 22:20
-    - put [jogging](activity) in [quickly](category) at 14:50
-    - insert activity [run](activity) in [weekly](category) at 19:41
-    - and add new activity [bed](activity) in [daily](category) at 12:35
-    -  enter the activity [stand_up](activity) in [commitments](category) at 17:30
-    - put activity [swimmming](activity) in [projects](category) at 18:30
-    - insert activity [play](activity) in [monthly](category) at 9:40
-    - put activity [jogging](activity) in [quickly](category) at 7:00
-    - add [run](activity) in category [commitments](category) at 6:30
-    - insert [bed](activity) in category [weekly](category) at 8:00
-    - enter [stand_up](activity) in category [daily](category) at 10:25
-    - and put activity [run](activity) in category [monthly](category) at 21:10
-    - add [swimmming](activity) in category [quickly](category) at 16:30
-    - insert [play](activity) in category [projects](category) at 19:00
-    - enter [jogging](activity) in category [monthly](category) at 20:30
-    - put activity [bed](activity) in category [quickly](category) at 9:40
-    - add activity [stand_up](activity) in category [projects](category) at 5:12
-    - insert activity [swimmming](activity) in category [commitments](category) at 13:39
-    - put activity [play](activity) in category [daily](category) at 3:29
-    - add activity [jogging](activity) in category [weekly](category) at 11:00
+    - add [match](activity) at 11:00
+    - add [call my mother](activity) at 13:00
+    - insert [take the pill](activity) at 9:30
+    - add [selfie](activity) at 01:45
+    - insert [degree](activity) at 00:00
+    - enter [walk with the dog](activity) at 3:00
+    - put [have a shower](activity) in [esthetics](category) at 4:25
+    - put [trello](activity) in [gadgets](category) at 2:55
+    - insert [church](activity) in [weekly](category) at 16:00
+    - add [visits](activity) in [parent](category) at 20:00
+    - insert [go to the post office](activity) in [packs](category) for tomorrow 
+    - add [go skiing](activity) in [hobby](category) at 20:00
+    - enter [push](activity) in [informatic](category) at 22:20
+    - enter [my friend birthday](activity) in [events](category) at 14:50
+    - insert activity [book the pub](activity) in [friendship](category) at 19:41
+    - add new activity [update](activity) in [team](category) at 12:35
+    - add new activity [go to theatre](activity) in [culture](category) at 12:35
+    - enter the activity [review](activity) in [commitments](category) at 17:30
+    - enter the activity [go to the concert](activity) in [music](category) at 17:30
+    - put activity [research](activity) in [updatings](category) at 18:30
+    - insert activity [checkboxes](activity) in [organize](category) at 9:40
+    - put activity [pizza](activity) in [friendship](category) at 7:00
+    - add [homework](activity) in category [class](category) at 6:30
+    - insert [sprint](activity) in category [engineering](category) at 8:00
+    - enter [experiments](activity) in category [science](category) at 10:25
+    - add [book the plane](activity) in category [journey](category) at 16:30
+    - insert [play volleyball](activity) in category [sport](category) at 19:00
+    - enter [take the medicine](activity) in category [health](category) at 20:30
+    - and put activity [play baseball](activity) in category [sport](category) at 21:10
+    - put activity [buy christmas present](activity) in category [urgent](category) at 9:40
+    - add activity [play volleyball](activity) in category [sport](category) at 5:12
+    - insert activity [correct](activity) in category [work](category) at 13:39
+    - insert activity [volunteering](activity) in category [caring](category) at 13:39
+    - put activity [bus](activity) in category [daily](category) at 3:29
+    - add activity [junkfood](activity) in category [weekly](category) at 11:00
     - I want to add an activity at 11:00
     - hi, I want to enter an activity to a list at 13:39
-    - hi, I want to insert an activity to [weekly](category) list at 21:10
-    - hi, and I want to add a new activity to [daily](category) list at 9:40
-    - hi, I want to insert an activity to [commitments](category) list at 19:00
-    - hi, I want to enter the activity to [projects](category) list at 16:30
-    - hi, I want to put an activity to [monthly](category) list at 7:00
-    - hi, and I want to add an activity to [quickly](category) list at 6:30
-    - hi, I want to add an activity to [weekly](category) list at 18:30
-    - hi, I want to create an activity to [daily](category) list at 17:30
-    - hi, and I want to insert an activity to [commitments](category) list at 22:20
-    - hi, I want to add an activity to [projects](category) list at 16:00
-    - hi, I want to enter an activity to [monthly](category) list at 14:50
-    - hi, I want to insert an activity to [quickly](category) list at 3:29
+    - hi, I want to insert an activity to [groceries](category) list at 21:10
+    - hi, and I want to add a new activity to [communication](category) list at 9:40
+    - hi, I want to insert an activity to [coaching](category) list at 19:00
+    - hi, I want to enter the activity to [upcoming](category) list at 16:30
+    - hi, I want to put an activity to [errands](category) list at 7:00
+    - hi, and I want to add an activity to [shop](category) list at 6:30
+    - hi, I want to add an activity to [business](category) list at 18:30
+    - hi, I want to create an activity to [marketing](category) list at 17:30
+    - hi, and I want to insert an activity to [blog](category) list at 22:20
+    - hi, I want to add an activity to [life](category) list at 16:00
+    - hi, I want to enter an activity to [lifestyle](category) list at 14:50
+    - hi, I want to insert an activity to [social](category) list at 3:29
     - hi, and I want to put an activity to my list at 12:37
     - hi, I want to insert an activity to my list at 18:14
 
-    
 - intent: remove_item
   examples: |
     - remove [run](activity)
     - delete [study](activity)
-    - del [stand_up](activity)
-    - remove [swimmming](activity)
-    - delete [play](activity)
-    - remove [jogging](activity)
+    - del [stand up](activity)
+    - remove [walk in the garden](activity)
+    - delete [do yoga](activity)
+    - del [do homework](activity)
     - del [run](activity) in [daily](category)
-    - delete [bed](activity) in [projects](category)
-    - cancel [stand_up](activity) in [weekly](category)
-    - remove [swimmming](activity) in [monthly](category)
-    - delete [play](activity) in [commitments](category)
-    - del [jogging](activity) in [quickly](category)
-    - remove activity [run](activity) in [weekly](category)
-    - delete activity [bed](activity) in [daily](category)
-    - remove activity [stand_up](activity) in [commitments](category)
-    - del activity [swimmming](activity) in [projects](category)
-    - delete activity [play](activity) in [monthly](category)
+    - delete [bed](activity) in [health](category)
+    - cancel [drink](activity) in [daily](category)
+    - remove [swimming](activity) in [sport](category)
+    - cancel [go for a hike](activity) in [freetime](category)
+    - remove [do shopping](activity) in [life](category)
+    - delete [go to the beautician](activity) in [personal](category)
+    - del [finish the report](activity) in [work](category)
+    - remove activity [boxe](activity) in [weekly](category)
+    - delete activity [send an email](activity) in [team](category)
+    - remove activity [read the paper](activity) in [commitments](category)
+    - del activity [swimming](activity) in [fun](category)
+    - del activity [play the piano](activity) in [music](category)
+    - delete activity [play](activity) in [entertainment](category)
     - cancel activity [jogging](activity) in [quickly](category)
-    - remove [run](activity) in category [commitments](category)
-    - del [bed](activity) in category [weekly](category)
-    - delete [stand_up](activity) in category [daily](category)
-    - cancel [swimmming](activity) in category [quickly](category)
-    - remove [play](activity) in category [projects](category)
-    - delete [jogging](activity) in category [monthly](category)
-    - remove activity [run](activity) in category [monthly](category)
-    - cancel activity [bed](activity) in category [quickly](category)
-    - delete activity [stand_up](activity) in category [projects](category)
-    - del activity [swimmming](activity) in category [commitments](category)
-    - remove activity [play](activity) in category [daily](category)
-    - del activity [jogging](activity) in category [weekly](category)
+    - cancel activity [write the paper](activity) in [research](category)
+    - remove [review the presentation](activity) in category [school](category)
+    - del [bed](activity) in category [health](category)
+    - del [learn spanish](activity) in category [languages](category)
+    - delete [shampoo](activity) in category [daily](category)
+    - cancel [taekwondo](activity) in category [hobby](category)
+    - cancel [complete the form](activity) in category [committments](category)
+    - remove [video-conference](activity) in category [community](category)
+    - delete [do presentation](activity) in category [society](category)
+    - remove activity [study maths](activity) in category [university](category)
+    - cancel activity [ppt](activity) in category [urgent](category)
+    - cancel activity [correcting homework](activity) in category [working](category)
+    - delete activity [train](activity) in category [well-being](category)
+    - delete activity [go swimming](activity) in category [sport](category)
+    - del activity [go to bank](activity) in category [finance](category)
+    - remove activity [read](activity) in category [culture](category)
+    - del activity [psychologist](activity) in category [mind](category)
     - I want to delete an activity
     - I want to remove an activity to a list
-    - I want to del an activity to [weekly](category) list
-    - I want to delete an activity to [daily](category) list
-    - I want to remove an activity to [commitments](category) list
-    - I want to delete an activity to [projects](category) list
-    - I want to cancel an activity to [monthly](category) list
-    - I want to delete an activity to [quickly](category) list
-    - hi, I want to del an activity to [weekly](category) list
-    - hi, I want to remove an activity to [daily](category) list
-    - hi, I want to delete an activity to [commitments](category) list
-    - hi, I want to cancel an activity to [projects](category) list
-    - hello, I want to del an activity to [monthly](category) list
-    - hello, I want to delete an activity to [quickly](category) list
+    - I want to del an activity to [classroom](category) list
+    - I want to delete an activity to [paperwork](category) list
+    - I want to remove an activity to [show](category) list
+    - I want to delete an activity to [leadership](category) list
+    - I want to cancel an activity to [computer](category) list
+    - I want to delete an activity to [pleasure](category) list
+    - hi, I want to del an activity to [amusement](category) list
+    - hi, I want to remove an activity to [recreation](category) list
+    - hi, I want to delete an activity to [parents](category) list
+    - hi, I want to cancel an activity to [plannings](category) list
+    - hello, I want to del an activity to [theater](category) list
+    - hello, I want to delete an activity to [politic](category) list
     - hello I want to remove an activity to my list
     - hi I want to delete an activity to my list
-    - delete [run](activity) at 11:00
-    - remove [bed](activity) at 13:00
-    - delete [stand_up](activity) at 9:30
-    - cancel [swimmming](activity) at 01:45
-    - del [play](activity) at 00:00
-    - remove [jogging](activity) at 3:00
-    - delete [study](activity) in [daily](category) at 4:25
-    - del [bed](activity) in [projects](category) at 2:55
-    - cancel [stand_up](activity) in [weekly](category) at 16:00
-    - delete [swimmming](activity) in [monthly](category) at 20:00
-    - remove [play](activity) in [commitments](category) at 22:20
-    - del [jogging](activity) in [quickly](category) at 14:50
-    - delete activity [run](activity) in [weekly](category) at 19:41
-    - del activity [bed](activity) in [daily](category) at 12:35
-    - remove activity [stand_up](activity) in [commitments](category) at 17:30
-    - delete activity [swimmming](activity) in [projects](category) at 18:30
-    - del activity [play](activity) in [monthly](category) at 9:40
-    - cancel activity [jogging](activity) in [quickly](category) at 7:00
-    - del [run](activity) in category [commitments](category) at 6:30
-    - delete [bed](activity) in category [weekly](category) at 8:00
-    - remove [stand_up](activity) in category [daily](category) at 10:25
-    - del [swimmming](activity) in category [quickly](category) at 16:30
-    - cancel [play](activity) in category [projects](category) at 19:00
-    - delete [jogging](activity) in category [monthly](category) at 20:30
-    - del activity [run](activity) in category [monthly](category) at 21:10
-    - remove activity [bed](activity) in category [quickly](category) at 9:40
-    - cancel activity [stand_up](activity) in category [projects](category) at 5:12
-    - delete activity [swimmming](activity) in category [commitments](category) at 13:39
-    - remove activity [play](activity) in category [daily](category) at 13:29
-    - remove activity [jogging](activity) in category [weekly](category) at 11:00
+    - delete [go to singing](activity) at 11:00
+    - remove [go to cinema](activity) at 13:00
+    - delete [e-mail](activity) at 9:30
+    - cancel [windsurf](activity) at 01:45
+    - del [checkboxes](activity) at 00:00
+    - cancel [help my mother](activity) at 01:45
+    - del [do shopping](activity) at 00:00
+    - remove [merge](activity) at 3:00
+    - delete [go to meeting](activity) in [work](category) at 4:25
+    - del [study latin](activity) in [school](category) at 2:55
+    - cancel [tests](activity) in [plan](category) at 16:00
+    - cancel [write the report](activity) in [project](category) at 16:00
+    - delete [refuel](activity) in [car](category) at 20:00
+    - delete [buy the train ticket](activity) in [journey](category) at 20:00
+    - remove [dentist](activity) in [healthcare](category) at 22:20
+    - remove [wash the car](activity) in [households](category) at 22:20
+    - del [blog](activity) in [hobbies](category) at 14:50
+    - delete activity [go to church](activity) in [personal](category) at 19:41
+    - del activity [listen the poadcast](activity) in [entertainings](category) at 12:35
+    - remove activity [exit](activity) in [society](category) at 17:30
+    - remove activity [go to the post office](activity) in [packs](category) at 17:30
+    - delete activity [climbing](activity) in [summer](category) at 18:30
+    - del activity [nails](activity) in [esthetics](category) at 9:40
+    - cancel activity [stroll](activity) in [daily](category) at 7:00
+    - cancel activity [study for the exam](activity) in [university](category) at 7:00
+    - del [walking](activity) in category [day](category) at 6:30
+    - delete [buy bread](activity) in category [food](category) at 8:00
+    - remove [push](activity) in category [work](category) at 10:25
+    - remove [tidy up the wardrobe](activity) in category [monthly](category) at 10:25
+    - del [prepare the breakfast](activity) in category [diet](category) at 7:30
+    - cancel [studying](activity) in category [school](category) at 19:00
+    - cancel [clean house](activity) in category [households](category) at 19:00
+    - delete [cleaning](activity) in category [house](category) at 20:30
+    - del activity [word](activity) in category [programs](category) at 21:10
+    - del activity [go to the market](activity) in category [personal](category) at 21:10
+    - remove activity [paint](activity) in category [creativeness](category) at 9:40
+    - cancel activity [gardening](activity) in category [garden](category) at 5:12
+    - cancel activity [attend the lesson](activity) in category [university](category) at 5:12
+    - delete activity [hairdresser](activity) in category [well-being](category) at 13:39
+    - remove activity [water the plants](activity) in category [households](category) at 13:29
+    - delete activity [do the interview](activity) in category [society](category) at 11:00
     - I want to delete an activity at 11:00
     - I want to cancel an activity to a list at 13:39
-    - I want to del an activity to [weekly](category) list at 21:10
-    - I want to delete an activity to [daily](category) list at 9:40
-    - I want to cancel an activity to [commitments](category) list at 19:00
-    - I want to remove an activity to [projects](category) list at 16:30
-    - I want to delete an activity to [monthly](category) list at 7:00
-    - I want to remove an activity to [quickly](category) list at 6:30
-    - hi, I want to del an activity to [weekly](category) list at 18:30
-    - hi, I want to remove an activity to [daily](category) list at 17:30
-    - hi, I want to delete an activity to [commitments](category) list at 22:20
-    - hi, I want to cancel an activity to [projects](category) list at 16:00
-    - hello, I want to del an activity to [monthly](category) list at 14:50
-    - hello, I want to delete an activity to [quickly](category) list at 3:29
+    - I want to del an activity to [communication](category) list at 21:10
+    - I want to delete an activity to [groceries](category) list at 9:40
+    - I want to cancel an activity to [errands](category) list at 19:00
+    - I want to remove an activity to [upcoming](category) list at 16:30
+    - I want to delete an activity to [shop](category) list at 7:00
+    - I want to remove an activity to [business](category) list at 6:30
+    - hi, I want to del an activity to [marketing](category) list at 18:30
+    - hi, I want to remove an activity to [blog](category) list at 17:30
+    - hi, I want to delete an activity to [life](category) list at 22:20
+    - hi, I want to cancel an activity to [lifestyle](category) list at 16:00
+    - hello, I want to del an activity to [social](category) list at 14:50
+    - hello, I want to delete an activity to [caring](category) list at 3:29
     - hello I want to remove an activity to my list at 12:37
     - hi I want to delete an activity to my list at 18:14
 
@@ -753,246 +836,258 @@ nlu:
     - set activity [complete](activity_status) 
     - Hi, set activity [complete](activity_status)
     - set up [complete](activity_status) [run](activity)
+    - set up [complete](activity_status) [play guitar](activity)
     - set done [bed](activity)
-    - set [complete](activity_status) [stand_up](activity)
-    - set up [completed](activity_status) [swimmming](activity)
+    - set [complete](activity_status) [water the plants](activity)
+    - set up [completed](activity_status) [swimming](activity)
+    - set up [completed](activity_status) [call the doctor](activity)
     - set [complete](activity_status) [play](activity)
-    - set done [jogging](activity)
-    - set [complete](activity_status) [run](activity) in [daily](category)
-    - set [completed](activity_status) [bed](activity) in [projects](category)
-    - set up [complete](activity_status) [stand_up](activity) in [weekly](category)
-    - set [complete](activity_status) [swimmming](activity) in [monthly](category)
-    - set done [play](activity) in [commitments](category)
-    - set [complete](activity_status) [jogging](activity) in [quickly](category)
-    - set [completed](activity_status) activity [run](activity) in [weekly](category)
-    - set [complete](activity_status) activity [bed](activity) in [daily](category)
-    - set [completed](activity_status) activity [study](activity) in [commitments](category)
-    - set done activity [swimmming](activity) in [projects](category)
-    - set [complete](activity_status) activity [play](activity) in [monthly](category)
+    - set done [dinner with friends](activity)
+    - set [complete](activity_status) [turn off the oven](activity) in [households](category)
+    - set [completed](activity_status) [bed](activity) in [health](category)
+    - set up [complete](activity_status) [stand up](activity) in [daily](category)
+    - set up [complete](activity_status) [call my mother](activity) in [weekly](category)
+    - set [complete](activity_status) [swimming](activity) in [sport](category)
+    - set done [play](activity) in [entertainment](category)
+    - set [complete](activity_status) [listen to music](activity) in [personal](category)
+    - set done [clean the bathroom](activity) in [home](category)
+    - set [completed](activity_status) [go to the sea](activity) in [travel](category)
+    - set [completed](activity_status) activity [play the piano](activity) in [music](category)
+    - set [complete](activity_status) activity [buy a bike](activity) in [shop](category)
+    - set done activity [cook pizza](activity) in [households](category)
+    - set done activity [match](activity) in [gym](category)
+    - set [complete](activity_status) activity [selfie](activity) in [social](category)
     - set [completed](activity_status) activity [jogging](activity) in [quickly](category)
-    - set done [run](activity) in category [commitments](category)
-    - set [complete](activity_status) [bed](activity) in category [weekly](category)
-    - set up [completed](activity_status) [stand_up](activity) in category [daily](category)
-    - set [complete](activity_status) [swimmming](activity) in category [quickly](category)
-    - set [completed](activity_status) [play](activity) in category [projects](category)
-    - set done [jogging](activity) in category [monthly](category)
-    - set [complete](activity_status) activity [run](activity) in category [monthly](category)
-    - set [complete](activity_status) activity [bed](activity) in category [quickly](category)
-    - set done activity [stand_up](activity) in category [projects](category)
-    - set [completed](activity_status) activity [swimmming](activity) in category [commitments](category)
-    - set [complete](activity_status) activity [play](activity) in category [daily](category)
-    - set [completed](activity_status) activity [jogging](activity) in category [weekly](category)
+    - set done [repeat math](activity) in category [school](category)
+    - set [complete](activity_status) [call the boss](activity) in category [work](category)
+    - set up [completed](activity_status) [repetitions](activity) in category [graduance](category)
+    - set up [completed](activity_status) [clean the kitchen](activity) in category [house](category)
+    - set [complete](activity_status) [hairdresser](activity) in category [well-being](category)
+    - set [completed](activity_status) [gardening](activity) in category [garden](category)
+    - set [completed](activity_status) [repeat the presentation](activity) in category [projects](category)
+    - set done [powerpoint](activity) in category [programs](category)
+    - set [complete](activity_status) activity [propose](activity) in category [girlfriend](category)
+    - set done activity [go to pharmacy](activity) in category [well-being](category)
+    - set done activity [shampoo](activity) in category [daily](category)
+    - set [completed](activity_status) activity [help my grandfather](activity) in category [parents](category)
+    - set [complete](activity_status) activity [play guitar](activity) in category [music](category)
+    - set [completed](activity_status) activity [taekwondo](activity) in category [martial-arts](category)
     - I want to set [complete](activity_status) an activity 
     - I want to set done an activity in a list 
-    - I want to set [completed](activity_status) an activity in [weekly](category) list 
-    - I want to set [complete](activity_status) an activity in [daily](category) list
-    - I want to set done an activity in [commitments](category) list 
-    - I want to set [complete](activity_status) an activity in [projects](category) list 
-    - I want to set [complete](activity_status) an activity in [monthly](category) list
-    - I want to set done an activity in [quickly](category) list
-    - hi, I want to set [completed](activity_status) an activity in [weekly](category) list 
-    - hi, I want to set [complete](activity_status) an activity in [daily](category) list 
-    - hi, I want to set done an activity in [commitments](category) list 
-    - hi, I want to set [completed](activity_status) an activity in [projects](category) list 
+    - I want to set [completed](activity_status) an activity in [business](category) list 
+    - I want to set [complete](activity_status) an activity in [errands](category) list
+    - I want to set done an activity in [upcoming](category) list 
+    - I want to set [complete](activity_status) an activity in [coaching](category) list 
+    - I want to set [complete](activity_status) an activity in [groceries](category) list
+    - I want to set done an activity in [communication](category) list
+    - hi, I want to set [completed](activity_status) an activity in [society](category) list 
+    - hi, I want to set [complete](activity_status) an activity in [marketing](category) list 
+    - hi, I want to set done an activity in [classroom](category) list 
+    - hi, I want to set [completed](activity_status) an activity in [paperworks](category) list 
     - hello, I want to set done an activity in [monthly](category) list 
-    - hello, I want to set [complete](activity_status) an activity in [quickly](category) list
+    - hello, I want to set [complete](activity_status) an activity in [places](category) list
     - hello I want to set [complete](activity_status) an activity in my list 
     - hi I want to set up [complete](activity_status) an activity in my list 
-    - Hi I want to set done all activity in [monthly](category) list
-    - I have [complete](activity_status) activity [swimming](activity) in category [gym](category)
-    - I have done activity [run](activity) in category [commitments](category)
-    - I have [completed](activity_status) activity [play](activity) in category [projects](category)
-    - I have [complete](activity_status) activity [stand_up](activity) in category [daily](category)
-    - I have done activity [jogging](activity) in category [gym](category)
+    - Hi I want to set done all activity in [sooner](category) list
+    - I have [complete](activity_status) activity [go to the vet](activity) in category [animals](category)
+    - I have done activity [fix the code](activity) in category [university](category)
+    - I have [completed](activity_status) activity [pub](activity) in category [friendship](category)
+    - I have [completed](activity_status) activity [reserve a table](activity) in category [fun](category)
+    - I have [complete](activity_status) activity [ski](activity) in category [winter](category)
+    - I have done activity [medicines](activity) in category [weekly](category)
     - set activity [incomplete](activity_status) 
     - Hi, set activity [incomplete](activity_status)
-    - set [incomplete](activity_status) [run](activity)
-    - set [incomplete](activity_status) [bed](activity)
-    - set undone [stand_up](activity)
-    - set [incomplete](activity_status) [swimmming](activity)
-    - set [incomplete](activity_status) [play](activity)
-    - set undone [jogging](activity)
-    - set [incomplete](activity_status) [run](activity) in [daily](category)
-    - set [incomplete](activity_status) [bed](activity) in [projects](category)
-    - set [incomplete](activity_status) [stand_up](activity) in [weekly](category)
-    - set undone [swimmming](activity) in [monthly](category)
-    - set [incomplete](activity_status) [play](activity) in [commitments](category)
-    - set [incomplete](activity_status) [jogging](activity) in [quickly](category)
-    - set [incomplete](activity_status) activity [run](activity) in [weekly](category)
-    - set [incomplete](activity_status) activity [study](activity) in [daily](category)
-    - set undone activity [stand_up](activity) in [commitments](category)
-    - set [incomplete](activity_status) activity [swimmming](activity) in [projects](category)
-    - set [incomplete](activity_status) activity [play](activity) in [monthly](category)
-    - set [incomplete](activity_status) activity [jogging](activity) in [quickly](category)
-    - set [incomplete](activity_status) [run](activity) in category [commitments](category)
-    - set undone [bed](activity) in category [weekly](category)
-    - set [incomplete](activity_status) [stand_up](activity) in category [daily](category)
-    - set [incomplete](activity_status) [swimmming](activity) in category [quickly](category)
-    - set [incomplete](activity_status) [play](activity) in category [projects](category)
-    - set [incomplete](activity_status) [jogging](activity) in category [monthly](category)
-    - set [incomplete](activity_status) activity [run](activity) in category [monthly](category)
-    - set [incomplete](activity_status) activity [bed](activity) in category [quickly](category)
-    - set [incomplete](activity_status) activity [stand_up](activity) in category [projects](category)
-    - set [incomplete](activity_status) activity [swimmming](activity) in category [commitments](category)
-    - set undone activity [play](activity) in category [daily](category)
-    - set [incomplete](activity_status) activity [jogging](activity) in category [weekly](category)
+    - set [incomplete](activity_status) [read](activity)
+    - set [incomplete](activity_status) [prepare the dinner](activity)
+    - set undone [ppt](activity)
+    - set [incomplete](activity_status) [train](activity)
+    - set [incomplete](activity_status) [send an email](activity)
+    - set undone [turn off the light](activity)
+    - set [incomplete](activity_status) [paint](activity) in [creativeness](category)
+    - set [incomplete](activity_status) [write](activity) in [hobby](category)
+    - set [incomplete](activity_status) [windsurf](activity) in [summer](category)
+    - set undone [checkbox](activity) in [plan](category)
+    - set undone [collect the package](activity) in [organization](category)
+    - set [incomplete](activity_status) [have a wash](activity) in [daily](category)
+    - set [incomplete](activity_status) activity [listen the music](activity) in [fun](category)
+    - set [incomplete](activity_status) activity [watch a concert](activity) in [event](category)
+    - set [incomplete](activity_status) activity [vet for the dog](activity) in [urgent](category)
+    - set [incomplete](activity_status) activity [party](activity) in [entertainment](category)
+    - set [incomplete](activity_status) activity [car from the machanic](activity) in category [quickly](category)
+    - set [incomplete](activity_status) [search](activity) in category [scheme](category)
+    - set undone [appointment](activity) in category [doctor](category)
+    - set undone [video-conference](activity) in category [community](category)
+    - set [incomplete](activity_status) [bank's appointments](activity) in category [finance](category)
+    - set [incomplete](activity_status) [pik up of the package](activity) in category [organization](category)
+    - set [incomplete](activity_status) [bills](activity) in category [important](category)
+    - set [incomplete](activity_status) [update](activity) in category [team](category)
+    - set [incomplete](activity_status) activity [go to gym](activity) in category [sport](category)
+    - set [incomplete](activity_status) activity [clean my bedroom](activity) in category [households](category)
+    - set [incomplete](activity_status) activity [stand up](activity) in category [health](category)
+    - set [incomplete](activity_status) activity [swimming](activity) in category [pleasure](category)
+    - set undone activity [visits](activity) in category [parent](category)
+    - set [incomplete](activity_status) activity [junkfood](activity) in category [weekly](category)
+    - set undone activity [cookies for children](activity) in category [households](category)
+    - set [incomplete](activity_status) activity [present for grandmother](activity) in category [christmas](category)
     - I want to set [incomplete](activity_status) an activity 
     - I want to set [incomplete](activity_status) an activity in a list 
-    - I want to set [incomplete](activity_status) an activity in [weekly](category) list 
-    - I want to set [incomplete](activity_status) an activity in [daily](category) list
-    - I want to set undone an activity in [study](category) list 
-    - I want to set [incomplete](activity_status) an activity in [projects](category) list 
-    - I want to set [incomplete](activity_status) an activity in [monthly](category) list
-    - I want to set [incomplete](activity_status) an activity in [quickly](category) list
-    - hi, I want to set [incomplete](activity_status) an activity in [weekly](category) list 
-    - hi, I want to set undone an activity in [daily](category) list 
-    - hi, I want to set undone an activity in [commitments](category) list 
-    - hi, I want to set [incomplete](activity_status) an activity in [projects](category) list 
-    - hello, I want to set [incomplete](activity_status) an activity in [monthly](category) list 
-    - hello, I want to set [incomplete](activity_status) an activity in [quickly](category) list
+    - I want to set [incomplete](activity_status) an activity in [deepwork](category) list 
+    - I want to set [incomplete](activity_status) an activity in [chores](category) list
+    - I want to set undone an activity in [learning](category) list 
+    - I want to set [incomplete](activity_status) an activity in [mind-care](category) list 
+    - I want to set [incomplete](activity_status) an activity in [body-care](category) list
+    - I want to set [incomplete](activity_status) an activity in [people](category) list
+    - hi, I want to set [incomplete](activity_status) an activity in [summer](category) list 
+    - hi, I want to set undone an activity in [someday](category) list 
+    - hi, I want to set undone an activity in [movies](category) list 
+    - hi, I want to set [incomplete](activity_status) an activity in [places](category) list 
+    - hello, I want to set [incomplete](activity_status) an activity in [sooner](category) list 
+    - hello, I want to set [incomplete](activity_status) an activity in [critical](category) list
     - hello I want to set [incomplete](activity_status) an activity in my list 
     - hi I want to set [incomplete](activity_status) an activity in my list 
-    - Hi I want to set undone all activity in [monthly](category) list
-    - undo [complete](activity_status) [run](activity)
-    - undo [complete](activity_status) [bed](activity)
-    - undo [complete](activity_status) [stand_up](activity)
-    - undo [complete](activity_status) [swimmming](activity)
-    - undo [complete](activity_status) [play](activity)
-    - undo [complete](activity_status) [jogging](activity)
-    - undo [complete](activity_status) [run](activity) in [daily](category)
-    - undo [complete](activity_status) [bed](activity) in [projects](category)
-    - undo [complete](activity_status) [stand_up](activity) in [weekly](category)
-    - undo [complete](activity_status) [swimmming](activity) in [monthly](category)
-    - undo [complete](activity_status) [play](activity) in [commitments](category)
-    - undo [complete](activity_status) [study](activity) in [quickly](category)
-    - undo [complete](activity_status) activity [run](activity) in [weekly](category)
-    - undo [complete](activity_status) activity [bed](activity) in [daily](category)
-    - undo [complete](activity_status) activity [stand_up](activity) in [commitments](category)
-    - undo [complete](activity_status) activity [swimmming](activity) in [projects](category)
-    - undo [complete](activity_status) activity [play](activity) in [monthly](category)
+    - Hi I want to set undone all activity in [leadership](category) list
+    - undo [complete](activity_status) [exit](activity)
+    - undo [complete](activity_status) [guardrobe](activity)
+    - undo [complete](activity_status) [booking](activity)
+    - undo [complete](activity_status) [post office](activity)
+    - undo [complete](activity_status) [bank count](activity)
+    - undo [complete](activity_status) [bills in bank](activity)
+    - undo [complete](activity_status) [blog](activity) in [daily](category)
+    - undo [complete](activity_status) [refuel](activity) in [car](category)
+    - undo [complete](activity_status) [stand up](activity) in [daily](category)
+    - undo [complete](activity_status) [go swimming](activity) in [journey](category)
+    - undo [complete](activity_status) [answer to the email](activity) in [commitments](category)
+    - undo [complete](activity_status) [answer to the call](activity) in [work](category)
+    - undo [complete](activity_status) activity [search](activity) in [scheme](category)
+    - undo [complete](activity_status) activity [robotic](activity) in [electronic](category)
+    - undo [complete](activity_status) activity [meeting](activity) in [course](category)
+    - undo [complete](activity_status) activity [doctor appointment](activity) in [personal](category)
+    - undo [complete](activity_status) activity [take the pills](activity) in [healthcare](category)
+    - undo [complete](activity_status) activity [take the medicine](activity) in [health](category)
     
 - intent: presentation+set_status_activity
   examples: |
     - i am [mattia](name) , set activity [complete](activity_status) 
     - Hi, i'm [ferdinando](name) set activity [complete](activity_status)
-    - i'm [ferdinando](name) , set up [complete](activity_status) [run](activity)
+    - i'm [luca](name) , set up [complete](activity_status) [run](activity)
     - i'm [Giusy](name) , set done [bed](activity)
-    - I'm [ferdinando](name) , set [complete](activity_status) [stand_up](activity)
-    - i am [mattia](name) , set up [completed](activity_status) [swimmming](activity)
-    - i'm [Giusy](name) , set [complete](activity_status) [play](activity)
-    - I'm [alessia](name) , set done [jogging](activity)
-    - I am [mattia](name) , set [complete](activity_status) [run](activity) in [daily](category)
-    - i am [camilla](name) and set [completed](activity_status) [bed](activity) in [projects](category)
-    - i'm [nando](name) set up [complete](activity_status) [stand_up](activity) in [weekly](category)
-    - i am [alessia](name) set [complete](activity_status) [swimmming](activity) in [monthly](category)
-    - I'm [alessia](name) , set done [play](activity) in [commitments](category)
-    - i am [alessia](name) set [complete](activity_status) [jogging](activity) in [quickly](category)
-    - I am [mattia](name) , set [completed](activity_status) activity [run](activity) in [weekly](category)
-    - I'm [nando](name) , set [complete](activity_status) activity [bed](activity) in [daily](category)
-    - I am [mattia](name) set [completed](activity_status) activity [study](activity) in [commitments](category)
-    - i am [alessia](name) set done activity [swimmming](activity) in [projects](category)
-    - I'm [alessia](name) set [complete](activity_status) activity [play](activity) in [monthly](category)
-    - I am [alessia](name) , set [completed](activity_status) activity [jogging](activity) in [quickly](category)
-    - I am [mattia](name) set done [run](activity) in category [commitments](category)
-    - i'm [ferdinando](name) , set [complete](activity_status) [bed](activity) in category [weekly](category)
-    - I'm [alessia](name) set up [completed](activity_status) [stand_up](activity) in category [daily](category)
-    - i'm [ferdinando](name) , set [complete](activity_status) [swimmming](activity) in category [quickly](category)
-    - I am [alessia](name) , set [completed](activity_status) [play](activity) in category [projects](category)
-    - I am [mattia](name) , set done [jogging](activity) in category [monthly](category)
-    - i'm [ferdinando](name) set [complete](activity_status) activity [run](activity) in category [monthly](category)
-    - I'm [Giusy](name) , set [complete](activity_status) activity [bed](activity) in category [quickly](category)
-    - i'm [ferdinando](name) , set done activity [stand_up](activity) in category [projects](category)
-    - I'm [ferdinando](name) , set [completed](activity_status) activity [swimmming](activity) in category [commitments](category)
-    - i am [mattia](name) , set [complete](activity_status) activity [play](activity) in category [daily](category)
-    - I'm [ferdinando](name) set [completed](activity_status) activity [jogging](activity) in category [weekly](category)
-    - i am [camilla](name) and I want to set [complete](activity_status) an activity 
-    - I am [mattia](name) and I want to set done an activity in a list 
-    - i'm [alessia](name) and I want to set [completed](activity_status) an activity in [weekly](category) list 
-    - i'm [ferdinando](name) I want to set [complete](activity_status) an activity in [daily](category) list
-    - i'm [nando](name) , I want to set done an activity in [commitments](category) list 
-    - I'm [ferdinando](name) , I want to set [complete](activity_status) an activity in [projects](category) list 
-    - I am [mattia](name) and I want to set [complete](activity_status) an activity in [monthly](category) list
-    - I am [mattia](name) , I want to set done an activity in [quickly](category) list
-    - hi, I am [alessia](name) and I want to set [completed](activity_status) an activity in [weekly](category) list 
-    - hi, i am [camilla](name) and I want to set [complete](activity_status) an activity in [daily](category) list 
-    - hi, I am [mattia](name) , I want to set done an activity in [commitments](category) list 
-    - hi, i'm [alessia](name) and I want to set [completed](activity_status) an activity in [projects](category) list 
-    - hello, i'm [ferdinando](name) and I want to set done an activity in [monthly](category) list 
-    - I'm [Giusy](name) , hello, I want to set [complete](activity_status) an activity in [quickly](category) list
-    - hello i am [mattia](name) , I want to set [complete](activity_status) an activity in my list 
-    - I am [camilla](name) hi I want to set up [complete](activity_status) an activity in my list 
-    - Hi i'm [nando](name) and I want to set done all activity in [monthly](category) list
-    - i am [alessia](name) and I have [complete](activity_status) activity [swimming](activity) in category [gym](category)
-    - I'm [Giusy](name) , I have done activity [run](activity) in category [commitments](category)
-    - I am [alessia](name) and I have [completed](activity_status) activity [play](activity) in category [projects](category)
-    - I am [mattia](name) , I have [complete](activity_status) activity [stand_up](activity) in category [daily](category)
-    - I am [camilla](name) and I have done activity [jogging](activity) in category [gym](category)
-    - I'm [antonio](name) and set activity [incomplete](activity_status) 
-    - Hi, I'm [Giusy](name) set activity [incomplete](activity_status)
-    - I am [camilla](name) set [incomplete](activity_status) [run](activity)
-    - I'm [ferdinando](name) , set [incomplete](activity_status) [bed](activity)
-    - I am [mattia](name) set undone [stand_up](activity)
-    - i'm [Giusy](name) set [incomplete](activity_status) [swimmming](activity)
-    - i'm [alessia](name) set [incomplete](activity_status) [play](activity)
-    - I'm [antonio](name) and set undone [jogging](activity)
-    - I'm [nando](name) , set [incomplete](activity_status) [run](activity) in [daily](category)
-    - I'm [antonio](name) and set [incomplete](activity_status) [bed](activity) in [projects](category)
-    - I am [mattia](name) set [incomplete](activity_status) [stand_up](activity) in [weekly](category)
-    - i am [camilla](name) set undone [swimmming](activity) in [monthly](category)
-    - I am [mattia](name) set [incomplete](activity_status) [play](activity) in [commitments](category)
-    - I'm [ferdinando](name) , set [incomplete](activity_status) [jogging](activity) in [quickly](category)
-    - i'm [nando](name) set [incomplete](activity_status) activity [run](activity) in [weekly](category)
-    - i'm [antonio](name) and set [incomplete](activity_status) activity [study](activity) in [daily](category)
-    - I am [mattia](name) , set undone activity [stand_up](activity) in [commitments](category)
-    - i'm [nando](name) set [incomplete](activity_status) activity [swimmming](activity) in [projects](category)
-    - I'm [Giusy](name) , set [incomplete](activity_status) activity [play](activity) in [monthly](category)
-    - i'm [alessia](name) , set [incomplete](activity_status) activity [jogging](activity) in [quickly](category)
-    - i'm [alessia](name) set [incomplete](activity_status) [run](activity) in category [commitments](category)
-    - I am [camilla](name) set undone [bed](activity) in category [weekly](category)
-    - I'm [Giusy](name) set [incomplete](activity_status) [stand_up](activity) in category [daily](category)
-    - I'm [Giusy](name) , set [incomplete](activity_status) [swimmming](activity) in category [quickly](category)
-    - i am [camilla](name) set [incomplete](activity_status) [play](activity) in category [projects](category)
-    - i'm [antonio](name) set [incomplete](activity_status) [jogging](activity) in category [monthly](category)
-    - I'm [ferdinando](name) , set [incomplete](activity_status) activity [run](activity) in category [monthly](category)
-    - I'm [Giusy](name) , set [incomplete](activity_status) activity [bed](activity) in category [quickly](category)
-    - i'm [ferdinando](name) set [incomplete](activity_status) activity [stand_up](activity) in category [projects](category)
-    - I am [mattia](name) , set [incomplete](activity_status) activity [swimmming](activity) in category [commitments](category)
-    - i'm [alessia](name) set undone activity [play](activity) in category [daily](category)
-    - I'm [Giusy](name) , set [incomplete](activity_status) activity [jogging](activity) in category [weekly](category)
-    - i am [camilla](name) I want to set [incomplete](activity_status) an activity 
-    - i'm [antonio](name) and I want to set [incomplete](activity_status) an activity in a list 
-    - I'm [nando](name) , I want to set [incomplete](activity_status) an activity in [weekly](category) list 
-    - I am [camilla](name) , I want to set [incomplete](activity_status) an activity in [daily](category) list
-    - I'm [ferdinando](name) , I want to set undone an activity in [study](category) list 
-    - I'm [Giusy](name) , I want to set [incomplete](activity_status) an activity in [projects](category) list 
-    - i'm [alessia](name) I want to set [incomplete](activity_status) an activity in [monthly](category) list
-    - i'm [ferdinando](name) I want to set [incomplete](activity_status) an activity in [quickly](category) list
-    - I am [mattia](name) , hi, I want to set [incomplete](activity_status) an activity in [weekly](category) list 
-    - hi, i'm [ferdinando](name) and I want to set undone an activity in [daily](category) list 
-    - i'm [alessia](name) hi, I want to set undone an activity in [commitments](category) list 
-    - hi, I'm [Giusy](name) and I want to set [incomplete](activity_status) an activity in [projects](category) list 
-    - hello, i'm [antonio](name) and I want to set [incomplete](activity_status) an activity in [monthly](category) list 
-    - hello, i'm [antonio](name) and I want to set [incomplete](activity_status) an activity in [quickly](category) list
-    - i am [camilla](name) hello I want to set [incomplete](activity_status) an activity in my list 
-    - hi I am [mattia](name) and I want to set [incomplete](activity_status) an activity in my list 
-    - Hi I'm [nando](name) , I want to set undone all activity in [monthly](category) list
-    - i'm [antonio](name) undo [complete](activity_status) [run](activity)
-    - I'm [ferdinando](name) , undo [complete](activity_status) [bed](activity)
-    - I am [camilla](name) , undo [complete](activity_status) [stand_up](activity)
-    - i'm [antonio](name) , undo [complete](activity_status) [swimmming](activity)
-    - i'm [alessia](name) undo [complete](activity_status) [play](activity)
-    - I am [mattia](name) and undo [complete](activity_status) [jogging](activity)
-    - I'm [ferdinando](name) , undo [complete](activity_status) [run](activity) in [daily](category)
-    - i'm [antonio](name) undo [complete](activity_status) [bed](activity) in [projects](category)
-    - I'm [Giusy](name) undo [complete](activity_status) [stand_up](activity) in [weekly](category)
-    - I am [mattia](name) , undo [complete](activity_status) [swimmming](activity) in [monthly](category)
-    - i'm [antonio](name) undo [complete](activity_status) [play](activity) in [commitments](category)
-    - I'm [nando](name) , undo [complete](activity_status) [study](activity) in [quickly](category)
-    - i'm [alessia](name) undo [complete](activity_status) activity [run](activity) in [weekly](category)
-    - i'm [antonio](name) undo [complete](activity_status) activity [bed](activity) in [daily](category)
-    - I'm [Giusy](name) , undo [complete](activity_status) activity [stand_up](activity) in [commitments](category)
-    - I'm [ferdinando](name) , undo [complete](activity_status) activity [swimmming](activity) in [projects](category)
-    - i am [camilla](name) undo [complete](activity_status) activity [play](activity) in [monthly](category)
+    - i'm [giovanni](name) , set done [take medicines](activity)
+    - I'm [gianluca](name) , set [complete](activity_status) [go swim](activity)
+    - i am [giuseppe](name) , set up [completed](activity_status) [cinema with friends](activity)
+    - i'm [valeria](name) , set [complete](activity_status) [play with dog](activity)
+    - I'm [alessia](name) , set done [listen the lesson](activity)
+    - I am [vito](name) , set [complete](activity_status) [run](activity) in [daily](category)
+    - i am [Camilla](name) and set [completed](activity_status) [send the exercise](activity) in [projects](category)
+    - i'm [nando](name) set up [complete](activity_status) [stand up](activity) in [weekly](category)
+    - i am [valentina](name) set [complete](activity_status) [swimming](activity) in [monthly](category)
+    - I'm [francesca](name) , set done [play](activity) in [commitments](category)
+    - i am [roberta](name) set [complete](activity_status) [pool with friends](activity) in [quickly](category)
+    - I am [simone](name) , set [completed](activity_status) activity [yoga](activity) in [weekly](category)
+    - I'm [alessandro](name) , set [complete](activity_status) activity [go to university](activity) in [daily](category)
+    - I am [francesco](name) set [completed](activity_status) activity [study with friends](activity) in [personal](category)
+    - i am [sara](name) set done activity [swimming](activity) in [sport](category)
+    - I'm [fiorella](name) set [complete](activity_status) activity [play](activity) in [entertainment](category)
+    - I am [anna](name) , set [completed](activity_status) activity [prepare the lesson](activity) in [work](category)
+    - I am [davide](name) set done [hairdresser](activity) in category [estethics](category)
+    - i'm [daniele](name) , set [complete](activity_status) [gardening](activity) in category [households](category)
+    - I'm [paola](name) set up [completed](activity_status) [drink](activity) in category [life](category)
+    - i'm [paolo](name) , set [complete](activity_status) [help at home](activity) in category [family](category)
+    - I am [lucia](name) , set [completed](activity_status) [volunteering](activity) in category [caring](category)
+    - I am [luciano](name) , set done [help dad](activity) in category [parents](category)
+    - i'm [piero](name) set [complete](activity_status) activity [pub](activity) in category [friendship](category)
+    - I'm [giovanna](name) , set [complete](activity_status) activity [pizza](activity) in category [diet](category)
+    - i'm [gerardo](name) , set done activity [call grandfather](activity) in category [family](category)
+    - I'm [marco](name) , set [completed](activity_status) activity [eat some fruits](activity) in category [health](category)
+    - i am [eugenio](name) , set [complete](activity_status) activity [play football](activity) in category [hobby](category)
+    - I'm [berniero](name) set [completed](activity_status) activity [jogging](activity) in category [weekly](category)
+    - i am [silvia](name) and I want to set [complete](activity_status) an activity 
+    - I am [antonio](name) and I want to set done an activity in a list 
+    - i'm [silvana](name) and I want to set [completed](activity_status) an activity in [pleasure](category) list 
+    - i'm [orazio](name) I want to set [complete](activity_status) an activity in [annual](category) list
+    - i'm [fernando](name) , I want to set done an activity in [healthcare](category) list 
+    - I'm [emilio](name) , I want to set [complete](activity_status) an activity in [school](category) list 
+    - I am [tommaso](name) and I want to set [complete](activity_status) an activity in [university](category) list
+    - I am [gianmarco](name) , I want to set done an activity in [friendship](category) list
+    - hi, I am [ilenia](name) and I want to set [completed](activity_status) an activity in [work](category) list 
+    - hi, i am [ilaria](name) and I want to set [complete](activity_status) an activity in [parents](category) list 
+    - hi, I am [dario](name) , I want to set done an activity in [commitments](category) list 
+    - hi, i'm [pia](name) and I want to set [completed](activity_status) an activity in [journey](category) list 
+    - hello, i'm [renato](name) and I want to set done an activity in [summer](category) list 
+    - I'm [luana](name) , hello, I want to set [complete](activity_status) an activity in [holidays](category) list
+    - hello i am [ugo](name) , I want to set [complete](activity_status) an activity in my list 
+    - I am [annamaria](name) hi I want to set up [complete](activity_status) an activity in my list 
+    - Hi i'm [walter](name) and I want to set done all activity in [winter](category) list
+    - i am [maria](name) and I have [complete](activity_status) activity [swimming](activity) in category [summer](category)
+    - I'm [gianna](name) , I have done activity [tests](activity) in category [commitments](category)
+    - I am [Iris](name) and I have [completed](activity_status) activity [merge](activity) in category [project](category)
+    - I am [Zacaria](name) , I have [complete](activity_status) activity [drink water](activity) in category [daily](category)
+    - I am [elena](name) and I have done activity [walk with the dog](activity) in category [animals](category)
+    - I'm [stefano](name) and set activity [incomplete](activity_status) 
+    - Hi, I'm [stefania](name) set activity [incomplete](activity_status)
+    - I am [Antonia](name) set [incomplete](activity_status) [math exercises](activity)
+    - I'm [ines](name) , set [incomplete](activity_status) [search](activity)
+    - I am [gianpaolo](name) set undone [stand up](activity)
+    - i'm [Pierpaolo](name) set [incomplete](activity_status) [blog](activity)
+    - i'm [jasmin](name) set [incomplete](activity_status) [booking](activity)
+    - I'm [manuel](name) and set undone [listen to music](activity)
+    - I'm [emanuele](name) , set [incomplete](activity_status) [run in the center](activity) in [daily](category)
+    - I'm [gabriele](name) and set [incomplete](activity_status) [fix some issues](activity) in [projects](category)
+    - I am [kevin](name) set [incomplete](activity_status) [church](activity) in [weekly](category)
+    - i am [carla](name) set undone [check my room](activity) in [home](category)
+    - I am [carlo](name) set [incomplete](activity_status) [send some notes](activity) in [commitments](category)
+    - I'm [giancarlo](name) , set [incomplete](activity_status) [taekwondo](activity) in [hobbies](category)
+    - i'm [augusto](name) set [incomplete](activity_status) activity [boxe](activity) in [sport](category)
+    - i'm [ivan](name) and set [incomplete](activity_status) activity [study math](activity) in [university](category)
+    - I am [giordano](name) , set undone activity [guardrobe](activity) in [clothing](category)
+    - i'm [pio](name) set [incomplete](activity_status) activity [write to the prof](activity) in [education](category)
+    - I'm [Debora](name) , set [incomplete](activity_status) activity [cinema](activity) in [friendship](category)
+    - i'm [Desirè](name) , set [incomplete](activity_status) activity [party](activity) in [fun](category)
+    - i'm [michela](name) set [incomplete](activity_status) [go to the bank](activity) in category [finance](category)
+    - I am [gabriella](name) set undone [bills](activity) in category [finances](category)
+    - I'm [giacinta](name) set [incomplete](activity_status) [gardening](activity) in category [house](category)
+    - I'm [giada](name) , set [incomplete](activity_status) [take meds](activity) in category [healtcare](category)
+    - i am [fiona](name) set [incomplete](activity_status) [check the project](activity) in category [team](category)
+    - i'm [Vito](name) set [incomplete](activity_status) [jogging](activity) in category [monthly](category)
+    - I'm [oscar](name) , set [incomplete](activity_status) activity [video-conference](activity) in category [weekly](category)
+    - I'm [helena](name) , set [incomplete](activity_status) activity [wash myself](activity) in category [well-being](category)
+    - i'm [quasimodo](name) set [incomplete](activity_status) activity [call the others](activity) in category [society](category)
+    - I am [nevio](name) , set [incomplete](activity_status) activity [swimming](activity) in category [freetime](category)
+    - i'm [trevor](name) set undone activity [play guitar](activity) in category [music](category)
+    - I'm [Sabrina](name) , set [incomplete](activity_status) activity [go to church](activity) in category [weekly](category)
+    - i am [Ylenia](name) I want to set [incomplete](activity_status) an activity 
+    - i'm [emiliano](name) and I want to set [incomplete](activity_status) an activity in a list 
+    - I'm [raffaele](name) , I want to set [incomplete](activity_status) an activity in [spring](category) list 
+    - I am [raffaella](name) , I want to set [incomplete](activity_status) an activity in [autumn](category) list
+    - I'm [angelo](name) , I want to set undone an activity in [winter](category) list 
+    - I'm [angela](name) , I want to set [incomplete](activity_status) an activity in [deepwork](category) list 
+    - i'm [daniela](name) I want to set [incomplete](activity_status) an activity in [chores](category) list
+    - i'm [christian](name) I want to set [incomplete](activity_status) an activity in [learning](category) list
+    - I am [cristiano](name) , hi, I want to set [incomplete](activity_status) an activity in [culture](category) list 
+    - hi, i'm [gianluigi](name) and I want to set undone an activity in [people](category) list 
+    - i'm [gina](name) hi, I want to set undone an activity in [body-care](category) list 
+    - hi, I'm [gaia](name) and I want to set [incomplete](activity_status) an activity in [mind-care](category) list 
+    - hello, i'm [Leonardo](name) and I want to set [incomplete](activity_status) an activity in [educational](category) list 
+    - hello, i'm [Giorgio](name) and I want to set [incomplete](activity_status) an activity in [friendship](category) list
+    - i am [samira](name) hello I want to set [incomplete](activity_status) an activity in my list 
+    - hi I am [ciro](name) and I want to set [incomplete](activity_status) an activity in my list 
+    - Hi I'm [matteo](name) , I want to set undone all activity in [monthly](category) list
+    - i'm [niccolò](name) undo [complete](activity_status) [painting](activity)
+    - I'm [nicola](name) , undo [complete](activity_status) [pay the bills](activity)
+    - I am [nicoletta](name) , undo [complete](activity_status) [stand up](activity)
+    - i'm [javier](name) , undo [complete](activity_status) [nails](activity)
+    - i'm [mirco](name) undo [complete](activity_status) [call my mother](activity)
+    - I am [mirko](name) and undo [complete](activity_status) [cook for dinner](activity)
+    - I'm [miriana](name) , undo [complete](activity_status) [disco](activity) in [fun](category)
+    - i'm [adriano](name) undo [complete](activity_status) [github](activity) in [projects](category)
+    - I'm [adriana](name) undo [complete](activity_status) [book the holiday](activity) in [summers](category)
+    - I am [massimo](name) , undo [complete](activity_status) [stroll](activity) in [monthly](category)
+    - i'm [bruno](name) undo [complete](activity_status) [ring](activity) in [commitments](category)
+    - I'm [daniel](name) , undo [complete](activity_status) [match](activity) in [gym](category)
+    - i'm [orietta](name) undo [complete](activity_status) activity [guardrobe](activity) in [weekly](category)
+    - i'm [thomas](name) undo [complete](activity_status) activity [book the restaurant](activity) in [events](category)
+    - I'm [tina](name) , undo [complete](activity_status) activity [call the group](activity) in [team](category)
+    - I'm [orlando](name) , undo [complete](activity_status) activity [do a repetition of math](activity) in [school](category)
+    - i am [Nadia](name) undo [complete](activity_status) activity [dentist](activity) in [health](category)
 
 - intent: add_category
   examples: |
@@ -1018,17 +1113,17 @@ nlu:
     - category: [bills](category)
     - I want to add a category
     - I want to insert a category
-    - I want to use  a new category
+    - I want to use a new category
     - new category: [school](category)
     - I want to put a new category [vacation](category)
     - I want to add a new category [leisure](category)
-    - hi, I want to enter a new category [research] (category)
-    - hi, I want to put a new category [events] (category)
+    - hi, I want to enter a new category [research](category)
+    - hi, I want to put a new category [events](category)
     - hi, I want to add a category [weekly](category)
     - hi, I want to insert the category [daily](category)
     - hi, I want to insert the category [projects](category)
     - new category to add: [projects](category)
-    - new category to insert: [bills](category)
+    - new category to insert: [finances](category)
     - hi, please insert the following [medical](category)
     - hi, please put the following [finance](category)
     - hi, please enter the following [shopping](category)
@@ -1036,11 +1131,19 @@ nlu:
     - category: [payments](category)
     - hello, I want to add the category [household](category)
     - I want to add a category [bank](category)
-    - hi, please insert the following [diet](category)
-    - I want to add  the category [commitments](category) 
-    - hello, I want to add the category [work](category)
-    - hello, I want to put the category [research](category)
-    - I want to insert the category [sports](category) 
+    - hi, please insert the following [fun](category)
+    - I want to add  the category [lifestyle](category) 
+    - hello, I want to add the category [life](category)
+    - hello, I want to put the category [parents](category)
+    - I want to insert the category [family](category) 
+    - add [sport](category)
+    - insert [freetime](category)
+    - enter [friends](category)
+    - put [sport](category)
+    - add [sport](category) category
+    - insert [freetime](category) category
+    - enter [friends](category) category
+    - put [sport](category) category
 
 - intent: remove_category
   examples: |
@@ -1051,12 +1154,12 @@ nlu:
     - I want to del the category [projects](category) 
     - I want to cancel the category [monthly](category) 
     - I want to delete the category [quickly](category) 
-    - hi, I want to del the category [weekly](category) 
-    - hi, I want to remove the category [daily](category) 
-    - hi, I want to delete the category [commitments](category) 
-    - hi, I want to remove the category [projects](category) 
-    - hello, I want to cancel the category [monthly](category) 
-    - hello, I want to remove the category [quickly](category) 
+    - hi, I want to del the category [annual](category) 
+    - hi, I want to remove the category [health](category) 
+    - hi, I want to delete the category [finance](category) 
+    - hi, I want to remove the category [family](category) 
+    - hello, I want to cancel the category [healthcare](category) 
+    - hello, I want to remove the category [home](category) 
     - I want to cancel the category [gym](category) 
     - I want to delete the category [sports](category) 
     - I want to del the category [study](category) 
@@ -1064,6 +1167,42 @@ nlu:
     - I want to remove the category [university](category) 
     - I want to delete the category [personal](category) 
     - hi, I want to cancel the category [work](category) 
+    - cancel the category [study](category)
+    - delete category [relations](category)
+    - remove the category [medications](category)
+    - rem the category [engineering](category)
+    - category to cancel: [school](category)
+    - I want to dislodge [university](category) category
+    - I want to dismiss [profession](category) category
+    - I want to obliterate [vacation](category) category
+    - remove old [personal](category) category
+    - delete old [bank](category) category
+    - cancel old [diet](category) category
+    - the category to eliminate is [household](category)
+    - the category to dismiss is [university](category)
+    - the category to deter is [volunteering](category)
+    - I don't want to use the category [events](category)
+    - I don't want to use the category [medical](category)
+    - I don't want to use the category [sports](category)
+    - I want to del a category
+    - I want to remove a category
+    - I want to dissuade a category
+    - I want to eliminate the category [vacation](category)
+    - I want to cancel a category [leisure](category)
+    - hi, I want to del a category [research](category)
+    - hi, I want to canc a category [events](category)
+    - hi, I want to remove a category [weekly](category)
+    - hi, I want to delete the category [daily](category)
+    - hi, I want to cancel the category [projects](category)
+    - category to trash: [projects](category)
+    - category to deter: [finances](category)
+    - hi, please dismiss the following [medical](category)
+    - hi, please trash the following [finance](category)
+    - hi, please remove the following [shopping](category)
+    - hello, I want to delete the category [household](category)
+    - hi, please cancel the following [fun](category) category
+    - hello, I want to remove the category [life](category)
+    - hello, I want to delete the category [parents](category)
 
 - intent: modify_category
   examples: |
@@ -1073,48 +1212,48 @@ nlu:
     - substitute the category [school]{"entity": "category", "role": "old"} with [events]{"entity": "category", "role": "new"}
     - transform the category [holiday]{"entity": "category", "role": "old"} to [bank]{"entity": "category", "role": "new"}
     - replace the category [bank]{"entity": "category", "role": "old"} with [holiday]{"entity": "category", "role": "new"}
-    - alter the category [carriage]{"entity": "category", "role": "old"} in [subjects]{"entity": "category", "role": "new"}
-    - change the category [subjects]{"entity": "category", "role": "old"} in [carriage]{"entity": "category", "role": "new"}
+    - alter the category [carriage]{"entity": "category", "role": "old"} in [fun]{"entity": "category", "role": "new"}
+    - change the category [fun]{"entity": "category", "role": "old"} in [carriage]{"entity": "category", "role": "new"}
     - I want to change the category [work]{"entity": "category", "role": "old"} with [commitments]{"entity": "category", "role": "new"}
     - I want to substitute the category [commitments]{"entity": "category", "role": "old"} with [work]{"entity": "category", "role": "new"}
     - substitute the category [monthly]{"entity": "category", "role": "old"} in [finance]{"entity": "category", "role": "new"}
     - please, vary the category [finance]{"entity": "category", "role": "old"} in [monthly]{"entity": "category", "role": "new"}
-    - convert the category [work]{"entity": "category", "role": "old"} in [household]{"entity": "category", "role": "new"}
-    - replace the category [household]{"entity": "category", "role": "old"} with [work]{"entity": "category", "role": "new"}
+    - convert the category [well-being]{"entity": "category", "role": "old"} in [household]{"entity": "category", "role": "new"}
+    - replace the category [household]{"entity": "category", "role": "old"} with [well-being]{"entity": "category", "role": "new"}
     - transform the category [gym]{"entity": "category", "role": "old"} in [leisure]{"entity": "category", "role": "new"}
     - alter the category [leisure]{"entity": "category", "role": "old"} with [gym]{"entity": "category", "role": "new"}
-    - I want to  transform the category [finance]{"entity": "category", "role": "old"} in [projects]{"entity": "category", "role": "new"}
-    - I want to vary the category [projects]{"entity": "category", "role": "old"} to [finance]{"entity": "category", "role": "new"}
+    - I want to  transform the category [plannings]{"entity": "category", "role": "old"} in [projects]{"entity": "category", "role": "new"}
+    - I want to vary the category [projects]{"entity": "category", "role": "old"} to [plannings]{"entity": "category", "role": "new"}
     - alter the category [vacation]{"entity": "category", "role": "old"} in [volunteering]{"entity": "category", "role": "new"}
     - modify the category [volunteering]{"entity": "category", "role": "old"} in [vacation]{"entity": "category", "role": "new"}
-    - vary the category [personal]{"entity": "category", "role": "old"} in [gym]{"entity": "category", "role": "new"}
-    - convert the category [gym]{"entity": "category", "role": "old"} in [personal]{"entity": "category", "role": "new"}
-    - change the category [school]{"entity": "category", "role": "old"} in [events]{"entity": "category", "role": "new"}
-    - please, change the category [events]{"entity": "category", "role": "old"} in [school]{"entity": "category", "role": "new"}
-    - I want to replace the category [payments]{"entity": "category", "role": "old"} in [finance]{"entity": "category", "role": "new"}
-    - please, I want to change the category [finance]{"entity": "category", "role": "old"} in [payments]{"entity": "category", "role": "new"}
-    - modify the category [projects]{"entity": "category", "role": "old"} in [quickly]{"entity": "category", "role": "new"}
-    - transform the category [quickly]{"entity": "category", "role": "old"} with [projects]{"entity": "category", "role": "new"}
-    - please, I want to convert the category [times]{"entity": "category", "role": "old"} in [volunteering]{"entity": "category", "role": "new"}
-    - please, i want to replace the category [volunteering]{"entity": "category", "role": "old"} to [times]{"entity": "category", "role": "new"}
-    - i want to alter the category [monthly]{"entity": "category", "role": "old"} to [carriage]{"entity": "category", "role": "new"}
-    - substitute the category [carriage]{"entity": "category", "role": "old"} in [monthly]{"entity": "category", "role": "new"}
-    - I want to modify the category [events]{"entity": "category", "role": "old"} in [medications]{"entity": "category", "role": "new"}
-    - I want to transform the category [medications]{"entity": "category", "role": "old"} in [events]{"entity": "category", "role": "new"}
-    - modify the category [dailyweekly]{"entity": "category", "role": "old"} in [events]{"entity": "category", "role": "new"}
-    - vary the category [events]{"entity": "category", "role": "old"} with [dailyweekly]{"entity": "category", "role": "new"}
-    - I want to convert the category [work]{"entity": "category", "role": "old"} in [carriage]{"entity": "category", "role": "new"}
-    - convert the category [carriage]{"entity": "category", "role": "old"} with [work]{"entity": "category", "role": "new"}
+    - vary the category [personal]{"entity": "category", "role": "old"} in [sport]{"entity": "category", "role": "new"}
+    - convert the category [sport]{"entity": "category", "role": "old"} in [personal]{"entity": "category", "role": "new"}
+    - change the category [university]{"entity": "category", "role": "old"} in [healthcare]{"entity": "category", "role": "new"}
+    - please, change the category [healthcare]{"entity": "category", "role": "old"} in [university]{"entity": "category", "role": "new"}
+    - I want to replace the category [payments]{"entity": "category", "role": "old"} in [theater]{"entity": "category", "role": "new"}
+    - please, I want to change the category [theater]{"entity": "category", "role": "old"} in [payments]{"entity": "category", "role": "new"}
+    - modify the category [friendship]{"entity": "category", "role": "old"} in [quickly]{"entity": "category", "role": "new"}
+    - transform the category [quickly]{"entity": "category", "role": "old"} with [friendship]{"entity": "category", "role": "new"}
+    - please, I want to convert the category [lifestyle]{"entity": "category", "role": "old"} in [caring]{"entity": "category", "role": "new"}
+    - please, i want to replace the category [caring]{"entity": "category", "role": "old"} to [lifestyle]{"entity": "category", "role": "new"}
+    - i want to alter the category [annual]{"entity": "category", "role": "old"} to [summer]{"entity": "category", "role": "new"}
+    - substitute the category [summer]{"entity": "category", "role": "old"} in [annual]{"entity": "category", "role": "new"}
+    - I want to modify the category [entertainment]{"entity": "category", "role": "old"} in [medications]{"entity": "category", "role": "new"}
+    - I want to transform the category [medications]{"entity": "category", "role": "old"} in [entertainment]{"entity": "category", "role": "new"}
+    - modify the category [dailyweekly]{"entity": "category", "role": "old"} in [family]{"entity": "category", "role": "new"}
+    - vary the category [family]{"entity": "category", "role": "old"} with [dailyweekly]{"entity": "category", "role": "new"}
+    - I want to convert the category [home]{"entity": "category", "role": "old"} in [parents]{"entity": "category", "role": "new"}
+    - convert the category [parents]{"entity": "category", "role": "old"} with [home]{"entity": "category", "role": "new"}
     - replace the category [exams]{"entity": "category", "role": "old"} in [calendary]{"entity": "category", "role": "new"}
     - change the category [calendary]{"entity": "category", "role": "old"} in [exams]{"entity": "category", "role": "new"}
-    - I want to alter the category [medications]{"entity": "category", "role": "old"} in [events]{"entity": "category", "role": "new"}
+    - I want to alter the category [animals]{"entity": "category", "role": "old"} in [finance]{"entity": "category", "role": "new"}
     - I want to convert a category
     - convert a category
     - convert one category
     - transform a category
     - let me change a category
     - i want to modify a category
-    - alter a categoryù
+    - alter a category
     - substitute a category
     - vary one category
     - vary a category
@@ -1125,11 +1264,11 @@ nlu:
   examples: |
     - I want to see all my activities
     - I want to see all my [uncompleted](activity_status) activities
-    - I want to see all my [[completed](activity_status) activities
+    - I want to see all my [completed](activity_status) activities
     - Show my [undeveloped](activity_status) activities
     - Show my [done](activity_status) activities
     - Which are my activities?
-    - which are [concluded](activity_status) my activities?
+    - which are my [concluded](activity_status) activities?
     - what are my [uncompleted](activity_status) activities?
     - What are my activities?
     - What are my [finished](activity_status) activities?
@@ -1137,11 +1276,18 @@ nlu:
     - show activity in [gym](category) category
     - show all my [developed](activity_status) activity in [monthly](category) category
     - show my [undone](activity_status) activity in [commitments](category) category
-    - show [executed](activity_status) activity in [work](category) category
+    - show [executed](activity_status) activity in [school](category) category
     - show activity in [projects](category) category
     - show [unfinished](activity_status) activity in [work](category) category
     - show [completed](activity_status) activities
     - show [completed](activity_status) activity
+    - I want to see all my inserted activities
+    - I want to see all my added activities
+    - I want to see all my created activities
+    - Which are my inserted activities?
+    - What are my added activities?
+    - Which are my added activities?
+    - What are my created activities?
 
 - intent: presentation+view_activities
   examples: |
@@ -1150,20 +1296,27 @@ nlu:
     - I'm [antonio](name) ,I want to see all my [[completed](activity_status) activities
     - i am [alessia](name) , show my [undeveloped](activity_status) activities
     - i am [mattia](name) Show my [done](activity_status) activities
-    - I'm [antonio](name) , Which are my activities?
-    - I'm [Simone](name) which are [concluded](activity_status) my activities?
-    - i am [mattia](name) what are my [uncompleted](activity_status) activities?
-    - i am [mattia](name) what are my activities?
+    - I'm [vito](name) , Which are my activities?
+    - I'm [giovanni](name) which are [concluded](activity_status) my activities?
+    - i am [nando](name) what are my [uncompleted](activity_status) activities?
+    - i am [Ferdinando](name) what are my activities?
     - i'm [camilla](name) What are my [finished](activity_status) activities?
-    - I am [mattia](name) , What are my [unexecuted](activity_status) activities?
-    - i am [alessia](name) , show activity in [gym](category) category
-    - I'm [antonio](name) show all my [developed](activity_status) activity in [monthly](category) category
-    - i'm [Giusy](name) show my [undone](activity_status) activity in [commitments](category) category
-    - I'm [Giusy](name) show [executed](activity_status) activity in [work](category) category
-    - i'm [camilla](name) show activity in [projects](category) category
-    - I am [alessia](name) , show [unfinished](activity_status) activity in [work](category) category
-    - I'm [Simone](name) show [completed](activity_status) activities
-    - i'm [Giusy](name) show [completed](activity_status) activity
+    - I am [daniele](name) , What are my [unexecuted](activity_status) activities?
+    - i am [valeria](name) , show activity in [gym](category) category
+    - I'm [gianluca](name) show all my [developed](activity_status) activity in [monthly](category) category
+    - i'm [paola](name) show my [undone](activity_status) activity in [commitments](category) category
+    - I'm [carla](name) show [executed](activity_status) activity in [work](category) category
+    - i'm [sara](name) show activity in [projects](category) category
+    - I am [francesca](name) , show [unfinished](activity_status) activity in [school](category) category
+    - I'm [lorenzo](name) show [completed](activity_status) activities
+    - i'm [enza](name) show [completed](activity_status) activity
+    - Hello i'm [paolo](name), want to see all my inserted activities
+    - Hello i'm [pierpaolo](name), want to see all my added activities
+    - Hello i'm [javier](name), want to see all my created activities
+    - i'm [eugenio](name),which are my inserted activities?
+    - i am [daniele](name), what are my added activities?
+    - i'm [tommaso](name),which are my added activities?
+    - i am [simone](name), what are my created activities?
 
 - intent: clean_activities
   examples: |
@@ -1176,129 +1329,135 @@ nlu:
     - please clean all completed activities
     - please remove all completed activities
     - please clean activities
-    - clean my actiivty
-    - clean activity
+    - clean my activities
+    - clean activities
     - clean table
     
-    
-
-
 - intent: modify_activity_category   
   examples: |
-    - I want to change the category [holiday]{"entity": "category", "role": "old"} of the activity [sport](activity) in [gym]{"entity": "category", "role": "new"}
-    - I want to change the category [gym]{"entity": "category", "role": "old"} of the activity [sport](activity) in [holiday]{"entity": "category", "role": "new"}
-    - modify the category [holiday]{"entity": "category", "role": "old"} of [walk](activity) into [commitments]{"entity": "category", "role": "new"}
-    - modify the category [commitments]{"entity": "category", "role": "old"} of [walk](activity) into [holiday]{"entity": "category", "role": "new"}
-    - replace the category [wishes]{"entity": "category", "role": "old"} of the activity [jogging](activity) into category [leisure]{"entity": "category", "role": "new"}
-    - replace the category [leisure]{"entity": "category", "role": "old"} of the activity [jogging](activity) into category [wishes]{"entity": "category", "role": "new"}
-    - For the activity [refuel](activity) modify the category [gym]{"entity": "category", "role": "old"} in [diet]{"entity": "category", "role": "new"}
-    - For the activity [refuel](activity) modify the category [diet]{"entity": "category", "role": "old"} in [gym]{"entity": "category", "role": "new"}
-    - For the activity [draw](activity) into the category [household]{"entity": "category", "role": "old"} replace the category with [wishes]{"entity": "category", "role": "new"}
-    - For the activity [draw](activity) into the category [wishes]{"entity": "category", "role": "old"} replace the category with [household]{"entity": "category", "role": "new"}
+    - I want to change the category [holiday]{"entity": "category", "role": "old"} of the activity [yoga](activity) in [gym]{"entity": "category", "role": "new"}
+    - I want to change the category [gym]{"entity": "category", "role": "old"} of the activity [boxe](activity) in [holiday]{"entity": "category", "role": "new"}
+    - modify the category [vacations]{"entity": "category", "role": "old"} of [walk](activity) into [commitments]{"entity": "category", "role": "new"}
+    - modify the category [commitments]{"entity": "category", "role": "old"} of [walk](activity) into [vacations]{"entity": "category", "role": "new"}
+    - replace the category [christmas]{"entity": "category", "role": "old"} of the activity [jogging](activity) into category [leisure]{"entity": "category", "role": "new"}
+    - replace the category [leisure]{"entity": "category", "role": "old"} of the activity [jogging](activity) into category [christmas]{"entity": "category", "role": "new"}
+    - For the activity [refuel](activity) modify the category [lifestyle]{"entity": "category", "role": "old"} in [diet]{"entity": "category", "role": "new"}
+    - For the activity [refuel](activity) modify the category [diet]{"entity": "category", "role": "old"} in [lifestyle]{"entity": "category", "role": "new"}
+    - For the activity [draw](activity) into the category [household]{"entity": "category", "role": "old"} replace the category with [life]{"entity": "category", "role": "new"}
+    - For the activity [draw](activity) into the category [life]{"entity": "category", "role": "old"} replace the category with [household]{"entity": "category", "role": "new"}
     - convert the category [sport]{"entity": "category", "role": "old"} of the activity [cards](activity) with [dailyweekly]{"entity": "category", "role": "new"}
     - convert the category [dailyweekly]{"entity": "category", "role": "old"} of the activity [cards](activity) with [sport]{"entity": "category", "role": "new"}
-    - transform the category [projects]{"entity": "category", "role": "old"} of the activity [study](activity) into category [gym]{"entity": "category", "role": "new"}
-    - transform the category [gym]{"entity": "category", "role": "old"} of the activity [study](activity) into category [projects]{"entity": "category", "role": "new"}
-    - For the activity [sleep](activity) set the category [exams]{"entity": "category", "role": "old"} in [sport]{"entity": "category", "role": "new"}
-    - For the activity [sleep](activity) set the category [sport]{"entity": "category", "role": "old"} in [exams]{"entity": "category", "role": "new"}
-    - For the activity [cards](activity) transform the category [household]{"entity": "category", "role": "old"} in [medical]{"entity": "category", "role": "new"}
-    - For the activity [cards](activity) transform the category [medical]{"entity": "category", "role": "old"} in [household]{"entity": "category", "role": "new"}
-    - For the activity [stand_up](activity) update the category [sport]{"entity": "category", "role": "old"} in [commitments]{"entity": "category", "role": "new"}
-    - For the activity [stand_up](activity) update the category [commitments]{"entity": "category", "role": "old"} in [sport]{"entity": "category", "role": "new"}
-    - I want to change the category [holiday]{"entity": "category", "role": "old"} of the activity [run](activity) in [wishes]{"entity": "category", "role": "new"}
-    - I want to change the category [wishes]{"entity": "category", "role": "old"} of the activity [run](activity) in [holiday]{"entity": "category", "role": "new"}
-    - modify the category [finance]{"entity": "category", "role": "old"} of [walk](activity) into [diet]{"entity": "category", "role": "new"}
-    - modify the category [diet]{"entity": "category", "role": "old"} of [walk](activity) into [finance]{"entity": "category", "role": "new"}
-    - replace the category [personal]{"entity": "category", "role": "old"} of the activity [stand_up](activity) into category [job]{"entity": "category", "role": "new"}
-    - replace the category [job]{"entity": "category", "role": "old"} of the activity [stand_up](activity) into category [personal]{"entity": "category", "role": "new"}
-    - For the activity [cooking](activity) modify the category [exams]{"entity": "category", "role": "old"} in [diet]{"entity": "category", "role": "new"}
-    - For the activity [cooking](activity) modify the category [diet]{"entity": "category", "role": "old"} in [exams]{"entity": "category", "role": "new"}
-    - For the activity [study](activity) into the category [volunteering]{"entity": "category", "role": "old"} replace the category with [quickly]{"entity": "category", "role": "new"}
-    - For the activity [study](activity) into the category [quickly]{"entity": "category", "role": "old"} replace the category with [volunteering]{"entity": "category", "role": "new"}
-    - convert the category [household]{"entity": "category", "role": "old"} of the activity [sport](activity) with [medications]{"entity": "category", "role": "new"}
-    - convert the category [medications]{"entity": "category", "role": "old"} of the activity [sport](activity) with [household]{"entity": "category", "role": "new"}
-    - transform the category [holiday]{"entity": "category", "role": "old"} of the activity [reed](activity) into category [carriage]{"entity": "category", "role": "new"}
-    - transform the category [carriage]{"entity": "category", "role": "old"} of the activity [reed](activity) into category [holiday]{"entity": "category", "role": "new"}
-    - For the activity [walk](activity) set the category [carriage]{"entity": "category", "role": "old"} in [commitments]{"entity": "category", "role": "new"}
-    - For the activity [walk](activity) set the category [commitments]{"entity": "category", "role": "old"} in [carriage]{"entity": "category", "role": "new"}
-    - For the activity [study](activity) transform the category [household]{"entity": "category", "role": "old"} in [bank]{"entity": "category", "role": "new"}
-    - For the activity [study](activity) transform the category [bank]{"entity": "category", "role": "old"} in [household]{"entity": "category", "role": "new"}
-    - For the activity [study](activity) update the category [quickly]{"entity": "category", "role": "old"} in [volunteering]{"entity": "category", "role": "new"}
-    - For the activity [study](activity) update the category [volunteering]{"entity": "category", "role": "old"} in [quickly]{"entity": "category", "role": "new"}
+    - transform the category [projects]{"entity": "category", "role": "old"} of the activity [study](activity) into category [home]{"entity": "category", "role": "new"}
+    - transform the category [home]{"entity": "category", "role": "old"} of the activity [study](activity) into category [projects]{"entity": "category", "role": "new"}
+    - For the activity [sleep](activity) set the category [exams]{"entity": "category", "role": "old"} in [coaching]{"entity": "category", "role": "new"}
+    - For the activity [sleep](activity) set the category [coaching]{"entity": "category", "role": "old"} in [exams]{"entity": "category", "role": "new"}
+    - For the activity [cards](activity) transform the category [trip]{"entity": "category", "role": "old"} in [medical]{"entity": "category", "role": "new"}
+    - For the activity [cards](activity) transform the category [medical]{"entity": "category", "role": "old"} in [trip]{"entity": "category", "role": "new"}
+    - For the activity [stand up](activity) update the category [educational]{"entity": "category", "role": "old"} in [school]{"entity": "category", "role": "new"}
+    - For the activity [stand up](activity) update the category [school]{"entity": "category", "role": "old"} in [educational]{"entity": "category", "role": "new"}
+    - I want to change the category [journey]{"entity": "category", "role": "old"} of the activity [book the hotel](activity) in [wishes]{"entity": "category", "role": "new"}
+    - I want to change the category [wishes]{"entity": "category", "role": "old"} of the activity [book the hotel](activity) in [journey]{"entity": "category", "role": "new"}
+    - modify the category [freetime]{"entity": "category", "role": "old"} of [walk in open air](activity) into [feeding]{"entity": "category", "role": "new"}
+    - modify the category [feeding]{"entity": "category", "role": "old"} of [walk in open air](activity) into [freetime]{"entity": "category", "role": "new"}
+    - replace the category [personal]{"entity": "category", "role": "old"} of the activity [prepare the breakfast](activity) into category [households]{"entity": "category", "role": "new"}
+    - replace the category [households]{"entity": "category", "role": "old"} of the activity [prepare the breakfast](activity) into category [personal]{"entity": "category", "role": "new"}
+    - For the activity [cooking for the husband](activity) modify the category [groceries]{"entity": "category", "role": "old"} in [social]{"entity": "category", "role": "new"}
+    - For the activity [cooking for the husband](activity) modify the category [social]{"entity": "category", "role": "old"} in [groceries]{"entity": "category", "role": "new"}
+    - For the activity [clean the house](activity) into the category [daily]{"entity": "category", "role": "old"} replace the category with [quickly]{"entity": "category", "role": "new"}
+    - For the activity [clean the house](activity) into the category [quickly]{"entity": "category", "role": "old"} replace the category with [daily]{"entity": "category", "role": "new"}    
+    - convert the category [important]{"entity": "category", "role": "old"} of the activity [adjust the motorcycle](activity) with [urgent]{"entity": "category", "role": "new"}
+    - convert the category [urgent]{"entity": "category", "role": "old"} of the activity [adjust the motorcycle](activity) with [important]{"entity": "category", "role": "new"}    
+    - transform the category [parents]{"entity": "category", "role": "old"} of the activity [prepare the exam](activity) into category [university]{"entity": "category", "role": "new"}
+    - transform the category [university]{"entity": "category", "role": "old"} of the activity [prepare the exam](activity) into category [parents]{"entity": "category", "role": "new"}
+    - For the activity [launch with family](activity) set the category [music]{"entity": "category", "role": "old"} in [events]{"entity": "category", "role": "new"}
+    - For the activity [launch with family](activity) set the category [events]{"entity": "category", "role": "old"} in [music]{"entity": "category", "role": "new"}
+    - For the activity [attend the conference](activity) transform the category [work]{"entity": "category", "role": "old"} in [job]{"entity": "category", "role": "new"}
+    - For the activity [attend the conference](activity) transform the category [job]{"entity": "category", "role": "old"} in [work]{"entity": "category", "role": "new"}    
+    - For the activity [fruit at market](activity) update the category [culture]{"entity": "category", "role": "old"} in [entertainment]{"entity": "category", "role": "new"}
+    - For the activity [fruit at market](activity) update the category [entertainment]{"entity": "category", "role": "old"} in [culture]{"entity": "category", "role": "new"}
 
 
 - intent: modify_activity_deadline  
   examples: |
     - I want to modify the deadline of an activity
     - alter the deadline
-    - I want to change the deadline of the activity [stand_up](activity) in the cateogry [personal](category) from 25 September to 27th september 1998
-    - I want to change the deadline of the activity [stand_up](activity) in the cateogry [personal](category) with 27th september 1998
-    - I want to modify the deadline of the activity [match](activity) in the cateogry [payments](category) to tomorrow at 18:00
-    - I want to modify the deadline of the activity [match](activity) in the cateogry [payments](category) with tomorrow at 18:00
-    - modify the deadline of the activity [reed](activity) in the cateogry [university](category) form Friday to Sunday 
-    - modify the deadline of the activity [reed](activity) in the cateogry [university](category) with Sunday 
-    - alter the deadline of the activity [exit](activity) in the cateogry [bank](category) to Sunday 
-    - alter the deadline of the activity [exit](activity) in the cateogry [bank](category) with Sunday 
-    - In the cateogry [subjects](category) replace the deadline of the activity [draw](activity) from 22th september to 25th september
-    - In the cateogry [subjects](category) modify the deadline of the activity [draw](activity) from 22th september to 25th september
-    - Alter the deadline of the activity [stand_up](activity) in the cateogry [work](category) with Monday
-    - Alter the deadline of the activity [stand_up](activity) in the cateogry [work](category) to Monday
-    - For the activity [stand_up](activity) in the cateogry [bank](category) modify the deadline with 22th october 1922
-    - For the activity [stand_up](activity) in the cateogry [bank](category) modify the deadline from 4 Novemner to 22th october 1922
-    - For the activity [note](activity) in the cateogry [school](category) transform the deadline into Monday
-    - For the activity [note](activity) in the cateogry [school](category) transform the deadline into Monday
-    - I want to change the deadline of the activity [exit](activity) in the cateogry [times](category) with 27th september 1998
-    - I want to change the deadline of the activity [exit](activity) in the cateogry [times](category) to 27th september 1998
-    - I want to modify the deadline of the activity [draw](activity) in the cateogry [job](category) with tomorrow at 18:00
-    - I want to modify the deadline of the activity [draw](activity) in the cateogry [job](category) in tomorrow at 18:00
-    - modify the deadline of the activity [draw](activity) in the cateogry [calendary](category) with Sunday 
-    - modify the deadline of the activity [draw](activity) in the cateogry [calendary](category) with Sunday 
-    - alter the deadline of the activity [travel](activity) in the cateogry [household](category) from 07/11/2022 to Sunday 
-    - alter the deadline of the activity [travel](activity) in the cateogry [household](category) with Sunday 
-    - In the cateogry [exams](category) replace the deadline of the activity [cards](activity) from 22th september to 25th september
-    - In the cateogry [exams](category) replace the deadline of the activity [cards](activity) from 10/12/2022 to 12/13/2022
-    - Alter the deadline of the activity [runbed](activity) in the cateogry [monthly](category) from Today to 04/21/2023
-    - Alter the deadline of the activity [runbed](activity) in the cateogry [monthly](category) with Monday
-    - For the activity [play](activity) in the cateogry [university](category) modify the deadline with 22th october 1922
-    - For the activity [play](activity) in the cateogry [university](category) modify the deadline in the 22th october 1922
-    - For the activity [stand_up](activity) in the cateogry [holiday](category) transform the deadline into Monday
-    - For the activity [stand_up](activity) in the cateogry [holiday](category) transform the deadline into Monday
+    - I want to change the deadline of the activity [stand up](activity) in the category [personal](category) from 25 September to 27th september 1998
+    - I want to change the deadline of the activity [listen the poadcast](activity) in the category [music](category) with 27th september 1998
+    - I want to modify the deadline of the activity [match](activity) in the category [sport](category) for tomorrow at 18:00
+    - I want to modify the deadline of the activity [match with dad](activity) in the category [freetime](category) with tomorrow at 18:00
+    - modify the deadline of the activity [reed](activity) in the category [university](category) form Friday to Sunday 
+    - modify the deadline of the activity [read the journal](activity) in the category [daily](category) with Sunday 
+    - alter the deadline of the activity [exit](activity) in the category [bank](category) to Sunday 
+    - alter the deadline of the activity [pay the supermarket](activity) in the category [payments](category) with Sunday 
+    - In the category [culture](category) replace the deadline of the activity [painting exhibition](activity) from 22th september to 25th september
+    - In the category [subjects](category) replace the deadline of the activity [draw](activity) from 22th september to 25th september
+    - In the category [health](category) modify the deadline of the activity [repeat science](activity) from 22th september to 25th september
+    - In the category [healthcare](category) modify the deadline of the activity [paint](activity) from 22th september to 25th september
+    - Alter the deadline of the activity [help grandmother](activity) in the category [volunteering](category) with Monday
+    - Alter the deadline of the activity [drink](activity) in the category [work](category) to Monday
+    - For the activity [go to church](activity) in the category [commitments](category) modify the deadline with 22th october 1922
+    - For the activity [bills](activity) in the category [finance](category) modify the deadline from 4 Novemner to 22th october 1922
+    - For the activity [book the airplane](activity) in the category [holiday](category) transform the deadline into Monday
+    - For the activity [note](activity) in the category [school](category) transform the deadline into Monday
+    - I want to change the deadline of the activity [go out with friends](activity) in the category [events](category) with 27th september 1998
+    - I want to change the deadline of the activity [pub](activity) in the category [times](category) to 27th september 1998
+    - I want to modify the deadline of the activity [draw a portrait](activity) in the category [job](category) with tomorrow at 18:00
+    - I want to modify the deadline of the activity [play guitar](activity) in the category [groceries](category) in tomorrow at 18:00
+    - modify the deadline of the activity [cook for the family](activity) in the category [households](category) with Sunday 
+    - modify the deadline of the activity [review](activity) in the category [calendary](category) with Sunday 
+    - alter the deadline of the activity [travel with mum](activity) in the category [lifestyle](category) from 07/11/2022 to Sunday 
+    - alter the deadline of the activity [travel](activity) in the category [house](category) with Sunday 
+    - In the category [education](category) replace the deadline of the activity [repeat cognitive](activity) from 22th september to 25th september
+    - In the category [courses](category) replace the deadline of the activity [cards](activity) from 10/12/2022 to 12/13/2022
+    - Alter the deadline of the activity [bed](activity) in the category [monthly](category) from Today to 04/21/2023
+    - Alter the deadline of the activity [christmas dinner](activity) in the category [fun](category) with Monday
+    - For the activity [birthday invitation](activity) in the category [summer](category) modify the deadline with 22th october 1922
+    - For the activity [play](activity) in the category [journey](category) modify the deadline in the 22th october 1922
+    - For the activity [clean my bedroom](activity) in the category [home](category) transform the deadline into Monday
+    - For the activity [medicines](activity) in the category [urgent](category) transform the deadline into Monday
 
 - intent: modify_activity_name  
   examples: |
     - I want to change the name of the activity [study]{"entity": "activity", "role": "old"} in [sport](category) with name [fuel]{"entity": "activity", "role": "new"}
-    - I want to change the name of the activity [fuel]{"entity": "activity", "role": "old"} in the cateogry [sport](category) with name [study]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [ring]{"entity": "activity", "role": "old"} in the cateogry [bank](category) with [exit]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [exit]{"entity": "activity", "role": "old"} in [bank](category) with [ring]{"entity": "activity", "role": "new"}
-    - modify the name of the activity [study]{"entity": "activity", "role": "old"} in the cateogry [times](category) with name [draw]{"entity": "activity", "role": "new"}
-    - modify the name of the activity [draw]{"entity": "activity", "role": "old"} in the cateogry [times](category) with name [study]{"entity": "activity", "role": "new"}
-    - In the cateogry [university](category) change the name of the activity [fuel]{"entity": "activity", "role": "old"}  with name [walk]{"entity": "activity", "role": "new"}
-    - In the cateogry [university](category) change the name of the activity [walk]{"entity": "activity", "role": "old"}  with name [fuel]{"entity": "activity", "role": "new"}
-    - In the cateogry [exams](category) replace the name of the activity [walk]{"entity": "activity", "role": "old"}  with name [fuel]{"entity": "activity", "role": "new"}
-    - In the cateogry [exams](category) replace the name of the activity [fuel]{"entity": "activity", "role": "old"}  with name [walk]{"entity": "activity", "role": "new"}
-    - Alter the name of the activity [jogging]{"entity": "activity", "role": "old"} in the cateogry [holiday](category) with name [travel]{"entity": "activity", "role": "new"}
-    - Alter the name of the activity [travel]{"entity": "activity", "role": "old"} in the cateogry [holiday](category) with name [run]{"entity": "activity", "role": "new"}
-    - For the activity [sport]{"entity": "activity", "role": "old"} in the cateogry [wishes](category) modify the name with [walk]{"entity": "activity", "role": "new"}
-    - For the activity [walk]{"entity": "activity", "role": "old"} in the cateogry [wishes](category) modify the name with [sport]{"entity": "activity", "role": "new"}
-    - For the activity [shopping]{"entity": "activity", "role": "old"} in the cateogry [work](category) transform the name with [study]{"entity": "activity", "role": "new"}
-    - For the activity [study]{"entity": "activity", "role": "old"} in the cateogry [work](category) transform the name with [shopping]{"entity": "activity", "role": "new"}
-    - I want to change the name of the activity [sport]{"entity": "activity", "role": "old"} in the cateogry [exams](category) with name [swimmming]{"entity": "activity", "role": "new"}
-    - I want to change the name of the activity [swimmming]{"entity": "activity", "role": "old"} in the cateogry [exams](category) with name [sport]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [ring]{"entity": "activity", "role": "old"} in the cateogry [carriage](category) with [runbed]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [runbed]{"entity": "activity", "role": "old"} in the cateogry [carriage](category) with [ring]{"entity": "activity", "role": "new"}
-    - modify the name of the activity [ring]{"entity": "activity", "role": "old"} in the cateogry [medical](category) with name [note]{"entity": "activity", "role": "new"}
-    - modify the name of the activity [note]{"entity": "activity", "role": "old"} in the cateogry [medical](category) with name [ring]{"entity": "activity", "role": "new"}
-    - In the cateogry [events](category) change the name of the activity [fuel]{"entity": "activity", "role": "old"}  with name [jogging]{"entity": "activity", "role": "new"}
-    - In the cateogry [events](category) change the name of the activity [jogging]{"entity": "activity", "role": "old"}  with name [fuel]{"entity": "activity", "role": "new"}
-    - In the cateogry [exams](category) replace the name of the activity [study]{"entity": "activity", "role": "old"}  with name [stand_up]{"entity": "activity", "role": "new"}
-    - In the cateogry [exams](category) replace the name of the activity [stand_up]{"entity": "activity", "role": "old"}  with name [study]{"entity": "activity", "role": "new"}
-    - Alter the name of the activity [refuel]{"entity": "activity", "role": "old"} in the cateogry [research](category) with name [travel]{"entity": "activity", "role": "new"}
-    - Alter the name of the activity [travel]{"entity": "activity", "role": "old"} in the cateogry [research](category) with name [refuel]{"entity": "activity", "role": "new"}
-    - For the activity [refuel]{"entity": "activity", "role": "old"} in the cateogry [wishes](category) modify the name with [swimmming]{"entity": "activity", "role": "new"}
-    - For the activity [swimmming]{"entity": "activity", "role": "old"} in the cateogry [wishes](category) modify the name with [refuel]{"entity": "activity", "role": "new"}
-    - For the activity [reed]{"entity": "activity", "role": "old"} in [vacation](category) transform the name with [walk]{"entity": "activity", "role": "new"}
-    - For the activity [walk]{"entity": "activity", "role": "old"} in the cateogry [vacation](category) transform the name with [reed]{"entity": "activity", "role": "new"}
-
+    - I want to change the name of the activity [fuel]{"entity": "activity", "role": "old"} in [sport](category) with name [study]{"entity": "activity", "role": "new"}
+    - I want to change the name of the activity [boxe]{"entity": "activity", "role": "old"} in the category [exams](category) with name [swimming]{"entity": "activity", "role": "new"}
+    - I want to change the name of the activity [swimming]{"entity": "activity", "role": "old"} in the category [exams](category) with name [boxe]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [ring]{"entity": "activity", "role": "old"} in the category [carriage](category) with [runbed]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [runbed]{"entity": "activity", "role": "old"} in the category [carriage](category) with [ring]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [help my mum]{"entity": "activity", "role": "old"} in the category [volunteering](category) with [help my dad]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [help my dad]{"entity": "activity", "role": "old"} in the category [volunteering](category) with [help my mum]{"entity": "activity", "role": "new"}
+    - modify the name of the activity [review]{"entity": "activity", "role": "old"} in the category [times](category) with name [draw]{"entity": "activity", "role": "new"}
+    - modify the name of the activity [draw]{"entity": "activity", "role": "old"} in the category [times](category) with name [review]{"entity": "activity", "role": "new"}
+    - In the category [university](category) change the name of the activity [shampoo]{"entity": "activity", "role": "old"}  with name [walk]{"entity": "activity", "role": "new"}
+    - In the category [university](category) change the name of the activity [walk]{"entity": "activity", "role": "old"}  with name [shampoo]{"entity": "activity", "role": "new"}
+    - In the category [school](category) replace the name of the activity [run]{"entity": "activity", "role": "old"}  with name [match]{"entity": "activity", "role": "new"}
+    - In the category [school](category) replace the name of the activity [match]{"entity": "activity", "role": "old"}  with name [run]{"entity": "activity", "role": "new"}
+    - Alter the name of the activity [jogging]{"entity": "activity", "role": "old"} in the category [holiday](category) with name [travel]{"entity": "activity", "role": "new"}
+    - Alter the name of the activity [travel]{"entity": "activity", "role": "old"} in the category [holiday](category) with name [jogging]{"entity": "activity", "role": "new"}
+    - For the activity [yoga]{"entity": "activity", "role": "old"} in the category [wishes](category) modify the name with [hairdresser]{"entity": "activity", "role": "new"}
+    - For the activity [hairdresser]{"entity": "activity", "role": "old"} in the category [wishes](category) modify the name with [yoga]{"entity": "activity", "role": "new"}
+    - For the activity [shopping]{"entity": "activity", "role": "old"} in the category [work](category) transform the name with [bus]{"entity": "activity", "role": "new"}
+    - For the activity [bus]{"entity": "activity", "role": "old"} in the category [work](category) transform the name with [shopping]{"entity": "activity", "role": "new"}
+    - I want to change the name of the activity [walk in open air]{"entity": "activity", "role": "old"} in [personal](category) with name [compile the module]{"entity": "activity", "role": "new"}
+    - I want to change the name of the activity [compile the module]{"entity": "activity", "role": "old"} in [personal](category) with name [walk in open air]{"entity": "activity", "role": "new"}
+    - I want to change the name of the activity [do taekwondo]{"entity": "activity", "role": "old"} in the category [estethics](category) with name [go swimming]{"entity": "activity", "role": "new"}
+    - I want to change the name of the activity [go swimming]{"entity": "activity", "role": "old"} in the category [estethics](category) with name [do taekwondo]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [help my aunt]{"entity": "activity", "role": "old"} in the category [caring](category) with [help my sister]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [help my sister]{"entity": "activity", "role": "old"} in the category [caring](category) with [help my aunt]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [go out with cat]{"entity": "activity", "role": "old"} in the category [daily](category) with [go out with dog]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [go out with dog]{"entity": "activity", "role": "old"} in the category [daily](category) with [go out with cat]{"entity": "activity", "role": "new"}
+    - modify the name of the activity [call grandfather]{"entity": "activity", "role": "old"} in the category [weekly](category) with name [take medicines]{"entity": "activity", "role": "new"}
+    - modify the name of the activity [take medicines]{"entity": "activity", "role": "old"} in the category [weekly](category) with name [call grandfather]{"entity": "activity", "role": "new"}
+    - In the category [events](category) change the name of the activity [cut hair]{"entity": "activity", "role": "old"}  with name [go to hairdresser]{"entity": "activity", "role": "new"}
+    - In the category [events](category) change the name of the activity [go to hairdresser]{"entity": "activity", "role": "old"}  with name [cut hair]{"entity": "activity", "role": "new"}
+    - In the category [friendship](category) replace the name of the activity [study for exam]{"entity": "activity", "role": "old"}  with name [learn maths]{"entity": "activity", "role": "new"}
+    - In the category [friendship](category) replace the name of the activity [learn maths]{"entity": "activity", "role": "old"}  with name [study for exam]{"entity": "activity", "role": "new"}
+    - Alter the name of the activity [cook dinner]{"entity": "activity", "role": "old"} in the category [households](category) with name [clean house]{"entity": "activity", "role": "new"}
+    - Alter the name of the activity [clean house]{"entity": "activity", "role": "old"} in the category [households](category) with name [cook dinner]{"entity": "activity", "role": "new"}
+    - For the activity [play guitar]{"entity": "activity", "role": "old"} in the category [freetime](category) modify the name with [go play football]{"entity": "activity", "role": "new"}
+    - For the activity [go play football]{"entity": "activity", "role": "old"} in the category [freetime](category) modify the name with [play guitar]{"entity": "activity", "role": "new"}
+    - For the activity [read a book]{"entity": "activity", "role": "old"} in the category [commitments](category) transform the name with [church]{"entity": "activity", "role": "new"}
+    - For the activity [church]{"entity": "activity", "role": "old"} in the category [commitments](category) transform the name with [read a book]{"entity": "activity", "role": "new"}
 
 - intent: view_categories
   examples: |
@@ -1311,69 +1470,91 @@ nlu:
     - which are my categories?
     - what are my categories?
     - What are my categories?
+    - show categories
+    - let me see all my inserted categories
+    - i want to watch my added categories
+    - I want to show all my created categories
+    - Which are my inserted categories?
+    - What are my added categories?
+    - Which are my added categories?
+    - What are my created categories?
 
 - intent: presentation+view_categories
   examples: |
     - i'm [Giusy](name) and I want to see all my categories
     - I'm [Simone](name) , Which are my categories?
-    - i'm [Giusy](name) Show my categories
+    - i'm [Paola](name) Show my categories
     - i am [mattia](name) Which are my categories?
     - i'm [camilla](name) which are my categories?
     - I'm [antonio](name) , which are my categories?
-    - I'm [Simone](name) , I want to see all my categories
+    - I'm [gerardo](name) , I want to see all my categories
     - i am [alessia](name) , what are my categories?
-    - I'm [antonio](name) What are my categories?
-    - I'm [antonio](name) show all my categories
-    - i am [alessia](name) , what are my categories?
-    - i'm [Simone](name) , What are my categories?
-    - i'm [camilla](name) show my categories
-    - I am [mattia](name) show all my categories
-    - i'm [antonio](name) what are my categories?
-    - i'm [antonio](name) show my categories
-    - i am [alessia](name) , Show all my categories
-    - I'm [antonio](name) Show my categories
-    - i am [mattia](name) Show all my categories
+    - I'm [nando](name) What are my categories?
+    - I'm [ferdinando](name) show all my categories
+    - i am [francesca](name) , what are my categories?
+    - i'm [marco](name) , What are my categories?
+    - i'm [Simona](name) show my categories
+    - I am [lorenzo](name) show all my categories
+    - i'm [gianluca](name) what are my categories?
+    - i'm [daniele](name) show my categories
+    - i am [sara](name) , Show all my categories
+    - I'm [davide](name) Show my categories
+    - i am [vito](name) Show all my categories
 
 - intent: remind_me_of
   examples: |
-    - remind me to [shopping](activity) into the category [household](category) at 8:30
-    - set a reminder for the activiy [call](activity) into the category [relations](category) of next morning
-    - help me to not forget the activity [study](activity) in the category [university](category) for Tomorrow
-    - help me to remind my [birtday](activity) on 12/18/2022
+    - remind me to [shopping](activity) into the category [life](category) at 8:30
+    - set a reminder for the activity [call](activity) into the category [relations](category) of next morning
+    - help me to not forget the activity [study](activity) in the category [school](category) for Tomorrow
+    - help me to remind my [birthday](activity) on 12/18/2022
     - remind me the [exam](activity) on tomorrow morning
-    - don't forget of [shopping](activity) at 19:00
+    - don't forget of [run](activity) at 19:00
     - I want to set a reminder 
     - want you help me to remind
-    - I can't forget to do the activity [exam](activity) of the category [university](category) of next Monday
-    - I want to set a reminder for the actvivity [hairdresser](activity)
+    - I can't forget to do the activity [boxe](activity) of the category [sport](category) of next Monday
+    - I want to set a reminder for the activity [hairdresser](activity)
     - remind me the [dinner](activity)
+    - remind me to [cook the dinner](activity) into the category [household](category) at 8:30
+    - set a reminder for the activity [call my girlfriend](activity) into the category [social](category) of next morning
+    - help me to not forget the activity [listen the lesson registration](activity) in the category [university](category) for Tomorrow
+    - help me to remind my [go to the birthday](activity) on 12/18/2022
+    - remind me the [guitar lesson](activity) on tomorrow morning
+    - don't forget of [do the exercises](activity) at 19:00
+    - set a reminder 
+    - help me to remind an activity
+    - I can't forget to do the activity [talk with the professor](activity) of the category [university](category) of next Monday
+    - I want to set a reminder for the activity [book the plane](activity)
+    - remind me the [eat some fruits](activity)
 
 - intent: presentation+remind_me_of
   examples: |
-    - i am [mattia](name) emind me to [shopping](activity) into the category [household](category) at 8:30
+    - i am [mattia](name) emind me to [shopping](activity) into the category [life](category) at 8:30
     - i'm [camilla](name) set a reminder for the activiy [call](activity) into the category [relations](category) of next morning
     - I'm [Simone](name) , help me to not forget the activity [study](activity) in the category [university](category) for Tomorrow
-    - i am [mattia](name) help me to remind my [birtday](activity) on 12/18/2022
-    - i'm [camilla](name) remind me the [exam](activity) on tomorrow morning
-    - i am [alessia](name) , don't forget of [shopping](activity) at 19:00
-    - I'm [Simone](name) , I want to set a reminder 
-    - I'm [Simone](name) , I want you help me to remind
-    - my name is [luigi](name) , please remind me of [shopping](activity) tomorrow evening
+    - i am [nando](name) help me to remind my [birthday](activity) on 12/18/2022
+    - i'm [Paola](name) remind me the [exam](activity) on tomorrow morning
+    - i am [alessia](name) , don't forget of [gardenind](activity) at 19:00
+    - I'm [marco](name) , I want to set a reminder 
+    - I'm [gerardo](name) , I want you help me to remind
+    - my name is [luigi](name) , please remind me of [shampoo](activity) tomorrow evening
     - I'm [Salvo](name) , please help me to don't forget the activity [project](activity) in the category [work](category) of next Friday
-    - i'm [camilla](name) I can't forget to do the activity [exam](activity) of the category [university](category) of next Monday
-    - i'm [camilla](name) I want to set a reminder for the actvivity [hairdresser](activity)
-    - i am [alessia](name) , remind me the [dinner](activity)
+    - i'm [francesca](name) I can't forget to do the activity [exercises](activity) of the category [school](category) of next Monday
+    - i'm [sara](name) I want to set a reminder for the activity [hairdresser](activity)
+    - i am [iris](name) , remind me the [dinner](activity)
+    - i am [ferdinando](name) remind me to [buy the gifts](activity) into the category [household](category) at 8:30
+    - i'm [giovanna](name) set a reminder for the activiy [videocall with friends](activity) into the category [social](category) of next morning
+    - I'm [lorenzo](name) , help me to not forget the activity [study for the exam](activity) in the category [university](category) for Tomorrow
+    - i am [vito](name) help me to remind my [prepare the launch](activity) on 12/18/2022
+    - i'm [luana](name) remind me the [go to the doctor](activity) on tomorrow morning
+    - i am [carla](name) , don't forget of [buy a gift](activity) at 19:00
+    - I'm [giovanni](name) , I want to set a reminder 
+    - I'm [tommaso](name) , I want you help me to remind
+    - my name is [salvatore](name) , please remind me of [do yoga](activity) tomorrow evening
+    - I'm [orazio](name) , please help me to don't forget the activity [fix some issues](activity) in the category [projects](category) of next Friday
+    - i'm [orietta](name) I can't forget to do the activity [send the e-mail](activity) of the category [work](category) of next Monday
+    - i'm [silvia](name) I want to set a reminder for the activity [clean home](activity)
+    - i am [silvana](name) , remind me the [buy some food](activity)
 
-- synonym: add
-  examples: |
-    - insert
-    - put
-    
-- synonym: remove
-  examples: |
-    - take off
-    - drop
-    
 - synonym: uncompleted
   examples: |
     - undone

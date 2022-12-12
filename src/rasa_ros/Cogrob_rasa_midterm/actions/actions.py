@@ -250,6 +250,7 @@ class showActivities(Action):
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
         #aggiunta
+        id = 5
         associated_name = Database.getName(id)
         category = tracker.get_slot("category")
         activity_status = tracker.get_slot("activity_status")

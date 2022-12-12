@@ -1,1 +1,23 @@
+<<<<<<< HEAD
 # None of the test stories failed - all good!
+=======
+version: "2.0"
+stories:
+- story: remind me of later presentation (/home/vito/Documenti/DefinitivoCog/src/rasa_ros/Cogrob_rasa_midterm/tests/test_stories.yml)
+  steps:
+  - intent: remind_me_of
+    entities:
+    - activity: shopping
+    - category: household
+  - slot_was_set:
+    - activity: shopping
+  - slot_was_set:
+    - category: household
+  - slot_was_set:
+    - time: '2022-11-18T00:00:00.000+01:00'
+  - action: action_set_reminder_slot
+  - action: add_item_form
+  - active_loop: add_item_form
+  - active_loop: null
+  - action: action_reminder_item  # predicted: my_action_fallback
+>>>>>>> origin/NewNLU

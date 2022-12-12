@@ -456,6 +456,21 @@
     "predicted_entities": []
   },
   {
+<<<<<<< HEAD
+=======
+    "text": "im marc3ll0",
+    "entities": [
+      {
+        "start": 3,
+        "end": 11,
+        "value": "marc3ll0",
+        "entity": "username"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+>>>>>>> origin/NewNLU
     "text": "im floricenta1",
     "entities": [
       {
@@ -504,24 +519,40 @@
     "predicted_entities": []
   },
   {
+<<<<<<< HEAD
     "text": "im nandinoxD",
+=======
+    "text": "im fragola86",
+>>>>>>> origin/NewNLU
     "entities": [
       {
         "start": 3,
         "end": 12,
+<<<<<<< HEAD
         "value": "nandinoxD",
+=======
+        "value": "fragola86",
+>>>>>>> origin/NewNLU
         "entity": "username"
       }
     ],
     "predicted_entities": []
   },
   {
+<<<<<<< HEAD
     "text": "im fragola86",
+=======
+    "text": "im nandinoxD",
+>>>>>>> origin/NewNLU
     "entities": [
       {
         "start": 3,
         "end": 12,
+<<<<<<< HEAD
         "value": "fragola86",
+=======
+        "value": "nandinoxD",
+>>>>>>> origin/NewNLU
         "entity": "username"
       }
     ],
@@ -636,24 +667,42 @@
     "predicted_entities": []
   },
   {
+<<<<<<< HEAD
     "text": "Silvietta2",
     "entities": [
       {
         "start": 0,
         "end": 10,
         "value": "Silvietta2",
-        "entity": "username"
-      }
-    ],
-    "predicted_entities": []
-  },
-  {
+=======
     "text": "im nandinoxD",
     "entities": [
       {
         "start": 3,
         "end": 12,
         "value": "nandinoxD",
+>>>>>>> origin/NewNLU
+        "entity": "username"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+<<<<<<< HEAD
+    "text": "im nandinoxD",
+    "entities": [
+      {
+        "start": 3,
+        "end": 12,
+        "value": "nandinoxD",
+=======
+    "text": "Silvietta2",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "Silvietta2",
+>>>>>>> origin/NewNLU
         "entity": "username"
       }
     ],
@@ -768,24 +817,42 @@
     "predicted_entities": []
   },
   {
+<<<<<<< HEAD
     "text": "my username is Pika11",
     "entities": [
       {
         "start": 15,
         "end": 21,
         "value": "Pika11",
-        "entity": "username"
-      }
-    ],
-    "predicted_entities": []
-  },
-  {
+=======
     "text": "im fragola86",
     "entities": [
       {
         "start": 3,
         "end": 12,
         "value": "fragola86",
+>>>>>>> origin/NewNLU
+        "entity": "username"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+<<<<<<< HEAD
+    "text": "im fragola86",
+    "entities": [
+      {
+        "start": 3,
+        "end": 12,
+        "value": "fragola86",
+=======
+    "text": "my username is Pika11",
+    "entities": [
+      {
+        "start": 15,
+        "end": 21,
+        "value": "Pika11",
+>>>>>>> origin/NewNLU
         "entity": "username"
       }
     ],
@@ -900,24 +967,42 @@
     "predicted_entities": []
   },
   {
+<<<<<<< HEAD
     "text": "my username is Pika11",
     "entities": [
       {
         "start": 15,
         "end": 21,
         "value": "Pika11",
-        "entity": "username"
-      }
-    ],
-    "predicted_entities": []
-  },
-  {
+=======
     "text": "im nandinoxD",
     "entities": [
       {
         "start": 3,
         "end": 12,
         "value": "nandinoxD",
+>>>>>>> origin/NewNLU
+        "entity": "username"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+<<<<<<< HEAD
+    "text": "im nandinoxD",
+    "entities": [
+      {
+        "start": 3,
+        "end": 12,
+        "value": "nandinoxD",
+=======
+    "text": "my username is Pika11",
+    "entities": [
+      {
+        "start": 15,
+        "end": 21,
+        "value": "Pika11",
+>>>>>>> origin/NewNLU
         "entity": "username"
       }
     ],
