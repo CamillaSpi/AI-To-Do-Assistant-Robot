@@ -170,6 +170,7 @@ def predict_identity(resized_face,rejection_threshold=0.5):
 
 def face_reidentification(msg):
     global actualLabels
+    lock.acquire()
     actualLabels = []
     im = ros_numpy.numpify(msg.detections[0].source_img)
     for d in msg.detections:
@@ -180,6 +181,7 @@ def face_reidentification(msg):
         o.id = predict_identity(resized_face)
         d.results.append(o)
         actualLabels.append(d.results[0].id)
+    lock.release()
     return msg
 
    
