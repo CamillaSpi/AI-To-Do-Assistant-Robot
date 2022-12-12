@@ -76,7 +76,8 @@ class actionAddItem(Action):
             actionAddCategory.run(self, dispatcher,tracker,domain)
             actionAddItem.run(self, dispatcher,tracker,domain)
         
-        return [SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None),SlotSet("reminder",False)]
+        return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
+
 
 class actionRemoveItem(Action):
 
@@ -101,7 +102,8 @@ class actionRemoveItem(Action):
             dispatcher.utter_message(text=f"Ops {associated_name}, this activity does not exists.") 
 
 
-        return [SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None)]
+        return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
+
             
 
 class actionAddCategory(Action):
@@ -126,7 +128,8 @@ class actionAddCategory(Action):
             dispatcher.utter_message(text=f"Ops {associated_name}, this category already exists.") 
 
     
-        return [SlotSet("category", None)]
+        return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
+
             
 
 class actionRemoveCategory(Action):
@@ -152,7 +155,8 @@ class actionRemoveCategory(Action):
             dispatcher.utter_message(text=f"Ops {associated_name}, this  category does not exists.") 
 
 
-        return [SlotSet("category", None)]
+        return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
+
 
 class actionSetStatusActivity(Action):
 
@@ -186,7 +190,8 @@ class actionSetStatusActivity(Action):
         else:
             dispatcher.utter_message(text=f"Ops {associated_name}, this activity does not exists.") 
 
-        return [SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None),SlotSet("activity_status",None)]
+        return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
+
 
 class actionSetInComplete(Action):
 
@@ -212,7 +217,7 @@ class actionSetInComplete(Action):
         else:
             dispatcher.utter_message(text=f"Ops {associated_name}, this activity does not exists.") 
 
-        return [SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None),SlotSet("activity_status",None)]
+        return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
 class showActivities(Action):
     def name(self) -> Text:
@@ -232,7 +237,7 @@ class showActivities(Action):
         list_of_activity = Database.selectItems(id,category, activity_status)
         dispatcher.utter_message(text=(f"-1 {associated_name} , you have {list_of_activity} activities" if list_of_activity else " No activity found for you!")) 
 
-        return [SlotSet("category", None),SlotSet("activity_status", None)]
+        return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
 class showCategories(Action):
     def name(self) -> Text:
@@ -250,7 +255,7 @@ class showCategories(Action):
         
         dispatcher.utter_message(text=(f"-1 {associated_name} , you have {list_of_categories} category" if list_of_categories else " No activity found for you!")) 
 
-        return [SlotSet("activity", None)]
+        return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
 class actionModifyCategory(Action):
     def name(self) -> Text:
@@ -277,7 +282,7 @@ class actionModifyCategory(Action):
         else:
             dispatcher.utter_message(text=f"Ops {associated_name} , the {category_new} already exists") 
         
-        return [SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("category", None)]
+        return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
 class actionModifyActivity(Action):
     def name(self) -> Text:
@@ -347,7 +352,8 @@ class actionModifyActivity(Action):
         else:
             dispatcher.utter_message(text=f"Ops {associated_name} the  activity {act_to_modify} already exists, it makes no sense to update that") 
     
-        return [SlotSet("category_old", None),SlotSet("activity_old", None),SlotSet("time", None),SlotSet("category_new", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("activity", None)]
+        return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
+
 
 
 class actionSetReminderSlot(Action):
