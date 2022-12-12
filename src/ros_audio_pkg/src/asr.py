@@ -6,6 +6,7 @@ import numpy as np
 from speech_recognition import AudioData
 import speech_recognition as sr
 from ros_audio_pkg.msg import AudioAndText
+import time
 #from datetime import datetime
 
 # Initialize a Recognizer
@@ -32,6 +33,7 @@ def callback(audio):
         #audioAndText.spoken_text = spoken_text
         #audioAndText.audioData = audio.data
         pub1.publish(audio)
+        time.sleep(0.2)
         pub2.publish(spoken_text)
     except sr.UnknownValueError:
         print("Google Speech Recognition non riesce a capire da questo file audio")

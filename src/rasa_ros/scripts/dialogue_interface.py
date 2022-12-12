@@ -41,11 +41,12 @@ def main():
     rospy.init_node('writing')
     rospy.wait_for_service('dialogue_server')
     dialogue_service("/session_start",-1)
-    testFunction()
+    #testFunction()
 
 
     while not rospy.is_shutdown():
         message = rospy.wait_for_message("text2answer",RecognizedSpoke)
+        print("messaggio arrivato nel dialogue interface: ", message)
         if message == 'exit': 
             break
         try:

@@ -101,6 +101,7 @@ def listener():
                 except:
                     X = X_ret
                 y= y +y_ret
+                id_label = actual_id
                 actual_id+=1
             else:
                 print("Ha parlato:", id_label)
@@ -113,11 +114,7 @@ def listener():
 def return_idLabel(req):
     global id_label
     lock.acquire()
-    try:
-        toReturn = id_label
-    except:
-        print("in except")
-        toReturn = 0
+    toReturn = id_label
     lock.release()
     return toReturn
     

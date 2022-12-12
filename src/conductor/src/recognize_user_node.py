@@ -22,17 +22,20 @@ obtain_video_id = rospy.ServiceProxy('video_user_server', video_detect_user)
 #function to recognize user with both audio and video
 def recognize_user(text_to_send):
     try:
-        id_voice = obtain_audio_id().id
-        print("id voice:", id_voice)
         id_face = obtain_video_id().answer
         print("id face:", id_face)
+        id_voice = obtain_audio_id().id
+        print("id voice:", id_voice)
         if(id_voice in id_face):
             #l'utente è stato correttamente riconosciuto quindi devo inviare tutto a rasa
-            # pub1.publish(text_to_send)
+            toSend = RecognizedSpoke()
+            toSend.msg = text_to_send.data
+            toSend.id = id_voice
+            pub1.publish(toSend)
             print('ti riconosco')
         else:
             print('non ti  riconosco')
-            pass
+        pass
             #l'utente non è stato correttamente riconosciuto
             # pub2.publish("I can't recognize you")
     except rospy.ServiceException as e:
