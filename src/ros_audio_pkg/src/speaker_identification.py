@@ -42,7 +42,7 @@ def elaboration(data):
     ukn = model.predict(np.expand_dims(ukn, 0))
     return ukn
 # "add activity run in category gym for tomorrow", "add study in university"
-phrases = ["I feel like I don't know you, repeat after me: Hi Pepper"]
+phrases = ["I feel like I don't know you, repeat after me: Hi Pepper","add activity run in category gym for tomorrow", "add study in university"]
 
 def registration(id):
     X_new=[]
@@ -109,7 +109,7 @@ def listener():
 
     except rospy.exceptions.ROSInterruptException:
         print("vado in close")
-        # save_identities(X,y,REF_PATH)
+        save_identities(X,y,REF_PATH)
 
 def return_idLabel(req):
     global id_label

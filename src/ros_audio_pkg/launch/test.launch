@@ -1,8 +1,10 @@
 <launch>
-        <node pkg="ros_audio_pkg" type="voice_detection.py" name="voice_detection" output="screen"/>
+        <!-- <node pkg="ros_audio_pkg" type="voice_detection.py" name="voice_detection" output="screen"/>
+        <node pkg="ros_audio_pkg" type="asr.py" name="asr" output="screen"/> -->
+        <node pkg="ros_audio_pkg" type="test_microphone.py" name="test_microphone" output="screen"/>
         <node pkg="ros_audio_pkg" type="asr.py" name="asr" output="screen"/>
         <node pkg="ros_audio_pkg" type="speaker_identification.py" name="speaker_identification" output="screen"/>
-        <node pkg="ros_audio_pkg" type="testService.py" name="testService" output="screen"/>
+        <!-- <node pkg="ros_audio_pkg" type="testService.py" name="testService" output="screen"/> -->
         
         <!-- <node pkg="rasa_ros" name="dialogue_interface" type="dialogue_interface.py" output="screen"/>
         <node pkg="rasa_ros" name="dialogue_server" type="dialogue_server.py" output="screen"/> -->

@@ -37,6 +37,7 @@ class NumpyArrayEncoder(JSONEncoder):
 
 def save_identities(X,y, path):
     to_save = {'X':X, 'y':y}
+    print("X",X, "y",y)
     print("sono in save")
     with open(path + '/json_data.json','w') as out_file:
         json.dump(to_save,out_file,cls=NumpyArrayEncoder)
