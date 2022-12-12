@@ -62,6 +62,7 @@ class actionCreateUser(Action):
             dispatcher.utter_message(text=f"Congratulation {name} your account has been correctly created") 
             
         else:
+            name = Database.getName(id)
             dispatcher.utter_message(text=f"Congratulation {name} you're logged in") 
         return []
 
