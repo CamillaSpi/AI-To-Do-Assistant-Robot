@@ -87,6 +87,8 @@ class actionAddItem(Action):
         time = tracker.get_slot("time")
         if (isinstance(activity,list)):
             activity = ' '.join([str(elem) for elem in activity])
+        if (isinstance(category,list)):
+            category = ' '.join([str(elem) for elem in category])
         if(time != None and len(time) == 2):
             time = time['to']
         if(Database.doesPossessionExists(id,category)):
@@ -120,6 +122,8 @@ class actionRemoveItem(Action):
         time = tracker.get_slot("time")
         if (isinstance(activity,list)):
             activity = ' '.join([str(elem) for elem in activity])
+        if (isinstance(category,list)):
+            category = ' '.join([str(elem) for elem in category])
         returnedValue = Database.deleteItem(id,activity ,category,time)
         if (returnedValue):  
             dispatcher.utter_message(text=f"Congratulation {associated_name}, {activity} removed from {category}") 
