@@ -333,7 +333,10 @@ class actionModifyActivity(Action):
         category = tracker.get_slot("category")
         activity = tracker.get_slot("activity")
         time = tracker.get_slot("time")
-      
+        if (isinstance(activity_old,list)):
+            activity_old = ' '.join([str(elem) for elem in activity_old])
+        if (isinstance(activity_new,list)):
+            activity_new = ' '.join([str(elem) for elem in activity_new])
         associated_name = Database.getName(id)
         
         if(activity_old!=None):
