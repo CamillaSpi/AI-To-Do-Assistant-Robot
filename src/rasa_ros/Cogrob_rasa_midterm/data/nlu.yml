@@ -1415,6 +1415,22 @@ nlu:
     - For the activity [play](activity) in the category [journey](category) modify the deadline in the 22th october 1922
     - For the activity [clean my bedroom](activity) in the category [home](category) transform the deadline into Monday
     - For the activity [medicines](activity) in the category [urgent](category) transform the deadline into Monday
+    - I want to change the deadline of the activity [math](activity) from 25 September to 27th september 1998
+    - I want to change the deadline of the activity [call my mum](activity) with 27th september 1998
+    - I want to modify the deadline of the activity [paint](activity) to tomorrow at 18:00
+    - I want to modify the deadline of the activity [play guitar](activity) from tomorrow to next week
+    - modify the deadline of the activity [walking](activity) from Friday to Sunday
+    - modify the deadline of the activity [walk with the dog](activity) to next month
+    - alter the deadline of the activity [sing](activity) with Sunday 
+    - alter the deadline of the activity [pay the bills](activity) from Sunday to Wednesday
+    - replace the deadline of the activity [football tournament](activity) to 25th november
+    - replace the deadline of the activity [exhibition](activity) from monday to friday
+    - modify the deadline of the activity [pool](activity) with Wedsneday
+    - modify the deadline of the activity [dinner with grandparents](activity) from 20th february to 26th february
+    - Alter the deadline of the activity [help grandfather](activity) to 22:00
+    - Alter the deadline of the activity [karaoke](activity) from 18:00 to 20:00
+    - For the activity [swim](activity) modify the deadline to 22th july 1922
+    - For the activity [book the airplane](activity) transform the deadline into Monday
 
 - intent: modify_activity_name  
   examples: |
