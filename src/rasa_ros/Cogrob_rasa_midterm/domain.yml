@@ -330,7 +330,7 @@ responses:
   utter_confirm_choice:
   - text: "Are you sure to complete this action!?"
   utter_ask_name:
-  - text: "Please insert the name"
+  - text: "Please insert your name"
   utter_deny_choice:
   - text: "Ok cancelled"
 

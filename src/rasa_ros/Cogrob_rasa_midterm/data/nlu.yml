@@ -1415,6 +1415,22 @@ nlu:
     - For the activity [play](activity) in the category [journey](category) modify the deadline in the 22th october 1922
     - For the activity [clean my bedroom](activity) in the category [home](category) transform the deadline into Monday
     - For the activity [medicines](activity) in the category [urgent](category) transform the deadline into Monday
+    - I want to change the deadline of the activity [math](activity) from 25 September to 27th september 1998
+    - I want to change the deadline of the activity [call my mum](activity) with 27th september 1998
+    - I want to modify the deadline of the activity [paint](activity) to tomorrow at 18:00
+    - I want to modify the deadline of the activity [play guitar](activity) from tomorrow to next week
+    - modify the deadline of the activity [walking](activity) from Friday to Sunday
+    - modify the deadline of the activity [walk with the dog](activity) to next month
+    - alter the deadline of the activity [sing](activity) with Sunday 
+    - alter the deadline of the activity [pay the bills](activity) from Sunday to Wednesday
+    - replace the deadline of the activity [football tournament](activity) to 25th november
+    - replace the deadline of the activity [exhibition](activity) from monday to friday
+    - modify the deadline of the activity [pool](activity) with Wedsneday
+    - modify the deadline of the activity [dinner with grandparents](activity) from 20th february to 26th february
+    - Alter the deadline of the activity [help grandfather](activity) to 22:00
+    - Alter the deadline of the activity [karaoke](activity) from 18:00 to 20:00
+    - For the activity [swim](activity) modify the deadline to 22th july 1922
+    - For the activity [book the airplane](activity) transform the deadline into Monday
 
 - intent: modify_activity_name  
   examples: |
@@ -1422,42 +1438,75 @@ nlu:
     - I want to change the name of the activity [fuel]{"entity": "activity", "role": "old"} in [sport](category) with name [study]{"entity": "activity", "role": "new"}
     - I want to change the name of the activity [boxe]{"entity": "activity", "role": "old"} in the category [exams](category) with name [swimming]{"entity": "activity", "role": "new"}
     - I want to change the name of the activity [swimming]{"entity": "activity", "role": "old"} in the category [exams](category) with name [boxe]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [ring]{"entity": "activity", "role": "old"} in the category [carriage](category) with [runbed]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [runbed]{"entity": "activity", "role": "old"} in the category [carriage](category) with [ring]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [help my mum]{"entity": "activity", "role": "old"} in the category [volunteering](category) with [help my dad]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [help my dad]{"entity": "activity", "role": "old"} in the category [volunteering](category) with [help my mum]{"entity": "activity", "role": "new"}
+    - I want to change the name of the activity [singing]{"entity": "activity", "role": "old"} with name [teaching]{"entity": "activity", "role": "new"}
+    - I want to change the name of the activity [teaching]{"entity": "activity", "role": "old"} with name [singing]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [ring]{"entity": "activity", "role": "old"} in the category [carriage](category) with [run]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [run]{"entity": "activity", "role": "old"} in the category [carriage](category) with [ring]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [launch]{"entity": "activity", "role": "old"} in [volunteering](category) with [dinner]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [dinner]{"entity": "activity", "role": "old"} in [volunteering](category) with [launch]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [read]{"entity": "activity", "role": "old"} with [travel]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [travel]{"entity": "activity", "role": "old"} with [read]{"entity": "activity", "role": "new"}
     - modify the name of the activity [review]{"entity": "activity", "role": "old"} in the category [times](category) with name [draw]{"entity": "activity", "role": "new"}
     - modify the name of the activity [draw]{"entity": "activity", "role": "old"} in the category [times](category) with name [review]{"entity": "activity", "role": "new"}
+    - modify the name of the activity [yoga]{"entity": "activity", "role": "old"} with name [pilates]{"entity": "activity", "role": "new"}
+    - modify the name of the activity [pilates]{"entity": "activity", "role": "old"} with name [yoga]{"entity": "activity", "role": "new"}
     - In the category [university](category) change the name of the activity [shampoo]{"entity": "activity", "role": "old"}  with name [walk]{"entity": "activity", "role": "new"}
     - In the category [university](category) change the name of the activity [walk]{"entity": "activity", "role": "old"}  with name [shampoo]{"entity": "activity", "role": "new"}
+    - Change the name of the activity [meditating]{"entity": "activity", "role": "old"}  with name [church]{"entity": "activity", "role": "new"}
+    - Change the name of the activity [church]{"entity": "activity", "role": "old"}  with name [meditating]{"entity": "activity", "role": "new"}
     - In the category [school](category) replace the name of the activity [run]{"entity": "activity", "role": "old"}  with name [match]{"entity": "activity", "role": "new"}
     - In the category [school](category) replace the name of the activity [match]{"entity": "activity", "role": "old"}  with name [run]{"entity": "activity", "role": "new"}
+    - replace the name of the activity [journal]{"entity": "activity", "role": "old"}  with name [writing]{"entity": "activity", "role": "new"}
+    - replace the name of the activity [writing]{"entity": "activity", "role": "old"}  with name [journal]{"entity": "activity", "role": "new"}
     - Alter the name of the activity [jogging]{"entity": "activity", "role": "old"} in the category [holiday](category) with name [travel]{"entity": "activity", "role": "new"}
     - Alter the name of the activity [travel]{"entity": "activity", "role": "old"} in the category [holiday](category) with name [jogging]{"entity": "activity", "role": "new"}
+    - Alter the name of the activity [painting]{"entity": "activity", "role": "old"} with name [concert]{"entity": "activity", "role": "new"}
+    - Alter the name of the activity [concert]{"entity": "activity", "role": "old"} with name [painting]{"entity": "activity", "role": "new"}
     - For the activity [yoga]{"entity": "activity", "role": "old"} in the category [wishes](category) modify the name with [hairdresser]{"entity": "activity", "role": "new"}
     - For the activity [hairdresser]{"entity": "activity", "role": "old"} in the category [wishes](category) modify the name with [yoga]{"entity": "activity", "role": "new"}
-    - For the activity [shopping]{"entity": "activity", "role": "old"} in the category [work](category) transform the name with [bus]{"entity": "activity", "role": "new"}
-    - For the activity [bus]{"entity": "activity", "role": "old"} in the category [work](category) transform the name with [shopping]{"entity": "activity", "role": "new"}
+    - For the activity [homework]{"entity": "activity", "role": "old"} modify the name with [presentation]{"entity": "activity", "role": "new"}
+    - For the activity [presentation]{"entity": "activity", "role": "old"} modify the name with [homework]{"entity": "activity", "role": "new"}
+    - For the activity [shopping]{"entity": "activity", "role": "old"} in [work](category) transform the name with [bus]{"entity": "activity", "role": "new"}
+    - For the activity [bus]{"entity": "activity", "role": "old"} in [work](category) transform the name with [shopping]{"entity": "activity", "role": "new"}
+    - For the activity [assignment]{"entity": "activity", "role": "old"} transform the name with [journal]{"entity": "activity", "role": "new"}
+    - For the activity [journal]{"entity": "activity", "role": "old"} transform the name with [assignment]{"entity": "activity", "role": "new"}    
     - I want to change the name of the activity [walk in open air]{"entity": "activity", "role": "old"} in [personal](category) with name [compile the module]{"entity": "activity", "role": "new"}
     - I want to change the name of the activity [compile the module]{"entity": "activity", "role": "old"} in [personal](category) with name [walk in open air]{"entity": "activity", "role": "new"}
     - I want to change the name of the activity [do taekwondo]{"entity": "activity", "role": "old"} in the category [estethics](category) with name [go swimming]{"entity": "activity", "role": "new"}
     - I want to change the name of the activity [go swimming]{"entity": "activity", "role": "old"} in the category [estethics](category) with name [do taekwondo]{"entity": "activity", "role": "new"}
+    - I want to change the name of the activity [editing a video]{"entity": "activity", "role": "old"} with name [writing an article]{"entity": "activity", "role": "new"}
+    - I want to change the name of the activity [writing an article]{"entity": "activity", "role": "old"} with name [editing a video]{"entity": "activity", "role": "new"}
     - I want to change the activity named [help my aunt]{"entity": "activity", "role": "old"} in the category [caring](category) with [help my sister]{"entity": "activity", "role": "new"}
     - I want to change the activity named [help my sister]{"entity": "activity", "role": "old"} in the category [caring](category) with [help my aunt]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [go out with cat]{"entity": "activity", "role": "old"} in the category [daily](category) with [go out with dog]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [go out with dog]{"entity": "activity", "role": "old"} in the category [daily](category) with [go out with cat]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [go out with cat]{"entity": "activity", "role": "old"} in [daily](category) with [go out with dog]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [go out with dog]{"entity": "activity", "role": "old"} in [daily](category) with [go out with cat]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [go to the park]{"entity": "activity", "role": "old"} with [go swimming]{"entity": "activity", "role": "new"}
+    - I want to change the activity named [go swimming]{"entity": "activity", "role": "old"} with [go to the park]{"entity": "activity", "role": "new"}
     - modify the name of the activity [call grandfather]{"entity": "activity", "role": "old"} in the category [weekly](category) with name [take medicines]{"entity": "activity", "role": "new"}
     - modify the name of the activity [take medicines]{"entity": "activity", "role": "old"} in the category [weekly](category) with name [call grandfather]{"entity": "activity", "role": "new"}
+    - modify the name of the activity [go to the doctor]{"entity": "activity", "role": "old"} with name [reading a textbook]{"entity": "activity", "role": "new"}
+    - modify the name of the activity [reading a textbook]{"entity": "activity", "role": "old"} with name [go to the doctor]{"entity": "activity", "role": "new"}
     - In the category [events](category) change the name of the activity [cut hair]{"entity": "activity", "role": "old"}  with name [go to hairdresser]{"entity": "activity", "role": "new"}
     - In the category [events](category) change the name of the activity [go to hairdresser]{"entity": "activity", "role": "old"}  with name [cut hair]{"entity": "activity", "role": "new"}
+    - Change the name of the activity [giving a presentation]{"entity": "activity", "role": "old"}  with name [travel for work]{"entity": "activity", "role": "new"}
+    - Change the name of the activity [travel for work]{"entity": "activity", "role": "old"}  with name [giving a presentation]{"entity": "activity", "role": "new"}
     - In the category [friendship](category) replace the name of the activity [study for exam]{"entity": "activity", "role": "old"}  with name [learn maths]{"entity": "activity", "role": "new"}
     - In the category [friendship](category) replace the name of the activity [learn maths]{"entity": "activity", "role": "old"}  with name [study for exam]{"entity": "activity", "role": "new"}
+    - Replace the name of the activity [read the journal]{"entity": "activity", "role": "old"}  with name [learn english]{"entity": "activity", "role": "new"}
+    - Replace the name of the activity [learn english]{"entity": "activity", "role": "old"}  with name [read the journal]{"entity": "activity", "role": "new"}
     - Alter the name of the activity [cook dinner]{"entity": "activity", "role": "old"} in the category [households](category) with name [clean house]{"entity": "activity", "role": "new"}
     - Alter the name of the activity [clean house]{"entity": "activity", "role": "old"} in the category [households](category) with name [cook dinner]{"entity": "activity", "role": "new"}
+    - Alter the name of the activity [prepare breakfast]{"entity": "activity", "role": "old"} with name [clean garden]{"entity": "activity", "role": "new"}
+    - Alter the name of the activity [clean garden]{"entity": "activity", "role": "old"} with name [prepare breakfast]{"entity": "activity", "role": "new"}
     - For the activity [play guitar]{"entity": "activity", "role": "old"} in the category [freetime](category) modify the name with [go play football]{"entity": "activity", "role": "new"}
     - For the activity [go play football]{"entity": "activity", "role": "old"} in the category [freetime](category) modify the name with [play guitar]{"entity": "activity", "role": "new"}
+    - For the activity [sing a song]{"entity": "activity", "role": "old"} modify the name with [football match]{"entity": "activity", "role": "new"}
+    - For the activity [football match]{"entity": "activity", "role": "old"} modify the name with [sing a song]{"entity": "activity", "role": "new"}
     - For the activity [read a book]{"entity": "activity", "role": "old"} in the category [commitments](category) transform the name with [church]{"entity": "activity", "role": "new"}
     - For the activity [church]{"entity": "activity", "role": "old"} in the category [commitments](category) transform the name with [read a book]{"entity": "activity", "role": "new"}
+    - For the activity [write a book]{"entity": "activity", "role": "old"} transform the name with [read a paper]{"entity": "activity", "role": "new"}
+    - For the activity [read a paper]{"entity": "activity", "role": "old"} transform the name with [write a book]{"entity": "activity", "role": "new"}
+
 
 - intent: view_categories
   examples: |

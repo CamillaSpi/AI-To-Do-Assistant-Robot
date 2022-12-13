@@ -85,10 +85,12 @@ class actionAddItem(Action):
         category = tracker.get_slot("category")
         reminder = tracker.get_slot("reminder")
         time = tracker.get_slot("time")
+        if (isinstance(activity,list)):
+            activity = ' '.join([str(elem) for elem in activity])
+        if (isinstance(category,list)):
+            category = ' '.join([str(elem) for elem in category])
         if(time != None and len(time) == 2):
             time = time['to']
-
-        
         if(Database.doesPossessionExists(id,category)):
             returnedValue= Database.insertItem(id,activity ,category,reminder,time)
             if (returnedValue):  
@@ -118,7 +120,10 @@ class actionRemoveItem(Action):
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
         time = tracker.get_slot("time")
-
+        if (isinstance(activity,list)):
+            activity = ' '.join([str(elem) for elem in activity])
+        if (isinstance(category,list)):
+            category = ' '.join([str(elem) for elem in category])
         returnedValue = Database.deleteItem(id,activity ,category,time)
         if (returnedValue):  
             dispatcher.utter_message(text=f"Congratulation {associated_name}, {activity} removed from {category}") 
@@ -143,7 +148,8 @@ class actionAddCategory(Action):
         id = 5
         associated_name = Database.getName(id)
         category = tracker.get_slot("category")
-
+        if (isinstance(category,list)):
+            category = ' '.join([str(elem) for elem in category])
         returnedValue = Database.insertCategoryAndPossession(id,category)
         if (returnedValue):  
             dispatcher.utter_message(text=f"Congratulation {associated_name}, {category} added as a new category") 
@@ -168,14 +174,13 @@ class actionRemoveCategory(Action):
         
         associated_name = Database.getName(id)
         category = tracker.get_slot("category")
-
-    
+        if (isinstance(category,list)):
+            category = ' '.join([str(elem) for elem in category])
         returnedValue = Database.deleteCategory(id,category)
         if (returnedValue):  
             dispatcher.utter_message(text=f"Congratulation {associated_name}, category {category} removed") 
         else:
             dispatcher.utter_message(text=f"Ops {associated_name}, this  category does not exists.") 
-
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -196,8 +201,10 @@ class actionSetStatusActivity(Action):
         category = tracker.get_slot("category")
         activity_status = tracker.get_slot("activity_status")
         time = tracker.get_slot("time")
-
-    
+        if (isinstance(activity,list)):
+            activity = ' '.join([str(elem) for elem in activity])
+        if (isinstance(category,list)):
+            category = ' '.join([str(elem) for elem in category])
         if activity_status == 'completed':
             returnedValue = Database.setItemStatus(id,activity ,category,time,True)
         elif activity_status == 'uncompleted':
@@ -229,7 +236,10 @@ class actionSetInComplete(Action):
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
         time = tracker.get_slot("time")
-
+        if (isinstance(activity,list)):
+            activity = ' '.join([str(elem) for elem in activity])
+        if (isinstance(category,list)):
+            category = ' '.join([str(elem) for elem in category])
         returnedValue = Database.setItemStatus(id,activity ,category,time,False)
 
         if (returnedValue):  
@@ -254,7 +264,8 @@ class showActivities(Action):
         associated_name = Database.getName(id)
         category = tracker.get_slot("category")
         activity_status = tracker.get_slot("activity_status")
-
+        if (isinstance(category,list)):
+            category = ' '.join([str(elem) for elem in category])
         list_of_activity = Database.selectItems(id,category, activity_status)
         dispatcher.utter_message(text=(f"-1 {associated_name} , you have {list_of_activity} activities" if list_of_activity else " No activities found for you!")) 
 
@@ -324,7 +335,7 @@ class actionModifyActivity(Action):
         time = tracker.get_slot("time")
       
         associated_name = Database.getName(id)
-       
+        
         if(activity_old!=None):
             act_to_modify = activity_old
         else:
@@ -443,6 +454,10 @@ class actionRemindItem(Action):
         id = 5
         associated_name = Database.getName(id) 
         date = datetime.now() + timedelta(seconds = 120)
+        if (isinstance(activity,list)):
+            activity = ' '.join([str(elem) for elem in activity])
+        if (isinstance(category,list)):
+            category = ' '.join([str(elem) for elem in category])
         entities = [{'name':associated_name, 'activity':activity, 'category':category,'time':time}]
         reminder = ReminderScheduled(
             "EXTERNAL_reminder",
