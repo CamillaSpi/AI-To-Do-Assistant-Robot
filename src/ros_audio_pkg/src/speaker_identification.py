@@ -42,11 +42,12 @@ def elaboration(data):
     ukn = model.predict(np.expand_dims(ukn, 0))
     return ukn
 # "add activity run in category gym for tomorrow", "add study in university"
-phrases = ["I feel like I don't know you, repeat after me: Hi Pepper","add activity run in category gym for tomorrow", "add study in university"]
+phrases = ["I feel like I don't know you, repeat after me: Hi Pepper","add activity run in category gym for tomorrow", "remove the category study in university","update the activity walk in personal" , "show my activity", "remind me to play guitar in freetime"]
 
 def registration(id):
     X_new=[]
     y_new=[]
+    id = 2
     for msg in phrases:
         pub1.publish(msg)
         print(msg)
