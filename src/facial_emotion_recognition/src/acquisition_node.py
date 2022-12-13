@@ -11,7 +11,7 @@ cap = cv2.VideoCapture(0)
 time.sleep(2)
 
 #da verificare per bene i parametri ottimali
-pub = rospy.Publisher("image", Image, queue_size=5)
+pub = rospy.Publisher("in_rgb", Image, queue_size=5)
 rospy.init_node('acquisition_node', anonymous=True)
 
 def acquire_and_pub():

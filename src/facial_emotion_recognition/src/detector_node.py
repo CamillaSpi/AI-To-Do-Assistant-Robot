@@ -65,7 +65,7 @@ def detect_face(msg):
         pub2.publish(Bool(False))
         print('no face found')
 
-si = rospy.Subscriber("image", Image, detect_face)
+si = rospy.Subscriber("in_rgb", Image, detect_face)
 
 try:
     rospy.spin()
