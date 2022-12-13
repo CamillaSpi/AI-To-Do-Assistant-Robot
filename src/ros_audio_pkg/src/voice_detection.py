@@ -16,10 +16,9 @@ old_bool = True
 
 # this is called from the background thread
 def callback(recognizer, audio):
-    data = np.frombuffer(audio.get_raw_data(), dtype=np.int16)
+    data = np.frombuffer(audio.get_raw_data(), dtype=np.int16) * 10
     data_to_send = Int16MultiArray()
     data_to_send.data = data
-    
     pub.publish(data_to_send)
 
 # Initialize a Recognizer

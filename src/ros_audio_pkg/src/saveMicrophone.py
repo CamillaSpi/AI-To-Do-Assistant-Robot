@@ -15,7 +15,7 @@ r = sr.Recognizer()
 # Init node
 rospy.init_node('speech_recognition', anonymous=True)
 pub1 = rospy.Publisher('AudioAndText', AudioAndText, queue_size=10)
-count = 0
+count = 2
 # this is called from the background thread
 def callback(audio):
     data = np.array(audio.data,dtype=np.int16)
