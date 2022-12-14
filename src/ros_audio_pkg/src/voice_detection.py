@@ -55,6 +55,6 @@ def rcv_person(msg):
         old_bool = msg.data
         
 
-pub2 = rospy.Subscriber('thereIsPerson', Bool,rcv_person)
+pub2 = rospy.Subscriber('isListening', Bool,rcv_person)
 
 rospy.spin()

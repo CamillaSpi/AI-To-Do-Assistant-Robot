@@ -42,7 +42,7 @@ faceNet = cv2.dnn.readNet(faceModel, faceProto)
 rospy.init_node('detector_face_node')
 pub = rospy.Publisher('face_reidentification', Detection2DArray, queue_size=2)
 
-pub2 = rospy.Publisher('thereIsPerson', Bool, queue_size=10)
+pub2 = rospy.Publisher('isListening', Bool, queue_size=10)
 
 def detect_face(msg):
     global count
