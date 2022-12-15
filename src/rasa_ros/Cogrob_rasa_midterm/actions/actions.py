@@ -602,3 +602,25 @@ class ActionReactToReminder(Action):
         #     dispatcher.utter_message(f"Hei {name}, remember to {activity} in {category} in 5 minutes!")
         dispatcher.utter_message(f"Hei {name}, remember to {activity} in {category} in 5 minutes!")
         return []
+
+class ActionRecognizeUser(Action):
+    """Return the name of the user"""
+
+    def name(self) -> Text:
+        return "action_say_name"
+
+    async def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+      
+        id=tracker.current_state()["sender_id"]
+        id = 5
+        associated_name = Database.getName(id) 
+
+        dispatcher.utter_message(f"Hei i thinks you are {associated_name}!")
+
+        return []
