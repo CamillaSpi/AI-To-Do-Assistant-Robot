@@ -2,6 +2,7 @@
 import cv2
 import os
 import rospy
+from optparse import OptionParser
 from sensor_msgs.msg import Image
 from std_msgs.msg import Bool
 from vision_msgs.msg import Detection2D, Detection2DArray
@@ -41,8 +42,13 @@ faceNet = cv2.dnn.readNet(faceModel, faceProto)
 
 rospy.init_node('detector_face_node')
 pub = rospy.Publisher('face_reidentification', Detection2DArray, queue_size=2)
-
 pub2 = rospy.Publisher('isListening', Bool, queue_size=10)
+
+parser = OptionParser()
+parser.add_option("--listen_on_detect", dest="LoD")
+(options, args) = parser.parse_args()
+listen_on_detect = options.LoD
+
 
 def detect_face(msg):
     global count
@@ -60,9 +66,9 @@ def detect_face(msg):
     if len(message.detections)>0:
         message.detections[0].source_img = ros_numpy.msgify(Image,frameFace,encoding ='rgb8')
         pub.publish(message)
-        pub2.publish(Bool(True))
+        if listen_on_detect == True: pub2.publish(Bool(True))
     else:
-        pub2.publish(Bool(False))
+        if listen_on_detect == True: pub2.publish(Bool(False))
         print('no face found')
 
 si = rospy.Subscriber("in_rgb", Image, detect_face)
