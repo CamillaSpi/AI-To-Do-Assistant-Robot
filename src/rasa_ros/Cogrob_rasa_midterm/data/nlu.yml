@@ -1604,6 +1604,16 @@ nlu:
     - i'm [silvia](name) I want to set a reminder for the activity [clean home](activity)
     - i am [silvana](name) , remind me the [buy some food](activity)
 
+- intent: ask_name
+  examples: |
+    - who I am?
+    - Do you know who I am?
+    - DId you know who I am?
+    - Did you recognize me?
+    - Do you recognize me?
+    - What is my name?
+    - Can you say my name?
+
 - synonym: uncompleted
   examples: |
     - undone
