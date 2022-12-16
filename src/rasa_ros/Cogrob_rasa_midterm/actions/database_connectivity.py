@@ -158,16 +158,12 @@ class Database:
       if(isinstance(deadline,dict)):
         first_date = list(deadline.values())[1]
         second_date = list(deadline.values())[0]
-        print("first: ",first_date)
-        print("second: ",second_date)
         base_query = base_query + " AND deadline BETWEEN ? AND ?"
         base_list.append(first_date)
         base_list.append(second_date)
       else:
         first_date = deadline
         second_date = deadline[:11] + "23:59:59" + deadline[19:]
-        print("first: ",first_date)
-        print("second: ",second_date)
         base_query = base_query + " AND deadline BETWEEN ? AND ?"
         base_list.append(first_date)
         base_list.append(second_date)
