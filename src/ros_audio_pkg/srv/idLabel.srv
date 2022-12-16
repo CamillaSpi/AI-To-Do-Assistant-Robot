@@ -1,2 +1,2 @@
 ---
-int32 id
+std_msgs/Float32MultiArray prob_voices

@@ -2,12 +2,13 @@
 import os
 import cv2
 import rospy
+from scipy import special
 import ros_numpy # pip3 install git+https://github.com/eric-wieser/ros_numpy
 import numpy as np
 from vision_msgs.msg import Detection2DArray, ObjectHypothesisWithPose
 
 from facial_emotion_recognition.srv import video_detect_user
-from std_msgs.msg import Int32MultiArray
+from std_msgs.msg import Int32MultiArray, Float32MultiArray, MultiArrayDimension
 
 import json
 from json import JSONEncoder
@@ -81,7 +82,7 @@ def batch_cosine_similarity(x1, x2):
     # as values have have length 1, we don't need to divide by norm (as it is 1)
     return s
 
-def dist2id(distance, y, ths, norm=False, mode='avg', filter_under_th=True):
+def dist2id(distance, y, ths, norm=False, mode='avg', filter_under_th=False):
     d = distance.copy()
     ths = np.array([ths]*len(y))
     y = np.array(y)
@@ -112,7 +113,8 @@ def dist2id(distance, y, ths, norm=False, mode='avg', filter_under_th=True):
             ids_prob.append(np.min(d[y == i]))
 
     ids_prob = np.array(ids_prob)
-    return ids[np.argmax(ids_prob)]
+    ids_prob_soft = special.softmax(ids_prob)
+    return ids[np.argmax(ids_prob)], ids_prob_soft
 
 def extract_features(face_reco_model, filename):
     if type(filename) == 'str':
@@ -162,25 +164,35 @@ def predict_identity(resized_face,rejection_threshold=0.5):
         feature_vector = extract_features(face_reco_model, resized_face).reshape(-1,2048)
         emb_face = np.repeat(feature_vector, len(database), 0).reshape(-1,2048)
         cos_dist = batch_cosine_similarity(np.array(database), emb_face)
-        id_label = dist2id(cos_dist, labels, rejection_threshold, mode='avg')
+        #id_label = dist2id(cos_dist, labels, rejection_threshold, mode='avg')
+        id_label, ids_prob = dist2id(cos_dist, labels, rejection_threshold, mode='avg')
     else:
         registration()
         id_label = actual_id
-    return (id_label)
+    return (id_label), ids_prob
 
 def face_reidentification(msg):
     global actualLabels
     lock.acquire()
-    actualLabels = []
+    actualLabels = Float32MultiArray() 
     im = ros_numpy.numpify(msg.detections[0].source_img)
-    for d in msg.detections:
+    for i,d in enumerate(msg.detections):
         # Preprocess image
         d,resized_face = elaboration(d,im)
         # Predict
         o = ObjectHypothesisWithPose()
-        o.id = predict_identity(resized_face)
+        o.id, ids_prob = predict_identity(resized_face)
         d.results.append(o)
-        actualLabels.append(d.results[0].id)
+        #actualLabels.append(d.results[0].id)
+        #id_probs_list = ids_prob.tolist()
+        for j in range(len(ids_prob)):
+            actualLabels.data.append(ids_prob[j])
+        #print("actualLabels:",actualLabels)
+        #id_probs_list = ids_prob.tolist()
+        #id_probs_list = [float(id_probs_list[i]) for j in range(len(id_probs_list))] 
+        #actualLabels.data = id_probs_list
+    #actualLabels.data = alabels
+    #print("actualArray.data.type", type(actualLabels.data[0]))
     lock.release()
     return msg
 
@@ -189,11 +201,8 @@ def recognize():
     s = rospy.Service('video_user_server',video_detect_user, handle_service)
     rospy.logdebug('image server READY.')
     print("vado sotto lo spin")
-
-
     try:
         while not rospy.is_shutdown():
-
             msg = rospy.wait_for_message('face_reidentification',Detection2DArray)
             to_publish = face_reidentification(msg)
             pub.publish(to_publish)
@@ -206,14 +215,37 @@ def recognize():
 def handle_service(req):
     global actualLabels
     lock.acquire()
-    try: 
-        if len(actualLabels) > 1:
-            toReturn =  actualLabels
-        toReturn = [actualLabels]
+    #toReturn = Float32MultiArray() 
+    
+    # print(type(actualLabels.data))
+    # #print(type(actualLabels.data))
+    # toReturn = Float32MultiArray() 
+    # lock.release()
+    # return actualLabels
+    #toReturn.data =  actualLabels
+    thing = MultiArrayDimension()
+    thing.stride = actual_id
+    
+    #toReturn.layout.dim.stride = 4
+    try:
+        actualLabels.layout.dim.append(thing)
     except NameError:
-        toReturn = []
+        print("in except")
+        actualLabels.data=[]
     lock.release()
-    return toReturn
+    return actualLabels
+    # toReturn.layout.dim.append(thing)
+    # try: 
+    #     if len(actualLabels.data) > 1:
+    #         toReturn.data =  actualLabels
+    #     toReturn.data = [actualLabels]
+    #     print("sono nel try", type(toReturn.data))
+    # except NameError:
+    #     print("in except")
+    #     toReturn.data = []
+    # lock.release()
+    # print("ciao111")
+    # return toReturn
 
 if __name__ == '__main__':
     recognize()

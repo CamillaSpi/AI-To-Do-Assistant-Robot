@@ -1,5 +1,6 @@
 import numpy as np
 import librosa
+from scipy import special
 
 
 # io utils
@@ -42,7 +43,7 @@ def batch_cosine_similarity(x1, x2):
     return s
 
 
-def dist2id(distance, y, ths, norm=False, mode='avg', filter_under_th=True):
+def dist2id(distance, y, ths, norm=False, mode='avg', filter_under_th=False):
     d = distance.copy()
     ths = np.array([ths]*len(y))
     y = np.array(y)
@@ -73,4 +74,5 @@ def dist2id(distance, y, ths, norm=False, mode='avg', filter_under_th=True):
             ids_prob.append(np.min(d[y == i]))
 
     ids_prob = np.array(ids_prob)
-    return ids[np.argmax(ids_prob)]
+    ids_prob_soft = special.softmax(ids_prob)
+    return ids[np.argmax(ids_prob)], ids_prob_soft

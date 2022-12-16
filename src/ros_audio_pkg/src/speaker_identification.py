@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from tensorflow.python.ops.gen_logging_ops import Print
 import rospy
-from std_msgs.msg import Int16MultiArray
+from std_msgs.msg import Int16MultiArray,Float32MultiArray
 import numpy as np
 import pickle
 import os
@@ -22,6 +22,7 @@ REF_PATH = os.path.dirname(os.path.abspath(__file__))
 RATE = 16000
 lock = Lock()
 global id_label
+global prob_voices
 # Load model, rete siamese basata su resnet/vgg. addestrata con triplette loss. disponibile pubblicamente su keras, non e la migliore
 # la maggior parte implementate in pytorch.
 model = get_deep_speaker(os.path.join(REF_PATH,'deep_speaker.h5'))
@@ -61,10 +62,9 @@ def registration(id):
     return np.array(X_new),y_new
     
 
-
-
 def listener():
     global id_label
+    global prob_voices
     rospy.init_node('reidentification_node', anonymous=True)
     X,y = load_identities(REF_PATH)
     try:
@@ -91,8 +91,9 @@ def listener():
                 # Matching, in base alle label e tresh dice distanza.
                 # quindi ukn restituisce tutti i valori distanza dei campioni rispetto a ukn. e calcolo la distanza media tra tutti i campioni. 
 
-                id_label = dist2id(cos_dist, y, TH, mode='avg') #id_label saranno id incrementali
-            
+                id_label, prob_voices = dist2id(cos_dist, y, TH, mode='avg') #id_label saranno id incrementali
+                #print("prob_voices", prob_voices)
+
             if len(X) == 0 or id_label is None:
                 print("in if")
                 #eventuale face recognition
@@ -114,8 +115,10 @@ def listener():
 
 def return_idLabel(req):
     global id_label
+    global prob_voices
+    toReturn = Float32MultiArray() 
     lock.acquire()
-    toReturn = id_label
+    toReturn.data = prob_voices
     lock.release()
     return toReturn
     
