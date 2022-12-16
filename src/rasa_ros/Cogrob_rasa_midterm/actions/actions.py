@@ -264,9 +264,10 @@ class showActivities(Action):
         associated_name = Database.getName(id)
         category = tracker.get_slot("category")
         activity_status = tracker.get_slot("activity_status")
+        time = tracker.get_slot("time")
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
-        list_of_activity = Database.selectItems(id,category, activity_status)
+        list_of_activity = Database.selectItems(id,category, activity_status, time)
         dispatcher.utter_message(text=(f"-1 {associated_name} , you have {list_of_activity} activities" if list_of_activity else " No activities found for you!")) 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
