@@ -5,6 +5,10 @@ import numpy as np
 
 import time
 import speech_recognition as sr
+import pyaudio
+
+pyaudio_instance = pyaudio.PyAudio()
+
 
 pub = rospy.Publisher('mic_data', Int16MultiArray, queue_size=10)
 rospy.init_node('voice_detection_node', anonymous=True)
@@ -14,11 +18,42 @@ global old_bool
 global stop_listening
 old_bool = True
 
+
+# find the index of respeaker usb device
+def find_device_index():
+    found = -1
+    for i in range(pyaudio_instance.get_device_count()):
+        dev = pyaudio_instance.get_device_info_by_index(i)
+        name = dev['name'].encode('utf-8')
+        if name.lower().find(b'respeaker') >= 0 and dev['maxInputChannels'] > 0:
+            found = i
+            break
+    return found
+
+device_index = find_device_index()
+if device_index < 0:
+    print('No ReSpeaker USB device found')
+    num_microphone = 2
+    # num_microphone = 1
+else:
+    print('Find ReSpeaker USB Device')
+    num_microphone = 4
+
+
 # this is called from the background thread
 def callback(recognizer, audio):
-    data = np.frombuffer(audio.get_raw_data(), dtype=np.int16) * 10
+    data = np.frombuffer(audio.get_raw_data(), dtype=np.int16)
+    max = np.sum(data[0::num_microphone])
+    toSend = data[0::num_microphone]
+    #though this for loop we search for the microphone with the max summed value, this should correspond to the principal microphone where the speaker is talking
+    for x in range(1,num_microphone): 
+        tmp = np.sum(data[x::num_microphone])
+        if max < tmp:
+            max = tmp 
+            toSend = data[x::num_microphone]
+
     data_to_send = Int16MultiArray()
-    data_to_send.data = data
+    data_to_send.data = toSend
     pub.publish(data_to_send)
 
 # Initialize a Recognizer
@@ -26,7 +61,7 @@ r = sr.Recognizer()
 
 # Audio source
 m = sr.Microphone(device_index=None,
-                    sample_rate=16000,
+                    sample_rate=16000*num_microphone,
                     chunk_size=1024)
 
 # Calibration within the environment

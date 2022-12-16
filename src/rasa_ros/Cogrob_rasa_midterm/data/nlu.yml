@@ -1288,6 +1288,13 @@ nlu:
     - What are my added activities?
     - Which are my added activities?
     - What are my created activities?
+    - I want to see all my activities for Monday
+    - Which are my added activities for tomorrow?
+    - What are my created activities for Sunday?
+    - Which are my activities for tomorrow morning?
+    - show activity in [gym](category) category for this evening
+    - let me view my activities for tuesday afternoon
+    - let me see activities for Wednesday evening
 
 - intent: presentation+view_activities
   examples: |
@@ -1317,6 +1324,13 @@ nlu:
     - i am [daniele](name), what are my added activities?
     - i'm [tommaso](name),which are my added activities?
     - i am [simone](name), what are my created activities?
+    - hi i am [piero](name), I want to see all my activities for Monday
+    - my name is [Sofia](name), Which are my added activities for tomorrow?
+    - hello i'm [vittorio](name), What are my created activities for Sunday?
+    - i'm [thomas](name) Which are my activities for tomorrow morning?
+    - i am [fiorella](name) show activity in [gym](category) category for this evening
+    - hi my name is [paolo](name) let me view my activities for tuesday afternoon
+    - hello my name is [eleonora](name) let me see activities for Wednesday evening
 
 - intent: clean_activities
   examples: |
@@ -1603,6 +1617,16 @@ nlu:
     - i'm [orietta](name) I can't forget to do the activity [send the e-mail](activity) of the category [work](category) of next Monday
     - i'm [silvia](name) I want to set a reminder for the activity [clean home](activity)
     - i am [silvana](name) , remind me the [buy some food](activity)
+
+- intent: ask_name
+  examples: |
+    - who I am?
+    - Do you know who I am?
+    - DId you know who I am?
+    - Did you recognize me?
+    - Do you recognize me?
+    - What is my name?
+    - Can you say my name?
 
 - synonym: uncompleted
   examples: |

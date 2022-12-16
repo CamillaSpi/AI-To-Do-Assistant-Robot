@@ -26,7 +26,10 @@
 <!-- stesso launcher per pc + pepper-->
 <launch>
     <arg name="node_start_delay" default="35.0" />  
-    <arg name="node_start_delay2" default="40.0" />  
+    <arg name="node_start_delay2" default="40.0" /> 
+    <arg name="lod" default="$(optenv LoD True)" />
+    <param name="lod" type="bool" value="$(arg lod)"/>
+         
     <node pkg="rasa_ros" name="rasa_action" type="rasa_action.sh" output="screen"/>
     <node pkg="rasa_ros" name="rasa_server" type="rasa_server.sh" output="screen"/> 
     <node pkg="rasa_ros" name="reminder_server" type="reminder_server.py" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' "/>
@@ -36,7 +39,7 @@
     <node pkg="ros_audio_pkg" type="asr.py" name="asr" output="screen"/>
     <node pkg="ros_audio_pkg" type="speaker_identification.py" name="speaker_identification" output="screen"/>
 
-    <node pkg="facial_emotion_recognition" type="detector_node.py" name="detector_node" output="screen"/>
+    <node pkg="facial_emotion_recognition" type="detector_node.py" name="detector_node" args="--listen_on_detect=$(arg lod)" output="screen" />
     <node pkg="facial_emotion_recognition" type="face_reidentification_node.py" name="ace_reidentification_node" output="screen"/>
     <node pkg="facial_emotion_recognition" type="visualization_node.py" name="visualization_node" output="screen"/> 
 

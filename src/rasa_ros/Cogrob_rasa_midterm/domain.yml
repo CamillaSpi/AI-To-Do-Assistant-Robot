@@ -32,6 +32,7 @@ intents:
   - presentation+set_status_activity
   - EXTERNAL_reminder
   - start_session
+  - ask_name
 
 entities:
   - activity
@@ -77,6 +78,7 @@ actions:
   - action_ask_activity_new
   - action_react_to_reminder
   - action_session_start
+  - action_say_name
 
 
 slots:

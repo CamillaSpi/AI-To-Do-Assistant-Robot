@@ -140,7 +140,7 @@ class Database:
       return False
 
   @staticmethod
-  def selectItems(ID, category=None, activity_status=None):
+  def selectItems(ID, category=None, activity_status=None, deadline=None):
     if ID == None: return None
     if(activity_status == "completed"):
       completed = True
@@ -154,11 +154,23 @@ class Database:
     if(activity_status != None):
       base_query = base_query + " AND completed == ?"
       base_list.append(completed)
+    if(deadline != None):
+      if(isinstance(deadline,dict)):
+        first_date = list(deadline.values())[1]
+        second_date = list(deadline.values())[0]
+        base_query = base_query + " AND deadline BETWEEN ? AND ?"
+        base_list.append(first_date)
+        base_list.append(second_date)
+      else:
+        first_date = deadline
+        second_date = deadline[:11] + "23:59:59" + deadline[19:]
+        base_query = base_query + " AND deadline BETWEEN ? AND ?"
+        base_list.append(first_date)
+        base_list.append(second_date)
     base_query = base_query + ";"
     cur.execute(base_query,base_list)
-    
     rows = cur.fetchall()
-    
+
     return len(rows) if len(rows) > 0 else None
 
   @staticmethod
@@ -259,10 +271,14 @@ class Database:
     cur.execute('''
       SELECT * FROM unfoldings WHERE id_unfolding == ? 
     ''', (id_unfolding, ))
-
-    if(len(cur.fetchall()) > 0 ):
-      conn.execute('''UPDATE unfoldings SET completed = ? WHERE ID == ? AND activity == ? AND category == ? AND deadline == ?
-      ''', (completed, ID, activity ,category,deadline))
+    rows= cur.fetchall()
+    if(len(rows) > 0 ):
+      if(deadline == None):
+        conn.execute('''UPDATE unfoldings SET completed = ? WHERE ID == ? AND activity == ? AND category == ?
+      ''', (completed, ID, activity ,category))
+      else:
+        conn.execute('''UPDATE unfoldings SET completed = ? WHERE ID == ? AND activity == ? AND category == ? AND deadline == ?
+        ''', (completed, ID, activity ,category,deadline))
       conn.commit()
       return True
     else:
