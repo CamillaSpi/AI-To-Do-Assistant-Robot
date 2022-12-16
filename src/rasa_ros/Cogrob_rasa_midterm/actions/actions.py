@@ -412,12 +412,11 @@ class actionCleanCompletedActivities(Action):
 
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"] 
-       
         associated_name = Database.getName(id)         
         
         returnedValue = Database.cleanCompletedActivities(id)
         if (returnedValue):  
-            dispatcher.utter_message(text=f"Congratulation {associated_name}, I've removed all you completed activity") 
+            dispatcher.utter_message(text=f"Congratulation {associated_name}, I've removed all your completed activity") 
         else:
             dispatcher.utter_message(text=f"Ops! {associated_name} something went wrong! I dont know, check it !") #??
     
