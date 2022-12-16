@@ -75,7 +75,6 @@ actions:
   - action_ask_category_new
   - action_ask_activity_old
   - action_ask_activity_new
-  - my_action_fallback
   - action_react_to_reminder
   - action_session_start
 
@@ -342,7 +341,7 @@ responses:
   - text: " Changfed "
 
   utter_default:
-  - text: I'm sorry, I can't help you. 
+  - text: I'm sorry, I can't help you, can you repeat?. 
 
   
 

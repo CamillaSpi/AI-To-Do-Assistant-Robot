@@ -557,23 +557,24 @@ class actionAskActivityNew(Action):
 
 
 
-class actionDefaultFallBack(Action):
-    def name(self) -> Text:
-        return "my_action_fallback"
+# class actionDefaultFallBack(Action):
+#     def name(self) -> Text:
+#         return "my_action_fallback"
     
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+#     def run(self, dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(text=f"Sorry, I lost my mind!")    
-        return [SlotSet("activity_old",None),
-        SlotSet("activity",None),
-        SlotSet("category_old",None),
-        SlotSet("category",None),
-        SlotSet("time",None),
-        SlotSet("activity_status",None),
-        SlotSet("activity_new",None),
-        SlotSet("category_new",None)]
+#         dispatcher.utter_message(text=f"Sorry, I lost my mind! Can you repeat?")    
+#         # return [SlotSet("activity_old",None),
+#         # SlotSet("activity",None),
+#         # SlotSet("category_old",None),
+#         # SlotSet("category",None),
+#         # SlotSet("time",None),
+#         # SlotSet("activity_status",None),
+#         # SlotSet("activity_new",None),
+#         # SlotSet("category_new",None)]
+#         return []
 
 
 class ActionReactToReminder(Action):
