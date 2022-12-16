@@ -18,9 +18,6 @@ global old_bool
 global stop_listening
 old_bool = True
 
-num_microphone = 2 # to select if realtek is available
-
-
 
 # find the index of respeaker usb device
 def find_device_index():
