@@ -179,7 +179,7 @@ class actionRemoveCategory(Action):
         if (returnedValue):  
             dispatcher.utter_message(text=f"Congratulation {associated_name}, category {category} removed") 
         else:
-            dispatcher.utter_message(text=f"Ops {associated_name}, this  category does not exists.") 
+            dispatcher.utter_message(text=f"Ops {associated_name}, this category does not exists.") 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -313,7 +313,7 @@ class actionModifyCategory(Action):
             else:
                 dispatcher.utter_message(text=f"Ops {associated_name} , the category {category_old} does not exists") 
         else:
-            dispatcher.utter_message(text=f"Ops {associated_name} , the {category_new} already exists") 
+            dispatcher.utter_message(text=f"Ops {associated_name} , the {category_new} category already exists") 
         
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -386,7 +386,7 @@ class actionModifyActivity(Action):
             else:
                 dispatcher.utter_message(text=f"Ops {associated_name} , the activity to be updated does not exists.") 
         else:
-            dispatcher.utter_message(text=f"Ops {associated_name} the  activity {act_to_modify} already exists, it makes no sense to update that") 
+            dispatcher.utter_message(text=f"Ops {associated_name} the activity {act_to_modify} already exists, it makes no sense to update that") 
     
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -417,9 +417,9 @@ class actionCleanCompletedActivities(Action):
         
         returnedValue = Database.cleanCompletedActivities(id)
         if (returnedValue):  
-            dispatcher.utter_message(text=f"Congratulation {associated_name}, I've removed all your completed activity") 
+            dispatcher.utter_message(text=f"Congratulation {associated_name}, I've removed all your completed activities") 
         else:
-            dispatcher.utter_message(text=f"Ops! {associated_name} something went wrong! I dont know, check it !") #??
+            dispatcher.utter_message(text=f"Ops! {associated_name} something went wrong! I didn't remove your completed activities!") #??
     
         return []
 
@@ -474,7 +474,7 @@ class actionRemindItem(Action):
             
             returnedValue = Database.updateReminder(id,category,activity,time,reminderSlot)
             if (returnedValue):
-                dispatcher.utter_message(text=f"Activity Updated!")
+                dispatcher.utter_message(text=f"Congratulation {associated_name}, the reminder of the activity has been updated.")
             else:
                 dispatcher.utter_message(text=f"{associated_name}, some problem with the update occurred!")
         else:
@@ -500,7 +500,7 @@ class actionAskCategoryOld(Action):
             dispatcher.utter_message(text=f"Please insert the category to be modified")
             return[SlotSet("requested_slot","category")]
         else:
-            dispatcher.utter_message(text=f"Please insert the category new")
+            dispatcher.utter_message(text=f"Please insert the new category")
             return[SlotSet("category_old",category),SlotSet("category",None),SlotSet("category_new",None),SlotSet("requested_slot","category")]    
         
 
@@ -516,7 +516,7 @@ class actionAskCategoryNew(Action):
         category_new = tracker.get_slot("category_new")
         category = tracker.get_slot("category")
         if(category_new == None and category == None):
-            dispatcher.utter_message(text=f"Please insert the category new")
+            dispatcher.utter_message(text=f"Please insert the new category")
             return[SlotSet("requested_slot","category")]
         else:
             return[SlotSet("category_new",category),SlotSet("category",None),SlotSet("requested_slot",None)]    
@@ -536,7 +536,7 @@ class actionAskActivityOld(Action):
             dispatcher.utter_message(text=f"Please insert the activity to be modified")
             return[SlotSet("requested_slot","activity")]
         else:
-            dispatcher.utter_message(text=f"Please insert the activity new")
+            dispatcher.utter_message(text=f"Please insert the new activity")
             return[SlotSet("activity_old",activity),SlotSet("activity",None),SlotSet("activity_new",None),SlotSet("requested_slot","activity")]    
 
 class actionAskActivityNew(Action):
@@ -550,7 +550,7 @@ class actionAskActivityNew(Action):
         activity_new = tracker.get_slot("activity_new")
         activity = tracker.get_slot("activity")
         if(activity_new == None and activity == None):
-            dispatcher.utter_message(text=f"Please insert the activity new")
+            dispatcher.utter_message(text=f"Please insert the new activity")
             return[SlotSet("requested_slot","activity")]
         else:
             return[SlotSet("activity_new",activity),SlotSet("activity",None),SlotSet("requested_slot",None)]    
@@ -622,6 +622,6 @@ class ActionRecognizeUser(Action):
         id = 5
         associated_name = Database.getName(id) 
 
-        dispatcher.utter_message(f"Hei i thinks you are {associated_name}!")
+        dispatcher.utter_message(f"Hey i think you are {associated_name}!")
 
         return []
