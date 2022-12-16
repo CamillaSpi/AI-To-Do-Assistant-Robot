@@ -45,7 +45,6 @@ stop_listening = r.listen_in_background(m, callback)
 
 
 def rcv_person(msg):
-    print('rcv msg' , msg.data)
     global old_bool
     global stop_listening
     if msg.data != old_bool:

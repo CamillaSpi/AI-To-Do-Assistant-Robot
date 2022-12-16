@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
+from datetime import datetime
 import os
 import cv2
 import rospy
 from scipy import special
-import ros_numpy # pip3 install git+https://github.com/eric-wieser/ros_numpy
+import ros_numpy  # pip3 install git+https://github.com/eric-wieser/ros_numpy
 import numpy as np
 from vision_msgs.msg import Detection2DArray, ObjectHypothesisWithPose
 
 from facial_emotion_recognition.srv import video_detect_user
-from std_msgs.msg import Int32MultiArray, Float32MultiArray, MultiArrayDimension
+from std_msgs.msg import Int32MultiArray, Float32MultiArray, MultiArrayDimension, Bool
 
 import json
 from json import JSONEncoder
@@ -23,6 +24,7 @@ REF_PATH = os.path.dirname(os.path.abspath(__file__))
 rospy.init_node('reidentification_face_node')
 global actualLabels
 
+
 class NumpyArrayEncoder(JSONEncoder):
     def default(self, obj):
         if isinstance(obj, np.ndarray):
@@ -33,39 +35,41 @@ class NumpyArrayEncoder(JSONEncoder):
 def save_identities():
     global database
     global labels
-    to_save = {'dataset':database, 'labels': labels}
+    to_save = {'dataset': database, 'labels': labels}
     print("sono in save")
-    with open(REF_PATH + '/../dataBase/json_data.json','w') as out_file:
-        json.dump(to_save,out_file,cls=NumpyArrayEncoder)
-        
+    with open(REF_PATH + '/../dataBase/json_data.json', 'w') as out_file:
+        json.dump(to_save, out_file, cls=NumpyArrayEncoder)
+
 
 def load_identities():
     print("sono in load")
     global database, labels
     try:
-        with open(REF_PATH + '/../dataBase/json_data.json','r') as in_file:
-            tmp= json.load(in_file)
+        with open(REF_PATH + '/../dataBase/json_data.json', 'r') as in_file:
+            tmp = json.load(in_file)
         dataset = np.asarray(tmp['dataset'])
         labels = np.asarray(tmp['labels'])
         print("sono in load identities", len(dataset))
-        return dataset,labels
+        return dataset, labels
     except:
-        return [],[]
+        return [], []
+
 
 pub = rospy.Publisher('identity', Detection2DArray, queue_size=2)
 
 # Load the VGG-Face model based on ResNet-50
 face_reco_model = VGGFace(model='resnet50', include_top=False, pooling='avg')
 padding = 0.2
-INPUT_SIZE = (224,224)
-global database 
+INPUT_SIZE = (224, 224)
+global database
 global labels
 global actual_id
 lock = Lock()
-database,labels = load_identities()
+database, labels = load_identities()
 actual_id = 0
 if len(labels):
     actual_id = max(labels) + 1
+
 
 def batch_cosine_similarity(x1, x2):
     '''
@@ -81,6 +85,7 @@ def batch_cosine_similarity(x1, x2):
     # l2 = np.sum(np.multiply(x2, x2), axis=1)
     # as values have have length 1, we don't need to divide by norm (as it is 1)
     return s
+
 
 def dist2id(distance, y, ths, norm=False, mode='avg', filter_under_th=False):
     d = distance.copy()
@@ -116,94 +121,97 @@ def dist2id(distance, y, ths, norm=False, mode='avg', filter_under_th=False):
     ids_prob_soft = special.softmax(ids_prob)
     return ids[np.argmax(ids_prob)], ids_prob_soft
 
+
 def extract_features(face_reco_model, filename):
     if type(filename) == 'str':
         faceim = cv2.imread(filename)
     else:
         faceim = filename
-    faceim = cv2.resize(faceim, (224,224))
+    faceim = cv2.resize(faceim, (224, 224))
     faceim = preprocess_input([faceim.astype(np.float32)], version=2)
-    feature_vector = (face_reco_model.predict(faceim,verbose=0)).flatten()
+    feature_vector = (face_reco_model.predict(faceim, verbose=0)).flatten()
     return feature_vector
-from datetime import datetime
 
-def registration():
-    global actualLabels
+
+def registration(msg):
+    global actual_id
     lock.acquire()
     t1 = datetime.now()
     print('non ti conosco... Rimani fermo ')
     for _ in range(10):
-        msg = rospy.wait_for_message('face_reidentification',Detection2DArray)
+        msg = rospy.wait_for_message('face_reidentification', Detection2DArray)
         im = ros_numpy.numpify(msg.detections[0].source_img)
         for d in msg.detections:
             # Preprocess image
-            d,resized_face = elaboration(d,im)
+            d, resized_face = elaboration(d, im)
             feature_vector = extract_features(face_reco_model, resized_face)
-            database.append(feature_vector)
+            database = np.concatenate((database, feature_vector))
             labels.append(actual_id)
     # Predict
+    actual_id +=1
     lock.release()
     t2 = datetime.now()
-    print('la procedura di registrazione ha impiegato' ,(t2-t1))
+    print('la procedura di registrazione ha impiegato', (t2-t1))
 
-def elaboration(d,im):
+
+def elaboration(d, im):
     bbox_0 = d.bbox.center.y - d.bbox.size_y/2
     bbox_1 = d.bbox.center.x - d.bbox.size_x/2
     bbox_2 = d.bbox.size_x + bbox_0
     bbox_3 = d.bbox.size_y + bbox_1
-    padding_px = int(padding*max(d.bbox.size_y,d.bbox.size_x))
-    face = im[round(max(0,bbox_1-padding_px)):round(min(bbox_3+padding_px,im.shape[0]-1)),round(max(0,bbox_0-padding_px)):round(min(bbox_2+padding_px, im.shape[1]-1))]
-    face = face[ face.shape[0]//2 - face.shape[1]//2 : face.shape[0]//2 + face.shape[1]//2, :, :]
-    resized_face = cv2.resize(face,INPUT_SIZE)
-    return d,resized_face
+    padding_px = int(padding*max(d.bbox.size_y, d.bbox.size_x))
+    face = im[round(max(0, bbox_1-padding_px)):round(min(bbox_3+padding_px, im.shape[0]-1)),
+              round(max(0, bbox_0-padding_px)):round(min(bbox_2+padding_px, im.shape[1]-1))]
+    face = face[face.shape[0]//2 - face.shape[1] //
+                2: face.shape[0]//2 + face.shape[1]//2, :, :]
+    resized_face = cv2.resize(face, INPUT_SIZE)
+    return d, resized_face
 
 
-def predict_identity(resized_face,rejection_threshold=0.5):
+def predict_identity(resized_face, rejection_threshold=0.5):
     global actual_id
-    if len(database) > 0 :
-        feature_vector = extract_features(face_reco_model, resized_face).reshape(-1,2048)
-        emb_face = np.repeat(feature_vector, len(database), 0).reshape(-1,2048)
+    if len(database) > 0:
+        feature_vector = extract_features(
+            face_reco_model, resized_face).reshape(-1, 2048)
+        emb_face = np.repeat(feature_vector, len(
+            database), 0).reshape(-1, 2048)
         cos_dist = batch_cosine_similarity(np.array(database), emb_face)
-        #id_label = dist2id(cos_dist, labels, rejection_threshold, mode='avg')
-        id_label, ids_prob = dist2id(cos_dist, labels, rejection_threshold, mode='avg')
+        # id_label = dist2id(cos_dist, labels, rejection_threshold, mode='avg')
+        id_label, ids_prob = dist2id(
+            cos_dist, labels, rejection_threshold, mode='avg')
     else:
-        registration()
-        id_label = actual_id
+        id_label = actual_id        # non so a che serve, probabilmente la togliamo proprio
+        ids_prob = []
     return (id_label), ids_prob
+
 
 def face_reidentification(msg):
     global actualLabels
     lock.acquire()
-    actualLabels = Float32MultiArray() 
+    actualLabels = Float32MultiArray()
     im = ros_numpy.numpify(msg.detections[0].source_img)
-    for i,d in enumerate(msg.detections):
+    for i, d in enumerate(msg.detections):
         # Preprocess image
-        d,resized_face = elaboration(d,im)
+        d, resized_face = elaboration(d, im)
         # Predict
         o = ObjectHypothesisWithPose()
         o.id, ids_prob = predict_identity(resized_face)
         d.results.append(o)
-        #actualLabels.append(d.results[0].id)
-        #id_probs_list = ids_prob.tolist()
+
         for j in range(len(ids_prob)):
             actualLabels.data.append(ids_prob[j])
-        #print("actualLabels:",actualLabels)
-        #id_probs_list = ids_prob.tolist()
-        #id_probs_list = [float(id_probs_list[i]) for j in range(len(id_probs_list))] 
-        #actualLabels.data = id_probs_list
-    #actualLabels.data = alabels
-    #print("actualArray.data.type", type(actualLabels.data[0]))
     lock.release()
     return msg
 
-   
+
 def recognize():
-    s = rospy.Service('video_user_server',video_detect_user, handle_service)
+    s = rospy.Service('video_user_server', video_detect_user, handle_service)
     rospy.logdebug('image server READY.')
     print("vado sotto lo spin")
     try:
         while not rospy.is_shutdown():
-            msg = rospy.wait_for_message('face_reidentification',Detection2DArray)
+            msg = rospy.wait_for_message(
+                'face_reidentification', Detection2DArray)
             to_publish = face_reidentification(msg)
             pub.publish(to_publish)
 
@@ -211,44 +219,22 @@ def recognize():
         print("vado in close")
         # save_identities()
 
-#aggiunte da me
 def handle_service(req):
     global actualLabels
     lock.acquire()
-    #toReturn = Float32MultiArray() 
-    
-    # print(type(actualLabels.data))
-    # #print(type(actualLabels.data))
-    # toReturn = Float32MultiArray() 
-    # lock.release()
-    # return actualLabels
-    #toReturn.data =  actualLabels
+
     thing = MultiArrayDimension()
     thing.stride = actual_id
-    
-    #toReturn.layout.dim.stride = 4
     try:
         actualLabels.layout.dim.append(thing)
     except NameError:
         print("in except")
-        actualLabels.data=[]
+        actualLabels.data = []
     lock.release()
     return actualLabels
-    # toReturn.layout.dim.append(thing)
-    # try: 
-    #     if len(actualLabels.data) > 1:
-    #         toReturn.data =  actualLabels
-    #     toReturn.data = [actualLabels]
-    #     print("sono nel try", type(toReturn.data))
-    # except NameError:
-    #     print("in except")
-    #     toReturn.data = []
-    # lock.release()
-    # print("ciao111")
-    # return toReturn
+
 
 if __name__ == '__main__':
+    pub_recogizer_node = rospy.Subscriber(
+        'startRegistration', Bool, registration)
     recognize()
-
-
-
