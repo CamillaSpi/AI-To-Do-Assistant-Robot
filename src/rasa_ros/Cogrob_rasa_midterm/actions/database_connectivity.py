@@ -170,7 +170,7 @@ class Database:
     base_query = base_query + ";"
     cur.execute(base_query,base_list)
     rows = cur.fetchall()
-    
+
     return len(rows) if len(rows) > 0 else None
 
   @staticmethod
@@ -271,10 +271,14 @@ class Database:
     cur.execute('''
       SELECT * FROM unfoldings WHERE id_unfolding == ? 
     ''', (id_unfolding, ))
-
-    if(len(cur.fetchall()) > 0 ):
-      conn.execute('''UPDATE unfoldings SET completed = ? WHERE ID == ? AND activity == ? AND category == ? AND deadline == ?
-      ''', (completed, ID, activity ,category,deadline))
+    rows= cur.fetchall()
+    if(len(rows) > 0 ):
+      if(deadline == None):
+        conn.execute('''UPDATE unfoldings SET completed = ? WHERE ID == ? AND activity == ? AND category == ?
+      ''', (completed, ID, activity ,category))
+      else:
+        conn.execute('''UPDATE unfoldings SET completed = ? WHERE ID == ? AND activity == ? AND category == ? AND deadline == ?
+        ''', (completed, ID, activity ,category,deadline))
       conn.commit()
       return True
     else:

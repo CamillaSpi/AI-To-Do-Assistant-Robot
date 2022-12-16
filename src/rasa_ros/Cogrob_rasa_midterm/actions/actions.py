@@ -75,7 +75,6 @@ class actionAddItem(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        name = tracker.get_slot("name")
         
         id=tracker.current_state()["sender_id"]
 
@@ -196,6 +195,7 @@ class actionSetStatusActivity(Action):
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
         #aggiunta
+        id = 5
         associated_name = Database.getName(id)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
@@ -412,6 +412,7 @@ class actionCleanCompletedActivities(Action):
 
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"] 
+        id = 5
         associated_name = Database.getName(id)         
         
         returnedValue = Database.cleanCompletedActivities(id)
