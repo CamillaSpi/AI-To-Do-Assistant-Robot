@@ -15,6 +15,7 @@ pub2 = rospy.Publisher('toSpeech', String, queue_size=10)
 
 # Init node
 rospy.init_node('recognize_user', anonymous=True)
+rejection_threshold = 0.7
 rospy.wait_for_service('voiceLabelServices')
 rospy.wait_for_service('video_user_server')
 obtain_audio_prob = rospy.ServiceProxy('voiceLabelServices', idLabel)
@@ -36,7 +37,7 @@ def recognize_user(text_to_send):
         
         start = 0
         max = 0
-        rejection_threshold = 0.7
+        
         while start != len(id_face_prob_arr):
             stop = start + faces_stride
             sum = np.sum([id_voice_prob_arr*0.40,id_face_prob_arr[start:stop]*0.60], axis = 0)
@@ -45,7 +46,7 @@ def recognize_user(text_to_send):
                 id_max = np.argmax(sum)
             start = stop
         print("id_max",id_max,"max", max)
-        if(max>0.7):
+        if(max>rejection_threshold):
             #l'utente è stato correttamente riconosciuto quindi devo inviare tutto a rasa
             toSend = RecognizedSpoke()
             toSend.msg = text_to_send.data
