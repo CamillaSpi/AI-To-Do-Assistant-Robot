@@ -85,6 +85,7 @@ class Database:
   @staticmethod
   def doesPossessionExists(ID,category,actual_cur):
     if category != None and ID != None:
+      print(ID,category)
       actual_cur.execute('''
         SELECT * FROM possessions WHERE ID == ? AND category == ?
       ''', (ID, category))
@@ -345,7 +346,7 @@ class Database:
         if newcategory != None:
           if newcategory!=None and not Database.doesPossessionExists(ID,newcategory,actual_cur):
             #Andrebbe comunicato che è stata creata tale categoria
-            Database.insertCategoryAndPossession(ID, newcategory,actual_conn)
+            Database.insertCategoryAndPossession(ID, newcategory,actual_cur,actual_conn)
           if newactivity!=None and not Database.doesActivityExists(newactivity,actual_cur):
             #Andrebbe comunicato che è stata creata tale activity
             Database.insertActivity(newactivity,actual_cur)

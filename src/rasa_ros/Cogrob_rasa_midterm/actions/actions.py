@@ -46,7 +46,6 @@ class ActionSessionStart(Action):
             id = m.hexdigest()
             cur = cur2
             conn = conn2
-        print(id)
         # lista = Database.getAllReminder(cur)
         # print(len(lista), 'reminder ripristinati')
         # for element in lista:
@@ -86,7 +85,6 @@ class actionCreateUser(Action):
             id = m.hexdigest()
             cur = cur2
             conn = conn2
-        print(id)
 
         if(Database.doesUserExists(id,cur) == False):
             returnedValue = Database.createUser(id,name,conn)
@@ -124,7 +122,6 @@ class actionAddItem(Action):
             id = m.hexdigest()
             cur = cur2
             conn = conn2
-        print(id)
         associated_name = Database.getName(id,cur)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
@@ -174,7 +171,6 @@ class actionRemoveItem(Action):
             id = m.hexdigest()
             cur = cur2
             conn = conn2
-        print(id)
         associated_name = Database.getName(id,cur)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
@@ -183,7 +179,7 @@ class actionRemoveItem(Action):
             activity = ' '.join([str(elem) for elem in activity])
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
-        returnedValue = Database.deleteItem(id,activity ,category,cur,conn)
+        returnedValue = Database.deleteItem(id,activity ,category,time,cur,conn)
         if (returnedValue):  
             dispatcher.utter_message(text=f"Congratulation {associated_name}, {activity} removed from {category}") 
         else:
@@ -218,7 +214,6 @@ class actionAddCategory(Action):
             id = m.hexdigest()
             cur = cur2
             conn = conn2
-        print(id)
         associated_name = Database.getName(id,cur)
         category = tracker.get_slot("category")
         if (isinstance(category,list)):
@@ -258,7 +253,6 @@ class actionRemoveCategory(Action):
             id = m.hexdigest()
             cur = cur2
             conn = conn2
-        print(id)
         
         associated_name = Database.getName(id,cur)
         category = tracker.get_slot("category")
@@ -298,7 +292,6 @@ class actionSetStatusActivity(Action):
             id = m.hexdigest()
             cur = cur2
             conn = conn2
-        print(id)
         associated_name = Database.getName(id,cur)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
@@ -347,7 +340,6 @@ class actionSetInComplete(Action):
             id = m.hexdigest()
             cur = cur2
             conn = conn2
-        print(id)
         
         associated_name = Database.getName(id,cur)
         activity = tracker.get_slot("activity")
@@ -391,7 +383,6 @@ class showActivities(Action):
             id = m.hexdigest()
             cur = cur2
             conn = conn2
-        print(id)
         associated_name = Database.getName(id,cur)
         category = tracker.get_slot("category")
         activity_status = tracker.get_slot("activity_status")
@@ -428,7 +419,6 @@ class showCategories(Action):
             id = m.hexdigest()
             cur = cur2
             conn = conn2
-        print(id)
        
         associated_name = Database.getName(id,cur)
         list_of_categories = Database.selectPossessions(id,cur)
@@ -461,13 +451,12 @@ class actionModifyCategory(Action):
             id = m.hexdigest()
             cur = cur2
             conn = conn2
-        print(id)
     
         associated_name = Database.getName(id,cur)
         category_old = tracker.get_slot("category_old")
         category_new = tracker.get_slot("category_new")
         
-        if (Database.doesPossessionExists(id,category,cur) == False):
+        if (Database.doesPossessionExists(id,category_new,cur) == False):
 
             returnedValue = Database.modifyCategory(id, category_old, category_new,cur,conn)
             if (returnedValue):  
@@ -503,7 +492,6 @@ class actionModifyActivity(Action):
             id = m.hexdigest()
             cur = cur2
             conn = conn2
-        print(id)
 
         category_old = tracker.get_slot("category_old")
         activity_old = tracker.get_slot("activity_old")
@@ -557,8 +545,8 @@ class actionModifyActivity(Action):
         if(activity_new == None):
             activity_new = activity
       
-        if (Database.doesUnfoldingsExists(id,category_new,activity_new,timenew,actual_cur=cur) == False):
-            returnedValue = Database.modifyActivity(id, cat_to_modify, act_to_modify, timeold, category_new, activity_new, timenew,actual_cur=cur,actual_conn=conn)
+        if (Database.doesUnfoldingsExists(id,category_new,activity_new,cur,timenew) == False):
+            returnedValue = Database.modifyActivity(id, cat_to_modify, act_to_modify, timeold, cur,conn,category_new, activity_new, timenew)
             if (returnedValue):  
                 dispatcher.utter_message(text=f"Congratulation {associated_name}, the activity {act_to_modify} has been updated") 
             else:
@@ -604,7 +592,6 @@ class actionCleanCompletedActivities(Action):
             id = m.hexdigest()
             cur = cur2
             conn = conn2
-        print(id)
         associated_name = Database.getName(id,cur)         
         
         returnedValue = Database.cleanCompletedActivities(id,conn)
@@ -647,6 +634,7 @@ class actionRemindItem(Action):
         category = tracker.get_slot("category")
         reminderSlot = tracker.get_slot("reminder")
         time = tracker.get_slot("time")
+        name = tracker.get_slot("name")
         
         cur = cur1
         conn = conn1
@@ -661,7 +649,6 @@ class actionRemindItem(Action):
             id = m.hexdigest()
             cur = cur2
             conn = conn2
-        print(id)
         associated_name = Database.getName(id,cur) 
         date = datetime.now() + timedelta(seconds = 120)
         if (isinstance(activity,list)):
@@ -676,7 +663,7 @@ class actionRemindItem(Action):
             kill_on_user_message = False,
         )
 
-        if (Database.doesUnfoldingsExists(id,category,activity,time,actual_cur=cur)):
+        if (Database.doesUnfoldingsExists(id,category,activity,cur,time)):
             
             returnedValue = Database.updateReminder(id,category,activity,time,conn)
             if (returnedValue):
@@ -840,7 +827,6 @@ class ActionRecognizeUser(Action):
             id = m.hexdigest()
             cur = cur2
             conn = conn2
-        print(id)
         associated_name = Database.getName(id,cur) 
 
         dispatcher.utter_message(f"Hey i think you are {associated_name}!")
