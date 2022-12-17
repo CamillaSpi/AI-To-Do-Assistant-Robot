@@ -52,7 +52,6 @@ def load_identities():
         dataset = np.asarray(tmp['dataset'])
         labels = np.asarray(tmp['labels'])
         number_of_users = tmp['number_of_users']
-        print("sono in load identities", len(dataset))
         return dataset, labels,number_of_users
     except:
         return [], [],0
