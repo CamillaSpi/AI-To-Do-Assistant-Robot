@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
   message_runtime
   rospy
+  std_msgs
   sensor_msgs
   vision_msgs
 )

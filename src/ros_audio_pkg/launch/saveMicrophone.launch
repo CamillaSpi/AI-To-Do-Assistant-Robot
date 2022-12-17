@@ -1,0 +1,7 @@
+<launch>
+        <node pkg="ros_audio_pkg" type="voice_detection.py" name="microphone" output="screen"/>
+        <node pkg="ros_audio_pkg" type="saveMicrophone.py" name="saveMicrophone" output="screen"/>
+</launch>
+
+
+

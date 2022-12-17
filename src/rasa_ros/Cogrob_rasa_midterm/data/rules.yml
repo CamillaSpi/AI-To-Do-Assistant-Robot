@@ -48,6 +48,11 @@ rules:
     - time: true 
   - action: action_reminder_item
 
+- rule: Recognize user
+  steps:
+  - intent: ask_name
+  - action: action_say_name
+
   ####aggiunta per reminder
 - rule: react to remind
   steps: 

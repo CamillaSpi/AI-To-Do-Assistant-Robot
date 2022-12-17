@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from tensorflow.python.ops.gen_logging_ops import Print
 import rospy
-from std_msgs.msg import Int16MultiArray
+from std_msgs.msg import Int16MultiArray,Float32MultiArray,Int16
 import numpy as np
 import pickle
 import os
@@ -9,10 +9,10 @@ import os
 from identification.deep_speaker.audio import get_mfcc
 from identification.deep_speaker.model import get_deep_speaker
 from identification.utils import batch_cosine_similarity, dist2id
-from std_msgs.msg import Int16MultiArray, String
+from std_msgs.msg import Int16MultiArray, String,Bool
 from identification.identities_mng import save_identities, load_identities
 from ros_audio_pkg.msg import RecognizedSpoke,AudioAndText
-from ros_audio_pkg.srv import idLabel
+from ros_audio_pkg.srv import idLabel,Registration
 import rospy
 from threading import Lock
 
@@ -22,6 +22,12 @@ REF_PATH = os.path.dirname(os.path.abspath(__file__))
 RATE = 16000
 lock = Lock()
 global id_label
+global prob_voices
+global number_of_users
+global features_dataBase
+global labels
+global last_features
+
 # Load model, rete siamese basata su resnet/vgg. addestrata con triplette loss. disponibile pubblicamente su keras, non e la migliore
 # la maggior parte implementate in pytorch.
 model = get_deep_speaker(os.path.join(REF_PATH,'deep_speaker.h5'))
@@ -41,38 +47,42 @@ def elaboration(data):
     # Prediction
     ukn = model.predict(np.expand_dims(ukn, 0))
     return ukn
-# "add activity run in category gym for tomorrow", "add study in university"
-phrases = ["I feel like I don't know you, repeat after me: Hi Pepper","add activity run in category gym for tomorrow", "remove the category study in university","update the activity walk in personal" , "show my activity", "remind me to play guitar in freetime"]
+# ,"add activity run in category gym for tomorrow","add activity run in category gym for tomorrow", "remove the category study in university","update the activity walk in personal" , "show my activity", "remind me to play guitar in freetime"
+phrases = ["I feel like I don't know you, repeat after me: Hi Pepper"]
 
-def registration(id):
-    X_new=[]
-    y_new=[]
-    id = 2
+def registration(msg):
+    global features_dataBase
+    global labels
+    global number_of_users
+    lock.acquire()
     for msg in phrases:
         pub1.publish(msg)
         print(msg)
         audioAndData = rospy.wait_for_message("RecivedAudio",Int16MultiArray) 
         data = audioAndData.data
         ukn = elaboration(data)
-        X_new.append(ukn[0])
-        y_new.append(id)
+        try:
+            features_dataBase = np.concatenate((features_dataBase,ukn),axis=0)
+        except:
+            features_dataBase = np.array([ukn[0]])
+        labels.append(number_of_users)
     pub1.publish("Stop to repeat with me, let say your name!")
     print("Stop to repeat with me, let say your name!")
-    return np.array(X_new),y_new
-    
+    number_of_users+=1
+    lock.release()
+    return 'ACK'
 
 
 
 def listener():
     global id_label
+    global prob_voices
+    global number_of_users
+    global features_dataBase
+    global labels
+    global last_features
     rospy.init_node('reidentification_node', anonymous=True)
-    X,y = load_identities(REF_PATH)
-    try:
-        actual_id = max(y)+1
-        print("find some things")
-    except:
-        print("empty folder ")
-        actual_id = 0
+    features_dataBase,labels,number_of_users = load_identities()
     try:
         while not rospy.is_shutdown():
             #mi vado a checkare che si tratti di testo, altrimenti ptrei riconocere il rumore, o comunque avere problemi.
@@ -80,48 +90,63 @@ def listener():
             recivedAudio = rospy.wait_for_message("RecivedAudio",Int16MultiArray) 
             lock.acquire()
 
-            ukn = elaboration(recivedAudio.data)
+            last_features = ukn = elaboration(recivedAudio.data)
 
-            if len(X) > 0:
+            if len(features_dataBase) > 0:
                 # Distance between the sample and the support set, caolcolo distanza coseno e quelle che ho memorizzato finora.
-                emb_voice = np.repeat(ukn, len(X), 0)
+                emb_voice = np.repeat(ukn, len(features_dataBase), 0)
                 # faccio distanza coseno con tutti quanti gli elementi.
-                cos_dist = batch_cosine_similarity(np.array(X), emb_voice)
+                cos_dist = batch_cosine_similarity(np.array(features_dataBase), emb_voice)
                 
                 # Matching, in base alle label e tresh dice distanza.
                 # quindi ukn restituisce tutti i valori distanza dei campioni rispetto a ukn. e calcolo la distanza media tra tutti i campioni. 
 
-                id_label = dist2id(cos_dist, y, TH, mode='avg') #id_label saranno id incrementali
-            
-            if len(X) == 0 or id_label is None:
-                print("in if")
-                #eventuale face recognition
-                X_ret,y_ret = registration(actual_id)
-                try:
-                    X = np.concatenate((X,X_ret))
-                except:
-                    X = X_ret
-                y= y +y_ret
-                id_label = actual_id
-                actual_id+=1
+                id_label, prob_voices = dist2id(cos_dist, labels, TH, mode='avg') #id_label saranno id incrementali
+                print("prob_voices", prob_voices)
             else:
-                print("Ha parlato:", id_label)
+                prob_voices = [] 
             lock.release()
 
     except rospy.exceptions.ROSInterruptException:
         print("vado in close")
-        save_identities(X,y,REF_PATH)
+        save_identities(features_dataBase,labels,number_of_users)
 
 def return_idLabel(req):
     global id_label
+    global prob_voices
+    toReturn = Float32MultiArray() 
     lock.acquire()
-    toReturn = id_label
+    toReturn.data = prob_voices
     lock.release()
     return toReturn
-    
+
+def naturalLearning(msg):
+    global last_features
+    global features_dataBase
+    global labels
+    id = msg.data
+
+    lock.acquire()
+    print(features_dataBase.shape, len(labels))
+    # should never be None, but to be safe
+    if last_features.all()!=None:
+        print('added new campionbe')
+        try:
+            features_dataBase = np.concatenate((features_dataBase,last_features),axis=0)
+        except:
+            features_dataBase = np.array([last_features[0]])
+        labels.append(number_of_users)
+    lock.release()
+
+
+
 
 def voiceLabelServer():
     s = rospy.Service('voiceLabelServices', idLabel, return_idLabel)
+    s = rospy.Service('voiceRegistrationService', Registration, registration)
+    p = rospy.Subscriber(
+        'naturalLearningVoice', Int16, naturalLearning)
+
     print("readyToGiveLabels")
 
 if __name__ == '__main__':
