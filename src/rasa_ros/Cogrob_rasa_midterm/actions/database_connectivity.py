@@ -85,7 +85,6 @@ class Database:
   @staticmethod
   def doesPossessionExists(ID,category,actual_cur):
     if category != None and ID != None:
-      print(ID,category)
       actual_cur.execute('''
         SELECT * FROM possessions WHERE ID == ? AND category == ?
       ''', (ID, category))
