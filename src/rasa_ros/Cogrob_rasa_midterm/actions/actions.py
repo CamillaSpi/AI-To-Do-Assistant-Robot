@@ -19,6 +19,8 @@ from datetime import datetime, timedelta
 
 from . import Database
 
+conn1,cur1, conn2, cur2 = Database.returnConnection()
+
 class ActionSessionStart(Action):
     def name(self) -> Text:
         return "action_session_start"
@@ -54,6 +56,12 @@ class actionCreateUser(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
+        try:
+            print(id)
+            id = int(id)
+            print(id)
+        except:
+            print('no')
         id = 5
 
         if(Database.doesUserExists(id) == False):
