@@ -11,6 +11,8 @@ from keras_vggface.vggface import VGGFace
 from keras_vggface.utils import preprocess_input
 from scipy import special
 import json
+from glob import glob
+from tqdm import tqdm
 
 
 REF_PATH = os.path.dirname(os.path.abspath(__file__))
@@ -26,15 +28,6 @@ def load_identities():
         return dataset, labels,number_of_users
     except:
         return [], [],0
-
-# This method takes as input the face recognition model and the filename of the image and returns
-# the feature vector
-def extract_features(face_reco_model, filename):
-    faceim = cv2.imread(filename)
-    faceim = cv2.resize(faceim, (224,224))
-    faceim = preprocess_input([faceim.astype(np.float32)], version=2)
-    feature_vector = (face_reco_model.predict(faceim)).flatten()
-    return feature_vector
 
 # Load the VGG-Face model based on ResNet-50
 face_reco_model = VGGFace(model='resnet50', include_top=False, pooling='avg')
@@ -138,14 +131,25 @@ def predict_identity(resized_face, rejection_threshold=0.5):
     else:
         id_label = number_of_users        # non so a che serve, probabilmente la togliamo proprio
         ids_prob = []
-    return (id_label), ids_prob
+    return (id_label)
 
 
 def face_reidentification(image):
-    global actualLabels
-    actualLabels =[]
-    id, ids_prob = predict_identity(image)
-    print(id, ids_prob)
+    return predict_identity(cv2.imread(image))
 
 
-face_reidentification('/home/nando/Scrivania/DefinitivoCog/src/facial_emotion_recognition/test/0/1.png')
+number_of_known_people = 4
+accuracy = 0
+count = 0
+
+for i in range(0,number_of_known_people):
+    person_path = os.path.join(REF_PATH, str(i).zfill(1))
+    person = []
+    print(person_path)
+    for filename in tqdm(glob(os.path.join(person_path,'*.png'))):
+        count +=1
+        if (i == predict_identity(cv2.imread(filename))):
+            accuracy +=1
+
+print("the accuracy is {:.2f}".format(accuracy/count))
+        
