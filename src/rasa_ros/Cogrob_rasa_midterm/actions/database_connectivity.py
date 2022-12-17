@@ -141,7 +141,7 @@ class Database:
         return False
 
   @staticmethod
-  def insertItem(ID, activity ,category, reminder,actual_conn,deadline=None):
+  def insertItem(ID, activity ,category, reminder,actual_cur,actual_conn,deadline=None):
     try:
       m = hashlib.sha256()
       m.update(str(ID).encode())
@@ -150,7 +150,7 @@ class Database:
       m.update(str(deadline).encode())
       m.digest()
       id_unfolding = m.hexdigest()
-      if not Database.doesActivityExists(activity):
+      if not Database.doesActivityExists(activity,actual_cur):
         actual_conn.execute('''
         INSERT INTO activities (name) VALUES (?);
         ''', (activity,))
@@ -240,10 +240,10 @@ class Database:
     return False
 
   @staticmethod
-  def insertCategoryAndPossession(ID, category,actual_conn):
+  def insertCategoryAndPossession(ID, category,actual_cur,actual_conn):
     if ID != None and category != None:
       try:
-        if(not Database.doesCategoryExists(category)):
+        if(not Database.doesCategoryExists(category,actual_cur)):
           actual_conn.execute('''
             INSERT INTO categories (name) VALUES (?);
           ''', (category,))
@@ -314,9 +314,9 @@ class Database:
     ''', (ID, category))
     if(len(actual_cur.fetchall()) > 0 ):
       if category_new != None:
-        if not Database.doesCategoryExists(category_new):
+        if not Database.doesCategoryExists(category_new,actual_cur):
           #Andrebbe comunicato che è stata creata tale categoria
-          Database.insertCategory(category_new)
+          Database.insertCategory(category_new,actual_cur)
       actual_conn.execute('''
         UPDATE possessions SET category = ? WHERE ID == ? AND category == ?;
       ''', (category_new,ID,category))
@@ -343,12 +343,12 @@ class Database:
       ''', (id_unfolding,))
       if(len(actual_cur.fetchall()) > 0 ):
         if newcategory != None:
-          if newcategory!=None and not Database.doesPossessionExists(ID,newcategory):
+          if newcategory!=None and not Database.doesPossessionExists(ID,newcategory,actual_cur):
             #Andrebbe comunicato che è stata creata tale categoria
-            Database.insertCategoryAndPossession(ID, newcategory)
-          if newactivity!=None and not Database.doesActivityExists(newactivity):
+            Database.insertCategoryAndPossession(ID, newcategory,actual_conn)
+          if newactivity!=None and not Database.doesActivityExists(newactivity,actual_cur):
             #Andrebbe comunicato che è stata creata tale activity
-            Database.insertActivity(newactivity)
+            Database.insertActivity(newactivity,actual_cur)
         paramList = list()
         paramList.append(("activity", newactivity))
         paramList.append(("category", newcategory))

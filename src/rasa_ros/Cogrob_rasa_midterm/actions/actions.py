@@ -21,7 +21,6 @@ import hashlib
 from . import Database
 
 conn1,cur1, conn2, cur2 = Database.returnConnection()
-m = hashlib.sha256()
 
 class ActionSessionStart(Action):
     def name(self) -> Text:
@@ -33,12 +32,16 @@ class ActionSessionStart(Action):
         # the session should begin with a `session_started` event
         events = [SessionStarted()]
         id=tracker.current_state()["sender_id"]
+        name = tracker.get_slot("name")
         cur = cur1
         conn = conn1
         try:
             id = int(id) #if yes this id was send trough ros nose
+            print('db1')
         except:
-            id = m.update(str(id).encode())
+            m = hashlib.sha256()
+            id = m.update(str(name).encode())
+            print('db2')
             m.digest()
             id = m.hexdigest()
             cur = cur2
@@ -74,8 +77,11 @@ class actionCreateUser(Action):
         conn = conn1
         try:
             id = int(id) #if yes this id was send trough ros nose
+            print('db1')
         except:
-            id = m.update(str(id).encode())
+            m = hashlib.sha256()
+            id = m.update(str(name).encode())
+            print('db2', name, id)
             m.digest()
             id = m.hexdigest()
             cur = cur2
@@ -103,14 +109,17 @@ class actionAddItem(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         id=tracker.current_state()["sender_id"]
+        name = tracker.get_slot("name")
 
-        
         cur = cur1
         conn = conn1
         try:
             id = int(id) #if yes this id was send trough ros nose
+            print('db1')
         except:
-            id = m.update(str(id).encode())
+            m = hashlib.sha256()
+            id = m.update(str(name).encode())
+            print('db2')
             m.digest()
             id = m.hexdigest()
             cur = cur2
@@ -128,7 +137,7 @@ class actionAddItem(Action):
         if(time != None and len(time) == 2):
             time = time['to']
         if(Database.doesPossessionExists(id,category,cur)):
-            returnedValue= Database.insertItem(id,activity ,category,reminder,time,actual_conn=conn)
+            returnedValue= Database.insertItem(id,activity ,category,reminder, cur ,conn,time)
             if (returnedValue):  
                 text = f"Congratulation {associated_name}, {activity} added to {category}" + (f", complete before {time[:10]} at {time[11:16]}." if time else ".") + (" I will remind you, dont worry " if reminder else "") 
                 dispatcher.utter_message(text=text) 
@@ -156,8 +165,11 @@ class actionRemoveItem(Action):
         conn = conn1
         try:
             id = int(id) #if yes this id was send trough ros nose
+            print('db1')
         except:
-            id = m.update(str(id).encode())
+            m = hashlib.sha256()
+            id = m.update(str(name).encode())
+            print('db2')
             m.digest()
             id = m.hexdigest()
             cur = cur2
@@ -197,8 +209,11 @@ class actionAddCategory(Action):
         conn = conn1
         try:
             id = int(id) #if yes this id was send trough ros nose
+            print('db1')
         except:
-            id = m.update(str(id).encode())
+            m = hashlib.sha256()
+            id = m.update(str(name).encode())
+            print('db2')
             m.digest()
             id = m.hexdigest()
             cur = cur2
@@ -208,7 +223,7 @@ class actionAddCategory(Action):
         category = tracker.get_slot("category")
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
-        returnedValue = Database.insertCategoryAndPossession(id,category,conn)
+        returnedValue = Database.insertCategoryAndPossession(id,category,actual_cur=cur, actual_conn=conn)
         if (returnedValue):  
             dispatcher.utter_message(text=f"Congratulation {associated_name}, {category} added as a new category") 
         else:
@@ -234,8 +249,11 @@ class actionRemoveCategory(Action):
         conn = conn1
         try:
             id = int(id) #if yes this id was send trough ros nose
+            print('db1')
         except:
-            id = m.update(str(id).encode())
+            m = hashlib.sha256()
+            id = m.update(str(name).encode())
+            print('db2')
             m.digest()
             id = m.hexdigest()
             cur = cur2
@@ -271,8 +289,11 @@ class actionSetStatusActivity(Action):
         conn = conn1
         try:
             id = int(id) #if yes this id was send trough ros nose
+            print('db1')
         except:
-            id = m.update(str(id).encode())
+            m = hashlib.sha256()
+            id = m.update(str(name).encode())
+            print('db2')
             m.digest()
             id = m.hexdigest()
             cur = cur2
@@ -317,8 +338,11 @@ class actionSetInComplete(Action):
         conn = conn1
         try:
             id = int(id) #if yes this id was send trough ros nose
+            print('db1')
         except:
-            id = m.update(str(id).encode())
+            m = hashlib.sha256()
+            id = m.update(str(name).encode())
+            print('db2')
             m.digest()
             id = m.hexdigest()
             cur = cur2
@@ -358,8 +382,11 @@ class showActivities(Action):
         conn = conn1
         try:
             id = int(id) #if yes this id was send trough ros nose
+            print('db1')
         except:
-            id = m.update(str(id).encode())
+            m = hashlib.sha256()
+            id = m.update(str(name).encode())
+            print('db2')
             m.digest()
             id = m.hexdigest()
             cur = cur2
@@ -392,8 +419,11 @@ class showCategories(Action):
         conn = conn1
         try:
             id = int(id) #if yes this id was send trough ros nose
+            print('db1')
         except:
-            id = m.update(str(id).encode())
+            m = hashlib.sha256()
+            id = m.update(str(name).encode())
+            print('db2')
             m.digest()
             id = m.hexdigest()
             cur = cur2
@@ -422,8 +452,11 @@ class actionModifyCategory(Action):
         conn = conn1
         try:
             id = int(id) #if yes this id was send trough ros nose
+            print('db1')
         except:
-            id = m.update(str(id).encode())
+            m = hashlib.sha256()
+            id = m.update(str(name).encode())
+            print('db2')
             m.digest()
             id = m.hexdigest()
             cur = cur2
@@ -461,8 +494,11 @@ class actionModifyActivity(Action):
         conn = conn1
         try:
             id = int(id) #if yes this id was send trough ros nose
+            print('db1')
         except:
-            id = m.update(str(id).encode())
+            m = hashlib.sha256()
+            id = m.update(str(name).encode())
+            print('db2')
             m.digest()
             id = m.hexdigest()
             cur = cur2
@@ -559,8 +595,11 @@ class actionCleanCompletedActivities(Action):
         conn = conn1
         try:
             id = int(id) #if yes this id was send trough ros nose
+            print('db1')
         except:
-            id = m.update(str(id).encode())
+            m = hashlib.sha256()
+            id = m.update(str(name).encode())
+            print('db2')
             m.digest()
             id = m.hexdigest()
             cur = cur2
@@ -613,8 +652,11 @@ class actionRemindItem(Action):
         conn = conn1
         try:
             id = int(id) #if yes this id was send trough ros nose
+            print('db1')
         except:
-            id = m.update(str(id).encode())
+            m = hashlib.sha256()
+            id = m.update(str(name).encode())
+            print('db2')
             m.digest()
             id = m.hexdigest()
             cur = cur2
@@ -789,8 +831,11 @@ class ActionRecognizeUser(Action):
         conn = conn1
         try:
             id = int(id) #if yes this id was send trough ros nose
+            print('db1')
         except:
-            id = m.update(str(id).encode())
+            m = hashlib.sha256()
+            id = m.update(str(name).encode())
+            print('db2')
             m.digest()
             id = m.hexdigest()
             cur = cur2
