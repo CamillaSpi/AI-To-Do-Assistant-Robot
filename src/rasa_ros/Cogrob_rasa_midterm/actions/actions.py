@@ -16,10 +16,12 @@ from rasa_sdk.events import SlotSet, ReminderScheduled,SessionStarted,ActionExec
 from rasa_sdk.forms import FormValidationAction
 from rasa_sdk.types import DomainDict
 from datetime import datetime, timedelta
+import hashlib
 
 from . import Database
 
 conn1,cur1, conn2, cur2 = Database.returnConnection()
+m = hashlib.sha256()
 
 class ActionSessionStart(Action):
     def name(self) -> Text:
@@ -30,11 +32,23 @@ class ActionSessionStart(Action):
     ) -> List[EventType]:
         # the session should begin with a `session_started` event
         events = [SessionStarted()]
-        # lista = Database.getAllReminder()
+        id=tracker.current_state()["sender_id"]
+        cur = cur1
+        conn = conn1
+        try:
+            id = int(id) #if yes this id was send trough ros nose
+        except:
+            id = m.update(str(id).encode())
+            m.digest()
+            id = m.hexdigest()
+            cur = cur2
+            conn = conn2
+        print(id)
+        # lista = Database.getAllReminder(cur)
         # print(len(lista), 'reminder ripristinati')
         # for element in lista:
         #     time = datetime.now() + timedelta(seconds = 20000) # time = datetime.fromisoformat(element[3])
-        #     entities = [{'name':Database.getName(element[0]), 'activity':element[1], 'category':element[2]}] # 'time':time
+        #     entities = [{'name':Database.getName(element[0],cur), 'activity':element[1], 'category':element[2]}] # 'time':time
         #     events.append(ReminderScheduled(
         #         "EXTERNAL_reminder",
         #         trigger_date_time = time,
@@ -56,21 +70,25 @@ class actionCreateUser(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
+        cur = cur1
+        conn = conn1
         try:
-            print(id)
-            id = int(id)
-            print(id)
+            id = int(id) #if yes this id was send trough ros nose
         except:
-            print('no')
-        id = 5
+            id = m.update(str(id).encode())
+            m.digest()
+            id = m.hexdigest()
+            cur = cur2
+            conn = conn2
+        print(id)
 
-        if(Database.doesUserExists(id) == False):
-            returnedValue = Database.createUser(id,name)
+        if(Database.doesUserExists(id,cur) == False):
+            returnedValue = Database.createUser(id,name,conn)
 
             dispatcher.utter_message(text=f"Congratulation {name} your account has been correctly created") 
             
         else:
-            name = Database.getName(id)
+            name = Database.getName(id,cur)
             dispatcher.utter_message(text=f"Congratulation {name} you're logged in") 
         return []
 
@@ -86,8 +104,19 @@ class actionAddItem(Action):
         
         id=tracker.current_state()["sender_id"]
 
-        id = 5
-        associated_name = Database.getName(id)
+        
+        cur = cur1
+        conn = conn1
+        try:
+            id = int(id) #if yes this id was send trough ros nose
+        except:
+            id = m.update(str(id).encode())
+            m.digest()
+            id = m.hexdigest()
+            cur = cur2
+            conn = conn2
+        print(id)
+        associated_name = Database.getName(id,cur)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
         reminder = tracker.get_slot("reminder")
@@ -98,8 +127,8 @@ class actionAddItem(Action):
             category = ' '.join([str(elem) for elem in category])
         if(time != None and len(time) == 2):
             time = time['to']
-        if(Database.doesPossessionExists(id,category)):
-            returnedValue= Database.insertItem(id,activity ,category,reminder,time)
+        if(Database.doesPossessionExists(id,category,cur)):
+            returnedValue= Database.insertItem(id,activity ,category,reminder,time,actual_conn=conn)
             if (returnedValue):  
                 text = f"Congratulation {associated_name}, {activity} added to {category}" + (f", complete before {time[:10]} at {time[11:16]}." if time else ".") + (" I will remind you, dont worry " if reminder else "") 
                 dispatcher.utter_message(text=text) 
@@ -123,7 +152,18 @@ class actionRemoveItem(Action):
         name = tracker.get_slot("name")
       
         id=tracker.current_state()["sender_id"]
-        associated_name = Database.getName(id)
+        cur = cur1
+        conn = conn1
+        try:
+            id = int(id) #if yes this id was send trough ros nose
+        except:
+            id = m.update(str(id).encode())
+            m.digest()
+            id = m.hexdigest()
+            cur = cur2
+            conn = conn2
+        print(id)
+        associated_name = Database.getName(id,cur)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
         time = tracker.get_slot("time")
@@ -131,7 +171,7 @@ class actionRemoveItem(Action):
             activity = ' '.join([str(elem) for elem in activity])
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
-        returnedValue = Database.deleteItem(id,activity ,category,time)
+        returnedValue = Database.deleteItem(id,activity ,category,cur,conn)
         if (returnedValue):  
             dispatcher.utter_message(text=f"Congratulation {associated_name}, {activity} removed from {category}") 
         else:
@@ -152,12 +192,23 @@ class actionAddCategory(Action):
         name = tracker.get_slot("name")
         
         id=tracker.current_state()["sender_id"]
-        id = 5
-        associated_name = Database.getName(id)
+        
+        cur = cur1
+        conn = conn1
+        try:
+            id = int(id) #if yes this id was send trough ros nose
+        except:
+            id = m.update(str(id).encode())
+            m.digest()
+            id = m.hexdigest()
+            cur = cur2
+            conn = conn2
+        print(id)
+        associated_name = Database.getName(id,cur)
         category = tracker.get_slot("category")
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
-        returnedValue = Database.insertCategoryAndPossession(id,category)
+        returnedValue = Database.insertCategoryAndPossession(id,category,conn)
         if (returnedValue):  
             dispatcher.utter_message(text=f"Congratulation {associated_name}, {category} added as a new category") 
         else:
@@ -179,11 +230,23 @@ class actionRemoveCategory(Action):
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
         
-        associated_name = Database.getName(id)
+        cur = cur1
+        conn = conn1
+        try:
+            id = int(id) #if yes this id was send trough ros nose
+        except:
+            id = m.update(str(id).encode())
+            m.digest()
+            id = m.hexdigest()
+            cur = cur2
+            conn = conn2
+        print(id)
+        
+        associated_name = Database.getName(id,cur)
         category = tracker.get_slot("category")
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
-        returnedValue = Database.deleteCategory(id,category)
+        returnedValue = Database.deleteCategory(id,category,cur,conn)
         if (returnedValue):  
             dispatcher.utter_message(text=f"Congratulation {associated_name}, category {category} removed") 
         else:
@@ -203,8 +266,19 @@ class actionSetStatusActivity(Action):
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
         #aggiunta
-        id = 5
-        associated_name = Database.getName(id)
+        
+        cur = cur1
+        conn = conn1
+        try:
+            id = int(id) #if yes this id was send trough ros nose
+        except:
+            id = m.update(str(id).encode())
+            m.digest()
+            id = m.hexdigest()
+            cur = cur2
+            conn = conn2
+        print(id)
+        associated_name = Database.getName(id,cur)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
         activity_status = tracker.get_slot("activity_status")
@@ -214,9 +288,9 @@ class actionSetStatusActivity(Action):
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
         if activity_status == 'completed':
-            returnedValue = Database.setItemStatus(id,activity ,category,time,True)
+            returnedValue = Database.setItemStatus(id,activity ,category,time,True,cur,conn)
         elif activity_status == 'uncompleted':
-            returnedValue = Database.setItemStatus(id,activity ,category,time,False)
+            returnedValue = Database.setItemStatus(id,activity ,category,time,False,cur,conn)
         else:
             dispatcher.utter_message(text=f"Ops {associated_name}, I didn't understand what you want to do with this activity") 
             return [SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None),SlotSet("activity_status",None)]
@@ -239,8 +313,19 @@ class actionSetInComplete(Action):
 
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
+        cur = cur1
+        conn = conn1
+        try:
+            id = int(id) #if yes this id was send trough ros nose
+        except:
+            id = m.update(str(id).encode())
+            m.digest()
+            id = m.hexdigest()
+            cur = cur2
+            conn = conn2
+        print(id)
         
-        associated_name = Database.getName(id)
+        associated_name = Database.getName(id,cur)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
         time = tracker.get_slot("time")
@@ -248,7 +333,7 @@ class actionSetInComplete(Action):
             activity = ' '.join([str(elem) for elem in activity])
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
-        returnedValue = Database.setItemStatus(id,activity ,category,time,False)
+        returnedValue = Database.setItemStatus(id,activity ,category,time,False,cur,conn)
 
         if (returnedValue):  
             dispatcher.utter_message(text=f"Congratulation {associated_name}, {activity} in {category} set as incompleted") 
@@ -268,14 +353,25 @@ class showActivities(Action):
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
         #aggiunta
-        id = 5
-        associated_name = Database.getName(id)
+        
+        cur = cur1
+        conn = conn1
+        try:
+            id = int(id) #if yes this id was send trough ros nose
+        except:
+            id = m.update(str(id).encode())
+            m.digest()
+            id = m.hexdigest()
+            cur = cur2
+            conn = conn2
+        print(id)
+        associated_name = Database.getName(id,cur)
         category = tracker.get_slot("category")
         activity_status = tracker.get_slot("activity_status")
         time = tracker.get_slot("time")
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
-        list_of_activity = Database.selectItems(id,category, activity_status, time)
+        list_of_activity = Database.selectItems(id,cur,category, activity_status, time)
         dispatcher.utter_message(text=(f"-1 {associated_name} , you have {list_of_activity} activities" if list_of_activity else " No activities found for you!")) 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
@@ -290,9 +386,22 @@ class showCategories(Action):
 
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
+        #aggiunta
+        
+        cur = cur1
+        conn = conn1
+        try:
+            id = int(id) #if yes this id was send trough ros nose
+        except:
+            id = m.update(str(id).encode())
+            m.digest()
+            id = m.hexdigest()
+            cur = cur2
+            conn = conn2
+        print(id)
        
-        associated_name = Database.getName(id)
-        list_of_categories = Database.selectPossessions(id)
+        associated_name = Database.getName(id,cur)
+        list_of_categories = Database.selectPossessions(id,cur)
         
         dispatcher.utter_message(text=(f"-1 {associated_name} , you have {list_of_categories} category" if list_of_categories else " No categories found for you!")) 
 
@@ -308,14 +417,26 @@ class actionModifyCategory(Action):
 
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
+        
+        cur = cur1
+        conn = conn1
+        try:
+            id = int(id) #if yes this id was send trough ros nose
+        except:
+            id = m.update(str(id).encode())
+            m.digest()
+            id = m.hexdigest()
+            cur = cur2
+            conn = conn2
+        print(id)
     
-        associated_name = Database.getName(id)
+        associated_name = Database.getName(id,cur)
         category_old = tracker.get_slot("category_old")
         category_new = tracker.get_slot("category_new")
         
-        if (Database.doesPossessionExists(id,category_new) == False):
+        if (Database.doesPossessionExists(id,category,cur) == False):
 
-            returnedValue = Database.modifyCategory(id, category_old, category_new)
+            returnedValue = Database.modifyCategory(id, category_old, category_new,cur,conn)
             if (returnedValue):  
                 dispatcher.utter_message(text=f"Congratulation {associated_name}, {category_old} modified in {category_new}") 
             else:
@@ -335,6 +456,19 @@ class actionModifyActivity(Action):
         possibleDeadlineErrorFlag=False
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"]
+
+        cur = cur1
+        conn = conn1
+        try:
+            id = int(id) #if yes this id was send trough ros nose
+        except:
+            id = m.update(str(id).encode())
+            m.digest()
+            id = m.hexdigest()
+            cur = cur2
+            conn = conn2
+        print(id)
+
         category_old = tracker.get_slot("category_old")
         activity_old = tracker.get_slot("activity_old")
         activity_new = tracker.get_slot("activity_new")
@@ -346,7 +480,7 @@ class actionModifyActivity(Action):
             activity_old = ' '.join([str(elem) for elem in activity_old])
         if (isinstance(activity_new,list)):
             activity_new = ' '.join([str(elem) for elem in activity_new])
-        associated_name = Database.getName(id)
+        associated_name = Database.getName(id,cur)
         
         if(activity_old!=None):
             act_to_modify = activity_old
@@ -368,7 +502,7 @@ class actionModifyActivity(Action):
         elif(isinstance(time, list)):
             timeold = time[0]['from']
             timenew = time[1]
-        elif(Database.doesUnfoldingsExists(id,category,activity) and category_new == None and activity_new == None):
+        elif(Database.doesUnfoldingsExists(id,category,activity,actual_cur=cur) and category_new == None and activity_new == None):
             
             timenew = time
             timeold = None
@@ -387,8 +521,8 @@ class actionModifyActivity(Action):
         if(activity_new == None):
             activity_new = activity
       
-        if (Database.doesUnfoldingsExists(id,category_new,activity_new,timenew) == False):
-            returnedValue = Database.modifyActivity(id, cat_to_modify, act_to_modify, timeold, category_new, activity_new, timenew)
+        if (Database.doesUnfoldingsExists(id,category_new,activity_new,timenew,actual_cur=cur) == False):
+            returnedValue = Database.modifyActivity(id, cat_to_modify, act_to_modify, timeold, category_new, activity_new, timenew,actual_cur=cur,actual_conn=conn)
             if (returnedValue):  
                 dispatcher.utter_message(text=f"Congratulation {associated_name}, the activity {act_to_modify} has been updated") 
             else:
@@ -420,10 +554,21 @@ class actionCleanCompletedActivities(Action):
 
         name = tracker.get_slot("name")
         id=tracker.current_state()["sender_id"] 
-        id = 5
-        associated_name = Database.getName(id)         
         
-        returnedValue = Database.cleanCompletedActivities(id)
+        cur = cur1
+        conn = conn1
+        try:
+            id = int(id) #if yes this id was send trough ros nose
+        except:
+            id = m.update(str(id).encode())
+            m.digest()
+            id = m.hexdigest()
+            cur = cur2
+            conn = conn2
+        print(id)
+        associated_name = Database.getName(id,cur)         
+        
+        returnedValue = Database.cleanCompletedActivities(id,conn)
         if (returnedValue):  
             dispatcher.utter_message(text=f"Congratulation {associated_name}, I've removed all your completed activities") 
         else:
@@ -463,8 +608,19 @@ class actionRemindItem(Action):
         category = tracker.get_slot("category")
         reminderSlot = tracker.get_slot("reminder")
         time = tracker.get_slot("time")
-        id = 5
-        associated_name = Database.getName(id) 
+        
+        cur = cur1
+        conn = conn1
+        try:
+            id = int(id) #if yes this id was send trough ros nose
+        except:
+            id = m.update(str(id).encode())
+            m.digest()
+            id = m.hexdigest()
+            cur = cur2
+            conn = conn2
+        print(id)
+        associated_name = Database.getName(id,cur) 
         date = datetime.now() + timedelta(seconds = 120)
         if (isinstance(activity,list)):
             activity = ' '.join([str(elem) for elem in activity])
@@ -478,9 +634,9 @@ class actionRemindItem(Action):
             kill_on_user_message = False,
         )
 
-        if (Database.doesUnfoldingsExists(id,category,activity,time)):
+        if (Database.doesUnfoldingsExists(id,category,activity,time,actual_cur=cur)):
             
-            returnedValue = Database.updateReminder(id,category,activity,time,reminderSlot)
+            returnedValue = Database.updateReminder(id,category,activity,time,conn)
             if (returnedValue):
                 dispatcher.utter_message(text=f"Congratulation {associated_name}, the reminder of the activity has been updated.")
             else:
@@ -628,8 +784,19 @@ class ActionRecognizeUser(Action):
 
       
         id=tracker.current_state()["sender_id"]
-        id = 5
-        associated_name = Database.getName(id) 
+        
+        cur = cur1
+        conn = conn1
+        try:
+            id = int(id) #if yes this id was send trough ros nose
+        except:
+            id = m.update(str(id).encode())
+            m.digest()
+            id = m.hexdigest()
+            cur = cur2
+            conn = conn2
+        print(id)
+        associated_name = Database.getName(id,cur) 
 
         dispatcher.utter_message(f"Hey i think you are {associated_name}!")
 
