@@ -68,9 +68,6 @@ def testFunction():
     time.sleep(0.5)
     message.msg = "remind me to call john in personal for yesterday"
     dialogue_service(message.msg,message.id) 
-    time.sleep(0.5)
-    message.msg = "remind me to call john in personal in 10 seconds"
-    dialogue_service(message.msg,message.id) 
 
 
 
@@ -78,7 +75,7 @@ def testFunction():
 def main():
     rospy.init_node('writing')
     rospy.wait_for_service('dialogue_server')
-    # testFunction()
+    dialogue_service("/session_start",-1)
 
 
     while not rospy.is_shutdown():

@@ -45,27 +45,28 @@ class ActionSessionStart(Action):
             id = int(id) #if yes this id was send trough ros nose
             Database.initDb(0)            
         except:
-            Database.initDb(1)    
+            Database.initDb(1)   
+            print(id) 
 
 
-        lista = Database.getAllReminder()
-        print(len(lista), 'reminder ripristinati')
-        for element in lista:
-            deadline = element[3]
-            time_remind = parser.parse(deadline)-timedelta(seconds = 20)
-            if(time_remind < actual_time_tz):
-                time = datetime.now()+timedelta(seconds = 2)
-                entities = [{'id':element[0],'name':Database.getName(element[0]), 'activity':element[1], 'category':element[2],'deadline': deadline,'expired':True}] # 'time':time
-            else: 
-                time = time_remind
-                entities = [{'id':element[0],'name':Database.getName(element[0]), 'activity':element[1], 'category':element[2],'deadline': deadline,'expired':False}] # 'time':time
+        # lista = Database.getAllReminder()
+        # print(len(lista), 'reminder ripristinati')
+        # for element in lista:
+        #     deadline = element[3]
+        #     time_remind = parser.parse(deadline)-timedelta(seconds = 20)
+        #     if(time_remind < actual_time_tz):
+        #         time = datetime.now()+timedelta(seconds = 2)
+        #         entities = [{'id':element[0],'name':Database.getName(element[0]), 'activity':element[1], 'category':element[2],'deadline': deadline,'expired':True}] # 'time':time
+        #     else: 
+        #         time = time_remind
+        #         entities = [{'id':element[0],'name':Database.getName(element[0]), 'activity':element[1], 'category':element[2],'deadline': deadline,'expired':False}] # 'time':time
         
-            events.append(ReminderScheduled(
-                "EXTERNAL_reminder",
-                trigger_date_time = time,
-                entities = entities,
-                kill_on_user_message = False,
-            ))
+        #     events.append(ReminderScheduled(
+        #         "EXTERNAL_reminder",
+        #         trigger_date_time = time,
+        #         entities = entities,
+        #         kill_on_user_message = False,
+        #     ))
 
         # an `action_listen` should be added at the end as a user message follows
         events.append(ActionExecuted("action_listen"))
