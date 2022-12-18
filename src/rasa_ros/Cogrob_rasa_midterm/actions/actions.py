@@ -543,7 +543,7 @@ class actionRemindItem(Action):
             m.digest()
             id = m.hexdigest()
         associated_name = Database.getName(id) 
-        date = datetime.now() + timedelta(seconds = 120)
+        date = datetime.now() + timedelta(seconds = 10)
         if (isinstance(activity,list)):
             activity = ' '.join([str(elem) for elem in activity])
         if (isinstance(category,list)):
