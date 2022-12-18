@@ -51,13 +51,14 @@ class ActionSessionStart(Action):
         lista = Database.getAllReminder()
         print(len(lista), 'reminder ripristinati')
         for element in lista:
-            time_remind = parser.parse(element[3])-timedelta(seconds = 20)
+            deadline = element[3]
+            time_remind = parser.parse(deadline)-timedelta(seconds = 20)
             if(time_remind < actual_time_tz):
                 time = datetime.now()+timedelta(seconds = 2)
-                entities = [{'name':Database.getName(element[0]), 'activity':element[1], 'category':element[2],'expired':True}] # 'time':time
+                entities = [{'id':element[0],'name':Database.getName(element[0]), 'activity':element[1], 'category':element[2],'deadline': deadline,'expired':True}] # 'time':time
             else: 
                 time = time_remind
-                entities = [{'name':Database.getName(element[0]), 'activity':element[1], 'category':element[2],'expired':False}] # 'time':time
+                entities = [{'id':element[0],'name':Database.getName(element[0]), 'activity':element[1], 'category':element[2],'deadline': deadline,'expired':False}] # 'time':time
         
             events.append(ReminderScheduled(
                 "EXTERNAL_reminder",
@@ -679,17 +680,22 @@ class ActionReactToReminder(Action):
 
         print("sto nella react")
         entities = tracker.latest_message.get("entities")[0]
+        id_user = entities['id']
         name = entities['name']
         activity = entities['activity']
         category = entities['category']
+        deadline = entities['deadline']
         expired = entities['expired']
         print(expired)
         if(expired):
             dispatcher.utter_message(f"Hei {name}, the reminder  for {activity} in {category} is expired!!!")
-            print("ti sei scordato")
+            print("ti sei scordato ", activity, category)
         else: 
             dispatcher.utter_message(f"Hei {name}, remember to {activity} in {category} in 5 minutes!")
-            print("sei ancora in tempo per ricordarti")
+            print("sei ancora in tempo per ricordarti", activity, category)
+
+        #aggiunta per far si che una volta notificato un reminder questo non venga più notificato successivamente
+        Database.updateReminder(id_user,category, activity, deadline, False)
         # time = entities['time']
         # time = datetime.fromisoformat(time)
         # date = datetime.now()
