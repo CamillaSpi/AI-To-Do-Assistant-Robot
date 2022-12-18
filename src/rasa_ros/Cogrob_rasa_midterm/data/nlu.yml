@@ -567,7 +567,7 @@ nlu:
     - enter [checkbox](activity) in category [plan](category) at 19:00
     - enter [call my mother](activity) in category [family](category) at 19:00
     - put [windsurf](activity) in category [summer](category) at 20:30
-    - add activity [cook](activity) in category [today](category) at 21:10
+    - add activity [cook](activity) in category [home](category) at 21:10
     - put activity [e-mail](activity) in category [quickly](category) at 9:40
     - insert activity [buy a book](activity) in category [learn](category) at 5:12
     - insert activity [draw](activity) in category [creativity](category) at 5:12
@@ -680,7 +680,7 @@ nlu:
     - enter [push](activity) in [informatic](category) at 22:20
     - enter [my friend birthday](activity) in [events](category) at 14:50
     - insert activity [book the pub](activity) in [friendship](category) at 19:41
-    - add new activity [update](activity) in [team](category) at 12:35
+    - add new activity [call](activity) in [team](category) at 12:35
     - add new activity [go to theatre](activity) in [culture](category) at 12:35
     - enter the activity [review](activity) in [commitments](category) at 17:30
     - enter the activity [go to the concert](activity) in [music](category) at 17:30
@@ -920,7 +920,7 @@ nlu:
     - set [incomplete](activity_status) [bank's appointments](activity) in category [finance](category)
     - set [incomplete](activity_status) [pik up of the package](activity) in category [organization](category)
     - set [incomplete](activity_status) [bills](activity) in category [important](category)
-    - set [incomplete](activity_status) [update](activity) in category [team](category)
+    - set [incomplete](activity_status) [call](activity) in category [team](category)
     - set [incomplete](activity_status) activity [go to gym](activity) in category [sport](category)
     - set [incomplete](activity_status) activity [clean my bedroom](activity) in category [households](category)
     - set [incomplete](activity_status) activity [stand up](activity) in category [health](category)

@@ -57,6 +57,12 @@ class Database:
             PRIMARY KEY (ID,category)
         );
     ''')
+    conn.execute('''
+        CREATE TRIGGER IF NOT EXISTS delete_activities_for_category AFTER DELETE ON possessions FOR EACH ROW 
+        BEGIN
+          DELETE FROM unfoldings WHERE ID = OLD.id AND category = OLD.category;
+        END
+    ''')
     conn.commit()
 
   @staticmethod
@@ -192,6 +198,7 @@ class Database:
         DELETE FROM unfoldings WHERE id_unfolding == ?
       ''', (id_unfolding,))
       conn.commit()
+      Database.checkActivitiesTable(activity)
       return True
     else:
       return False
@@ -256,8 +263,39 @@ class Database:
         DELETE FROM possessions WHERE ID == ? AND category == ? 
       ''', (ID, category))
         conn.commit()
+        Database.checkCategoriesTable(category)
         return True
     return False
+
+  @staticmethod
+  def checkActivitiesTable(activity):
+    cur.execute('''
+        SELECT * FROM unfoldings WHERE activity == ? 
+      ''', (activity,))
+    if(len(cur.fetchall()) > 0 ):
+      print("ci sono altri con questa attività")
+      return
+    else:
+      print("nessuno la tiene, elimino in activities")
+      conn.execute('''
+        DELETE FROM activities WHERE name == ? 
+      ''', (activity,))
+      conn.commit()
+
+  @staticmethod 
+  def checkCategoriesTable(category):
+    cur.execute('''
+        SELECT * FROM possessions WHERE category == ? 
+      ''', (category,))
+    if(len(cur.fetchall()) > 0 ):
+      print("ci sono altri con questa categoria")
+      return
+    else:
+      print("nessuno la tiene, elimino in categories")
+      conn.execute('''
+        DELETE FROM categories WHERE name == ? 
+      ''', (category,))
+      conn.commit()
 
   @staticmethod
   def setItemStatus(ID, activity ,category,deadline,completed):
@@ -300,6 +338,7 @@ class Database:
       conn.execute('''
         UPDATE unfoldings SET category = ? WHERE ID == ? AND category == ?;
       ''', (category_new,ID,category))
+      Database.checkCategoriesTable(category)
       conn.commit()
       return True
     else:
@@ -348,6 +387,7 @@ class Database:
         query = "UPDATE unfoldings SET" + queryParam[1:] + " WHERE id_unfolding == ?"
         conn.execute(query, tupleParam)
         conn.commit()
+        Database.checkActivitiesTable(activity)
         return True
       else:
         return False
