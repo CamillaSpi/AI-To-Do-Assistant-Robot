@@ -1,0 +1,57 @@
+{
+    "sender_id": "{5}",
+    "slots": {
+        "activity_old": null,
+        "activity_new": null,
+        "activity": null,
+        "category_old": null,
+        "category_new": null,
+        "category": null,
+        "name": null,
+        "time": null,
+        "activity_status": null,
+        "reminder": false,
+        "requested_slot": null,
+        "session_started_metadata": null
+    },
+    "latest_message": {
+        "intent": {},
+        "entities": [],
+        "text": null,
+        "message_id": null,
+        "metadata": {}
+    },
+    "latest_event_time": 1671387766.899747,
+    "followup_action": null,
+    "paused": false,
+    "events": [
+        {
+            "event": "action",
+            "timestamp": 1671387766.8997087,
+            "name": "action_session_start",
+            "policy": null,
+            "confidence": 1.0,
+            "action_text": null,
+            "hide_rule_turn": false
+        },
+        {
+            "event": "session_started",
+            "timestamp": 1671387766.8997252
+        },
+        {
+            "event": "action",
+            "timestamp": 1671387766.899747,
+            "name": "action_listen",
+            "policy": null,
+            "confidence": null,
+            "action_text": null,
+            "hide_rule_turn": null
+        }
+    ],
+    "latest_input_channel": null,
+    "active_loop": {},
+    "latest_action": {
+        "action_name": "action_listen"
+    },
+    "latest_action_name": "action_listen"
+}

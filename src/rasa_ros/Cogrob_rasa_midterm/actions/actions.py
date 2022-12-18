@@ -19,12 +19,23 @@ from datetime import datetime, timedelta
 from dateutil import parser
 import pytz
 import hashlib
+import json
+import os
 
 from . import Database
 
+REF_PATH = os.path.dirname(os.path.abspath(__file__))
 
 global id
 id = None
+
+def saveTracker(tracker, name):
+
+        with open(REF_PATH + '/../tests/data/'+name+'.json', 'w') as out_file:
+            json.dump(tracker, out_file)
+  
+
+
 
 class ActionSessionStart(Action):
     def name(self) -> Text:
@@ -40,6 +51,7 @@ class ActionSessionStart(Action):
         actual_time = datetime.now()
         actual_time_tz = amdam_tz.localize(actual_time, is_dst = True)
         id=tracker.current_state()["sender_id"]
+        saveTracker(tracker.current_state(),self.name())
      
         try:
             id = int(id) #if yes this id was send trough ros nose
@@ -81,6 +93,8 @@ class actionCreateUser(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name())
         global id
         name = tracker.get_slot("name")
         if type(id) != int:
@@ -111,6 +125,8 @@ class actionAddItem(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name())
         
         global id
         name = tracker.get_slot("name")
@@ -150,7 +166,9 @@ class actionRemoveItem(Action):
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name()) 
         name = tracker.get_slot("name")
       
         global id
@@ -182,7 +200,9 @@ class actionAddCategory(Action):
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name()) 
         name = tracker.get_slot("name")
         
         global id
@@ -211,7 +231,9 @@ class actionRemoveCategory(Action):
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name()) 
         
         name = tracker.get_slot("name")
         global id
@@ -240,6 +262,8 @@ class actionSetStatusActivity(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name())
 
         name = tracker.get_slot("name")
         global id
@@ -280,6 +304,8 @@ class actionSetInComplete(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name())
 
         name = tracker.get_slot("name")
         global id
@@ -311,6 +337,8 @@ class showActivities(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name())
 
         name = tracker.get_slot("name")
         global id
@@ -337,6 +365,8 @@ class showCategories(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name())
 
         name = tracker.get_slot("name")
         global id
@@ -360,6 +390,8 @@ class actionModifyCategory(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name())
 
         name = tracker.get_slot("name")
         global id
@@ -391,6 +423,8 @@ class actionModifyActivity(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name())
         possibleDeadlineErrorFlag=False
         name = tracker.get_slot("name")
         global id
@@ -470,6 +504,8 @@ class actionSetReminderSlot(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name())
 
         return[SlotSet("reminder",True)]
 
@@ -481,6 +517,8 @@ class actionCleanCompletedActivities(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name())
 
         name = tracker.get_slot("name")
         global id 
@@ -505,6 +543,8 @@ class actionResetSlot(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name())
 
         
         return [SlotSet("activity_old",None),
@@ -524,6 +564,8 @@ class actionRemindItem(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name())
 
         global id
         activity = tracker.get_slot("activity")
@@ -581,6 +623,8 @@ class actionAskCategoryOld(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name())
 
         category_old = tracker.get_slot("category_old")
         category = tracker.get_slot("category")
@@ -600,6 +644,8 @@ class actionAskCategoryNew(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name())
 
         category_new = tracker.get_slot("category_new")
         category = tracker.get_slot("category")
@@ -617,6 +663,8 @@ class actionAskActivityOld(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name())
 
         activity_old = tracker.get_slot("activity_old")
         activity = tracker.get_slot("activity")
@@ -634,6 +682,8 @@ class actionAskActivityNew(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        saveTracker(tracker.current_state(),self.name())
 
         activity_new = tracker.get_slot("activity_new")
         activity = tracker.get_slot("activity")
@@ -679,6 +729,8 @@ class ActionReactToReminder(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
+        saveTracker(tracker.current_state(),self.name())
+
         print("sto nella react")
         entities = tracker.latest_message.get("entities")[0]
         id_user = entities['id']
@@ -718,6 +770,8 @@ class ActionRecognizeUser(Action):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
+
+        saveTracker(tracker.current_state(),self.name())
 
       
         global id
