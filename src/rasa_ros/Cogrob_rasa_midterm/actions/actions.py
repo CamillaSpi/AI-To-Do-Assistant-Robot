@@ -816,7 +816,6 @@ class ActionReactToReminder(Action):
         name = entities['name']
         activity = entities['activity']
         category = entities['category']
-<<<<<<< HEAD
         expired = entities['expired']
         print(expired)
         if(expired):
@@ -825,9 +824,6 @@ class ActionReactToReminder(Action):
         else: 
             dispatcher.utter_message(f"Hei {name}, remember to {activity} in {category} in 5 minutes!")
             print("sei ancora in tempo per ricordarti")
-=======
-        print('sono in reminder')
->>>>>>> f5a6c529d3e57664721350fcca41afdd004fcf40
         # time = entities['time']
         # time = datetime.fromisoformat(time)
         # date = datetime.now()
