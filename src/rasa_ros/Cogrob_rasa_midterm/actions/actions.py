@@ -16,6 +16,8 @@ from rasa_sdk.events import SlotSet, ReminderScheduled,SessionStarted,ActionExec
 from rasa_sdk.forms import FormValidationAction
 from rasa_sdk.types import DomainDict
 from datetime import datetime, timedelta
+from dateutil import parser
+import pytz
 
 from . import Database
 
@@ -26,8 +28,31 @@ class ActionSessionStart(Action):
     async def run(
       self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]
     ) -> List[EventType]:
+        print(tracker.events)
         # the session should begin with a `session_started` event
         events = [SessionStarted()]
+        amdam_tz = pytz.timezone('Europe/Amsterdam')
+        actual_time = datetime.now()
+        actual_time_tz = amdam_tz.localize(actual_time, is_dst = True)
+        
+        lista = Database.getAllReminder()
+        print(len(lista), 'reminder ripristinati')
+        
+        for element in lista:
+            time_remind = parser.parse(element[3])-timedelta(seconds = 20)
+            if(time_remind < actual_time_tz):
+                time = datetime.now()+timedelta(seconds = 2)
+                entities = [{'name':Database.getName(element[0]), 'activity':element[1], 'category':element[2],'expired':True}] # 'time':time
+            else: 
+                time = time_remind
+                entities = [{'name':Database.getName(element[0]), 'activity':element[1], 'category':element[2],'expired':False}] # 'time':time
+            events.append(ReminderScheduled(
+                "EXTERNAL_reminder",
+                trigger_date_time = time,
+                entities = entities,
+                kill_on_user_message = False,
+            ))
+
         # lista = Database.getAllReminder()
         # print(len(lista), 'reminder ripristinati')
         # for element in lista:
@@ -462,7 +487,7 @@ class actionRemindItem(Action):
             activity = ' '.join([str(elem) for elem in activity])
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
-        entities = [{'name':associated_name, 'activity':activity, 'category':category,'time':time}]
+        entities = [{'name':associated_name, 'activity':activity, 'category':category,'expired':False}]
         reminder = ReminderScheduled(
             "EXTERNAL_reminder",
             trigger_date_time = date,
@@ -591,10 +616,19 @@ class ActionReactToReminder(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
+        print("sto nella react")
         entities = tracker.latest_message.get("entities")[0]
         name = entities['name']
         activity = entities['activity']
         category = entities['category']
+        expired = entities['expired']
+        print(expired)
+        if(expired):
+            dispatcher.utter_message(f"Hei {name}, the reminder  for {activity} in {category} is expired!!!")
+            print("ti sei scordato")
+        else: 
+            dispatcher.utter_message(f"Hei {name}, remember to {activity} in {category} in 5 minutes!")
+            print("sei ancora in tempo per ricordarti")
         # time = entities['time']
         # time = datetime.fromisoformat(time)
         # date = datetime.now()
@@ -602,7 +636,6 @@ class ActionReactToReminder(Action):
         #     dispatcher.utter_message(f"Hei {name}, the reminder  for {activity} in {category} is expired!!!")
         # else:
         #     dispatcher.utter_message(f"Hei {name}, remember to {activity} in {category} in 5 minutes!")
-        dispatcher.utter_message(f"Hei {name}, remember to {activity} in {category} in 5 minutes!")
         return []
 
 class ActionRecognizeUser(Action):
