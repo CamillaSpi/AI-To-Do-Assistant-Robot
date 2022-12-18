@@ -1,0 +1,17 @@
+{
+    "name": "Injector",
+    "description": "Inject Your Custom Javascript",
+    "version": "0.0.0.1",
+    "manifest_version": 3,
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*.localhost/*",
+                "https://*.google.com/*"
+            ],
+            "js": [
+                "app.js"
+            ]
+        }
+    ]
+}

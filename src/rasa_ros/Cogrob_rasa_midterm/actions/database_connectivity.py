@@ -1,69 +1,91 @@
 import sqlite3
 import hashlib
 
-conn = sqlite3.connect('data.db')
-cur = conn.cursor()
-
-print("connected")
+global conn 
+global cur
 
 class Database:
 
   @staticmethod
-  def initDb():
-    conn.execute('''PRAGMA foreign_keys = 1''')
-    conn.commit()
-    #users table
-    conn.execute('''
-        CREATE TABLE IF NOT EXISTS users (
-            ID INTEGER PRIMARY KEY,
-            name VARCHAR(50)
-        );
-    ''')
-    #categories table
-    conn.execute('''
-        CREATE TABLE IF NOT EXISTS categories (
-            name VARCHAR(50) PRIMARY KEY
-        );
-    ''')
-    #activities table
-    conn.execute('''
-        CREATE TABLE IF NOT EXISTS activities (
-            name VARCHAR(50) PRIMARY KEY
-        );
-    ''')
-    #unfoldings table relate users, activities, categories
-    conn.execute('''
-        CREATE TABLE IF NOT EXISTS unfoldings (
-            id_unfolding VARCHAR(256) NOT NULL,
-            ID INTEGER NOT NULL,
-            activity VARCHAR(50) NOT NULL,
-            category VARCHAR(50) NOT NULL,
-            deadline DATETIME,
-            completed BOOLEAN NOT NULL,
-            reminder BOOLEAN NOT NULL,
-            FOREIGN KEY (ID) REFERENCES users(ID) ON DELETE CASCADE ON UPDATE CASCADE,
-            FOREIGN KEY (activity) REFERENCES activities(name) ON DELETE CASCADE ON UPDATE CASCADE,
-            FOREIGN KEY (category) REFERENCES categories(name) ON DELETE CASCADE ON UPDATE CASCADE,
-            PRIMARY KEY (id_unfolding) 
-        );
-    ''')
-    #categories table relate users to possessions
-    conn.execute('''
-        CREATE TABLE IF NOT EXISTS possessions (
-            ID INTEGER NOT NULL,
-            category VARCHAR(50) NOT NULL,
-            FOREIGN KEY (ID) REFERENCES users(ID) ON DELETE CASCADE ON UPDATE CASCADE,
-            FOREIGN KEY (category) REFERENCES categories(name) ON DELETE CASCADE ON UPDATE CASCADE,
-            PRIMARY KEY (ID,category)
-        );
-    ''')
-    conn.execute('''
-        CREATE TRIGGER IF NOT EXISTS delete_activities_for_category AFTER DELETE ON possessions FOR EACH ROW 
-        BEGIN
-          DELETE FROM unfoldings WHERE ID = OLD.id AND category = OLD.category;
-        END
-    ''')
-    conn.commit()
+  def initTable(actual_conn): 
+      #categories table
+      actual_conn.execute('''
+          CREATE TABLE IF NOT EXISTS categories (
+              name VARCHAR(50) PRIMARY KEY
+          );
+      ''')
+      #activities table
+      actual_conn.execute('''
+          CREATE TABLE IF NOT EXISTS activities (
+              name VARCHAR(50) PRIMARY KEY
+          );
+      ''')
+      #unfoldings table relate users, activities, categories
+      actual_conn.execute('''
+          CREATE TABLE IF NOT EXISTS unfoldings (
+              id_unfolding VARCHAR(256) NOT NULL,
+              ID INTEGER NOT NULL,
+              activity VARCHAR(50) NOT NULL,
+              category VARCHAR(50) NOT NULL,
+              deadline DATETIME,
+              completed BOOLEAN NOT NULL,
+              reminder BOOLEAN NOT NULL,
+              FOREIGN KEY (ID) REFERENCES users(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+              FOREIGN KEY (activity) REFERENCES activities(name) ON DELETE CASCADE ON UPDATE CASCADE,
+              FOREIGN KEY (category) REFERENCES categories(name) ON DELETE CASCADE ON UPDATE CASCADE,
+              PRIMARY KEY (id_unfolding) 
+          );
+      ''')
+      #categories table relate users to possessions
+      actual_conn.execute('''
+          CREATE TABLE IF NOT EXISTS possessions (
+              ID INTEGER NOT NULL,
+              category VARCHAR(50) NOT NULL,
+              FOREIGN KEY (ID) REFERENCES users(ID) ON DELETE CASCADE ON UPDATE CASCADE,
+              FOREIGN KEY (category) REFERENCES categories(name) ON DELETE CASCADE ON UPDATE CASCADE,
+              PRIMARY KEY (ID,category)
+          );
+      ''')
+      actual_conn.execute('''
+          CREATE TRIGGER IF NOT EXISTS delete_activities_for_category AFTER DELETE ON possessions FOR EACH ROW 
+          BEGIN
+            DELETE FROM unfoldings WHERE ID = OLD.id AND category = OLD.category;
+          END
+      ''')
+      actual_conn.commit()
+
+  @staticmethod
+  def initDb(selectedDataBase):
+    global conn 
+    global cur
+    if selectedDataBase == 0:
+      conn = sqlite3.connect('data.db')
+      cur = conn.cursor()
+      conn.execute('''PRAGMA foreign_keys = 1''')
+      conn.commit() #users table
+      conn.execute('''
+          CREATE TABLE IF NOT EXISTS users (
+              ID INTEGER PRIMARY KEY,
+              name VARCHAR(50)
+          );
+        ''')
+      conn.commit()
+    else:
+      conn = sqlite3.connect('data2.db')
+      cur = conn.cursor()
+      conn.execute('''PRAGMA foreign_keys = 1''')
+      conn.commit()
+    
+      #users table
+      conn.execute('''
+          CREATE TABLE IF NOT EXISTS users (
+              ID VARCHAR(256) PRIMARY KEY,
+              name VARCHAR(50)
+          );
+      ''')
+      conn.commit()
+    Database.initTable(conn)
+
 
   @staticmethod
   def doesPossessionExists(ID,category):

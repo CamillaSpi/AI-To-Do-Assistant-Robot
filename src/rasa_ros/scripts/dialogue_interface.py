@@ -16,23 +16,61 @@ def testFunction():
     message.id = 5
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
+    message.msg = "add run in gym"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "no"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "update the activity named run in gym into walk"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "no"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "set walk in gym as completed"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "no"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "set walk in gym as uncompleted"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "no"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "add the category personal"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "modify the category personal in category university"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "yes"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "remove the category university"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "yes"
+    dialogue_service(message.msg,message.id) 
+    message.msg = "clean completed activity"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "yes"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
     message.msg = "show my activities"
     dialogue_service(message.msg,message.id) 
-    # time.sleep(0.5)
-    # message.msg = "clean activity"
-    # dialogue_service(message.msg,message.id) 
-    # time.sleep(0.5)
-    # message.msg = "yes"
-    # dialogue_service(message.msg,message.id) 
-    # time.sleep(0.5)
-    # message.msg = "remind me to walk in gym"
-    # dialogue_service(message.msg,message.id) 
-    # time.sleep(0.5)
-    # message.msg = "tomorrow"
-    # dialogue_service(message.msg,message.id) 
-    # time.sleep(0.5)
-    # dialogue_service("/session_start",5)
-    # time.sleep(0.5)
+    time.sleep(0.5)
+    message.msg = "show my categories"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "remind me to call john in personal for yesterday"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "remind me to call john in personal in 10 seconds"
+    dialogue_service(message.msg,message.id) 
 
 
 
@@ -40,8 +78,7 @@ def testFunction():
 def main():
     rospy.init_node('writing')
     rospy.wait_for_service('dialogue_server')
-    dialogue_service("/session_start",-1)
-    #testFunction()
+    # testFunction()
 
 
     while not rospy.is_shutdown():
