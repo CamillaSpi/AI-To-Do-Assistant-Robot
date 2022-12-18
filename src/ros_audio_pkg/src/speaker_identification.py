@@ -23,9 +23,9 @@ RATE = 16000
 lock = Lock()
 global id_label
 global prob_voices
-global actual_id
-global X
-global y
+global number_of_users
+global features_dataBase
+global labels
 global last_features
 
 # Load model, rete siamese basata su resnet/vgg. addestrata con triplette loss. disponibile pubblicamente su keras, non e la migliore
@@ -51,9 +51,9 @@ def elaboration(data):
 phrases = ["I feel like I don't know you, repeat after me: Hi Pepper"]
 
 def registration(msg):
-    global X
-    global y
-    global actual_id
+    global features_dataBase
+    global labels
+    global number_of_users
     lock.acquire()
     for msg in phrases:
         pub1.publish(msg)
@@ -62,13 +62,13 @@ def registration(msg):
         data = audioAndData.data
         ukn = elaboration(data)
         try:
-            X = np.concatenate((X,ukn),axis=0)
+            features_dataBase = np.concatenate((features_dataBase,ukn),axis=0)
         except:
-            X = np.array([ukn[0]])
-        y.append(actual_id)
+            features_dataBase = np.array([ukn[0]])
+        labels.append(number_of_users)
     pub1.publish("Stop to repeat with me, let say your name!")
     print("Stop to repeat with me, let say your name!")
-    actual_id+=1
+    number_of_users+=1
     lock.release()
     return 'ACK'
 
@@ -77,18 +77,12 @@ def registration(msg):
 def listener():
     global id_label
     global prob_voices
-    global actual_id
-    global X
-    global y
+    global number_of_users
+    global features_dataBase
+    global labels
     global last_features
     rospy.init_node('reidentification_node', anonymous=True)
-    X,y = load_identities(REF_PATH)
-    try:
-        actual_id = max(y)+1
-        print("find some things")
-    except:
-        print("empty folder ")
-        actual_id = 0
+    features_dataBase,labels,number_of_users = load_identities()
     try:
         while not rospy.is_shutdown():
             #mi vado a checkare che si tratti di testo, altrimenti ptrei riconocere il rumore, o comunque avere problemi.
@@ -98,16 +92,16 @@ def listener():
 
             last_features = ukn = elaboration(recivedAudio.data)
 
-            if len(X) > 0:
+            if len(features_dataBase) > 0:
                 # Distance between the sample and the support set, caolcolo distanza coseno e quelle che ho memorizzato finora.
-                emb_voice = np.repeat(ukn, len(X), 0)
+                emb_voice = np.repeat(ukn, len(features_dataBase), 0)
                 # faccio distanza coseno con tutti quanti gli elementi.
-                cos_dist = batch_cosine_similarity(np.array(X), emb_voice)
+                cos_dist = batch_cosine_similarity(np.array(features_dataBase), emb_voice)
                 
                 # Matching, in base alle label e tresh dice distanza.
                 # quindi ukn restituisce tutti i valori distanza dei campioni rispetto a ukn. e calcolo la distanza media tra tutti i campioni. 
 
-                id_label, prob_voices = dist2id(cos_dist, y, TH, mode='avg') #id_label saranno id incrementali
+                id_label, prob_voices = dist2id(cos_dist, labels, TH, mode='avg') #id_label saranno id incrementali
                 print("prob_voices", prob_voices)
             else:
                 prob_voices = [] 
@@ -115,7 +109,7 @@ def listener():
 
     except rospy.exceptions.ROSInterruptException:
         print("vado in close")
-        # save_identities(X,y,REF_PATH)
+        save_identities(features_dataBase,labels,number_of_users)
 
 def return_idLabel(req):
     global id_label
@@ -128,21 +122,20 @@ def return_idLabel(req):
 
 def naturalLearning(msg):
     global last_features
-    global X
-    global y
+    global features_dataBase
+    global labels
     id = msg.data
 
     lock.acquire()
-    print(X.shape, len(y))
+    print(features_dataBase.shape, len(labels))
     # should never be None, but to be safe
     if last_features.all()!=None:
         print('added new campionbe')
         try:
-            X = np.concatenate((X,last_features),axis=0)
+            features_dataBase = np.concatenate((features_dataBase,last_features),axis=0)
         except:
-            X = np.array([last_features[0]])
-        y.append(actual_id)
-    print(X.shape, len(y))
+            features_dataBase = np.array([last_features[0]])
+        labels.append(number_of_users)
     lock.release()
 
 

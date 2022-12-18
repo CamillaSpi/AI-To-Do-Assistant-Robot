@@ -29,13 +29,16 @@ class NumpyArrayEncoder(JSONEncoder):
     def default(self, obj):
         if isinstance(obj, np.ndarray):
             return obj.tolist()
+        if isinstance(obj, np.integer):
+            return int(obj)
         return JSONEncoder.default(self, obj)
 
 
 def save_identities():
     global database
     global labels
-    to_save = {'dataset': database, 'labels': labels}
+    global number_of_users
+    to_save = {'dataset': database, 'labels': labels,'number_of_users':number_of_users}
     print("sono in save")
     with open(REF_PATH + '/../dataBase/json_data.json', 'w') as out_file:
         json.dump(to_save, out_file, cls=NumpyArrayEncoder)
@@ -43,16 +46,15 @@ def save_identities():
 
 def load_identities():
     print("sono in load")
-    global database, labels
     try:
         with open(REF_PATH + '/../dataBase/json_data.json', 'r') as in_file:
             tmp = json.load(in_file)
         dataset = np.asarray(tmp['dataset'])
         labels = np.asarray(tmp['labels'])
-        print("sono in load identities", len(dataset))
-        return dataset, labels
+        number_of_users = tmp['number_of_users']
+        return dataset, labels,number_of_users
     except:
-        return [], []
+        return [], [],0
 
 
 pub = rospy.Publisher('identity', Detection2DArray, queue_size=2)
@@ -63,12 +65,9 @@ padding = 0.2
 INPUT_SIZE = (224, 224)
 global database
 global labels
-global actual_id
+global number_of_users
 lock = Lock()
-database, labels = load_identities()
-actual_id = 0
-if len(labels):
-    actual_id = max(labels) + 1
+database, labels,number_of_users = load_identities()
 
 
 def batch_cosine_similarity(x1, x2):
@@ -134,7 +133,7 @@ def extract_features(face_reco_model, filename):
 
 
 def registration(msg):
-    global actual_id
+    global number_of_users
     lock.acquire()
     t1 = datetime.now()
     print('non ti conosco... Rimani fermo ')
@@ -146,9 +145,9 @@ def registration(msg):
             d, resized_face = elaboration(d, im)
             feature_vector = extract_features(face_reco_model, resized_face)
             database = np.concatenate((database, feature_vector))
-            labels.append(actual_id)
+            labels.append(number_of_users)
     # Predict
-    actual_id +=1
+    number_of_users +=1
     lock.release()
     t2 = datetime.now()
     print('la procedura di registrazione ha impiegato', (t2-t1))
@@ -169,7 +168,7 @@ def elaboration(d, im):
 
 
 def predict_identity(resized_face, rejection_threshold=0.5):
-    global actual_id
+    global number_of_users
     if len(database) > 0:
         feature_vector = extract_features(
             face_reco_model, resized_face).reshape(-1, 2048)
@@ -180,7 +179,7 @@ def predict_identity(resized_face, rejection_threshold=0.5):
         id_label, ids_prob = dist2id(
             cos_dist, labels, rejection_threshold, mode='avg')
     else:
-        id_label = actual_id        # non so a che serve, probabilmente la togliamo proprio
+        id_label = number_of_users        # non so a che serve, probabilmente la togliamo proprio
         ids_prob = []
     return (id_label), ids_prob
 
@@ -217,14 +216,14 @@ def recognize():
 
     except rospy.exceptions.ROSInterruptException:
         print("vado in close")
-        # save_identities()
+        save_identities()
 
 def handle_service(req):
     global actualLabels
     lock.acquire()
 
     thing = MultiArrayDimension()
-    thing.stride = actual_id
+    thing.stride = number_of_users
     try:
         actualLabels.layout.dim.append(thing)
     except NameError:

@@ -4,6 +4,9 @@ import numpy as np
 
 from json import JSONEncoder
 
+
+REF_PATH = os.path.dirname(os.path.abspath(__file__))
+
 def get_json(path):
     with open(path) as json_file:
         data = json.load(json_file)
@@ -29,27 +32,29 @@ def get_identities(ids_folder, read_file, id_file_name='ids.json'):
 
     return X, y, ths
 
+
 class NumpyArrayEncoder(JSONEncoder):
     def default(self, obj):
         if isinstance(obj, np.ndarray):
             return obj.tolist()
+        if isinstance(obj, np.integer):
+            return int(obj)
         return JSONEncoder.default(self, obj)
 
-def save_identities(X,y, path):
-    to_save = {'X':X, 'y':y}
-    print("X",X, "y",y)
-    print("sono in save")
-    with open(path + '/json_data.json','w') as out_file:
+def save_identities(features_dataBase,labels,number_of_users):
+    to_save = {'features_dataBase':features_dataBase, 'labels':labels,'number_of_users':number_of_users}
+    with open(REF_PATH + '/../../dataBase/json_data.json', 'w') as out_file:
         json.dump(to_save,out_file,cls=NumpyArrayEncoder)
 
 
-def load_identities(path):
-    print("sono in load")
+def load_identities():
+    print("sono in load speaker")
     try:
-        with open(path + '/json_data.json','r') as in_file:
+        with open(REF_PATH + '/../../dataBase/json_data.json','r') as in_file:
             tmp= json.load(in_file)
-        X = np.asarray(tmp['X'])
-        y = tmp['y']
-        return X, y
+        features_dataBase = np.asarray(tmp['features_dataBase'])
+        labels = tmp['labels']
+        number_of_users = tmp['number_of_users']
+        return features_dataBase, labels,number_of_users
     except:
-        return [],[]
+        return [],[],0
