@@ -76,7 +76,7 @@ def main():
     rospy.init_node('writing')
     rospy.wait_for_service('dialogue_server')
     dialogue_service("/session_start",-1)
-    # testFunction()
+    testFunction()
 
 
     while not rospy.is_shutdown():

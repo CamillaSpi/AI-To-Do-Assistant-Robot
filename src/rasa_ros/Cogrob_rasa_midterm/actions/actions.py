@@ -558,7 +558,7 @@ class actionRemindItem(Action):
 
         if (Database.doesUnfoldingsExists(id,category,activity,time)):
             
-            returnedValue = Database.updateReminder(id,category,activity,time)
+            returnedValue = Database.updateReminder(id,category,activity,time,reminderSlot)
             if (returnedValue):
                 dispatcher.utter_message(text=f"Congratulation {associated_name}, the reminder of the activity has been updated.")
             else:
