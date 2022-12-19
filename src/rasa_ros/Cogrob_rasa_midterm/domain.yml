@@ -284,66 +284,66 @@ forms:
 
 
 responses:
- utter_greet:
-  - text: "Ehi! Chi sei?"
+  utter_greet:
+      - text: "Ehi! Chi sei?"
 
   utter_help:
-  - text: "Ehi, sono il tuo assistente personale, puoi creare liste di cose da fare e io le gestirò"
-  - text: "Chiedimi di aggiungere una nuova attività o di creare una nuova lista di categorie!"
-  - text: "Hai provato a chiedermi di mostrarti le tue attività?"
+    - text: "Ehi, sono il tuo assistente personale, puoi creare liste di cose da fare e io le gestirò"
+    - text: "Chiedimi di aggiungere una nuova attività o di creare una nuova lista di categorie!"
+    - text: "Hai provato a chiedermi di mostrarti le tue attività?"
 
   utter_cheer_up:
-  - text: "Ecco qualcosa per rallegrarti:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+    - text: "Ecco qualcosa per rallegrarti:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
-  - text: "Ti ha aiutato?"
+    - text: "Ti ha aiutato?"
 
   utter_happy:
-  - text: "Ottimo, continua!"
+    - text: "Ottimo, continua!"
 
   utter_goodbye:
-  - text: "Ciao"
+    - text: "Ciao"
 
   utter_iamabot:
-  - text: "Sono un bot, alimentato da Gruppo12."
+    - text: "Sono un bot, alimentato da Gruppo12."
 
   utter_ask_time:
-  - text: "Inserisci l'ora"
+    - text: "Inserisci l'ora"
 
   utter_ask_if_deadline:
-  - text: "Questo elemento ha una scadenza?"
+    - text: "Questo elemento ha una scadenza?"
 
   utter_ask_if_reminder:
-  - text: "Vuoi impostare un promemoria per l'attività?"
+    - text: "Vuoi impostare un promemoria per l'attività?"
 
   utter_ask_activity:
-  - text: "Inserisci l'attività"
+    - text: "Inserisci l'attività"
   utter_ask_add_item_form_activity:
-  - text: "Inserisci la nuova attività"
+    - text: "Inserisci la nuova attività"
 
   utter_ask_category:
-    - text: "Inserisci la categoria dell'elemento"
+      - text: "Inserisci la categoria dell'elemento"
 
   utter_ask_add_category_form_category:
-  - text: "Inserisci la nuova categoria"
+    - text: "Inserisci la nuova categoria"
 
   utter_confirm_choice:
-  - text: "Sei sicuro di completare questa azione!?"
+    - text: "Sei sicuro di completare questa azione!?"
   utter_ask_name:
-  - text: "Inserisci il tuo nome"
+    - text: "Inserisci il tuo nome"
   utter_deny_choice:
-  - text: "Ok annullato"
+    - text: "Ok annullato"
 
   utter_modification_choice:
-  - text: "Quale informazione vuoi modificare?"
+    - text: "Quale informazione vuoi modificare?"
   utter_choice_what_to_modify:
-  - text: "Quale campo vuoi modificare?"
+    - text: "Quale campo vuoi modificare?"
   utter_confirmed:
-  - text: " modificato "
+    - text: " modificato "
 
   utter_default:
-  - text: Mi dispiace, non posso aiutarti, puoi ripetere?.
+    - text: Mi dispiace, non posso aiutarti, puoi ripetere?.
 
   
 
