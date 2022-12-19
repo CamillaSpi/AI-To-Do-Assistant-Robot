@@ -1101,6 +1101,9 @@ nlu:
     - Ciao, per favore annulla la seguente categoria [divertimento](category)
     - Ciao, voglio rimuovere la categoria [vita](category)
     - Ciao, voglio eliminare la categoria [genitori](category)
+    - rimuovi una categoria
+    - cancella una categoria
+    - elimina una categoria
 
 - intent: modify_category
   examples: |
@@ -1180,6 +1183,9 @@ nlu:
     - Mostra attività nella categoria [palestra](category) per questa sera
     - Fammi vedere le mie attività per martedì pomeriggio
     - Fammi vedere le attività per mercoledì sera
+    - cosa devo fare oggi
+    - cosa ho da fare
+    - cosa mi manca da fare oggi?
 
 - intent: presentation+view_activities
   examples: |
@@ -1512,6 +1518,11 @@ nlu:
     - Mi riconosci?
     - Qual è il mio nome?
     - Puoi dire il mio nome?
+    - dimmi il mio nome
+    - chi sono
+    - dimmi ciao!
+    - dici il mio nome
+    - puoi pronuniciare il mio nome?
 
 - synonym: uncompleted
   examples: |
