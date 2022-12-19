@@ -18,7 +18,7 @@ def handle_service(req):
 
     r = requests.post(get_answer_url, json=message)
     response = DialogueResponse()
-    response.answer = "mario"
+    response.answer = "ack"
     # for i in r.json():
     #     response.answer += i['text'] + ' ' if 'text' in i else ''
     

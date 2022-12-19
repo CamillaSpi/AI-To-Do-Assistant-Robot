@@ -78,7 +78,32 @@ def testFunction():
 def main():
     rospy.init_node('writing')
     rospy.wait_for_service('dialogue_server')
+<<<<<<< Updated upstream
     # testFunction()
+=======
+<<<<<<< Updated upstream
+    dialogue_service("/session_start",-1)
+    testFunction()
+=======
+    message = RecognizedSpoke()  
+    message.msg = "Hi i am Vito"
+    message.id = 5
+    dialogue_service(message.msg,message.id) 
+    # time.sleep(1)
+    # message.msg = "remind me to call john in personal in 10 seconds"
+    # dialogue_service(message.msg,message.id) 
+    # time.sleep(1)
+    # message.msg = "remind me to call john in personal in 10 seconds"
+    # dialogue_service(message.msg,message.id) 
+    # time.sleep(1)
+    # message.msg = "remind me to call john in personal in 10 seconds"
+    # dialogue_service(message.msg,message.id) 
+    # time.sleep(1)
+    # message.msg = "remind me to call john in personal in 10 seconds"
+    # dialogue_service(message.msg,message.id) 
+    # testFunction()
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 
     while not rospy.is_shutdown():

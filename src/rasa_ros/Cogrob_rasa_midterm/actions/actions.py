@@ -21,6 +21,7 @@ import pytz
 import hashlib
 
 from . import Database
+from time import sleep
 
 
 global id
@@ -59,7 +60,6 @@ class ActionSessionStart(Action):
             else: 
                 time = time_remind
                 entities = [{'id':element[0],'name':Database.getName(element[0]), 'activity':element[1], 'category':element[2],'deadline': deadline,'expired':False}] # 'time':time
-        
             events.append(ReminderScheduled(
                 "EXTERNAL_reminder",
                 trigger_date_time = time,
@@ -680,11 +680,11 @@ class ActionReactToReminder(Action):
 
         print("sto nella react")
         entities = tracker.latest_message.get("entities")[0]
-        id_user = entities['id']
+        # id_user = entities['id']
         name = entities['name']
         activity = entities['activity']
         category = entities['category']
-        deadline = entities['deadline']
+        # deadline = entities['deadline']
         expired = entities['expired']
         print(expired)
         if(expired):
@@ -695,7 +695,7 @@ class ActionReactToReminder(Action):
             print("sei ancora in tempo per ricordarti", activity, category)
 
         #aggiunta per far si che una volta notificato un reminder questo non venga più notificato successivamente
-        Database.updateReminder(id_user,category, activity, deadline, False)
+        # Database.updateReminder(id_user,category, activity, deadline, False)
         # time = entities['time']
         # time = datetime.fromisoformat(time)
         # date = datetime.now()
