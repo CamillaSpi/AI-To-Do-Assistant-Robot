@@ -125,6 +125,7 @@ class Database:
 
   @staticmethod
   def doesActivityExists(activity):
+    
     if activity != None:
       cur.execute('''
         SELECT * FROM activities WHERE name == ?

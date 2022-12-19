@@ -26,6 +26,7 @@ from . import Database
 global id
 id = None
 
+
 class ActionSessionStart(Action):
     def name(self) -> Text:
         return "action_session_start"
