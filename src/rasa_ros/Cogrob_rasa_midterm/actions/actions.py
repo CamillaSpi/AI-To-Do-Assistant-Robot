@@ -291,7 +291,7 @@ class showActivities(Action):
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
         list_of_activity,json = Database.selectItems(id,category, activity_status, time)
-        dispatcher.utter_message(text=(f"{associated_name} , hai {list_of_activity} attività." if list_of_activity else " Non ci sono attività per te!"),json=json) 
+        dispatcher.utter_message(text=(f"{associated_name} , hai {list_of_activity} attività." if list_of_activity else " non ci sono attività per te!"),json=json) 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -309,7 +309,7 @@ class showCategories(Action):
         associated_name = Database.getName(id)
         list_of_categories,json = Database.selectPossessions(id)
         
-        dispatcher.utter_message(text=(f"{associated_name} , hai {list_of_categories} categorie." if list_of_categories else " Non hai alcuna categoria!"),json=json) 
+        dispatcher.utter_message(text=(f"{associated_name} , hai {list_of_categories} categorie." if list_of_categories else " non hai alcuna categoria!"),json=json) 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
