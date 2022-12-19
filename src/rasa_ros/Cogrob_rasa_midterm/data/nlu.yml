@@ -1359,201 +1359,199 @@ nlu:
 
 - intent: modify_activity_name  
   examples: |
-    - I want to change the name of the activity [study]{"entity": "activity", "role": "old"} in [sport](category) with name [fuel]{"entity": "activity", "role": "new"}
-    - I want to change the name of the activity [fuel]{"entity": "activity", "role": "old"} in [sport](category) with name [study]{"entity": "activity", "role": "new"}
-    - I want to change the name of the activity [boxe]{"entity": "activity", "role": "old"} in the category [exams](category) with name [swimming]{"entity": "activity", "role": "new"}
-    - I want to change the name of the activity [swimming]{"entity": "activity", "role": "old"} in the category [exams](category) with name [boxe]{"entity": "activity", "role": "new"}
-    - I want to change the name of the activity [singing]{"entity": "activity", "role": "old"} with name [teaching]{"entity": "activity", "role": "new"}
-    - I want to change the name of the activity [teaching]{"entity": "activity", "role": "old"} with name [singing]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [ring]{"entity": "activity", "role": "old"} in the category [carriage](category) with [run]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [run]{"entity": "activity", "role": "old"} in the category [carriage](category) with [ring]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [launch]{"entity": "activity", "role": "old"} in [volunteering](category) with [dinner]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [dinner]{"entity": "activity", "role": "old"} in [volunteering](category) with [launch]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [read]{"entity": "activity", "role": "old"} with [travel]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [travel]{"entity": "activity", "role": "old"} with [read]{"entity": "activity", "role": "new"}
-    - modify the name of the activity [review]{"entity": "activity", "role": "old"} in the category [times](category) with name [draw]{"entity": "activity", "role": "new"}
-    - modify the name of the activity [draw]{"entity": "activity", "role": "old"} in the category [times](category) with name [review]{"entity": "activity", "role": "new"}
-    - modify the name of the activity [yoga]{"entity": "activity", "role": "old"} with name [pilates]{"entity": "activity", "role": "new"}
-    - modify the name of the activity [pilates]{"entity": "activity", "role": "old"} with name [yoga]{"entity": "activity", "role": "new"}
-    - In the category [university](category) change the name of the activity [shampoo]{"entity": "activity", "role": "old"}  with name [walk]{"entity": "activity", "role": "new"}
-    - In the category [university](category) change the name of the activity [walk]{"entity": "activity", "role": "old"}  with name [shampoo]{"entity": "activity", "role": "new"}
-    - Change the name of the activity [meditating]{"entity": "activity", "role": "old"}  with name [church]{"entity": "activity", "role": "new"}
-    - Change the name of the activity [church]{"entity": "activity", "role": "old"}  with name [meditating]{"entity": "activity", "role": "new"}
-    - In the category [school](category) replace the name of the activity [run]{"entity": "activity", "role": "old"}  with name [match]{"entity": "activity", "role": "new"}
-    - In the category [school](category) replace the name of the activity [match]{"entity": "activity", "role": "old"}  with name [run]{"entity": "activity", "role": "new"}
-    - replace the name of the activity [journal]{"entity": "activity", "role": "old"}  with name [writing]{"entity": "activity", "role": "new"}
-    - replace the name of the activity [writing]{"entity": "activity", "role": "old"}  with name [journal]{"entity": "activity", "role": "new"}
-    - Alter the name of the activity [jogging]{"entity": "activity", "role": "old"} in the category [holiday](category) with name [travel]{"entity": "activity", "role": "new"}
-    - Alter the name of the activity [travel]{"entity": "activity", "role": "old"} in the category [holiday](category) with name [jogging]{"entity": "activity", "role": "new"}
-    - Alter the name of the activity [painting]{"entity": "activity", "role": "old"} with name [concert]{"entity": "activity", "role": "new"}
-    - Alter the name of the activity [concert]{"entity": "activity", "role": "old"} with name [painting]{"entity": "activity", "role": "new"}
-    - For the activity [yoga]{"entity": "activity", "role": "old"} in the category [wishes](category) modify the name with [hairdresser]{"entity": "activity", "role": "new"}
-    - For the activity [hairdresser]{"entity": "activity", "role": "old"} in the category [wishes](category) modify the name with [yoga]{"entity": "activity", "role": "new"}
-    - For the activity [homework]{"entity": "activity", "role": "old"} modify the name with [presentation]{"entity": "activity", "role": "new"}
-    - For the activity [presentation]{"entity": "activity", "role": "old"} modify the name with [homework]{"entity": "activity", "role": "new"}
-    - For the activity [shopping]{"entity": "activity", "role": "old"} in [work](category) transform the name with [bus]{"entity": "activity", "role": "new"}
-    - For the activity [bus]{"entity": "activity", "role": "old"} in [work](category) transform the name with [shopping]{"entity": "activity", "role": "new"}
-    - For the activity [assignment]{"entity": "activity", "role": "old"} transform the name with [journal]{"entity": "activity", "role": "new"}
-    - For the activity [journal]{"entity": "activity", "role": "old"} transform the name with [assignment]{"entity": "activity", "role": "new"}    
-    - I want to change the name of the activity [walk in open air]{"entity": "activity", "role": "old"} in [personal](category) with name [compile the module]{"entity": "activity", "role": "new"}
-    - I want to change the name of the activity [compile the module]{"entity": "activity", "role": "old"} in [personal](category) with name [walk in open air]{"entity": "activity", "role": "new"}
-    - I want to change the name of the activity [do taekwondo]{"entity": "activity", "role": "old"} in the category [estethics](category) with name [go swimming]{"entity": "activity", "role": "new"}
-    - I want to change the name of the activity [go swimming]{"entity": "activity", "role": "old"} in the category [estethics](category) with name [do taekwondo]{"entity": "activity", "role": "new"}
-    - I want to change the name of the activity [editing a video]{"entity": "activity", "role": "old"} with name [writing an article]{"entity": "activity", "role": "new"}
-    - I want to change the name of the activity [writing an article]{"entity": "activity", "role": "old"} with name [editing a video]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [help my aunt]{"entity": "activity", "role": "old"} in the category [caring](category) with [help my sister]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [help my sister]{"entity": "activity", "role": "old"} in the category [caring](category) with [help my aunt]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [go out with cat]{"entity": "activity", "role": "old"} in [daily](category) with [go out with dog]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [go out with dog]{"entity": "activity", "role": "old"} in [daily](category) with [go out with cat]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [go to the park]{"entity": "activity", "role": "old"} with [go swimming]{"entity": "activity", "role": "new"}
-    - I want to change the activity named [go swimming]{"entity": "activity", "role": "old"} with [go to the park]{"entity": "activity", "role": "new"}
-    - modify the name of the activity [call grandfather]{"entity": "activity", "role": "old"} in the category [weekly](category) with name [take medicines]{"entity": "activity", "role": "new"}
-    - modify the name of the activity [take medicines]{"entity": "activity", "role": "old"} in the category [weekly](category) with name [call grandfather]{"entity": "activity", "role": "new"}
-    - modify the name of the activity [go to the doctor]{"entity": "activity", "role": "old"} with name [reading a textbook]{"entity": "activity", "role": "new"}
-    - modify the name of the activity [reading a textbook]{"entity": "activity", "role": "old"} with name [go to the doctor]{"entity": "activity", "role": "new"}
-    - In the category [events](category) change the name of the activity [cut hair]{"entity": "activity", "role": "old"}  with name [go to hairdresser]{"entity": "activity", "role": "new"}
-    - In the category [events](category) change the name of the activity [go to hairdresser]{"entity": "activity", "role": "old"}  with name [cut hair]{"entity": "activity", "role": "new"}
-    - Change the name of the activity [giving a presentation]{"entity": "activity", "role": "old"}  with name [travel for work]{"entity": "activity", "role": "new"}
-    - Change the name of the activity [travel for work]{"entity": "activity", "role": "old"}  with name [giving a presentation]{"entity": "activity", "role": "new"}
-    - In the category [friendship](category) replace the name of the activity [study for exam]{"entity": "activity", "role": "old"}  with name [learn maths]{"entity": "activity", "role": "new"}
-    - In the category [friendship](category) replace the name of the activity [learn maths]{"entity": "activity", "role": "old"}  with name [study for exam]{"entity": "activity", "role": "new"}
-    - Replace the name of the activity [read the journal]{"entity": "activity", "role": "old"}  with name [learn english]{"entity": "activity", "role": "new"}
-    - Replace the name of the activity [learn english]{"entity": "activity", "role": "old"}  with name [read the journal]{"entity": "activity", "role": "new"}
-    - Alter the name of the activity [cook dinner]{"entity": "activity", "role": "old"} in the category [households](category) with name [clean house]{"entity": "activity", "role": "new"}
-    - Alter the name of the activity [clean house]{"entity": "activity", "role": "old"} in the category [households](category) with name [cook dinner]{"entity": "activity", "role": "new"}
-    - Alter the name of the activity [prepare breakfast]{"entity": "activity", "role": "old"} with name [clean garden]{"entity": "activity", "role": "new"}
-    - Alter the name of the activity [clean garden]{"entity": "activity", "role": "old"} with name [prepare breakfast]{"entity": "activity", "role": "new"}
-    - For the activity [play guitar]{"entity": "activity", "role": "old"} in the category [freetime](category) modify the name with [go play football]{"entity": "activity", "role": "new"}
-    - For the activity [go play football]{"entity": "activity", "role": "old"} in the category [freetime](category) modify the name with [play guitar]{"entity": "activity", "role": "new"}
-    - For the activity [sing a song]{"entity": "activity", "role": "old"} modify the name with [football match]{"entity": "activity", "role": "new"}
-    - For the activity [football match]{"entity": "activity", "role": "old"} modify the name with [sing a song]{"entity": "activity", "role": "new"}
-    - For the activity [read a book]{"entity": "activity", "role": "old"} in the category [commitments](category) transform the name with [church]{"entity": "activity", "role": "new"}
-    - For the activity [church]{"entity": "activity", "role": "old"} in the category [commitments](category) transform the name with [read a book]{"entity": "activity", "role": "new"}
-    - For the activity [write a book]{"entity": "activity", "role": "old"} transform the name with [read a paper]{"entity": "activity", "role": "new"}
-    - For the activity [read a paper]{"entity": "activity", "role": "old"} transform the name with [write a book]{"entity": "activity", "role": "new"}
-
+    - Voglio cambiare il nome dell'attività [studio]{"entity": "activity", "role": "old"} nella categoria [sport](category) con nome [carburante]{"entity": "activity", "role": "new"}
+    - Voglio cambiare il nome dell'attività [carburante]{"entity": "activity", "role": "old"} nella categoria [sport](category) con nome [studio]{"entity": "activity", "role": "new"}
+    - Voglio cambiare il nome dell'attività [boxe]{"entity": "activity", "role": "old"} nella categoria [esami](category) con nome [nuoto]{"entity": "activity", "role": "new"}
+    - Voglio cambiare il nome dell'attività [nuoto]{"entity": "activity", "role": "old"} nella categoria [esami](category) con nome [boxe]{"entity": "activity", "role": "new"}
+    - Voglio cambiare il nome dell'attività [canto]{"entity": "activity", "role": "old"} con nome [insegnamento]{"entity": "activity", "role": "new"}
+    - Voglio cambiare il nome dell'attività [insegnamento]{"entity": "activity", "role": "old"} con nome [canto]{"entity": "activity", "role": "new"}
+    - Voglio cambiare l'attività con nome [anello]{"entity": "activity", "role": "old"} nella categoria [carrozza](category) con [correre]{"entity": "activity", "role": "new"}
+    - Voglio cambiare l'attività con nome [correre]{"entity": "activity", "role": "old"} nella categoria [carrozza](category) con [anello]{"entity": "activity", "role": "new"}
+    - Voglio cambiare l'attività con nome [lancio]{"entity": "activity", "role": "old"} nella categoria [volontariato](category) con [cena]{"entity": "activity", "role": "new"}
+    - Voglio cambiare l'attività con nome [cena]{"entity": "activity", "role": "old"} nella categoria [volontariato](category) con [lancio]{"entity": "activity", "role": "new"}
+    - Voglio cambiare l'attività con nome [leggere]{"entity": "activity", "role": "old"} con [viaggiare]{"entity": "activity", "role": "new"}
+    - Voglio cambiare l'attività con nome [viaggiare]{"entity": "activity", "role": "old"} con [leggere]{"entity": "activity", "role": "new"}
+    - Modificare il nome dell'attività [revisione]{"entity": "activity", "role": "old"} nella categoria [tempi](category) con nome [disegnare]{"entity": "activity", "role": "new"}
+    - Modificare il nome dell'attività [disegnare]{"entity": "activity", "role": "old"} nella categoria [tempi](category) con nome [revisione]{"entity": "activity", "role": "new"}
+    - Modificare il nome dell'attività [yoga]{"entity": "activity", "role": "old"} con nome [pilates]{"entity": "activity", "role": "new"}
+    - Modificare il nome dell'attività [pilates]{"entity": "activity", "role": "old"} con nome [yoga]{"entity": "activity", "role": "new"}
+    - Nella categoria [università](category) cambiare il nome dell'attività [shampoo]{"entity": "activity", "role": "old"}  con nome [camminare]{"entity": "activity", "role": "new"}
+    - Nella categoria [università](category) cambiare il nome dell'attività [camminare]{"entity": "activity", "role": "old"}  con nome [shampoo]{"entity": "activity", "role": "new"}
+    - Cambiare il nome dell'attività [meditazione]{"entity": "activity", "role": "old"}  con nome [chiesa]{"entity": "activity", "role": "new"}
+    - Cambiare il nome dell'attività [chiesa]{"entity": "activity", "role": "old"}  con nome [meditazione]{"entity": "activity", "role": "new"}
+    - Nella categoria [scuola](category) sostituire il nome dell'attività [correre]{"entity": "activity", "role": "old"}  con nome [partita]{"entity": "activity", "role": "new"}
+    - Nella categoria [scuola](category) sostituire il nome dell'attività [partita]{"entity": "activity", "role": "old"}  con nome [correre]{"entity": "activity", "role": "new"}
+    - Sostituire il nome dell'attività [giornale]{"entity": "activity", "role": "old"}  con nome [scrittura]{"entity": "activity", "role": "new"}- replace the name of the activity [writing]{"entity": "activity", "role": "old"}  with name [journal]{"entity": "activity", "role": "new"}
+    - Cambia il nome dell'attività [jogging]{"entity": "activity", "role": "old"} nella categoria [vacanza](category) con nome [viaggio]{"entity": "activity", "role": "new"}
+    - Cambia il nome dell'attività [viaggio]{"entity": "activity", "role": "old"} nella categoria [vacanza](category) con nome [jogging]{"entity": "activity", "role": "new"}
+    - Cambia il nome dell'attività [pittura]{"entity": "activity", "role": "old"} con nome [concerto]{"entity": "activity", "role": "new"}
+    - Cambia il nome dell'attività [concerto]{"entity": "activity", "role": "old"} con nome [pittura]{"entity": "activity", "role": "new"}
+    - Per l'attività [yoga]{"entity": "activity", "role": "old"} nella categoria [desideri](category) modifica il nome con [parrucchiere]{"entity": "activity", "role": "new"}
+    - Per l'attività [parrucchiere]{"entity": "activity", "role": "old"} nella categoria [desideri](category) modifica il nome con [yoga]{"entity": "activity", "role": "new"}
+    - Per l'attività [compiti]{"entity": "activity", "role": "old"} modifica il nome con [presentazione]{"entity": "activity", "role": "new"}
+    - Per l'attività [presentazione]{"entity": "activity", "role": "old"} modifica il nome con [compiti]{"entity": "activity", "role": "new"}
+    - Per l'attività [shopping]{"entity": "activity", "role": "old"} in [lavoro](category) trasforma il nome con [autobus]{"entity": "activity", "role": "new"}
+    - Per l'attività [autobus]{"entity": "activity", "role": "old"} in [lavoro](category) trasforma il nome con [shopping]{"entity": "activity", "role": "new"}
+    - Per l'attività [assegnazione]{"entity": "activity", "role": "old"} trasforma il nome con [giornale]{"entity": "activity", "role": "new"}
+    - Per l'attività [giornale]{"entity": "activity", "role": "old"} trasforma il nome con [assegnazione]{"entity": "activity", "role": "new"}
+    - Voglio cambiare il nome dell'attività [camminare all'aperto]{"entity": "activity", "role": "old"} nella [personale](category) con nome [compilare il modulo]{"entity": "activity", "role": "new"}
+    - Voglio cambiare il nome dell'attività [compilare il modulo]{"entity": "activity", "role": "old"} nella [personale](category) con nome [camminare all'aperto]{"entity": "activity", "role": "new"}
+    - Voglio cambiare il nome dell'attività [fare taekwondo]{"entity": "activity", "role": "old"} nella categoria [estetica](category) con nome [andare a nuotare]{"entity": "activity", "role": "new"}
+    - Voglio cambiare il nome dell'attività [andare a nuotare]{"entity": "activity", "role": "old"} nella categoria [estetica](category) con nome [fare taekwondo]{"entity": "activity", "role": "new"}
+    - Voglio cambiare il nome dell'attività [modificare un video]{"entity": "activity", "role": "old"} con nome [scrivere un articolo]{"entity": "activity", "role": "new"}
+    - Voglio cambiare il nome dell'attività [scrivere un articolo]{"entity": "activity", "role": "old"} con nome [modificare un video]{"entity": "activity", "role": "new"}
+    - Voglio cambiare l'attività con nome [aiutare la zia]{"entity": "activity", "role": "old"} nella categoria [cura](category) con [aiutare la sorella]{"entity": "activity", "role": "new"}
+    - Voglio cambiare l'attività con nome [aiutare la sorella]{"entity": "activity", "role": "old"} nella categoria [cura](category) con [aiutare la zia]{"entity": "activity", "role": "new"}
+    - Voglio cambiare l'attività con nome [uscire con il gatto]{"entity": "activity", "role": "old"} nella [quotidiana](category) con [uscire con il cane]{"entity": "activity", "role": "new"}
+    - Voglio cambiare l'attività con nome [uscire con il cane]{"entity": "activity", "role": "old"} nella [quotidiana](category) con [uscire con il gatto]{"entity": "activity", "role": "new"}
+    - Voglio cambiare l'attività con nome [andare al parco]{"entity": "activity", "role": "old"} con [andare a nuotare]{"entity": "activity", "role": "new"}
+    - Voglio cambiare l'attività denominata [nuotare]{"entity": "activity", "role": "old"} con [andare al parco]{"entity": "activity", "role": "new"}
+    - Modifica il nome dell'attività [chiamare il nonno]{"entity": "activity", "role": "old"} nella categoria [settimanale](category) con il nome [prendere le medicine]{"entity": "activity", "role": "new"}
+    - Modifica il nome dell'attività [prendere le medicine]{"entity": "activity", "role": "old"} nella categoria [settimanale](category) con il nome [chiamare il nonno]{"entity": "activity", "role": "new"}
+    - Modifica il nome dell'attività [andare dal dottore]{"entity": "activity", "role": "old"} con il nome [leggere un libro di testo]{"entity": "activity", "role": "new"}
+    - Modifica il nome dell'attività [leggere un libro di testo]{"entity": "activity", "role": "old"} con il nome [andare dal dottore]{"entity": "activity", "role": "new"}
+    - Nella categoria [eventi](category) cambia il nome dell'attività [tagliare i capelli]{"entity": "activity", "role": "old"}  con il nome [andare dal parrucchiere]{"entity": "activity", "role": "new"}
+    - Nella categoria [eventi](category) cambia il nome dell'attività [andare dal parrucchiere]{"entity": "activity", "role": "old"}  con il nome [tagliare i capelli]{"entity": "activity", "role": "new"}
+    - Cambia il nome dell'attività [fare una presentazione]{"entity": "activity", "role": "old"}  con il nome [viaggiare per lavoro]{"entity": "activity", "role": "new"}
+    - Cambia il nome dell'attività [viaggiare per lavoro]{"entity": "activity", "role": "old"}  con il nome [fare una presentazione]{"entity": "activity", "role": "new"}
+    - Nella categoria [amicizia](category) sostituisci il nome dell'attività [studiare per l'esame]{"entity": "activity", "role": "old"}  con il nome [imparare le matematiche]{"entity": "activity", "role": "new"}
+    - Nella categoria [amicizia](category) sostituisci il nome dell'attività [imparare le matematiche]{"entity": "activity", "role": "old"}  con il nome [studiare per l'esame]{"entity": "activity", "role": "new"}
+    - Sostituisci il nome dell'attività [leggere il giornale]{"entity": "activity", "role": "old"}  con il nome [imparare l'inglese]{"entity": "activity", "role": "new"}
+    - Sostituisci il nome dell'attività [imparare l'inglese]{"entity": "activity", "role": "old"}  con il nome [leggere il giornale]{"entity": "activity", "role": "new"}
+    - Modifica il nome dell'attività [cucinare la cena]{"entity": "activity", "role": "old"} nella categoria [casa](category) con il nome [pulire la casa]{"entity": "activity", "role": "new"}
+    - Modifica il nome dell'attività [pulire la casa]{"entity": "activity", "role": "old"} nella categoria [casa](category) con il nome [cucinare la cena]{"entity": "activity", "role": "new"}
+    - Modifica il nome dell'attività [preparare la colazione]{"entity": "activity", "role": "old"} con il nome [pulire il giardino]{"entity": "activity", "role": "new"}
+    - Modifica il nome dell'attività [pulire il giardino]{"entity": "activity", "role": "old"} con il nome [preparare la colazione]{"entity": "activity", "role": "new"}
+    - Per l'attività [suonare la chitarra]{"entity": "activity", "role": "old"} nella categoria [tempo libero](category) modifica il nome con [andare a giocare a calcio]{"entity": "activity", "role": "new"}
+    - Per l'attività [andare a giocare a calcio]{"entity": "activity", "role": "old"} nella categoria [tempo libero](category) modifica il nome con [suonare la chitarra]{"entity": "activity", "role": "new"}
+    - Per l'attività [cantare una canzone]{"entity": "activity", "role": "old"} modifica il nome con [partita di calcio]{"entity": "activity", "role": "new"}
+    - Per l'attività [partita di calcio]{"entity": "activity", "role": "old"} modifica il nome con [cantare una canzone]{"entity": "activity", "role": "new"}
+    - Per l'attività [leggere un libro]{"entity": "activity", "role": "old"} nella categoria [impegni](category) trasforma il nome con [chiesa]{"entity": "activity", "role": "new"}
+    - Per l'attività [chiesa]{"entity": "activity", "role": "old"} nella categoria [impegni](category) trasforma il nome con [leggere un libro]{"entity": "activity", "role": "new"}
+    - Per l'attività [scrivere un libro]{"entity": "activity", "role": "old"} trasforma il nome con [leggere un giornale]{"entity": "activity", "role": "new"}
+    - Per l'attività [leggere un giornale]{"entity": "activity", "role": "old"} trasforma il nome con [scrivere un libro]{"entity": "activity", "role": "new"}
 
 - intent: view_categories
   examples: |
-    - I want to see all my categories
-    - Show my categories
-    - show my categories
-    - Show all my categories
-    - show all my categories
-    - Which are my categories?
-    - which are my categories?
-    - what are my categories?
-    - What are my categories?
-    - show categories
-    - let me see all my inserted categories
-    - i want to watch my added categories
-    - I want to show all my created categories
-    - Which are my inserted categories?
-    - What are my added categories?
-    - Which are my added categories?
-    - What are my created categories?
+    - Voglio vedere tutte le mie categorie 
+    - Mostrami le mie categorie 
+    - Mostra le mie categorie 
+    - Mostra tutte le mie categorie 
+    - Mostra tutte le mie categorie 
+    - Quali sono le mie categorie? 
+    - Quali sono le mie categorie? 
+    - Quali sono le mie categorie? 
+    - Quali sono le mie categorie? 
+    - Mostra le categorie 
+    - Lasciami vedere tutte le categorie inserite 
+    - Voglio guardare le categorie aggiunte 
+    - Voglio mostrare tutte le categorie create 
+    - Quali sono le categorie inserite? 
+    - Quali sono le categorie aggiunte? 
+    - Quali sono le categorie aggiunte? 
+    - Quali sono le categorie create?
 
 - intent: presentation+view_categories
   examples: |
-    - sono [Giusy](name) and I want to see all my categories
-    - sono [Simone](name) , Which are my categories?
-    - sono [Paola](name) Show my categories
-    - sono [mattia](name) Which are my categories?
-    - sono [camilla](name) which are my categories?
-    - sono [antonio](name) , which are my categories?
-    - sono [gerardo](name) , I want to see all my categories
-    - sono [alessia](name) , what are my categories?
-    - sono [nando](name) What are my categories?
-    - sono [ferdinando](name) show all my categories
-    - sono [francesca](name) , what are my categories?
-    - sono [marco](name) , What are my categories?
-    - sono [Simona](name) show my categories
-    - sono [lorenzo](name) show all my categories
-    - sono [gianluca](name) what are my categories?
-    - sono [daniele](name) show my categories
-    - sono [sara](name) , Show all my categories
-    - sono [davide](name) Show my categories
-    - sono [vito](name) Show all my categories
+    - sono [Giusy](name) e voglio vedere tutte le mie categorie
+    - sono [Simone](name), quali sono le mie categorie?
+    - sono [Paola](name) Mostra le mie categorie
+    - sono [Mattia](name) Quali sono le mie categorie?
+    - sono [Camilla](name) quali sono le mie categorie?
+    - sono [Antonio](name), quali sono le mie categorie?
+    - sono [Gerardo](name), voglio vedere tutte le mie categorie
+    - sono [Alessia](name), quali sono le mie categorie?
+    - sono [Nando](name) Quali sono le mie categorie?
+    - sono [Ferdinando](name) mostra tutte le mie categorie
+    - sono [Francesca](name), quali sono le mie categorie?
+    - sono [Marco](name), quali sono le mie categorie?
+    - sono [Simona](name) mostra le mie categorie
+    - sono [Lorenzo](name) mostra tutte le mie categorie
+    - sono [Gianluca](name) quali sono le mie categorie?
+    - sono [Daniele](name) mostra le mie categorie
+    - sono [Sara](name), mostra tutte le mie categorie
+    - sono [Davide](name) Mostra le mie categorie
+    - sono [Vito](name) Mostra tutte le mie categorie
 
 - intent: remind_me_of
   examples: |
-    - remind me to [shopping](activity) into the category [life](category) at 8:30
-    - set a reminder for the activity [call](activity) into the category [relations](category) of next morning
-    - help me to not forget the activity [study](activity) in the category [school](category) for Tomorrow
-    - help me to remind my [birthday](activity) on 12/18/2022
-    - remind me the [exam](activity) on tomorrow morning
-    - don't forget of [run](activity) at 19:00
-    - I want to set a reminder 
-    - want you help me to remind
-    - I can't forget to do the activity [boxe](activity) of the category [sport](category) of next Monday
-    - I want to set a reminder for the activity [hairdresser](activity)
-    - remind me the [dinner](activity)
-    - remind me to [cook the dinner](activity) into the category [household](category) at 8:30
-    - set a reminder for the activity [call my girlfriend](activity) into the category [social](category) of next morning
-    - help me to not forget the activity [listen the lesson registration](activity) in the category [university](category) for Tomorrow
-    - help me to remind my [go to the birthday](activity) on 12/18/2022
-    - remind me the [guitar lesson](activity) on tomorrow morning
-    - don't forget of [do the exercises](activity) at 19:00
-    - set a reminder 
-    - help me to remind an activity
-    - I can't forget to do the activity [talk with the professor](activity) of the category [university](category) of next Monday
-    - I want to set a reminder for the activity [book the plane](activity)
-    - remind me the [eat some fruits](activity)
+    - Ricordami di fare [shopping](attività) nella categoria [vita](categoria) alle 8:30
+    - Imposta un promemoria per l'attività [chiamata](attività) nella categoria [relazioni](categoria) della mattina successiva
+    - Aiutami a non dimenticare l'attività [studio](attività) nella categoria [scuola](categoria) per domani
+    - Aiutami a ricordare il mio [compleanno](attività) il 12/18/2022
+    - Ricordami l'[esame](attività) domani mattina
+    - Non dimenticare di [correre](attività) alle 19:00
+    - Voglio impostare un promemoria
+    - Vuoi aiutarmi a ricordare
+    - Non posso dimenticare di fare l'attività [boxe](attività) nella categoria [sport](categoria) della prossima lunedì
+    - Voglio impostare un promemoria per l'attività [parrucchiere](attività)
+    - Ricordami il [cena](attività)
+    - Ricordami di [cucinare la cena](attività) nella categoria [casa](categoria) alle 8:30
+    - Imposta un promemoria per l'attività [chiamare la mia ragazza](attività) nella categoria [sociale](categoria) della mattina successiva
+    - Aiutami a non dimenticare l'attività [ascoltare la registrazione della lezione](attività) nella categoria [università](categoria) per domani
+    - Aiutami a ricordare il mio [andare al compleanno](attività) il 12/18/2022
+    - Ricordami la [lezione di chitarra](attività) domani mattina
+    - Non dimenticare di [fare gli esercizi](attività) alle 19:00
+    - Imposta un promemoria
+    - Aiutami a ricordare un'attività
+    - Non posso dimenticare di fare l'attività [parlare con il professore](attività) nella categoria [università](categoria) della prossima lunedì
+    - Voglio impostare un promemoria per l'attività [prenotare l'aereo](attività)
+    - Ricordami di [mangiare frutta](attività)
 
 - intent: presentation+remind_me_of
   examples: |
-    - sono [mattia](name) emind me to [shopping](activity) into the category [life](category) at 8:30
-    - sono [camilla](name) set a reminder for the activiy [call](activity) into the category [relations](category) of next morning
-    - sono [Simone](name) , help me to not forget the activity [study](activity) in the category [university](category) for Tomorrow
-    - sono [nando](name) help me to remind my [birthday](activity) on 12/18/2022
-    - sono [Paola](name) remind me the [exam](activity) on tomorrow morning
-    - sono [alessia](name) , don't forget of [gardenind](activity) at 19:00
-    - sono [marco](name) , I want to set a reminder 
-    - sono [gerardo](name) , I want you help me to remind
-    - il mio nome è [luigi](name) , please remind me of [shampoo](activity) tomorrow evening
-    - sono [Salvo](name) , please help me to don't forget the activity [project](activity) in the category [work](category) of next Friday
-    - sono [francesca](name) I can't forget to do the activity [exercises](activity) of the category [school](category) of next Monday
-    - sono [sara](name) I want to set a reminder for the activity [hairdresser](activity)
-    - sono [iris](name) , remind me the [dinner](activity)
-    - sono [ferdinando](name) remind me to [buy the gifts](activity) into the category [household](category) at 8:30
-    - sono [giovanna](name) set a reminder for the activiy [videocall with friends](activity) into the category [social](category) of next morning
-    - sono [lorenzo](name) , help me to not forget the activity [study for the exam](activity) in the category [university](category) for Tomorrow
-    - sono [vito](name) help me to remind my [prepare the launch](activity) on 12/18/2022
-    - sono [luana](name) remind me the [go to the doctor](activity) on tomorrow morning
-    - sono [carla](name) , don't forget of [buy a gift](activity) at 19:00
-    - sono [giovanni](name) , I want to set a reminder 
-    - sono [tommaso](name) , I want you help me to remind
-    - il mio nome è [salvatore](name) , please remind me of [do yoga](activity) tomorrow evening
-    - sono [orazio](name) , please help me to don't forget the activity [fix some issues](activity) in the category [projects](category) of next Friday
-    - sono [orietta](name) I can't forget to do the activity [send the e-mail](activity) of the category [work](category) of next Monday
-    - sono [silvia](name) I want to set a reminder for the activity [clean home](activity)
-    - sono [silvana](name) , remind me the [buy some food](activity)
+    - Sono [Mattia](name), ricordami di [fare shopping](activity) nella categoria [vita](category) alle 8:30. 
+    - Sono [Camilla](name), impostami un promemoria per l'attività [chiamata](activity) nella categoria [relazioni](category) della mattina successiva. 
+    - Sono [Simone](name), aiutami a non dimenticare l'attività [studio](activity) nella categoria [università](category) per domani. 
+    - Sono [Nando](name), aiutami a ricordare il mio [compleanno](activity) il 12/18/2022. 
+    - Sono [Paola](name), ricordami l'[esame](activity) domani mattina. 
+    - Sono [Alessia](name), non dimenticare di [giardinaggio](activity) alle 19:00. 
+    - Sono [Marco](name), voglio impostare un promemoria. 
+    - Sono [Gerardo](name), voglio che tu mi aiuti a ricordare. 
+    - Il mio nome è [Luigi](name), ricordami di [shampoo](activity) domani sera. 
+    - Sono [Salvo](name), aiutami a non dimenticare l'attività [progetto](activity) nella categoria [lavoro](category) del prossimo venerdì. 
+    - Sono [Francesca](name), non posso dimenticare di fare l'attività [esercizi](activity) della categoria [scuola](category) della prossima lunedì. 
+    - Sono [Sara](name), voglio impostare un promemoria per l'attività [parrucchiere](activity). 
+    - Sono [Iris](name), ricordami il [cena](activity). 
+    - Sono [Ferdinando](name), ricordami di [acquistare i regali](activity) nella categoria [casa](category) alle 8:30. 
+    - Sono [Giovanna](name), impostami un promemoria per l'attività [videocall con amici](activity) nella categoria [sociale](category) della mattina successiva. 
+    - Sono [Lorenzo](name), aiutami a non dimenticare l'attività [studiare per l'esame](activity) nella categoria [università](category) per domani. 
+    - Sono [Vito](name), aiutami a ricordare il mio [preparare il lancio](activity) il 12/18/2022. 
+    - Sono [Luana](name), ricordami di [andare dal dottore](activity) domani mattina. 
+    - Sono [Carla](name), non dimenticare di [acquistare un regalo](activity) alle 19:00. 
+    - Sono [Giovanni](name), voglio impostare un promemoria. 
+    - Sono [Tommaso](name), voglio che tu mi aiuti a ricordare. 
+    - Il mio nome è [Salvatore](name), ricordami di [fare yoga](activity) domani sera. 
+    - Sono [Orazio](name), aiutami a non dimenticare l'attività [risolvere alcuni problemi](activity) nella categoria [progetti](category) del prossimo venerdì. 
+    - Sono [Orietta](name), non posso dimenticare di fare l'attività [inviare l'e-mail](activity) della categoria [lavoro](category) della prossima lunedì. 
+    - Sono [Silvia](name), voglio impostare un promemoria per l'attività [pulire la casa](activity). 
+    - Sono [Silvana](name), ricordami di [comprare del cibo](activity).
 
 - intent: ask_name
   examples: |
-    - who sono?
-    - Do you know who sono?
-    - DId you know who sono?
-    - Did you recognize me?
-    - Do you recognize me?
-    - What is my name?
-    - Can you say my name?
+    - Chi sono?
+    - Sai chi sono?
+    - Sai chi sono?
+    - Mi hai riconosciuto?
+    - Mi riconosci?
+    - Qual è il mio nome?
+    - Puoi dire il mio nome?
 
 - synonym: uncompleted
   examples: |
-    - undone
-    - unfinished
-    - unexecuted
-    - undeveloped
-    - uncomplete
+    - Incompleto
+    - Ineseguito
+    - Non sviluppato
+    - Non finito
+    - Incompiuto
 
 - synonym: completed
   examples: |
-    - done
-    - finished
-    - executed
-    - developed
-    - concluded
-    - complete
+    - fatto 
+    - finito 
+    - eseguito 
+    - sviluppato 
+    - concluso 
+    - completo
     
     
