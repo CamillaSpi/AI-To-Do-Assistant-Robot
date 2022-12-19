@@ -529,27 +529,14 @@ class actionRemindItem(Action):
         category = tracker.get_slot("category")
         reminderSlot = tracker.get_slot("reminder")
         time = tracker.get_slot("time")
-        name = tracker.get_slot("name")
         
-        
-     
-        
-        try:
-            id = int(id) #if yes this id was send trough ros nose
-            
-        except:
-            m = hashlib.sha256()
-            id = m.update(str(name).encode())
-            
-            m.digest()
-            id = m.hexdigest()
         associated_name = Database.getName(id) 
         date = datetime.now() + timedelta(seconds = 10)
         if (isinstance(activity,list)):
             activity = ' '.join([str(elem) for elem in activity])
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
-        entities = [{'name':associated_name, 'activity':activity, 'category':category,'expired':False}]
+        entities = [{'id':id,'name':Database.getName(id), 'activity':activity, 'category':category,'deadline': time,'expired':False}] # 'time':time
         reminder = ReminderScheduled(
             "EXTERNAL_reminder",
             trigger_date_time = date,
@@ -680,11 +667,12 @@ class ActionReactToReminder(Action):
 
         print("sto nella react")
         entities = tracker.latest_message.get("entities")[0]
-        # id_user = entities['id']
+        # print(entities)
+        id_user = entities['id']
         name = entities['name']
         activity = entities['activity']
         category = entities['category']
-        # deadline = entities['deadline']
+        deadline = entities['deadline']
         expired = entities['expired']
         print(expired)
         if(expired):
