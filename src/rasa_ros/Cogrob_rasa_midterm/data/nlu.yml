@@ -1450,26 +1450,26 @@ nlu:
 
 - intent: remind_me_of
   examples: |
-    - Ricordami di fare [shopping](activity) nella categoria [vita](categoria) alle 8:30
-    - Imposta un promemoria per l'attività [chiamata](activity) nella categoria [relazioni](categoria) della mattina successiva
-    - Aiutami a non dimenticare l'attività [studio](activity) nella categoria [scuola](categoria) per domani
+    - Ricordami di fare [shopping](activity) nella categoria [vita](category) alle 8:30
+    - Imposta un promemoria per l'attività [chiamata](activity) nella categoria [relazioni](category) della mattina successiva
+    - Aiutami a non dimenticare l'attività [studio](activity) nella categoria [scuola](category) per domani
     - Aiutami a ricordare il mio [compleanno](activity) il 12/18/2022
     - Ricordami [l'esame](activity) domani mattina
     - Non dimenticare di [correre](activity) alle 19:00
     - Voglio impostare un promemoria
     - Vuoi aiutarmi a ricordare
-    - Non posso dimenticare di fare l'attività [boxe](activity) nella categoria [sport](categoria) della prossima lunedì
+    - Non posso dimenticare di fare l'attività [boxe](activity) nella categoria [sport](category) della prossima lunedì
     - Voglio impostare un promemoria per l'attività [parrucchiere](activity)
     - Ricordami il [cena](activity)
-    - Ricordami di [cucinare la cena](activity) nella categoria [casa](categoria) alle 8:30
-    - Imposta un promemoria per l'attività [chiamare la mia ragazza](activity) nella categoria [sociale](categoria) della mattina successiva
-    - Aiutami a non dimenticare l'attività [ascoltare la registrazione della lezione](activity) nella categoria [università](categoria) per domani
+    - Ricordami di [cucinare la cena](activity) nella categoria [casa](category) alle 8:30
+    - Imposta un promemoria per l'attività [chiamare la mia ragazza](activity) nella categoria [sociale](category) della mattina successiva
+    - Aiutami a non dimenticare l'attività [ascoltare la registrazione della lezione](activity) nella categoria [università](category) per domani
     - Aiutami a ricordare il mio [andare al compleanno](activity) il 12/18/2022
     - Ricordami la [lezione di chitarra](activity) domani mattina
     - Non dimenticare di [fare gli esercizi](activity) alle 19:00
     - Imposta un promemoria
     - Aiutami a ricordare un'activity
-    - Non posso dimenticare di fare l'attività [parlare con il professore](activity) nella categoria [università](categoria) della prossima lunedì
+    - Non posso dimenticare di fare l'attività [parlare con il professore](activity) nella categoria [università](category) della prossima lunedì
     - Voglio impostare un promemoria per l'attività [prenotare l'aereo](activity)
     - Ricordami di [mangiare frutta](activity)
 
