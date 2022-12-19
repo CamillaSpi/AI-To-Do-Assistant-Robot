@@ -601,10 +601,10 @@ class ActionReactToReminder(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
-        print("sto nella react")
         entities = tracker.latest_message.get("entities")[0]
-        # print(entities)
         name = entities['name']
+        id_user = entities['id']
+        deadline = entities['deadline']
         activity = entities['activity']
         category = entities['category']
         expired = entities['expired']
@@ -617,14 +617,7 @@ class ActionReactToReminder(Action):
             print("sei ancora in tempo per ricordarti", activity, category)
 
         #aggiunta per far si che una volta notificato un reminder questo non venga più notificato successivamente
-        # Database.updateReminder(id_user,category, activity, deadline, False)
-        # time = entities['time']
-        # time = datetime.fromisoformat(time)
-        # date = datetime.now()
-        # if time <= date:
-        #     dispatcher.utter_message(f"Hei {name}, the reminder  for {activity} in {category} is expired!!!")
-        # else:
-        #     dispatcher.utter_message(f"Hei {name}, remember to {activity} in {category} in 5 minutes!")
+        Database.updateReminder(id_user,category, activity, deadline, False)
         return []
 
 class ActionRecognizeUser(Action):
