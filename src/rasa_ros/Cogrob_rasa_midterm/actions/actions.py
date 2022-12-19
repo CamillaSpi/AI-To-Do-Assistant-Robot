@@ -83,7 +83,7 @@ class actionCreateUser(Action):
         name = tracker.get_slot("name")
         if type(id) != int:
             m = hashlib.sha256()
-            id = m.update(str(name).encode())
+            id = m.update(str(name.lower()).encode())
             
             m.digest()
             id = m.hexdigest()
@@ -483,18 +483,7 @@ class actionRemindItem(Action):
         category = tracker.get_slot("category")
         reminderSlot = tracker.get_slot("reminder")
         time = tracker.get_slot("time")
-        name = tracker.get_slot("name")
         
-        
-        try:
-            id = int(id) #if yes this id was send trough ros nose
-            
-        except:
-            m = hashlib.sha256()
-            id = m.update(str(name).encode())
-            
-            m.digest()
-            id = m.hexdigest()
         associated_name = Database.getName(id) 
         date = datetime.now() + timedelta(seconds = 10)
         if (isinstance(activity,list)):
