@@ -295,7 +295,7 @@ class Database:
         SELECT * FROM unfoldings WHERE activity == ? 
       ''', (activity,))
     if(len(cur.fetchall()) > 0 ):
-      print("ci sono altri con questa attività")
+      print("ci sono altri con questa activity")
       return
     else:
       print("nessuno la tiene, elimino in activities")
@@ -310,7 +310,7 @@ class Database:
         SELECT * FROM possessions WHERE category == ? 
       ''', (category,))
     if(len(cur.fetchall()) > 0 ):
-      print("ci sono altri con questa categoria")
+      print("ci sono altri con questa category")
       return
     else:
       print("nessuno la tiene, elimino in categories")
@@ -352,7 +352,7 @@ class Database:
     if(len(cur.fetchall()) > 0 ):
       if category_new != None:
         if not Database.doesCategoryExists(category_new):
-          #Andrebbe comunicato che è stata creata tale categoria
+          #Andrebbe comunicato che è stata creata tale category
           Database.insertCategory(category_new)
       conn.execute('''
         UPDATE possessions SET category = ? WHERE ID == ? AND category == ?;
@@ -382,7 +382,7 @@ class Database:
       if(len(cur.fetchall()) > 0 ):
         if newcategory != None:
           if newcategory!=None and not Database.doesPossessionExists(ID,newcategory):
-            #Andrebbe comunicato che è stata creata tale categoria
+            #Andrebbe comunicato che è stata creata tale category
             Database.insertCategoryAndPossession(ID, newcategory)
           if newactivity!=None and not Database.doesActivityExists(newactivity):
             #Andrebbe comunicato che è stata creata tale activity

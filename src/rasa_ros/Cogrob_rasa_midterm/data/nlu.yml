@@ -698,117 +698,117 @@ nlu:
 
 - intent: remove_item
   examples: |
-    - remove [run](activity)
-    - delete [study](activity)
-    - del [stand up](activity)
-    - remove [walk in the garden](activity)
-    - delete [do yoga](activity)
-    - del [do homework](activity)
-    - del [run](activity) in [daily](category)
-    - delete [bed](activity) in [health](category)
-    - cancel [drink](activity) in [daily](category)
-    - remove [swimming](activity) in [sport](category)
-    - cancel [go for a hike](activity) in [freetime](category)
-    - remove [do shopping](activity) in [life](category)
-    - delete [go to the beautician](activity) in [personal](category)
-    - del [finish the report](activity) in [work](category)
-    - remove activity [boxe](activity) in [weekly](category)
-    - delete activity [send an email](activity) in [team](category)
-    - remove activity [read the paper](activity) in [commitments](category)
-    - del activity [swimming](activity) in [fun](category)
-    - del activity [play the piano](activity) in [music](category)
-    - delete activity [play](activity) in [entertainment](category)
-    - cancel activity [jogging](activity) in [quickly](category)
-    - cancel activity [write the paper](activity) in [research](category)
-    - remove [review the presentation](activity) in category [school](category)
-    - del [bed](activity) in category [health](category)
-    - del [learn spanish](activity) in category [languages](category)
-    - delete [shampoo](activity) in category [daily](category)
-    - cancel [taekwondo](activity) in category [hobby](category)
-    - cancel [complete the form](activity) in category [committments](category)
-    - remove [video-conference](activity) in category [community](category)
-    - delete [do presentation](activity) in category [society](category)
-    - remove activity [study maths](activity) in category [university](category)
-    - cancel activity [ppt](activity) in category [urgent](category)
-    - cancel activity [correcting homework](activity) in category [working](category)
-    - delete activity [train](activity) in category [well-being](category)
-    - delete activity [go swimming](activity) in category [sport](category)
-    - del activity [go to bank](activity) in category [finance](category)
-    - remove activity [read](activity) in category [culture](category)
-    - del activity [psychologist](activity) in category [mind](category)
-    - I want to delete an activity
-    - I want to remove an activity to a list
-    - I want to del an activity to [classroom](category) list
-    - I want to delete an activity to [paperwork](category) list
-    - I want to remove an activity to [show](category) list
-    - I want to delete an activity to [leadership](category) list
-    - I want to cancel an activity to [computer](category) list
-    - I want to delete an activity to [pleasure](category) list
-    - hi, I want to del an activity to [amusement](category) list
-    - hi, I want to remove an activity to [recreation](category) list
-    - hi, I want to delete an activity to [parents](category) list
-    - hi, I want to cancel an activity to [plannings](category) list
-    - hello, I want to del an activity to [theater](category) list
-    - hello, I want to delete an activity to [politic](category) list
-    - hello I want to remove an activity to my list
-    - hi I want to delete an activity to my list
-    - delete [go to singing](activity) at 11:00
-    - remove [go to cinema](activity) at 13:00
-    - delete [e-mail](activity) at 9:30
-    - cancel [windsurf](activity) at 01:45
-    - del [checkboxes](activity) at 00:00
-    - cancel [help my mother](activity) at 01:45
-    - del [do shopping](activity) at 00:00
-    - remove [merge](activity) at 3:00
-    - delete [go to meeting](activity) in [work](category) at 4:25
-    - del [study latin](activity) in [school](category) at 2:55
-    - cancel [tests](activity) in [plan](category) at 16:00
-    - cancel [write the report](activity) in [project](category) at 16:00
-    - delete [refuel](activity) in [car](category) at 20:00
-    - delete [buy the train ticket](activity) in [journey](category) at 20:00
-    - remove [dentist](activity) in [healthcare](category) at 22:20
-    - remove [wash the car](activity) in [households](category) at 22:20
-    - del [blog](activity) in [hobbies](category) at 14:50
-    - delete activity [go to church](activity) in [personal](category) at 19:41
-    - del activity [listen the poadcast](activity) in [entertainings](category) at 12:35
-    - remove activity [exit](activity) in [society](category) at 17:30
-    - remove activity [go to the post office](activity) in [packs](category) at 17:30
-    - delete activity [climbing](activity) in [summer](category) at 18:30
-    - del activity [nails](activity) in [esthetics](category) at 9:40
-    - cancel activity [stroll](activity) in [daily](category) at 7:00
-    - cancel activity [study for the exam](activity) in [university](category) at 7:00
-    - del [walking](activity) in category [day](category) at 6:30
-    - delete [buy bread](activity) in category [food](category) at 8:00
-    - remove [push](activity) in category [work](category) at 10:25
-    - remove [tidy up the wardrobe](activity) in category [monthly](category) at 10:25
-    - del [prepare the breakfast](activity) in category [diet](category) at 7:30
-    - cancel [studying](activity) in category [school](category) at 19:00
-    - cancel [clean house](activity) in category [households](category) at 19:00
-    - delete [cleaning](activity) in category [house](category) at 20:30
-    - del activity [word](activity) in category [programs](category) at 21:10
-    - del activity [go to the market](activity) in category [personal](category) at 21:10
-    - remove activity [paint](activity) in category [creativeness](category) at 9:40
-    - cancel activity [gardening](activity) in category [garden](category) at 5:12
-    - cancel activity [attend the lesson](activity) in category [university](category) at 5:12
-    - delete activity [hairdresser](activity) in category [well-being](category) at 13:39
-    - remove activity [water the plants](activity) in category [households](category) at 13:29
-    - delete activity [do the interview](activity) in category [society](category) at 11:00
-    - I want to delete an activity at 11:00
-    - I want to cancel an activity to a list at 13:39
-    - I want to del an activity to [communication](category) list at 21:10
-    - I want to delete an activity to [groceries](category) list at 9:40
-    - I want to cancel an activity to [errands](category) list at 19:00
-    - I want to remove an activity to [upcoming](category) list at 16:30
-    - I want to delete an activity to [shop](category) list at 7:00
-    - I want to remove an activity to [business](category) list at 6:30
-    - hi, I want to del an activity to [marketing](category) list at 18:30
-    - hi, I want to remove an activity to [blog](category) list at 17:30
-    - hi, I want to delete an activity to [life](category) list at 22:20
-    - hi, I want to cancel an activity to [lifestyle](category) list at 16:00
-    - hello, I want to del an activity to [social](category) list at 14:50
-    - hello, I want to delete an activity to [caring](category) list at 3:29
-    - hello I want to remove an activity to my list at 12:37
-    - hi I want to delete an activity to my list at 18:14
+    - rimuovi [correre](activity)
+    - elimina [studiare](activity)
+    - elimina [alzarsi](activity)
+    - rimuovi [camminare nel giardino](activity)
+    - elimina [fare yoga](activity)
+    - elimina [fare i compiti](activity)
+    - elimina [correre](activity) nella [category quotidiana](category)
+    - elimina [letto](activity) nella [category salute](category)
+    - Cancellare [bere](activity) nella [category quotidiana](category)
+    - rimuovi [nuotare](activity) nella [category sport](category)
+    - Cancellare [andare in escursione](activity) nella [category tempo libero](category)
+    - rimuovi [fare shopping](activity) nella [category vita](category)
+    - elimina [andare dall'estetista](activity) nella [category personale](category)
+    - elimina [finire il rapporto](activity) nella [category lavoro](category)
+    - rimuovi l'activity [boxe](activity) nella [category settimanale](category)
+    - elimina l'activity [inviare un'email](activity) nella [category team](category)
+    - rimuovi l'activity [leggere il giornale](activity) nella [category impegni](category)
+    - elimina l'activity [nuotare](activity) nella [category divertimento](category)
+    - elimina l'activity [suonare il pianoforte](activity) nella [category musica](category)
+    - elimina l'activity [giocare](activity) nella [category intrattenimento](category)
+    - Cancellare l'activity [fare jogging](activity) nella [category velocemente](category)
+    - Cancellare l'activity [scrivere il rapporto](activity) nella [category ricerca](category)
+    - rimuovi [rivisitare la presentazione](activity) nella [category scuola](category)
+    - elimina [letto](activity) nella [category salute](category)
+    - elimina [imparare lo spagnolo](activity) nella [category lingue](category)
+    - elimina [shampoo](activity) nella [category quotidiana](category)
+    - Cancellare [taekwondo](activity) nella [category hobby](category)
+    - Cancellare [compilare il modulo](activity) nella [category impegni](category)
+    - rimuovi [videoconferenza](activity) nella [category comunità](category)
+    - elimina [fare una presentazione](activity) nella [category società](category)
+    - rimuovi l'activity [studiare matematica](activity) nella [category università](category)
+    - Cancellare l'activity [ppt](activity) nella [category urgente](category)
+    - Cancellare l'activity [correggere i compiti](activity) nella [category lavoro](category)
+    - elimina l'activity [allenarsi](activity) nella [category benessere](category)
+    - elimina l'activity [andare a nuotare](activity) nella [category sport](category)
+    - elimina l'activity [andare in banca](activity) nella [category finanza](category)
+    - rimuovi l'activity [leggere](activity) nella [category cultura](category)
+    - elimina l'activity [psicologo](activity) nella [category mente](category)
+    - Voglio elimina un'activity
+    - Voglio rimuovi un'activity da un elenco
+    - Voglio elimina un'activity dall'elenco [aula](category)
+    - Voglio elimina un'activity dall'elenco [documenti](category)
+    - Voglio rimuovi un'activity dall'elenco [spettacolo](category)
+    - Voglio elimina un'activity dall'elenco [leadership](category)
+    - Voglio cancellare un'activity dall'elenco [computer](category)
+    - Voglio elimina un'activity dall'elenco [piacere](category)
+    - Ciao, voglio elimina un'activity dall'elenco [divertimento](category)
+    - Ciao, voglio rimuovi un'activity dall'elenco [ricreazione](category)
+    - Ciao, voglio elimina un'activity dall'elenco [genitori](category)
+    - Ciao, voglio cancellare un'activity dall'elenco [pianificazioni](category)
+    - Ciao, voglio elimina un'activity dall'elenco [teatro](category)
+    - Ciao, voglio rimuovi un'activity dall'elenco [politica](category)
+    - Ciao, voglio elimina un'activity dalla mia lista
+    - Ciao, voglio cancellare un'activity dalla mia lista
+    - Cancella [andare a cantare](activity) alle 11:00
+    - Rimuovi [andare al cinema](activity) alle 13:00
+    - Cancella [e-mail](activity) alle 9:30
+    - Cancella [windsurf](activity) alle 01:45
+    - Cancella [casella di controllo](activity) alle 00:00
+    - Cancella [aiutare mia madre](activity) alle 01:45
+    - Cancella [fare shopping](activity) alle 00:00
+    - Rimuovi [unire](activity) alle 3:00
+    - Cancella [andare a un incontro](activity) nella [category lavoro](category) alle 4:25
+    - Cancella [studiare il latino](activity) nella [category scuola](category) alle 2:55
+    - Cancella [test](activity) nella [category pianificazione](category) alle 16:00
+    - Cancella [scrivere il rapporto](activity) nella [category progetto](category) alle 16:00
+    - Cancella [fare il pieno](activity) nella [category auto](category) alle 20:00
+    - Cancella [acquistare il biglietto del treno](activity) nella [category viaggio](category) alle 20:00
+    - Rimuovi [dentista](activity) nella [category assistenza sanitaria](category) alle 22:20
+    - Rimuovi [lavare l'auto](activity) nella [category faccende domestiche](category) alle 22:20
+    - Cancella [blog](activity) nella [category hobby](category) alle 14:50
+    - Cancella [andare in chiesa](activity) nella [category personale](category) alle 19:41
+    - Cancella [ascoltare un podcast](activity) nella [category intrattenimento](category) alle 12:35
+    - Rimuovi [uscire](activity) nella [category società](category) alle 17:30
+    - Rimuovi [andare all'ufficio postale](activity) nella [category pacchi](category) alle 17:30
+    - Cancella [arrampicata](activity) nella [category estate](category) alle 18:30
+    - Cancella [unghie](activity) nella [category estetica](category) alle 9:40
+    - Cancella [passeggiata](activity) nella [category giornaliera](category) alle 7:00
+    - Cancella [studiare per l'esame](activity) nella [category università](category) alle 7:00
+    - Cancella [camminare](activity) nella [category giorno](category) alle 6:30
+    - Cancella [acquistare il pane](activity) nella [category cibo](category) alle 8:00
+    - Rimuovi [spingere](activity) nella [category lavoro](category) alle 10:25
+    - Rimuovi [riordinare l'armadio](activity) nella [category mensile](category) alle 10:25
+    - Cancella [preparare la colazione](activity) nella [category dieta](category) alle 7:30
+    - Cancella [studiare](activity) nella [category scuola](category) alle 19:00
+    - Cancella [pulire la casa](activity) nella [category faccende domestiche](category) alle 19:00
+    - Cancella [pulizia](activity) nella [category casa](category) alle 20:30
+    - Cancella [parola](activity) nella [category programmi](category) alle 21:10
+    - Cancella [andare al mercato](activity) nella [category personale](category) alle 21:10
+    - Rimuovi [dipingere](activity) nella [category creatività](category) alle 9:40
+    - Cancella [giardinaggio](activity) nella [category giardino](category) alle 5:12
+    - Cancella [partecipare alla lezione](activity) nella [category università](category) alle 5:12
+    - Cancella [parrucchiere](activity) nella [category benessere](category) alle 13:39
+    - Rimuovi [annaffiare le piante](activity) nella [category faccende domestiche](category) alle 13:29
+    - Cancella [fare l'intervista](activity) nella [category società](category) alle 11:00
+    - Voglio cancellare un'activity alle 11:00
+    - Voglio cancellare un'activity in un elenco alle 13:39
+    - Voglio cancellare un'activity nella [category comunicazione](category) alle 21:10
+    - Voglio cancellare un'activity nella [category generi alimentari](category) alle 9:40
+    - Voglio cancellare un'activity nella [category commissioni](category) alle 19:00
+    - Voglio cancellare un'activity nella [category imminente](category) alle 16:30
+    - Voglio cancellare un'activity nella [category negozio](category) alle 7:00
+    - Voglio cancellare un'activity nella [category business](category) alle 6:30
+    - Ciao, voglio cancellare un'activity nella [category marketing](category) alle 18:30
+    - Ciao, voglio cancellare un'activity nella [category blog](category) alle 17:30
+    - Ciao, voglio cancellare un'activity nella [category vita](category) alle 22:20
+    - Ciao, voglio cancellare un'activity nella [category stile di vita](category) alle 16:00
+    - Ciao, voglio cancellare un'activity nella [category sociale](category) alle 14:50
+    - Ciao, voglio cancellare un'activity nella [category cura](category) alle 3:29
+    - Ciao, voglio cancellare un'activity nella mia lista alle 12:37
+    - Ciao, voglio cancellare un'activity nella mia lista alle 18:14
 
 - intent: set_status_activity
   examples: |
