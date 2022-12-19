@@ -89,6 +89,7 @@ nlu:
     - Sei un umano?
     - Sto parlando con un bot?
     - Sto parlando con un umano?
+    - tu chi sei?
 
 - intent: help
   examples: |
