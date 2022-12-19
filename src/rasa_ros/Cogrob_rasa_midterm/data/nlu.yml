@@ -845,7 +845,7 @@ nlu:
     - Ciao, voglio impostare [incompleto](activity_status) un'attività in un elenco [critical](category)
     - Ciao, voglio impostare [incompleto](activity_status) un'attività nella mia lista 
     - Ciao, voglio impostare [incompleto](activity_status) un'attività nella mia lista 
-    - Ciao, voglio impostare [incompleto](activity_status)tutte le attività in un elenco [leadership](category)
+    - Ciao, voglio impostare [incompleto](activity_status) tutte le attività in un elenco [leadership](category)
     - Annullare [completato](activity_status) [uscita](activity)
     - Annullare [completato](activity_status) [guardaroba](activity)
     - Annullare [completato](activity_status) [prenotazione](activity)
@@ -926,24 +926,24 @@ nlu:
     - Ciao, sono [Stefania](name) imposta l'attività [incompleta](activity_status).
     - Sono [Antonia](name) imposta [incompleto](activity_status) [esercizi di matematica](activity).
     - Sono [Ines](name) e imposta [incompleto](activity_status) [ricerca](activity).
-    - Sono [Gianpaolo](name) imposta [incompleto](activity_status)[alzarsi](activity).
+    - Sono [Gianpaolo](name) imposta [incompleto](activity_status) [alzarsi](activity).
     - Sono [Pierpaolo](name) imposta [incompleto](activity_status) [blog](activity).
     - Sono [Jasmin](name) imposta [incompleto](activity_status) [prenotazione](activity).
-    - Sono [Manuel](name) e imposta [incompleto](activity_status)[ascoltare musica](activity).
+    - Sono [Manuel](name) e imposta [incompleto](activity_status) [ascoltare musica](activity).
     - Sono [Emanuele](name) e imposta [incompleto](activity_status) [correre nel centro](activity) in [quotidiano](category).
     - Sono [Gabriele](name) e imposta [incompleto](activity_status) [risolvere alcuni problemi](activity) in [progetti](category).
     - Sono [Kevin](name) imposta [incompleto](activity_status) [chiesa](activity) in [settimanale](category).
-    - Sono [Carla](name) imposta [incompleto](activity_status)[controllare la mia stanza](activity) in [casa](category).
+    - Sono [Carla](name) imposta [incompleto](activity_status) [controllare la mia stanza](activity) in [casa](category).
     - Sono [Carlo](name) imposta [incompleto](activity_status) [inviare alcune note](activity) in [impegni](category).
     - Sono [Giancarlo](name) e imposta [incompleto](activity_status) [taekwondo](activity) in [hobby](category).
     - Sono [Augusto](name) imposta [incompleto](activity_status) attività [boxe](activity) in [sport](category).
     - Sono [Ivan](name) e imposta [incompleto](activity_status) attività [studiare matematica](activity) in [università](category).
-    - Sono [Giordano](name) e imposta [incompleto](activity_status)attività [guardaroba](activity) in [abbigliamento](category).
+    - Sono [Giordano](name) e imposta [incompleto](activity_status) attività [guardaroba](activity) in [abbigliamento](category).
     - Sono [Pio](name) imposta [incompleto](activity_status) attività [scrivere al prof](activity) in [educazione](category).
     - Sono [Debora](name) e imposta [incompleto](activity_status) attività [cinema](activity) in [amicizia](category).
     - Sono [Desirè](name) e imposta [incompleto](activity_status) attività [festa](activity) in [divertimento](category).
     - Sono [Michela](name) imposta [incompleto](activity_status) [andare alla banca](activity) nella categoria [finanza](category).
-    - Sono [Gabriella](name) imposta [incompleto](activity_status)[bollette](activity) nella categoria [finanze](category).
+    - Sono [Gabriella](name) imposta [incompleto](activity_status) [bollette](activity) nella categoria [finanze](category).
     - Sono [Giacinta](name), imposta come [Incompleto](activity_status) l'attività di [Giardinaggio](activity) nella categoria [Casa]](category). 
     - Sono [Giada](name), imposta come [Incompleto](activity_status) l'attività di [Prendere i farmaci](activity) nella categoria [Cura della salute](category). 
     - Sono [Fiona](name), imposta come [Incompleto](activity_status) l'attività di [Controllare il progetto](activity) nella categoria [Team](category). 
@@ -1541,7 +1541,7 @@ nlu:
     - Imposta un promemoria per l'attività [chiamata](activity) nella categoria [relazioni](categoria) nella prossima mattina
     - Aiutami a non dimenticare l'attività [studio](activity) nella categoria [scuola](categoria) per domani
     - Aiutami a ricordare l'attività [compleanno](activity) il 12/18/2022
-    - Ricordami l'[esame](activity) domani mattina
+    - Ricordami [l'esame](activity) domani mattina
     - Non farmi dimenticare di [correre](activity) alle 19:00
     - Voglio impostare un promemoria
     - Aiutami a ricordare un'attività
