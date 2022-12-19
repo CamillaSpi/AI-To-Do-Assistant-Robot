@@ -5,15 +5,13 @@ nlu:
   examples: |
     - Ciao
     - Salve
-    - Salve lì
     - Buongiorno
     - Buonasera
-    - Moin
-    - Ehi lì
-    - Andiamo
-    - Ehsonoico
-    - Buongiorno
-    - Buonasera
+    - buon giorno
+    - buona sera
+    - Ehi 
+    - Hey
+    - buona mattina
     - Buon pomeriggio
 
 - intent: goodbye
@@ -22,7 +20,7 @@ nlu:
     - ci vediamo più tardi
     - buona notte
     - alla prossima
-    - arrivederci
+    - ci si vede
     - buona giornata
     - ci vediamo in giro
     - ciao ciao
@@ -32,23 +30,27 @@ nlu:
 - intent: affirm
   examples: |
     - Si
-    - sisi
+    - esatto
     - Indubbiamente
     - Certo
     - esattamente
     - Corretto
-    - Sì
+    - yes
+    - affermativo
     
 - intent: deny
   examples: |
     - no
     - n
     - mai
+    - negativo
     - Non credo
     - Non mi piace
     - Assolutamente no
     - Non proprio
     - Niente da fare
+    - non voglio
+    - non mi va
 
 - intent: mood_great
   examples: |
@@ -62,7 +64,7 @@ nlu:
     - Sto per salvare il mondo
     - Super entusiasta
     - Estremamente buono
-    - Così così perfetto
+    - Così perfetto
     - Così buono
 
 - intent: mood_unhappy
@@ -102,17 +104,17 @@ nlu:
 
 - intent: presentation
   examples: |
-    - ciao,sono [mattia](name) 
-    - ciao,sono [ferdinando](name) 
-    - ciao,sono [nando](name)
-    - ciao,sono [camilla](name) 
-    - ciao,sono [marco](name)
-    - ciao,sono [matteo](name) 
+    - ciao, sono [mattia](name) 
+    - ciao, sono [ferdinando](name) 
+    - ciao, sono [nando](name)
+    - ciao, sono [camilla](name) 
+    - ciao, sono [marco](name)
+    - ciao, sono [matteo](name) 
     - ciao, sono [michele](name)
     - ciao, sono [pierfrancesco](name)
     - ciao sono [ferdi](name)
     - ciao sono [cami](name)
-    - ciao, sono [alex](name)
+    - ciao sono [alex](name)
     - ciao sono [marcello](name)
     - il mio nome è [matti](name) 
     - il mio nome è [alessia](name) 
@@ -137,10 +139,16 @@ nlu:
     - Creare un account
     - Creare un utente
     - Impostare un account
-    - Creare un account
+    - Crea un account
     - Lasciami creare un account
     - Voglio creare un account
     - Nuovo account
+    - utente
+    - Impostare un utente
+    - Crea un utente
+    - Lasciami creare un utente
+    - Voglio creare un utente
+    - Nuovo utente
     - il mio nome è [Ugo](name)
     - hi bot, il mio nome è [Gianluca](name)
     - il mio nome è [Xavier](name)
@@ -296,7 +304,7 @@ nlu:
     - [fare shopping](activity)
     - [suonare](activity)
     - [giocare](activity)
-    - [giocare a partite](activity)
+    - [giocare partita](activity)
     - [giocare a carte](activity)
     - [dipingere](activity)
     - [disegnare](activity)
@@ -338,39 +346,6 @@ nlu:
     - [Impegni](category)
     - [Rapidamente](category)
     - [Calendario](category)
-    - [Desideri](category)
-    - [Desideri](category)
-    - [Carro](category)
-    - [Carrello](category)
-    - [Volte](category)
-    - [Esami](category)
-    - [Materie](category)
-    - [Dieta](category)
-    - [Banca](category)
-    - [Tempo libero](category)
-    - [Farmaci](category)
-    - [Medico](category)
-    - [Ricerca](category)
-    - [Volontariato](category)
-    - [Finanza](category)
-    - [Pagamenti](category)
-    - [Eventi](category)
-    - [Lavoro](category)
-    - [Casa](category)
-    - [Personale](category)
-    - [Università](category)
-    - [Scuola](category)
-    - [Sport](category)
-    - [Lavoro](category)
-    - [Vacanza](category)
-    - [Vacanze](category)
-    - [Quotidiano](category)
-    - [Settimanale](category)
-    - [Progetti](category)
-    - [Mensile](category)
-    - [Rapidamente](category)
-    - [Calendario](category)
-    - [Desideri](category)
     - [Desideri](category)
     - [Carro](category)
     - [Carrello](category)
@@ -415,7 +390,6 @@ nlu:
     - 08/09/2025
     - lunedì prossimo
     - venerdì
-    - lunedì prossimo
     
 - intent: add_item
   examples: |
