@@ -3,6 +3,7 @@ import hashlib
 
 global conn 
 global cur
+global toReturn
 
 class Database:
 
@@ -58,7 +59,9 @@ class Database:
   def initDb(selectedDataBase):
     global conn 
     global cur
+    global toReturn
     if selectedDataBase == 0:
+      toReturn = 0
       conn = sqlite3.connect('data.db')
       cur = conn.cursor()
       conn.execute('''PRAGMA foreign_keys = 1''')
@@ -71,6 +74,7 @@ class Database:
         ''')
       conn.commit()
     else:
+      toReturn=1
       conn = sqlite3.connect('data2.db')
       cur = conn.cursor()
       conn.execute('''PRAGMA foreign_keys = 1''')
@@ -170,6 +174,7 @@ class Database:
 
   @staticmethod
   def selectItems(ID, category=None, activity_status=None, deadline=None):
+    global toReturn
     if ID == None: return None
     if(activity_status == "completed"):
       completed = True
@@ -197,10 +202,26 @@ class Database:
         base_list.append(first_date)
         base_list.append(second_date)
     base_query = base_query + ";"
+    query_dict = {"query": base_query}
     cur.execute(base_query,base_list)
     rows = cur.fetchall()
-
-    return len(rows) if len(rows) > 0 else None
+    if(toReturn == 0):
+      return len(rows),query_dict
+    else:
+      if(len(rows)>0):  
+        category = ["Activities","Category","DeadLine","Completed"]
+        number = [i for i in range(1,len(rows)+1)]
+        row_format ="{:>20}" * (len(category) + 1)
+        toPrint = ""
+        toPrint += (row_format.format("", *category)) + "\n"
+        for team, row in zip(number, rows):
+            if (row[2]):
+              row = (row[0],row[1],row[2][:10]+ " "+row[2][11:16],row[3])
+            else:
+              row = (row[0],row[1],"None",row[3])
+            toPrint += (row_format.format(team, *row)) + "\n"
+        return toPrint,query_dict
+      
 
   @staticmethod
   def deleteItem(ID, activity ,category,deadline):
