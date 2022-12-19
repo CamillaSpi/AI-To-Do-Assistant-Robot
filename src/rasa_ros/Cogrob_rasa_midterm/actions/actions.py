@@ -108,7 +108,6 @@ class actionAddItem(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         global id
-        name = tracker.get_slot("name")
 
         associated_name = Database.getName(id)
         activity = tracker.get_slot("activity")
@@ -143,7 +142,6 @@ class actionRemoveItem(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
-        name = tracker.get_slot("name")
       
         global id
 
@@ -172,7 +170,6 @@ class actionAddCategory(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
-        name = tracker.get_slot("name")
         
         global id
         
@@ -198,7 +195,6 @@ class actionRemoveCategory(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
         
-        name = tracker.get_slot("name")
         global id
         
         associated_name = Database.getName(id)
@@ -222,7 +218,6 @@ class actionSetStatusActivity(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        name = tracker.get_slot("name")
         global id
         #aggiunta
 
@@ -259,7 +254,6 @@ class actionSetInComplete(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        name = tracker.get_slot("name")
         global id
      
         associated_name = Database.getName(id)
@@ -287,7 +281,6 @@ class showActivities(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        name = tracker.get_slot("name")
         global id
         #aggiunta
     
@@ -297,8 +290,8 @@ class showActivities(Action):
         time = tracker.get_slot("time")
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
-        list_of_activity = Database.selectItems(id,category, activity_status, time)
-        dispatcher.utter_message(text=(f"-1 {associated_name} , hai {list_of_activity} attività." if list_of_activity else " Non ci sono attività per te!")) 
+        list_of_activity,json = Database.selectItems(id,category, activity_status, time)
+        dispatcher.utter_message(text=(f"{associated_name} , hai {list_of_activity} attività." if list_of_activity else " Non ci sono attività per te!"),json=json) 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -310,14 +303,13 @@ class showCategories(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        name = tracker.get_slot("name")
         global id
         #aggiunta
         
         associated_name = Database.getName(id)
-        list_of_categories = Database.selectPossessions(id)
+        list_of_categories,json = Database.selectPossessions(id)
         
-        dispatcher.utter_message(text=(f"-1 {associated_name} , hai {list_of_categories} categorie." if list_of_categories else " Non hai alcuna categoria!")) 
+        dispatcher.utter_message(text=(f"{associated_name} , hai {list_of_categories} categorie." if list_of_categories else " Non hai alcuna categoria!"),json=json) 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -329,7 +321,6 @@ class actionModifyCategory(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        name = tracker.get_slot("name")
         global id
         
         associated_name = Database.getName(id)
@@ -356,7 +347,6 @@ class actionModifyActivity(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         possibleDeadlineErrorFlag=False
-        name = tracker.get_slot("name")
         global id
 
 
@@ -441,7 +431,6 @@ class actionCleanCompletedActivities(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        name = tracker.get_slot("name")
         global id 
         
         associated_name = Database.getName(id)         
@@ -615,11 +604,9 @@ class ActionReactToReminder(Action):
         print("sto nella react")
         entities = tracker.latest_message.get("entities")[0]
         # print(entities)
-        id_user = entities['id']
         name = entities['name']
         activity = entities['activity']
         category = entities['category']
-        deadline = entities['deadline']
         expired = entities['expired']
         print(expired)
         if(expired):
@@ -655,7 +642,6 @@ class ActionRecognizeUser(Action):
 
       
         global id
-        name = tracker.get_slot("name")
         
         associated_name = Database.getName(id) 
 
