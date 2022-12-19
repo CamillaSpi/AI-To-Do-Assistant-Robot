@@ -5,24 +5,24 @@
 ### To test use rasa test core --stories ./tests/test_stories.yml --out results ####
 stories:
 
-#################################### Test Stories  Add Item Single Cases ######################################
-- story: later presentation and add activity (single) without deadline 1
+#################################### Test Stories  aggiungi Item Single Cases ######################################
+- story: later presentation and aggiungi activity (single) without deadline 1
   steps:
   - user: |
-      add an activity
+      Aggiungi un'activity
     intent: add_item
   - action: add_item_form
   - active_loop: add_item_form
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: add_item_form
   - user: |
-      [walk](activity)
+      [camminare](activity)
     intent: inform
   - action: add_item_form
   - user: |
-      [health](category)
+      [salute](category)
     intent: inform
   - action: add_item_form
   - active_loop: null
@@ -32,29 +32,29 @@ stories:
     intent: deny
   - action: action_add_item 
 
-- story: later presentation and add activity (single) with deadline 1
+- story: later presentation and aggiungi activity (single) with deadline 1
   steps:
   - user: |
-      add an activity
+      Aggiungi un'activity
     intent: add_item
   - action: add_item_form
   - active_loop: add_item_form
   - user: |
-      im [fragola86](username)
+      sono [fragola86](name)
     intent: presentation
   - action: add_item_form
   - user: |
-      [study](activity)
+      [studiare](activity)
     intent: inform
   - action: add_item_form
   - user: |
-      [healthcare](category)
+      [Assistenza sanitaria](category)
     intent: inform
   - action: add_item_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      yes
+      si
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -67,30 +67,30 @@ stories:
   - active_loop: null
   - action: utter_ask_if_reminder
   - user: |
-      yes
+      si
     intent: affirm
   - action: action_set_reminder_slot
   - action: action_add_item
     
-- story: presentation and add activity (single) without deadline 1
+- story: presentation and aggiungi activity (single) without deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      add an activity
+      Aggiungi un'activity
     intent: add_item
   - action: add_item_form
   - active_loop: add_item_form
   - user: |
-      [walk](activity)
+      [camminare](activity)
     intent: inform
   - action: add_item_form
   - user: |
-      [health](category)
+      [salute](category)
     intent: inform
   - action: add_item_form
   - active_loop: null
@@ -100,31 +100,31 @@ stories:
     intent: deny
   - action: action_add_item 
 
-- story: presentation and add activity (single) with deadline 1
+- story: presentation and aggiungi activity (single) with deadline 1
   steps:
   - user: |
-      im [fragola86](username)
+      sono [fragola86](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      add an activity
+      Aggiungi un'activity
     intent: add_item
   - action: add_item_form
   - active_loop: add_item_form
   - user: |
-      [study](activity)
+      [studiare](activity)
     intent: inform
   - action: add_item_form
   - user: |
-      [healthcare](category)
+      [Assistenza sanitaria](category)
     intent: inform
   - action: add_item_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      yes
+      si
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -137,26 +137,26 @@ stories:
   - active_loop: null
   - action: utter_ask_if_reminder
   - user: |
-      yes
+      si
     intent: affirm
   - action: action_set_reminder_slot
   - action: action_add_item
 
 
-#################################### Test Stories  Add Item Double Cases ######################################
-- story: later presentation and add activity (double) without deadline 1
+#################################### Test Stories  aggiungi Item Double Cases ######################################
+- story: later presentation and aggiungi activity (double) without deadline 1
   steps:
   - user: |
-      add an activity
+      Aggiungi un'activity
     intent: add_item
   - action: add_item_form
   - active_loop: add_item_form
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: add_item_form
   - user: |
-      [walk](activity) in [health](category)
+      [camminare](activity) in [salute](category)
     intent: inform
   - action: add_item_form
   - active_loop: null
@@ -166,25 +166,25 @@ stories:
     intent: deny
   - action: action_add_item 
 
-- story: later presentation and add activity (dobule) with deadline 1
+- story: later presentation and aggiungi activity (dobule) with deadline 1
   steps:
   - user: |
-      add an activity
+      Aggiungi un'activity
     intent: add_item
   - action: add_item_form
   - active_loop: add_item_form
   - user: |
-      im [fragola86](username)
+      sono [fragola86](name)
     intent: presentation
   - action: add_item_form
   - user: |
-      add[study](activity) in [healthcare](category)
+      aggiungi [studiare](activity) in [Assistenza sanitaria](category)
     intent: inform
   - action: add_item_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      yes
+      si
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -197,22 +197,22 @@ stories:
   - active_loop: null
   - action: utter_ask_if_reminder
   - user: |
-      yes
+      si
     intent: affirm
   - action: action_set_reminder_slot
   - action: action_add_item
     
-- story: presentation and add activity (dobule) without deadline 1
+- story: presentation and aggiungi activity (dobule) without deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      add [walk](activity) in [health](category)
+      aggiungi [camminare](activity) in [salute](category)
     intent: add_item
   - action: add_item_form
   - active_loop: add_item_form
@@ -223,27 +223,27 @@ stories:
     intent: deny
   - action: action_add_item 
 
-- story: presentation and add activity (dobule) with deadline 1
+- story: presentation and aggiungi activity (dobule) with deadline 1
   steps:
   - user: |
-      im [fragola86](username)
+      sono [fragola86](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      add an activity
+      Aggiungi un'activity
     intent: add_item
   - action: add_item_form
   - active_loop: add_item_form
   - user: |
-      add [walk](activity) in [health](category)
+      aggiungi [camminare](activity) in [salute](category)
     intent: add_item
   - action: add_item_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      yes
+      si
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -256,30 +256,30 @@ stories:
   - active_loop: null
   - action: utter_ask_if_reminder
   - user: |
-      yes
+      si
     intent: affirm
   - action: action_set_reminder_slot
   - action: action_add_item
 
 
-#################################### Test Stories  Remove Item Single Cases without deadline ######################################
-- story: later presentation and fake remove activity (single) without deadline 1
+#################################### Test Stories  rimuovi Item Single Cases without deadline ######################################
+- story: later presentation and fake rimuovi activity (single) without deadline 1
   steps:
   - user: |
-      remove an activity
+      Rimuovi un'activity
     intent: remove_item
   - action: remove_item_form
   - active_loop: remove_item_form
   - user: |
-      im [alfredinoPaneEVino](username)
+      sono [alfredo](name)
     intent: presentation
   - action: remove_item_form
   - user: |
-      [walk](activity)
+      [camminare](activity)
     intent: inform
   - action: remove_item_form
   - user: |
-      [health](category)
+      [salute](category)
     intent: inform
   - action: remove_item_form
   - active_loop: null
@@ -294,23 +294,23 @@ stories:
   - action: utter_deny_choice
   - action: action_reset_slot
 
-- story: later presentation and real remove activity (single) without deadline 1
+- story: later presentation and real rimuovi activity (single) without deadline 1
   steps:
   - user: |
-      remove an activity
+      Rimuovi un'activity
     intent: remove_item
   - action: remove_item_form
   - active_loop: remove_item_form
   - user: |
-      im [alfredinoPaneEVino](username)
+      sono [alfredo](name)
     intent: presentation
   - action: remove_item_form
   - user: |
-      [walk](activity)
+      [camminare](activity)
     intent: inform
   - action: remove_item_form
   - user: |
-      [health](category)
+      [salute](category)
     intent: inform
   - action: remove_item_form
   - active_loop: null
@@ -320,29 +320,29 @@ stories:
     intent: deny
   - action: utter_confirm_choice
   - user: |
-      yes
+      si
     intent: affirm
   - action: action_remove_item
 
-- story: presentation and fake remove activity (single) without deadline 1
+- story: presentation and fake rimuovi activity (single) without deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      remo an activity
+      cancella un'activity
     intent: remove_item
   - action: remove_item_form
   - active_loop: remove_item_form
   - user: |
-      [walk](activity)
+      [camminare](activity)
     intent: inform
   - action: remove_item_form
   - user: |
-      [health](category)
+      [salute](category)
     intent: inform
   - action: remove_item_form
   - active_loop: null
@@ -356,25 +356,25 @@ stories:
     intent: affirm
   - action: action_remove_item
 
-- story: presentation and real remove activity (single) without deadline 1
+- story: presentation and real rimuovi activity (single) without deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      remo an activity
+      cancella un'activity
     intent: remove_item
   - action: remove_item_form
   - active_loop: remove_item_form
   - user: |
-      [walk](activity)
+      [camminare](activity)
     intent: inform
   - action: remove_item_form
   - user: |
-      [health](category)
+      [salute](category)
     intent: inform
   - action: remove_item_form
   - active_loop: null
@@ -384,24 +384,24 @@ stories:
     intent: deny
   - action: utter_confirm_choice
   - user: |
-      yes
+      si
     intent: affirm
   - action: action_remove_item
 
-#################################### Test Stories  Remove Item Double Cases without deadline ######################################
-- story: later presentation and fake remove activity (double) without deadline 1
+#################################### Test Stories  rimuovi Item Double Cases without deadline ######################################
+- story: later presentation and fake rimuovi activity (double) without deadline 1
   steps:
   - user: |
-      remove an activity
+      Rimuovi un'activity
     intent: remove_item
   - action: remove_item_form
   - active_loop: remove_item_form
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: remove_item_form
   - user: |
-      [walk](activity) in [health](category)
+      [camminare](activity) in [salute](category)
     intent: inform
   - action: remove_item_form
   - active_loop: null
@@ -416,19 +416,19 @@ stories:
   - action: utter_deny_choice
   - action: action_reset_slot
 
-- story: later presentation and real remove activity (double) without deadline 1
+- story: later presentation and real rimuovi activity (double) without deadline 1
   steps:
   - user: |
-      remove an activity
+      Rimuovi un'activity
     intent: remove_item
   - action: remove_item_form
   - active_loop: remove_item_form
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: remove_item_form
   - user: |
-      [walk](activity) in [health](category)
+      [camminare](activity) in [salute](category)
     intent: inform
   - action: remove_item_form
   - active_loop: null
@@ -438,22 +438,22 @@ stories:
     intent: deny
   - action: utter_confirm_choice
   - user: |
-      yes
+      si
     intent: affirm
   - action: action_remove_item
 
     
-- story: presentation and fake remove activity (dobule) without deadline 1
+- story: presentation and fake rimuovi activity (dobule) without deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      add [walk](activity) in [health](category)
+      aggiungi [camminare](activity) in [salute](category)
     intent: remove_item
   - action: remove_item_form
   - active_loop: remove_item_form
@@ -469,17 +469,17 @@ stories:
   - action: utter_deny_choice
   - action: action_reset_slot
 
-- story: presentation and real remove activity (dobule) without deadline 1
+- story: presentation and real rimuovi activity (dobule) without deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      remove [walk](activity) in [health](category)
+      rimuovi [camminare](activity) da [salute](category)
     intent: remove_item
   - action: remove_item_form
   - active_loop: remove_item_form
@@ -490,193 +490,35 @@ stories:
     intent: deny
   - action: utter_confirm_choice
   - user: |
-      yes
+      si
     intent: affirm
   - action: action_remove_item
 
 
-#################################### Test Stories  Remove Item Single Cases with deadline ######################################
-- story: later presentation and fake remove activity (single) with deadline 1
+#################################### Test Stories  rimuovi Item Single Cases with deadline ######################################
+- story: later presentation and fake rimuovi activity (single) with deadline 1
   steps:
   - user: |
-      remove an activity
+      Rimuovi un'activity
     intent: remove_item
   - action: remove_item_form
   - active_loop: remove_item_form
   - user: |
-      im [alfredinoPaneEVino](username)
+      sono [alfredo](name)
     intent: presentation
   - action: remove_item_form
   - user: |
-      [walk](activity)
+      [camminare](activity)
     intent: inform
   - action: remove_item_form
   - user: |
-      [health](category)
+      [salute](category)
     intent: inform
   - action: remove_item_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      yes
-    intent: affirm
-  - action: add_deadline_form
-  - active_loop: add_deadline_form
-  - user: |
-      09/27/2022
-    intent: inform
-  - action: add_deadline_form
-  - slot_was_set:
-    - time: "2022-09-27T00:00:00.000+02:00"
-  - active_loop: null
-  - action: utter_confirm_choice
-  - user: |
-      no
-    intent: deny
-  - action: utter_deny_choice
-  - action: action_reset_slot
-
-- story: later presentation and real remove activity (single) with deadline 1
-  steps:
-  - user: |
-      remove an activity
-    intent: remove_item
-  - action: remove_item_form
-  - active_loop: remove_item_form
-  - user: |
-      im [alfredinoPaneEVino](username)
-    intent: presentation
-  - action: remove_item_form
-  - user: |
-      [walk](activity)
-    intent: inform
-  - action: remove_item_form
-  - user: |
-      [health](category)
-    intent: inform
-  - action: remove_item_form
-  - active_loop: null
-  - action: utter_ask_if_deadline
-  - user: |
-      yes
-    intent: affirm
-  - action: add_deadline_form
-  - active_loop: add_deadline_form
-  - user: |
-      09/27/2022
-    intent: inform
-  - action: add_deadline_form
-  - slot_was_set:
-    - time: "2022-09-27T00:00:00.000+02:00"
-  - active_loop: null
-  - action: utter_confirm_choice
-  - user: |
-      yes
-    intent: affirm
-  - action: action_remove_item
-
-- story: presentation and fake remove activity (single) with deadline 1
-  steps:
-  - user: |
-      im [nandinoxD](username)
-    intent: presentation
-  - action: recognize_user_form
-  - active_loop: null
-  - action: action_recognize_user
-  - user: |
-      remo an activity
-    intent: remove_item
-  - action: remove_item_form
-  - active_loop: remove_item_form
-  - user: |
-      [walk](activity)
-    intent: inform
-  - action: remove_item_form
-  - user: |
-      [health](category)
-    intent: inform
-  - action: remove_item_form
-  - active_loop: null
-  - action: utter_ask_if_deadline
-  - user: |
-      yes
-    intent: affirm
-  - action: add_deadline_form
-  - active_loop: add_deadline_form
-  - user: |
-      09/27/2022
-    intent: inform
-  - action: add_deadline_form
-  - slot_was_set:
-    - time: "2022-09-27T00:00:00.000+02:00"
-  - active_loop: null
-  - action: utter_confirm_choice
-  - user: |
-      no
-    intent: affirm
-  - action: action_remove_item
-
-- story: presentation and real remove activity (single) with deadline 1
-  steps:
-  - user: |
-      im [nandinoxD](username)
-    intent: presentation
-  - action: recognize_user_form
-  - active_loop: null
-  - action: action_recognize_user
-  - user: |
-      remo an activity
-    intent: remove_item
-  - action: remove_item_form
-  - active_loop: remove_item_form
-  - user: |
-      [walk](activity)
-    intent: inform
-  - action: remove_item_form
-  - user: |
-      [health](category)
-    intent: inform
-  - action: remove_item_form
-  - active_loop: null
-  - action: utter_ask_if_deadline
-  - user: |
-      yes
-    intent: affirm
-  - action: add_deadline_form
-  - active_loop: add_deadline_form
-  - user: |
-      09/27/2022
-    intent: inform
-  - action: add_deadline_form
-  - slot_was_set:
-    - time: "2022-09-27T00:00:00.000+02:00"
-  - active_loop: null
-  - action: utter_confirm_choice
-  - user: |
-      yes
-    intent: affirm
-  - action: action_remove_item
-
-#################################### Test Stories  Remove Item Double Cases with deadline ######################################
-- story: later presentation and fake remove activity (double) with deadline 1
-  steps:
-  - user: |
-      remove an activity
-    intent: remove_item
-  - action: remove_item_form
-  - active_loop: remove_item_form
-  - user: |
-      im [nandinoxD](username)
-    intent: presentation
-  - action: remove_item_form
-  - user: |
-      [walk](activity) in [health](category)
-    intent: inform
-  - action: remove_item_form
-  - active_loop: null
-  - action: utter_ask_if_deadline
-  - user: |
-      yes
+      si
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -694,19 +536,177 @@ stories:
   - action: utter_deny_choice
   - action: action_reset_slot
 
-- story: later presentation and real remove activity (double) direct deadline 1
+- story: later presentation and real rimuovi activity (single) with deadline 1
   steps:
   - user: |
-      remove an activity
+      Rimuovi un'activity
     intent: remove_item
   - action: remove_item_form
   - active_loop: remove_item_form
   - user: |
-      im [nandinoxD](username)
+      sono [alfredo](name)
     intent: presentation
   - action: remove_item_form
   - user: |
-      [walk](activity) in [health](category) at 22th december 2022
+      [camminare](activity)
+    intent: inform
+  - action: remove_item_form
+  - user: |
+      [salute](category)
+    intent: inform
+  - action: remove_item_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - user: |
+      si
+    intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - user: |
+      09/27/2022
+    intent: inform
+  - action: add_deadline_form
+  - slot_was_set:
+    - time: "2022-09-27T00:00:00.000+02:00"
+  - active_loop: null
+  - action: utter_confirm_choice
+  - user: |
+      si
+    intent: affirm
+  - action: action_remove_item
+
+- story: presentation and fake rimuovi activity (single) with deadline 1
+  steps:
+  - user: |
+      sono [ferdinando](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      cancella un'activity
+    intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - user: |
+      [camminare](activity)
+    intent: inform
+  - action: remove_item_form
+  - user: |
+      [salute](category)
+    intent: inform
+  - action: remove_item_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - user: |
+      si
+    intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - user: |
+      09/27/2022
+    intent: inform
+  - action: add_deadline_form
+  - slot_was_set:
+    - time: "2022-09-27T00:00:00.000+02:00"
+  - active_loop: null
+  - action: utter_confirm_choice
+  - user: |
+      no
+    intent: affirm
+  - action: action_remove_item
+
+- story: presentation and real rimuovi activity (single) with deadline 1
+  steps:
+  - user: |
+      sono [ferdinando](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      cancella un'activity
+    intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - user: |
+      [camminare](activity)
+    intent: inform
+  - action: remove_item_form
+  - user: |
+      [salute](category)
+    intent: inform
+  - action: remove_item_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - user: |
+      si
+    intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - user: |
+      09/27/2022
+    intent: inform
+  - action: add_deadline_form
+  - slot_was_set:
+    - time: "2022-09-27T00:00:00.000+02:00"
+  - active_loop: null
+  - action: utter_confirm_choice
+  - user: |
+      si
+    intent: affirm
+  - action: action_remove_item
+
+#################################### Test Stories  rimuovi Item Double Cases with deadline ######################################
+- story: later presentation and fake rimuovi activity (double) with deadline 1
+  steps:
+  - user: |
+      Rimuovi un'activity
+    intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - user: |
+      sono [ferdinando](name)
+    intent: presentation
+  - action: remove_item_form
+  - user: |
+      [camminare](activity) in [salute](category)
+    intent: inform
+  - action: remove_item_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - user: |
+      si
+    intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - user: |
+      09/27/2022
+    intent: inform
+  - action: add_deadline_form
+  - slot_was_set:
+    - time: "2022-09-27T00:00:00.000+02:00"
+  - active_loop: null
+  - action: utter_confirm_choice
+  - user: |
+      no
+    intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+
+- story: later presentation and real rimuovi activity (double) direct deadline 1
+  steps:
+  - user: |
+      Rimuovi un'activity
+    intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - user: |
+      sono [ferdinando](name)
+    intent: presentation
+  - action: remove_item_form
+  - user: |
+      [camminare](activity) in [salute](category) il 22 dicembre 2022
     intent: inform
   - slot_was_set:
     - time: "2022-12-22T00:00:00.000+01:00"
@@ -714,22 +714,22 @@ stories:
   - active_loop: null
   - action: utter_confirm_choice
   - user: |
-      yes
+      si
     intent: affirm
   - action: action_remove_item
 
     
-- story: presentation and fake remove activity (dobule) direct deadline 1
+- story: presentation and fake rimuovi activity (dobule) direct deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      add [walk](activity) in [health](category) at at 22th december 2022
+      aggiungi [camminare](activity) in [salute](category) il 22 dicembre 2022
     intent: remove_item
   - slot_was_set:
     - time: "2022-12-22T00:00:00.000+01:00"
@@ -743,17 +743,17 @@ stories:
   - action: utter_deny_choice
   - action: action_reset_slot
 
-- story: presentation and real remove activity (dobule) with deadline 1
+- story: presentation and real rimuovi activity (dobule) with deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      remove [walk](activity) in [health](category) at 27th september 2022
+      rimuovi [camminare](activity) da [salute](category) il 27 settembre 2022
     intent: remove_item
   - slot_was_set:
     - time: "2022-09-27T00:00:00.000+02:00"
@@ -762,36 +762,36 @@ stories:
   - active_loop: null
   - action: utter_confirm_choice
   - user: |
-      yes
+      si
     intent: affirm
   - action: action_remove_item
 
 
 
-#################################### Test Stories  Set Status Completed Single ######################################
-- story: later presentation and set Complete (single) with deadline 1
+#################################### Test Stories  setta Status Completed Single ######################################
+- story: later presentation and setta Complete (single) with deadline 1
   steps:
   - user: |
-      set [completed](activity_status)
+      imposta [completata](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      im [marc3ll0](username)
+      sono [alfredo](name)
     intent: presentation
   - action: set_status_activity_form
   - user: |
-      [study](activity)
+      [studiare](activity)
     intent: inform
   - action: set_status_activity_form
   - user: |
-      [personal](category)
+      [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      yes
+      si
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -804,23 +804,23 @@ stories:
   - active_loop: null
   - action: action_set_status_activity
 
-- story: later presentation and set Complete (single) without deadline 1
+- story: later presentation and setta Complete (single) without deadline 1
   steps:
   - user: |
-      set [completed](activity_status)
+      imposta [completata](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      im [marc3ll0](username)
+      sono [alfredo](name)
     intent: presentation
   - action: set_status_activity_form
   - user: |
-      [study](activity)
+      [studiare](activity)
     intent: inform
   - action: set_status_activity_form
   - user: |
-      [personal](category)
+      [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
@@ -830,32 +830,32 @@ stories:
     intent: deny
   - action: action_set_status_activity
 
-- story: presentation and set Complete (single) with deadline 1
+- story: presentation and setta Complete (single) with deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      set [completed](activity_status)
+      imposta [completata](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      [study](activity)
+      [studiare](activity)
     intent: inform
   - action: set_status_activity_form
   - user: |
-      [personal](category)
+      [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      yes
+      si
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -868,26 +868,26 @@ stories:
   - active_loop: null
   - action: action_set_status_activity
 
-- story: presentation and set Complete (single) without deadline 1
+- story: presentation and setta Complete (single) without deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      set [completed](activity_status)
+      imposta [completata](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      [study](activity)
+      [studiare](activity)
     intent: inform
   - action: set_status_activity_form
   - user: |
-      [personal](category)
+      [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
@@ -897,26 +897,26 @@ stories:
     intent: deny
   - action: action_set_status_activity
 
-#################################### Test Stories  Set Status Completed Double ######################################
-- story: later presentation and set Complete (double) with deadline 1
+#################################### Test Stories  setta Status Completed Double ######################################
+- story: later presentation and setta Complete (double) with deadline 1
   steps:
   - user: |
-      set [completed](activity_status)
+      imposta [completata](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      im [marc3ll0](username)
+      sono [alfredo](name)
     intent: presentation
   - action: set_status_activity_form
   - user: |
-      [study]{"entity": "activity", "role": "new"} in [personal](category)
+      [studiare]{"entity": "activity", "role": "new"} in [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      yes
+      si
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -929,19 +929,19 @@ stories:
   - active_loop: null
   - action: action_set_status_activity
 
-- story: later presentation and set Complete (double) without deadline 1
+- story: later presentation and setta Complete (double) without deadline 1
   steps:
   - user: |
-      set [completed](activity_status)
+      imposta [completata](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      im [marc3ll0](username)
+      sono [alfredo](name)
     intent: presentation
   - action: set_status_activity_form
   - user: |
-      [study]{"entity": "activity", "role": "new"} in [personal](category)
+      [studiare]{"entity": "activity", "role": "new"} in [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
@@ -951,28 +951,28 @@ stories:
     intent: deny
   - action: action_set_status_activity
 
-- story: presentation and set Complete (double) with deadline 1
+- story: presentation and setta Complete (double) with deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      set [completed](activity_status)
+      imposta [completata](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      [study]{"entity": "activity", "role": "new"} in  [personal](category)
+      [studiare]{"entity": "activity", "role": "new"} in  [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      yes
+      si
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -985,22 +985,22 @@ stories:
   - active_loop: null
   - action: action_set_status_activity
 
-- story: presentation and set Complete (double) without deadline 1
+- story: presentation and setta Complete (double) without deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      set [completed](activity_status)
+      imposta [completata](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      [study]{"entity": "activity", "role": "new"} in  [personal](category)
+      [studiare]{"entity": "activity", "role": "new"} in  [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
@@ -1010,20 +1010,20 @@ stories:
     intent: deny
   - action: action_set_status_activity
 
-#################################### Test Stories  Set Status Completed all ######################################
-- story: later presentation and set Complete (all) with deadline 1
+#################################### Test Stories  setta Status Completed all ######################################
+- story: later presentation and setta Complete (all) with deadline 1
   steps:
   - user: |
-      set [completed](activity_status)
+      imposta [completata](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      im [marc3ll0](username)
+      sono [alfredo](name)
     intent: presentation
   - action: set_status_activity_form
   - user: |
-      [study]{"entity": "activity", "role": "new"} in [personal](category) on 09/27/2022
+      [studiare]{"entity": "activity", "role": "new"} in [personale](category) il 09/27/2022
     intent: inform
   - slot_was_set:
     - time: "2022-09-27T00:00:00.000+02:00"
@@ -1031,22 +1031,22 @@ stories:
   - active_loop: null
   - action: action_set_status_activity
 
-- story: presentation and set Complete (all) with deadline 1
+- story: presentation and setta Complete (all) with deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      set [completed](activity_status)
+      imposta [completata](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      [study](activity) in [personal](category) on 09/27/2022
+      [studiare](activity) in [personale](category) il 09/27/2022
     intent: inform
   - slot_was_set:
     - time: "2022-09-27T00:00:00.000+02:00"
@@ -1054,30 +1054,30 @@ stories:
   - active_loop: null
   - action: action_set_status_activity
 
-#################################### Test Stories  Set Status uncompleted Single ######################################
-- story: later presentation and set unCompleted (single) with deadline 1
+#################################### Test Stories  setta Status incompleta Single ######################################
+- story: later presentation and setta incompleta (single) with deadline 1
   steps:
   - user: |
-      set [uncompleted](activity_status)
+      setta [incompleta](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      im [marc3ll0](username)
+      sono [alfredo](name)
     intent: presentation
   - action: set_status_activity_form
   - user: |
-      [study](activity)
+      [studiare](activity)
     intent: inform
   - action: set_status_activity_form
   - user: |
-      [personal](category)
+      [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      yes
+      si
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -1090,23 +1090,23 @@ stories:
   - active_loop: null
   - action: action_set_status_activity
 
-- story: later presentation and set unCompleted (single) without deadline 1
+- story: later presentation and setta incompleta (single) without deadline 1
   steps:
   - user: |
-      set [uncompleted](activity_status)
+      setta [incompleta](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      im [marc3ll0](username)
+      sono [alfredo](name)
     intent: presentation
   - action: set_status_activity_form
   - user: |
-      [study](activity)
+      [studiare](activity)
     intent: inform
   - action: set_status_activity_form
   - user: |
-      [personal](category)
+      [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
@@ -1116,32 +1116,32 @@ stories:
     intent: deny
   - action: action_set_status_activity
 
-- story: presentation and set unCompleted (single) with deadline 1
+- story: presentation and setta incompleta (single) with deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      set [uncompleted](activity_status)
+      setta [incompleta](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      [study](activity)
+      [studiare](activity)
     intent: inform
   - action: set_status_activity_form
   - user: |
-      [personal](category)
+      [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      yes
+      si
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -1154,26 +1154,26 @@ stories:
   - active_loop: null
   - action: action_set_status_activity
 
-- story: presentation and set unCompleted (single) without deadline 1
+- story: presentation and setta incompleta (single) without deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      set [uncompleted](activity_status)
+      setta [incompleta](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      [study](activity)
+      [studiare](activity)
     intent: inform
   - action: set_status_activity_form
   - user: |
-      [personal](category)
+      [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
@@ -1183,26 +1183,26 @@ stories:
     intent: deny
   - action: action_set_status_activity
 
-#################################### Test Stories  Set Status UnCompleted Double ######################################
-- story: later presentation and set unCompleted (double) with deadline 1
+#################################### Test Stories  setta Status incompleta Double ######################################
+- story: later presentation and setta incompleta (double) with deadline 1
   steps:
   - user: |
-      set [uncompleted](activity_status)
+      setta [incompleta](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      im [marc3ll0](username)
+      sono [alfredo](name)
     intent: presentation
   - action: set_status_activity_form
   - user: |
-      [study](activity) in [personal](category)
+      [studiare](activity) in [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      yes
+      si
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -1215,19 +1215,19 @@ stories:
   - active_loop: null
   - action: action_set_status_activity
 
-- story: later presentation and set unCompleted (double) without deadline 1
+- story: later presentation and setta incompleta (double) without deadline 1
   steps:
   - user: |
-      set [uncompleted](activity_status)
+      setta [incompleta](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      im [marc3ll0](username)
+      sono [alfredo](name)
     intent: presentation
   - action: set_status_activity_form
   - user: |
-      [study]{"entity": "activity", "role": "new"} in [personal](category)
+      [studiare]{"entity": "activity", "role": "new"} in [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
@@ -1237,28 +1237,28 @@ stories:
     intent: deny
   - action: action_set_status_activity
 
-- story: presentation and set unCompleted (double) with deadline 1
+- story: presentation and setta incompleta (double) with deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      set [uncompleted](activity_status)
+      setta [incompleta](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      [study](activity) in [personal](category)
+      [studiare](activity) in [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      yes
+      si
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -1271,22 +1271,22 @@ stories:
   - active_loop: null
   - action: action_set_status_activity
 
-- story: presentation and set unCompleted (double) without deadline 1
+- story: presentation and setta incompleta (double) without deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      set [uncompleted](activity_status)
+      setta [incompleta](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      [study](activity) in  [personal](category)
+      [studiare](activity) in  [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
@@ -1296,20 +1296,20 @@ stories:
     intent: deny
   - action: action_set_status_activity
 
-#################################### Test Stories  Set Status UnCompleted all ######################################
-- story: later presentation and set unCompleted (all) with deadline 1
+#################################### Test Stories  setta Status incompleta all ######################################
+- story: later presentation and setta incompleta (all) with deadline 1
   steps:
   - user: |
-      set [uncompleted](activity_status)
+      setta [incompleta](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      im [marc3ll0](username)
+      sono [alfredo](name)
     intent: presentation
   - action: set_status_activity_form
   - user: |
-      [study](activity) in [personal](category) on 09/27/2022
+      [studiare](activity) in [personale](category) il 09/27/2022
     intent: inform
   - slot_was_set:
     - time: "2022-09-27T00:00:00.000+02:00"
@@ -1317,22 +1317,22 @@ stories:
   - active_loop: null
   - action: action_set_status_activity
 
-- story: presentation and set unCompleted (all) with deadline 1
+- story: presentation and setta incompleta (all) with deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      set [uncompleted](activity_status)
+      setta [incompleta](activity_status)
     intent: set_status_activity
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      [study](activity) in [personal](category) on 09/27/2022
+      [studiare](activity) in [personale](category) il 09/27/2022
     intent: inform
   - slot_was_set:
     - time: "2022-09-27T00:00:00.000+02:00"
@@ -1344,12 +1344,12 @@ stories:
 - story: later presentation and modify the category of an activity without deadline
   steps:
   - user: |
-      I want to change the category [courses]{"entity": "category", "role": "old"} of the activity [study](activity) in [university]{"entity": "category", "role": "new"}
+      cambiami la categoria [corsi]{"entity": "category", "role": "old"} dell'attività [studiare](activity) in [università]{"entity": "category", "role": "new"}
     intent: modify_activity_category
   - action: modify_activity_category_form
   - active_loop: modify_activity_category_form
   - user: |
-      im [floricenta1](username)
+      sono [alfredo](name)
     intent: presentation
   - action: modify_activity_category_form
   - active_loop: null
@@ -1362,18 +1362,18 @@ stories:
 - story: later presentation and modify the category of an activity with deadline
   steps:
   - user: |
-      I want to change the category [courses]{"entity": "category", "role": "old"} of the activity [study](activity) in [university]{"entity": "category", "role": "new"}
+      cambiami la categoria [corsi]{"entity": "category", "role": "old"} dell'attività [studiare](activity) in [università]{"entity": "category", "role": "new"}
     intent: modify_activity_category
   - action: modify_activity_category_form
   - active_loop: modify_activity_category_form
   - user: |
-      im [misterJack](username)
+      sono [alfredo](name)
     intent: presentation
   - action: modify_activity_category_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      yes
+      si
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -1389,14 +1389,14 @@ stories:
 - story: presentation and modify the category of an activity without deadline
   steps:
   - user: |
-      im [armadillo1999](username)
+      sono [alfredo](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-       I want to change the category [courses]{"entity": "category", "role": "old"} of the activity [study](activity) in [university]{"entity": "category", "role": "new"}
+       cambiami la categoria [corsi]{"entity": "category", "role": "old"} dell'attività [studiare](activity) in [università]{"entity": "category", "role": "new"}
     intent: modify_activity_category
   - action: modify_activity_category_form
   - active_loop: modify_activity_category_form
@@ -1410,21 +1410,21 @@ stories:
 - story: presentation and modify the category of an activity with deadline
   steps:
   - user: |
-      im [napoliUnicoAmore1926](username)
+      sono [alfredo](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-       I want to change the category [courses]{"entity": "category", "role": "old"} of the activity [study](activity) in [university]{"entity": "category", "role": "new"}
+       cambiami la categoria [corsi]{"entity": "category", "role": "old"} dell'attività [studiare](activity) in [università]{"entity": "category", "role": "new"}
     intent: modify_activity_category
   - action: modify_activity_category_form
   - active_loop: modify_activity_category_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      yes
+      si
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -1437,18 +1437,18 @@ stories:
   - active_loop: null
   - action: action_modify_activity
 
-#################################### Test Stories  Add Item Other ######################################
-- story: later presentation and add activity already deadline 1
+#################################### Test Stories  aggiungi Item Other ######################################
+- story: later presentation and aggiungi activity already deadline 1
   steps:
   - user: |
-      add [run](activity) into [daily](category) on 22th december 2022
+      aggiungi [corsa](activity) in [giornaliera](category) il 22 dicembre 2022
     intent: add_item
   - slot_was_set:
     - time: "2022-12-22T00:00:00.000+01:00"
   - action: add_item_form
   - active_loop: add_item_form
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: add_item_form
   - active_loop: null
@@ -1458,16 +1458,16 @@ stories:
     intent: deny
   - action: action_add_item 
 
-- story: presentation and add activity already deadline 1
+- story: presentation and aggiungi activity already deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      add [run](activity) into [daily](category) on 22th december 2022
+      aggiungi [corsa](activity) in [giornaliera](category) il 22 dicembre 2022
     intent: add_item
   - slot_was_set:
     - time: "2022-12-22T00:00:00.000+01:00"
@@ -1480,16 +1480,16 @@ stories:
   - action: action_add_item 
 
 
-- story: presentation and add activity withouth deadline 1
+- story: presentation and aggiungi activity withouth deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      add [run]{"entity": "activity", "role": "new"} into [daily]{"entity": "category", "role": "new"}
+      aggiungi [corsa]{"entity": "activity", "role": "new"} in [giornaliera]{"entity": "category", "role": "new"}
     intent: add_item
   - action: add_item_form
   - active_loop: null
@@ -1500,10 +1500,10 @@ stories:
   - action: action_add_item
   
 
-- story: presentation and add activity with deadline 1
+- story: presentation and aggiungi activity with deadline 1
   steps:
   - user: |
-      im [nandinoxD](username)
+      sono [ferdinando](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
@@ -1511,7 +1511,7 @@ stories:
     - requested_slot: null
   - action: action_recognize_user
   - user: |
-      add [painting]{"entity": "activity", "role": "new"} into [weekly]{"entity": "category", "role": "new"}
+      aggiungi [partita]{"entity": "activity", "role": "new"} in [settimanale]{"entity": "category", "role": "new"}
     intent: add_item
   - action: add_item_form
   - active_loop: null
@@ -1530,21 +1530,21 @@ stories:
   - active_loop: null
   - action: utter_ask_if_reminder
   - user: |
-      yes
+      si
     intent: affirm
   - action: action_set_reminder_slot
   - action: action_add_item
 
-- story: presentation and add activity withouth deadline 2
+- story: presentation and aggiungi activity withouth deadline 2
   steps:
   - user: |
-      my username is [albericoDocce00](username)
+      il mio nome è [Mattia](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      add [rob]{"entity": "activity", "role": "new"} into [weekly]{"entity": "category", "role": "new"}
+      aggiungi [nuoto]{"entity": "activity", "role": "new"} in [settimanale]{"entity": "category", "role": "new"}
     intent: add_item
   - action: add_item_form
   - active_loop: null
@@ -1555,10 +1555,10 @@ stories:
   - action: action_add_item
   
 
-- story: presentation and add activity with deadline 1
+- story: presentation and aggiungi activity with deadline 1
   steps:
   - user: |
-      im [banaan33](username)
+      sono [alfredo](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
@@ -1566,7 +1566,7 @@ stories:
     - requested_slot: null
   - action: action_recognize_user
   - user: |
-      add [painting]{"entity": "activity", "role": "new"} into [weekly]{"entity": "category", "role": "new"}
+      aggiungi [partita]{"entity": "activity", "role": "new"} in [settimanale]{"entity": "category", "role": "new"}
     intent: add_item
   - action: add_item_form
   - active_loop: null
@@ -1594,12 +1594,12 @@ stories:
 - story: test1 for clean complete activities confirmed
   steps:
   - user: |
-      clean completed activities
+      elimina le attività completate
     intent: clean_activities
   - action: clean_activities_form
   - active_loop: clean_activities_form
   - user: |
-      [Luca90](username)
+      [Luca](name)
     intent: inform
   - action: clean_activities_form
   - active_loop: null 
@@ -1612,30 +1612,30 @@ stories:
 - story: test2 for clean complete activities confirmed
   steps:
   - user: |
-      I want to delete completed activities
+      cancellami le attività completate
     intent: clean_activities
   - action: clean_activities_form
   - active_loop: clean_activities_form
   - user: |
-      [Geronimo](username)
+      [camilla](name)
     intent: inform
   - action: clean_activities_form
   - active_loop: null 
   - action: utter_confirm_choice
   - user: |
-      yes
+      si
     intent: affirm
   - action: action_clean_all_completed
 
 - story: test3 for clean complete activities confirmed
   steps:
   - user: |
-      delete all my completed activities
+      cancella le mie attività completate
     intent: clean_activities
   - action: clean_activities_form
   - active_loop: clean_activities_form
   - user: |
-      [Vittoria](username)
+      [Vittoria](name)
     intent: inform
   - action: clean_activities_form
   - active_loop: null 
@@ -1648,36 +1648,36 @@ stories:
 - story: test4 for clean complete activities confirmed
   steps:
   - user: |
-      remove my completed activities
+      rimuovi le attività da me completate
     intent: clean_activities
   - action: clean_activities_form
   - active_loop: clean_activities_form
   - user: |
-      [Antonio29](username)
+      [Antonio](name)
     intent: inform
   - action: clean_activities_form
   - active_loop: null 
   - action: utter_confirm_choice
   - user: |
-      yes
+      si
     intent: affirm
   - action: action_clean_all_completed
 
 - story: test5 for clean complete activities confirmed
   steps:
   - user: |
-      delete the activities completed
+      cancella tutte le attività che ho completato
     intent: clean_activities
   - action: clean_activities_form
   - active_loop: clean_activities_form
   - user: |
-      [Silvietta2](username)
+      [Silvia](name)
     intent: inform
   - action: clean_activities_form
   - active_loop: null 
   - action: utter_confirm_choice
   - user: |
-      yes
+      si
     intent: affirm
   - action: action_clean_all_completed
 
@@ -1685,12 +1685,12 @@ stories:
 - story: test1 for clean complete activities denied
   steps:
   - user: |
-      clean completed activities
+      elimina le attività completate
     intent: clean_activities
   - action: clean_activities_form
   - active_loop: clean_activities_form
   - user: |
-      [Lucia](username)
+      [Lucia](name)
     intent: inform
   - action: clean_activities_form
   - active_loop: null 
@@ -1704,12 +1704,12 @@ stories:
 - story: test2 for clean complete activities denied
   steps:
   - user: |
-      I want to delete completed activities
+      cancellami le attività completate
     intent: clean_activities
   - action: clean_activities_form
   - active_loop: clean_activities_form
   - user: |
-      [Valentina394](username)
+      [Valentina](name)
     intent: inform
   - action: clean_activities_form
   - active_loop: null 
@@ -1723,18 +1723,18 @@ stories:
 - story: test3 for clean complete activities denied
   steps:
   - user: |
-      delete all my completed activities
+      cancella le mie attività completate
     intent: clean_activities
   - action: clean_activities_form
   - active_loop: clean_activities_form
   - user: |
-      [Paolino](username)
+      [paolo](name)
     intent: inform
   - action: clean_activities_form
   - active_loop: null 
   - action: utter_confirm_choice
   - user: |
-      no thanks
+      no grazie
     intent: deny
   - action: utter_deny_choice
   - action: action_reset_slot
@@ -1742,18 +1742,18 @@ stories:
 - story: test4 for clean complete activities denied
   steps:
   - user: |
-      remove my completed activities
+      rimuovi le attività da me completate
     intent: clean_activities
   - action: clean_activities_form
   - active_loop: clean_activities_form
   - user: |
-      [Francesca](username)
+      [Francesca](name)
     intent: inform
   - action: clean_activities_form
   - active_loop: null 
   - action: utter_confirm_choice
   - user: |
-      no sorry
+      no mi dispiace
     intent: deny
   - action: utter_deny_choice
   - action: action_reset_slot
@@ -1761,12 +1761,12 @@ stories:
 - story: test5 for clean complete activities denied
   steps:
   - user: |
-      delete the activities completed
+      cancella tutte le attività che ho completato
     intent: clean_activities
   - action: clean_activities_form
   - active_loop: clean_activities_form
   - user: |
-      [Vito2](username)
+      [Vito](name)
     intent: inform
   - action: clean_activities_form
   - active_loop: null 
@@ -1781,12 +1781,12 @@ stories:
 - story: test1 for show activities
   steps:
   - user: |
-      i want to see my activities
+      mostrami tutte le mie attività
     intent: view_activities
   - action: view_activities_form
   - active_loop: view_activities_form
   - user: |
-      [Vito2](username)
+      [Vito](name)
     intent: inform
   - action: view_activities_form
   - active_loop: null 
@@ -1795,13 +1795,13 @@ stories:
 - story: test2 for show activities
   steps:
   - user: |
-      hi my username is [Luchino19](username)
+      ciao, il mio nome è [Luchino](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      let me see all my activities
+      fammi vedere le mie attività
     intent: view_activities
   - action: view_activities_form
   - active_loop: null  
@@ -1810,12 +1810,12 @@ stories:
 - story: test3 for show activities
   steps:
   - user: |
-      let me see my done activities
+      mostrami le tutte le attività che ho completato
     intent: view_activities
   - action: view_activities_form
   - active_loop: view_activities_form
   - user: |
-      [Lauretta](username)
+      [laura](name)
     intent: inform
   - action: view_activities_form
   - active_loop: null 
@@ -1824,13 +1824,13 @@ stories:
 - story: test4 for show activities
   steps:
   - user: |
-      hi my username is [Roberto](username)
+      ciao, il mio nome è [Roberto](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      i want to see my undone activities
+      voglio vedere le attività che non ho ancora completato
     intent: view_activities
   - action: view_activities_form
   - active_loop: null  
@@ -1839,13 +1839,13 @@ stories:
 - story: test5 for show activities
   steps:
   - user: |
-      my username is [Pika11](username)
+      il mio nome [Mattia](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      i want to watch the uncompleted activities 
+      mostrami le attività non fatte
     intent: view_activities
   - action: view_activities_form
   - active_loop: null  
@@ -1855,7 +1855,7 @@ stories:
 - story: test1 for login-signup
   steps:
   - user: |
-      hi my username is [Luke10](username)
+      ciao, il mio nome è [luca](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
@@ -1864,7 +1864,7 @@ stories:
 - story: test2 for login-signup
   steps:
   - user: |
-      i am [Carlo2](username) and i want to create an account
+      sono [Carlo](name) e voglio creare un account
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
@@ -1873,12 +1873,12 @@ stories:
 - story: test3 for login-signup
   steps:
   - user: |
-      let me create a new user
+      creami un nuovo user
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - user: |
-      my username is [Giovanni](username)
+      il mio nome è [Mattia](name)
     intent: inform
   - action: recognize_user_form
   - active_loop: null
@@ -1887,12 +1887,12 @@ stories:
 - story: test4 for login-signup
   steps:
   - user: |
-      i am a new user
+      sono a nuovo user
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - user: |
-      it is [Mario999](username)
+      [Mario](name)
     intent: inform
   - action: recognize_user_form
   - active_loop: null
@@ -1901,12 +1901,12 @@ stories:
 - story: test5 for login-signup
   steps:
   - user: |
-      can i add a new account?
+      posso creare un nuovo account
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - user: |
-      the username is [Zelda122](username)
+      il nome è [francesco](name)
     intent: inform
   - action: recognize_user_form
   - active_loop: null
@@ -1916,12 +1916,12 @@ stories:
 - story: test1 for show categories
   steps:
   - user: |
-      i want to see my categories
+      voglio vedere le mie categorie
     intent: view_categories
   - action: view_categories_form
   - active_loop: view_categories_form
   - user: |
-      [Gerry2](username)
+      [Gerry](name)
     intent: inform
   - action: view_categories_form
   - active_loop: null 
@@ -1930,13 +1930,13 @@ stories:
 - story: test2 for show categories
   steps:
   - user: |
-      hi my username is [Franco](username)
+      ciao, il mio nome è [Francesca](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      let me see all my categories
+      mostrami tutte le categorie che ho creato
     intent: view_categories
   - action: view_categories_form
   - active_loop: null  
@@ -1945,12 +1945,12 @@ stories:
 - story: test3 for show categories
   steps:
   - user: |
-      look my categories
+      mostrami le mie categorie
     intent: view_categories
   - action: view_categories_form
   - active_loop: view_categories_form
   - user: |
-      [Nadia](username)
+      [Nadia](name)
     intent: inform
   - action: view_categories_form
   - active_loop: null 
@@ -1959,13 +1959,13 @@ stories:
 - story: test4 for show categories
   steps:
   - user: |
-      hi my username is [Roberto](username)
+      ciao, il mio nome è [Roberto](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      i want to look at my categories
+      voglio guardare le mie categorie
     intent: view_categories
   - action: view_categories_form
   - active_loop: null  
@@ -1974,69 +1974,69 @@ stories:
 - story: test5 for show categories
   steps:
   - user: |
-      my username is [Pika11](username)
+      il mio nome [Mattia](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      my categories
+      le mie categorie
     intent: view_categories
   - action: view_categories_form
   - active_loop: null  
   - action: action_view_categories
 
-#################################### Test Stories Add Category######################################
-- story: test1 for add category
+#################################### Test Stories aggiungi Category######################################
+- story: test1 for aggiungi category
   steps:
   - user: |
-      hi i am [Tonino](username) and i want to add a category [projects](category)
+      buongiorno sono [Tonino](name) e voglio aggiungere la categoria [progetti](category)
     intent: add_category
   - action: add_category_form
   - active_loop: null
   - action: action_add_category
 
-- story: test2 for add category
+- story: test2 for aggiungi category
   steps:
   - user: |
-      hi i am [Tonino](username) let me add a category 
+      buongiorno sono [Tonino](name) aggiungimi una categoria
     intent: add_category
   - action: add_category_form
   - active_loop: add_category_form
   - user: |
-      the category is [school]{"entity": "category", "role": "new"}
+      la categoria è [scuola]{"entity": "category", "role": "new"}
     intent: inform
   - action: add_category_form
   - active_loop: null
   - action: action_add_category
 
-- story: test3 for add category
+- story: test3 for aggiungi category
   steps: 
   - user: |
-      let me add a new category
+      metti una nuova categoria
     intent: add_category
   - action: add_category_form
   - active_loop: add_category_form
   - user: |
-      username: [Sara](username)
+      il mio nome è [Sara](name)
     intent: inform
   - action: add_category_form
   - user: |
-      category is [health]{"entity": "category", "role": "new"}
+      la categoria è [salute]{"entity": "category", "role": "new"}
     intent: inform
   - action: add_category_form
   - active_loop: null
   - action: action_add_category
 
-- story: test4 for add category
+- story: test4 for aggiungi category
   steps:
   - user: |
-      create a new category [sport]{"entity": "category", "role": "new"}
+      crea la categoria [sport]{"entity": "category", "role": "new"}
     intent: add_category
   - action: add_category_form
   - active_loop: add_category_form
   - user: |
-      my name is [Javier](username)
+      il mio nome è [mario](name)
     intent: inform
   - action: add_category_form
   - active_loop: null
@@ -2046,31 +2046,31 @@ stories:
 - story: test2 for modify category confirmed
   steps:
   - user: |
-      my name is [Elio](username)
+      sono [Elio](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      modify the category [gym](category)
+      modifica la categoria [palestra](category)
     intent: modify_category
   - action: modify_category_form
   - active_loop: modify_category_form
   - user: |
-      its name is [cooking](category)
+      [cucina](category)
     intent: inform
   - action: modify_category_form
   - active_loop: null
   - action: utter_confirm_choice
   - user: |
-      yes
+      si
     intent: affirm
   - action: action_modify_category
 
 - story: test3 for modify category confirmed
   steps:
   - user: |
-      my username is [Tonino](username) change the category [medicines]{"entity": "category", "role": "old"} into [personal]{"entity": "category", "role": "new"}
+      sono [Mattia](name) cambia la categoria [medicinali]{"entity": "category", "role": "old"} in [personale]{"entity": "category", "role": "new"}
     intent: modify_category
   - action: modify_category_form
   - active_loop: null
@@ -2083,20 +2083,20 @@ stories:
 - story: test4 for modify category confirmed
   steps:
   - user: |
-      i want to convert a category
+      voglio cambiare il nome di una categoria
     intent: modify_category
   - action: modify_category_form
   - active_loop: modify_category_form
   - user: |
-      my name is [Walter789](username)
+      sono [Walter](name)
     intent: inform
   - action: modify_category_form
   - user: |
-      the old category is [friends](category)
+      la categoria vecchia è [amici](category)
     intent: inform
   - action: modify_category_form
   - user: |
-      the new category name is [hobby](category)
+      la nuova categoria è [hobby](category)
     intent: inform
   - action: modify_category_form
   - active_loop: null
@@ -2110,12 +2110,12 @@ stories:
 - story: test1 for modify category negative
   steps:
   - user: |
-      hi my username is [Tonino](username) and i want to transform the category [projects]{"entity": "category", "role": "old"}
+      ciao, il mio nome è [Toni](name) voglio cambiare la categoria [progetti]{"entity": "category", "role": "old"}
     intent: modify_category
   - action: modify_category_form
   - active_loop: modify_category_form
   - user: |
-      the new is [personal]{"entity": "category", "role": "new"}
+      la nuova è [personale]{"entity": "category", "role": "new"}
     intent: inform
   - action: modify_category_form
   - active_loop: null
@@ -2129,16 +2129,16 @@ stories:
 - story: test2 for modify category negative
   steps:
   - user: |
-      alter the category [gym]{"entity": "category", "role": "old"}
+      modifica la categoria [palestra]{"entity": "category", "role": "old"}
     intent: modify_category
   - action: modify_category_form
   - active_loop: modify_category_form
   - user: |
-      [Elio](username)
+      [Elio](name)
     intent: inform
   - action: modify_category_form
   - user: |
-      category name is [cooking]{"entity": "category", "role": "new"}
+      il nome della categoria è [cucina]{"entity": "category", "role": "new"}
     intent: inform
   - action: modify_category_form
   - active_loop: null
@@ -2152,7 +2152,7 @@ stories:
 - story: test3 for modify category negative
   steps:
   - user: |
-      my name is [Tonino](username) i would convert the category [medicines]{"entity": "category", "role": "old"} into [personal]{"entity": "category", "role": "new"}
+      sono [Tonino](name) vorrei cambiare la categoria [medicinali]{"entity": "category", "role": "old"} in [personale]{"entity": "category", "role": "new"}
     intent: modify_category
   - action: modify_category_form
   - active_loop: null
@@ -2166,20 +2166,20 @@ stories:
 - story: test4 for modify category negative
   steps:
   - user: |
-      change a category name
+      cambia il nome di una mia categoria
     intent: modify_category
   - action: modify_category_form
   - active_loop: modify_category_form
   - user: |
-      my name is [Walter789](username)
+      sono [Walter](name)
     intent: inform
   - action: modify_category_form
   - user: |
-      the previous category is [friends]{"entity": "category", "role": "old"}
+      prima si chiamava [amici]{"entity": "category", "role": "old"}
     intent: inform
   - action: modify_category_form
   - user: |
-      the new one category name is [hobby]{"entity": "category", "role": "new"}
+      il nome della nuova categoria è [hobby]{"entity": "category", "role": "new"}
   - action: modify_category_form
   - active_loop: null
   - action: utter_confirm_choice
@@ -2191,29 +2191,20 @@ stories:
 
 
 
-
-
-
-
-
-
-
-
-
 #################################### Test Stories Modify Activity Deadline ######################################
 - story: test modify deadline of activity with deadline passing no date
   steps:
   - user: |
-      I want to modify the deadline of the activity [run](activity) in the category [gym](category)
+      voglio modificare la scadenza dell'attività [corsa](activity) nella categoria [palestra](category)
     intent: modify_activity_deadline 
   - action: modify_activity_deadline_form 
   - active_loop: modify_activity_deadline_form
   - user: |
-      my name is [Cinzia](username)
+      sono [Cinzia](name)
     intent: presentation
   - action: modify_activity_deadline_form
   - user: |
-      from 11/11/2022 to 12/12/2022
+      dal 11/11/2022 to 12/12/2022
     intent: inform
   - action: modify_activity_deadline_form
   - active_loop: null
@@ -2222,30 +2213,30 @@ stories:
 - story: test modify deadline of activity passing all
   steps:
   - user: |
-      I want to modify the deadline of the activity [dinner](activity) in the category [personal](catgory) from 09/15/2022 to 10/06/2022
+      voglio modificare la scadenza dell'attività [cena](activity) nella categoria [personale](catgory) dal 09/15/2022 al 10/06/2022
     intent: modify_activity_deadline 
   - action: modify_activity_deadline_form 
   - active_loop: modify_activity_deadline_form
   - user: |
-      my name is [Alessia](username)
+      sono [Alessia](name)
     intent: presentation
   - action: modify_activity_deadline_form
   - active_loop: null
   - action: action_modify_activity
     
 
-#################################### Test Stories Modify Activity Name ######################################
-- story: test modify name of activity passing all but no deadline yes deadline
+#################################### Test Salries Modify Activity Name ######################################
+- story: test modify name of activity passing all but no deadline si deadline
   steps:
   - user: |
-       my name is [Carola](username) and I want to modify the name of the activity [hairdresser]{"entity": "activity", "role": "old"} in the category [beauty]{"entity": "category", "role": "new"} with name [play]{"entity": "activity", "role": "new"}
+       sono [Carola](name) e voglio modificare il nome dell'attività [parrucchiere]{"entity": "activity", "role": "old"} nella categoria [beauty]{"entity": "category", "role": "new"} con il nome [play]{"entity": "activity", "role": "new"}
     intent: modify_activity_name 
   - action: modify_activity_name_form 
   - active_loop: modify_activity_name_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      yes
+      si
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -2262,7 +2253,7 @@ stories:
 - story: test modify name of activity passing all but no deadline no deadline
   steps:
   - user: |
-       my name is [Carola](username) and I want to modify the name of the activity [walk]{"entity": "activity", "role": "old"} in the category [sport]{"entity": "category", "role": "new"} with name [run]{"entity": "activity", "role": "new"}
+       sono [Carola](name) e voglio modificare il nome dell'attività [camminata]{"entity": "activity", "role": "old"} nella categoria [sport]{"entity": "category", "role": "new"} con il nome [corsa]{"entity": "activity", "role": "new"}
     intent: modify_activity_name 
   - action: modify_activity_name_form 
   - active_loop: modify_activity_name_form
@@ -2276,7 +2267,7 @@ stories:
 - story: test modify name of activity passing all also deadline
   steps:
   - user: |
-       my name is [Luca](username) and I want to modify the name of the activity [hairdresser]{"entity": "activity", "role": "old"} in the category [beauty]{"entity": "category", "role": "new"} of 04/04/2022 with name [play]{"entity": "activity", "role": "new"}
+       sono [Luca](name) e voglio modificare il nome dell'attività [parrucchiere]{"entity": "activity", "role": "old"} nella categoria [beauty]{"entity": "category", "role": "new"} of 04/04/2022 con il nome [play]{"entity": "activity", "role": "new"}
     intent: modify_activity_name
   - slot_was_set:
       - time: "2022-04-04T00:00:00.000+02:00"
@@ -2288,17 +2279,17 @@ stories:
 
 
 #################################### Test Stories Modify Activity Category ######################################
-- story: test modify category of activity passing all but no deadline yes deadline
+- story: test modify category of activity passing all but no deadline si deadline
   steps:
   - user: |
-       my name is [Alex](username) and I want to modify the category of the activity [shopping]{"entity": "activity", "role": "new"} in the category [personal]{"entity": "category", "role": "old"} with category [households]{"entity": "category", "role": "new"}
+       sono [Alex](name) e voglio modificare la categoria dell'attività [shopping]{"entity": "activity", "role": "new"} per la categoria [personale]{"entity": "category", "role": "old"} in [faccende di casa]{"entity": "category", "role": "new"}
     intent: modify_activity_category
   - action: modify_activity_category_form 
   - active_loop: modify_activity_category_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      yes
+      si
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
@@ -2315,7 +2306,7 @@ stories:
 - story: test modify category of activity passing all but no deadline no deadline
   steps:
   - user: |
-       my name is [Ferdi](username) and I want to modify the category of the activity [walk]{"entity": "activity", "role": "new"} in the category [sport]{"entity": "category", "role": "old"} with category [gym]{"entity": "category", "role": "new"}
+       sono [Ferdi](name) e voglio modificare la categoria dell'attività [camminata]{"entity": "activity", "role": "new"}, categoria [sport]{"entity": "category", "role": "old"} con la categoria [palestra]{"entity": "category", "role": "new"}
     intent: modify_activity_category
   - action: modify_activity_category_form 
   - active_loop: modify_activity_category_form
@@ -2330,7 +2321,7 @@ stories:
 - story: test modify category of activity passing all also deadline
   steps:
   - user: |
-       my name is [Lucia](username) and I want to modify the category of the activity [hairdresser](activity) in the category [beauty]{"entity": "category", "role": "old"} of 04/04/2022 with name [personal]{"entity": "category", "role": "new"}
+       sono [Lucia](name) e voglio cambiare il nome della categoria relativa all'attività [parrucchiere](activity) da [beauty]{"entity": "category", "role": "old"} per il 04/04/2022 a [personale]{"entity": "category", "role": "new"}
     intent: modify_activity_category
   - slot_was_set:
       - time: "2022-04-04T00:00:00.000+02:00"
