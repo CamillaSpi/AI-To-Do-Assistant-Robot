@@ -284,66 +284,66 @@ forms:
 
 
 responses:
-  utter_greet:
-  - text: "Hey! Who are you?"
+ utter_greet:
+  - text: "Ehi! Chi sei?"
 
   utter_help:
-  - text: "Hey, i'm your personal assistant, you can create To-Do list and i'll manage that :D"
-  - text: "Ask me to add a new activity or to create a new cateogory list!"
-  - text: "Have you try to ask me to show your activities?"
+  - text: "Ehi, sono il tuo assistente personale, puoi creare liste di cose da fare e io le gestirò"
+  - text: "Chiedimi di aggiungere una nuova attività o di creare una nuova lista di categorie!"
+  - text: "Hai provato a chiedermi di mostrarti le tue attività?"
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
+  - text: "Ecco qualcosa per rallegrarti:"
     image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+  - text: "Ti ha aiutato?"
 
   utter_happy:
-  - text: "Great, carry on!"
+  - text: "Ottimo, continua!"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Ciao"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Gruppo12."
+  - text: "Sono un bot, alimentato da Gruppo12."
 
   utter_ask_time:
-  - text: "Please insert the time"
+  - text: "Inserisci l'ora"
 
   utter_ask_if_deadline:
-  - text: "Does this item have a deadline?"
+  - text: "Questo elemento ha una scadenza?"
 
   utter_ask_if_reminder:
-  - text: "Do you want to set a reminder for the activity?"
+  - text: "Vuoi impostare un promemoria per l'attività?"
 
   utter_ask_activity:
-  - text: "Please insert the activity"
+  - text: "Inserisci l'attività"
   utter_ask_add_item_form_activity:
-  - text: "Please insert the new activity"
+  - text: "Inserisci la nuova attività"
 
   utter_ask_category:
-    - text: "Please insert the category of the item"
+    - text: "Inserisci la categoria dell'elemento"
 
   utter_ask_add_category_form_category:
-  - text: "Please insert the new category"
- 
+  - text: "Inserisci la nuova categoria"
+
   utter_confirm_choice:
-  - text: "Are you sure to complete this action!?"
+  - text: "Sei sicuro di completare questa azione!?"
   utter_ask_name:
-  - text: "Please insert your name"
+  - text: "Inserisci il tuo nome"
   utter_deny_choice:
-  - text: "Ok cancelled"
+  - text: "Ok annullato"
 
   utter_modification_choice:
-  - text: "Which info do you weant to modify?"
+  - text: "Quale informazione vuoi modificare?"
   utter_choice_what_to_modify:
-  - text: "What campo vuoi modiffare?"
+  - text: "Quale campo vuoi modificare?"
   utter_confirmed:
-  - text: " Changfed "
+  - text: " modificato "
 
   utter_default:
-  - text: I'm sorry, I can't help you, can you repeat?. 
+  - text: Mi dispiace, non posso aiutarti, puoi ripetere?.
 
   
 
