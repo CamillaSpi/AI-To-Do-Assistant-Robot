@@ -285,7 +285,8 @@ forms:
 
 responses:
   utter_greet:
-      - text: "Ehi! Chi sei?"
+      - text: "Ehi Ciao! come posso aiutarti?"
+      - text: "Ehi Ciao! ccosa posso fare per te oggi?"
 
   utter_help:
     - text: "Ehi, sono il tuo assistente personale, puoi creare liste di cose da fare e io le gestirò"
@@ -306,7 +307,7 @@ responses:
     - text: "Ciao"
 
   utter_iamabot:
-    - text: "Sono un bot, alimentato da Gruppo12."
+    - text: "Sono un bot, realizzato dal Gruppo12."
 
   utter_ask_time:
     - text: "Inserisci l'ora"

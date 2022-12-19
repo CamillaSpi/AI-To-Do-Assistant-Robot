@@ -1104,6 +1104,9 @@ nlu:
     - rimuovi una categoria
     - cancella una categoria
     - elimina una categoria
+    - rimuovi [universita](category) tra le mie categorie
+    - fai scomparire [spesa](category) dalle mie categorie
+    - cancella la categoria [finanza](category)
 
 - intent: modify_category
   examples: |
