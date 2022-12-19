@@ -34,6 +34,7 @@ pipeline:
     url: "http://localhost:8000"
     # dimensions to extract
     timezone: "Europe/Berlin"
+    locale: it_IT
     dimensions: ["time"]
     timeout : 3
 
