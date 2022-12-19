@@ -135,7 +135,7 @@ def naturalLearning(msg):
             features_dataBase = np.concatenate((features_dataBase,last_features),axis=0)
         except:
             features_dataBase = np.array([last_features[0]])
-        labels.append(number_of_users)
+        labels.append(id)
     lock.release()
 
 

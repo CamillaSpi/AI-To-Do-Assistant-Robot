@@ -16,15 +16,15 @@ def callback(msg):
     try:
         print('arriva')
         resp = load_url(msg.data).ack
+
         if resp!= 'ACK':
             print("There is an error in msg, maybe")
         else:
             time.sleep(5)
             # Javascript script for displaying a prompt
             # ALTabletBinding is a javascript binding inject in the web page displayed on the tablet
-            script = """
-                alert("ciao");
-            """
+            script = """var vediamo = document.getElementById("clickMe");
+vediamo.click();"""
             resp = execute_js(script).ack
             if resp != 'ACK':
                 print('no execute js ')

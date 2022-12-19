@@ -23,6 +23,7 @@ REF_PATH = os.path.dirname(os.path.abspath(__file__))
 # Server Initialization
 rospy.init_node('reidentification_face_node')
 global actualLabels
+actualLabels = Float32MultiArray()
 
 
 class NumpyArrayEncoder(JSONEncoder):

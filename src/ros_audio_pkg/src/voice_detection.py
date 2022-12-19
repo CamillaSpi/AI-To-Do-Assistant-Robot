@@ -53,7 +53,7 @@ def callback(recognizer, audio):
             toSend = data[x::num_microphone]
 
     data_to_send = Int16MultiArray()
-    data_to_send.data = toSend
+    data_to_send.data = toSend*3
     pub.publish(data_to_send)
 
 # Initialize a Recognizer
@@ -85,8 +85,10 @@ def rcv_person(msg):
     if msg.data != old_bool:
         if not msg.data:
             stop_listening()
+            print('stop ascolto')
         else:
             stop_listening = r.listen_in_background(m, callback)
+            print('asolto')
         old_bool = msg.data
         
 

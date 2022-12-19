@@ -177,9 +177,8 @@ echo "<script type='text/javascript'>
             success: function(response){   
                 
                 html = $.parseHTML( response );
-                
+                alert('sto per aggiornare');
                 array = html[0].textContent.split(' ');
-                alert(array[0]); 
                 if(array[0]=='hidden'){
                     row = document.getElementById(array[1]);
                     row.hidden = true;
