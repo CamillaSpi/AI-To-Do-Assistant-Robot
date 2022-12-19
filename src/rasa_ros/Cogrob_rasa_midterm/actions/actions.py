@@ -22,7 +22,8 @@ import hashlib
 
 from . import Database
 from time import sleep
-
+import json
+import os
 
 global id
 id = None
@@ -66,7 +67,6 @@ class ActionSessionStart(Action):
                 entities = entities,
                 kill_on_user_message = False,
             ))
-
         # an `action_listen` should be added at the end as a user message follows
         events.append(ActionExecuted("action_listen"))
 
@@ -108,7 +108,6 @@ class actionAddItem(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         global id
-        name = tracker.get_slot("name")
 
         associated_name = Database.getName(id)
         activity = tracker.get_slot("activity")
@@ -124,10 +123,10 @@ class actionAddItem(Action):
         if(Database.doesPossessionExists(id,category)):
             returnedValue= Database.insertItem(id,activity ,category,reminder,time)
             if (returnedValue):  
-                text = f"{associated_name}, l'attività {activity} aggiunta alla categoria {category}" + (f", da completare prima del {time[:10]} alle {time[11:16]}." if time else ".") + ("Te lo ricorderò, non preoccuparti" if reminder else "") 
+                text = f"{associated_name}, l'attivita {activity} aggiunta alla categoria {category}" + (f", da completare prima del {time[:10]} alle {time[11:16]}." if time else ".") + ("Te lo ricorderò, non preoccuparti" if reminder else "") 
                 dispatcher.utter_message(text=text) 
             else:
-                dispatcher.utter_message(text=f"Ops {associated_name}, questa attività esiste già.") 
+                dispatcher.utter_message(text=f"Ops {associated_name}, questa attivita esiste già.") 
         else:
             dispatcher.utter_message(text=f"Questa categoria non esisteva, l'ho creata.") 
             actionAddCategory.run(self, dispatcher,tracker,domain)
@@ -143,7 +142,6 @@ class actionRemoveItem(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
-        name = tracker.get_slot("name")
       
         global id
 
@@ -157,9 +155,9 @@ class actionRemoveItem(Action):
             category = ' '.join([str(elem) for elem in category])
         returnedValue = Database.deleteItem(id,activity ,category,time)
         if (returnedValue):  
-            dispatcher.utter_message(text=f"{associated_name}, l'attività {activity} è stata rimossa dalla categoria {category} .") 
+            dispatcher.utter_message(text=f"{associated_name}, l'attivita {activity} è stata rimossa dalla categoria {category} .") 
         else:
-            dispatcher.utter_message(text=f"Ops {associated_name}, questà attività non esiste.") 
+            dispatcher.utter_message(text=f"Ops {associated_name}, questà attivita non esiste.") 
 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
@@ -172,7 +170,6 @@ class actionAddCategory(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
-        name = tracker.get_slot("name")
         
         global id
         
@@ -198,7 +195,6 @@ class actionRemoveCategory(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
         
-        name = tracker.get_slot("name")
         global id
         
         associated_name = Database.getName(id)
@@ -222,7 +218,6 @@ class actionSetStatusActivity(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        name = tracker.get_slot("name")
         global id
         #aggiunta
 
@@ -240,13 +235,13 @@ class actionSetStatusActivity(Action):
         elif activity_status == 'incompleta':
             returnedValue = Database.setItemStatus(id,activity ,category,time,False)
         else:
-            dispatcher.utter_message(text=f"Ops {associated_name}, non ho capito cosa vuoi fare con questa attività.") 
+            dispatcher.utter_message(text=f"Ops {associated_name}, non ho capito cosa vuoi fare con questa attivita.") 
             return [SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
         if (returnedValue):  
-            dispatcher.utter_message(text=f"{associated_name}, attività {activity} in {category} {activity_status} !") 
+            dispatcher.utter_message(text=f"{associated_name}, attivita {activity} in {category} {activity_status} !") 
         else:
-            dispatcher.utter_message(text=f"Ops {associated_name}, questa attività non esiste.") 
+            dispatcher.utter_message(text=f"Ops {associated_name}, questa attivita non esiste.") 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -259,7 +254,6 @@ class actionSetInComplete(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        name = tracker.get_slot("name")
         global id
      
         associated_name = Database.getName(id)
@@ -273,9 +267,9 @@ class actionSetInComplete(Action):
         returnedValue = Database.setItemStatus(id,activity ,category,time,False)
 
         if (returnedValue):  
-            dispatcher.utter_message(text=f"{associated_name}, attività {activity} in {category} impostata come incompleta.") 
+            dispatcher.utter_message(text=f"{associated_name}, attivita {activity} in {category} impostata come incompleta.") 
         else:
-            dispatcher.utter_message(text=f"Ops {associated_name}, questa attività non esiste.") 
+            dispatcher.utter_message(text=f"Ops {associated_name}, questa attivita non esiste.") 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -287,7 +281,6 @@ class showActivities(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        name = tracker.get_slot("name")
         global id
         #aggiunta
     
@@ -297,8 +290,8 @@ class showActivities(Action):
         time = tracker.get_slot("time")
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
-        list_of_activity = Database.selectItems(id,category, activity_status, time)
-        dispatcher.utter_message(text=(f"-1 {associated_name} , hai {list_of_activity} attività." if list_of_activity else " Non ci sono attività per te!")) 
+        list_of_activity,json = Database.selectItems(id,category, activity_status, time)
+        dispatcher.utter_message(text=(f"{associated_name} , hai {list_of_activity} attivita." if list_of_activity else " non ci sono attivita per te!"),json_message=json) 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -310,14 +303,13 @@ class showCategories(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        name = tracker.get_slot("name")
         global id
         #aggiunta
         
         associated_name = Database.getName(id)
-        list_of_categories = Database.selectPossessions(id)
+        list_of_categories,json = Database.selectPossessions(id)
         
-        dispatcher.utter_message(text=(f"-1 {associated_name} , hai {list_of_categories} categorie." if list_of_categories else " Non hai alcuna categoria!")) 
+        dispatcher.utter_message(text=(f"{associated_name} , hai {list_of_categories} categorie." if list_of_categories else " non hai alcuna categoria!"),json_message=json) 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -329,7 +321,6 @@ class actionModifyCategory(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        name = tracker.get_slot("name")
         global id
         
         associated_name = Database.getName(id)
@@ -356,7 +347,6 @@ class actionModifyActivity(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         possibleDeadlineErrorFlag=False
-        name = tracker.get_slot("name")
         global id
 
 
@@ -403,7 +393,7 @@ class actionModifyActivity(Action):
             timenew = time
             timeold = time
         if possibleDeadlineErrorFlag is True and activity_old is None and category_old is None:
-            dispatcher.utter_message(text=f"dimmi la deadline precedente e quella nuova nella successiva richiesta per modificare la deadline di un'attività")
+            dispatcher.utter_message(text=f"dimmi la deadline precedente e quella nuova nella successiva richiesta per modificare la deadline di un'attivita")
             return [SlotSet("category", None),SlotSet("category_old", None),SlotSet("activity_old", None),SlotSet("category_new", None),SlotSet("activity_new", None),SlotSet("activity", None),SlotSet("time", None)]
     
 
@@ -415,11 +405,11 @@ class actionModifyActivity(Action):
         if (Database.doesUnfoldingsExists(id,category_new,activity_new,timenew) == False):
             returnedValue = Database.modifyActivity(id, cat_to_modify, act_to_modify, timeold,category_new, activity_new, timenew)
             if (returnedValue):  
-                dispatcher.utter_message(text=f"{associated_name}, l'attività {act_to_modify} è stata modificata") 
+                dispatcher.utter_message(text=f"{associated_name}, l'attivita {act_to_modify} è stata modificata") 
             else:
-                dispatcher.utter_message(text=f"Ops {associated_name} , l'attività da modificare non esiste.") 
+                dispatcher.utter_message(text=f"Ops {associated_name} , l'attivita da modificare non esiste.") 
         else:
-            dispatcher.utter_message(text=f"Ops {associated_name} l'attività {activity_new} esiste già, non ha senso modificare {act_to_modify}") 
+            dispatcher.utter_message(text=f"Ops {associated_name} l'attivita {activity_new} esiste già, non ha senso modificare {act_to_modify}") 
     
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -441,16 +431,15 @@ class actionCleanCompletedActivities(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        name = tracker.get_slot("name")
         global id 
         
         associated_name = Database.getName(id)         
         
         returnedValue = Database.cleanCompletedActivities(id)
         if (returnedValue):  
-            dispatcher.utter_message(text=f"{associated_name}, tutte le tue attività completate sono state rimosse!") 
+            dispatcher.utter_message(text=f"{associated_name}, tutte le tue attivita completate sono state rimosse!") 
         else:
-            dispatcher.utter_message(text=f"Ops! {associated_name} qualcosa è andato storto! Non riesco a rimuovere tutte le tue attività completate!") #??
+            dispatcher.utter_message(text=f"Ops! {associated_name} qualcosa è andato storto! Non riesco a rimuovere tutte le tue attivita completate!") #??
     
         return []
 
@@ -503,7 +492,7 @@ class actionRemindItem(Action):
             
             returnedValue = Database.updateReminder(id,category,activity,time,reminderSlot)
             if (returnedValue):
-                dispatcher.utter_message(text=f"{associated_name}, il reminder per l'attività è stato aggiornato.")
+                dispatcher.utter_message(text=f"{associated_name}, il reminder per l'attivita è stato aggiornato.")
             else:
                 dispatcher.utter_message(text=f"{associated_name}, ci sono stati dei problemi con l'aggiornamento del reminder!")
         else:
@@ -556,10 +545,10 @@ class actionAskActivityOld(Action):
         activity_old = tracker.get_slot("activity_old")
         activity = tracker.get_slot("activity")
         if(activity_old == None and activity == None):
-            dispatcher.utter_message(text=f"Qual è l'attività da modificare?")
+            dispatcher.utter_message(text=f"Qual è l'attivita da modificare?")
             return[SlotSet("requested_slot","activity")]
         else:
-            dispatcher.utter_message(text=f"Qual è la nuova attività?")
+            dispatcher.utter_message(text=f"Qual è la nuova attivita?")
             return[SlotSet("activity_old",activity),SlotSet("activity",None),SlotSet("activity_new",None),SlotSet("requested_slot","activity")]    
 
 class actionAskActivityNew(Action):
@@ -573,7 +562,7 @@ class actionAskActivityNew(Action):
         activity_new = tracker.get_slot("activity_new")
         activity = tracker.get_slot("activity")
         if(activity_new == None and activity == None):
-            dispatcher.utter_message(text=f"Qual è la nuova attività?")
+            dispatcher.utter_message(text=f"Qual è la nuova attivita?")
             return[SlotSet("requested_slot","activity")]
         else:
             return[SlotSet("activity_new",activity),SlotSet("activity",None),SlotSet("requested_slot",None)]    
@@ -612,32 +601,23 @@ class ActionReactToReminder(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
-        print("sto nella react")
         entities = tracker.latest_message.get("entities")[0]
-        # print(entities)
-        id_user = entities['id']
         name = entities['name']
+        id_user = entities['id']
+        deadline = entities['deadline']
         activity = entities['activity']
         category = entities['category']
-        deadline = entities['deadline']
         expired = entities['expired']
         print(expired)
         if(expired):
-            dispatcher.utter_message(f"Hei {name}, il reminder per l'attività {activity} in {category} è scaduto!")
+            dispatcher.utter_message(f"Hei {name}, il reminder per l'attivita {activity} in {category} è scaduto!")
             print("ti sei scordato ", activity, category)
         else: 
-            dispatcher.utter_message(f"Hei {name}, ricordati dell'attività {activity} in {category} tra cinque minuti!")
+            dispatcher.utter_message(f"Hei {name}, ricordati dell'attivita {activity} in {category} tra cinque minuti!")
             print("sei ancora in tempo per ricordarti", activity, category)
 
         #aggiunta per far si che una volta notificato un reminder questo non venga più notificato successivamente
-        # Database.updateReminder(id_user,category, activity, deadline, False)
-        # time = entities['time']
-        # time = datetime.fromisoformat(time)
-        # date = datetime.now()
-        # if time <= date:
-        #     dispatcher.utter_message(f"Hei {name}, the reminder  for {activity} in {category} is expired!!!")
-        # else:
-        #     dispatcher.utter_message(f"Hei {name}, remember to {activity} in {category} in 5 minutes!")
+        Database.updateReminder(id_user,category, activity, deadline, False)
         return []
 
 class ActionRecognizeUser(Action):
@@ -655,7 +635,6 @@ class ActionRecognizeUser(Action):
 
       
         global id
-        name = tracker.get_slot("name")
         
         associated_name = Database.getName(id) 
 

@@ -19,13 +19,12 @@ def create_app() -> Sanic:
     def print_response(request: Request) -> HTTPResponse:
         """Print bot response to the console."""
         text = request.json.get("text")
-        if text[0:2] == '-1':
-            pub2.publish('http://10.0.1.248:80/webPage/')
-            text = text[2:]
-        elif text[0:2] == '-2':
-            pub2.publish('http://10.0.1.248:80/webPage/')
-            text = text[2:]
-        pub.publish(text)
+        try:
+            json_query = request.json.get('custom')['query']
+            pub2.publish(f'http://10.0.1.248:80/webPage/constructPOSTrequest.php?query={json_query}')
+            print(f'http://10.0.1.248:80/webPage/costructPOSTrequest.php?query={json_query}')
+        except:
+            pub.publish(text)
 
         body = {"status": "message sent"}
         return response.json(body, status=200)

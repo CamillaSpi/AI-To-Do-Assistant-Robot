@@ -113,7 +113,13 @@ def main():
     message.id = 5
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "remind me to call john in personal in 10 seconds"
+    message.msg = "mostrami le attivitia"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "mostrami le categorie"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "mostrami le attivitia per oggi"
     dialogue_service(message.msg,message.id) 
     # time.sleep(0.5)
     # message.msg = "remind me to call john in personal in 10 seconds"
