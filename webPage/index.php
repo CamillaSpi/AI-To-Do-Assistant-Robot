@@ -15,8 +15,8 @@ if (isset($_POST['ajax'])) {} else {
             // $data = json_decode(stripslashes($_POST['chosenOption']));
             // now here i've the matrix contains all the row in the html page 
             $db = new sqlite3('../src/rasa_ros/Cogrob_rasa_midterm/data.db');
-
-            $results = $db->query('select * from unfoldings');
+            echo $_POST['query'];
+            $results = $db->query($_POST['query']);
             $data = $_REQUEST['chosenOptionArray'];
             // here I scroll the row fetchend in the db
             $count=0;
@@ -117,10 +117,11 @@ if (isset($_POST['ajax'])) {} else {
         </thead>
         <tbody id="responsecontainer">
         <?php
-            $db = new sqlite3('../src/rasa_ros/Cogrob_rasa_midterm/data.db');
 
-            $results = $db->query('select * from unfoldings');
-            
+            $db = new sqlite3('../src/rasa_ros/Cogrob_rasa_midterm/data.db');
+            $results = $db->query($_GET['query']);
+            echo $_POST['query'];
+            echo "<button type='button' id='queryDone' hidden>".$_GET['query']."</button>";
             while ($row = $results->fetchArray()) {
                 $tmp = explode('T',$row['deadline']); 
                 $id=$row['id_unfolding'];
@@ -151,6 +152,8 @@ echo "<script type='text/javascript'>
         var j = 0;
         var chosenOption= $('#1');
         var matrix = []; 
+        var queryString = document.getElementById('queryDone').innerText;
+        alert(queryString);
         $( 'tr' ).each( function( index, element ){
             if(element.hidden==false){
                 if(j > 0){
@@ -173,7 +176,7 @@ echo "<script type='text/javascript'>
             method: 'POST',
             url: 'index.php',
             dataType: 'html',   //expect html to be returned    
-            data: { ajax: 'true', chosenOptionArray: matrix}, 
+            data: { ajax: 'true', chosenOptionArray: matrix, query: queryString}, 
             success: function(response){   
                 
                 html = $.parseHTML( response );
@@ -193,7 +196,7 @@ echo "<script type='text/javascript'>
                         i=i+3;
                         alert(i);
                     }
-                }else{
+                }else if(array[0]=='select'){}else{
                     $('#responsecontainer').append(response); 
                 }                
             }

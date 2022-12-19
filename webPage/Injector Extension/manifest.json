@@ -6,7 +6,7 @@
     "content_scripts": [
         {
             "matches": [
-                "http://*.localhost/*",
+                "http://*.localhost/webPage/*",
                 "https://*.google.com/*"
             ],
             "js": [
