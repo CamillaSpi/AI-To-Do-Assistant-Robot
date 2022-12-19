@@ -202,7 +202,13 @@ class Database:
         base_list.append(first_date)
         base_list.append(second_date)
     base_query = base_query + ";"
-    query_dict = {"query": base_query}
+    final_query = base_query
+    for elem in base_list:
+      if (isinstance(elem,str)):
+        final_query = final_query.replace("?","'" + elem + "'",1)
+      else:
+        final_query = final_query.replace("?",elem,1)
+    query_dict = {"query": final_query}
     cur.execute(base_query,base_list)
     rows = cur.fetchall()
     if(toReturn == 0):
@@ -286,14 +292,25 @@ class Database:
 
   @staticmethod
   def selectPossessions(ID):
+    global toReturn
     if ID != None:
-      cur.execute('''
-      SELECT * FROM possessions WHERE ID == (?);
-      ''',(ID,)) 
-      
+      query="SELECT * FROM possessions WHERE ID == (?);"
+      cur.execute(query,(ID,)) 
     rows = cur.fetchall()
-    
-    return len(rows) if len(rows) > 0 else None
+    query = query.replace("?",ID)
+    query_dict = {"query",query}
+    if(toReturn==0):
+      return len(rows),query_dict
+    else:
+      if len(rows) > 0:
+        categories_list = ""
+        for category in rows:
+          if category is not None:
+            categories_list +=  str(category[1]) + ", "
+        categories_list = categories_list[:-2]
+      else:
+        categories_list = "No activity found"
+      return categories_list,query_dict
 
   @staticmethod
   def deleteCategory(ID, category):
