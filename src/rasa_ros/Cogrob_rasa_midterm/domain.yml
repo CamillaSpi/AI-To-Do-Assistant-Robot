@@ -286,7 +286,7 @@ forms:
 responses:
   utter_greet:
       - text: "Ehi Ciao! come posso aiutarti?"
-      - text: "Ehi Ciao! ccosa posso fare per te oggi?"
+      - text: "Ehi Ciao! cosa posso fare per te oggi?"
 
   utter_help:
     - text: "Ehi, sono il tuo assistente personale, puoi creare liste di cose da fare e io le gestirò"
