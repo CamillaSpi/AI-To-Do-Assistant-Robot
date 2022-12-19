@@ -1381,7 +1381,8 @@ nlu:
     - Cambiare il nome dell'attività [chiesa]{"entity": "activity", "role": "old"}  con nome [meditazione]{"entity": "activity", "role": "new"}
     - Nella categoria [scuola](category) sostituire il nome dell'attività [correre]{"entity": "activity", "role": "old"}  con nome [partita]{"entity": "activity", "role": "new"}
     - Nella categoria [scuola](category) sostituire il nome dell'attività [partita]{"entity": "activity", "role": "old"}  con nome [correre]{"entity": "activity", "role": "new"}
-    - Sostituire il nome dell'attività [giornale]{"entity": "activity", "role": "old"}  con nome [scrittura]{"entity": "activity", "role": "new"}- replace the name of the activity [writing]{"entity": "activity", "role": "old"}  with name [journal]{"entity": "activity", "role": "new"}
+    - Sostituire il nome dell'attività [giornale]{"entity": "activity", "role": "old"}  con nome [scrittura]{"entity": "activity", "role": "new"}
+    - replace the name of the activity [writing]{"entity": "activity", "role": "old"}  with name [journal]{"entity": "activity", "role": "new"}
     - Cambia il nome dell'attività [jogging]{"entity": "activity", "role": "old"} nella categoria [vacanza](category) con nome [viaggio]{"entity": "activity", "role": "new"}
     - Cambia il nome dell'attività [viaggio]{"entity": "activity", "role": "old"} nella categoria [vacanza](category) con nome [jogging]{"entity": "activity", "role": "new"}
     - Cambia il nome dell'attività [pittura]{"entity": "activity", "role": "old"} con nome [concerto]{"entity": "activity", "role": "new"}
@@ -1479,7 +1480,7 @@ nlu:
     - Imposta un promemoria per l'attività [chiamata](activity) nella categoria [relazioni](categoria) della mattina successiva
     - Aiutami a non dimenticare l'attività [studio](activity) nella categoria [scuola](categoria) per domani
     - Aiutami a ricordare il mio [compleanno](activity) il 12/18/2022
-    - Ricordami l'[esame](activity) domani mattina
+    - Ricordami [l'esame](activity) domani mattina
     - Non dimenticare di [correre](activity) alle 19:00
     - Voglio impostare un promemoria
     - Vuoi aiutarmi a ricordare
@@ -1504,7 +1505,7 @@ nlu:
     - Sono [Camilla](name), impostami un promemoria per l'attività [chiamata](activity) nella categoria [relazioni](category) della mattina successiva. 
     - Sono [Simone](name), aiutami a non dimenticare l'attività [studio](activity) nella categoria [università](category) per domani. 
     - Sono [Nando](name), aiutami a ricordare il mio [compleanno](activity) il 12/18/2022. 
-    - Sono [Paola](name), ricordami l'[esame](activity) domani mattina. 
+    - Sono [Paola](name), ricordami [l'esame](activity) domani mattina. 
     - Sono [Alessia](name), non dimenticare di [giardinaggio](activity) alle 19:00. 
     - Sono [Marco](name), voglio impostare un promemoria. 
     - Sono [Gerardo](name), voglio che tu mi aiuti a ricordare. 
