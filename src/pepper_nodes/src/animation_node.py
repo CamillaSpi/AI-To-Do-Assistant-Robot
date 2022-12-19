@@ -16,27 +16,27 @@ class AnimationNode:
         self.ip = ip
         self.port = port
         self.session = Session(ip, port)
-        self.tts = self.session.get_service("ALAnimationPlayer")
+        self.animation = self.session.get_service("ALAnimationPlayer")
      
     '''
     Rececives a Animation message and call the ALAnimationPlayer service.
     The robot will play the text of the message
     '''
-    def say(self, msg):
+    def run(self, msg):
         try:
-            self.tts.say(msg.animation)
+            self.animation.run(msg.animation)
         except:
             self.session.reconnect()
-            self.tts = self.session.get_service("ALAnimationPlayer")
-            self.tts.say(msg.animation)
+            self.animation = self.session.get_service("ALAnimationPlayer")
+            self.animation.run(msg.animation)
         return "ACK"
     
     '''
-    Starts the node and create the tts service
+    Starts the node and create the animation service
     '''
     def start(self):
         rospy.init_node("animation_node")
-        rospy.Service('tts', Animation, self.say)
+        rospy.Service('animation_node', Animation, self.run)
 
         rospy.spin()
 
@@ -49,7 +49,7 @@ if __name__ == "__main__":
     (options, args) = parser.parse_args()
 
     try:
-        ttsnode = AnimationNode(options.ip, int(options.port))
-        ttsnode.start()
+        animationnode = AnimationNode(options.ip, int(options.port))
+        animationnode.start()
     except rospy.ROSInterruptException:
         pass

@@ -2,17 +2,19 @@
 import rospy
 from std_msgs.msg import String
 import numpy as np
-from pepper_nodes.srv import LoadUrl
+from pepper_nodes.srv import Animation
 import time
 
 # Init node
 rospy.init_node('animation_to_pepper', anonymous=True)
-load_url = rospy.ServiceProxy('animation_node', LoadUrl)
+execute_animation = rospy.ServiceProxy('animation_node', Animation)
 # this is called from the background thread
 def callback():
     try:
         print('arriva')
-        resp = load_url("animations/Stand/Gestures/Hey_1").ack
+        anim = Animation()
+        anim.animation="animations/Stand/Gestures/Hey_1"
+        resp = execute_animation(anim).ack
         if resp!= 'ACK':
             print("There is an error in msg, maybe")
     except rospy.ServiceException as e:
