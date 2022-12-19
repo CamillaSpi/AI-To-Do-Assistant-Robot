@@ -205,9 +205,9 @@ class Database:
     final_query = base_query
     for elem in base_list:
       if (isinstance(elem,str)):
-        final_query = final_query.replace("?","'" + elem + "'",1)
+        final_query = final_query.replace("?","'" + str(elem) + "'",1)
       else:
-        final_query = final_query.replace("?",elem,1)
+        final_query = final_query.replace("?",str(elem),1)
     query_dict = {"query": final_query}
     cur.execute(base_query,base_list)
     rows = cur.fetchall()
@@ -294,11 +294,11 @@ class Database:
   def selectPossessions(ID):
     global toReturn
     if ID != None:
-      query="SELECT * FROM possessions WHERE ID == (?);"
+      query="SELECT * FROM possessions WHERE ID == ?;"
       cur.execute(query,(ID,)) 
     rows = cur.fetchall()
-    query = query.replace("?",ID)
-    query_dict = {"query",query}
+    query = query.replace("?",str(ID))
+    query_dict = {"query":query}
     if(toReturn==0):
       return len(rows),query_dict
     else:
