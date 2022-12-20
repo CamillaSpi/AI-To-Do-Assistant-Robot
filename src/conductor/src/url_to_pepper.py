@@ -20,7 +20,7 @@ def callback(msg):
         if resp!= 'ACK':
             print("There is an error in msg, maybe")
         else:
-            time.sleep(5)
+            time.sleep(20)
             # Javascript script for displaying a prompt
             # ALTabletBinding is a javascript binding inject in the web page displayed on the tablet
             script = """var vediamo = document.getElementById("clickMe");

@@ -24,7 +24,7 @@ def callback(audio):
     
     try:
         #t1 = datetime.now()
-        spoken_text= r.recognize_google(audio_data,language="en-GB")
+        spoken_text= r.recognize_google(audio_data,language="it-IT")
         print("Google Speech Recognition pensa tu abbia detto: " + spoken_text)
         #t2 = datetime.now()
         #delta = t2-t1

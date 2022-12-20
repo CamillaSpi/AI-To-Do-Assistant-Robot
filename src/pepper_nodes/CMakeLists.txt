@@ -62,6 +62,8 @@ add_service_files(
   Rest.srv
   Text2Speech.srv
   WakeUp.srv
+  Animation.srv
+  Tracker.srv
 )
 
 ## Generate actions in the 'action' folder

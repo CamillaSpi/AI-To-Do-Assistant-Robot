@@ -108,29 +108,12 @@ def testFunction():
 def main():
     rospy.init_node('writing')
     rospy.wait_for_service('dialogue_server')
-    message = RecognizedSpoke()  
-    message.msg = "Hi i am Vito"
-    message.id = 5
-    dialogue_service(message.msg,message.id) 
-    time.sleep(0.5)
-    message.msg = "mostrami le attivitia"
-    dialogue_service(message.msg,message.id) 
-    time.sleep(0.5)
-    message.msg = "mostrami le categorie"
-    dialogue_service(message.msg,message.id) 
-    time.sleep(0.5)
-    message.msg = "mostrami le attivitia per oggi"
-    dialogue_service(message.msg,message.id) 
-    # time.sleep(0.5)
-    # message.msg = "remind me to call john in personal in 10 seconds"
-    # dialogue_service(message.msg,message.id) 
-    # time.sleep(0.5)
-    # message.msg = "remind me to call john in personal in 10 seconds"
-    # dialogue_service(message.msg,message.id) 
-    # time.sleep(0.5)
-    # message.msg = "remind me to call john in personal in 10 seconds"
-    # dialogue_service(message.msg,message.id) 
     # testFunction()
+    message = RecognizedSpoke()  
+    message.msg = "/session_start"
+    message.id = -1
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
 
 
     while not rospy.is_shutdown():

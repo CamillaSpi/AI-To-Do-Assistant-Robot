@@ -27,6 +27,7 @@ class TrackerNode:
             self.stop()
         else:
             try:
+                self.tracker_service.setMode("Head")
                 self.tracker_service.track(msg.traker)
             except:
                 self.session.reconnect()

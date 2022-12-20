@@ -475,7 +475,7 @@ class actionRemindItem(Action):
         time = tracker.get_slot("time")
         
         associated_name = Database.getName(id) 
-        date = datetime.now() + timedelta(seconds = 10)
+        date = datetime.now() + timedelta(seconds = 40)
         if (isinstance(activity,list)):
             activity = ' '.join([str(elem) for elem in activity])
         if (isinstance(category,list)):

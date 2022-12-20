@@ -33,7 +33,7 @@ def find_device_index():
 device_index = find_device_index()
 if device_index < 0:
     print('No ReSpeaker USB device found')
-    num_microphone = 2
+    num_microphone = 1
     # num_microphone = 1
 else:
     print('Find ReSpeaker USB Device')

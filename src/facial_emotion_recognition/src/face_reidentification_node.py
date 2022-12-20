@@ -135,6 +135,7 @@ def extract_features(face_reco_model, filename):
 
 def registration(msg):
     global number_of_users
+    global database
     lock.acquire()
     t1 = datetime.now()
     print('non ti conosco... Rimani fermo ')
