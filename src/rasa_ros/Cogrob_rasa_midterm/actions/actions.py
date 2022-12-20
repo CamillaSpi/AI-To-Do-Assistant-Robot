@@ -124,7 +124,7 @@ class actionAddItem(Action):
             returnedValue= Database.insertItem(id,activity ,category,reminder,time)
             if (returnedValue):  
                 text = f"{associated_name}, l'attivita {activity} aggiunta alla categoria {category}" + (f", da completare prima del {time[:10]} alle {time[11:16]}." if time else ".") + ("Te lo ricorderò, non preoccuparti" if reminder else "") 
-                dispatcher.utter_message(text=text) 
+                dispatcher.utter_message(text=text,json_message={'query':'js'}) 
             else:
                 dispatcher.utter_message(text=f"Ops {associated_name}, questa attivita esiste già.") 
         else:
@@ -155,7 +155,7 @@ class actionRemoveItem(Action):
             category = ' '.join([str(elem) for elem in category])
         returnedValue = Database.deleteItem(id,activity ,category,time)
         if (returnedValue):  
-            dispatcher.utter_message(text=f"{associated_name}, l'attivita {activity} è stata rimossa dalla categoria {category} .") 
+            dispatcher.utter_message(text=f"{associated_name}, l'attivita {activity} è stata rimossa dalla categoria {category} .",json_message={'query':'js'}) 
         else:
             dispatcher.utter_message(text=f"Ops {associated_name}, questà attivita non esiste.") 
 
@@ -239,7 +239,7 @@ class actionSetStatusActivity(Action):
             return [SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
         if (returnedValue):  
-            dispatcher.utter_message(text=f"{associated_name}, attivita {activity} in {category} {activity_status} !") 
+            dispatcher.utter_message(text=f"{associated_name}, attivita {activity} in {category} {activity_status} !",json_message={'query':'js'}) 
         else:
             dispatcher.utter_message(text=f"Ops {associated_name}, questa attivita non esiste.") 
 
@@ -405,7 +405,7 @@ class actionModifyActivity(Action):
         if (Database.doesUnfoldingsExists(id,category_new,activity_new,timenew) == False):
             returnedValue = Database.modifyActivity(id, cat_to_modify, act_to_modify, timeold,category_new, activity_new, timenew)
             if (returnedValue):  
-                dispatcher.utter_message(text=f"{associated_name}, l'attivita {act_to_modify} è stata modificata") 
+                dispatcher.utter_message(text=f"{associated_name}, l'attivita {act_to_modify} è stata modificata",json_message={'query':'js'}) 
             else:
                 dispatcher.utter_message(text=f"Ops {associated_name} , l'attivita da modificare non esiste.") 
         else:
@@ -437,7 +437,7 @@ class actionCleanCompletedActivities(Action):
         
         returnedValue = Database.cleanCompletedActivities(id)
         if (returnedValue):  
-            dispatcher.utter_message(text=f"{associated_name}, tutte le tue attivita completate sono state rimosse!") 
+            dispatcher.utter_message(text=f"{associated_name}, tutte le tue attivita completate sono state rimosse!",json_message={'query':'js'}) 
         else:
             dispatcher.utter_message(text=f"Ops! {associated_name} qualcosa è andato storto! Non riesco a rimuovere tutte le tue attivita completate!") #??
     
@@ -492,7 +492,7 @@ class actionRemindItem(Action):
             
             returnedValue = Database.updateReminder(id,category,activity,time,reminderSlot)
             if (returnedValue):
-                dispatcher.utter_message(text=f"{associated_name}, il reminder per l'attivita è stato aggiornato.")
+                dispatcher.utter_message(text=f"{associated_name}, il reminder per l'attivita è stato aggiornato.",json_message={'query':'js'})
             else:
                 dispatcher.utter_message(text=f"{associated_name}, ci sono stati dei problemi con l'aggiornamento del reminder!")
         else:
@@ -609,15 +609,15 @@ class ActionReactToReminder(Action):
         category = entities['category']
         expired = entities['expired']
         print(expired)
+        Database.updateReminder(id_user,category, activity, deadline, False)
         if(expired):
-            dispatcher.utter_message(f"Hei {name}, il reminder per l'attivita {activity} in {category} è scaduto!")
+            dispatcher.utter_message(f"Hei {name}, il reminder per l'attivita {activity} in {category} è scaduto!",json_message={'query':'js'})
             print("ti sei scordato ", activity, category)
         else: 
-            dispatcher.utter_message(f"Hei {name}, ricordati dell'attivita {activity} in {category} tra cinque minuti!")
+            dispatcher.utter_message(f"Hei {name}, ricordati dell'attivita {activity} in {category} tra cinque minuti!",json_message={'query':'js'})
             print("sei ancora in tempo per ricordarti", activity, category)
 
         #aggiunta per far si che una volta notificato un reminder questo non venga più notificato successivamente
-        Database.updateReminder(id_user,category, activity, deadline, False)
         return []
 
 class ActionRecognizeUser(Action):

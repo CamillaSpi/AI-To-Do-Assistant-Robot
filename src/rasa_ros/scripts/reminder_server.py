@@ -3,7 +3,6 @@ from rasa_ros.srv import Dialogue, DialogueResponse
 from sanic import Sanic, response
 from sanic.request import Request
 from sanic.response import HTTPResponse
-from pepper_nodes.srv import String
 import rospy
 import requests
 from std_msgs.msg import String
@@ -23,10 +22,16 @@ def create_app() -> Sanic:
         text = request.json.get("text")
         try:
             json_query = request.json.get('custom')['query']
-            pub2.publish(f'http://10.0.1.248:80/webPage/index.php?query={json_query}')
-            print(f'http://10.0.1.248:80/webPage/index.php?query={json_query}')
+            print('ho riceuvto ' , json_query)
+            if "js" not in json_query:
+                pub2.publish(f'http://10.0.1.248:80/webPage/index.php?query={json_query}')
+                print(f'http://10.0.1.248:80/webPage/index.php?query={json_query}')
+            else:
+                pub2.publish('js')
+                print('ricevuto js')
         except:
             pub.publish(text)
+            print('reminder server ' ,text)
             if "hai effettuato l'accesso!" in text:
                 anim="animations/Stand/Gestures/Hey_4"
                 pub3.publish(anim)

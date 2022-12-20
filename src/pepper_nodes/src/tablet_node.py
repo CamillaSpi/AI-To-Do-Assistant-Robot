@@ -38,8 +38,9 @@ class TabletNode:
         try:
             self.tablet_proxy.executeJS(msg.js)
         except:
-            self.tablet_proxy = self.session.get_service("ALTabletService")
-            self.tablet_proxy.executeJS(msg.js)
+            # self.tablet_proxy = self.session.get_service("ALTabletService")
+            # self.tablet_proxy.executeJS(msg.js)
+            print("No service found, jump injection")
             
         return "ACK"
     

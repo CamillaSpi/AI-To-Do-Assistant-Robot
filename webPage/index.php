@@ -15,7 +15,6 @@ if (isset($_POST['ajax'])) {} else {
             // $data = json_decode(stripslashes($_POST['chosenOption']));
             // now here i've the matrix contains all the row in the html page 
             $db = new sqlite3('../src/rasa_ros/Cogrob_rasa_midterm/data.db');
-            echo $_POST['query'];
             $results = $db->query($_POST['query']);
             $data = $_REQUEST['chosenOptionArray'];
             // here I scroll the row fetchend in the db
@@ -190,11 +189,9 @@ echo "<script type='text/javascript'>
                     row.id = array[3];
                     childs = row.children;
                     var i=4;
-                    alert(i);
                     while(array.length != i){
                         (childs[array[i]-1]).innerHTML = array[i+1];
                         i=i+3;
-                        alert(i);
                     }
                 }else if(array[0]=='select'){}else{
                     $('#responsecontainer').append(response); 

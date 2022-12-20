@@ -36,6 +36,7 @@
     <node pkg="conductor" type="recognize_user_node.py" name="recognize_user_node" output="screen"/>
     <node pkg="conductor" name="url2pepper" type="url_to_pepper.py" output="screen"/>
     <node pkg="conductor" name="text2pepper" type="text_to_pepper.py" output="screen"/>
+    <node pkg="conductor" name="animation2pepper" type="animation_to_pepper.py" output="screen"/>
 
     
 </launch>

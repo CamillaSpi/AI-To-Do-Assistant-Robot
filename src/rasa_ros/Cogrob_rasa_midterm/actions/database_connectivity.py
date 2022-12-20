@@ -212,6 +212,7 @@ class Database:
     cur.execute(base_query,base_list)
     rows = cur.fetchall()
     if(toReturn == 0):
+      query_dict['query'] = query_dict['query'].replace("activity,category,deadline,completed,reminder","*")
       return len(rows),query_dict
     else:
       if(len(rows)>0):  
