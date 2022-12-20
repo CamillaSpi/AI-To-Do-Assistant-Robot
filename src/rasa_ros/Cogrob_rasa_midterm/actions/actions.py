@@ -291,7 +291,12 @@ class showActivities(Action):
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
         list_of_activity,json = Database.selectItems(id,category, activity_status, time)
-        dispatcher.utter_message(text=(f"{associated_name} , hai {list_of_activity} attivita." if list_of_activity else " non ci sono attivita per te!"),json_message=json) 
+        text=associated_name
+        if json == None:
+            text += f", ecco a te {list_of_activity}." if list_of_activity else " non ci sono attivita per te!"
+        else:
+            text += f", hai {list_of_activity} attivita." if list_of_activity else " non ci sono attivita per te!"
+        dispatcher.utter_message(text=text,json_message=json) 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -308,8 +313,14 @@ class showCategories(Action):
         
         associated_name = Database.getName(id)
         list_of_categories,json = Database.selectPossessions(id)
+        text = associated_name
+        if json == None:
+            text+=f", ecco le tue categorie: {list_of_categories}." if list_of_categories else " non hai alcuna categoria!"
+        else:
+            text+=f"(, hai {list_of_categories} categorie." if list_of_categories else " non ci sono categorie per te!"
+
         
-        dispatcher.utter_message(text=(f"{associated_name} , hai {list_of_categories} categorie." if list_of_categories else " non hai alcuna categoria!"),json_message=json) 
+        dispatcher.utter_message(text=text,json_message=json) 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 

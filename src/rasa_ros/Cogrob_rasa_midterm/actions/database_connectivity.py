@@ -176,9 +176,9 @@ class Database:
   def selectItems(ID, category=None, activity_status=None, deadline=None):
     global toReturn
     if ID == None: return None
-    if(activity_status == "completed"):
+    if(activity_status == "completa"):
       completed = True
-    elif(activity_status == "uncompleted"):
+    elif(activity_status == "incompleta"):
       completed = False
     base_query = "SELECT activity,category,deadline,completed,reminder FROM unfoldings WHERE ID == ?"
     base_list = [ID,]
@@ -215,10 +215,11 @@ class Database:
       query_dict['query'] = query_dict['query'].replace("activity,category,deadline,completed,reminder","*")
       return len(rows),query_dict
     else:
+      toPrint = None
       if(len(rows)>0):  
-        category = ["Activities","Category","DeadLine","Completed"]
+        category = ["Attivita","Categoria","DeadLine","Completata"]
         number = [i for i in range(1,len(rows)+1)]
-        row_format ="{:>20}" * (len(category) + 1)
+        row_format ="{:>22}" * (len(category) + 1)
         toPrint = ""
         toPrint += (row_format.format("", *category)) + "\n"
         for team, row in zip(number, rows):
@@ -227,7 +228,7 @@ class Database:
             else:
               row = (row[0],row[1],"None",row[3])
             toPrint += (row_format.format(team, *row)) + "\n"
-        return toPrint,query_dict
+      return toPrint,None
       
 
   @staticmethod
@@ -303,15 +304,14 @@ class Database:
     if(toReturn==0):
       return len(rows),query_dict
     else:
+      categories_list = None
       if len(rows) > 0:
         categories_list = ""
         for category in rows:
           if category is not None:
             categories_list +=  str(category[1]) + ", "
         categories_list = categories_list[:-2]
-      else:
-        categories_list = "No activity found"
-      return categories_list,query_dict
+      return categories_list,None
 
   @staticmethod
   def deleteCategory(ID, category):
