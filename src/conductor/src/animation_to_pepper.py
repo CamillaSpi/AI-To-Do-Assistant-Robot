@@ -11,14 +11,14 @@ execute_animation = rospy.ServiceProxy('animation_node', Animation)
 # this is called from the background thread
 def callback(msg):
     try:
-        resp = execute_animation(msg.animation).ack
+        resp = execute_animation(msg.data).ack
         if resp!= 'ACK':
             print("There is an error in msg, maybe")
     except rospy.ServiceException as e:
         print("Service call failed: %s", e)
     
 def listener():
-    rospy.Subscriber("animation2Pepper", Animation, callback)
+    rospy.Subscriber("animation2Pepper", String, callback)
     rospy.spin()
 
 if __name__ == '__main__':
