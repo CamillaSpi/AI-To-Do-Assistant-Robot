@@ -3,6 +3,7 @@ from rasa_ros.srv import Dialogue, DialogueResponse
 from sanic import Sanic, response
 from sanic.request import Request
 from sanic.response import HTTPResponse
+from pepper_nodes.srv import Animation
 import rospy
 import requests
 from std_msgs.msg import String
@@ -10,6 +11,7 @@ from std_msgs.msg import String
 
 pub = rospy.Publisher('toSpeech', String, queue_size=10)
 pub2 = rospy.Publisher("toShow", String,  queue_size=10)
+pub3 = rospy.Publisher("animation2Pepper", Animation,  queue_size=1)
 
 def create_app() -> Sanic:
 
@@ -25,6 +27,15 @@ def create_app() -> Sanic:
             print(f'http://10.0.1.248:80/webPage/index.php?query={json_query}')
         except:
             pub.publish(text)
+            if "hai effettuato l'accesso!" in text:
+                anim = Animation()
+                anim.animation="animations/Stand/Gestures/Hey_4"
+                pub3.publish(anim)
+            elif "Mi dispiace, non posso aiutarti, puoi ripetere?." in text:
+                anim = Animation()
+                anim.animation="animations/Stand/Gestures/IDontKnow_1"
+                pub3.publish(anim)
+
 
         body = {"status": "message sent"}
         return response.json(body, status=200)

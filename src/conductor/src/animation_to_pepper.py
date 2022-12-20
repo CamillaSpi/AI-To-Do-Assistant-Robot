@@ -9,20 +9,16 @@ import time
 rospy.init_node('animation_to_pepper', anonymous=True)
 execute_animation = rospy.ServiceProxy('animation_node', Animation)
 # this is called from the background thread
-def callback():
+def callback(msg):
     try:
-        print('arriva')
-        anim = Animation()
-        anim.animation="animations/Stand/Gestures/Hey_1"
-        resp = execute_animation(anim).ack
+        resp = execute_animation(msg.animation).ack
         if resp!= 'ACK':
             print("There is an error in msg, maybe")
     except rospy.ServiceException as e:
         print("Service call failed: %s", e)
     
 def listener():
-    time.sleep(5)
-    callback()
+    rospy.Subscriber("animation2Pepper", Animation, callback)
     rospy.spin()
 
 if __name__ == '__main__':
