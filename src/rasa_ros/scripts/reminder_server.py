@@ -47,22 +47,21 @@ def handle_service(req):
     response.answer = str(r)
 
     return response
-
-
 def main():
     rospy.init_node('callback')
-    app = create_app()
-    port = 5034
-    s = rospy.Service('dialogue_server',
-                        Dialogue, handle_service)
-    rospy.logdebug('Dialogue server READY.')
-    print(f"Starting callback server on port {port}.")
-    app.run("0.0.0.0", port)
-    rospy.spin()
+    try:
+        app = create_app()
+        port = 5034
+        s = rospy.Service('dialogue_server',
+                            Dialogue, handle_service)
+        rospy.logdebug('Dialogue server READY.')
+        print(f"Starting callback server on port {port}.")
+        app.run("0.0.0.0", port)
+        rospy.spin()
+    except rospy.ROSInterruptException as e:
+        print(e)
+        app.stop()  
 
 
 if __name__ == '__main__':
-    try: 
-        main()
-    except rospy.ROSInterruptException as e:
-        pass
+    main()
