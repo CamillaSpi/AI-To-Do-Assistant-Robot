@@ -23,12 +23,28 @@ class TrackerNode:
     The robot will play the text of the message
     '''
     def run(self, msg):
+        if 'stop' in msg.tracker:
+            self.stop()
+        else:
+            try:
+                self.tracker_service.track(msg.traker)
+            except:
+                self.session.reconnect()
+                self.tracker_service = self.session.get_service("ALTracker")
+                self.tracker_service.track(msg.traker)
+            return "ACK"
+     
+    '''
+    Rececives a Tracker message and call the ALTracker service.
+    The robot will play the text of the message
+    '''
+    def stop(self):
         try:
-            self.tracker_service.track(msg.traker)
+            self.tracker_service.stopTracker()
         except:
             self.session.reconnect()
             self.tracker_service = self.session.get_service("ALTracker")
-            self.tracker_service.track(msg.traker)
+            self.tracker_service.stopTracker()
         return "ACK"
     
     '''
