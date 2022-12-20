@@ -21,8 +21,8 @@ def create_app() -> Sanic:
         text = request.json.get("text")
         try:
             json_query = request.json.get('custom')['query']
-            pub2.publish(f'http://10.0.1.248:80/webPage/constructPOSTrequest.php?query={json_query}')
-            print(f'http://10.0.1.248:80/webPage/costructPOSTrequest.php?query={json_query}')
+            pub2.publish(f'http://10.0.1.248:80/webPage/index.php?query={json_query}')
+            print(f'http://10.0.1.248:80/webPage/index.php?query={json_query}')
         except:
             pub.publish(text)
 
