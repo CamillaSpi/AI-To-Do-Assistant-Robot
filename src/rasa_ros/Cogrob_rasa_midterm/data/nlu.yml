@@ -29,7 +29,7 @@ nlu:
 
 - intent: affirm
   examples: |
-    - Si
+    - Si 
     - esatto
     - Indubbiamente
     - Certo
@@ -37,6 +37,9 @@ nlu:
     - Corretto
     - yes
     - affermativo
+    - si 
+    - Sì
+    - sì
     
 - intent: deny
   examples: |
@@ -392,6 +395,14 @@ nlu:
     - 08/09/2025
     - lunedì prossimo
     - venerdì
+    - in 30 secondi
+    - in 5 secondi
+    - tra 26 minuti
+    - tra 1 ora
+    - tra 57 secondi
+    - tra 4 ore
+    - 19 ore
+    - 26 minuti e 30 secondi
     
 - intent: add_item
   examples: |
