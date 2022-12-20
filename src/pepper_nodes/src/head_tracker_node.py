@@ -26,13 +26,17 @@ class TrackerNode:
         if 'stop' in msg.tracker:
             self.stop()
         else:
+            targetName = msg.tracker
+            faceWidth = 0.1
             try:
-                self.tracker_service.setMode("Head")
-                self.tracker_service.track(msg.traker)
+                self.tracker_service.registerTarget(targetName, faceWidth)
+                self.tracker_service.track(targetName)
+                
             except:
                 self.session.reconnect()
                 self.tracker_service = self.session.get_service("ALTracker")
-                self.tracker_service.track(msg.traker)
+                self.tracker_service.registerTarget(targetName, faceWidth)
+                self.tracker_service.track(targetName)
             return "ACK"
      
     '''
