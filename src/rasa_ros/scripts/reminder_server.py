@@ -30,7 +30,7 @@ def create_app() -> Sanic:
                     pub2.publish('js')
                     print('ricevuto js')
                 else:
-                    pub2.publish('reoad')
+                    pub2.publish('reload')
                     print('reload')
         except:
             pub.publish(text)
