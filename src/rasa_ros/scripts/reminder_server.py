@@ -26,8 +26,12 @@ def create_app() -> Sanic:
                 pub2.publish(f'http://10.0.1.248:80/webPage/index.php?query={json_query}')
                 print(f'http://10.0.1.248:80/webPage/index.php?query={json_query}')
             else:
-                pub2.publish('js')
-                print('ricevuto js')
+                if 'reload' not in json_query:
+                    pub2.publish('js')
+                    print('ricevuto js')
+                else:
+                    pub2.publish('reoad')
+                    print('reload')
         except:
             pub.publish(text)
 

@@ -179,7 +179,7 @@ class actionAddCategory(Action):
             category = ' '.join([str(elem) for elem in category])
         returnedValue = Database.insertCategoryAndPossession(id,category)
         if (returnedValue):  
-            dispatcher.utter_message(text=f"{associated_name}, {category} aggiunta come nuova categoria.") 
+            dispatcher.utter_message(text=f"{associated_name}, {category} aggiunta come nuova categoria.",json_message={'query':'js reload'}) 
         else:
             dispatcher.utter_message(text=f"Ops {associated_name}, questa categoria esiste già.") 
 
@@ -203,7 +203,7 @@ class actionRemoveCategory(Action):
             category = ' '.join([str(elem) for elem in category])
         returnedValue = Database.deleteCategory(id,category)
         if (returnedValue):  
-            dispatcher.utter_message(text=f"{associated_name}, la categoria {category} è stata rimossa.") 
+            dispatcher.utter_message(text=f"{associated_name}, la categoria {category} è stata rimossa.",json_message={'query':'js reload'}) 
         else:
             dispatcher.utter_message(text=f"Ops {associated_name}, questa categoria non esiste.") 
 
@@ -342,7 +342,7 @@ class actionModifyCategory(Action):
 
             returnedValue = Database.modifyCategory(id, category_old, category_new)
             if (returnedValue):  
-                dispatcher.utter_message(text=f"{associated_name}, categoria {category_old} modificata in {category_new} .") 
+                dispatcher.utter_message(text=f"{associated_name}, categoria {category_old} modificata in {category_new} .",json_message={'query':'js reload'}) 
             else:
                 dispatcher.utter_message(text=f"Ops {associated_name} , la categoria {category_old} non esiste.") 
         else:

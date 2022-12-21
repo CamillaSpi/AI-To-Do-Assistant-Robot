@@ -16,8 +16,11 @@ def callback(msg):
     try:
         print('arriva')
         if "js" in msg.data:
-            script = """var vediamo = document.getElementById("clickMe");
-vediamo.click();"""
+            if 'reload' not in msg.data:
+                script = """var vediamo = document.getElementById("clickMe");
+    vediamo.click();"""
+            else:
+                script=""" mattia scrivi qua """
             resp = execute_js(script).ack
 
         else:
