@@ -20,7 +20,8 @@ def callback(msg):
                 script = """var vediamo = document.getElementById("clickMe");
     vediamo.click();"""
             else:
-                script=""" mattia scrivi qua """
+                script = """var vediamo = document.getElementById("refresh");
+    reload.click();"""
             resp = execute_js(script).ack
 
         else:
