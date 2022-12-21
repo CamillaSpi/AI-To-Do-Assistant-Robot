@@ -315,7 +315,7 @@ class showCategories(Action):
         list_of_categories,json = Database.selectPossessions(id)
         text = associated_name
         if json == None:
-            text+=f", ecco le tue categorie: {list_of_categories}." if list_of_categories else " non hai alcuna categoria!"
+            text+=f", ecco a te categorie: {list_of_categories}." if list_of_categories else " non hai alcuna categoria!"
         else:
             text+=f"(, hai {list_of_categories} categorie." if list_of_categories else " non ci sono categorie per te!"
 

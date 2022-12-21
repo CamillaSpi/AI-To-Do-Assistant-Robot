@@ -10,7 +10,6 @@ from std_msgs.msg import String
 
 pub = rospy.Publisher('toSpeech', String, queue_size=10)
 pub2 = rospy.Publisher("toShow", String,  queue_size=10)
-pub3 = rospy.Publisher("animation2Pepper", String,  queue_size=1)
 
 def create_app() -> Sanic:
 
@@ -31,14 +30,6 @@ def create_app() -> Sanic:
                 print('ricevuto js')
         except:
             pub.publish(text)
-            print('reminder server ' ,text)
-            if "hai effettuato l'accesso!" in text:
-                anim="animations/Stand/Gestures/Hey_4"
-                pub3.publish(anim)
-            elif "Mi dispiace, non posso aiutarti, puoi ripetere?." in text:
-                anim="animations/Stand/Gestures/IDontKnow_1"
-                pub3.publish(anim)
-
 
         body = {"status": "message sent"}
         return response.json(body, status=200)
