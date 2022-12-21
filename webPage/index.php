@@ -22,17 +22,31 @@ if (isset($_POST['ajax'])) {} else {
             $count=0;
             $operation=False;
             $satisfied=False;
+            $index=0;
+            $id_index = '0';
             while ($row = $results->fetchArray()) {
-                
+                if($index==0){
+                    $keys = array_keys($row);
+                    $keyLen = sizeof($keys);
+                    for($k=0;$k<$keyLen;++$k){
+                        if($keys[$k]=="ID"){
+                            if($k=='1'){
+                                $id_index = '1'; 
+                            }
+                        }
+                    }
+                    $index = 1;
+                }
+                $length = sizeof($row)/2;
                 if($count < sizeof($data)){
                     if($operation==True){
                         //echo "confronta:  ".$data[$count][0];
                         //echo "con questo:  ".$row['id_unfolding'];
                         //modify operation
-                        if ($data[$count][0]==$row['id_unfolding']){
+                        if ($data[$count][0]==$row[$id_index]){
                             
                         $str.="modify ".$data[$count-1][0]." to ".$value[0];
-                        for($k=1;$k<6;++$k){
+                        for($k=1;$k<$length;++$k){
                             if($data[$count-1][$k]!=$value[$k]){
                                 $str=$str." ".$k." ".$value[$k]." ";
                             }
@@ -49,32 +63,33 @@ if (isset($_POST['ajax'])) {} else {
                         }
                         $operation=False;
                     }
-                    if ($data[$count][0]!=$row['id_unfolding']){
+                    if ($data[$count][0]!=$row[$id_index]){
                         $operation=True;
-                        $value[0]=$row['id_unfolding'];
-                        $value[1]=$row['activity'];
-                        $value[2]=$row['category'];
-                        $value[3]=$row['deadline'];
-                        $value[4]=$row['completed'];
-                        $value[5]=$row['reminder'];
+                        $value[0]=$row[$id_index];
+                        for($k=2;$k<$length;++$k){
+                            $value[$k-1]=$row[$k];
+                        }
                     }
                 }else{
-                    $id=$row['id_unfolding'];
-                    echo " 
-                        <tr id=$id class='active-row'>
-                            <td>{$row['activity']}</td>
-                            <td>{$row['category']}</td>
-                            <td>"; 
+                    $id=$row[$id_index];
+                    echo " <tr id=$id class='active-row'>";
+                    for($k=1;$k<$length;++$k){
+                        if($row[$k] == $row['deadline']){
+                            echo "<td>"; 
                             if(empty($tmp)){
-                                echo "{$row['deadline']}";
+                                echo "{$row[$k]}";
                             }else
                                 $tmpSub= substr($tmp[1], 0, 5);
                                 echo "{$tmp[0]} {$tmpSub}";
-                            echo "</td>
-                            <td>{$row['completed']}</td>
-                            <td>{$row['reminder']}</td>
-                        </tr>
-                    ";
+                            echo "</td>";
+                        }else if($keys[1+$k*2]=="ID"){
+                        
+                        }else{
+                            echo "<td>{$row[$k]}</td>";
+                        }
+                        
+                    }
+                    echo "</tr>";   
                     break;
                     }
                 ++$count;
@@ -93,7 +108,7 @@ if (isset($_POST['ajax'])) {} else {
                 // }
                 //else{
                 $str.="modify ".$data[$count-1][0]." to ".$value[0];;
-                for($k=1;$k<6;++$k){
+                for($k=1;$k<$length;++$k){
                     
                     if($data[$count-1][$k]!=$value[$k]){
                         $str=$str." ".$k." ".$value[$k]." ";
@@ -105,41 +120,58 @@ if (isset($_POST['ajax'])) {} else {
                 $operation=False;
             }
         } else {
-        ?>
-        <thead>
-            <tr>
-                <th>activity</th>
-                <th>category</th>
-                <th>deadline</th>
-                <th>completed</th>
-                <th>reminder</th>
-            </tr>
-        </thead>
-        <tbody id="responsecontainer">
-        <?php
 
             $db = new sqlite3('../src/rasa_ros/Cogrob_rasa_midterm/data.db');
             $results = $db->query($_GET['query']);
-            echo $_POST['query'];
-            echo "<button type='button' id='queryDone' hidden>".$_GET['query']."</button>";
+            $id_index = '0'; 
+            $index=0;
             while ($row = $results->fetchArray()) {
-                $tmp = explode('T',$row['deadline']); 
-                $id=$row['id_unfolding'];
-                echo " 
-                    <tr id=$id class='active-row'>
-                        <td>{$row['activity']}</td>
-                        <td>{$row['category']}</td>
-                        <td>"; 
-                        if(empty($tmp)){
-                            echo "{$row['deadline']}";
+                $length = sizeof($row)/2;
+                $keys = array_keys($row);
+                $keyLen = sizeof($keys);
+                if($index==0){
+                    echo "
+                    <thead>
+                        <tr>";
+                    for($k=0;$k<$keyLen;++$k){
+                        if($keys[$k]=="ID"){
+                            if($k=='1'){
+                                $id_index = '1'; 
+                            }
+                        }else if($keys[$k]=="id_unfolding"){
+                        }else{
+                            if (is_numeric($keys[$k])){}else{
+                                echo "<th>$keys[$k]</th>";
+                            }
+                        }
+                    }
+                    echo "</tr>
+                    </thead>
+                    <tbody id='responsecontainer'>";
+                    echo "<button type='button' id='queryDone' hidden>".$_GET['query']."</button>";
+                    $index = 1;
+                }
+                $tmp = explode('T',$row['4']); 
+                $id=$row[$id_index];
+                #for to create table from db
+                echo " <tr id=$id class='active-row'>";
+                for($k=1;$k<$length;++$k){
+                    if($row[$k] == $row['deadline']){
+                        echo "<td>"; 
+                        if(empty($row['deadline'])){
+                            echo "{$row[$k]}";
                         }else
                             $tmpSub= substr($tmp[1], 0, 5);
                             echo "{$tmp[0]} {$tmpSub}";
-                        echo "</td>
-                        <td>{$row['completed']}</td>
-                        <td>{$row['reminder']}</td>
-                    </tr>
-                ";
+                        echo "</td>";
+                    }else if($keys[1+$k*2]=="ID"){
+                        
+                    }else{
+                        echo "<td>{$row[$k]}</td>";
+                    }
+                    
+                }
+                echo "</tr>";                    
                 $id++;
             } 
         echo "
@@ -158,12 +190,11 @@ echo "<script type='text/javascript'>
         var chosenOption= $('#1');
         var matrix = []; 
         var queryString = document.getElementById('queryDone').innerText;
-        alert(queryString);
         $( 'tr' ).each( function( index, element ){
             if(element.hidden==false){
                 if(j > 0){
                     matrix.push([]);
-                    for ( var i = 0; i < 4; i++ ) {
+                    for ( var i = 0; i < element.cells.length; i++ ) {
                         if(i==0){
                             matrix[j-1].push(element.id);
                         }
@@ -172,8 +203,8 @@ echo "<script type='text/javascript'>
                 }
                 j=j+1;
             }   
+            
         });
-        
         // alert($(chosenOption).serializeArray())
         // var jsonString = JSON.stringify($(chosenOption))
         $.ajax({
@@ -185,6 +216,7 @@ echo "<script type='text/javascript'>
             success: function(response){   
                 
                 html = $.parseHTML( response );
+                alert(response);
                 alert('sto per aggiornare');
                 array = html[0].textContent.split(' ');
                 if(array[0]=='hidden'){
