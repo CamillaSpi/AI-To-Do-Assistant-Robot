@@ -17,10 +17,10 @@ def callback(msg):
         print('arriva')
         if "js" in msg.data:
             if 'reload' not in msg.data:
-                script = """var vediamo = document.getElementById("clickMe");
-    vediamo.click();"""
+                script = """var inject = document.getElementById("clickMe");
+    inject.click();"""
             else:
-                script = """var vediamo = document.getElementById("refresh");
+                script = """var reload = document.getElementById("refresh");
     reload.click();"""
             resp = execute_js(script).ack
 

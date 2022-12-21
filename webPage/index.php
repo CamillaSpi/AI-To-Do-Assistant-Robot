@@ -8,7 +8,8 @@ if (isset($_POST['ajax'])) {} else {
         
     </head>
     <body>
-        <button type='button' id='clickMe' hidden>CLICK ME TO RUN PHP</button>
+        <button type='button' id='clickMe' hidden>CLICK ME TO MODIFY</button>
+        <button type='button' id='refresh' hidden>CLICK ME TO SUBSTITUTE PAGE</button>
         <table class='styled-table'>";
         }if (isset($_POST['ajax'])) {
             
@@ -147,6 +148,11 @@ if (isset($_POST['ajax'])) {} else {
     </body>
 </html>";
 echo "<script type='text/javascript'>
+    $('table tr').hide();
+    $('table tr').each(function(index){
+        $(this).delay(index*500).show(1000);
+    });
+
     $('#clickMe').click(function(){
         var j = 0;
         var chosenOption= $('#1');
@@ -183,7 +189,7 @@ echo "<script type='text/javascript'>
                 array = html[0].textContent.split(' ');
                 if(array[0]=='hidden'){
                     row = document.getElementById(array[1]);
-                    row.hidden = true;
+                    $(row).hide(1000);
                 }else if(array[0]=='modify'){
                     row = document.getElementById(array[1]);
                     row.id = array[3];
@@ -193,11 +199,32 @@ echo "<script type='text/javascript'>
                         (childs[array[i]-1]).innerHTML = array[i+1];
                         i=i+3;
                     }
+                    $(row).hide().fadeIn(1000);
                 }else if(array[0]=='select'){}else{
-                    $('#responsecontainer').append(response); 
+                    $(response).appendTo('#responsecontainer').hide().fadeIn(1000); 
                 }                
             }
         });
     });
 </script>
-";}?>
+";
+echo "
+<script type='text/javascript'>
+    
+    $('#refresh').click(function(){  
+        var queryString = document.getElementById('queryDone').innerText;
+
+        $.ajax({
+        
+            method: 'GET',
+            url: 'index.php',
+            dataType: 'html',   //expect html to be returned    
+            data: {query: queryString}, 
+            success: function(response){   
+                $('body').html(response);  
+            }
+        });
+    });
+</script>
+";
+}?>
