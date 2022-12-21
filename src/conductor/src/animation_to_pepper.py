@@ -19,7 +19,7 @@ def callback(msg):
     elif "Mi dispiace, non posso aiutarti, puoi ripetere?." in msg.data:
         anim="animations/Stand/Gestures/IDontKnow_1"
     elif "ecco a te" in msg.data:
-        anim = "animations/Stand/Gestures/ShowTablet_2"
+        anim = "animations/Stand/Gestures/ShowTablet_1"
     else:
         anim= "animations/Stand/BodyTalk/BodyTalk_" +  str(random.choice(available_bodyTalk))
     print(anim)
