@@ -26,9 +26,9 @@ pipeline:
   - name: ResponseSelector
     epochs: 150
     constrain_similarities: true
-  # - name: FallbackClassifier
-  #   threshold: 0.3
-  #   ambiguity_threshold: 0.1
+  - name: FallbackClassifier
+    threshold: 0.7
+    ambiguity_threshold: 0.1
   - name: "DucklingEntityExtractor"
     # url of the running duckling server
     url: "http://localhost:8000"
@@ -45,9 +45,8 @@ policies:
 # # If you'd like to customize them, uncomment and adjust the policies.
 # # See https://rasa.com/docs/rasa/policies for more information.
   - name: MemoizationPolicy
-    max_history: 3
   - name: RulePolicy
-    core_fallback_threshold: 0.7
+    core_fallback_threshold: 0.4
     core_fallback_action_name: "action_default_fallback"
     enable_fallback_prediction: True
   - name: TEDPolicy
