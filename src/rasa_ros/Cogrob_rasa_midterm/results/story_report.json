@@ -1,63 +1,9 @@
 {
-  "modify_activity_deadline_form": {
+  "modify_activity_name_form": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 5
-  },
-  "remove_item_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 44
-  },
-  "view_activities_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 7
-  },
-  "modify_category_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 17
-  },
-  "action_recognize_user": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 41
-  },
-  "action_clean_all_completed": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 5
-  },
-  "action_modify_activity": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 12
-  },
-  "action_reset_slot": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 15
-  },
-  "action_remove_item": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 10
-  },
-  "add_item_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 30
+    "support": 3
   },
   "add_deadline_form": {
     "precision": 1.0,
@@ -65,29 +11,77 @@
     "f1-score": 1.0,
     "support": 46
   },
-  "clean_activities_form": {
+  "action_view_activities": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 20
+    "support": 5
   },
-  "utter_ask_if_deadline": {
+  "action_remove_item": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 49
+    "support": 10
   },
-  "utter_deny_choice": {
+  "action_reset_slot": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 15
   },
-  "action_view_categories": {
+  "action_modify_category": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "remove_item_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 44
+  },
+  "action_recognize_user": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 41
+  },
+  "add_item_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 30
+  },
+  "view_activities_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7
+  },
+  "action_clean_all_completed": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 5
+  },
+  "recognize_user_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 44
+  },
+  "action_modify_activity": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 12
+  },
+  "modify_category_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 17
   },
   "set_status_activity_form": {
     "precision": 1.0,
@@ -95,7 +89,25 @@
     "f1-score": 1.0,
     "support": 58
   },
+  "add_category_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8
+  },
+  "modify_activity_deadline_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5
+  },
   "action_set_status_activity": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 20
+  },
+  "clean_activities_form": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
@@ -113,17 +125,17 @@
     "f1-score": 1.0,
     "support": 5
   },
-  "utter_ask_if_reminder": {
+  "utter_deny_choice": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 8
+    "support": 15
   },
-  "action_view_activities": {
+  "utter_ask_if_deadline": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 5
+    "support": 49
   },
   "view_categories_form": {
     "precision": 1.0,
@@ -131,35 +143,11 @@
     "f1-score": 1.0,
     "support": 7
   },
-  "add_category_form": {
+  "modify_activity_category_form": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 8
-  },
-  "modify_activity_name_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
-  "action_add_item": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 14
-  },
-  "action_listen": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 365
-  },
-  "action_modify_category": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
+    "support": 9
   },
   "action_add_category": {
     "precision": 1.0,
@@ -167,17 +155,29 @@
     "f1-score": 1.0,
     "support": 4
   },
-  "modify_activity_category_form": {
+  "utter_ask_if_reminder": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 9
+    "support": 8
   },
-  "recognize_user_form": {
+  "action_listen": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 44
+    "support": 365
+  },
+  "action_add_item": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 14
+  },
+  "action_view_categories": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5
   },
   "accuracy": 1.0,
   "macro avg": {

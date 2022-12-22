@@ -7,7 +7,7 @@ pipeline:
 # # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
   - name: SpacyNLP
-    model: 'en_core_web_trf'
+    model: 'it_core_news_lg'
   - name: SpacyTokenizer
     intent_tokenization_flag: True
     intent_split_symbol: "+"
@@ -20,11 +20,12 @@ pipeline:
     min_ngram: 1
     max_ngram: 4
   - name: DIETClassifier
-    epochs: 150
+    epochs: 100
+    model_confidence: linear_norm
     constrain_similarities: true
   - name: EntitySynonymMapper
   - name: ResponseSelector
-    epochs: 150
+    epochs: 100
     constrain_similarities: true
   # - name: FallbackClassifier
   #   threshold: 0.3
@@ -46,10 +47,11 @@ policies:
 # # See https://rasa.com/docs/rasa/policies for more information.
   - name: MemoizationPolicy
   - name: RulePolicy
-    core_fallback_threshold: 0.7
+    core_fallback_threshold: 0.6
     core_fallback_action_name: "action_default_fallback"
     enable_fallback_prediction: True
   - name: TEDPolicy
     max_history: 5
-    epochs: 150
+    epochs: 200
     constrain_similarities: true
+    model_confidence: linear_norm

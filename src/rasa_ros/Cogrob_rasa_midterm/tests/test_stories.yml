@@ -40,7 +40,7 @@ stories:
   - action: add_item_form
   - active_loop: add_item_form
   - user: |
-      sono [fragola86](name)
+      sono [matilde](name)
     intent: presentation
   - action: add_item_form
   - user: |
@@ -103,7 +103,7 @@ stories:
 - story: presentation and aggiungi activity (single) with deadline 1
   steps:
   - user: |
-      sono [fragola86](name)
+      sono [matilde](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
@@ -174,7 +174,7 @@ stories:
   - action: add_item_form
   - active_loop: add_item_form
   - user: |
-      sono [fragola86](name)
+      sono [matilde](name)
     intent: presentation
   - action: add_item_form
   - user: |
@@ -226,7 +226,7 @@ stories:
 - story: presentation and aggiungi activity (dobule) with deadline 1
   steps:
   - user: |
-      sono [fragola86](name)
+      sono [matilde](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
