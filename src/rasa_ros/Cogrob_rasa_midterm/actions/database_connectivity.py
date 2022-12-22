@@ -34,17 +34,19 @@ class Database:
               FOREIGN KEY (ID) REFERENCES users(ID) ON DELETE CASCADE ON UPDATE CASCADE,
               FOREIGN KEY (activity) REFERENCES activities(name) ON DELETE CASCADE ON UPDATE CASCADE,
               FOREIGN KEY (category) REFERENCES categories(name) ON DELETE CASCADE ON UPDATE CASCADE,
-              PRIMARY KEY (id_unfolding) 
+              PRIMARY KEY (id_unfolding),
+              UNIQUE(ID,category)
           );
       ''')
       #categories table relate users to possessions
       actual_conn.execute('''
           CREATE TABLE IF NOT EXISTS possessions (
+              id_possession VARCHAR(256) NOT NULL,
               ID INTEGER NOT NULL,
               category VARCHAR(50) NOT NULL,
               FOREIGN KEY (ID) REFERENCES users(ID) ON DELETE CASCADE ON UPDATE CASCADE,
               FOREIGN KEY (category) REFERENCES categories(name) ON DELETE CASCADE ON UPDATE CASCADE,
-              PRIMARY KEY (ID,category)
+              PRIMARY KEY (id_possession)
           );
       ''')
       actual_conn.execute('''
@@ -278,14 +280,19 @@ class Database:
   @staticmethod
   def insertCategoryAndPossession(ID, category):
     if ID != None and category != None:
+      m = hashlib.sha256()
+      m.update(str(ID).encode())
+      m.update(str(category).encode())
+      m.digest()
+      id_possession = m.hexdigest()
       try:
         if(not Database.doesCategoryExists(category)):
           conn.execute('''
             INSERT INTO categories (name) VALUES (?);
           ''', (category,))
         conn.execute('''
-          INSERT INTO possessions (ID, category) VALUES (?,?);
-        ''', (ID,category))
+          INSERT INTO possessions (id_possession, ID, category) VALUES (?,?,?);
+        ''', (id_possession,ID,category))
         conn.commit()
         return True
       except sqlite3.IntegrityError:
@@ -309,7 +316,7 @@ class Database:
         categories_list = ""
         for category in rows:
           if category is not None:
-            categories_list +=  str(category[1]) + ", "
+            categories_list +=  str(category[2]) + ", "
         categories_list = categories_list[:-2]
       return categories_list,None
 
@@ -384,6 +391,7 @@ class Database:
     else:
       return False
 
+###ERRORI QUI DENTRO 
   @staticmethod
   def modifyCategory(ID, category, category_new):
     cur.execute('''
@@ -394,9 +402,16 @@ class Database:
         if not Database.doesCategoryExists(category_new):
           #Andrebbe comunicato che è stata creata tale category
           Database.insertCategory(category_new)
+      m = hashlib.sha256()
+      m.update(str(ID).encode())
+      m.update(str(category_new).encode())
+      m.digest()
+      id_possession = m.hexdigest()
+      print(category_new)
       conn.execute('''
-        UPDATE possessions SET category = ? WHERE ID == ? AND category == ?;
-      ''', (category_new,ID,category))
+        UPDATE possessions SET id_possession = ?, category = ? WHERE ID == ? AND category == ?;
+      ''', (id_possession,category_new,ID,category))
+      ##NON VIENE AGGIORNATO l'ID
       conn.execute('''
         UPDATE unfoldings SET category = ? WHERE ID == ? AND category == ?;
       ''', (category_new,ID,category))

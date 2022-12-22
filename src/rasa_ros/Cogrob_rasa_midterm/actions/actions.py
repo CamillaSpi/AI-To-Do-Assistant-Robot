@@ -339,7 +339,7 @@ class actionModifyCategory(Action):
         category_new = tracker.get_slot("category_new")
         
         if (Database.doesPossessionExists(id,category_new) == False):
-
+            print(category_new)
             returnedValue = Database.modifyCategory(id, category_old, category_new)
             if (returnedValue):  
                 dispatcher.utter_message(text=f"{associated_name}, categoria {category_old} modificata in {category_new} .",json_message={'query':'js reload'}) 
