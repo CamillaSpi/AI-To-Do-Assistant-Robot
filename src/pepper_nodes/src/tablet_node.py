@@ -52,8 +52,13 @@ class TabletNode:
 
         rospy.Service('execute_js', ExecuteJS, self.execute_js)
         rospy.Service('load_url', LoadUrl, self.load_url)
-
+        rospy.on_shutdown(self._handle_shutdown)
         rospy.spin()
+        
+    def _handle_shutdown(self):
+        """Handler for rospy shutdown.
+        """
+        self.tablet_proxy.resetTablet()
 
 if __name__ == "__main__":
     parser = OptionParser()
