@@ -60,7 +60,13 @@ class WakeUpNode:
         self.stand()        
         rospy.Service("wakeup", WakeUp, self.wakeup)
         rospy.Service("rest", Rest, self.rest)
+        rospy.on_shutdown(self._handle_shutdown)
         rospy.spin()
+        
+    def _handle_shutdown(self):
+        """Handler for rospy shutdown.
+        """
+        self.rest()
 
 if __name__ == "__main__":
     parser = OptionParser()
