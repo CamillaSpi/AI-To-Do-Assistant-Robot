@@ -302,6 +302,7 @@ nlu:
     - [giocare a carte](activity)
     - [dipingere](activity)
     - [disegnare](activity)
+    - [cinema](activity)
     - [viaggiare](activity)
     - [fare il pieno](activity)
     - [fare il rifornimento](activity)
