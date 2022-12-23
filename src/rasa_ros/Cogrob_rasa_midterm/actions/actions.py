@@ -179,7 +179,7 @@ class actionAddCategory(Action):
             category = ' '.join([str(elem) for elem in category])
         returnedValue = Database.insertCategoryAndPossession(id,category)
         if (returnedValue):  
-            dispatcher.utter_message(text=f"{associated_name}, {category} aggiunta come nuova categoria.",json_message={'query':'js reload'}) 
+            dispatcher.utter_message(text=f"{associated_name}, {category} aggiunta come nuova categoria.",json_message={'query':'js'}) 
         else:
             dispatcher.utter_message(text=f"Ops {associated_name}, questa categoria esiste già.") 
 

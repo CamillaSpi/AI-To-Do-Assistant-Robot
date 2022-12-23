@@ -14,7 +14,7 @@ execute_js = rospy.ServiceProxy('execute_js', ExecuteJS)
 # this is called from the background thread
 def callback(msg):
     try:
-        print('arriva')
+        print(msg.data)
         if "js" in msg.data:
             if 'reload' not in msg.data:
                 script = """var inject = document.getElementById("clickMe");
