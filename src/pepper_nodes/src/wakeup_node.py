@@ -68,7 +68,6 @@ class WakeUpNode:
         """
         self.rest()
 
-
 if __name__ == "__main__":
     parser = OptionParser()
     parser.add_option("--ip", dest="ip", default="10.0.1.207")
