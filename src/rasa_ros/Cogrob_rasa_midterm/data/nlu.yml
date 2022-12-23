@@ -280,7 +280,6 @@ nlu:
     - [giorgina](name)
     - sono [Nando](name)
     - sono [nando](name)
-    - sono [Nando](name)
 - intent: inform
   examples: |
     - [correre](activity)
@@ -398,6 +397,7 @@ nlu:
     - [cena con i parenti](activity)
     - [famiglia](category)
     - da oggi a domani
+    - [palestra](category)
 - intent: add_item
   examples: |
     - aggiungi [correre](activity)
@@ -1591,6 +1591,7 @@ nlu:
     - Sono [Orietta](name), non posso dimenticare di fare l'attività [inviare l'e-mail](activity) della categoria [lavoro](category) della prossima lunedì.
     - Sono [Silvia](name), voglio impostare un promemoria per l'attività [pulire la casa](activity).
     - Sono [Silvana](name), ricordami di [comprare del cibo](activity).
+    - ciao sono [Nando](name), puoi ricordarmi di [andare in palestra](activity) domani alle 21
 - intent: ask_name
   examples: |
     - Chi sono?

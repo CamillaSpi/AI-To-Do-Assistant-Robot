@@ -1012,3 +1012,58 @@ stories:
     - time: null
   - slot_was_set:
     - activity_status: null
+
+- story: interactive_story_1
+  steps:
+  - intent: presentation+remind_me_of
+    entities:
+    - name: Nando
+    - activity: andare in palestra
+    - time: '2022-12-24T21:00:00.000+01:00'
+  - slot_was_set:
+    - activity: andare in palestra
+  - slot_was_set:
+    - name: Nando
+  - slot_was_set:
+    - time: '2022-12-24T21:00:00.000+01:00'
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - slot_was_set:
+    - name: Nando
+  - slot_was_set:
+    - name: Nando
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_recognize_user
+  - action: action_set_reminder_slot
+  - slot_was_set:
+    - reminder: true
+  - action: add_item_form
+  - active_loop: add_item_form
+  - slot_was_set:
+    - name: Nando
+  - slot_was_set:
+    - activity: andare in palestra
+  - slot_was_set:
+    - name: Nando
+  - slot_was_set:
+    - activity: andare in palestra
+  - slot_was_set:
+    - requested_slot: category
+  - slot_was_set:
+    - category: palestra
+  - slot_was_set:
+    - category: palestra
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_reminder_item
+  - slot_was_set:
+    - activity: null
+  - slot_was_set:
+    - time: null
+  - slot_was_set:
+    - category: null
+  - slot_was_set:
+    - reminder: false
