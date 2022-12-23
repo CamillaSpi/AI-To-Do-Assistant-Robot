@@ -172,6 +172,7 @@ class Database:
       conn.commit()
       return True
     except sqlite3.IntegrityError as e :
+      print(e)
       return False
 
   @staticmethod
