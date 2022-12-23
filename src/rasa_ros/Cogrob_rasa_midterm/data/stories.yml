@@ -1067,3 +1067,93 @@ stories:
     - category: null
   - slot_was_set:
     - reminder: false
+
+- story: interactive_story_1
+  steps:
+  - intent: presentation
+    entities:
+    - name: Luke
+  - slot_was_set:
+    - name: Luke
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - slot_was_set:
+    - name: Luke
+  - slot_was_set:
+    - name: Luke
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: add_category
+  - action: add_category_form
+  - active_loop: add_category_form
+  - slot_was_set:
+    - name: Luke
+  - slot_was_set:
+    - requested_slot: category
+  - slot_was_set:
+    - category: musica
+  - slot_was_set:
+    - category: musica
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_add_category
+  - slot_was_set:
+    - activity: null
+  - slot_was_set:
+    - activity_old: null
+  - slot_was_set:
+    - activity_new: null
+  - slot_was_set:
+    - category: null
+  - slot_was_set:
+    - category_old: null
+  - slot_was_set:
+    - category_new: null
+  - slot_was_set:
+    - time: null
+  - slot_was_set:
+    - activity_status: null
+  - intent: add_item
+    entities:
+    - category: musica
+  - slot_was_set:
+    - category: musica
+  - action: add_item_form
+  - active_loop: add_item_form
+  - slot_was_set:
+    - name: Luke
+  - slot_was_set:
+    - category: musica
+  - slot_was_set:
+    - category: musica
+  - slot_was_set:
+    - requested_slot: activity
+  - slot_was_set:
+    - activity: uscire con gli amici
+  - slot_was_set:
+    - activity: uscire con gli amici
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: deny
+  - action: action_add_item
+  - slot_was_set:
+    - activity: null
+  - slot_was_set:
+    - activity_old: null
+  - slot_was_set:
+    - activity_new: null
+  - slot_was_set:
+    - category: null
+  - slot_was_set:
+    - category_old: null
+  - slot_was_set:
+    - category_new: null
+  - slot_was_set:
+    - time: null
+  - slot_was_set:
+    - activity_status: null

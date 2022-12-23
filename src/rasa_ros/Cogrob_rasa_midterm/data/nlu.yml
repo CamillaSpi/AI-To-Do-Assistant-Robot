@@ -280,6 +280,7 @@ nlu:
     - [giorgina](name)
     - sono [Nando](name)
     - sono [nando](name)
+    - ciao sono [Luke](name)
 - intent: inform
   examples: |
     - [correre](activity)
@@ -399,6 +400,8 @@ nlu:
     - [famiglia](category)
     - da oggi a domani
     - [palestra](category)
+    - [musica](category)
+    - [uscire con gli amici](activity)
 - intent: add_item
   examples: |
     - aggiungi [correre](activity)
@@ -679,6 +682,7 @@ nlu:
     - Ciao, vorrei inserire un'attività nella mia lista alle 18:14
     - aggiungi [mangiare](activity) in [casa](category) oggi alle 12
     - aggiungi [correre](activity) in [palestra](category) alle 12
+    - aggiungi un'attività in [musica](category)
 - intent: remove_item
   examples: |
     - rimuovi [correre](activity)
@@ -1063,6 +1067,7 @@ nlu:
     - Inserisci [tempo libero](category) categoria
     - Inserisci [amici](category) categoria
     - Metti [sport](category) categoria
+    - crea una nuova categoria
 - intent: remove_category
   examples: |
     - Voglio rimuovere una categoria
