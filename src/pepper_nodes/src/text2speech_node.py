@@ -16,11 +16,11 @@ class Text2SpeechNode:
         self.ip = ip
         self.port = port
         self.session = Session(ip, port)
-        self.tts = self.session.get_service("ALTextToSpeech")
+        self.tts = self.session.get_service("ALAnimatedSpeech")
         self.tts.setLanguage("Italian")
      
     '''
-    Rececives a Text2Speech message and call the ALTextToSpeech service.
+    Rececives a Text2Speech message and call the ALAnimatedSpeech service.
     The robot will play the text of the message
     '''
     def say(self, msg):
@@ -28,7 +28,7 @@ class Text2SpeechNode:
             self.tts.say(msg.speech)
         except:
             self.session.reconnect()
-            self.tts = self.session.get_service("ALTextToSpeech")
+            self.tts = self.session.get_service("ALAnimatedSpeech")
             self.tts.say(msg.speech)
         return "ACK"
     
