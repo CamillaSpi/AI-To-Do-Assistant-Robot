@@ -281,6 +281,7 @@ nlu:
     - sono [Nando](name)
     - sono [nando](name)
     - ciao sono [Luke](name)
+    - sono [Nando](name)
 - intent: inform
   examples: |
     - [correre](activity)
@@ -402,6 +403,7 @@ nlu:
     - [palestra](category)
     - [musica](category)
     - [uscire con gli amici](activity)
+    - alle 21
 - intent: add_item
   examples: |
     - aggiungi [correre](activity)
@@ -873,6 +875,7 @@ nlu:
     - Annullare [completato](activity_status) attività [prendere le pillole](activity) in [healthcare](category)
     - Annullare [completato](activity_status) attività [prendere la medicina](activity) in [health](category)
     - imposta come [completato]{"entity": "activity_status", "value": "completata"} [studiare](activity) in [personale](category)
+    - imposta [leggere](activity) a [casa](category) come [completato]{"entity": "activity_status", "value": "completata"}
 - intent: presentation+set_status_activity
   examples: |
     - Sono [Mattia](name), imposta l'attività come [completata](activity_status).

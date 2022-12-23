@@ -3,20 +3,20 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- deny
-- inform
-- add_item
+- set_status_activity
 - presentation
+- view_activities
+- inform
+- affirm
+- deny
+- add_item
 - add_category
 - presentation+remind_me_of
 - modify_activity_deadline
-- affirm
 - remove_item
 - remind_me_of
 - goodbye
-- view_activities
 - modify_activity_name
-- set_status_activity
 - greet
 - mood_great
 - mood_unhappy

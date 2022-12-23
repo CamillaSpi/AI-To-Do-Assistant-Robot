@@ -1157,3 +1157,106 @@ stories:
     - time: null
   - slot_was_set:
     - activity_status: null
+
+- story: interactive_story_1
+  steps:
+  - intent: presentation
+    entities:
+    - name: Nando
+  - slot_was_set:
+    - name: Nando
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - slot_was_set:
+    - name: Nando
+  - slot_was_set:
+    - name: Nando
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: view_activities
+    entities:
+    - time: '2022-12-23T00:00:00.000+01:00'
+  - slot_was_set:
+    - time: '2022-12-23T00:00:00.000+01:00'
+  - action: view_activities_form
+  - active_loop: view_activities_form
+  - slot_was_set:
+    - name: Nando
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_view_activities
+  - slot_was_set:
+    - activity: null
+  - slot_was_set:
+    - activity_old: null
+  - slot_was_set:
+    - activity_new: null
+  - slot_was_set:
+    - category: null
+  - slot_was_set:
+    - category_old: null
+  - slot_was_set:
+    - category_new: null
+  - slot_was_set:
+    - time: null
+  - slot_was_set:
+    - activity_status: null
+  - intent: set_status_activity
+    entities:
+    - activity: leggere
+    - category: casa
+    - activity_status: completata
+  - slot_was_set:
+    - activity: leggere
+  - slot_was_set:
+    - category: casa
+  - slot_was_set:
+    - activity_status: completata
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - slot_was_set:
+    - name: Nando
+  - slot_was_set:
+    - activity: leggere
+  - slot_was_set:
+    - category: casa
+  - slot_was_set:
+    - activity: leggere
+  - slot_was_set:
+    - category: casa
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - requested_slot: time
+  - slot_was_set:
+    - time: '2022-12-23T21:00:00.000+01:00'
+  - slot_was_set:
+    - time: '2022-12-23T21:00:00.000+01:00'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_set_status_activity
+  - slot_was_set:
+    - activity: null
+  - slot_was_set:
+    - activity_old: null
+  - slot_was_set:
+    - activity_new: null
+  - slot_was_set:
+    - category: null
+  - slot_was_set:
+    - category_old: null
+  - slot_was_set:
+    - category_new: null
+  - slot_was_set:
+    - time: null
+  - slot_was_set:
+    - activity_status: null
