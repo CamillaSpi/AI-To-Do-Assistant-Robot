@@ -17,7 +17,8 @@ class Text2SpeechNode:
         self.port = port
         self.session = Session(ip, port)
         self.tts = self.session.get_service("ALAnimatedSpeech")
-        # self.tts.setLanguage("Italian")
+        self.tts.setLanguage("Italian")
+        self.tts = self.session.get_service("ALTextToSpeech")
      
     '''
     Rececives a Text2Speech message and call the ALAnimatedSpeech service.

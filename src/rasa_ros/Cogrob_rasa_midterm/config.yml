@@ -7,7 +7,7 @@ pipeline:
 # # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
   - name: SpacyNLP
-    model: 'en_core_web_trf'
+    model: 'it_core_news_lg'
   - name: SpacyTokenizer
     intent_tokenization_flag: True
     intent_split_symbol: "+"
@@ -26,9 +26,9 @@ pipeline:
   - name: ResponseSelector
     epochs: 150
     constrain_similarities: true
-  # - name: FallbackClassifier
-  #   threshold: 0.3
-  #   ambiguity_threshold: 0.1
+  - name: FallbackClassifier
+    threshold: 0.7
+    ambiguity_threshold: 0.1
   - name: "DucklingEntityExtractor"
     # url of the running duckling server
     url: "http://localhost:8000"
@@ -46,7 +46,7 @@ policies:
 # # See https://rasa.com/docs/rasa/policies for more information.
   - name: MemoizationPolicy
   - name: RulePolicy
-    core_fallback_threshold: 0.7
+    core_fallback_threshold: 0.4
     core_fallback_action_name: "action_default_fallback"
     enable_fallback_prediction: True
   - name: TEDPolicy
