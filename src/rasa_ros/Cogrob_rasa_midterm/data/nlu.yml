@@ -281,7 +281,7 @@ nlu:
     - sono [Nando](name)
     - sono [nando](name)
     - ciao sono [Luke](name)
-    - sono [Nando](name)
+    - ciao sono [Luke](name)
 - intent: inform
   examples: |
     - [correre](activity)
@@ -404,6 +404,7 @@ nlu:
     - [musica](category)
     - [uscire con gli amici](activity)
     - alle 21
+    - [università](category)
 - intent: add_item
   examples: |
     - aggiungi [correre](activity)
@@ -1134,6 +1135,7 @@ nlu:
     - rimuovi [universita](category) tra le mie categorie
     - fai scomparire [spesa](category) dalle mie categorie
     - cancella la categoria [finanza](category)
+    - rimuovi categoria
 - intent: modify_category
   examples: |
     - Voglio sostituire la categoria [soggetti]{"entity": "category", "role": "old"} con [tempi]{"entity": "category", "role": "new"}

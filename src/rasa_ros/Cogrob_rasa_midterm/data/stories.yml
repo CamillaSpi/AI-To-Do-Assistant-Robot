@@ -1260,3 +1260,54 @@ stories:
     - time: null
   - slot_was_set:
     - activity_status: null
+
+- story: interactive_story_1
+  steps:
+  - intent: presentation
+    entities:
+    - name: Luke
+  - slot_was_set:
+    - name: Luke
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - slot_was_set:
+    - name: Luke
+  - slot_was_set:
+    - name: Luke
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: remove_category
+  - action: remove_category_form
+  - active_loop: remove_category_form
+  - slot_was_set:
+    - name: Luke
+  - slot_was_set:
+    - requested_slot: category
+  - slot_was_set:
+    - category: università
+  - slot_was_set:
+    - category: università
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: affirm
+  - action: action_remove_category
+  - slot_was_set:
+    - activity: null
+  - slot_was_set:
+    - activity_old: null
+  - slot_was_set:
+    - activity_new: null
+  - slot_was_set:
+    - category: null
+  - slot_was_set:
+    - category_old: null
+  - slot_was_set:
+    - category_new: null
+  - slot_was_set:
+    - time: null
+  - slot_was_set:
+    - activity_status: null

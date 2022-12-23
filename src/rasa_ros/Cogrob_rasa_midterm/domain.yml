@@ -3,11 +3,12 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- set_status_activity
-- presentation
-- view_activities
 - inform
 - affirm
+- remove_category
+- presentation
+- set_status_activity
+- view_activities
 - deny
 - add_item
 - add_category
@@ -21,7 +22,6 @@ intents:
 - mood_great
 - mood_unhappy
 - bot_challenge
-- remove_category
 - view_categories
 - help
 - modify_category
