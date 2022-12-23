@@ -94,6 +94,8 @@ responses:
   - text: Sono un bot, realizzato dal Gruppo12.
   utter_ask_time:
   - text: Inserisci l'ora
+  utter_ask_modify_activity_deadline_form_time:
+  - text: Da che data a che data vuoi modificare l'attività
   utter_ask_if_deadline:
   - text: Questo elemento ha una scadenza?
   utter_ask_if_reminder:
@@ -160,6 +162,7 @@ actions:
 - utter_happy
 - utter_iamabot
 - utter_modification_choice
+- utter_ask_modify_activity_deadline_form_time
 forms:
   recognize_user_form:
     required_slots:
