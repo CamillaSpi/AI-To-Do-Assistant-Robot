@@ -339,7 +339,7 @@ class actionModifyCategory(Action):
         category_new = tracker.get_slot("category_new")
         
         if (Database.doesPossessionExists(id,category_new) == False):
-
+            print(category_new)
             returnedValue = Database.modifyCategory(id, category_old, category_new)
             if (returnedValue):  
                 dispatcher.utter_message(text=f"{associated_name}, categoria {category_old} modificata in {category_new} .",json_message={'query':'js reload'}) 
@@ -404,7 +404,7 @@ class actionModifyActivity(Action):
             timenew = time
             timeold = time
         if possibleDeadlineErrorFlag is True and activity_old is None and category_old is None:
-            dispatcher.utter_message(text=f"dimmi la deadline precedente e la nuova")
+            dispatcher.utter_message(text=f"dimmi la deadline precedente e quella nuova nella successiva richiesta per modificare la deadline di un'attivita")
             return [SlotSet("category", None),SlotSet("category_old", None),SlotSet("activity_old", None),SlotSet("category_new", None),SlotSet("activity_new", None),SlotSet("activity", None),SlotSet("time", None)]
     
 
