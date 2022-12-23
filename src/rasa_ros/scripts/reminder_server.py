@@ -19,6 +19,7 @@ def create_app() -> Sanic:
     def print_response(request: Request) -> HTTPResponse:
         """Print bot response to the console."""
         text = request.json.get("text")
+        print(text)
         try:
             json_query = request.json.get('custom')['query']
             print('ho riceuvto ' , json_query)

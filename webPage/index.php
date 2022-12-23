@@ -139,6 +139,8 @@ if (isset($_POST['ajax'])) {} else {
                                 $id_index = '1'; 
                             }
                         }else if($keys[$k]=="id_unfolding"){
+                        }
+                        else if($keys[$k]=="id_possession"){
                         }else{
                             if (is_numeric($keys[$k])){}else{
                                 echo "<th>$keys[$k]</th>";
@@ -216,8 +218,7 @@ echo "<script type='text/javascript'>
             success: function(response){   
                 
                 html = $.parseHTML( response );
-                alert(response);
-                alert('sto per aggiornare');
+                alert(html);
                 array = html[0].textContent.split(' ');
                 if(array[0]=='hidden'){
                     row = document.getElementById(array[1]);
