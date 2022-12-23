@@ -22,7 +22,7 @@ def callback(msg):
 def listener():
     #qua fare un'array in cui mandiamo entrambe le cose 
     try:
-        rospy.Subscriber("in_rgb", Image, callback)
+        rospy.Subscriber("in_rgb1", Image, callback)
         rospy.spin()
     except rospy.exceptions.ROSInterruptException:
         print("vado in close in massiccianza")
