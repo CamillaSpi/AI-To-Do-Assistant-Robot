@@ -3,13 +3,14 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- add_item
+- modify_activity_deadline
 - presentation
+- inform
+- add_item
 - affirm
 - remove_item
 - remind_me_of
 - goodbye
-- inform
 - view_activities
 - modify_activity_name
 - set_status_activity
@@ -26,7 +27,6 @@ intents:
 - clean_activities
 - nlu_fallback
 - modify_activity_category
-- modify_activity_deadline
 - presentation+remove_item
 - presentation+remind_me_of
 - presentation+view_categories
@@ -280,15 +280,15 @@ forms:
       name:
       - type: from_entity
         entity: name
-      time:
-      - type: from_entity
-        entity: time
       activity:
       - type: from_entity
         entity: activity
       category:
       - type: from_entity
         entity: category
+      time:
+      - type: from_entity
+        entity: time
   clean_activities_form:
     required_slots:
       name:

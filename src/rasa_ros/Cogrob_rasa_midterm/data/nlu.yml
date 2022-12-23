@@ -395,6 +395,9 @@ nlu:
     - [universita](category)
     - oggi alle 21
     - in 5 minuti
+    - [cena con i parenti](activity)
+    - [famiglia](category)
+    - da oggi a domani
 - intent: add_item
   examples: |
     - aggiungi [correre](activity)
@@ -1379,6 +1382,7 @@ nlu:
     - Altera la scadenza dell'attività [karaoke](activity) da 18:00 a 20:00
     - Per l'attività [nuotare](activity) modifica la scadenza al 22 luglio 1922
     - Per l'attività [prenotare l'aereo](activity) trasforma la scadenza in lunedì
+    - modifica la scadenza di un'attivita
 - intent: modify_activity_name
   examples: |
     - Voglio cambiare il nome dell'attività [studio]{"entity": "activity", "role": "old"} nella categoria [sport](category) con il nome [carburante]{"entity": "activity", "role": "new"}

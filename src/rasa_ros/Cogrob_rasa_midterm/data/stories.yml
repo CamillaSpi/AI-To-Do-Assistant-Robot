@@ -947,3 +947,68 @@ stories:
     - time: null
   - slot_was_set:
     - activity_status: null
+
+- story: interactive_story_1
+  steps:
+  - intent: presentation
+    entities:
+    - name: Nando
+  - slot_was_set:
+    - name: Nando
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - slot_was_set:
+    - name: Nando
+  - slot_was_set:
+    - name: Nando
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_deadline
+  - action: modify_activity_deadline_form
+  - active_loop: modify_activity_deadline_form
+  - slot_was_set:
+    - name: Nando
+  - slot_was_set:
+    - requested_slot: activity
+  - slot_was_set:
+    - activity: cena con i parenti
+  - slot_was_set:
+    - activity: cena con i parenti
+  - slot_was_set:
+    - requested_slot: category
+  - slot_was_set:
+    - category: famiglia
+  - slot_was_set:
+    - category: famiglia
+  - slot_was_set:
+    - requested_slot: time
+  - slot_was_set:
+    - time:
+        to: '2022-12-25T00:00:00.000+01:00'
+        from: '2022-12-23T00:00:00.000+01:00'
+  - slot_was_set:
+    - time:
+        to: '2022-12-25T00:00:00.000+01:00'
+        from: '2022-12-23T00:00:00.000+01:00'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_modify_activity
+  - slot_was_set:
+    - activity: null
+  - slot_was_set:
+    - activity_old: null
+  - slot_was_set:
+    - activity_new: null
+  - slot_was_set:
+    - category: null
+  - slot_was_set:
+    - category_old: null
+  - slot_was_set:
+    - category_new: null
+  - slot_was_set:
+    - time: null
+  - slot_was_set:
+    - activity_status: null
