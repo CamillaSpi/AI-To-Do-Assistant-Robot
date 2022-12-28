@@ -34,8 +34,7 @@ class Database:
               FOREIGN KEY (ID) REFERENCES users(ID) ON DELETE CASCADE ON UPDATE CASCADE,
               FOREIGN KEY (activity) REFERENCES activities(name) ON DELETE CASCADE ON UPDATE CASCADE,
               FOREIGN KEY (category) REFERENCES categories(name) ON DELETE CASCADE ON UPDATE CASCADE,
-              PRIMARY KEY (id_unfolding),
-              UNIQUE(ID,category)
+              PRIMARY KEY (id_unfolding)
           );
       ''')
       #categories table relate users to possessions
@@ -46,7 +45,8 @@ class Database:
               category VARCHAR(50) NOT NULL,
               FOREIGN KEY (ID) REFERENCES users(ID) ON DELETE CASCADE ON UPDATE CASCADE,
               FOREIGN KEY (category) REFERENCES categories(name) ON DELETE CASCADE ON UPDATE CASCADE,
-              PRIMARY KEY (id_possession)
+              PRIMARY KEY (id_possession),
+              UNIQUE(ID,category)
           );
       ''')
       actual_conn.execute('''
@@ -402,22 +402,22 @@ class Database:
         if not Database.doesCategoryExists(category_new):
           #Andrebbe comunicato che è stata creata tale category
           Database.insertCategory(category_new)
-      m = hashlib.sha256()
-      m.update(str(ID).encode())
-      m.update(str(category_new).encode())
-      m.digest()
-      id_possession = m.hexdigest()
-      print(category_new)
-      conn.execute('''
-        UPDATE possessions SET id_possession = ?, category = ? WHERE ID == ? AND category == ?;
-      ''', (id_possession,category_new,ID,category))
-      ##NON VIENE AGGIORNATO l'ID
-      conn.execute('''
-        UPDATE unfoldings SET category = ? WHERE ID == ? AND category == ?;
-      ''', (category_new,ID,category))
-      Database.checkCategoriesTable(category)
-      conn.commit()
-      return True
+        m = hashlib.sha256()
+        m.update(str(ID).encode())
+        m.update(str(category_new).encode())
+        m.digest()
+        id_possession = m.hexdigest()
+        print(category_new)
+        conn.execute('''
+          UPDATE possessions SET id_possession = ?, category = ? WHERE ID == ? AND category == ?;
+        ''', (id_possession,category_new,ID,category))
+        ##NON VIENE AGGIORNATO l'ID
+        conn.execute('''
+          UPDATE unfoldings SET category = ? WHERE ID == ? AND category == ?;
+        ''', (category_new,ID,category))
+        Database.checkCategoriesTable(category)
+        conn.commit()
+        return True
     else:
       return False
 
