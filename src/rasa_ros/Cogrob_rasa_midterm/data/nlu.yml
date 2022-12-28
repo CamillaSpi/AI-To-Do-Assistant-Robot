@@ -1535,7 +1535,7 @@ nlu:
     - sono [Vito](name) Quali sono le categorie inserite?
 - intent: remind_me_of
   examples: |
-    - Ricordami di fare [shopping](activity) nella categoria [vita](categoria) alle 8:30
+    - Ricordami di [fare shopping](activity) nella categoria [vita](categoria) alle 8:30
     - Imposta un promemoria per l'attività [chiamata](activity) nella categoria [relazioni](categoria) nella prossima mattina
     - Aiutami a non dimenticare l'attività [studio](activity) nella categoria [scuola](categoria) per domani
     - Aiutami a ricordare l'attività [compleanno](activity) il 12/18/2022
@@ -1554,7 +1554,7 @@ nlu:
     - Non dimenticare di [fare gli esercizi](activity) alle 19:00
     - Imposta un promemoria
     - Non posso dimenticare di fare l'attività [parlare con il professore](activity) nella categoria [università](categoria) per domenica prossima
-    - Ricordami di fare [shopping](activity) nella categoria [vita](category) alle 8:30
+    - Ricordami di [fare shopping](activity) nella categoria [vita](category) alle 8:30
     - Imposta un promemoria per l'attività [chiamata](activity) nella categoria [relazioni](category) della mattina successiva
     - Aiutami a non dimenticare l'attività [studio](activity) nella categoria [scuola](category) per domani
     - Aiutami a ricordare il mio [compleanno](activity) il 12/18/2022
@@ -1565,13 +1565,13 @@ nlu:
     - Ricordami di [cucinare la cena](activity) nella categoria [casa](category) alle 8:30
     - Imposta un promemoria per l'attività [chiamare la mia ragazza](activity) nella categoria [sociale](category) della mattina successiva
     - Aiutami a non dimenticare l'attività [ascoltare la registrazione della lezione](activity) nella categoria [università](category) per domani
-    - Aiutami a ricordare il mio [andare al compleanno](activity) il 12/18/2022
+    - Aiutami a ricordare il mio [compleanno](activity) il 12/18/2022
     - Ricordami la [lezione di chitarra](activity) domani mattina
-    - Non posso dimenticare di fare l'attività [parlare con il professore](activity) nella categoria [università](category) della prossima lunedì
+    - Non posso dimenticare di fare l'attività [parlare con il professore](activity) nella categoria [università](category) il prossima lunedì
     - Voglio impostare un promemoria per l'attività [prenotare l'aereo](activity)
     - Ricordami di [mangiare frutta](activity)
-    - ricordami di mangiare in [casa](category)
     - ricordami di [mangiare](activity) in [casa](category)
+
 - intent: presentation+remind_me_of
   examples: |
     - Sono [Mattia](name), ricordami di [fare shopping](activity) nella categoria [vita](category) alle 8:30.

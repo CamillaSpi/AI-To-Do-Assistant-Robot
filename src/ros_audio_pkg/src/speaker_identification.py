@@ -48,7 +48,7 @@ def elaboration(data):
     ukn = model.predict(np.expand_dims(ukn, 0))
     return ukn
 # ,"add activity run in category gym for tomorrow","add activity run in category gym for tomorrow", "remove the category study in university","update the activity walk in personal" , "show my activity", "remind me to play guitar in freetime"
-phrases = ["I feel like I don't know you, repeat after me: Hi Pepper"]
+phrases = ["Mi sembra di non conoscerti, ripeti dopo di me: Ciao Pepper","aggiungi attività corsa nella categoria palestra per domani", "rimuovi la categoria studio in università","aggiorna l'attività passeggiata in personale" , "mostra le mie attività", "ricordami di suonare la chitarra nel tempo libero"]
 
 def registration(msg):
     global features_dataBase
@@ -66,8 +66,8 @@ def registration(msg):
         except:
             features_dataBase = np.array([ukn[0]])
         labels.append(number_of_users)
-    pub1.publish("Stop to repeat with me, let say your name!")
-    print("Stop to repeat with me, let say your name!")
+    pub1.publish("Perfetto, ti ho riconosciuto, ora dimmi il tuo nome!")
+    print("Perfetto, ti ho riconosciuto, ora dimmi il tuo nome!")
     number_of_users+=1
     lock.release()
     return 'ACK'
