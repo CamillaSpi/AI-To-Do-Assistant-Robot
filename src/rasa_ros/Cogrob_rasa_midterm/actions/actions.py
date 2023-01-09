@@ -28,6 +28,9 @@ import os
 global id
 id = None
 
+global rasa_only
+rasa_only = False
+
 
 class ActionSessionStart(Action):
     def name(self) -> Text:
@@ -37,6 +40,7 @@ class ActionSessionStart(Action):
       self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]
     ) -> List[EventType]:
         global id
+        global rasa_only
         # the session should begin with a `session_started` event
         events = [SessionStarted()]
         amdam_tz = pytz.timezone('Europe/Amsterdam')
@@ -46,8 +50,9 @@ class ActionSessionStart(Action):
      
         try:
             id = int(id) #if yes this id was send trough ros nose
-            Database.initDb(0)            
+            Database.initDb(0)       
         except:
+            rasa_only = True
             Database.initDb(1)    
 
         lista = Database.getAllReminder()
@@ -124,7 +129,10 @@ class actionAddItem(Action):
             returnedValue= Database.insertItem(id,activity ,category,reminder,time)
             if (returnedValue):  
                 text = f"{associated_name}, l'attivita {activity} aggiunta alla categoria {category}" + (f", da completare prima del {time[:10]} alle {time[11:16]}." if time else ".") + ("Te lo ricorderò, non preoccuparti" if reminder else "") 
-                dispatcher.utter_message(text=text,json_message={'query':'js'}) 
+                if rasa_only:
+                    dispatcher.utter_message(text=text) 
+                else:
+                    dispatcher.utter_message(text=text,json_message={'query':'js'}) 
             else:
                 dispatcher.utter_message(text=f"Ops {associated_name}, questa attivita esiste già.") 
         else:
@@ -154,8 +162,12 @@ class actionRemoveItem(Action):
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
         returnedValue = Database.deleteItem(id,activity ,category,time)
-        if (returnedValue):  
-            dispatcher.utter_message(text=f"{associated_name}, l'attivita {activity} è stata rimossa dalla categoria {category} .",json_message={'query':'js'}) 
+        if (returnedValue):
+            text = f"{associated_name}, l'attivita {activity} è stata rimossa dalla categoria {category} ."
+            if rasa_only:
+                dispatcher.utter_message(text=text) 
+            else:
+                dispatcher.utter_message(text=text,json_message={'query':'js'}) 
         else:
             dispatcher.utter_message(text=f"Ops {associated_name}, questà attivita non esiste.") 
 
@@ -179,7 +191,11 @@ class actionAddCategory(Action):
             category = ' '.join([str(elem) for elem in category])
         returnedValue = Database.insertCategoryAndPossession(id,category)
         if (returnedValue):  
-            dispatcher.utter_message(text=f"{associated_name}, {category} aggiunta come nuova categoria.",json_message={'query':'js'}) 
+            text = f"{associated_name}, {category} aggiunta come nuova categoria."
+            if rasa_only:
+                dispatcher.utter_message(text=text) 
+            else:
+                dispatcher.utter_message(text=text,json_message={'query':'js'}) 
         else:
             dispatcher.utter_message(text=f"Ops {associated_name}, questa categoria esiste già.") 
 
@@ -203,7 +219,11 @@ class actionRemoveCategory(Action):
             category = ' '.join([str(elem) for elem in category])
         returnedValue = Database.deleteCategory(id,category)
         if (returnedValue):  
-            dispatcher.utter_message(text=f"{associated_name}, la categoria {category} è stata rimossa.",json_message={'query':'js reload'}) 
+            text = f"{associated_name}, la categoria {category} è stata rimossa."
+            if rasa_only:
+                dispatcher.utter_message(text=text) 
+            else:
+                dispatcher.utter_message(text=text,json_message={'query':'js reload'}) 
         else:
             dispatcher.utter_message(text=f"Ops {associated_name}, questa categoria non esiste.") 
 
@@ -239,7 +259,11 @@ class actionSetStatusActivity(Action):
             return [SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
         if (returnedValue):  
-            dispatcher.utter_message(text=f"{associated_name}, attivita {activity} in {category} {activity_status} !",json_message={'query':'js'}) 
+            text = f"{associated_name}, attivita {activity} in {category} {activity_status} !"
+            if rasa_only:
+                dispatcher.utter_message(text=text) 
+            else:
+                dispatcher.utter_message(text=text,json_message={'query':'js'}) 
         else:
             dispatcher.utter_message(text=f"Ops {associated_name}, questa attivita non esiste.") 
 
@@ -342,7 +366,11 @@ class actionModifyCategory(Action):
             print(category_new)
             returnedValue = Database.modifyCategory(id, category_old, category_new)
             if (returnedValue):  
-                dispatcher.utter_message(text=f"{associated_name}, categoria {category_old} modificata in {category_new} .",json_message={'query':'js reload'}) 
+                text = f"{associated_name}, categoria {category_old} modificata in {category_new} ."
+                if rasa_only:
+                    dispatcher.utter_message(text=text) 
+                else:
+                    dispatcher.utter_message(text=text,json_message={'query':'js reload'}) 
             else:
                 dispatcher.utter_message(text=f"Ops {associated_name} , la categoria {category_old} non esiste.") 
         else:
@@ -416,7 +444,11 @@ class actionModifyActivity(Action):
         if (Database.doesUnfoldingsExists(id,category_new,activity_new,timenew) == False):
             returnedValue = Database.modifyActivity(id, cat_to_modify, act_to_modify, timeold,category_new, activity_new, timenew)
             if (returnedValue):  
-                dispatcher.utter_message(text=f"{associated_name}, l'attivita {act_to_modify} è stata modificata",json_message={'query':'js'}) 
+                text = f"{associated_name}, l'attivita {act_to_modify} è stata modificata"
+                if rasa_only:
+                    dispatcher.utter_message(text=text) 
+                else:
+                    dispatcher.utter_message(text=text,json_message={'query':'js'}) 
             else:
                 dispatcher.utter_message(text=f"Ops {associated_name} , l'attivita da modificare non esiste.") 
         else:
@@ -448,7 +480,11 @@ class actionCleanCompletedActivities(Action):
         
         returnedValue = Database.cleanCompletedActivities(id)
         if (returnedValue):  
-            dispatcher.utter_message(text=f"{associated_name}, tutte le tue attivita completate sono state rimosse!",json_message={'query':'js'}) 
+            text = f"{associated_name}, tutte le tue attivita completate sono state rimosse!"
+            if rasa_only:
+                dispatcher.utter_message(text=text) 
+            else:
+                dispatcher.utter_message(text=text,json_message={'query':'js'}) 
         else:
             dispatcher.utter_message(text=f"Ops! {associated_name} qualcosa è andato storto! Non riesco a rimuovere tutte le tue attivita completate!") #??
     
@@ -503,7 +539,11 @@ class actionRemindItem(Action):
             
             returnedValue = Database.updateReminder(id,category,activity,time,reminderSlot)
             if (returnedValue):
-                dispatcher.utter_message(text=f"{associated_name}, il reminder per l'attivita è stato aggiornato.",json_message={'query':'js'})
+                text = f"{associated_name}, il reminder per l'attivita è stato aggiornato."
+                if rasa_only:
+                    dispatcher.utter_message(text=text) 
+                else:
+                    dispatcher.utter_message(text=text,json_message={'query':'js'}) 
             else:
                 dispatcher.utter_message(text=f"{associated_name}, ci sono stati dei problemi con l'aggiornamento del reminder!")
         else:
@@ -622,10 +662,18 @@ class ActionReactToReminder(Action):
         print(expired)
         Database.updateReminder(id_user,category, activity, deadline, False)
         if(expired):
-            dispatcher.utter_message(f"Hei {name}, il reminder per l'attivita {activity} in {category} è scaduto!",json_message={'query':'js'})
+            text = f"Hei {name}, il reminder per l'attivita {activity} in {category} è scaduto!"
+            if rasa_only:
+                dispatcher.utter_message(text=text) 
+            else:
+                dispatcher.utter_message(text=text,json_message={'query':'js'}) 
             print("ti sei scordato ", activity, category)
         else: 
-            dispatcher.utter_message(f"Hei {name}, ricordati dell'attivita {activity} in {category} tra cinque minuti!",json_message={'query':'js'})
+            text = f"Hei {name}, ricordati dell'attivita {activity} in {category} tra cinque minuti!"
+            if rasa_only:
+                dispatcher.utter_message(text=text) 
+            else:
+                dispatcher.utter_message(text=text,json_message={'query':'js'}) 
             print("sei ancora in tempo per ricordarti", activity, category)
 
         #aggiunta per far si che una volta notificato un reminder questo non venga più notificato successivamente
