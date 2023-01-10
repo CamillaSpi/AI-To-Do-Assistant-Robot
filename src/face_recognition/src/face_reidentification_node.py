@@ -8,7 +8,7 @@ import ros_numpy  # pip3 install git+https://github.com/eric-wieser/ros_numpy
 import numpy as np
 from vision_msgs.msg import Detection2DArray, ObjectHypothesisWithPose
 
-from facial_emotion_recognition.srv import video_detect_user
+from face_recognition.srv import video_detect_user
 from std_msgs.msg import Int32MultiArray, Float32MultiArray, MultiArrayDimension, Bool
 
 import json

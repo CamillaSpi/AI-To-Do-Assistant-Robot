@@ -1,0 +1,5 @@
+face_recognition
+/home/vito/Documenti/DefinitivoCog/devel/.private/face_recognition/cmake.lock /home/vito/Documenti/DefinitivoCog/devel/./cmake.lock
+/home/vito/Documenti/DefinitivoCog/devel/.private/face_recognition/lib/pkgconfig/face_recognition.pc /home/vito/Documenti/DefinitivoCog/devel/lib/pkgconfig/face_recognition.pc
+/home/vito/Documenti/DefinitivoCog/devel/.private/face_recognition/share/face_recognition/cmake/face_recognitionConfig-version.cmake /home/vito/Documenti/DefinitivoCog/devel/share/face_recognition/cmake/face_recognitionConfig-version.cmake
+/home/vito/Documenti/DefinitivoCog/devel/.private/face_recognition/share/face_recognition/cmake/face_recognitionConfig.cmake /home/vito/Documenti/DefinitivoCog/devel/share/face_recognition/cmake/face_recognitionConfig.cmake

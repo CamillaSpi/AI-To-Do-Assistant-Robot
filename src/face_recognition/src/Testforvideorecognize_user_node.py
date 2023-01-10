@@ -4,7 +4,7 @@ from std_msgs.msg import String
 import numpy as np
 from pepper_nodes.srv import *
 
-from facial_emotion_recognition.srv import video_detect_user
+from face_recognition.srv import video_detect_user
 from sensor_msgs.msg import Image
 
 # #i messaggi correttamente riconosciuti verranno mandati a rasa

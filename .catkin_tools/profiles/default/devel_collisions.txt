@@ -2,4 +2,5 @@
 /home/nando/Desktop/DefinitivoCog/DefinitivoCog/devel/./cmake.lock 87
 /home/camilla/Scrivania/DefinitivoCog/devel/./cmake.lock 1
 /home/nando/Scrivania/DefinitivoCog/devel/./cmake.lock 4
-/home/mattia/Desktop/DefinitivoCog/devel/./cmake.lock 140
+/home/mattia/Desktop/DefinitivoCog/devel/./cmake.lock 134
+/home/vito/Documenti/DefinitivoCog/devel/./cmake.lock 44

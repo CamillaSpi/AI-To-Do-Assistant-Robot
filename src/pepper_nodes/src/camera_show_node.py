@@ -28,7 +28,7 @@ class Nodo(object):
     '''
     def start(self):
         # Subscriber
-        rospy.Subscriber("/in_rgb1", Image, self.callback)
+        rospy.Subscriber("/images_topic", Image, self.callback)
 
         rospy.spin()
 

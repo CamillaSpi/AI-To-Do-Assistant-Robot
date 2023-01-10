@@ -50,7 +50,7 @@ class ImageInputNode:
         self.rgb_sub = self.camera.subscribeCamera("RGB Stream", rgb_camera, resolution, COLORSPACE_RGB, self.fps) #https://bit.ly/3BEFZIr
         if not self.rgb_sub:
             raise Exception("Camera is not initialized properly")
-        self.image_publisher = rospy.Publisher('in_rgb1', Image, queue_size=1)
+        self.image_publisher = rospy.Publisher('images_topic', Image, queue_size=1)
         self.bridge = CvBridge()
     
     '''
