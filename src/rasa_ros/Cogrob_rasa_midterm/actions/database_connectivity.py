@@ -395,6 +395,7 @@ class Database:
 ###ERRORI QUI DENTRO 
   @staticmethod
   def modifyCategory(ID, category, category_new):
+    print("query eseguita:", ID, category)
     cur.execute('''
       SELECT * FROM possessions WHERE ID == ? AND category == ?
     ''', (ID, category))
