@@ -189,7 +189,6 @@ echo "<script type='text/javascript'>
 
 
     $('#clickMe').click(function(){
-        alert('verifico');
         var j = 0;
         var numRow = document.getElementById('numOldRows').innerText;
         var matrix = []; 
@@ -259,14 +258,15 @@ echo "
     
     $('#refresh').click(function(){  
         var queryString = document.getElementById('queryDone').innerText;
-
+        alert(document.URL); 
         $.ajax({
         
             method: 'GET',
             url: 'index.php',
             dataType: 'html',   //expect html to be returned    
             data: {query: queryString}, 
-            success: function(response){   
+            success: function(response){  
+                
                 $('body').html(response);  
             }
         });
