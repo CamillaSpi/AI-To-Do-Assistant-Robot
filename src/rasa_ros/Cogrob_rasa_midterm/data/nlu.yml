@@ -1071,13 +1071,13 @@ nlu:
     - Voglio vedere tutte le mie attività inserite
     - Voglio vedere tutte le mie attività aggiunte
     - Voglio vedere tutte le mie attività create
-    - Quali sono le mie attività inserite?
-    - Quali sono le mie attività aggiunte?
-    - Quali sono le mie attività create?
+    - quali sono le mie attività inserite?
+    - quali sono le mie attività aggiunte?
+    - quali sono le mie attività create?
     - Voglio vedere tutte le mie attività per lunedì
-    - Quali sono le mie attività aggiunte per domani?
-    - Quali sono le mie attività create per domenica?
-    - Quali sono le mie attività per domani mattina?
+    - quali sono le mie attività aggiunte per domani?
+    - quali sono le mie attività create per domenica?
+    - quali sono le mie attività per domani mattina?
     - Mostra attività nella categoria [palestra](category) per questa sera
     - Fammi vedere le mie attività per martedì pomeriggio
     - Fammi vedere le attività per mercoledì sera
@@ -1374,7 +1374,7 @@ nlu:
     - Mostra le mie categorie
     - Mostra tutte le mie categorie
     - Fammi vedere tutte le mie categorie
-    - Quali sono le mie categorie?
+    - quali sono le mie categorie?
     - Posso vedere quali sono le mie categorie?
     - Posso vedere le mie categorie?
     - Puoi mostrare le mie categorie?
@@ -1382,15 +1382,16 @@ nlu:
     - Voglio vedere tutte le categorie inserite
     - Voglio guardare le categorie aggiunte
     - Mostrami tutte le categorie create
-    - Quali sono le categorie inserite?
-    - Quali sono le categorie aggiunte?
-    - Quali sono le categorie create?
+    - quali sono le categorie inserite?
+    - quali sono le categorie aggiunte?
+    - quali sono le categorie create?
 - intent: presentation+view_categories
   examples: |
     - sono [Giusy](name) e voglio vedere tutte le mie categorie
     - sono [Simone](name), quali sono le mie categorie?
     - sono [Paola](name) Mostra le mie categorie
-    - sono [Mattia](name) Quali sono le mie categorie?
+    - sono [Mattia](name) quali sono le mie categorie?
+    - sono [Simona](name) mostra categorie
     - sono [Camilla](name) puoi mostrare le mie categorie?
     - sono [Antonio](name), posso vedere le mie categorie?
     - sono [Gerardo](name), voglio vedere tutte le mie categorie
@@ -1403,9 +1404,9 @@ nlu:
     - sono [Lorenzo](name) mostra tutte le mie categorie
     - sono [Gianluca](name) Voglio vedere tutte le categorie inserite
     - sono [Daniele](name) Voglio guardare le categorie aggiunte
-    - sono [Sara](name), Quali sono le categorie create?
-    - sono [Davide](name) Quali sono le categorie aggiunte?
-    - sono [Vito](name) Quali sono le categorie inserite?
+    - sono [Sara](name), quali sono le categorie create?
+    - sono [Davide](name) quali sono le categorie aggiunte?
+    - sono [Vito](name) quali sono le categorie inserite?
 - intent: remind_me_of
   examples: |
     - Ricordami di [fare shopping](activity) nella categoria [vita](categoria) alle 8:30
@@ -1445,35 +1446,6 @@ nlu:
     - Ricordami di [mangiare frutta](activity)
     - ricordami di [mangiare](activity) in [casa](category)
 
-- intent: presentation+remind_me_of
-  examples: |
-    - Sono [Mattia](name), ricordami di [fare shopping](activity) nella categoria [vita](category) alle 8:30.
-    - Sono [Camilla](name), impostami un promemoria per l'attività [chiamata](activity) nella categoria [relazioni](category) della mattina successiva.
-    - Sono [Simone](name), aiutami a non dimenticare l'attività [studio](activity) nella categoria [università](category) per domani.
-    - Sono [Nando](name), aiutami a ricordare il mio [compleanno](activity) il 12/18/2022.
-    - Sono [Paola](name), ricordami [l'esame](activity) domani mattina.
-    - Sono [Alessia](name), non dimenticare di [giardinaggio](activity) alle 19:00.
-    - Sono [Marco](name), voglio impostare un promemoria.
-    - Sono [Gerardo](name), voglio che tu mi aiuti a ricordare.
-    - Il mio nome è [Luigi](name), ricordami di [shampoo](activity) domani sera.
-    - Sono [Salvo](name), aiutami a non dimenticare l'attività [progetto](activity) nella categoria [lavoro](category) del prossimo venerdì.
-    - Sono [Francesca](name), non posso dimenticare di fare l'attività [esercizi](activity) della categoria [scuola](category) della prossima lunedì.
-    - Sono [Sara](name), voglio impostare un promemoria per l'attività [parrucchiere](activity).
-    - Sono [Iris](name), ricordami il [cena](activity).
-    - Sono [Ferdinando](name), ricordami di [acquistare i regali](activity) nella categoria [casa](category) alle 8:30.
-    - Sono [Giovanna](name), impostami un promemoria per l'attività [videocall con amici](activity) nella categoria [sociale](category) della mattina successiva.
-    - Sono [Lorenzo](name), aiutami a non dimenticare l'attività [studiare per l'esame](activity) nella categoria [università](category) per domani.
-    - Sono [Vito](name), aiutami a ricordare il mio [preparare il lancio](activity) il 12/18/2022.
-    - Sono [Luana](name), ricordami di [andare dal dottore](activity) domani mattina.
-    - Sono [Carla](name), non dimenticare di [acquistare un regalo](activity) alle 19:00.
-    - Sono [Giovanni](name), voglio impostare un promemoria.
-    - Sono [Tommaso](name), voglio che tu mi aiuti a ricordare.
-    - Il mio nome è [Salvatore](name), ricordami di [fare yoga](activity) domani sera.
-    - Sono [Orazio](name), aiutami a non dimenticare l'attività [risolvere alcuni problemi](activity) nella categoria [progetti](category) del prossimo venerdì.
-    - Sono [Orietta](name), non posso dimenticare di fare l'attività [inviare l'e-mail](activity) della categoria [lavoro](category) della prossima lunedì.
-    - Sono [Silvia](name), voglio impostare un promemoria per l'attività [pulire la casa](activity).
-    - Sono [Silvana](name), ricordami di [comprare del cibo](activity).
-    - ciao sono [Nando](name), puoi ricordarmi di [andare in palestra](activity) domani alle 21
 - intent: ask_name
   examples: |
     - Chi sono?
@@ -1481,7 +1453,7 @@ nlu:
     - Mi hai già visto prima?
     - Mi hai riconosciuto?
     - Mi riconosci?
-    - Qual è il mio nome?
+    - qual è il mio nome?
     - Puoi dire il mio nome?
     - dimmi il mio nome
     - chi sono
