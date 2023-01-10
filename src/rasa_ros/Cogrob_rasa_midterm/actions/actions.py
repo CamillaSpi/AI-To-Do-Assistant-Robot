@@ -119,6 +119,7 @@ class actionAddItem(Action):
         category = tracker.get_slot("category")
         reminder = tracker.get_slot("reminder")
         time = tracker.get_slot("time")
+        print("sono nella add_item: ", associated_name, activity, category, reminder, time)
         if (isinstance(activity,list)):
             activity = ' '.join([str(elem) for elem in activity])
         if (isinstance(category,list)):
