@@ -204,7 +204,7 @@ class Database:
         base_query = base_query + " AND deadline BETWEEN ? AND ?"
         base_list.append(first_date)
         base_list.append(second_date)
-    base_query = base_query + ";"
+    base_query = base_query + " ORDER BY category;"
     final_query = base_query
     for elem in base_list:
       if (isinstance(elem,str)):
@@ -304,7 +304,7 @@ class Database:
   def selectPossessions(ID):
     global toReturn
     if ID != None:
-      query="SELECT * FROM possessions WHERE ID == ?;"
+      query="SELECT * FROM possessions WHERE ID == ? ORDER BY category;"
       cur.execute(query,(ID,)) 
     rows = cur.fetchall()
     query = query.replace("?",str(ID))

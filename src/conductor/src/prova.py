@@ -14,7 +14,7 @@ def listener():
  #qua fare un'array in cui mandiamo entrambe le cose 
     try:
         print('ore')
-        pub.publish('http://10.0.1.227:80/webPage')
+        pub.publish('http://10.0.1.248:80/webPage')
         print('ore')
     except rospy.exceptions.ROSInterruptException:
         print("vado in close in massiccianza")

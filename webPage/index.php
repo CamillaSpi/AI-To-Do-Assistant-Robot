@@ -55,15 +55,17 @@ if (isset($_POST['ajax'])) {
                 break;
             }
         }
-        ##ADD STATEMENT {to fix a bug on when add first row (count-1 not work)first }
+        ##ADD STATEMENT 
         if($numOldRow < $numActualRow){
             if ($data[$count][0]!=$row[$id_index]){
                 $id=$row[$id_index];
                 $toAdd=$count-1;
+                
                 echo "<tr id=$id class='active-row'>
                 <td id='index' hidden>".$data[$toAdd][0]."</td>";
                 for($k=1;$k<$length;++$k){
                     if($row[$k] == $row['deadline']){
+                        $tmp = explode('T',$row['4']); 
                         echo "<td>"; 
                         if(empty($tmp)){
                             echo "{$row[$k]}";
@@ -99,6 +101,9 @@ if (isset($_POST['ajax'])) {
             if ($inverseOperation == True){
                 if($data[$count][0]==$row[$id_index]){
                     echo "hidden ".$data[$count-1][0]." restart";
+                    break;
+                }else if($count == $numActualRow-1){
+                    echo "hidden ".$data[$count][0]." restart";
                     break;
                 }
             }
@@ -184,7 +189,6 @@ echo "<script type='text/javascript'>
 
 
     $('#clickMe').click(function(){
-        alert('verifico');
         var j = 0;
         var numRow = document.getElementById('numOldRows').innerText;
         var matrix = []; 
@@ -217,25 +221,24 @@ echo "<script type='text/javascript'>
                 array = html[0].textContent.split(' ');
                 
                 if(array[0]=='hidden'){
-                    alert('sto per cancellare');
                     row = document.getElementById(array[1]);
-                    $(row).hide(1000).delay(2000).queue(function() { $(this).remove(); });
-                    var tooOld = document.getElementById('numOldRows').innerText;
-                    document.getElementById('numOldRows').innerText=tooOld-1;
                     if(array[2] == 'restart'){
-                        alert(numRow);
+                        $(row).remove();
+                    }else{
+                        $(row).hide(1000).delay(2000).queue(function() { $(this).remove(); });
+                    }                    
+                    var tooOld = document.getElementById('numOldRows').innerText;
+                    document.getElementById('numOldRows').innerText=parseInt(tooOld)-1;
+                    if(array[2] == 'restart'){
                         document.getElementById('clickMe').click();
                     }
                 }else if(array[0]=='select'){}else{
-                    alert('aggiungo');
                     var tooOld = document.getElementById('numOldRows').innerText;
-                    document.getElementById('numOldRows').innerText=tooOld+1;
+                    document.getElementById('numOldRows').innerText=parseInt(tooOld)+1;
                     var idWhereAppend = html[0].childNodes[1].textContent;
                     if(idWhereAppend == ''){
                         var table = document.getElementById('responsecontainer');
-                        alert(table);
                         idWhereAppend=table.childNodes[1].id;
-                        alert(idWhereAppend);
                         var idWhereAppend = '#'.concat(idWhereAppend);
                         $(response).insertBefore(idWhereAppend).hide().fadeIn(1000);
                     }else{
@@ -255,14 +258,15 @@ echo "
     
     $('#refresh').click(function(){  
         var queryString = document.getElementById('queryDone').innerText;
-
+        alert(document.URL); 
         $.ajax({
         
             method: 'GET',
             url: 'index.php',
             dataType: 'html',   //expect html to be returned    
             data: {query: queryString}, 
-            success: function(response){   
+            success: function(response){  
+                
                 $('body').html(response);  
             }
         });
