@@ -360,7 +360,11 @@ class actionModifyCategory(Action):
         
         associated_name = Database.getName(id)
         category_old = tracker.get_slot("category_old")
+        if (isinstance(category_old,list)):
+            category_old = ' '.join([str(elem) for elem in category_old])
         category_new = tracker.get_slot("category_new")
+        if (isinstance(category_new,list)):
+            category_new = ' '.join([str(elem) for elem in category_new])
         
         if (Database.doesPossessionExists(id,category_new) == False):
             print(category_new)
