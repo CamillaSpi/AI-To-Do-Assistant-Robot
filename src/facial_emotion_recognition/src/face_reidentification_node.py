@@ -117,9 +117,9 @@ def dist2id(distance, y, ths, norm=False, mode='avg', filter_under_th=False):
         if mode == 'min':
             ids_prob.append(np.min(d[y == i]))
 
-    ids_prob = np.array(ids_prob)
+    ids_prob = np.array(ids_prob)/1000
     ids_prob_soft = special.softmax(ids_prob)
-    return int(ids[np.argmax(ids_prob)]), ids_prob_soft
+    return ids[np.argmax(ids_prob)], ids_prob_soft
 
 
 def extract_features(face_reco_model, filename):
