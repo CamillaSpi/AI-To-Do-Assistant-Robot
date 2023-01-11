@@ -129,7 +129,7 @@ def extract_features(face_reco_model, filename):
         faceim = filename
     faceim = cv2.resize(faceim, (224, 224))
     faceim = preprocess_input([faceim.astype(np.float32)], version=2)
-    feature_vector = (face_reco_model.predict(faceim, verbose=0)).flatten()
+    feature_vector = (face_reco_model.predict(faceim, verbose=0))
     return feature_vector
 
 
@@ -146,7 +146,7 @@ def registration(msg):
         for d in msg.detections:
             # Preprocess image
             d, resized_face = elaboration(d, im)
-            feature_vector = extract_features(face_reco_model, resized_face).reshape((-1,2048))
+            feature_vector = extract_features(face_reco_model, resized_face)
             if database.size <=0:
                 database = feature_vector
             else:
@@ -177,9 +177,9 @@ def predict_identity(resized_face, rejection_threshold=7000):
     global number_of_users
     if len(database) > 0:
         feature_vector = extract_features(
-            face_reco_model, resized_face).reshape(-1, 2048)
+            face_reco_model, resized_face)
         emb_face = np.repeat(feature_vector, len(
-            database), 0).reshape(-1, 2048)
+            database), 0)
         cos_dist = batch_cosine_similarity(np.array(database), emb_face)
         # id_label = dist2id(cos_dist, labels, rejection_threshold, mode='avg')
         id_label, ids_prob = dist2id(
