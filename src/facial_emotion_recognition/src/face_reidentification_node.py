@@ -219,10 +219,13 @@ def recognize():
                 'face_reidentification', Detection2DArray)
             to_publish = face_reidentification(msg)
             pub.publish(to_publish)
+        print('ciao sono uscito dallo shutdown')
+        save_identities()
 
     except rospy.exceptions.ROSInterruptException:
-        print("vado in close")
+        print("vado in close Face")
         save_identities()
+        print("Salvato db face")
 
 def handle_service(req):
     global actualLabels
