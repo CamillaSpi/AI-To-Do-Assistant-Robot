@@ -49,6 +49,9 @@ def recognize_user(text_to_send):
         start = 0
         max = 0
         id_max = -1
+
+        if id_face_prob_arr.shape != id_voice_prob_arr.shape:
+            print('ho riconosciuto la voce ma non la persona!')
         
         while start != len(id_face_prob_arr):
             stop = start + faces_stride

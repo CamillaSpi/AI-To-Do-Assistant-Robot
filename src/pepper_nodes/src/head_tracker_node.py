@@ -17,6 +17,7 @@ class TrackerNode:
         self.port = port
         self.session = Session(ip, port)
         self.tracker_service = self.session.get_service("ALTracker")
+        self.run('face')
      
     '''
     Rececives a Tracker message and call the ALTracker service.
@@ -26,16 +27,19 @@ class TrackerNode:
         if 'stop' in msg.tracker:
             self.stop()
         else:
-            targetName = msg.tracker
+            if 'face' not in msg:
+                targetName = msg.tracker
+            else:
+                targetName = msg
             faceWidth = 0.1
             try:
                 self.tracker_service.registerTarget(targetName, faceWidth)
                 self.tracker_service.track(targetName)
-                
             except:
                 self.session.reconnect()
                 self.tracker_service = self.session.get_service("ALTracker")
                 self.tracker_service.registerTarget(targetName, faceWidth)
+                self.tracker_service.setMode('WholeBody')
                 self.tracker_service.track(targetName)
             return "ACK"
      
