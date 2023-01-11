@@ -145,9 +145,9 @@ def registration(msg):
         for d in msg.detections:
             # Preprocess image
             d, resized_face = elaboration(d, im)
-            feature_vector = extract_features(face_reco_model, resized_face)
+            feature_vector = np.expand_dims(extract_features(face_reco_model, resized_face),0)
             database = np.concatenate((database, feature_vector))
-            labels.append(number_of_users)
+            labels = np.append(labels,number_of_users)
     # Predict
     number_of_users +=1
     lock.release()
