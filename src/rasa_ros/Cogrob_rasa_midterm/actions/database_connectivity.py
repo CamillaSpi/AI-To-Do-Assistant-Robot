@@ -179,7 +179,7 @@ class Database:
   def selectItems(ID, category=None, activity_status=None, deadline=None):
     global toReturn
     if ID == None: return None
-    if(activity_status == "completa"):
+    if(activity_status == "completata"):
       completed = True
     elif(activity_status == "incompleta"):
       completed = False
@@ -395,6 +395,7 @@ class Database:
 ###ERRORI QUI DENTRO 
   @staticmethod
   def modifyCategory(ID, category, category_new):
+    print("query eseguita:", ID, category)
     cur.execute('''
       SELECT * FROM possessions WHERE ID == ? AND category == ?
     ''', (ID, category))

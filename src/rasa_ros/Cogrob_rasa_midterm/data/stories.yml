@@ -491,772 +491,772 @@ stories:
     - requested_slot: null
   - action: action_view_categories
   #Interactive Stories
-- story: interactive_story_1
-  steps:
-  - intent: presentation
-    entities:
-    - name: Nando
-  - slot_was_set:
-    - name: Nando
-  - action: recognize_user_form
-  - active_loop: recognize_user_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_recognize_user
-  - intent: view_activities
-  - action: view_activities_form
-  - active_loop: view_activities_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_view_activities
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - activity_old: null
-  - slot_was_set:
-    - activity_new: null
-  - slot_was_set:
-    - category: null
-  - slot_was_set:
-    - category_old: null
-  - slot_was_set:
-    - category_new: null
-  - slot_was_set:
-    - time: null
-  - slot_was_set:
-    - activity_status: null
-  - intent: view_activities
-    entities:
-    - time: '2022-12-22T00:00:00.000+01:00'
-  - slot_was_set:
-    - time: '2022-12-22T00:00:00.000+01:00'
-  - action: view_activities_form
-  - active_loop: view_activities_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_view_activities
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - activity_old: null
-  - slot_was_set:
-    - activity_new: null
-  - slot_was_set:
-    - category: null
-  - slot_was_set:
-    - category_old: null
-  - slot_was_set:
-    - category_new: null
-  - slot_was_set:
-    - time: null
-  - slot_was_set:
-    - activity_status: null
+# - story: interactive_story_1
+#   steps:
+#   - intent: presentation
+#     entities:
+#     - name: Nando
+#   - slot_was_set:
+#     - name: Nando
+#   - action: recognize_user_form
+#   - active_loop: recognize_user_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_recognize_user
+#   - intent: view_activities
+#   - action: view_activities_form
+#   - active_loop: view_activities_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_view_activities
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - activity_old: null
+#   - slot_was_set:
+#     - activity_new: null
+#   - slot_was_set:
+#     - category: null
+#   - slot_was_set:
+#     - category_old: null
+#   - slot_was_set:
+#     - category_new: null
+#   - slot_was_set:
+#     - time: null
+#   - slot_was_set:
+#     - activity_status: null
+#   - intent: view_activities
+#     entities:
+#     - time: '2022-12-22T00:00:00.000+01:00'
+#   - slot_was_set:
+#     - time: '2022-12-22T00:00:00.000+01:00'
+#   - action: view_activities_form
+#   - active_loop: view_activities_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_view_activities
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - activity_old: null
+#   - slot_was_set:
+#     - activity_new: null
+#   - slot_was_set:
+#     - category: null
+#   - slot_was_set:
+#     - category_old: null
+#   - slot_was_set:
+#     - category_new: null
+#   - slot_was_set:
+#     - time: null
+#   - slot_was_set:
+#     - activity_status: null
 
-- story: interactive_story_1
-  steps:
-  - intent: presentation
-    entities:
-    - name: Nando
-  - slot_was_set:
-    - name: Nando
-  - action: recognize_user_form
-  - active_loop: recognize_user_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_recognize_user
-  - intent: view_activities
-  - action: view_activities_form
-  - active_loop: view_activities_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_view_activities
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - activity_old: null
-  - slot_was_set:
-    - activity_new: null
-  - slot_was_set:
-    - category: null
-  - slot_was_set:
-    - category_old: null
-  - slot_was_set:
-    - category_new: null
-  - slot_was_set:
-    - time: null
-  - slot_was_set:
-    - activity_status: null
-  - intent: set_status_activity
-    entities:
-    - activity_status: completata
-    - activity: studiare
-    - category: personale
-  - slot_was_set:
-    - activity: studiare
-  - slot_was_set:
-    - category: personale
-  - slot_was_set:
-    - activity_status: completata
-  - action: set_status_activity_form
-  - active_loop: set_status_activity_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - activity: studiare
-  - slot_was_set:
-    - category: personale
-  - slot_was_set:
-    - activity: studiare
-  - slot_was_set:
-    - category: personale
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_ask_if_deadline
-  - intent: affirm
-  - action: add_deadline_form
-  - active_loop: add_deadline_form
-  - slot_was_set:
-    - requested_slot: time
-  - slot_was_set:
-    - time: '2022-12-24T15:00:00.000+01:00'
-  - slot_was_set:
-    - time: '2022-12-24T15:00:00.000+01:00'
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_set_status_activity
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - activity_old: null
-  - slot_was_set:
-    - activity_new: null
-  - slot_was_set:
-    - category: null
-  - slot_was_set:
-    - category_old: null
-  - slot_was_set:
-    - category_new: null
-  - slot_was_set:
-    - time: null
-  - slot_was_set:
-    - activity_status: null
-  - intent: view_activities
-    entities:
-    - time: '2022-12-22T00:00:00.000+01:00'
-  - slot_was_set:
-    - time: '2022-12-22T00:00:00.000+01:00'
-  - action: view_activities_form
-  - active_loop: view_activities_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_view_activities
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - activity_old: null
-  - slot_was_set:
-    - activity_new: null
-  - slot_was_set:
-    - category: null
-  - slot_was_set:
-    - category_old: null
-  - slot_was_set:
-    - category_new: null
-  - slot_was_set:
-    - time: null
-  - slot_was_set:
-    - activity_status: null
-  - intent: modify_activity_name
-  - action: modify_activity_name_form
-  - active_loop: modify_activity_name_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - requested_slot: category
-  - slot_was_set:
-    - category: universita
-  - slot_was_set:
-    - category: universita
-  - slot_was_set:
-    - requested_slot: activity_old
-  - slot_was_set:
-    - requested_slot: activity
-  - slot_was_set:
-    - activity: studiare
-  - slot_was_set:
-    - activity: studiare
-  - slot_was_set:
-    - requested_slot: activity_old
-  - slot_was_set:
-    - activity_old: studiare
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - activity_new: null
-  - slot_was_set:
-    - requested_slot: activity
-  - slot_was_set:
-    - activity: leggere
-  - slot_was_set:
-    - activity: leggere
-  - slot_was_set:
-    - requested_slot: activity_new
-  - slot_was_set:
-    - activity_new: leggere
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_ask_if_deadline
-  - intent: affirm
-  - action: add_deadline_form
-  - active_loop: add_deadline_form
-  - slot_was_set:
-    - requested_slot: time
-  - slot_was_set:
-    - time: '2022-12-22T21:00:00.000+01:00'
-  - slot_was_set:
-    - time: '2022-12-22T21:00:00.000+01:00'
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_modify_activity
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - activity_old: null
-  - slot_was_set:
-    - activity_new: null
-  - slot_was_set:
-    - category: null
-  - slot_was_set:
-    - category_old: null
-  - slot_was_set:
-    - category_new: null
-  - slot_was_set:
-    - time: null
-  - slot_was_set:
-    - activity_status: null
-  - intent: view_activities
-  - action: view_activities_form
-  - active_loop: view_activities_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_view_activities
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - activity_old: null
-  - slot_was_set:
-    - activity_new: null
-  - slot_was_set:
-    - category: null
-  - slot_was_set:
-    - category_old: null
-  - slot_was_set:
-    - category_new: null
-  - slot_was_set:
-    - time: null
-  - slot_was_set:
-    - activity_status: null
+# - story: interactive_story_1
+#   steps:
+#   - intent: presentation
+#     entities:
+#     - name: Nando
+#   - slot_was_set:
+#     - name: Nando
+#   - action: recognize_user_form
+#   - active_loop: recognize_user_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_recognize_user
+#   - intent: view_activities
+#   - action: view_activities_form
+#   - active_loop: view_activities_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_view_activities
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - activity_old: null
+#   - slot_was_set:
+#     - activity_new: null
+#   - slot_was_set:
+#     - category: null
+#   - slot_was_set:
+#     - category_old: null
+#   - slot_was_set:
+#     - category_new: null
+#   - slot_was_set:
+#     - time: null
+#   - slot_was_set:
+#     - activity_status: null
+#   - intent: set_status_activity
+#     entities:
+#     - activity_status: completata
+#     - activity: studiare
+#     - category: personale
+#   - slot_was_set:
+#     - activity: studiare
+#   - slot_was_set:
+#     - category: personale
+#   - slot_was_set:
+#     - activity_status: completata
+#   - action: set_status_activity_form
+#   - active_loop: set_status_activity_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - activity: studiare
+#   - slot_was_set:
+#     - category: personale
+#   - slot_was_set:
+#     - activity: studiare
+#   - slot_was_set:
+#     - category: personale
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: utter_ask_if_deadline
+#   - intent: affirm
+#   - action: add_deadline_form
+#   - active_loop: add_deadline_form
+#   - slot_was_set:
+#     - requested_slot: time
+#   - slot_was_set:
+#     - time: '2022-12-24T15:00:00.000+01:00'
+#   - slot_was_set:
+#     - time: '2022-12-24T15:00:00.000+01:00'
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_set_status_activity
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - activity_old: null
+#   - slot_was_set:
+#     - activity_new: null
+#   - slot_was_set:
+#     - category: null
+#   - slot_was_set:
+#     - category_old: null
+#   - slot_was_set:
+#     - category_new: null
+#   - slot_was_set:
+#     - time: null
+#   - slot_was_set:
+#     - activity_status: null
+#   - intent: view_activities
+#     entities:
+#     - time: '2022-12-22T00:00:00.000+01:00'
+#   - slot_was_set:
+#     - time: '2022-12-22T00:00:00.000+01:00'
+#   - action: view_activities_form
+#   - active_loop: view_activities_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_view_activities
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - activity_old: null
+#   - slot_was_set:
+#     - activity_new: null
+#   - slot_was_set:
+#     - category: null
+#   - slot_was_set:
+#     - category_old: null
+#   - slot_was_set:
+#     - category_new: null
+#   - slot_was_set:
+#     - time: null
+#   - slot_was_set:
+#     - activity_status: null
+#   - intent: modify_activity_name
+#   - action: modify_activity_name_form
+#   - active_loop: modify_activity_name_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - requested_slot: category
+#   - slot_was_set:
+#     - category: universita
+#   - slot_was_set:
+#     - category: universita
+#   - slot_was_set:
+#     - requested_slot: activity_old
+#   - slot_was_set:
+#     - requested_slot: activity
+#   - slot_was_set:
+#     - activity: studiare
+#   - slot_was_set:
+#     - activity: studiare
+#   - slot_was_set:
+#     - requested_slot: activity_old
+#   - slot_was_set:
+#     - activity_old: studiare
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - activity_new: null
+#   - slot_was_set:
+#     - requested_slot: activity
+#   - slot_was_set:
+#     - activity: leggere
+#   - slot_was_set:
+#     - activity: leggere
+#   - slot_was_set:
+#     - requested_slot: activity_new
+#   - slot_was_set:
+#     - activity_new: leggere
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: utter_ask_if_deadline
+#   - intent: affirm
+#   - action: add_deadline_form
+#   - active_loop: add_deadline_form
+#   - slot_was_set:
+#     - requested_slot: time
+#   - slot_was_set:
+#     - time: '2022-12-22T21:00:00.000+01:00'
+#   - slot_was_set:
+#     - time: '2022-12-22T21:00:00.000+01:00'
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_modify_activity
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - activity_old: null
+#   - slot_was_set:
+#     - activity_new: null
+#   - slot_was_set:
+#     - category: null
+#   - slot_was_set:
+#     - category_old: null
+#   - slot_was_set:
+#     - category_new: null
+#   - slot_was_set:
+#     - time: null
+#   - slot_was_set:
+#     - activity_status: null
+#   - intent: view_activities
+#   - action: view_activities_form
+#   - active_loop: view_activities_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_view_activities
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - activity_old: null
+#   - slot_was_set:
+#     - activity_new: null
+#   - slot_was_set:
+#     - category: null
+#   - slot_was_set:
+#     - category_old: null
+#   - slot_was_set:
+#     - category_new: null
+#   - slot_was_set:
+#     - time: null
+#   - slot_was_set:
+#     - activity_status: null
 
-- story: interactive_story_1
-  steps:
-  - intent: presentation
-    entities:
-    - name: nando
-  - slot_was_set:
-    - name: nando
-  - action: recognize_user_form
-  - active_loop: recognize_user_form
-  - slot_was_set:
-    - name: nando
-  - slot_was_set:
-    - name: nando
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_recognize_user
-  - intent: remind_me_of
-    entities:
-    - activity: mangiare
-    - category: casa
-  - slot_was_set:
-    - activity: mangiare
-  - slot_was_set:
-    - category: casa
-  - action: action_set_reminder_slot
-  - slot_was_set:
-    - reminder: true
-  - action: reminder_form
-  - active_loop: reminder_form
-  - slot_was_set:
-    - name: nando
-  - slot_was_set:
-    - activity: mangiare
-  - slot_was_set:
-    - category: casa
-  - slot_was_set:
-    - activity: mangiare
-  - slot_was_set:
-    - category: casa
-  - slot_was_set:
-    - requested_slot: time
-  - slot_was_set:
-    - time: '2022-12-22T16:34:03.000+01:00'
-  - slot_was_set:
-    - time: '2022-12-22T16:34:03.000+01:00'
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_reminder_item
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - time: null
-  - slot_was_set:
-    - category: null
-  - slot_was_set:
-    - reminder: false
-  - intent: goodbye
-  - action: utter_goodbye
+# - story: interactive_story_1
+#   steps:
+#   - intent: presentation
+#     entities:
+#     - name: nando
+#   - slot_was_set:
+#     - name: nando
+#   - action: recognize_user_form
+#   - active_loop: recognize_user_form
+#   - slot_was_set:
+#     - name: nando
+#   - slot_was_set:
+#     - name: nando
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_recognize_user
+#   - intent: remind_me_of
+#     entities:
+#     - activity: mangiare
+#     - category: casa
+#   - slot_was_set:
+#     - activity: mangiare
+#   - slot_was_set:
+#     - category: casa
+#   - action: action_set_reminder_slot
+#   - slot_was_set:
+#     - reminder: true
+#   - action: reminder_form
+#   - active_loop: reminder_form
+#   - slot_was_set:
+#     - name: nando
+#   - slot_was_set:
+#     - activity: mangiare
+#   - slot_was_set:
+#     - category: casa
+#   - slot_was_set:
+#     - activity: mangiare
+#   - slot_was_set:
+#     - category: casa
+#   - slot_was_set:
+#     - requested_slot: time
+#   - slot_was_set:
+#     - time: '2022-12-22T16:34:03.000+01:00'
+#   - slot_was_set:
+#     - time: '2022-12-22T16:34:03.000+01:00'
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_reminder_item
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - time: null
+#   - slot_was_set:
+#     - category: null
+#   - slot_was_set:
+#     - reminder: false
+#   - intent: goodbye
+#   - action: utter_goodbye
 
-- story: interactive_story_1
-  steps:
-  - intent: presentation
-    entities:
-    - name: Nando
-  - slot_was_set:
-    - name: Nando
-  - action: recognize_user_form
-  - active_loop: recognize_user_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_recognize_user
-  - intent: remove_item
-    entities:
-    - activity: correre
-    - category: palestra
-    - time: '2022-12-23T00:00:00.000+01:00'
-  - slot_was_set:
-    - activity: correre
-  - slot_was_set:
-    - category: palestra
-  - slot_was_set:
-    - time: '2022-12-23T00:00:00.000+01:00'
-  - action: utter_confirm_choice
-  - intent: affirm
-  - action: action_remove_item
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - activity_old: null
-  - slot_was_set:
-    - activity_new: null
-  - slot_was_set:
-    - category: null
-  - slot_was_set:
-    - category_old: null
-  - slot_was_set:
-    - category_new: null
-  - slot_was_set:
-    - time: null
-  - slot_was_set:
-    - activity_status: null
+# - story: interactive_story_1
+#   steps:
+#   - intent: presentation
+#     entities:
+#     - name: Nando
+#   - slot_was_set:
+#     - name: Nando
+#   - action: recognize_user_form
+#   - active_loop: recognize_user_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_recognize_user
+#   - intent: remove_item
+#     entities:
+#     - activity: correre
+#     - category: palestra
+#     - time: '2022-12-23T00:00:00.000+01:00'
+#   - slot_was_set:
+#     - activity: correre
+#   - slot_was_set:
+#     - category: palestra
+#   - slot_was_set:
+#     - time: '2022-12-23T00:00:00.000+01:00'
+#   - action: utter_confirm_choice
+#   - intent: affirm
+#   - action: action_remove_item
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - activity_old: null
+#   - slot_was_set:
+#     - activity_new: null
+#   - slot_was_set:
+#     - category: null
+#   - slot_was_set:
+#     - category_old: null
+#   - slot_was_set:
+#     - category_new: null
+#   - slot_was_set:
+#     - time: null
+#   - slot_was_set:
+#     - activity_status: null
 
-- story: interactive_story_1
-  steps:
-  - intent: presentation
-    entities:
-    - name: Nando
-  - slot_was_set:
-    - name: Nando
-  - action: recognize_user_form
-  - active_loop: recognize_user_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_recognize_user
-  - intent: add_item
-    entities:
-    - activity: correre
-    - category: palestra
-    - time: '2022-12-23T12:00:00.000+01:00'
-  - slot_was_set:
-    - activity: correre
-  - slot_was_set:
-    - category: palestra
-  - slot_was_set:
-    - time: '2022-12-23T12:00:00.000+01:00'
-  - action: utter_ask_if_reminder
-  - intent: affirm
-  - action: action_set_reminder_slot
-  - slot_was_set:
-    - reminder: true
-  - action: action_add_item
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - activity_old: null
-  - slot_was_set:
-    - activity_new: null
-  - slot_was_set:
-    - category: null
-  - slot_was_set:
-    - category_old: null
-  - slot_was_set:
-    - category_new: null
-  - slot_was_set:
-    - time: null
-  - slot_was_set:
-    - activity_status: null
+# - story: interactive_story_1
+#   steps:
+#   - intent: presentation
+#     entities:
+#     - name: Nando
+#   - slot_was_set:
+#     - name: Nando
+#   - action: recognize_user_form
+#   - active_loop: recognize_user_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_recognize_user
+#   - intent: add_item
+#     entities:
+#     - activity: correre
+#     - category: palestra
+#     - time: '2022-12-23T12:00:00.000+01:00'
+#   - slot_was_set:
+#     - activity: correre
+#   - slot_was_set:
+#     - category: palestra
+#   - slot_was_set:
+#     - time: '2022-12-23T12:00:00.000+01:00'
+#   - action: utter_ask_if_reminder
+#   - intent: affirm
+#   - action: action_set_reminder_slot
+#   - slot_was_set:
+#     - reminder: true
+#   - action: action_add_item
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - activity_old: null
+#   - slot_was_set:
+#     - activity_new: null
+#   - slot_was_set:
+#     - category: null
+#   - slot_was_set:
+#     - category_old: null
+#   - slot_was_set:
+#     - category_new: null
+#   - slot_was_set:
+#     - time: null
+#   - slot_was_set:
+#     - activity_status: null
 
-- story: interactive_story_1
-  steps:
-  - intent: presentation
-    entities:
-    - name: Nando
-  - slot_was_set:
-    - name: Nando
-  - action: recognize_user_form
-  - active_loop: recognize_user_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_recognize_user
-  - intent: modify_activity_deadline
-  - action: modify_activity_deadline_form
-  - active_loop: modify_activity_deadline_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - requested_slot: activity
-  - slot_was_set:
-    - activity: cena con i parenti
-  - slot_was_set:
-    - activity: cena con i parenti
-  - slot_was_set:
-    - requested_slot: category
-  - slot_was_set:
-    - category: famiglia
-  - slot_was_set:
-    - category: famiglia
-  - slot_was_set:
-    - requested_slot: time
-  - slot_was_set:
-    - time:
-        to: '2022-12-25T00:00:00.000+01:00'
-        from: '2022-12-23T00:00:00.000+01:00'
-  - slot_was_set:
-    - time:
-        to: '2022-12-25T00:00:00.000+01:00'
-        from: '2022-12-23T00:00:00.000+01:00'
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_modify_activity
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - activity_old: null
-  - slot_was_set:
-    - activity_new: null
-  - slot_was_set:
-    - category: null
-  - slot_was_set:
-    - category_old: null
-  - slot_was_set:
-    - category_new: null
-  - slot_was_set:
-    - time: null
-  - slot_was_set:
-    - activity_status: null
+# - story: interactive_story_1
+#   steps:
+#   - intent: presentation
+#     entities:
+#     - name: Nando
+#   - slot_was_set:
+#     - name: Nando
+#   - action: recognize_user_form
+#   - active_loop: recognize_user_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_recognize_user
+#   - intent: modify_activity_deadline
+#   - action: modify_activity_deadline_form
+#   - active_loop: modify_activity_deadline_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - requested_slot: activity
+#   - slot_was_set:
+#     - activity: cena con i parenti
+#   - slot_was_set:
+#     - activity: cena con i parenti
+#   - slot_was_set:
+#     - requested_slot: category
+#   - slot_was_set:
+#     - category: famiglia
+#   - slot_was_set:
+#     - category: famiglia
+#   - slot_was_set:
+#     - requested_slot: time
+#   - slot_was_set:
+#     - time:
+#         to: '2022-12-25T00:00:00.000+01:00'
+#         from: '2022-12-23T00:00:00.000+01:00'
+#   - slot_was_set:
+#     - time:
+#         to: '2022-12-25T00:00:00.000+01:00'
+#         from: '2022-12-23T00:00:00.000+01:00'
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_modify_activity
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - activity_old: null
+#   - slot_was_set:
+#     - activity_new: null
+#   - slot_was_set:
+#     - category: null
+#   - slot_was_set:
+#     - category_old: null
+#   - slot_was_set:
+#     - category_new: null
+#   - slot_was_set:
+#     - time: null
+#   - slot_was_set:
+#     - activity_status: null
 
-- story: interactive_story_1
-  steps:
-  - intent: presentation+remind_me_of
-    entities:
-    - name: Nando
-    - activity: andare in palestra
-    - time: '2022-12-24T21:00:00.000+01:00'
-  - slot_was_set:
-    - activity: andare in palestra
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - time: '2022-12-24T21:00:00.000+01:00'
-  - action: recognize_user_form
-  - active_loop: recognize_user_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_recognize_user
-  - action: action_set_reminder_slot
-  - slot_was_set:
-    - reminder: true
-  - action: add_item_form
-  - active_loop: add_item_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - activity: andare in palestra
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - activity: andare in palestra
-  - slot_was_set:
-    - requested_slot: category
-  - slot_was_set:
-    - category: palestra
-  - slot_was_set:
-    - category: palestra
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_reminder_item
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - time: null
-  - slot_was_set:
-    - category: null
-  - slot_was_set:
-    - reminder: false
+# - story: interactive_story_1
+#   steps:
+#   - intent: presentation+remind_me_of
+#     entities:
+#     - name: Nando
+#     - activity: andare in palestra
+#     - time: '2022-12-24T21:00:00.000+01:00'
+#   - slot_was_set:
+#     - activity: andare in palestra
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - time: '2022-12-24T21:00:00.000+01:00'
+#   - action: recognize_user_form
+#   - active_loop: recognize_user_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_recognize_user
+#   - action: action_set_reminder_slot
+#   - slot_was_set:
+#     - reminder: true
+#   - action: add_item_form
+#   - active_loop: add_item_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - activity: andare in palestra
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - activity: andare in palestra
+#   - slot_was_set:
+#     - requested_slot: category
+#   - slot_was_set:
+#     - category: palestra
+#   - slot_was_set:
+#     - category: palestra
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_reminder_item
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - time: null
+#   - slot_was_set:
+#     - category: null
+#   - slot_was_set:
+#     - reminder: false
 
-- story: interactive_story_1
-  steps:
-  - intent: presentation
-    entities:
-    - name: Luke
-  - slot_was_set:
-    - name: Luke
-  - action: recognize_user_form
-  - active_loop: recognize_user_form
-  - slot_was_set:
-    - name: Luke
-  - slot_was_set:
-    - name: Luke
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_recognize_user
-  - intent: add_category
-  - action: add_category_form
-  - active_loop: add_category_form
-  - slot_was_set:
-    - name: Luke
-  - slot_was_set:
-    - requested_slot: category
-  - slot_was_set:
-    - category: musica
-  - slot_was_set:
-    - category: musica
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_add_category
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - activity_old: null
-  - slot_was_set:
-    - activity_new: null
-  - slot_was_set:
-    - category: null
-  - slot_was_set:
-    - category_old: null
-  - slot_was_set:
-    - category_new: null
-  - slot_was_set:
-    - time: null
-  - slot_was_set:
-    - activity_status: null
-  - intent: add_item
-    entities:
-    - category: musica
-  - slot_was_set:
-    - category: musica
-  - action: add_item_form
-  - active_loop: add_item_form
-  - slot_was_set:
-    - name: Luke
-  - slot_was_set:
-    - category: musica
-  - slot_was_set:
-    - category: musica
-  - slot_was_set:
-    - requested_slot: activity
-  - slot_was_set:
-    - activity: uscire con gli amici
-  - slot_was_set:
-    - activity: uscire con gli amici
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_ask_if_deadline
-  - intent: deny
-  - action: action_add_item
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - activity_old: null
-  - slot_was_set:
-    - activity_new: null
-  - slot_was_set:
-    - category: null
-  - slot_was_set:
-    - category_old: null
-  - slot_was_set:
-    - category_new: null
-  - slot_was_set:
-    - time: null
-  - slot_was_set:
-    - activity_status: null
+# - story: interactive_story_1
+#   steps:
+#   - intent: presentation
+#     entities:
+#     - name: Luke
+#   - slot_was_set:
+#     - name: Luke
+#   - action: recognize_user_form
+#   - active_loop: recognize_user_form
+#   - slot_was_set:
+#     - name: Luke
+#   - slot_was_set:
+#     - name: Luke
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_recognize_user
+#   - intent: add_category
+#   - action: add_category_form
+#   - active_loop: add_category_form
+#   - slot_was_set:
+#     - name: Luke
+#   - slot_was_set:
+#     - requested_slot: category
+#   - slot_was_set:
+#     - category: musica
+#   - slot_was_set:
+#     - category: musica
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_add_category
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - activity_old: null
+#   - slot_was_set:
+#     - activity_new: null
+#   - slot_was_set:
+#     - category: null
+#   - slot_was_set:
+#     - category_old: null
+#   - slot_was_set:
+#     - category_new: null
+#   - slot_was_set:
+#     - time: null
+#   - slot_was_set:
+#     - activity_status: null
+#   - intent: add_item
+#     entities:
+#     - category: musica
+#   - slot_was_set:
+#     - category: musica
+#   - action: add_item_form
+#   - active_loop: add_item_form
+#   - slot_was_set:
+#     - name: Luke
+#   - slot_was_set:
+#     - category: musica
+#   - slot_was_set:
+#     - category: musica
+#   - slot_was_set:
+#     - requested_slot: activity
+#   - slot_was_set:
+#     - activity: uscire con gli amici
+#   - slot_was_set:
+#     - activity: uscire con gli amici
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: utter_ask_if_deadline
+#   - intent: deny
+#   - action: action_add_item
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - activity_old: null
+#   - slot_was_set:
+#     - activity_new: null
+#   - slot_was_set:
+#     - category: null
+#   - slot_was_set:
+#     - category_old: null
+#   - slot_was_set:
+#     - category_new: null
+#   - slot_was_set:
+#     - time: null
+#   - slot_was_set:
+#     - activity_status: null
 
-- story: interactive_story_1
-  steps:
-  - intent: presentation
-    entities:
-    - name: Nando
-  - slot_was_set:
-    - name: Nando
-  - action: recognize_user_form
-  - active_loop: recognize_user_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_recognize_user
-  - intent: view_activities
-    entities:
-    - time: '2022-12-23T00:00:00.000+01:00'
-  - slot_was_set:
-    - time: '2022-12-23T00:00:00.000+01:00'
-  - action: view_activities_form
-  - active_loop: view_activities_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_view_activities
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - activity_old: null
-  - slot_was_set:
-    - activity_new: null
-  - slot_was_set:
-    - category: null
-  - slot_was_set:
-    - category_old: null
-  - slot_was_set:
-    - category_new: null
-  - slot_was_set:
-    - time: null
-  - slot_was_set:
-    - activity_status: null
-  - intent: set_status_activity
-    entities:
-    - activity: leggere
-    - category: casa
-    - activity_status: completata
-  - slot_was_set:
-    - activity: leggere
-  - slot_was_set:
-    - category: casa
-  - slot_was_set:
-    - activity_status: completata
-  - action: set_status_activity_form
-  - active_loop: set_status_activity_form
-  - slot_was_set:
-    - name: Nando
-  - slot_was_set:
-    - activity: leggere
-  - slot_was_set:
-    - category: casa
-  - slot_was_set:
-    - activity: leggere
-  - slot_was_set:
-    - category: casa
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_ask_if_deadline
-  - intent: affirm
-  - action: add_deadline_form
-  - active_loop: add_deadline_form
-  - slot_was_set:
-    - requested_slot: time
-  - slot_was_set:
-    - time: '2022-12-23T21:00:00.000+01:00'
-  - slot_was_set:
-    - time: '2022-12-23T21:00:00.000+01:00'
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: action_set_status_activity
-  - slot_was_set:
-    - activity: null
-  - slot_was_set:
-    - activity_old: null
-  - slot_was_set:
-    - activity_new: null
-  - slot_was_set:
-    - category: null
-  - slot_was_set:
-    - category_old: null
-  - slot_was_set:
-    - category_new: null
-  - slot_was_set:
-    - time: null
-  - slot_was_set:
-    - activity_status: null
+# - story: interactive_story_1
+#   steps:
+#   - intent: presentation
+#     entities:
+#     - name: Nando
+#   - slot_was_set:
+#     - name: Nando
+#   - action: recognize_user_form
+#   - active_loop: recognize_user_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_recognize_user
+#   - intent: view_activities
+#     entities:
+#     - time: '2022-12-23T00:00:00.000+01:00'
+#   - slot_was_set:
+#     - time: '2022-12-23T00:00:00.000+01:00'
+#   - action: view_activities_form
+#   - active_loop: view_activities_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_view_activities
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - activity_old: null
+#   - slot_was_set:
+#     - activity_new: null
+#   - slot_was_set:
+#     - category: null
+#   - slot_was_set:
+#     - category_old: null
+#   - slot_was_set:
+#     - category_new: null
+#   - slot_was_set:
+#     - time: null
+#   - slot_was_set:
+#     - activity_status: null
+#   - intent: set_status_activity
+#     entities:
+#     - activity: leggere
+#     - category: casa
+#     - activity_status: completata
+#   - slot_was_set:
+#     - activity: leggere
+#   - slot_was_set:
+#     - category: casa
+#   - slot_was_set:
+#     - activity_status: completata
+#   - action: set_status_activity_form
+#   - active_loop: set_status_activity_form
+#   - slot_was_set:
+#     - name: Nando
+#   - slot_was_set:
+#     - activity: leggere
+#   - slot_was_set:
+#     - category: casa
+#   - slot_was_set:
+#     - activity: leggere
+#   - slot_was_set:
+#     - category: casa
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: utter_ask_if_deadline
+#   - intent: affirm
+#   - action: add_deadline_form
+#   - active_loop: add_deadline_form
+#   - slot_was_set:
+#     - requested_slot: time
+#   - slot_was_set:
+#     - time: '2022-12-23T21:00:00.000+01:00'
+#   - slot_was_set:
+#     - time: '2022-12-23T21:00:00.000+01:00'
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_set_status_activity
+#   - slot_was_set:
+#     - activity: null
+#   - slot_was_set:
+#     - activity_old: null
+#   - slot_was_set:
+#     - activity_new: null
+#   - slot_was_set:
+#     - category: null
+#   - slot_was_set:
+#     - category_old: null
+#   - slot_was_set:
+#     - category_new: null
+#   - slot_was_set:
+#     - time: null
+#   - slot_was_set:
+#     - activity_status: null
