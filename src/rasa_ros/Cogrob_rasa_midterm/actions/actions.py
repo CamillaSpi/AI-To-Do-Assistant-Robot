@@ -223,7 +223,7 @@ class actionRemoveCategory(Action):
             if rasa_only:
                 dispatcher.utter_message(text=text) 
             else:
-                dispatcher.utter_message(text=text,json_message={'query':'js reload'}) 
+                dispatcher.utter_message(text=text,json_message={'query':'js_reload'}) 
         else:
             dispatcher.utter_message(text=f"Ops {associated_name}, questa categoria non esiste.") 
 
@@ -370,7 +370,7 @@ class actionModifyCategory(Action):
                 if rasa_only:
                     dispatcher.utter_message(text=text) 
                 else:
-                    dispatcher.utter_message(text=text,json_message={'query':'js reload'}) 
+                    dispatcher.utter_message(text=text,json_message={'query':'js_reload'}) 
             else:
                 dispatcher.utter_message(text=f"Ops {associated_name} , la categoria {category_old} non esiste.") 
         else:

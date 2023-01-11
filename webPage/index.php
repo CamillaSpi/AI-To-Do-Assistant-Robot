@@ -258,18 +258,24 @@ echo "
     
     $('#refresh').click(function(){  
         var queryString = document.getElementById('queryDone').innerText;
-        alert(document.URL); 
-        $.ajax({
+        text = document.URL;
+        if (text.includes('possessions')){
+            var inject = document.getElementById('clickMe');
+            inject.click();
+        } else{
+            $.ajax({
         
-            method: 'GET',
-            url: 'index.php',
-            dataType: 'html',   //expect html to be returned    
-            data: {query: queryString}, 
-            success: function(response){  
-                
-                $('body').html(response);  
-            }
-        });
+                method: 'GET',
+                url: 'index.php',
+                dataType: 'html',   //expect html to be returned    
+                data: {query: queryString}, 
+                success: function(response){  
+                    
+                    $('body').html(response);  
+                }
+            });
+        }
+        
     });
 </script>
 ";
