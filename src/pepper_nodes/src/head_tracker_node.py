@@ -17,7 +17,6 @@ class TrackerNode:
         self.port = port
         self.session = Session(ip, port)
         self.tracker_service = self.session.get_service("ALTracker")
-        self.run('face')
      
     '''
     Rececives a Tracker message and call the ALTracker service.

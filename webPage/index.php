@@ -29,87 +29,91 @@ if (isset($_POST['ajax'])) {
     $id_index = '0';
     $numOldRow = $_POST['numOldRow'];
     $numActualRow = 0;
-    
-    while ($row = $resultsCount->fetchArray()) {
-        ++$numActualRow;
-    }
-    while ($row = $results->fetchArray()) {
-        if($index==0){
-            $keys = array_keys($row);
-            $keyLen = sizeof($keys);
-            for($k=0;$k<$keyLen;++$k){
-                if($keys[$k]=="ID"){
-                    if($k=='1'){
-                        $id_index = '1'; 
+    if (True){
+        echo "refresh "; 
+    }else{
+        while ($row = $resultsCount->fetchArray()) {
+            ++$numActualRow;
+        }
+        while ($row = $results->fetchArray()) {
+            if($index==0){
+                $keys = array_keys($row);
+                $keyLen = sizeof($keys);
+                for($k=0;$k<$keyLen;++$k){
+                    if($keys[$k]=="ID"){
+                        if($k=='1'){
+                            $id_index = '1'; 
+                        }
                     }
                 }
+                $index = 1;
             }
-            $index = 1;
-        }
-        $length = sizeof($row)/2;
-        ##REMOVE STATEMENT
-        if($numOldRow > $numActualRow){
-            if ($data[$count][0]!=$row[$id_index]){
-                echo "hidden ".$data[$count][0];
-                $satisfied=True;
-                break;
-            }
-        }
-        ##ADD STATEMENT 
-        if($numOldRow < $numActualRow){
-            if ($data[$count][0]!=$row[$id_index]){
-                $id=$row[$id_index];
-                $toAdd=$count-1;
-                
-                echo "<tr id=$id class='active-row'>
-                <td id='index' hidden>".$data[$toAdd][0]."</td>";
-                for($k=1;$k<$length;++$k){
-                    if($row[$k] == $row['deadline']){
-                        $tmp = explode('T',$row['4']); 
-                        echo "<td>"; 
-                        if(empty($tmp)){
-                            echo "{$row[$k]}";
-                        }else
-                            $tmpSub= substr($tmp[1], 0, 5);
-                            echo "{$tmp[0]} {$tmpSub}";
-                        echo "</td>";
-                    }else if($keys[1+$k*2]=="ID"){
-                    
-                    }else{
-                        echo "<td>{$row[$k]}</td>";
-                    }
-                    
-                }
-                echo "</tr>";   
-                break;
-            }
-        }
-        ##MODIFY STATEMENT
-        if($numOldRow == $numActualRow){
-            if($operation == True && $idToCheck == $data[$count][0]){
-                echo "hidden ".$idSus." restart";
-                break;
-            }else if($operation == True && $idToCheck != $data[$count][0]){
-                $operation = False;
-                $inverseOperation = True;
-            }
-            if ($data[$count][0]!=$row[$id_index]){
-                $operation = True;
-                $idSus = $data[$count][0];
-                $idToCheck = $row[$id_index];
-            }
-            if ($inverseOperation == True){
-                if($data[$count][0]==$row[$id_index]){
-                    echo "hidden ".$data[$count-1][0]." restart";
-                    break;
-                }else if($count == $numActualRow-1){
-                    echo "hidden ".$data[$count][0]." restart";
+            $length = sizeof($row)/2;
+            ##REMOVE STATEMENT
+            if($numOldRow > $numActualRow){
+                if ($data[$count][0]!=$row[$id_index]){
+                    echo "hidden ".$data[$count][0];
+                    $satisfied=True;
                     break;
                 }
             }
+            ##ADD STATEMENT 
+            if($numOldRow < $numActualRow){
+                if ($data[$count][0]!=$row[$id_index]){
+                    $id=$row[$id_index];
+                    $toAdd=$count-1;
+                    
+                    echo "<tr id=$id class='active-row'>
+                    <td id='index' hidden>".$data[$toAdd][0]."</td>";
+                    for($k=1;$k<$length;++$k){
+                        if($row[$k] == $row['deadline']){
+                            $tmp = explode('T',$row['4']); 
+                            echo "<td>"; 
+                            if(empty($tmp)){
+                                echo "{$row[$k]}";
+                            }else
+                                $tmpSub= substr($tmp[1], 0, 5);
+                                echo "{$tmp[0]} {$tmpSub}";
+                            echo "</td>";
+                        }else if($keys[1+$k*2]=="ID"){
+                        
+                        }else{
+                            echo "<td>{$row[$k]}</td>";
+                        }
+                        
+                    }
+                    echo "</tr>";   
+                    break;
+                }
+            }
+            ##MODIFY STATEMENT
+            if($numOldRow == $numActualRow){
+                if($operation == True && $idToCheck == $data[$count][0]){
+                    echo "hidden ".$idSus." restart";
+                    break;
+                }else if($operation == True && $idToCheck != $data[$count][0]){
+                    $operation = False;
+                    $inverseOperation = True;
+                }
+                if ($data[$count][0]!=$row[$id_index]){
+                    $operation = True;
+                    $idSus = $data[$count][0];
+                    $idToCheck = $row[$id_index];
+                }
+                if ($inverseOperation == True){
+                    if($data[$count][0]==$row[$id_index]){
+                        echo "hidden ".$data[$count-1][0]." restart";
+                        break;
+                    }else if($count == $numActualRow-1){
+                        echo "hidden ".$data[$count][0]." restart";
+                        break;
+                    }
+                }
+            }
+            ++$count;
         }
-        ++$count;
     }
+
     if($numOldRow > $numActualRow && $satisfied==False){
         echo "hidden ".$data[$count][0];
     }
@@ -219,35 +223,42 @@ echo "<script type='text/javascript'>
                 html = $.parseHTML( response );
                 
                 array = html[0].textContent.split(' ');
-                
-                if(array[0]=='hidden'){
-                    row = document.getElementById(array[1]);
-                    if(array[2] == 'restart'){
-                        $(row).remove();
-                    }else{
-                        $(row).hide(1000).delay(2000).queue(function() { $(this).remove(); });
-                    }                    
-                    var tooOld = document.getElementById('numOldRows').innerText;
-                    document.getElementById('numOldRows').innerText=parseInt(tooOld)-1;
-                    if(array[2] == 'restart'){
-                        document.getElementById('clickMe').click();
-                    }
-                }else if(array[0]=='select'){}else{
-                    var tooOld = document.getElementById('numOldRows').innerText;
-                    document.getElementById('numOldRows').innerText=parseInt(tooOld)+1;
-                    var idWhereAppend = html[0].childNodes[1].textContent;
-                    if(idWhereAppend == ''){
-                        var table = document.getElementById('responsecontainer');
-                        idWhereAppend=table.childNodes[1].id;
-                        var idWhereAppend = '#'.concat(idWhereAppend);
-                        $(response).insertBefore(idWhereAppend).hide().fadeIn(1000);
-                    }else{
-                        var idWhereAppend = '#'.concat(idWhereAppend);
-                        $(response).insertAfter(idWhereAppend).hide().fadeIn(1000); 
-                    }
-                    
-                    
-                }                
+                if(array[0]=='refresh'){
+                    alert('sono in refresh, ma da jssss');
+                    var reload = document.getElementById('refresh');
+                    reload.click();
+                }else{
+                    if(array[0]=='hidden'){
+                        row = document.getElementById(array[1]);
+                        if(array[2] == 'restart'){
+                            $(row).remove();
+                        }else{
+                            $(row).hide(1000).delay(2000).queue(function() { $(this).remove(); });
+                        }                    
+                        var tooOld = document.getElementById('numOldRows').innerText;
+                        document.getElementById('numOldRows').innerText=parseInt(tooOld)-1;
+                        if(array[2] == 'restart'){
+                            alert('sono a metà della modifica');
+                            document.getElementById('clickMe').click();
+                        }
+                    }else if(array[0]=='select'){}else{
+                        var tooOld = document.getElementById('numOldRows').innerText;
+                        document.getElementById('numOldRows').innerText=parseInt(tooOld)+1;
+                        var idWhereAppend = html[0].childNodes[1].textContent;
+                        if(idWhereAppend == ''){
+                            var table = document.getElementById('responsecontainer');
+                            idWhereAppend=table.childNodes[1].id;
+                            var idWhereAppend = '#'.concat(idWhereAppend);
+                            $(response).insertBefore(idWhereAppend).hide().fadeIn(1000);
+                        }else{
+                            var idWhereAppend = '#'.concat(idWhereAppend);
+                            $(response).insertAfter(idWhereAppend).hide().fadeIn(1000); 
+                        }
+                        
+                        
+                    }         
+                }
+                       
             }
         });
     });
@@ -259,6 +270,7 @@ echo "
     $('#refresh').click(function(){  
         var queryString = document.getElementById('queryDone').innerText;
         text = document.URL;
+        alert('ora refresho tutto');
         if (text.includes('possessions')){
             var inject = document.getElementById('clickMe');
             inject.click();
