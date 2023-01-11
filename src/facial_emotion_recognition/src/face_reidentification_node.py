@@ -55,7 +55,7 @@ def load_identities():
         number_of_users = tmp['number_of_users']
         return dataset, labels,number_of_users
     except:
-        return [], [],0
+        return np.array([]), np.array([]),0
 
 
 pub = rospy.Publisher('identity', Detection2DArray, queue_size=2)
@@ -119,7 +119,7 @@ def dist2id(distance, y, ths, norm=False, mode='avg', filter_under_th=False):
 
     ids_prob = np.array(ids_prob)
     ids_prob_soft = special.softmax(ids_prob)
-    return ids[np.argmax(ids_prob)], ids_prob_soft
+    return int(ids[np.argmax(ids_prob)]), ids_prob_soft
 
 
 def extract_features(face_reco_model, filename):
@@ -136,6 +136,7 @@ def extract_features(face_reco_model, filename):
 def registration(msg):
     global number_of_users
     global database
+    global labels
     lock.acquire()
     t1 = datetime.now()
     print('non ti conosco... Rimani fermo ')
@@ -145,8 +146,11 @@ def registration(msg):
         for d in msg.detections:
             # Preprocess image
             d, resized_face = elaboration(d, im)
-            feature_vector = np.expand_dims(extract_features(face_reco_model, resized_face),0)
-            database = np.concatenate((database, feature_vector))
+            feature_vector = extract_features(face_reco_model, resized_face).reshape((-1,2048))
+            if database.size <=0:
+                database = feature_vector
+            else:
+                database = np.concatenate((database, feature_vector))
             labels = np.append(labels,number_of_users)
     # Predict
     number_of_users +=1
