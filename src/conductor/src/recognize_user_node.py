@@ -49,7 +49,6 @@ def recognize_user(text_to_send):
         start = 0
         max = 0
         id_max = -1
-
         
         while start != len(id_face_prob_arr):
             stop = start + faces_stride
