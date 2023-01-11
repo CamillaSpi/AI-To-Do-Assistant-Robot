@@ -139,7 +139,7 @@ def registration(msg):
     lock.acquire()
     t1 = datetime.now()
     print('non ti conosco... Rimani fermo ')
-    for _ in range(10):
+    for x in range(10):
         msg = rospy.wait_for_message('face_reidentification', Detection2DArray)
         im = ros_numpy.numpify(msg.detections[0].source_img)
         for d in msg.detections:
