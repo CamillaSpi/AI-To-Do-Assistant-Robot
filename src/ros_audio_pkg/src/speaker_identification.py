@@ -48,7 +48,7 @@ def elaboration(data):
     ukn = model.predict(np.expand_dims(ukn, 0))
     return ukn
 # ,"add activity run in category gym for tomorrow","add activity run in category gym for tomorrow", "remove the category study in university","update the activity walk in personal" , "show my activity", "remind me to play guitar in freetime"
-phrases = ["Mi sembra di non conoscerti, ripeti dopo di me: Ciao Pepper" ]#,"aggiungi attività corsa nella categoria palestra per domani", "rimuovi la categoria studio in università","aggiorna l'attività passeggiata in personale" , "mostra le mie attività", "ricordami di suonare la chitarra nel tempo libero"]
+phrases = ["Mi sembra di non conoscerti, ripeti dopo di me: Ciao Pepper" ,"aggiungi attività corsa nella categoria palestra per domani", "rimuovi la categoria studio in università","aggiorna l'attività passeggiata in personale" , "mostra le mie attività", "ricordami di suonare la chitarra nel tempo libero"]
 
 def registration(msg):
     global features_dataBase
