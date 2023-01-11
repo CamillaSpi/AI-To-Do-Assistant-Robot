@@ -51,9 +51,9 @@ def load_identities():
         with open(REF_PATH + '/../dataBase/json_data.json', 'r') as in_file:
             tmp = json.load(in_file)
         dataset = np.asarray(tmp['dataset'])
-        labels = np.asarray(tmp['labels'])
+        labels = np.asarray(tmp['labels'],dtype=np.int32)
         number_of_users = tmp['number_of_users']
-        return dataset, labels,number_of_users
+        return dataset, labels,int(number_of_users)
     except:
         return np.array([]), np.array([]),0
 
@@ -100,7 +100,7 @@ def dist2id(distance, y, ths, norm=False, mode='avg', filter_under_th=False):
         ths = ths[idx]
 
         if d.shape[0] == 0:
-            return None
+            return 0,[0]
 
     if norm:
         # norm in case of different thresholds
@@ -173,7 +173,7 @@ def elaboration(d, im):
     return d, resized_face
 
 
-def predict_identity(resized_face, rejection_threshold=0.5):
+def predict_identity(resized_face, rejection_threshold=7000):
     global number_of_users
     if len(database) > 0:
         feature_vector = extract_features(
@@ -183,7 +183,7 @@ def predict_identity(resized_face, rejection_threshold=0.5):
         cos_dist = batch_cosine_similarity(np.array(database), emb_face)
         # id_label = dist2id(cos_dist, labels, rejection_threshold, mode='avg')
         id_label, ids_prob = dist2id(
-            cos_dist, labels, rejection_threshold, mode='avg')
+            cos_dist, labels, rejection_threshold, mode='avg',filter_under_th=number_of_users==1)
     else:
         id_label = number_of_users        # non so a che serve, probabilmente la togliamo proprio
         ids_prob = []
