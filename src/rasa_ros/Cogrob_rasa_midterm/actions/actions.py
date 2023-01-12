@@ -463,7 +463,7 @@ class actionModifyActivity(Action):
                     dispatcher.utter_message(text=text,json_message={'query':'js'}) 
             else:
                 dispatcher.utter_message(text=f"Ops {associated_name} , l'attivita da modificare non esiste.") 
-                print("Nel db ho cercato: " ,id,cat_to_modify, act_to_modify, timeold,category_new, activity_new, timenew)
+                
         else:
             dispatcher.utter_message(text=f"Ops {associated_name} l'attivita {activity_new} esiste già, non ha senso modificare {act_to_modify}") 
     
@@ -622,10 +622,11 @@ class actionAskActivityNew(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+        
         activity_new = tracker.get_slot("activity_new")
         activity = tracker.get_slot("activity")
-        if(activity_new == None and activity == None):
+        activity_old = tracker.get_slot("activity_old")
+        if(activity_new == None and (activity == None or activity == activity_old)):
             dispatcher.utter_message(text=f"Qual è la nuova attivita?")
             return[SlotSet("requested_slot","activity")]
         else:
