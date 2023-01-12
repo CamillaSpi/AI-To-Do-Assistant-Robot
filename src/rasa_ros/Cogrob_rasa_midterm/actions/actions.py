@@ -115,6 +115,9 @@ class actionAddItem(Action):
         global id
 
         associated_name = Database.getName(id)
+        if associated_name == None: # if user ask somethings without previously login
+            actionCreateUser.run(self,dispatcher,tracker,domain)
+            associated_name = Database.getName(id)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
         reminder = tracker.get_slot("reminder")
@@ -154,6 +157,9 @@ class actionRemoveItem(Action):
         global id
 
         associated_name = Database.getName(id)
+        if associated_name == None:
+            actionCreateUser.run(self,dispatcher,tracker,domain)
+            associated_name = Database.getName(id)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
         time = tracker.get_slot("time")
@@ -186,6 +192,9 @@ class actionAddCategory(Action):
         global id
         
         associated_name = Database.getName(id)
+        if associated_name == None:
+            actionCreateUser.run(self,dispatcher,tracker,domain)
+            associated_name = Database.getName(id)
         category = tracker.get_slot("category")
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
@@ -214,6 +223,9 @@ class actionRemoveCategory(Action):
         global id
         
         associated_name = Database.getName(id)
+        if associated_name == None:
+            actionCreateUser.run(self,dispatcher,tracker,domain)
+            associated_name = Database.getName(id)
         category = tracker.get_slot("category")
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
@@ -242,6 +254,9 @@ class actionSetStatusActivity(Action):
         #aggiunta
 
         associated_name = Database.getName(id)
+        if associated_name == None:
+            actionCreateUser.run(self,dispatcher,tracker,domain)
+            associated_name = Database.getName(id)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
         activity_status = tracker.get_slot("activity_status")
@@ -281,6 +296,9 @@ class actionSetInComplete(Action):
         global id
      
         associated_name = Database.getName(id)
+        if associated_name == None:
+            actionCreateUser.run(self,dispatcher,tracker,domain)
+            associated_name = Database.getName(id)
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
         time = tracker.get_slot("time")
@@ -307,8 +325,14 @@ class showActivities(Action):
 
         global id
         #aggiunta
-    
         associated_name = Database.getName(id)
+        if associated_name == None:
+            actionCreateUser.run(self,dispatcher,tracker,domain)
+            associated_name = Database.getName(id)
+            
+
+
+
         category = tracker.get_slot("category")
         activity_status = tracker.get_slot("activity_status")
         time = tracker.get_slot("time")
@@ -317,9 +341,9 @@ class showActivities(Action):
         list_of_activity,json = Database.selectItems(id,category, activity_status, time)
         text=associated_name
         if json == None:
-            text += f", ecco a te {list_of_activity}." if list_of_activity else " non ci sono attivita per te!"
+            text += f", ecco a te {list_of_activity}." if list_of_activity!=None else " non ci sono attivita per te!"
         else:
-            text += f", hai {list_of_activity} attivita." if list_of_activity else " non ci sono attivita per te!"
+            text += f", hai {list_of_activity} attivita." if list_of_activity!=None else " non ci sono attivita per te!"
         dispatcher.utter_message(text=text,json_message=json) 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
@@ -336,6 +360,9 @@ class showCategories(Action):
         #aggiunta
         
         associated_name = Database.getName(id)
+        if associated_name == None:
+            actionCreateUser.run(self,dispatcher,tracker,domain)
+            associated_name = Database.getName(id)
         list_of_categories,json = Database.selectPossessions(id)
         text = associated_name
         if json == None:
@@ -359,6 +386,9 @@ class actionModifyCategory(Action):
         global id
         
         associated_name = Database.getName(id)
+        if associated_name == None:
+            actionCreateUser.run(self,dispatcher,tracker,domain)
+            associated_name = Database.getName(id)
         category_old = tracker.get_slot("category_old")
         if (isinstance(category_old,list)):
             category_old = ' '.join([str(elem) for elem in category_old])
@@ -412,6 +442,9 @@ class actionModifyActivity(Action):
         if (isinstance(category_old,list)):
             category_old = ' '.join([str(elem) for elem in category_old])
         associated_name = Database.getName(id)
+        if associated_name == None:
+            actionCreateUser.run(self,dispatcher,tracker,domain)
+            associated_name = Database.getName(id)
         
         if(activity_old!=None):
             act_to_modify = activity_old
@@ -490,7 +523,10 @@ class actionCleanCompletedActivities(Action):
 
         global id 
         
-        associated_name = Database.getName(id)         
+        associated_name = Database.getName(id)
+        if associated_name == None:
+            actionCreateUser.run(self,dispatcher,tracker,domain)
+            associated_name = Database.getName(id)         
         
         returnedValue = Database.cleanCompletedActivities(id)
         if (returnedValue):  
@@ -535,7 +571,10 @@ class actionRemindItem(Action):
         reminderSlot = tracker.get_slot("reminder")
         time = tracker.get_slot("time")
         
-        associated_name = Database.getName(id) 
+        associated_name = Database.getName(id)
+        if associated_name == None:
+            actionCreateUser.run(self,dispatcher,tracker,domain)
+            associated_name = Database.getName(id) 
         date = datetime.now() + timedelta(seconds = 40)
         if (isinstance(activity,list)):
             activity = ' '.join([str(elem) for elem in activity])
@@ -711,7 +750,10 @@ class ActionRecognizeUser(Action):
       
         global id
         
-        associated_name = Database.getName(id) 
+        associated_name = Database.getName(id)
+        if associated_name == None:
+            actionCreateUser.run(self,dispatcher,tracker,domain)
+            associated_name = Database.getName(id) 
 
         dispatcher.utter_message(f"Hey penso tu sia {associated_name}!")
 
