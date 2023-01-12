@@ -16,7 +16,7 @@ if (isset($_POST['ajax'])) {
     
     // $data = json_decode(stripslashes($_POST['chosenOption']));
     // now here i've the matrix contains all the row in the html page 
-    $db = new sqlite3('../src/rasa_ros/Cogrob_rasa_midterm/data.db');
+    $db = new sqlite3('../src/rasa_ros/Cogrob_rasa_midterm/data2.db');
     $results = $db->query($_POST['query']);
     $resultsCount = $db->query($_POST['query']);
     $data = $_REQUEST['chosenOptionArray'];
@@ -29,12 +29,13 @@ if (isset($_POST['ajax'])) {
     $id_index = '0';
     $numOldRow = $_POST['numOldRow'];
     $numActualRow = 0;
-    if (True){
-        echo "refresh "; 
+    while ($row = $resultsCount->fetchArray()) {
+        ++$numActualRow;
+    }
+    if (($numOldRow == 1 && $numOldRow >= $numActualRow) || $numOldRow == 0){
+        echo "refresh ".$numOldRow.' '.$numActualRow; 
     }else{
-        while ($row = $resultsCount->fetchArray()) {
-            ++$numActualRow;
-        }
+
         while ($row = $results->fetchArray()) {
             if($index==0){
                 $keys = array_keys($row);
@@ -99,6 +100,16 @@ if (isset($_POST['ajax'])) {
                     $operation = True;
                     $idSus = $data[$count][0];
                     $idToCheck = $row[$id_index];
+                    if($count == $numActualRow-1){
+                        echo "hidden ".$data[$count][0]." restart";
+                        break;
+                    }
+                }
+                if(($numOldRow == 2 && $count == $numActualRow-1) && $operation == True){
+                    if($data[$count][0]==$row[$id_index]){
+                        echo "hidden ".$data[$count-1][0]." restart";
+                        break;
+                    }
                 }
                 if ($inverseOperation == True){
                     if($data[$count][0]==$row[$id_index]){
@@ -119,7 +130,7 @@ if (isset($_POST['ajax'])) {
     }
 } else {
 
-    $db = new sqlite3('../src/rasa_ros/Cogrob_rasa_midterm/data.db');
+    $db = new sqlite3('../src/rasa_ros/Cogrob_rasa_midterm/data2.db');
     $resultsCount = $db->query($_GET['query']);
     $results = $db->query($_GET['query']);
     $id_index = '0'; 
@@ -129,6 +140,7 @@ if (isset($_POST['ajax'])) {
         ++$count;
     }
     echo "<button type='button' id='numOldRows' hidden>".$count."</button>";
+    echo "<button type='button' id='queryDone' hidden>".$_GET['query']."</button>";
     while ($row = $results->fetchArray()) {
         $length = sizeof($row)/2;
         $keys = array_keys($row);
@@ -154,7 +166,7 @@ if (isset($_POST['ajax'])) {
             echo "</tr>
             </thead>
             <tbody id='responsecontainer'>";
-            echo "<button type='button' id='queryDone' hidden>".$_GET['query']."</button>";
+            
             $index = 1;
         }
         $tmp = explode('T',$row['4']); 
@@ -197,31 +209,32 @@ echo "<script type='text/javascript'>
         var numRow = document.getElementById('numOldRows').innerText;
         var matrix = []; 
         var queryString = document.getElementById('queryDone').innerText;
-        $( 'tr' ).each( function( index, element ){
-            if(element.hidden==false){
-                if(j > 0){
-                    matrix.push([]);
-                    for ( var i = 0; i < element.cells.length; i++ ) {
-                        if(i==0){
-                            matrix[j-1].push(element.id);
+        if(numRow>0){
+            $( 'tr' ).each( function( index, element ){
+                if(element.hidden==false){
+                    if(j > 0){
+                        matrix.push([]);
+                        for ( var i = 0; i < element.cells.length; i++ ) {
+                            if(i==0){
+                                matrix[j-1].push(element.id);
+                            }
+                            matrix[j-1].push(element.cells[i].innerText);
                         }
-                        matrix[j-1].push(element.cells[i].innerText);
                     }
-                }
-                j=j+1;
-            }   
-            
-        });
-        $.ajax({
+                    j=j+1;
+                }   
+                
+            });
+        }
         
+        $.ajax({
             method: 'POST',
             url: 'index.php',
             dataType: 'html',   //expect html to be returned    
             data: { ajax: 'true', chosenOptionArray: matrix, query: queryString, numOldRow: numRow}, 
             success: function(response){   
-                
+                alert('vediamo');
                 html = $.parseHTML( response );
-                
                 array = html[0].textContent.split(' ');
                 if(array[0]=='refresh'){
                     alert('sono in refresh, ma da jssss');
@@ -236,18 +249,30 @@ echo "<script type='text/javascript'>
                             $(row).hide(1000).delay(2000).queue(function() { $(this).remove(); });
                         }                    
                         var tooOld = document.getElementById('numOldRows').innerText;
+                        alert(tooOld);
                         document.getElementById('numOldRows').innerText=parseInt(tooOld)-1;
                         if(array[2] == 'restart'){
                             alert('sono a metà della modifica');
                             document.getElementById('clickMe').click();
                         }
                     }else if(array[0]=='select'){}else{
+                        alert('sto per aggiungere');
                         var tooOld = document.getElementById('numOldRows').innerText;
                         document.getElementById('numOldRows').innerText=parseInt(tooOld)+1;
                         var idWhereAppend = html[0].childNodes[1].textContent;
+                        
                         if(idWhereAppend == ''){
                             var table = document.getElementById('responsecontainer');
-                            idWhereAppend=table.childNodes[1].id;
+                            alert(table);
+                            var allRows = table.childNodes;
+                            for(var i = 0; i < allRows.length; i++){
+                                idWhereAppend=table.childNodes[i].id;
+                                if(idWhereAppend === undefined){
+                                    alert('non ci siamo');
+                                }else{
+                                    break;
+                                }
+                            }
                             var idWhereAppend = '#'.concat(idWhereAppend);
                             $(response).insertBefore(idWhereAppend).hide().fadeIn(1000);
                         }else{
@@ -269,9 +294,10 @@ echo "
     
     $('#refresh').click(function(){  
         var queryString = document.getElementById('queryDone').innerText;
+        var numRow = document.getElementById('numOldRows').innerText;
         text = document.URL;
         alert('ora refresho tutto');
-        if (text.includes('possessions')){
+        if (text.includes('possessions') && numRow > 1){
             var inject = document.getElementById('clickMe');
             inject.click();
         } else{
