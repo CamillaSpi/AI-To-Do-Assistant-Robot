@@ -406,90 +406,90 @@ stories:
 
 #################################### Stories Miste ######################################
 
-- story: Presentation and Remind me of with deadline
-  steps:
-  - intent: presentation+remind_me_of
-  - action: recognize_user_form
-  - active_loop: recognize_user_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: action_recognize_user
-  - action: action_set_reminder_slot
-  - action: add_item_form
-  - active_loop: add_item_form
-  - active_loop: null
-  - slot_was_set:
-    - time: true
-  - action: action_reminder_item
+# - story: Presentation and Remind me of with deadline
+#   steps:
+#   - intent: presentation+remind_me_of
+#   - action: recognize_user_form
+#   - active_loop: recognize_user_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: action_recognize_user
+#   - action: action_set_reminder_slot
+#   - action: add_item_form
+#   - active_loop: add_item_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - time: true
+#   - action: action_reminder_item
 
-- story: Presentation and Remind me of without deadline
-  steps:
-  - intent: presentation+remind_me_of
-  - action: recognize_user_form
-  - active_loop: recognize_user_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: action_recognize_user
-  - action: action_set_reminder_slot
-  - action: add_item_form
-  - active_loop: add_item_form
-  - active_loop: null
-  - slot_was_set:
-    - time: false
-  - action: add_deadline_form
-  - active_loop: add_deadline_form
-  - active_loop: null
-  - slot_was_set:
-    - time: true
-  - action: action_reminder_item
+# - story: Presentation and Remind me of without deadline
+#   steps:
+#   - intent: presentation+remind_me_of
+#   - action: recognize_user_form
+#   - active_loop: recognize_user_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: action_recognize_user
+#   - action: action_set_reminder_slot
+#   - action: add_item_form
+#   - active_loop: add_item_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - time: false
+#   - action: add_deadline_form
+#   - active_loop: add_deadline_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - time: true
+#   - action: action_reminder_item
 
-- story: Presentation and Set Activity Status
-  steps:
-  - intent: presentation+set_status_activity
-  - action: recognize_user_form
-  - active_loop: recognize_user_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: action_recognize_user
-  - action: set_status_activity_form
-  - active_loop: set_status_activity_form
-  - active_loop: null
-  - checkpoint: set_status_generic
+# - story: Presentation and Set Activity Status
+#   steps:
+#   - intent: presentation+set_status_activity
+#   - action: recognize_user_form
+#   - active_loop: recognize_user_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: action_recognize_user
+#   - action: set_status_activity_form
+#   - active_loop: set_status_activity_form
+#   - active_loop: null
+#   - checkpoint: set_status_generic
 
-- story: Presentation and View Activities
-  steps:
-  - intent: presentation+view_activities
-  - action: recognize_user_form
-  - active_loop: recognize_user_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: action_recognize_user
-  - action: view_activities_form
-  - active_loop: view_activities_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: action_view_activities
+# - story: Presentation and View Activities
+#   steps:
+#   - intent: presentation+view_activities
+#   - action: recognize_user_form
+#   - active_loop: recognize_user_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: action_recognize_user
+#   - action: view_activities_form
+#   - active_loop: view_activities_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: action_view_activities
 
-- story: Presentation and View categories
-  steps:
-  - intent: presentation+view_categories
-  - action: recognize_user_form
-  - active_loop: recognize_user_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: action_recognize_user
-  - action: view_categories_form
-  - active_loop: view_categories_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: action_view_categories
+# - story: Presentation and View categories
+#   steps:
+#   - intent: presentation+view_categories
+#   - action: recognize_user_form
+#   - active_loop: recognize_user_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: action_recognize_user
+#   - action: view_categories_form
+#   - active_loop: view_categories_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   - action: action_view_categories
   #Interactive Stories
 # - story: interactive_story_1
 #   steps:

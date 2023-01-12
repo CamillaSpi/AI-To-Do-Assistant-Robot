@@ -44,8 +44,8 @@ rules:
   - action: reminder_form
   - active_loop: reminder_form
   - active_loop: null
-  - slot_was_set: 
-    - time: true 
+  - slot_was_set:
+    - requested_slot: null
   - action: action_reminder_item
 
 - rule: Recognize user

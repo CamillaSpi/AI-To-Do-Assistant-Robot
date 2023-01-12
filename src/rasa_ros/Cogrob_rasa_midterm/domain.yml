@@ -11,7 +11,6 @@ intents:
 - deny
 - add_item
 - add_category
-- presentation+remind_me_of
 - modify_activity_deadline
 - remove_item
 - remind_me_of
@@ -28,10 +27,6 @@ intents:
 - clean_activities
 - nlu_fallback
 - modify_activity_category
-- presentation+remove_item
-- presentation+view_categories
-- presentation+view_activities
-- presentation+set_status_activity
 - EXTERNAL_reminder
 - start_session
 - ask_name
