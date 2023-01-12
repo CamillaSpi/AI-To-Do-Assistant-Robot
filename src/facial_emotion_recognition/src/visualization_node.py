@@ -24,7 +24,6 @@ def rcv_identity(msg):
     global image
     global i
     #rospy.loginfo('detection here')
-    print('ricevuta face')
     frame_face = None
     for d in msg.detections:
         if (frame_face is None):
@@ -36,18 +35,18 @@ def rcv_identity(msg):
         #print(identity)
         cv2.putText(frame_face, identity, (round(d.bbox.center.y-d.bbox.size_y/2+d.bbox.size_x //20), round(d.bbox.center.x-d.bbox.size_x/2+d.bbox.size_y//20)), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2, cv2.LINE_AA)
     cv2.imshow("identity Demo", frame_face)
-    cv2.imwrite(REF_PATH + '/../cameraAcquisition/framePepper'+str(i)+'.jpg',frame_face)
-    i+=1
+    # cv2.imwrite(REF_PATH + '/../cameraAcquisition/framePepper'+str(i)+'.jpg',frame_face)
+    # i+=1
     cv2.waitKey(5)
 
 def justShow(msg):
     global image
     global i 
     #rospy.loginfo('detection here')
-    frame_face = ros_numpy.numpify(msg)
-    cv2.imwrite(REF_PATH + '/../cameraAcquisition/framePepper'+str(i)+'.jpg',frame_face)
-    i+=1
-    print('justShow')
+    # frame_face = ros_numpy.numpify(msg)
+    # cv2.imwrite(REF_PATH + '/../cameraAcquisition/framePepper'+str(i)+'.jpg',frame_face)
+    # i+=1
+    # print('justShow')
 
 
 sd = rospy.Subscriber("identity", Detection2DArray, rcv_identity)
