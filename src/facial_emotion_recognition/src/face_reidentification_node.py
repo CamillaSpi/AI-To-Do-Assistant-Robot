@@ -51,11 +51,11 @@ def load_identities():
         with open(REF_PATH + '/../dataBase/json_data.json', 'r') as in_file:
             tmp = json.load(in_file)
         dataset = np.asarray(tmp['dataset'])
-        labels = np.asarray(tmp['labels'])
+        labels = np.asarray(tmp['labels'],dtype=np.int32)
         number_of_users = tmp['number_of_users']
-        return dataset, labels,number_of_users
+        return dataset, labels,int(number_of_users)
     except:
-        return [], [],0
+        return np.array([]), np.array([]),0
 
 
 pub = rospy.Publisher('identity', Detection2DArray, queue_size=2)
@@ -100,7 +100,7 @@ def dist2id(distance, y, ths, norm=False, mode='avg', filter_under_th=False):
         ths = ths[idx]
 
         if d.shape[0] == 0:
-            return None
+            return 0,[0]
 
     if norm:
         # norm in case of different thresholds
@@ -117,7 +117,7 @@ def dist2id(distance, y, ths, norm=False, mode='avg', filter_under_th=False):
         if mode == 'min':
             ids_prob.append(np.min(d[y == i]))
 
-    ids_prob = np.array(ids_prob)
+    ids_prob = np.array(ids_prob)/1000
     ids_prob_soft = special.softmax(ids_prob)
     return ids[np.argmax(ids_prob)], ids_prob_soft
 
@@ -129,25 +129,29 @@ def extract_features(face_reco_model, filename):
         faceim = filename
     faceim = cv2.resize(faceim, (224, 224))
     faceim = preprocess_input([faceim.astype(np.float32)], version=2)
-    feature_vector = (face_reco_model.predict(faceim, verbose=0)).flatten()
+    feature_vector = (face_reco_model.predict(faceim, verbose=0))
     return feature_vector
 
 
 def registration(msg):
     global number_of_users
     global database
+    global labels
     lock.acquire()
     t1 = datetime.now()
     print('non ti conosco... Rimani fermo ')
-    for _ in range(10):
+    for x in range(10):
         msg = rospy.wait_for_message('face_reidentification', Detection2DArray)
         im = ros_numpy.numpify(msg.detections[0].source_img)
         for d in msg.detections:
             # Preprocess image
             d, resized_face = elaboration(d, im)
             feature_vector = extract_features(face_reco_model, resized_face)
-            database = np.concatenate((database, feature_vector))
-            labels.append(number_of_users)
+            if database.size <=0:
+                database = feature_vector
+            else:
+                database = np.concatenate((database, feature_vector))
+            labels = np.append(labels,number_of_users)
     # Predict
     number_of_users +=1
     lock.release()
@@ -169,17 +173,17 @@ def elaboration(d, im):
     return d, resized_face
 
 
-def predict_identity(resized_face, rejection_threshold=0.5):
+def predict_identity(resized_face, rejection_threshold=7000):
     global number_of_users
     if len(database) > 0:
         feature_vector = extract_features(
-            face_reco_model, resized_face).reshape(-1, 2048)
+            face_reco_model, resized_face)
         emb_face = np.repeat(feature_vector, len(
-            database), 0).reshape(-1, 2048)
+            database), 0)
         cos_dist = batch_cosine_similarity(np.array(database), emb_face)
         # id_label = dist2id(cos_dist, labels, rejection_threshold, mode='avg')
         id_label, ids_prob = dist2id(
-            cos_dist, labels, rejection_threshold, mode='avg')
+            cos_dist, labels, rejection_threshold, mode='avg',filter_under_th=number_of_users==1)
     else:
         id_label = number_of_users        # non so a che serve, probabilmente la togliamo proprio
         ids_prob = []
@@ -215,10 +219,13 @@ def recognize():
                 'face_reidentification', Detection2DArray)
             to_publish = face_reidentification(msg)
             pub.publish(to_publish)
+        print('ciao sono uscito dallo shutdown')
+        save_identities()
 
     except rospy.exceptions.ROSInterruptException:
-        print("vado in close")
+        print("vado in close Face")
         save_identities()
+        print("Salvato db face")
 
 def handle_service(req):
     global actualLabels

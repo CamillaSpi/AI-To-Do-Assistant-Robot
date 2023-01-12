@@ -14,17 +14,20 @@ execute_js = rospy.ServiceProxy('execute_js', ExecuteJS)
 # this is called from the background thread
 def callback(msg):
     try:
-        print(msg.data)
+        resp = None
+        print('sono js ' , msg.data)
+        print("is this prima degli if")
         if "js" in msg.data:
-            if 'reload' not in msg.data:
-                script = """var inject = document.getElementById("clickMe");
+            print("is this dopo js")
+            script = """var inject = document.getElementById("clickMe");
     inject.click();"""
-            else:
-                script = """var reload = document.getElementById("refresh");
+            resp = execute_js(script).ack
+        if 'reload' in msg.data:
+            print("is this in reload")
+            script = """var reload = document.getElementById("refresh");
     reload.click();"""
             resp = execute_js(script).ack
-
-        else:
+        elif 'js' not in msg.data and 'reload' not in msg.data:
             resp = load_url(msg.data).ack
 
         if resp!= 'ACK':

@@ -3,6 +3,7 @@ nlu:
 - intent: greet
   examples: |
     - Ciao
+    - ciao
     - Salve
     - Buongiorno
     - Buonasera

@@ -1,5 +1,5 @@
 <launch>
-  <arg name="nao_ip" default="$(optenv NAO_IP 10.0.1.230)" />
+  <arg name="nao_ip" default="$(optenv NAO_IP 10.0.1.207)" />
   <arg name="nao_port" default="$(optenv NAO_PORT 9559)" />
   <param name="nao_ip" type="string" value="$(arg nao_ip)"/>
   <param name="nao_port" type="string" value="$(arg nao_port)"/>
