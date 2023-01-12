@@ -16,7 +16,7 @@ if (isset($_POST['ajax'])) {
     
     // $data = json_decode(stripslashes($_POST['chosenOption']));
     // now here i've the matrix contains all the row in the html page 
-    $db = new sqlite3('../src/rasa_ros/Cogrob_rasa_midterm/data2.db');
+    $db = new sqlite3('../src/rasa_ros/Cogrob_rasa_midterm/data.db');
     $results = $db->query($_POST['query']);
     $resultsCount = $db->query($_POST['query']);
     $data = $_REQUEST['chosenOptionArray'];
@@ -130,7 +130,7 @@ if (isset($_POST['ajax'])) {
     }
 } else {
 
-    $db = new sqlite3('../src/rasa_ros/Cogrob_rasa_midterm/data2.db');
+    $db = new sqlite3('../src/rasa_ros/Cogrob_rasa_midterm/data.db');
     $resultsCount = $db->query($_GET['query']);
     $results = $db->query($_GET['query']);
     $id_index = '0'; 

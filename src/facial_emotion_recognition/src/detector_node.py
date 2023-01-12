@@ -68,7 +68,6 @@ def detect_face(msg):
         message.detections[0].source_img = ros_numpy.msgify(Image,frameFace,encoding ='rgb8')
         pub.publish(message)
         if listen_on_detect == True: pub2.publish(Bool(True))
-        print('face found')
     else:
         if listen_on_detect == True: pub2.publish(Bool(False))
         pub_justShow.publish(msg)
