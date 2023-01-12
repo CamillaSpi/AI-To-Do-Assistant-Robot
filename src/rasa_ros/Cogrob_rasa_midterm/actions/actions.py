@@ -454,6 +454,7 @@ class actionModifyActivity(Action):
         
       
         if (Database.doesUnfoldingsExists(id,category_new,activity_new,timenew) == False):
+            print("nel db sto per cercare: ", id, cat_to_modify, act_to_modify, timeold,category_new, activity_new, timenew)
             returnedValue = Database.modifyActivity(id, cat_to_modify, act_to_modify, timeold,category_new, activity_new, timenew)
             if (returnedValue):  
                 text = f"{associated_name}, l'attivita {act_to_modify} è stata modificata"
@@ -592,7 +593,8 @@ class actionAskCategoryNew(Action):
 
         category_new = tracker.get_slot("category_new")
         category = tracker.get_slot("category")
-        if(category_new == None and category == None):
+        category_old = tracker.get_slot("category_old")
+        if(category_new == None and (category == None or category == category_old)):
             dispatcher.utter_message(text=f"Qual è la nuova categoria?")
             return[SlotSet("requested_slot","category")]
         else:
