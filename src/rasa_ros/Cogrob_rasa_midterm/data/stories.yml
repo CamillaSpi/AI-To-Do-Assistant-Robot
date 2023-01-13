@@ -235,6 +235,8 @@ stories:
       - requested_slot: null
     - action: action_add_category
 
+
+#################################### Remove Category Stories ######################################
 - story: Remove generic Category
   steps:
     - intent: remove_category
@@ -246,7 +248,6 @@ stories:
     - action: utter_confirm_choice
     - checkpoint: Remove_generic_Category
 
-#################################### Remove Category Stories ######################################
 - story: Remove new Category with deny
   steps:
     - checkpoint: Remove_generic_Category
@@ -260,7 +261,8 @@ stories:
     - intent: affirm
     - action: action_remove_category
     
-#################################### Modify Category Stories ######################################
+
+#################################### Modify Category Stories Stories ######################################
 - story: Modify the category confirmed
   steps:
     - intent: modify_category
@@ -287,7 +289,7 @@ stories:
     - action: action_reset_slot
 
 
-#################################### Modify Activity Category ######################################
+#################################### Modify Activity Category Stories ######################################
 - story: Modify the activity category generic
   steps:
     - intent: modify_activity_category
@@ -327,8 +329,8 @@ stories:
     - action: action_modify_activity
 
 
-#################################### Modify Activity Deadline ######################################
-- story: Modify the activity category generic
+#################################### Modify Activity Deadline Stories ######################################
+- story: Modify the activity deadline generic
   steps:
     - intent: modify_activity_deadline
     - action: modify_activity_deadline_form
@@ -336,7 +338,8 @@ stories:
     - active_loop: null
     - action: action_modify_activity
 
-#################################### Modify Activity name ######################################
+
+#################################### Modify Activity Name Stories ######################################
 - story: Modify the activity name generic
   steps:
     - intent: modify_activity_name
@@ -373,11 +376,11 @@ stories:
     - checkpoint: modify_activity_name_generic
     - slot_was_set:
       - time: true
-      - requested_slot: null
+      #- requested_slot: null
     - action: action_modify_activity
 
 
-#################################### Clean Stories ######################################
+#################################### Clean Completed Activities Stories ######################################
 - story: Clean Complete Activities confirmed 
   steps:
     - intent: clean_activities
@@ -389,7 +392,6 @@ stories:
     - action: utter_confirm_choice
     - intent: affirm
     - action: action_clean_all_completed
-
 
 - story: Clean Complete Activities denied 
   steps:

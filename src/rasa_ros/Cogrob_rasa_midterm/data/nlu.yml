@@ -38,11 +38,14 @@ nlu:
     - sì
     - sì
     - sisi
+    - si grazie
 - intent: deny
   examples: |
     - no
+    - no mi dispiace
     - nono
     - n
+    - no grazie
     - mai
     - negativo
     - non credo
