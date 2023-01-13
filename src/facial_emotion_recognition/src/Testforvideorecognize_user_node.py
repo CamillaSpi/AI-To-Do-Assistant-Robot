@@ -18,12 +18,12 @@ rospy.init_node('recognize_user', anonymous=True)
 #function to recognize user with both audio and video
 def recognize_user(text_to_send):
     # rospy.wait_for_service('audio_user_server')
-    rospy.wait_for_service('video_user_server')
+    rospy.wait_for_service('videoLabelServices')
     try:
         # obtain_audio_id = rospy.ServiceProxy('audio_user_server', #funz per ottenere id dell audio)
         # id_voice = obtain_audio_id()
         # print("id voice:", id_voice)
-        obtain_video_id = rospy.ServiceProxy('video_user_server', video_detect_user)
+        obtain_video_id = rospy.ServiceProxy('videoLabelServices', video_detect_user)
         id_face = obtain_video_id()
         print("id face:", id_face)
         # if(id_face == id_voice):
