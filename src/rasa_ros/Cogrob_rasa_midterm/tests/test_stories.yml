@@ -32,7 +32,7 @@ stories:
     intent: deny
   - action: action_add_item 
 
-- story: later presentation and aggiungi activity (single) with deadline 1
+- story: later presentation and aggiungi activity (single) with deadline 1 with reminder
   steps:
   - user: |
       Aggiungi un'activity
@@ -71,7 +71,47 @@ stories:
     intent: affirm
   - action: action_set_reminder_slot
   - action: action_add_item
+
+- story: later presentation and aggiungi activity (single) with deadline 1 without reminder
+  steps:
+  - user: |
+      Aggiungi un'activity
+    intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - user: |
+      sono [matilde](name)
+    intent: presentation
+  - action: add_item_form
+  - user: |
+      [studiare](activity)
+    intent: inform
+  - action: add_item_form
+  - user: |
+      [Assistenza sanitaria](category)
+    intent: inform
+  - action: add_item_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - user: |
+      si
+    intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - user: |
+      09/27/2022
+    intent: inform
+  - action: add_deadline_form
+  - slot_was_set:
+    - time: "2022-09-27T00:00:00.000+02:00"
+  - active_loop: null
+  - action: utter_ask_if_reminder
+  - user: |
+      no
+    intent: deny
+  - action: action_add_item
     
+
 - story: presentation and aggiungi activity (single) without deadline 1
   steps:
   - user: |
@@ -142,6 +182,47 @@ stories:
   - action: action_set_reminder_slot
   - action: action_add_item
 
+- story: presentation and aggiungi activity (single) with deadline 1 without deadline
+  steps:
+  - user: |
+      sono [matilde](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      Aggiungi un'activity
+    intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - user: |
+      [studiare](activity)
+    intent: inform
+  - action: add_item_form
+  - user: |
+      [Assistenza sanitaria](category)
+    intent: inform
+  - action: add_item_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - user: |
+      si
+    intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - user: |
+      09/27/2022
+    intent: inform
+  - action: add_deadline_form
+  - slot_was_set:
+    - time: "2022-09-27T00:00:00.000+02:00"
+  - active_loop: null
+  - action: utter_ask_if_reminder
+  - user: |
+      no
+    intent: deny
+  - action: action_add_item
+
 
 #################################### Test Stories  aggiungi Item Double Cases ######################################
 - story: later presentation and aggiungi activity (double) without deadline 1
@@ -166,7 +247,7 @@ stories:
     intent: deny
   - action: action_add_item 
 
-- story: later presentation and aggiungi activity (dobule) with deadline 1
+- story: later presentation and aggiungi activity (dobule) with deadline 1 with reminder
   steps:
   - user: |
       Aggiungi un'activity
@@ -202,6 +283,41 @@ stories:
   - action: action_set_reminder_slot
   - action: action_add_item
     
+- story: later presentation and aggiungi activity (dobule) with deadline 1 wihout reminder
+  steps:
+  - user: |
+      Aggiungi un'activity
+    intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - user: |
+      sono [matilde](name)
+    intent: presentation
+  - action: add_item_form
+  - user: |
+      aggiungi [studiare](activity) in [Assistenza sanitaria](category)
+    intent: inform
+  - action: add_item_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - user: |
+      si
+    intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - user: |
+      09/27/2022
+    intent: inform
+  - action: add_deadline_form
+  - slot_was_set:
+    - time: "2022-09-27T00:00:00.000+02:00"
+  - active_loop: null
+  - action: utter_ask_if_reminder
+  - user: |
+      no
+    intent: deny
+  - action: action_add_item
+
 - story: presentation and aggiungi activity (dobule) without deadline 1
   steps:
   - user: |
@@ -223,7 +339,7 @@ stories:
     intent: deny
   - action: action_add_item 
 
-- story: presentation and aggiungi activity (dobule) with deadline 1
+- story: presentation and aggiungi activity (dobule) with deadline 1 with reminder
   steps:
   - user: |
       sono [matilde](name)
@@ -261,6 +377,146 @@ stories:
   - action: action_set_reminder_slot
   - action: action_add_item
 
+- story: presentation and aggiungi activity (dobule) with deadline 1 without reminder
+  steps:
+  - user: |
+      sono [matilde](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      Aggiungi un'activity
+    intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - user: |
+      aggiungi [camminare](activity) in [salute](category)
+    intent: add_item
+  - action: add_item_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - user: |
+      si
+    intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - user: |
+      09/27/2022
+    intent: inform
+  - action: add_deadline_form
+  - slot_was_set:
+    - time: "2022-09-27T00:00:00.000+02:00"
+  - active_loop: null
+  - action: utter_ask_if_reminder
+  - user: |
+      no
+    intent: deny
+  - action: action_add_item
+
+
+#################################### Test Stories  aggiungi Item Triple Cases ######################################
+- story: later presentation and aggiungi activity (triple) with deadline 1 with reminder
+  steps:
+  - user: |
+      Aggiungi un'activity
+    intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - user: |
+      sono [matilde](name)
+    intent: presentation
+  - action: add_item_form
+  - user: |
+      aggiungi [studiare](activity) in [Assistenza sanitaria](category) 09/27/2022
+    intent: inform
+  - action: add_item_form
+  - active_loop: null
+  - slot_was_set:
+    - time: "2022-09-27T00:00:00.000+02:00"
+  - action: utter_ask_if_reminder
+  - user: |
+      si
+    intent: affirm
+  - action: action_set_reminder_slot
+  - action: action_add_item
+    
+- story: later presentation and aggiungi activity (triple) with deadline 1 wihout reminder
+  steps:
+  - user: |
+      Aggiungi un'activity
+    intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - user: |
+      sono [matilde](name)
+    intent: presentation
+  - action: add_item_form
+  - user: |
+      aggiungi [studiare](activity) in [Assistenza sanitaria](category) il 09/27/2022
+    intent: inform
+  - action: add_item_form
+  - active_loop: null
+  - slot_was_set:
+    - time: "2022-09-27T00:00:00.000+02:00"
+  - action: utter_ask_if_reminder
+  - user: |
+      no
+    intent: deny
+  - action: action_add_item
+
+- story: presentation and aggiungi activity (triple) with deadline 1 with reminder
+  steps:
+  - user: |
+      sono [matilde](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      Aggiungi un'activity
+    intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - user: |
+      aggiungi [camminare](activity) in [salute](category) il 09/27/2022
+    intent: add_item
+  - action: add_item_form
+  - active_loop: null
+  - slot_was_set:
+    - time: "2022-09-27T00:00:00.000+02:00"
+  - action: utter_ask_if_reminder
+  - user: |
+      si
+    intent: affirm
+  - action: action_set_reminder_slot
+  - action: action_add_item
+
+- story: presentation and aggiungi activity (triple) with deadline 1 without reminder
+  steps:
+  - user: |
+      sono [matilde](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      Aggiungi un'activity
+    intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - user: |
+      aggiungi [camminare](activity) in [salute](category) il 09/27/2022
+    intent: add_item
+  - action: add_item_form
+  - active_loop: null
+  - slot_was_set:
+    - time: "2022-09-27T00:00:00.000+02:00"
+  - action: utter_ask_if_reminder
+  - user: |
+      no
+    intent: deny
+  - action: action_add_item
 
 #################################### Test Stories  rimuovi Item Single Cases without deadline ######################################
 - story: later presentation and fake rimuovi activity (single) without deadline 1
@@ -694,7 +950,119 @@ stories:
   - action: utter_deny_choice
   - action: action_reset_slot
 
-- story: later presentation and real rimuovi activity (double) direct deadline 1
+
+- story: later presentation and real rimuovi activity (double) with deadline 1
+  steps:
+  - user: |
+      Rimuovi un'activity
+    intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - user: |
+      sono [ferdinando](name)
+    intent: presentation
+  - action: remove_item_form
+  - user: |
+      [camminare](activity) in [salute](category)
+    intent: inform
+  - action: remove_item_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - user: |
+      si
+    intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - user: |
+      09/27/2022
+    intent: inform
+  - action: add_deadline_form
+  - slot_was_set:
+    - time: "2022-09-27T00:00:00.000+02:00"
+  - active_loop: null
+  - action: utter_confirm_choice
+  - user: |
+      si
+    intent: affirm
+  - action: action_remove_item
+
+- story: presentation and fake rimuovi activity (double) with deadline 1
+  steps:
+  - user: |
+      Rimuovi un'activity
+    intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - user: |
+      sono [ferdinando](name)
+    intent: presentation
+  - action: remove_item_form
+  - user: |
+      [camminare](activity) in [salute](category)
+    intent: inform
+  - action: remove_item_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - user: |
+      si
+    intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - user: |
+      09/27/2022
+    intent: inform
+  - action: add_deadline_form
+  - slot_was_set:
+    - time: "2022-09-27T00:00:00.000+02:00"
+  - active_loop: null
+  - action: utter_confirm_choice
+  - user: |
+      no
+    intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+
+
+- story: presentation and real rimuovi activity (double) with deadline 1
+  steps:
+  - user: |
+      Rimuovi un'activity
+    intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - user: |
+      sono [ferdinando](name)
+    intent: presentation
+  - action: remove_item_form
+  - user: |
+      [camminare](activity) in [salute](category)
+    intent: inform
+  - action: remove_item_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - user: |
+      si
+    intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - user: |
+      09/27/2022
+    intent: inform
+  - action: add_deadline_form
+  - slot_was_set:
+    - time: "2022-09-27T00:00:00.000+02:00"
+  - active_loop: null
+  - action: utter_confirm_choice
+  - user: |
+      si
+    intent: affirm
+  - action: action_remove_item
+
+
+#################################### Test Stories  rimuovi Item Triple Cases with deadline ######################################
+
+
+- story: later presentation and real rimuovi activity (triple)
   steps:
   - user: |
       Rimuovi un'activity
@@ -718,8 +1086,56 @@ stories:
     intent: affirm
   - action: action_remove_item
 
-    
-- story: presentation and fake rimuovi activity (dobule) direct deadline 1
+- story: presentation and real rimuovi activity (triple) 
+  steps:
+  - user: |
+      sono [ferdinando](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      aggiungi [camminare](activity) in [salute](category) il 22 dicembre 2022
+    intent: remove_item
+  - slot_was_set:
+    - time: "2022-12-22T00:00:00.000+01:00"
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - active_loop: null
+  - action: utter_confirm_choice
+  - user: |
+      si
+    intent: affirm
+  - action: action_remove_item
+
+
+- story: later presentation and fake rimuovi activity (triple)
+  steps:
+  - user: |
+      Rimuovi un'activity
+    intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - user: |
+      sono [ferdinando](name)
+    intent: presentation
+  - action: remove_item_form
+  - user: |
+      [camminare](activity) in [salute](category) il 22 dicembre 2022
+    intent: inform
+  - slot_was_set:
+    - time: "2022-12-22T00:00:00.000+01:00"
+  - action: remove_item_form
+  - active_loop: null
+  - action: utter_confirm_choice
+  - user: |
+      no
+    intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+
+- story: presentation and fake rimuovi activity (triple) 
   steps:
   - user: |
       sono [ferdinando](name)
@@ -742,30 +1158,6 @@ stories:
     intent: deny
   - action: utter_deny_choice
   - action: action_reset_slot
-
-- story: presentation and real rimuovi activity (dobule) with deadline 1
-  steps:
-  - user: |
-      sono [ferdinando](name)
-    intent: presentation
-  - action: recognize_user_form
-  - active_loop: recognize_user_form
-  - active_loop: null
-  - action: action_recognize_user
-  - user: |
-      rimuovi [camminare](activity) da [salute](category) il 27 settembre 2022
-    intent: remove_item
-  - slot_was_set:
-    - time: "2022-09-27T00:00:00.000+02:00"
-  - action: remove_item_form
-  - active_loop: remove_item_form
-  - active_loop: null
-  - action: utter_confirm_choice
-  - user: |
-      si
-    intent: affirm
-  - action: action_remove_item
-
 
 
 #################################### Test Stories  setta Status Completed Single ######################################
@@ -910,7 +1302,7 @@ stories:
     intent: presentation
   - action: set_status_activity_form
   - user: |
-      [studiare]{"entity": "activity", "role": "new"} in [personale](category)
+      [studiare](activity) in [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
@@ -941,7 +1333,7 @@ stories:
     intent: presentation
   - action: set_status_activity_form
   - user: |
-      [studiare]{"entity": "activity", "role": "new"} in [personale](category)
+      [studiare](activity) in [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
@@ -966,7 +1358,7 @@ stories:
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      [studiare]{"entity": "activity", "role": "new"} in  [personale](category)
+      [studiare](activity) in  [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
@@ -1000,7 +1392,7 @@ stories:
   - action: set_status_activity_form
   - active_loop: set_status_activity_form
   - user: |
-      [studiare]{"entity": "activity", "role": "new"} in  [personale](category)
+      [studiare](activity) in  [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
@@ -1023,7 +1415,7 @@ stories:
     intent: presentation
   - action: set_status_activity_form
   - user: |
-      [studiare]{"entity": "activity", "role": "new"} in [personale](category) il 09/27/2022
+      [studiare](activity) in [personale](category) il 09/27/2022
     intent: inform
   - slot_was_set:
     - time: "2022-09-27T00:00:00.000+02:00"
@@ -1227,7 +1619,7 @@ stories:
     intent: presentation
   - action: set_status_activity_form
   - user: |
-      [studiare]{"entity": "activity", "role": "new"} in [personale](category)
+      [studiare](activity) in [personale](category)
     intent: inform
   - action: set_status_activity_form
   - active_loop: null
@@ -1489,7 +1881,7 @@ stories:
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      aggiungi [corsa]{"entity": "activity", "role": "new"} in [giornaliera]{"entity": "category", "role": "new"}
+      aggiungi [corsa](activity) in [giornaliera]{"entity": "category", "role": "new"}
     intent: add_item
   - action: add_item_form
   - active_loop: null
@@ -1511,7 +1903,7 @@ stories:
     - requested_slot: null
   - action: action_recognize_user
   - user: |
-      aggiungi [partita]{"entity": "activity", "role": "new"} in [settimanale]{"entity": "category", "role": "new"}
+      aggiungi [partita](activity) in [settimanale]{"entity": "category", "role": "new"}
     intent: add_item
   - action: add_item_form
   - active_loop: null
@@ -1544,7 +1936,7 @@ stories:
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      aggiungi [nuoto]{"entity": "activity", "role": "new"} in [settimanale]{"entity": "category", "role": "new"}
+      aggiungi [nuoto](activity) in [settimanale]{"entity": "category", "role": "new"}
     intent: add_item
   - action: add_item_form
   - active_loop: null
@@ -1566,7 +1958,7 @@ stories:
     - requested_slot: null
   - action: action_recognize_user
   - user: |
-      aggiungi [partita]{"entity": "activity", "role": "new"} in [settimanale]{"entity": "category", "role": "new"}
+      aggiungi [partita](activity) in [settimanale](category)
     intent: add_item
   - action: add_item_form
   - active_loop: null

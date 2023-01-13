@@ -131,13 +131,13 @@ class actionAddItem(Action):
         if(Database.doesPossessionExists(id,category)):
             returnedValue= Database.insertItem(id,activity ,category,reminder,time)
             if (returnedValue):  
-                text = f"{associated_name}, l'attivita {activity} aggiunta alla categoria {category}" + (f", da completare prima del {time[:10]} alle {time[11:16]}." if time else ".") + ("Te lo ricorderò, non preoccuparti" if reminder else "") 
+                text = f"{associated_name}, l'attività {activity} è stata aggiunta alla categoria {category}" + (f", da completare prima del {time[:10]} alle {time[11:16]}." if time else ".") + ("Te lo ricorderò" if reminder else "") 
                 if rasa_only:
                     dispatcher.utter_message(text=text) 
                 else:
                     dispatcher.utter_message(text=text,json_message={'query':'js'}) 
             else:
-                dispatcher.utter_message(text=f"Ops {associated_name}, questa attivita esiste già.") 
+                dispatcher.utter_message(text=f"Ops {associated_name}, questa attività esiste già.") 
         else:
             dispatcher.utter_message(text=f"Questa categoria non esisteva, l'ho creata.") 
             actionAddCategory.run(self, dispatcher,tracker,domain)
@@ -169,13 +169,13 @@ class actionRemoveItem(Action):
             category = ' '.join([str(elem) for elem in category])
         returnedValue = Database.deleteItem(id,activity ,category,time)
         if (returnedValue):
-            text = f"{associated_name}, l'attivita {activity} è stata rimossa dalla categoria {category} ."
+            text = f"{associated_name}, l'attività {activity} è stata rimossa dalla categoria {category} ."
             if rasa_only:
                 dispatcher.utter_message(text=text) 
             else:
                 dispatcher.utter_message(text=text,json_message={'query':'js'}) 
         else:
-            dispatcher.utter_message(text=f"Ops {associated_name}, questà attivita non esiste.") 
+            dispatcher.utter_message(text=f"Mi dispiace {associated_name}, questà attività non esiste.") 
 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
@@ -200,13 +200,13 @@ class actionAddCategory(Action):
             category = ' '.join([str(elem) for elem in category])
         returnedValue = Database.insertCategoryAndPossession(id,category)
         if (returnedValue):  
-            text = f"{associated_name}, {category} aggiunta come nuova categoria."
+            text = f"{associated_name}, {category} è stata aggiunta come nuova categoria."
             if rasa_only:
                 dispatcher.utter_message(text=text) 
             else:
                 dispatcher.utter_message(text=text,json_message={'query':'js'}) 
         else:
-            dispatcher.utter_message(text=f"Ops {associated_name}, questa categoria esiste già.") 
+            dispatcher.utter_message(text=f"{associated_name}, questa categoria esiste già.") 
 
     
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
@@ -237,7 +237,7 @@ class actionRemoveCategory(Action):
             else:
                 dispatcher.utter_message(text=text,json_message={'query':'js_reload'}) 
         else:
-            dispatcher.utter_message(text=f"Ops {associated_name}, questa categoria non esiste.") 
+            dispatcher.utter_message(text=f"{associated_name}, questa categoria non esiste.") 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -270,17 +270,17 @@ class actionSetStatusActivity(Action):
         elif activity_status == 'incompleta':
             returnedValue = Database.setItemStatus(id,activity ,category,time,False)
         else:
-            dispatcher.utter_message(text=f"Ops {associated_name}, non ho capito cosa vuoi fare con questa attivita.") 
+            dispatcher.utter_message(text=f"{associated_name}, non ho capito cosa vuoi fare, perfavore ripeti in maniera più chiara.") 
             return [SlotSet("activity", None),SlotSet("category", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
         if (returnedValue):  
-            text = f"{associated_name}, attivita {activity} in {category} {activity_status} !"
+            text = f"{associated_name}, l'attività {activity} in {category} è {activity_status} !"
             if rasa_only:
                 dispatcher.utter_message(text=text) 
             else:
                 dispatcher.utter_message(text=text,json_message={'query':'js'}) 
         else:
-            dispatcher.utter_message(text=f"Ops {associated_name}, questa attivita non esiste.") 
+            dispatcher.utter_message(text=f"{associated_name}, questa attività non esiste.") 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -309,9 +309,9 @@ class actionSetInComplete(Action):
         returnedValue = Database.setItemStatus(id,activity ,category,time,False)
 
         if (returnedValue):  
-            dispatcher.utter_message(text=f"{associated_name}, attivita {activity} in {category} impostata come incompleta.") 
+            dispatcher.utter_message(text=f"{associated_name}, l'attività {activity} in {category} impostata come incompleta.") 
         else:
-            dispatcher.utter_message(text=f"Ops {associated_name}, questa attivita non esiste.") 
+            dispatcher.utter_message(text=f"{associated_name}, questa attività non esiste.") 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -341,9 +341,9 @@ class showActivities(Action):
         list_of_activity,json = Database.selectItems(id,category, activity_status, time)
         text=associated_name
         if json == None:
-            text += f", ecco a te {list_of_activity}." if list_of_activity!=None else " non ci sono attivita per te!"
+            text += f", ecco le tue attività: {list_of_activity}." if list_of_activity!=None else " non ci sono attività per te!"
         else:
-            text += f", hai {list_of_activity} attivita." if list_of_activity!=None else " non ci sono attivita per te!"
+            text += f", hai {list_of_activity} attività." if list_of_activity!=None else " non ci sono attività per te!"
         dispatcher.utter_message(text=text,json_message=json) 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
@@ -366,7 +366,7 @@ class showCategories(Action):
         list_of_categories,json = Database.selectPossessions(id)
         text = associated_name
         if json == None:
-            text+=f", ecco a te categorie: {list_of_categories}." if list_of_categories else " non hai alcuna categoria!"
+            text+=f", ecco le tue categorie: {list_of_categories}." if list_of_categories else " non hai alcuna categoria!"
         else:
             text+=f"(, hai {list_of_categories} categorie." if list_of_categories else " non ci sono categorie per te!"
 
@@ -406,9 +406,9 @@ class actionModifyCategory(Action):
                 else:
                     dispatcher.utter_message(text=text,json_message={'query':'js_reload'}) 
             else:
-                dispatcher.utter_message(text=f"Ops {associated_name} , la categoria {category_old} non esiste.") 
+                dispatcher.utter_message(text=f"{associated_name} , la categoria {category_old} non esiste.") 
         else:
-            dispatcher.utter_message(text=f"Ops {associated_name} , la categoria {category_new} esiste già.") 
+            dispatcher.utter_message(text=f"{associated_name} , la categoria {category_new} esiste già.") 
         
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -476,7 +476,7 @@ class actionModifyActivity(Action):
             timenew = time
             timeold = time
         if possibleDeadlineErrorFlag is True and activity_old is None and category_old is None:
-            dispatcher.utter_message(text=f"dimmi la deadline precedente e quella nuova nella successiva richiesta per modificare la deadline di un'attivita")
+            dispatcher.utter_message(text=f"Perfavore, ripeti la richiesta specificando la deadline attuale e quella nuova")
             return [SlotSet("category", None),SlotSet("category_old", None),SlotSet("activity_old", None),SlotSet("category_new", None),SlotSet("activity_new", None),SlotSet("activity", None),SlotSet("time", None)]
     
 
@@ -490,16 +490,16 @@ class actionModifyActivity(Action):
             print("nel db sto per cercare: ", id, cat_to_modify, act_to_modify, timeold,category_new, activity_new, timenew)
             returnedValue = Database.modifyActivity(id, cat_to_modify, act_to_modify, timeold,category_new, activity_new, timenew)
             if (returnedValue):  
-                text = f"{associated_name}, l'attivita {act_to_modify} è stata modificata"
+                text = f"{associated_name}, l'attività {act_to_modify} è stata modificata"
                 if rasa_only:
                     dispatcher.utter_message(text=text) 
                 else:
                     dispatcher.utter_message(text=text,json_message={'query':'js'}) 
             else:
-                dispatcher.utter_message(text=f"Ops {associated_name} , l'attivita da modificare non esiste.") 
+                dispatcher.utter_message(text=f"{associated_name} , l'attività da modificare non esiste.") 
                 
         else:
-            dispatcher.utter_message(text=f"Ops {associated_name} l'attivita {activity_new} esiste già, non ha senso modificare {act_to_modify}") 
+            dispatcher.utter_message(text=f"{associated_name} l'attività {activity_new} esiste già, non ha senso modificare {act_to_modify}") 
     
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
@@ -530,13 +530,13 @@ class actionCleanCompletedActivities(Action):
         
         returnedValue = Database.cleanCompletedActivities(id)
         if (returnedValue):  
-            text = f"{associated_name}, tutte le tue attivita completate sono state rimosse!"
+            text = f"{associated_name}, tutte le tue attività completate sono state rimosse!"
             if rasa_only:
                 dispatcher.utter_message(text=text) 
             else:
                 dispatcher.utter_message(text=text,json_message={'query':'js'}) 
         else:
-            dispatcher.utter_message(text=f"Ops! {associated_name} qualcosa è andato storto! Non riesco a rimuovere tutte le tue attivita completate!") #??
+            dispatcher.utter_message(text=f"{associated_name} qualcosa è andato storto! Non rho potuto rimuovere le tue attività completate!") #??
     
         return []
 
@@ -592,7 +592,7 @@ class actionRemindItem(Action):
             
             returnedValue = Database.updateReminder(id,category,activity,time,reminderSlot)
             if (returnedValue):
-                text = f"{associated_name}, il reminder per l'attivita è stato aggiornato."
+                text = f"{associated_name}, il reminder per l'attività è stato aggiornato."
                 if rasa_only:
                     dispatcher.utter_message(text=text) 
                 else:
@@ -650,10 +650,10 @@ class actionAskActivityOld(Action):
         activity_old = tracker.get_slot("activity_old")
         activity = tracker.get_slot("activity")
         if(activity_old == None and activity == None):
-            dispatcher.utter_message(text=f"Qual è l'attivita da modificare?")
+            dispatcher.utter_message(text=f"Qual è l'attività da modificare?")
             return[SlotSet("requested_slot","activity")]
         else:
-            dispatcher.utter_message(text=f"Qual è la nuova attivita?")
+            dispatcher.utter_message(text=f"Qual è la nuova attività?")
             return[SlotSet("activity_old",activity),SlotSet("activity",None),SlotSet("activity_new",None),SlotSet("requested_slot","activity")]    
 
 class actionAskActivityNew(Action):
@@ -668,7 +668,7 @@ class actionAskActivityNew(Action):
         activity = tracker.get_slot("activity")
         activity_old = tracker.get_slot("activity_old")
         if(activity_new == None and (activity == None or activity == activity_old)):
-            dispatcher.utter_message(text=f"Qual è la nuova attivita?")
+            dispatcher.utter_message(text=f"Qual è la nuova attività?")
             return[SlotSet("requested_slot","activity")]
         else:
             return[SlotSet("activity_new",activity),SlotSet("activity",None),SlotSet("requested_slot",None)]    
@@ -717,14 +717,14 @@ class ActionReactToReminder(Action):
         print(expired)
         Database.updateReminder(id_user,category, activity, deadline, False)
         if(expired):
-            text = f"Hei {name}, il reminder per l'attivita {activity} in {category} è scaduto!"
+            text = f"{name}, il reminder per l'attività {activity} in {category} è scaduto!"
             if rasa_only:
                 dispatcher.utter_message(text=text) 
             else:
                 dispatcher.utter_message(text=text,json_message={'query':'js'}) 
             print("ti sei scordato ", activity, category)
         else: 
-            text = f"Hei {name}, ricordati dell'attivita {activity} in {category} tra cinque minuti!"
+            text = f"{name}, ricordati dell'attività {activity} in {category} tra cinque minuti!"
             if rasa_only:
                 dispatcher.utter_message(text=text) 
             else:
