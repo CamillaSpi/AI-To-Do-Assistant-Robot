@@ -16,7 +16,7 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-#################################### Show Stories ######################################
+#################################### Show Rules ######################################
 - rule: Show my Activities 
   steps:
   - intent: view_activities
@@ -37,6 +37,8 @@ rules:
     - requested_slot: null
   - action: action_view_categories
 
+
+#################################### Remind Rules ######################################
 - rule: Remind me
   steps: 
   - intent: remind_me_of
@@ -53,7 +55,7 @@ rules:
   - intent: ask_name
   - action: action_say_name
 
-  ####aggiunta per reminder
+
 - rule: react to remind
   steps: 
   - intent: EXTERNAL_reminder
