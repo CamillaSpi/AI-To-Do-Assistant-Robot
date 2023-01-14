@@ -23,10 +23,10 @@ natural_learning_face = rospy.Publisher('naturalLearningFace', Int16, queue_size
 rospy.init_node('recognize_user', anonymous=True)
 rejection_threshold = 0.65
 rospy.wait_for_service('voiceLabelServices')
-rospy.wait_for_service('video_user_server')
+rospy.wait_for_service('videoLabelServices')
 rospy.wait_for_service('voiceRegistrationService')
 obtain_audio_prob = rospy.ServiceProxy('voiceLabelServices', idLabel)
-obtain_video_prob = rospy.ServiceProxy('video_user_server', video_detect_user)
+obtain_video_prob = rospy.ServiceProxy('videoLabelServices', video_detect_user)
 startVoiceRegistration = rospy.ServiceProxy('voiceRegistrationService', Registration)
 
 

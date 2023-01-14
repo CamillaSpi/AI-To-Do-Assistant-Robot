@@ -210,7 +210,7 @@ def face_reidentification(msg):
 
 
 def recognize():
-    s = rospy.Service('video_user_server', video_detect_user, handle_service)
+    s = rospy.Service('videoLabelServices', video_detect_user, handle_service)
     rospy.logdebug('image server READY.')
     print("vado sotto lo spin")
     try:
