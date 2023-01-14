@@ -5,7 +5,6 @@ import numpy as np
 import cv2
 from cv_bridge import CvBridge
 
-pub = rospy.Publisher('image_analysis', Image, queue_size=10)
 # Init node
 rospy.init_node('image_node', anonymous=True)
 bridge = CvBridge()
