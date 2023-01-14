@@ -1,0 +1,5 @@
+no_pepper_nodes
+/home/nando/Desktop/DefinitivoCog/devel/.private/no_pepper_nodes/cmake.lock /home/nando/Desktop/DefinitivoCog/devel/./cmake.lock
+/home/nando/Desktop/DefinitivoCog/devel/.private/no_pepper_nodes/lib/pkgconfig/no_pepper_nodes.pc /home/nando/Desktop/DefinitivoCog/devel/lib/pkgconfig/no_pepper_nodes.pc
+/home/nando/Desktop/DefinitivoCog/devel/.private/no_pepper_nodes/share/no_pepper_nodes/cmake/no_pepper_nodesConfig-version.cmake /home/nando/Desktop/DefinitivoCog/devel/share/no_pepper_nodes/cmake/no_pepper_nodesConfig-version.cmake
+/home/nando/Desktop/DefinitivoCog/devel/.private/no_pepper_nodes/share/no_pepper_nodes/cmake/no_pepper_nodesConfig.cmake /home/nando/Desktop/DefinitivoCog/devel/share/no_pepper_nodes/cmake/no_pepper_nodesConfig.cmake

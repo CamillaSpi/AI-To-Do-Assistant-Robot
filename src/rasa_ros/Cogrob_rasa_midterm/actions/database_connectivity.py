@@ -222,7 +222,7 @@ class Database:
       if(len(rows)>0):  
         category = ["Attivita","Categoria","DeadLine","Completata"]
         number = [i for i in range(1,len(rows)+1)]
-        row_format ="{:>22}" * (len(category) + 1)
+        row_format ="{:>20}" * (len(category) + 1)
         toPrint = ""
         toPrint += (row_format.format("", *category)) + "\n"
         for team, row in zip(number, rows):

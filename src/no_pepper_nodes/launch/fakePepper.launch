@@ -1,0 +1,7 @@
+<launch>
+
+  <node pkg="no_pepper_nodes" type="test_url_node.py" name="tablet_node" output="screen" />
+  <node pkg="no_pepper_nodes" type="test_tts_node.py" name="text2speech" output="screen" />
+  <node pkg="no_pepper_nodes" type="test_camera_node.py" name="image_input" output="screen" />
+
+</launch>

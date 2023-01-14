@@ -1,0 +1,22 @@
+face_recognition
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/cmake.lock /home/nando/Desktop/DefinitivoCog/devel/./cmake.lock
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/lib/python3/dist-packages/face_recognition/__init__.py /home/nando/Desktop/DefinitivoCog/devel/lib/python3/dist-packages/face_recognition/__init__.py
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/lib/python3/dist-packages/face_recognition/srv/__init__.py /home/nando/Desktop/DefinitivoCog/devel/lib/python3/dist-packages/face_recognition/srv/__init__.py
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/lib/python3/dist-packages/face_recognition/srv/_video_detect_user.py /home/nando/Desktop/DefinitivoCog/devel/lib/python3/dist-packages/face_recognition/srv/_video_detect_user.py
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/lib/pkgconfig/face_recognition.pc /home/nando/Desktop/DefinitivoCog/devel/lib/pkgconfig/face_recognition.pc
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/share/common-lisp/ros/face_recognition/srv/_package_video_detect_user.lisp /home/nando/Desktop/DefinitivoCog/devel/share/common-lisp/ros/face_recognition/srv/_package_video_detect_user.lisp
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/share/common-lisp/ros/face_recognition/srv/_package.lisp /home/nando/Desktop/DefinitivoCog/devel/share/common-lisp/ros/face_recognition/srv/_package.lisp
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/share/common-lisp/ros/face_recognition/srv/video_detect_user.lisp /home/nando/Desktop/DefinitivoCog/devel/share/common-lisp/ros/face_recognition/srv/video_detect_user.lisp
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/share/common-lisp/ros/face_recognition/srv/face_recognition-srv.asd /home/nando/Desktop/DefinitivoCog/devel/share/common-lisp/ros/face_recognition/srv/face_recognition-srv.asd
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/share/face_recognition/cmake/face_recognition-msg-extras.cmake /home/nando/Desktop/DefinitivoCog/devel/share/face_recognition/cmake/face_recognition-msg-extras.cmake
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/share/face_recognition/cmake/face_recognition-msg-paths.cmake /home/nando/Desktop/DefinitivoCog/devel/share/face_recognition/cmake/face_recognition-msg-paths.cmake
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/share/face_recognition/cmake/face_recognitionConfig.cmake /home/nando/Desktop/DefinitivoCog/devel/share/face_recognition/cmake/face_recognitionConfig.cmake
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/share/face_recognition/cmake/face_recognitionConfig-version.cmake /home/nando/Desktop/DefinitivoCog/devel/share/face_recognition/cmake/face_recognitionConfig-version.cmake
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/share/roseus/ros/face_recognition/manifest.l /home/nando/Desktop/DefinitivoCog/devel/share/roseus/ros/face_recognition/manifest.l
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/share/roseus/ros/face_recognition/srv/video_detect_user.l /home/nando/Desktop/DefinitivoCog/devel/share/roseus/ros/face_recognition/srv/video_detect_user.l
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/share/gennodejs/ros/face_recognition/_index.js /home/nando/Desktop/DefinitivoCog/devel/share/gennodejs/ros/face_recognition/_index.js
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/share/gennodejs/ros/face_recognition/srv/video_detect_user.js /home/nando/Desktop/DefinitivoCog/devel/share/gennodejs/ros/face_recognition/srv/video_detect_user.js
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/share/gennodejs/ros/face_recognition/srv/_index.js /home/nando/Desktop/DefinitivoCog/devel/share/gennodejs/ros/face_recognition/srv/_index.js
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/include/face_recognition/video_detect_userRequest.h /home/nando/Desktop/DefinitivoCog/devel/include/face_recognition/video_detect_userRequest.h
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/include/face_recognition/video_detect_user.h /home/nando/Desktop/DefinitivoCog/devel/include/face_recognition/video_detect_user.h
+/home/nando/Desktop/DefinitivoCog/devel/.private/face_recognition/include/face_recognition/video_detect_userResponse.h /home/nando/Desktop/DefinitivoCog/devel/include/face_recognition/video_detect_userResponse.h

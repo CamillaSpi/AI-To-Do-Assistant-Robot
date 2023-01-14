@@ -341,9 +341,9 @@ class showActivities(Action):
         list_of_activity,json = Database.selectItems(id,category, activity_status, time)
         text=associated_name
         if json == None:
-            text += f", ecco le tue attività: {list_of_activity}." if list_of_activity!=None else " non ci sono attività per te!"
+            text += f", ecco le tue attività:\n\t {list_of_activity}." if list_of_activity else " non ci sono attività per te!"
         else:
-            text += f", hai {list_of_activity} attività." if list_of_activity!=None else " non ci sono attività per te!"
+            text += f", hai {list_of_activity} attività." if list_of_activity else " non ci sono attività per te!"
         dispatcher.utter_message(text=text,json_message=json) 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]

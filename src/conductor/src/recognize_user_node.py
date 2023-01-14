@@ -5,7 +5,7 @@ import numpy as np
 from ros_audio_pkg.msg import RecognizedSpoke
 from pepper_nodes.srv import *
 from ros_audio_pkg.srv import idLabel,Registration
-from facial_emotion_recognition.srv import video_detect_user
+from face_recognition.srv import video_detect_user
 import time
 
 #i messaggi correttamente riconosciuti verranno mandati a rasa
