@@ -1,284 +1,33 @@
 {
-<<<<<<< HEAD
-  "view_activities_form": {
-=======
-  "modify_category_form": {
->>>>>>> 546de3c2a4d2c3bd76cb23543f944b2e0807b582
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 17
-  },
-  "utter_ask_if_deadline": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-<<<<<<< HEAD
-    "support": 58
-  },
-  "recognize_user_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 76
-=======
-    "support": 54
-  },
-  "utter_deny_choice": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 16
->>>>>>> 546de3c2a4d2c3bd76cb23543f944b2e0807b582
-  },
-  "modify_activity_name_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
-  "action_add_category": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 4
-  },
-<<<<<<< HEAD
-  "action_clean_all_completed": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 6
-  },
-  "add_item_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 30
-  },
-  "view_categories_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
-  "remove_item_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 44
-=======
-  "modify_activity_category_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 9
-  },
   "action_remove_item": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 11
   },
-  "clean_activities_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 20
-  },
-  "action_add_item": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 22
->>>>>>> 546de3c2a4d2c3bd76cb23543f944b2e0807b582
-  },
-  "action_set_status_activity": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 20
-  },
-<<<<<<< HEAD
-  "action_recognize_user": {
-=======
-  "action_view_categories": {
->>>>>>> 546de3c2a4d2c3bd76cb23543f944b2e0807b582
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 75
-  },
-<<<<<<< HEAD
-  "set_status_activity_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 58
-=======
-  "action_view_activities": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 5
->>>>>>> 546de3c2a4d2c3bd76cb23543f944b2e0807b582
-  },
-  "modify_activity_deadline_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-<<<<<<< HEAD
-    "support": 33
-=======
-    "support": 5
->>>>>>> 546de3c2a4d2c3bd76cb23543f944b2e0807b582
-  },
-  "action_recognize_user": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-<<<<<<< HEAD
-    "support": 12
-=======
-    "support": 45
->>>>>>> 546de3c2a4d2c3bd76cb23543f944b2e0807b582
-  },
-  "add_category_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 8
-  },
-<<<<<<< HEAD
-  "action_view_activities": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "modify_activity_name_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 24
-  },
-  "utter_deny_choice": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 13
-=======
-  "action_modify_activity": {
+  "modify_category_form": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 12
-  },
-  "utter_ask_if_reminder": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 16
-  },
-  "view_activities_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 7
->>>>>>> 546de3c2a4d2c3bd76cb23543f944b2e0807b582
-  },
-  "remove_item_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-<<<<<<< HEAD
-    "support": 18
-  },
-  "utter_ask_if_deadline": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 61
-=======
-    "support": 50
-  },
-  "action_listen": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 417
->>>>>>> 546de3c2a4d2c3bd76cb23543f944b2e0807b582
-  },
-  "action_modify_category": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3
-  },
-<<<<<<< HEAD
-  "modify_activity_deadline_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 10
-  },
-  "utter_ask_if_reminder": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 8
-  },
-  "action_listen": {
-=======
-  "action_reset_slot": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 16
-  },
-  "add_item_form": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 52
-  },
-  "action_set_reminder_slot": {
->>>>>>> 546de3c2a4d2c3bd76cb23543f944b2e0807b582
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 448
-  },
-<<<<<<< HEAD
-  "action_view_categories": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "action_reset_slot": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 13
   },
   "utter_confirm_choice": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 32
+    "support": 34
   },
-  "action_set_reminder_slot": {
+  "recognize_user_form": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 5
+    "support": 80
   },
-  "modify_activity_category_form": {
+  "view_categories_form": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 30
+    "support": 3
   },
   "utter_greet": {
     "precision": 1.0,
@@ -286,17 +35,53 @@
     "f1-score": 1.0,
     "support": 2
   },
-  "action_add_item": {
+  "action_clean_all_completed": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 14
-=======
-  "utter_confirm_choice": {
+    "support": 6
+  },
+  "action_view_activities": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 35
+    "support": 2
+  },
+  "action_set_status_activity": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 20
+  },
+  "remove_item_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 50
+  },
+  "view_activities_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "utter_ask_if_reminder": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 16
+  },
+  "action_modify_activity": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 33
+  },
+  "action_recognize_user": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 79
   },
   "set_status_activity_form": {
     "precision": 1.0,
@@ -304,60 +89,124 @@
     "f1-score": 1.0,
     "support": 58
   },
-  "view_categories_form": {
+  "utter_deny_choice": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 14
+  },
+  "modify_activity_deadline_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10
+  },
+  "action_listen": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 500
+  },
+  "action_add_item": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 15
+  },
+  "action_modify_category": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3
+  },
+  "add_category_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8
+  },
+  "modify_activity_name_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 24
+  },
+  "action_reminder_item": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 7
   },
-  "recognize_user_form": {
+  "clean_activities_form": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 48
-  },
-  "action_clean_all_completed": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 5
+    "support": 18
   },
   "add_deadline_form": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 56
->>>>>>> 546de3c2a4d2c3bd76cb23543f944b2e0807b582
+    "support": 68
+  },
+  "utter_ask_if_deadline": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 66
+  },
+  "action_view_categories": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "modify_activity_category_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 30
+  },
+  "action_reset_slot": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 14
+  },
+  "action_add_category": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4
+  },
+  "action_set_reminder_slot": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7
+  },
+  "add_item_form": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 52
   },
   "accuracy": 1.0,
   "macro avg": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-<<<<<<< HEAD
-    "support": 1125
-=======
-    "support": 1033
->>>>>>> 546de3c2a4d2c3bd76cb23543f944b2e0807b582
+    "support": 1251
   },
   "weighted avg": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-<<<<<<< HEAD
-    "support": 1125
+    "support": 1251
   },
   "conversation_accuracy": {
     "accuracy": 1.0,
-    "correct": 112,
-    "total": 112
-=======
-    "support": 1033
-  },
-  "conversation_accuracy": {
-    "accuracy": 1.0,
-    "correct": 108,
-    "total": 108
->>>>>>> 546de3c2a4d2c3bd76cb23543f944b2e0807b582
+    "correct": 122,
+    "total": 122
   }
 }
