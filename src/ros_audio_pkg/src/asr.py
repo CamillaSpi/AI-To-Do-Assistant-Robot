@@ -16,6 +16,7 @@ r = sr.Recognizer()
 rospy.init_node('speech_recognition', anonymous=True)
 pub1 = rospy.Publisher('RecivedAudio', Int16MultiArray, queue_size=10) #publish the recived audio
 pub2 = rospy.Publisher('InterpretedText', String, queue_size=10) #publish the recognized text
+pubSpeech = rospy.Publisher('toSpeech', String,queue_size=10)
 
 # this is called from the background thread
 def callback(audio):
@@ -37,6 +38,7 @@ def callback(audio):
         pub2.publish(spoken_text)
     except sr.UnknownValueError:
         print("Google Speech Recognition non riesce a capire da questo file audio")
+        pubSpeech.publish("Scusa, puoi ripetere")
     except sr.RequestError as e:
         print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
