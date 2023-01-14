@@ -70,7 +70,7 @@ stories:
       si
     intent: affirm
   - action: action_set_reminder_slot
-  - action: action_add_item
+  - action: action_reminder_item
 
 - story: later presentation and aggiungi activity (single) with deadline 1 without reminder
   steps:
@@ -180,7 +180,7 @@ stories:
       si
     intent: affirm
   - action: action_set_reminder_slot
-  - action: action_add_item
+  - action: action_reminder_item
 
 - story: presentation and aggiungi activity (single) with deadline 1 without deadline
   steps:
@@ -281,7 +281,7 @@ stories:
       si
     intent: affirm
   - action: action_set_reminder_slot
-  - action: action_add_item
+  - action: action_reminder_item
     
 - story: later presentation and aggiungi activity (dobule) with deadline 1 wihout reminder
   steps:
@@ -375,7 +375,7 @@ stories:
       si
     intent: affirm
   - action: action_set_reminder_slot
-  - action: action_add_item
+  - action: action_reminder_item
 
 - story: presentation and aggiungi activity (dobule) with deadline 1 without reminder
   steps:
@@ -439,7 +439,7 @@ stories:
       si
     intent: affirm
   - action: action_set_reminder_slot
-  - action: action_add_item
+  - action: action_reminder_item
     
 - story: later presentation and aggiungi activity (triple) with deadline 1 wihout reminder
   steps:
@@ -490,7 +490,7 @@ stories:
       si
     intent: affirm
   - action: action_set_reminder_slot
-  - action: action_add_item
+  - action: action_reminder_item
 
 - story: presentation and aggiungi activity (triple) with deadline 1 without reminder
   steps:
@@ -1925,7 +1925,7 @@ stories:
       si
     intent: affirm
   - action: action_set_reminder_slot
-  - action: action_add_item
+  - action: action_reminder_item
 
 - story: presentation and aggiungi activity withouth deadline 2
   steps:

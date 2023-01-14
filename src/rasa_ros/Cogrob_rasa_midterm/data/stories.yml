@@ -90,7 +90,7 @@ stories:
   - action: utter_ask_if_reminder
   - intent: affirm
   - action: action_set_reminder_slot
-  - action: action_add_item
+  - action: action_reminder_item
 
 - story: Submit new activity maybe deadline with no reminder
   steps:
