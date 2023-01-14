@@ -70,7 +70,7 @@ stories:
       si
     intent: affirm
   - action: action_set_reminder_slot
-  - action: action_add_item
+  - action: action_reminder_item
 
 - story: later presentation and aggiungi activity (single) with deadline 1 without reminder
   steps:
@@ -180,7 +180,7 @@ stories:
       si
     intent: affirm
   - action: action_set_reminder_slot
-  - action: action_add_item
+  - action: action_reminder_item
 
 - story: presentation and aggiungi activity (single) with deadline 1 without deadline
   steps:
@@ -281,7 +281,7 @@ stories:
       si
     intent: affirm
   - action: action_set_reminder_slot
-  - action: action_add_item
+  - action: action_reminder_item
     
 - story: later presentation and aggiungi activity (dobule) with deadline 1 wihout reminder
   steps:
@@ -375,7 +375,7 @@ stories:
       si
     intent: affirm
   - action: action_set_reminder_slot
-  - action: action_add_item
+  - action: action_reminder_item
 
 - story: presentation and aggiungi activity (dobule) with deadline 1 without reminder
   steps:
@@ -439,7 +439,7 @@ stories:
       si
     intent: affirm
   - action: action_set_reminder_slot
-  - action: action_add_item
+  - action: action_reminder_item
     
 - story: later presentation and aggiungi activity (triple) with deadline 1 wihout reminder
   steps:
@@ -490,7 +490,7 @@ stories:
       si
     intent: affirm
   - action: action_set_reminder_slot
-  - action: action_add_item
+  - action: action_reminder_item
 
 - story: presentation and aggiungi activity (triple) with deadline 1 without reminder
   steps:
@@ -1925,7 +1925,7 @@ stories:
       si
     intent: affirm
   - action: action_set_reminder_slot
-  - action: action_add_item
+  - action: action_reminder_item
 
 - story: presentation and aggiungi activity withouth deadline 2
   steps:
@@ -1982,7 +1982,9 @@ stories:
   - action: action_add_item
   
 
-#################################### Test Stories  Clean completed activities with confirmation######################################
+########################################################## TEST STORIES: CLEAN COMPLETED ACTIVITIES ##########################################################
+
+####################### with confirmation ####################### 
 - story: test1 for clean complete activities confirmed
   steps:
   - user: |
@@ -1997,7 +1999,7 @@ stories:
   - active_loop: null 
   - action: utter_confirm_choice
   - user: |
-      yeah
+      sisi
     intent: affirm
   - action: action_clean_all_completed
 
@@ -2022,18 +2024,21 @@ stories:
 - story: test3 for clean complete activities confirmed
   steps:
   - user: |
+      ciao, sono carmela
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
       cancella le mie attività completate
     intent: clean_activities
   - action: clean_activities_form
   - active_loop: clean_activities_form
-  - user: |
-      [Vittoria](name)
-    intent: inform
-  - action: clean_activities_form
   - active_loop: null 
   - action: utter_confirm_choice
   - user: |
-      yep
+      certo
     intent: affirm
   - action: action_clean_all_completed
 
@@ -2051,14 +2056,14 @@ stories:
   - active_loop: null 
   - action: utter_confirm_choice
   - user: |
-      si
+      affermativo
     intent: affirm
   - action: action_clean_all_completed
 
 - story: test5 for clean complete activities confirmed
   steps:
   - user: |
-      cancella tutte le attività che ho completato
+      per favore, cancella tutte le attività che ho completato
     intent: clean_activities
   - action: clean_activities_form
   - active_loop: clean_activities_form
@@ -2069,11 +2074,11 @@ stories:
   - active_loop: null 
   - action: utter_confirm_choice
   - user: |
-      si
+      sì
     intent: affirm
   - action: action_clean_all_completed
 
-#################################### Test Stories Clean completed activities with negation######################################
+####################### with denial ####################### 
 - story: test1 for clean complete activities denied
   steps:
   - user: |
@@ -2088,7 +2093,7 @@ stories:
   - active_loop: null 
   - action: utter_confirm_choice
   - user: |
-      no
+      nono
     intent: deny
   - action: utter_deny_choice
   - action: action_reset_slot
@@ -2107,7 +2112,7 @@ stories:
   - active_loop: null 
   - action: utter_confirm_choice
   - user: |
-      nope
+      no
     intent: deny
   - action: utter_deny_choice
   - action: action_reset_slot
@@ -2115,21 +2120,23 @@ stories:
 - story: test3 for clean complete activities denied
   steps:
   - user: |
+      ciao, sono carmela
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
       cancella le mie attività completate
     intent: clean_activities
   - action: clean_activities_form
   - active_loop: clean_activities_form
-  - user: |
-      [paolo](name)
-    intent: inform
-  - action: clean_activities_form
   - active_loop: null 
   - action: utter_confirm_choice
   - user: |
-      no grazie
-    intent: deny
-  - action: utter_deny_choice
-  - action: action_reset_slot
+      assolutamente no
+    intent: affirm
+  - action: action_clean_all_completed
 
 - story: test4 for clean complete activities denied
   steps:
@@ -2164,87 +2171,47 @@ stories:
   - active_loop: null 
   - action: utter_confirm_choice
   - user: |
-      no
+      no grazie
     intent: deny
   - action: utter_deny_choice
   - action: action_reset_slot
 
-#################################### Test Stories Show activities######################################
-- story: test1 for show activities
+
+########################################################## TEST STORIES: SHOW ACTIVITIES ########################################################## 
+- story: test1 show activities first request then name
   steps:
   - user: |
-      mostrami tutte le mie attività
+      mostrami le mie attività
     intent: view_activities
   - action: view_activities_form
   - active_loop: view_activities_form
   - user: |
-      [Vito](name)
+      [Gerry](name)
     intent: inform
   - action: view_activities_form
   - active_loop: null 
   - action: action_view_activities
 
-- story: test2 for show activities
+- story: test2 show activities first name then request
   steps:
   - user: |
-      ciao, il mio nome è [Luchino](name)
+      ciao, il mio nome è [Francesca](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      fammi vedere le mie attività
+      mostrami tutte le attività che ho aggiunto
     intent: view_activities
   - action: view_activities_form
   - active_loop: null  
   - action: action_view_activities
 
-- story: test3 for show activities
-  steps:
-  - user: |
-      mostrami le tutte le attività che ho completato
-    intent: view_activities
-  - action: view_activities_form
-  - active_loop: view_activities_form
-  - user: |
-      [laura](name)
-    intent: inform
-  - action: view_activities_form
-  - active_loop: null 
-  - action: action_view_activities
 
-- story: test4 for show activities
-  steps:
-  - user: |
-      ciao, il mio nome è [Roberto](name)
-    intent: presentation
-  - action: recognize_user_form
-  - active_loop: null
-  - action: action_recognize_user
-  - user: |
-      voglio vedere le attività che non ho ancora completato
-    intent: view_activities
-  - action: view_activities_form
-  - active_loop: null  
-  - action: action_view_activities
+########################################################## TEST STORIES: LOGIN-SIGNUP AND LATER LOGIN-SIGNUP ########################################################## 
 
-- story: test5 for show activities
-  steps:
-  - user: |
-      il mio nome [Mattia](name)
-    intent: presentation
-  - action: recognize_user_form
-  - active_loop: null
-  - action: action_recognize_user
-  - user: |
-      mostrami le attività non fatte
-    intent: view_activities
-  - action: view_activities_form
-  - active_loop: null  
-  - action: action_view_activities
-
-#################################### Test Stories Login-Signup######################################
-- story: test1 for login-signup
+####################### login-signup #######################
+- story: test1 login-signup
   steps:
   - user: |
       ciao, il mio nome è [luca](name)
@@ -2253,7 +2220,7 @@ stories:
   - active_loop: null
   - action: action_recognize_user
 
-- story: test2 for login-signup
+- story: test2 login-signup
   steps:
   - user: |
       sono [Carlo](name) e voglio creare un account
@@ -2262,53 +2229,57 @@ stories:
   - active_loop: null
   - action: action_recognize_user
 
-- story: test3 for login-signup
+- story: test3 login-signup
   steps:
   - user: |
-      creami un nuovo user
+      creami un account
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
   - user: |
-      il mio nome è [Mattia](name)
+      [Mattia](name)
     intent: inform
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
 
-- story: test4 for login-signup
+####################### later login-signup #######################
+- story: test1 later login-signup
   steps:
   - user: |
-      sono a nuovo user
+      ciao
+    intent: greet
+  - action: utter_greet
+  - user: |
+      sono [Mattia](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
-  - user: |
-      [Mario](name)
-    intent: inform
-  - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
 
-- story: test5 for login-signup
+- story: test2 later login-signup
   steps:
   - user: |
-      posso creare un nuovo account
+      Buongiorno
+    intent: greet
+  - action: utter_greet
+  - user: |
+      sono [luca](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: recognize_user_form
-  - user: |
-      il nome è [francesco](name)
-    intent: inform
-  - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
 
-#################################### Test Stories Show categories######################################
-- story: test1 for show categories
+
+
+########################################################## TEST STORIES: SHOW CATEGORIES ########################################################## 
+
+- story: test1 show categories first request then name
   steps:
   - user: |
-      voglio vedere le mie categorie
+      mostrami le mie categorie
     intent: view_categories
   - action: view_categories_form
   - active_loop: view_categories_form
@@ -2319,7 +2290,7 @@ stories:
   - active_loop: null 
   - action: action_view_categories
 
-- story: test2 for show categories
+- story: test2 show categories first name then request
   steps:
   - user: |
       ciao, il mio nome è [Francesca](name)
@@ -2334,75 +2305,46 @@ stories:
   - active_loop: null  
   - action: action_view_categories
 
-- story: test3 for show categories
-  steps:
-  - user: |
-      mostrami le mie categorie
-    intent: view_categories
-  - action: view_categories_form
-  - active_loop: view_categories_form
-  - user: |
-      [Nadia](name)
-    intent: inform
-  - action: view_categories_form
-  - active_loop: null 
-  - action: action_view_categories
 
-- story: test4 for show categories
+
+########################################################## TEST STORIES: ADD NEW CATEGORY ########################################################## 
+
+- story: test1 add new category passing all
   steps:
   - user: |
-      ciao, il mio nome è [Roberto](name)
+      sono [Antonio](name)
     intent: presentation
   - action: recognize_user_form
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      voglio guardare le mie categorie
-    intent: view_categories
-  - action: view_categories_form
-  - active_loop: null  
-  - action: action_view_categories
-
-- story: test5 for show categories
-  steps:
-  - user: |
-      il mio nome [Mattia](name)
-    intent: presentation
-  - action: recognize_user_form
-  - active_loop: null
-  - action: action_recognize_user
-  - user: |
-      le mie categorie
-    intent: view_categories
-  - action: view_categories_form
-  - active_loop: null  
-  - action: action_view_categories
-
-#################################### Test Stories aggiungi Category######################################
-- story: test1 for aggiungi category
-  steps:
-  - user: |
-      buongiorno sono [Tonino](name) e voglio aggiungere la categoria [progetti](category)
+      aggiungi la nuova categoria [tempo libero](category)
     intent: add_category
   - action: add_category_form
   - active_loop: null
   - action: action_add_category
 
-- story: test2 for aggiungi category
+- story: test2 add new category passing step by step
   steps:
   - user: |
-      buongiorno sono [Tonino](name) aggiungimi una categoria
+      sono [francesca](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      aggiungi una nuova categoria
     intent: add_category
   - action: add_category_form
   - active_loop: add_category_form
   - user: |
-      la categoria è [scuola](category)
+      [cultura](category)
     intent: inform
-  - action: add_category_form
+  - action: add_category_form  
   - active_loop: null
   - action: action_add_category
 
-- story: test3 for aggiungi category
+- story: test3 add new category passing step by step
   steps: 
   - user: |
       metti una nuova categoria
@@ -2420,7 +2362,7 @@ stories:
   - active_loop: null
   - action: action_add_category
 
-- story: test4 for aggiungi category
+- story: test4 add new category passing all
   steps:
   - user: |
       crea la categoria [sport](category)
@@ -2434,8 +2376,12 @@ stories:
   - active_loop: null
   - action: action_add_category
 
-#################################### Test Stories Modify Category confirmed######################################
-- story: test2 for modify category confirmed
+
+
+########################################################## TEST STORIES: MODIFY CATEGORY ########################################################## 
+
+####################### with confirmation #######################
+- story: test1 modify category passing one of two
   steps:
   - user: |
       sono [Elio](name)
@@ -2444,45 +2390,53 @@ stories:
   - active_loop: null
   - action: action_recognize_user
   - user: |
-      modifica la categoria [palestra](category)
+      modifica la categoria [sport](category)
     intent: modify_category
   - action: modify_category_form
   - active_loop: modify_category_form
   - user: |
-      [cucina](category)
+      [salute fisica](category)
     intent: inform
   - action: modify_category_form
   - active_loop: null
   - action: utter_confirm_choice
   - user: |
-      si
+      sisi
     intent: affirm
   - action: action_modify_category
 
-- story: test3 for modify category confirmed
+- story: test2 modify category passing all
   steps:
   - user: |
-      sono [Mattia](name) cambia la categoria [medicinali]{"entity": "category", "role": "old"} in [personale]{"entity": "category", "role": "new"}
+      sono [Mattia](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      cambia la categoria [svago]{"entity": "category", "role": "old"} in [divertimento]{"entity": "category", "role": "new"}
     intent: modify_category
   - action: modify_category_form
   - active_loop: null
   - action: utter_confirm_choice
   - user: |
-      y
+      sì
     intent: affirm
   - action: action_modify_category
 
-- story: test4 for modify category confirmed
+- story: test3 modify category passing step by step
   steps:
+  - user: |
+      sono [camilla](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
   - user: |
       voglio cambiare il nome di una categoria
     intent: modify_category
   - action: modify_category_form
   - active_loop: modify_category_form
-  - user: |
-      sono [Walter](name)
-    intent: inform
-  - action: modify_category_form
   - user: |
       la categoria vecchia è [amici](category)
     intent: inform
@@ -2494,20 +2448,26 @@ stories:
   - active_loop: null
   - action: utter_confirm_choice
   - user: |
-      y
+      certo
     intent: affirm
   - action: action_modify_category
 
-#################################### Test Stories Modify Category negation######################################
-- story: test1 for modify category negative
+####################### with denial #######################
+- story: test1 modify category passing one of two
   steps:
   - user: |
-      ciao, il mio nome è [Toni](name) voglio cambiare la categoria [progetti]{"entity": "category", "role": "old"}
+      sono [Elio](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      modifica la categoria [sport](category)
     intent: modify_category
   - action: modify_category_form
   - active_loop: modify_category_form
   - user: |
-      la nuova è [personale]{"entity": "category", "role": "new"}
+      [salute fisica](category)
     intent: inform
   - action: modify_category_form
   - active_loop: null
@@ -2518,134 +2478,318 @@ stories:
   - action: utter_deny_choice
   - action: action_reset_slot
 
-- story: test2 for modify category negative
+- story: test2 modify category passing all
   steps:
   - user: |
-      modifica la categoria [palestra]{"entity": "category", "role": "old"}
+      sono [Mattia](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      cambia la categoria [svago]{"entity": "category", "role": "old"} in [divertimento]{"entity": "category", "role": "new"}
+    intent: modify_category
+  - action: modify_category_form
+  - active_loop: null
+  - action: utter_confirm_choice
+  - user: |
+      nono
+    intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+
+- story: test3 modify category passing step by step
+  steps:
+  - user: |
+      sono [camilla](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      voglio cambiare il nome di una categoria
     intent: modify_category
   - action: modify_category_form
   - active_loop: modify_category_form
   - user: |
-      [Elio](name)
+      la categoria vecchia è [amici](category)
     intent: inform
   - action: modify_category_form
   - user: |
-      il nome della categoria è [cucina]{"entity": "category", "role": "new"}
+      la nuova categoria è [hobby](category)
     intent: inform
   - action: modify_category_form
   - active_loop: null
   - action: utter_confirm_choice
   - user: |
-      no
-    intent: deny
-  - action: utter_deny_choice
-  - action: action_reset_slot
-
-- story: test3 for modify category negative
-  steps:
-  - user: |
-      sono [Tonino](name) vorrei cambiare la categoria [medicinali]{"entity": "category", "role": "old"} in [personale]{"entity": "category", "role": "new"}
-    intent: modify_category
-  - action: modify_category_form
-  - active_loop: null
-  - action: utter_confirm_choice
-  - user: |
-      no
-    intent: deny
-  - action: utter_deny_choice
-  - action: action_reset_slot
-
-- story: test4 for modify category negative
-  steps:
-  - user: |
-      cambia il nome di una mia categoria
-    intent: modify_category
-  - action: modify_category_form
-  - active_loop: modify_category_form
-  - user: |
-      sono [Walter](name)
-    intent: inform
-  - action: modify_category_form
-  - user: |
-      prima si chiamava [amici]{"entity": "category", "role": "old"}
-    intent: inform
-  - action: modify_category_form
-  - user: |
-      il nome della nuova categoria è [hobby]{"entity": "category", "role": "new"}
-  - action: modify_category_form
-  - active_loop: null
-  - action: utter_confirm_choice
-  - user: |
-      no
+      negativo
     intent: deny
   - action: utter_deny_choice
   - action: action_reset_slot
 
 
 
-#################################### Test Stories Modify Activity Deadline ######################################
-- story: test modify deadline of activity with deadline passing no date
+########################################################## TEST STORIES: MODIFY ACTIVITY DEADLINE ########################################################## 
+
+- story: test1 modify deadline of activity with deadline passing all
   steps:
   - user: |
-      voglio modificare la scadenza dell'attività [corsa](activity) nella categoria [palestra](category)
+      ciao, sono [Carola](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      voglio modificare la scadenza dell'attività [corsa](activity) nella categoria [palestra](category) dal 11/11/2023 to 12/12/2023
+    intent: modify_activity_deadline 
+  - action: modify_activity_deadline_form 
+  - active_loop: modify_activity_deadline_form
+  - active_loop: null
+  - action: action_modify_activity
+
+- story: test2 modify deadline of activity with deadline passing two of three
+  steps:
+  - user: |
+      ciao, sono [Alessia](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      cambia la deadline dell'attività [parrucchiere](activity) nella categoria [tempo libero](category)
     intent: modify_activity_deadline 
   - action: modify_activity_deadline_form 
   - active_loop: modify_activity_deadline_form
   - user: |
-      sono [Cinzia](name)
-    intent: presentation
-  - action: modify_activity_deadline_form
-  - user: |
-      dal 11/11/2022 to 12/12/2022
+      dalle 14:00 di oggi alle 15:00 di domani
     intent: inform
   - action: modify_activity_deadline_form
   - active_loop: null
   - action: action_modify_activity
 
-- story: test modify deadline of activity passing all
+- story: test3 modify deadline of activity with deadline passing two of three
   steps:
   - user: |
-      voglio modificare la scadenza dell'attività [cena](activity) nella categoria [personale](catgory) dal 09/15/2022 al 10/06/2022
+      ciao, sono [lorenzo](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      cambia la deadline dell'attività [andare al mercato](activity) dalle 16:00 alle 18:00
     intent: modify_activity_deadline 
   - action: modify_activity_deadline_form 
   - active_loop: modify_activity_deadline_form
   - user: |
-      sono [Alessia](name)
-    intent: presentation
+      [faccende domestiche](category)
+    intent: inform
   - action: modify_activity_deadline_form
   - active_loop: null
   - action: action_modify_activity
-    
 
-#################################### Test Salries Modify Activity Name ######################################
-- story: test modify name of activity passing all but no deadline si deadline
+- story: test4 modify deadline of activity with deadline passing two of three
   steps:
   - user: |
-       sono [Carola](name) e voglio modificare il nome dell'attività [parrucchiere]{"entity": "activity", "role": "old"} nella categoria [beauty]{"entity": "category", "role": "new"} con il nome [play]{"entity": "activity", "role": "new"}
+      ciao, sono [camilla](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      modifica la deadline di un'attività nella categoria [visite mediche](category) dal 05/05/2023 al 06/06/2023
+    intent: modify_activity_deadline 
+  - action: modify_activity_deadline_form 
+  - active_loop: modify_activity_deadline_form
+  - user: |
+      [andare dal dentista](activity)
+    intent: inform
+  - action: modify_activity_deadline_form
+  - active_loop: null
+  - action: action_modify_activity
+
+- story: test5 modify deadline of activity with deadline passing all step by step
+  steps:
+  - user: |
+      ciao, sono [michele](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      modifica la deadline dell'attività [correre](activity)
+    intent: modify_activity_deadline 
+  - action: modify_activity_deadline_form 
+  - active_loop: modify_activity_deadline_form
+  - user: |
+      [sport](category)
+    intent: inform
+  - action: modify_activity_deadline_form
+  - user: |
+      da lunedì a venerdì
+    intent: inform
+  - action: modify_activity_deadline_form
+  - active_loop: null
+  - action: action_modify_activity
+
+
+
+########################################################## TEST STORIES: MODIFY ACTIVITY NAME ########################################################## 
+
+####################### passing no deadline but have deadline ####################### 
+- story: test1 modify activity name passing all but no deadline si deadline
+  steps:
+  - user: |
+      ciao, sono [Carola](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      modificare l'attività [parrucchiere]{"entity": "activity", "role": "old"} nella categoria [cura personale](category) con [estetista]{"entity": "activity", "role": "new"}
     intent: modify_activity_name 
   - action: modify_activity_name_form 
   - active_loop: modify_activity_name_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      si
+      sisi
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
   - user: |
-      05/05/2022
+      02/02/2023
     intent: inform
   - action: add_deadline_form
   - slot_was_set:
-    - time: "2022-05-05T00:00:00.000+02:00"
+    - time: "2022-02-02T00:00:00.000+01:00"
   - active_loop: null
   - action: action_modify_activity
 
-
-- story: test modify name of activity passing all but no deadline no deadline
+- story: test2 modify activity name passing all step by step but no deadline si deadline
   steps:
   - user: |
-       sono [Carola](name) e voglio modificare il nome dell'attività [camminata]{"entity": "activity", "role": "old"} nella categoria [sport]{"entity": "category", "role": "new"} con il nome [corsa]{"entity": "activity", "role": "new"}
+      sono [Cristina](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      voglio modificare il nome dell'attività [andare a correre]{"entity": "activity", "role": "old"} 
+    intent: modify_activity_name 
+  - action: modify_activity_name_form 
+  - active_loop: modify_activity_name_form
+  - user: |
+      [cura personale](category)
+    intent: inform
+  - action: modify_activity_name_form 
+  - user: |
+      [nuotare](activity)
+    intent: inform
+  - action: modify_activity_name_form 
+  - active_loop: null  
+  - action: utter_ask_if_deadline
+  - user: |
+      sì
+    intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - user: |
+      02/02/2023
+    intent: inform
+  - action: add_deadline_form
+  - slot_was_set:
+    - time: "2022-02-02T00:00:00.000+01:00"
+  - active_loop: null
+  - action: action_modify_activity
+
+- story: test3 modify activity name passing two of three but no deadline si deadline
+  steps:
+  - user: |
+      ciao, il mio nome è [Alessandro](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      cambia il nome dell'attività [andare al mercato]{"entity": "activity", "role": "old"} nella categoria [faccende domestiche](category)
+    intent: modify_activity_name 
+  - action: modify_activity_name_form 
+  - active_loop: modify_activity_name_form
+  - user: |
+      [fare la spesa](activity)
+    intent: inform
+  - action: modify_activity_name_form 
+  - active_loop: null  
+  - action: utter_ask_if_deadline
+  - user: |
+      sisi
+    intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - user: |
+      07/07/2023
+    intent: inform
+  - action: add_deadline_form
+  - slot_was_set:
+    - time: "2022-07-07T00:00:00.000+01:00"
+  - active_loop: null
+  - action: action_modify_activity
+
+- story: test4 modify activity name passing two of three but no deadline si deadline
+  steps:
+  - user: |
+      il mio nome è [Alessio](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      sostituisci l'attività [mangiare la pizza]{"entity": "activity", "role": "old"} con [andare al pub]{"entity": "activity", "role": "new"}
+    intent: modify_activity_name 
+  - action: modify_activity_name_form 
+  - active_loop: modify_activity_name_form
+  - user: |
+      [tempo libero](category)
+    intent: inform
+  - action: modify_activity_name_form 
+  - active_loop: null  
+  - action: utter_ask_if_deadline
+  - user: |
+      certo
+    intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - user: |
+      04/04/2023
+    intent: inform
+  - action: add_deadline_form
+  - slot_was_set:
+    - time: "2022-04-04T00:00:00.000+01:00"
+  - active_loop: null
+  - action: action_modify_activity
+
+####################### passing no deadline but don't have deadline ####################### 
+
+- story: test1 modify activity name passing all but no deadline no deadline
+  steps:
+  - user: |
+      ciao, sono [Alessandra](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      modificare l'attività [parrucchiere]{"entity": "activity", "role": "old"} nella categoria [cura personale](category) con [estetista]{"entity": "activity", "role": "new"}
     intent: modify_activity_name 
   - action: modify_activity_name_form 
   - active_loop: modify_activity_name_form
@@ -2656,50 +2800,334 @@ stories:
     intent: deny
   - action: action_modify_activity
 
-- story: test modify name of activity passing all also deadline
+- story: test2 modify activity name passing all step by step but no deadline no deadline
   steps:
   - user: |
-       sono [Luca](name) e voglio modificare il nome dell'attività [parrucchiere]{"entity": "activity", "role": "old"} nella categoria [beauty]{"entity": "category", "role": "new"} of 04/04/2022 con il nome [play]{"entity": "activity", "role": "new"}
+      sono [nando](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      voglio modificare il nome dell'attività [andare al parco]{"entity": "activity", "role": "old"} 
+    intent: modify_activity_name 
+  - action: modify_activity_name_form 
+  - active_loop: modify_activity_name_form
+  - user: |
+      [salute personale](category)
+    intent: inform
+  - action: modify_activity_name_form 
+  - user: |
+      [fare yoga](activity)
+    intent: inform
+  - action: modify_activity_name_form 
+  - active_loop: null  
+  - action: utter_ask_if_deadline
+  - user: |
+      nono
+    intent: deny
+  - action: action_modify_activity
+
+- story: test3 modify activity name passing two of three but no deadline no deadline
+  steps:
+  - user: |
+      ciao, il mio nome è [luigi](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      cambia il nome dell'attività [andare in palestra]{"entity": "activity", "role": "old"} nella categoria [dieta](category)
+    intent: modify_activity_name 
+  - action: modify_activity_name_form 
+  - active_loop: modify_activity_name_form
+  - user: |
+      [mangiare sano](activity)
+    intent: inform
+  - action: modify_activity_name_form 
+  - active_loop: null  
+  - action: utter_ask_if_deadline
+  - user: |
+      no, grazie
+    intent: deny
+  - action: action_modify_activity
+
+- story: test4 modify activity name passing two of three but no deadline no deadline
+  steps:
+  - user: |
+      il mio nome è [vito](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      sostituisci l'attività [studiare]{"entity": "activity", "role": "old"} con [esame]{"entity": "activity", "role": "new"}
+    intent: modify_activity_name 
+  - action: modify_activity_name_form 
+  - active_loop: modify_activity_name_form
+  - user: |
+      [università](category)
+    intent: inform
+  - action: modify_activity_name_form 
+  - active_loop: null  
+  - action: utter_ask_if_deadline
+  - user: |
+      negativo
+    intent: deny
+  - action: action_modify_activity
+
+####################### passing also deadline ####################### 
+
+- story: test1 modify activity name passing all also deadline
+  steps:
+  - user: |
+      sono [nicola](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      modifica il nome dell'attività [prendere le medicine]{"entity": "activity", "role": "old"} nella categoria [salute](category) del 04/04/2023 con il nome [prendere la pillola]{"entity": "activity", "role": "new"}
     intent: modify_activity_name
   - slot_was_set:
-      - time: "2022-04-04T00:00:00.000+02:00"
+      - time: "2023-04-04T00:00:00.000+01:00"
   - action: modify_activity_name_form 
   - active_loop: modify_activity_name_form
   - active_loop: null
   - action: action_modify_activity
 
-
-
-#################################### Test Stories Modify Activity Category ######################################
-- story: test modify category of activity passing all but no deadline si deadline
+- story: test2 modify activity name passing all also deadline but in steps
   steps:
   - user: |
-       sono [Alex](name) e voglio modificare la categoria dell'attività [shopping]{"entity": "activity", "role": "new"} per la categoria [personale]{"entity": "category", "role": "old"} in [faccende di casa]{"entity": "category", "role": "new"}
-    intent: modify_activity_category
+      ciao, sono [enzo](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      modificare l'attività [dentista]{"entity": "activity", "role": "old"} del 04/04/2023
+    intent: modify_activity_name
+  - slot_was_set:
+      - time: "2023-04-04T00:00:00.000+01:00"
+  - action: modify_activity_name_form 
+  - active_loop: modify_activity_name_form
+  - user: |
+      [salute personale](category)
+    intent: inform
+  - action: modify_activity_name_form 
+  - user: |
+      [andare dal dottore](activity)
+    intent: inform
+  - action: modify_activity_name_form
+  - active_loop: null
+  - action: action_modify_activity
+
+- story: test3 modify activity name passing all also deadline but in steps
+  steps:
+  - user: |
+      il mio nome è [camilla](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      sostituisci il nome dell'attività [fare i compiti]{"entity": "activity", "role": "old"} nella categoria [scuola] del 05/05/2023
+    intent: modify_activity_name
+  - slot_was_set:
+      - time: "2023-05-05T00:00:00.000+01:00"
+  - action: modify_activity_name_form 
+  - active_loop: modify_activity_name_form
+  - user: |
+      [studiare per interrogazione](activity)
+    intent: inform
+  - action: modify_activity_name_form
+  - active_loop: null
+  - action: action_modify_activity
+
+- story: test4 modify activity name passing all also deadline but in steps
+  steps:
+  - user: |
+      ciao, il mio nome è [mattia](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      voglio modificare il nome dell'attività [correre]{"entity": "activity", "role": "old"} del 06/06/2023 con il nome [fare jogging]{"entity": "activity", "role": "new"}
+    intent: modify_activity_name
+  - slot_was_set:
+      - time: "2023-04-04T00:00:00.000+01:00"
+  - action: modify_activity_name_form 
+  - active_loop: modify_activity_name_form
+  - user: |
+      [salute personale](category)
+    intent: inform
+  - action: modify_activity_name_form 
+  - active_loop: null
+  - action: action_modify_activity
+
+
+
+########################################################## TEST STORIES: MODIFY ACTIVITY CATEGORY ########################################################## 
+
+####################### passing no deadline but have deadline ####################### 
+- story: test1 modify activity category passing all but no deadline si deadline
+  steps:
+  - user: |
+      ciao, sono [Carola](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      modificare la categoria [cura personale]{"entity": "category", "role": "old"} dell'attività [parrucchiere](activity) con la categoria [svago]{"entity": "category", "role": "new"}
+    intent: modify_activity_category 
   - action: modify_activity_category_form 
   - active_loop: modify_activity_category_form
   - active_loop: null
   - action: utter_ask_if_deadline
   - user: |
-      si
+      sisi
     intent: affirm
   - action: add_deadline_form
   - active_loop: add_deadline_form
   - user: |
-      05/05/2022
+      02/02/2023
     intent: inform
   - action: add_deadline_form
   - slot_was_set:
-    - time: "2022-05-05T00:00:00.000+02:00"
+    - time: "2022-02-02T00:00:00.000+01:00"
   - active_loop: null
   - action: action_modify_activity
 
-
-- story: test modify category of activity passing all but no deadline no deadline
+- story: test2 modify activity category passing all step by step but no deadline si deadline
   steps:
   - user: |
-       sono [Ferdi](name) e voglio modificare la categoria dell'attività [camminata]{"entity": "activity", "role": "new"}, categoria [sport]{"entity": "category", "role": "old"} con la categoria [palestra]{"entity": "category", "role": "new"}
-    intent: modify_activity_category
+      sono [Cristina](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      voglio modificare la categoria dell'attivtà [andare a correre](activity)
+    intent: modify_activity_category 
+  - action: modify_activity_category_form 
+  - active_loop: modify_activity_category_form
+  - user: |
+      [cura personale]{"entity": "category", "role": "old"}
+    intent: inform
+  - action: modify_activity_category_form 
+  - user: |
+      [dieta]{"entity": "category", "role": "new"}
+    intent: inform
+  - action: modify_activity_category_form 
+  - active_loop: null  
+  - action: utter_ask_if_deadline
+  - user: |
+      sì
+    intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - user: |
+      02/02/2023
+    intent: inform
+  - action: add_deadline_form
+  - slot_was_set:
+    - time: "2022-02-02T00:00:00.000+01:00"
+  - active_loop: null
+  - action: action_modify_activity
+
+- story: test3 modify activity category passing two of three but no deadline si deadline
+  steps:
+  - user: |
+      ciao, il mio nome è [Alessandro](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      cambia la categoria [faccende domestiche]{"entity": "category", "role": "old"} dell'attività [andare al mercato](activity)
+    intent: modify_activity_category 
+  - action: modify_activity_category_form 
+  - active_loop: modify_activity_category_form
+  - user: |
+      [casa]{"entity": "category", "role": "new"}
+    intent: inform
+  - action: modify_activity_category_form 
+  - active_loop: null  
+  - action: utter_ask_if_deadline
+  - user: |
+      sisi
+    intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - user: |
+      07/07/2023
+    intent: inform
+  - action: add_deadline_form
+  - slot_was_set:
+    - time: "2022-07-07T00:00:00.000+01:00"
+  - active_loop: null
+  - action: action_modify_activity
+
+- story: test4 modify activity category passing two of three but no deadline si deadline
+  steps:
+  - user: |
+      il mio nome è [Alessio](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      sostituisci la categoria [svago]{"entity": "category", "role": "old"} di un'attività con la categoria [tempo libero]{"entity": "category", "role": "new"} 
+    intent: modify_activity_category 
+  - action: modify_activity_category_form 
+  - active_loop: modify_activity_category_form
+  - user: |
+      [andare al pub](activity)
+    intent: inform
+  - action: modify_activity_category_form 
+  - active_loop: null  
+  - action: utter_ask_if_deadline
+  - user: |
+      certo
+    intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - user: |
+      04/04/2023
+    intent: inform
+  - action: add_deadline_form
+  - slot_was_set:
+    - time: "2022-04-04T00:00:00.000+01:00"
+  - active_loop: null
+  - action: action_modify_activity
+
+####################### passing no deadline but don't have deadline ####################### 
+
+- story: test1 modify activity category passing all but no deadline no deadline
+  steps:
+  - user: |
+      ciao, sono [Alessandra](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      modificare la categoria [tempo libero]{"entity": "category", "role": "old"} dell'attività [estetista](activity) con la categoria [cura personale](category) {"entity": "category", "role": "new"} 
+    intent: modify_activity_category 
   - action: modify_activity_category_form 
   - active_loop: modify_activity_category_form
   - active_loop: null
@@ -2709,15 +3137,187 @@ stories:
     intent: deny
   - action: action_modify_activity
 
-
-- story: test modify category of activity passing all also deadline
+- story: test2 modify activity category passing all step by step but no deadline no deadline
   steps:
   - user: |
-       sono [Lucia](name) e voglio cambiare il nome della categoria relativa all'attività [parrucchiere](activity) da [beauty]{"entity": "category", "role": "old"} per il 04/04/2022 a [personale]{"entity": "category", "role": "new"}
+      sono [nando](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      voglio modificare la categoria dell'attività [andare al parco](activity)
+    intent: modify_activity_category 
+  - action: modify_activity_category_form 
+  - active_loop: modify_activity_category_form
+  - user: |
+      [salute personale]{"entity": "category", "role": "old"}
+    intent: inform
+  - action: modify_activity_category_form 
+  - user: |
+      [sport]{"entity": "category", "role": "new"}
+    intent: inform
+  - action: modify_activity_category_form 
+  - active_loop: null  
+  - action: utter_ask_if_deadline
+  - user: |
+      nono
+    intent: deny
+  - action: action_modify_activity
+
+- story: test3 modify activity category passing two of three but no deadline no deadline
+  steps:
+  - user: |
+      ciao, il mio nome è [luigi](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      cambia il nome della categoria [dieta]{"entity": "category", "role": "old"} dell'attività [andare in palestra](activity)
+    intent: modify_activity_category 
+  - action: modify_activity_category_form 
+  - active_loop: modify_activity_category_form
+  - user: |
+      [salute]{"entity": "category", "role": "new"}
+    intent: inform
+  - action: modify_activity_category_form 
+  - active_loop: null  
+  - action: utter_ask_if_deadline
+  - user: |
+      no, grazie
+    intent: deny
+  - action: action_modify_activity
+
+- story: test4 modify activity category passing two of three but no deadline no deadline
+  steps:
+  - user: |
+      il mio nome è [vito](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      sostituisci la categoria [università]{"entity": "category", "role": "old"} di un'attività con la categoria [cultura]{"entity": "category", "role": "new"}
+    intent: modify_activity_category 
+  - action: modify_activity_category_form 
+  - active_loop: modify_activity_category_form
+  - user: |
+      [esame](activity)
+    intent: inform
+  - action: modify_activity_category_form 
+  - active_loop: null  
+  - action: utter_ask_if_deadline
+  - user: |
+      negativo
+    intent: deny
+  - action: action_modify_activity
+
+####################### passing also deadline ####################### 
+
+- story: test1 modify activity category passing all also deadline
+  steps:
+  - user: |
+      sono [nicola](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      modifica il nome della categoria [salute]{"entity": "category", "role": "old"} dell'attività [prendere le medicine](activity) del 04/04/2023 con il nome [cure mediche]{"entity": "category", "role": "new"}
     intent: modify_activity_category
   - slot_was_set:
-      - time: "2022-04-04T00:00:00.000+02:00"
+      - time: "2023-04-04T00:00:00.000+01:00"
   - action: modify_activity_category_form 
   - active_loop: modify_activity_category_form
   - active_loop: null
   - action: action_modify_activity
+
+- story: test2 modify activity category passing all also deadline but in steps
+  steps:
+  - user: |
+      ciao, sono [enzo](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      modificare la categoria [svago]{"entity": "category", "role": "old"} di un'attività del 04/04/2023
+    intent: modify_activity_category
+  - slot_was_set:
+      - time: "2023-04-04T00:00:00.000+01:00"
+  - action: modify_activity_category_form 
+  - active_loop: modify_activity_category_form
+  - user: |
+      [mostra d'arte](activity)
+    intent: inform
+  - action: modify_activity_category_form 
+  - user: |
+      [cultura](category)
+    intent: inform
+  - action: modify_activity_category_form
+  - active_loop: null
+  - action: action_modify_activity
+
+- story: test3 modify activity category passing all also deadline but in steps
+  steps:
+  - user: |
+      il mio nome è [camilla](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      sostituisci il nome della categoria [scuola]{"entity": "category", "role": "old"} dell'attività [fare i compiti](activity) del 05/05/2023
+    intent: modify_activity_category
+  - slot_was_set:
+      - time: "2023-05-05T00:00:00.000+01:00"
+  - action: modify_activity_category_form 
+  - active_loop: modify_activity_category_form
+  - user: |
+      [imminente](category)
+    intent: inform
+  - action: modify_activity_category_form
+  - active_loop: null
+  - action: action_modify_activity
+
+- story: test4 modify activity category passing all also deadline but in steps
+  steps:
+  - user: |
+      ciao, il mio nome è [mattia](name)
+    intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - user: |
+      voglio modificare il nome della categoria [sport]{"entity": "activity", "role": "old"} di un'attività del 06/06/2023 con il nome [salute fisica]{"entity": "category", "role": "new"}
+    intent: modify_activity_category
+  - slot_was_set:
+      - time: "2023-04-04T00:00:00.000+01:00"
+  - action: modify_activity_category_form 
+  - active_loop: modify_activity_category_form
+  - user: |
+      [pilates](activity)
+    intent: inform
+  - action: modify_activity_category_form 
+  - active_loop: null
+  - action: action_modify_activity
+
+
+
+
+
+
+
+
+
+
+
+
