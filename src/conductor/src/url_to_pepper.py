@@ -15,24 +15,24 @@ def callback(msg):
     try:
         resp = None
         if "js" in msg.data:
-            print("Injected JS")
+            rospy.loginfo("Injected JS")
             script = """var inject = document.getElementById("clickMe");
     inject.click();"""
             resp = execute_js(script).ack
         if 'reload' in msg.data:
-            print("Injected Reload")
+            rospy.loginfo("Injected Reload")
             script = """var reload = document.getElementById("refresh");
     reload.click();"""
             resp = execute_js(script).ack
         elif 'js' not in msg.data and 'reload' not in msg.data:
-            print('Send URL')
+            rospy.loginfo('Send URL')
             resp = load_url(msg.data).ack
 
         if resp!= 'ACK':
-            print("There is an error in msg, maybe")
+            rospy.loginfo("There is an error in msg, maybe")
             
     except rospy.ServiceException as e:
-        print("Service call failed: %s", e)
+        rospy.loginfo("Service call failed: %s", e)
     
 def listener():
     rospy.Subscriber("toShow", String, callback)

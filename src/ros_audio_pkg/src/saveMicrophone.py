@@ -20,10 +20,10 @@ count = 10
 def callback(audio):
     data = np.array(audio.data,dtype=np.int16)
     audio_data = AudioData(data.tobytes(), 16000, 2)
-    print('salvo file audio')
+    rospy.loginfo('salvo file audio')
     with open(os.path.dirname(__file__)+"/../audioSample/"+str(count)+"_audio_file.wav" , 'wb') as file:
         file.write(audio_data.get_wav_data())
-    print('salvato!!')
+    rospy.loginfo('salvato!!')
 
 
 

@@ -42,7 +42,6 @@ faceNet = cv2.dnn.readNet(faceModel, faceProto)
 
 rospy.init_node('detector_face_node')
 pub = rospy.Publisher('face_reidentification', Detection2DArray, queue_size=2)
-pub_justShow = rospy.Publisher('justShow', Image, queue_size=2)
 pub2 = rospy.Publisher('isListening', Bool, queue_size=10)
 
 parser = OptionParser()
@@ -70,8 +69,7 @@ def detect_face(msg):
         if listen_on_detect == True: pub2.publish(Bool(True))
     else:
         if listen_on_detect == True: pub2.publish(Bool(False))
-        pub_justShow.publish(msg)
-        print('no face found')
+        rospy.loginfo('no face found')
 
 si = rospy.Subscriber("in_rgb1", Image, detect_face)
 
@@ -79,4 +77,4 @@ try:
     rospy.spin()
 
 except KeyboardInterrupt:
-    print("Shutting down")
+    rospy.loginfo("Shutting down")

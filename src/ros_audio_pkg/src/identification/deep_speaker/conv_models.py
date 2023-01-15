@@ -157,8 +157,8 @@ def _train():
     # y_softmax = np.random.uniform(size=(6, 100))
     # dsm = DeepSpeakerModel(batch_input_shape=(None, 32, 64, 4), include_softmax=True, num_speakers_softmax=100)
     # dsm.m.compile(optimizer=Adam(lr=0.01), loss='categorical_crossentropy')
-    # print(dsm.m.predict(x).shape)
-    # print(dsm.m.evaluate(x, y_softmax))
+    # rospy.loginfo(dsm.m.predict(x).shape)
+    # rospy.loginfo(dsm.m.evaluate(x, y_softmax))
     # w = dsm.get_weights()
     dsm = DeepSpeakerModel(batch_input_shape=(None, 32, 64, 4), include_softmax=False)
     # dsm.m.set_weights(w)
@@ -172,9 +172,9 @@ def _train():
     # batch = np.vstack((anchor, positive, negative))
     # x = batch
     # y = np.zeros(shape=(len(batch), 512))  # not important.
-    # print('Starting to fit...')
+    # rospy.loginfo('Starting to fit...')
     # while True:
-    #     print(dsm.m.train_on_batch(x, y))
+    #     rospy.loginfo(dsm.m.train_on_batch(x, y))
 
     # should not work... and it does not work!
     unit_batch_size = 20
@@ -182,9 +182,9 @@ def _train():
     batch = np.vstack((negative, negative, negative))
     x = batch
     y = np.zeros(shape=(len(batch), 512))  # not important.
-    print('Starting to fit...')
+    rospy.loginfo('Starting to fit...')
     while True:
-        print(dsm.m.train_on_batch(x, y))
+        rospy.loginfo(dsm.m.train_on_batch(x, y))
 
 
 def _test_checkpoint_compatibility():

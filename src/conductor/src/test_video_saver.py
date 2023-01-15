@@ -20,7 +20,7 @@ def listener():
      #qua fare un'array in cui mandiamo entrambe le cose 
     try:
         while not rospy.is_shutdown(): 
-            print('added message')
+            rospy.loginfo('added message')
             img = rospy.wait_for_message("in_rgb1", Image) 
             img = bridge.imgmsg_to_cv2(img)
             img = cv2.resize(img, size)
@@ -28,7 +28,7 @@ def listener():
             cv2.imshow("Emotion Demo", img)
             k = cv2.waitKey(5)
     except rospy.exceptions.ROSInterruptException:
-        print("vado in close in massiccianza e salvo il file")
+        rospy.loginfo("vado in close in massiccianza e salvo il file")
         out.release()
         cv2.destroyAllWindows()
 

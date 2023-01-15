@@ -22,7 +22,7 @@ class Session:
         try:
             self.session.connect("tcp://" + self.ip + ":" + str(self.port))
         except RuntimeError:
-            print("Can't connect to Naoqi at ip \"" + self.ip + "\" on port " + str(self.port) + ".\n "
+            rospy.loginfo("Can't connect to Naoqi at ip \"" + self.ip + "\" on port " + str(self.port) + ".\n "
                                                                                                  "Please check your script arguments. Run with -h option for help.")
             sys.exit(1)
 

@@ -32,11 +32,11 @@ def find_device_index():
 
 device_index = find_device_index()
 if device_index < 0:
-    print('No ReSpeaker USB device found')
+    rospy.loginfo('No ReSpeaker USB device found')
     num_microphone = 1
     # num_microphone = 1
 else:
-    print('Find ReSpeaker USB Device')
+    rospy.loginfo('Find ReSpeaker USB Device')
     num_microphone = 4
 
 
@@ -68,14 +68,14 @@ m = sr.Microphone(device_index=None,
 # we only need to calibrate once, before we start listening
 # necessario per andare a calibrare il segnale.
 # se c'e molto rumore non riesce a comrpedenre bene, vado quindi a sistemare questa cosa
-print("Calibrating...")
+rospy.loginfo("Calibrating...")
 with m as source:
     r.adjust_for_ambient_noise(source,duration=3)  
-print("Calibration finished")
+rospy.loginfo("Calibration finished")
 
 # start listening in the background
 # `stop_listening` is now a function that, when called, stops background listening
-print("Recording...")
+rospy.loginfo("Recording...")
 stop_listening = r.listen_in_background(m, callback)
 
 
@@ -85,10 +85,10 @@ def rcv_person(msg):
     if msg.data != old_bool:
         if not msg.data:
             stop_listening()
-            print('stop ascolto')
+            rospy.loginfo('stop ascolto')
         else:
             stop_listening = r.listen_in_background(m, callback)
-            print('asolto')
+            rospy.loginfo('asolto')
         old_bool = msg.data
         
 

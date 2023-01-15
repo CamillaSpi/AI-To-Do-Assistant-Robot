@@ -26,10 +26,10 @@ def callback(audio):
     try:
         #t1 = datetime.now()
         spoken_text= r.recognize_google(audio_data,language="it-IT")
-        print("Google Speech Recognition pensa tu abbia detto: " + spoken_text)
+        rospy.loginfo("Google Speech Recognition pensa tu abbia detto: " + spoken_text)
         #t2 = datetime.now()
         #delta = t2-t1
-        #print('inference time ' , delta.total_seconds())
+        #rospy.loginfo('inference time ' , delta.total_seconds())
         #audioAndText = AudioAndText()
         #audioAndText.spoken_text = spoken_text
         #audioAndText.audioData = audio.data
@@ -37,10 +37,10 @@ def callback(audio):
         time.sleep(0.2)
         pub2.publish(spoken_text)
     except sr.UnknownValueError:
-        print("Google Speech Recognition non riesce a capire da questo file audio")
+        rospy.loginfo("Google Speech Recognition non riesce a capire da questo file audio")
         pubSpeech.publish("Scusa, puoi ripetere")
     except sr.RequestError as e:
-        print("Could not request results from Google Speech Recognition service; {0}".format(e))
+        rospy.loginfo("Could not request results from Google Speech Recognition service; {0}".format(e))
 
 def listener():
     rospy.Subscriber("mic_data", Int16MultiArray, callback)

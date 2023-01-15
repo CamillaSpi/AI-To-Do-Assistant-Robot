@@ -26,7 +26,7 @@ def rcv_identity(msg):
         identity = 'unrecognized user'
         if id >= 0:
             identity = 'recognized user'
-        #print(identity)
+        #rospy.loginfo(identity)
         cv2.putText(frame_face, identity, (round(d.bbox.center.y-d.bbox.size_y/2+d.bbox.size_x //20), round(d.bbox.center.x-d.bbox.size_x/2+d.bbox.size_y//20)), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2, cv2.LINE_AA)
     cv2.imshow("identity Demo", frame_face)
     # cv2.imwrite(REF_PATH + '/../cameraAcquisition/framePepper'+str(i)+'.jpg',frame_face)
@@ -39,4 +39,4 @@ try:
     rospy.spin()
 
 except KeyboardInterrupt:
-    print("Shutting down")
+    rospy.loginfo("Shutting down")

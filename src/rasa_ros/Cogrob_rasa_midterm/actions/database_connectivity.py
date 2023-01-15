@@ -149,7 +149,7 @@ class Database:
       conn.commit()
       return True
     except sqlite3.IntegrityError as e:
-        print(e)
+        rospy.loginfo(e)
         return False
 
   @staticmethod
@@ -172,7 +172,7 @@ class Database:
       conn.commit()
       return True
     except sqlite3.IntegrityError as e :
-      print(e)
+      rospy.loginfo(e)
       return False
 
   @staticmethod
@@ -218,20 +218,20 @@ class Database:
       query_dict['query'] = query_dict['query'].replace("activity,category,deadline,completed,reminder","*")
       return len(rows),query_dict
     else:
-      toPrint = None
+      torospy.loginfo = None
       if(len(rows)>0):  
         category = ["Attivita","Categoria","DeadLine","Completata"]
         number = [i for i in range(1,len(rows)+1)]
         row_format ="{:>20}" * (len(category) + 1)
-        toPrint = ""
-        toPrint += (row_format.format("", *category)) + "\n"
+        torospy.loginfo = ""
+        torospy.loginfo += (row_format.format("", *category)) + "\n"
         for team, row in zip(number, rows):
             if (row[2]):
               row = (row[0],row[1],row[2][:10]+ " "+row[2][11:16],row[3])
             else:
               row = (row[0],row[1],"None",row[3])
-            toPrint += (row_format.format(team, *row)) + "\n"
-      return toPrint,None
+            torospy.loginfo += (row_format.format(team, *row)) + "\n"
+      return torospy.loginfo,None
       
 
   @staticmethod
@@ -343,10 +343,10 @@ class Database:
         SELECT * FROM unfoldings WHERE activity == ? 
       ''', (activity,))
     if(len(cur.fetchall()) > 0 ):
-      print("ci sono altri con questa activity")
+      rospy.loginfo("ci sono altri con questa activity")
       return
     else:
-      print("nessuno la tiene, elimino in activities")
+      rospy.loginfo("nessuno la tiene, elimino in activities")
       conn.execute('''
         DELETE FROM activities WHERE name == ? 
       ''', (activity,))
@@ -358,10 +358,10 @@ class Database:
         SELECT * FROM possessions WHERE category == ? 
       ''', (category,))
     if(len(cur.fetchall()) > 0 ):
-      print("ci sono altri con questa category")
+      rospy.loginfo("ci sono altri con questa category")
       return
     else:
-      print("nessuno la tiene, elimino in categories")
+      rospy.loginfo("nessuno la tiene, elimino in categories")
       conn.execute('''
         DELETE FROM categories WHERE name == ? 
       ''', (category,))
@@ -395,7 +395,7 @@ class Database:
 ###ERRORI QUI DENTRO 
   @staticmethod
   def modifyCategory(ID, category, category_new):
-    print("query eseguita:", ID, category)
+    rospy.loginfo("query eseguita:", ID, category)
     cur.execute('''
       SELECT * FROM possessions WHERE ID == ? AND category == ?
     ''', (ID, category))
@@ -409,7 +409,7 @@ class Database:
         m.update(str(category_new).encode())
         m.digest()
         id_possession = m.hexdigest()
-        print(category_new)
+        rospy.loginfo(category_new)
         conn.execute('''
           UPDATE possessions SET id_possession = ?, category = ? WHERE ID == ? AND category == ?;
         ''', (id_possession,category_new,ID,category))
@@ -471,7 +471,7 @@ class Database:
       else:
         return False
     except sqlite3.IntegrityError as e:
-      print(e)
+      rospy.loginfo(e)
       return False
 
   @staticmethod
