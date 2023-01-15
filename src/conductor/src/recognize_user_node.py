@@ -15,7 +15,6 @@ pub2 = rospy.Publisher('toSpeech', String, queue_size=10)
 
 pub_recogizer_node = rospy.Publisher('startRegistration', Bool, queue_size=10)
 
-
 natural_learning_voice = rospy.Publisher('naturalLearningVoice', Int16, queue_size=10)
 
 # Init node
@@ -64,15 +63,13 @@ def recognize_user(text_to_send):
             toSend.msg = text_to_send.data
             toSend.id = id_max
             pub1.publish(toSend)
-            print('ti riconosco',toSend)
+            print('Utente riconosciuto')
 
             # natural learning 
             if id_voice_prob_arr[id_max] < 0.35:
                 natural_learning_voice.publish(id_max)
-               
-
         else:
-            print('non ti  riconosco') #qui bisogna avviare la registrazione
+            print('Utente Non riconosciuto, inizio registrazione') #qui bisogna avviare la registrazione
             pub_recogizer_node.publish(Bool(True))
             reg_response = startVoiceRegistration()
             print('ricevuta risposta'  ,reg_response)

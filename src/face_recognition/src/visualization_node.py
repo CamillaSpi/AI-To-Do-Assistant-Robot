@@ -33,20 +33,7 @@ def rcv_identity(msg):
     # i+=1
     cv2.waitKey(5)
 
-def justShow(msg):
-    global image
-    global i 
-    #rospy.loginfo('detection here')
-    # frame_face = ros_numpy.numpify(msg)
-    # cv2.imwrite(REF_PATH + '/../cameraAcquisition/framePepper'+str(i)+'.jpg',frame_face)
-    # i+=1
-    # print('justShow')
-
-
 sd = rospy.Subscriber("identity", Detection2DArray, rcv_identity)
-
-ss = rospy.Subscriber("justShow", Image, justShow)
-
 
 try:
     rospy.spin()

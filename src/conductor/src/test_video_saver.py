@@ -21,7 +21,7 @@ def listener():
     try:
         while not rospy.is_shutdown(): 
             print('added message')
-            img = rospy.wait_for_message("test_in_rgb1", Image) 
+            img = rospy.wait_for_message("in_rgb1", Image) 
             img = bridge.imgmsg_to_cv2(img)
             img = cv2.resize(img, size)
             out.write(img)

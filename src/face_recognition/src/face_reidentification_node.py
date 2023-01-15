@@ -223,7 +223,7 @@ def recognize():
                 'face_reidentification', Detection2DArray)
             to_publish = face_reidentification(msg)
             pub.publish(to_publish)
-        print('ciao sono uscito dallo shutdown')
+        print('vado in close Face')
         save_identities()
 
     except rospy.exceptions.ROSInterruptException:
