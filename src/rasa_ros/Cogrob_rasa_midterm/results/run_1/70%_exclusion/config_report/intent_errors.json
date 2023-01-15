@@ -1,0 +1,306 @@
+[
+  {
+    "text": "ci vediamo più tardi",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.3014805316925049
+    }
+  },
+  {
+    "text": "buona giornata",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.8197534084320068
+    }
+  },
+  {
+    "text": "Per favore aiutami",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "view_categories",
+      "confidence": 0.11555521190166473
+    }
+  },
+  {
+    "text": "sisi",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9922838807106018
+    }
+  },
+  {
+    "text": "affermativo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.3304792642593384
+    }
+  },
+  {
+    "text": "Estremamente buono",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.363089919090271
+    }
+  },
+  {
+    "text": "Così buono",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.3778688907623291
+    }
+  },
+  {
+    "text": "Sono stupefacente",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.6942934989929199
+    }
+  },
+  {
+    "text": "La mia giornata è stata orribile",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.6818300485610962
+    }
+  },
+  {
+    "text": "Non bene",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.713960587978363
+    }
+  },
+  {
+    "text": "sapresti dirmi chi sono?",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.8434648513793945
+    }
+  },
+  {
+    "text": "cancella le mie attività",
+    "intent": "clean_activities",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.3453407883644104
+    }
+  },
+  {
+    "text": "per favore, elimina le attività",
+    "intent": "clean_activities",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.3884631097316742
+    }
+  },
+  {
+    "text": "posso vedere le mie categorie?",
+    "intent": "view_categories",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.4823961853981018
+    }
+  },
+  {
+    "text": "fammi vedere tutte le mie categorie",
+    "intent": "view_categories",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.43529626727104187
+    }
+  },
+  {
+    "text": "non posso dimenticare di fare gli esercizi alle 19:00",
+    "intent": "remind_me_of",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.26279327273368835
+    }
+  },
+  {
+    "text": "aiutami a non dimenticare l'attività studio nella categoria scuola per domani",
+    "intent": "remind_me_of",
+    "intent_prediction": {
+      "name": "remove_item",
+      "confidence": 0.3043397068977356
+    }
+  },
+  {
+    "text": "imposta un promemoria",
+    "intent": "remind_me_of",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.47968247532844543
+    }
+  },
+  {
+    "text": "cambiare la categoria università con la categoria cura della persona",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.9734221696853638
+    }
+  },
+  {
+    "text": "trasformare la categoria palestra in tempo libero",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.9740533828735352
+    }
+  },
+  {
+    "text": "voglio modificare il nome di una categoria",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.7942219972610474
+    }
+  },
+  {
+    "text": "per favore, cambiare la categoria cura della persona con la categoria università",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.9130755066871643
+    }
+  },
+  {
+    "text": "per favore, variare la categoria finanza nella categoria banca",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.5499032139778137
+    }
+  },
+  {
+    "text": "inserisci la categoria farmaci",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.6901369690895081
+    }
+  },
+  {
+    "text": "viao, voglio mettere la categoria genitori",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "modify_category",
+      "confidence": 0.578632652759552
+    }
+  },
+  {
+    "text": "ciao, inserisci la seguente divertimento",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9999949336051941
+    }
+  },
+  {
+    "text": "non voglio usare la categoria eventi",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.6231573820114136
+    }
+  },
+  {
+    "text": "non voglio usare la categoria medico",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.712687075138092
+    }
+  },
+  {
+    "text": "metti non completata l'attività cena fuori nella categoria svago",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.7607676982879639
+    }
+  },
+  {
+    "text": "imposta incompiuta andare a correre",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.7583268880844116
+    }
+  },
+  {
+    "text": "ciao, metti incompiuta l'attività jogging in salute fisica",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9786319732666016
+    }
+  },
+  {
+    "text": "per l'attività andare in farmacia modificare la categoria salute personale in salute",
+    "intent": "modify_activity_category",
+    "intent_prediction": {
+      "name": "modify_activity_deadline",
+      "confidence": 0.8670384883880615
+    }
+  },
+  {
+    "text": "rimuovi l'attività boxe nella categoria settimanale",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.6032005548477173
+    }
+  },
+  {
+    "text": "rimuovi dentista nella categoria assistenza sanitaria alle 22:20",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.5386542677879333
+    }
+  },
+  {
+    "text": "ciao, voglio rimuovere un'attività dall'elenco ricreazione",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9958631992340088
+    }
+  },
+  {
+    "text": "nik",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.32139915227890015
+    }
+  },
+  {
+    "text": "metti fare shopping",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.99968022108078
+    }
+  },
+  {
+    "text": "metti fare una doccia in cura personale alle 4:25",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.4889209270477295
+    }
+  }
+]

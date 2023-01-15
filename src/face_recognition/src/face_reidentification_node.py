@@ -40,13 +40,13 @@ def save_identities():
     global labels
     global number_of_users
     to_save = {'dataset': database, 'labels': labels,'number_of_users':number_of_users}
-    print("sono in save")
+    rospy.loginfo("sono in save")
     with open(REF_PATH + '/../dataBase/json_data.json', 'w') as out_file:
         json.dump(to_save, out_file, cls=NumpyArrayEncoder)
 
 
 def load_identities():
-    print("sono in load")
+    rospy.loginfo("sono in load")
     try:
         with open(REF_PATH + '/../dataBase/json_data.json', 'r') as in_file:
             tmp = json.load(in_file)
@@ -119,7 +119,11 @@ def dist2id(distance, y, ths, norm=False, mode='avg', filter_under_th=False):
 
     ids_prob = np.array(ids_prob)/1000
     ids_prob_soft = special.softmax(ids_prob)
-    return ids[np.argmax(ids_prob)], ids_prob_soft
+
+    idmax = ids[np.argmax(ids_prob)]
+    if ids_prob_soft[idmax] < 0.75:
+        idmax = -1
+    return idmax, ids_prob_soft
 
 
 def extract_features(face_reco_model, filename):
@@ -139,7 +143,7 @@ def registration(msg):
     global labels
     lock.acquire()
     t1 = datetime.now()
-    print('non ti conosco... Rimani fermo ')
+    rospy.loginfo('non ti conosco... Rimani fermo ')
     for x in range(10):
         msg = rospy.wait_for_message('face_reidentification', Detection2DArray)
         im = ros_numpy.numpify(msg.detections[0].source_img)
@@ -156,7 +160,7 @@ def registration(msg):
     number_of_users +=1
     lock.release()
     t2 = datetime.now()
-    print('la procedura di registrazione ha impiegato', (t2-t1))
+    rospy.loginfo('la procedura di registrazione ha impiegato', (t2-t1))
 
 
 def elaboration(d, im):
@@ -212,20 +216,20 @@ def face_reidentification(msg):
 def recognize():
     s = rospy.Service('videoLabelServices', video_detect_user, handle_service)
     rospy.logdebug('image server READY.')
-    print("vado sotto lo spin")
+    rospy.loginfo("vado sotto lo spin")
     try:
         while not rospy.is_shutdown():
             msg = rospy.wait_for_message(
                 'face_reidentification', Detection2DArray)
             to_publish = face_reidentification(msg)
             pub.publish(to_publish)
-        print('ciao sono uscito dallo shutdown')
+        rospy.loginfo('vado in close Face')
         save_identities()
 
     except rospy.exceptions.ROSInterruptException:
-        print("vado in close Face")
+        rospy.loginfo("vado in close Face")
         save_identities()
-        print("Salvato db face")
+        rospy.loginfo("Salvato db face")
 
 def handle_service(req):
     global actualLabels
@@ -236,7 +240,7 @@ def handle_service(req):
     try:
         actualLabels.layout.dim.append(thing)
     except NameError:
-        print("in except")
+        rospy.loginfo("in except")
         actualLabels.data = []
     lock.release()
     return actualLabels

@@ -18,7 +18,7 @@ from tqdm import tqdm
 REF_PATH = os.path.dirname(os.path.abspath(__file__))
 
 def load_identities():
-    print("sono in load")
+    rospy.loginfo("sono in load")
     try:
         with open(REF_PATH + '/../dataBase/json_data.json', 'r') as in_file:
             tmp = json.load(in_file)
@@ -152,7 +152,7 @@ for y_test in range(0,number_of_known_people):
     person = []
 
 
-    print(person_path)
+    rospy.loginfo(person_path)
     for filename in tqdm(glob(os.path.join(person_path,'*.png'))):
         count +=1
         y_prediction = predict_identity(cv2.imread(filename))
@@ -169,5 +169,5 @@ sn.heatmap(df_cm, annot=True, annot_kws={"size": 16}) # font size
 
 plt.show()
 
-print("the accuracy is {:.2f}".format(accuracy/count))
+rospy.loginfo("the accuracy is {:.2f}".format(accuracy/count))
         

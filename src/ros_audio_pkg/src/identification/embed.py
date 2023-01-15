@@ -22,7 +22,7 @@ def embedd(X, y, ths, model, preprocess_input=None):
             X[i]) if preprocess_input is not None else X[i]
 
         if x_p is None:
-            print("error i=%d, name=%s" % (i, y[i]))
+            rospy.loginfo("error i=%d, name=%s" % (i, y[i]))
             continue
 
         emb = model.predict(x_p)[0]

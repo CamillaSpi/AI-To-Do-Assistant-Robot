@@ -1,0 +1,162 @@
+[
+  {
+    "text": "tu chi sei?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.9635436534881592
+    }
+  },
+  {
+    "text": "buona notte",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6468222141265869
+    }
+  },
+  {
+    "text": "arrivederci",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.3286644220352173
+    }
+  },
+  {
+    "text": "si",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.4415380358695984
+    }
+  },
+  {
+    "text": "Meraviglioso",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9999077916145325
+    }
+  },
+  {
+    "text": "Stupefacente",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9989150166511536
+    }
+  },
+  {
+    "text": "Sono triste",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.705529510974884
+    }
+  },
+  {
+    "text": "assolutamente no",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.4346737563610077
+    }
+  },
+  {
+    "text": "no grazie",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.334337443113327
+    }
+  },
+  {
+    "text": "nono",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9894953966140747
+    }
+  },
+  {
+    "text": "mostra attività",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999780058860779
+    }
+  },
+  {
+    "text": "quali sono le mie attività inserite?",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9701441526412964
+    }
+  },
+  {
+    "text": "aggiungi sport",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "nuova categoria da inserire: finanze",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9935247898101807
+    }
+  },
+  {
+    "text": "inserisci tempo libero",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "nuova categoria da aggiungere: progetti",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "metti completata l'attività cena fuori nella categoria svago",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9999549388885498
+    }
+  },
+  {
+    "text": "metti terminata l'attività acquistare una bicicletta in negozio",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9977695345878601
+    }
+  },
+  {
+    "text": "elimina fare i compiti",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.7357861995697021
+    }
+  },
+  {
+    "text": "chiara",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.2587852478027344
+    }
+  }
+]

@@ -1,0 +1,240 @@
+{
+  "view_activities": {
+    "precision": 1.0,
+    "recall": 0.25,
+    "f1-score": 0.4,
+    "support": 8,
+    "confused_with": {
+      "view_categories": 3,
+      "add_item": 2
+    }
+  },
+  "modify_category": {
+    "precision": 0.6666666666666666,
+    "recall": 0.5,
+    "f1-score": 0.5714285714285715,
+    "support": 8,
+    "confused_with": {
+      "modify_activity_name": 2,
+      "modify_activity_category": 1
+    }
+  },
+  "affirm": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2,
+    "confused_with": {
+      "inform": 2
+    }
+  },
+  "clean_activities": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "view_categories": {
+    "precision": 0.25,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.28571428571428575,
+    "support": 3,
+    "confused_with": {
+      "add_item": 1,
+      "ask_name": 1
+    }
+  },
+  "ask_name": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 3,
+    "confused_with": {
+      "modify_activity_name": 2,
+      "presentation": 1
+    }
+  },
+  "help": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "mood_great": {
+    "precision": 1.0,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.5,
+    "support": 3,
+    "confused_with": {
+      "inform": 1,
+      "presentation": 1
+    }
+  },
+  "add_item": {
+    "precision": 0.6923076923076923,
+    "recall": 0.9642857142857143,
+    "f1-score": 0.8059701492537313,
+    "support": 56,
+    "confused_with": {
+      "remove_item": 2
+    }
+  },
+  "remove_category": {
+    "precision": 0.6923076923076923,
+    "recall": 0.75,
+    "f1-score": 0.7199999999999999,
+    "support": 12,
+    "confused_with": {
+      "remove_item": 2,
+      "add_category": 1
+    }
+  },
+  "deny": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 3,
+    "confused_with": {
+      "presentation": 3
+    }
+  },
+  "goodbye": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2,
+    "confused_with": {
+      "inform": 1,
+      "presentation": 1
+    }
+  },
+  "modify_activity_deadline": {
+    "precision": 0.8333333333333334,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.8333333333333334,
+    "support": 12,
+    "confused_with": {
+      "modify_activity_category": 1,
+      "modify_activity_name": 1
+    }
+  },
+  "remind_me_of": {
+    "precision": 0.8571428571428571,
+    "recall": 0.8571428571428571,
+    "f1-score": 0.8571428571428571,
+    "support": 7,
+    "confused_with": {
+      "modify_category": 1
+    }
+  },
+  "presentation": {
+    "precision": 0.6857142857142857,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.676056338028169,
+    "support": 36,
+    "confused_with": {
+      "inform": 8,
+      "add_item": 2
+    }
+  },
+  "greet": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2,
+    "confused_with": {
+      "add_item": 1,
+      "inform": 1
+    }
+  },
+  "remove_item": {
+    "precision": 0.782608695652174,
+    "recall": 0.782608695652174,
+    "f1-score": 0.782608695652174,
+    "support": 23,
+    "confused_with": {
+      "add_item": 3,
+      "remove_category": 2
+    }
+  },
+  "inform": {
+    "precision": 0.6216216216216216,
+    "recall": 0.5227272727272727,
+    "f1-score": 0.5679012345679012,
+    "support": 44,
+    "confused_with": {
+      "presentation": 5,
+      "set_status_activity": 3
+    }
+  },
+  "set_status_activity": {
+    "precision": 0.7333333333333333,
+    "recall": 0.6875,
+    "f1-score": 0.7096774193548386,
+    "support": 16,
+    "confused_with": {
+      "add_item": 3,
+      "modify_activity_category": 2
+    }
+  },
+  "bot_challenge": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 1,
+    "confused_with": {
+      "ask_name": 1
+    }
+  },
+  "mood_unhappy": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "add_category": {
+    "precision": 0.75,
+    "recall": 0.2727272727272727,
+    "f1-score": 0.39999999999999997,
+    "support": 11,
+    "confused_with": {
+      "add_item": 6,
+      "remove_category": 2
+    }
+  },
+  "modify_activity_name": {
+    "precision": 0.625,
+    "recall": 0.9523809523809523,
+    "f1-score": 0.7547169811320755,
+    "support": 21,
+    "confused_with": {
+      "modify_activity_deadline": 1
+    }
+  },
+  "modify_activity_category": {
+    "precision": 0.625,
+    "recall": 0.5882352941176471,
+    "f1-score": 0.6060606060606061,
+    "support": 17,
+    "confused_with": {
+      "add_item": 3,
+      "modify_activity_name": 3
+    }
+  },
+  "accuracy": 0.6835016835016835,
+  "macro avg": {
+    "precision": 0.5756265074199857,
+    "recall": 0.5122614469041898,
+    "f1-score": 0.519608769652856,
+    "support": 297
+  },
+  "weighted avg": {
+    "precision": 0.6765341932008598,
+    "recall": 0.6835016835016835,
+    "f1-score": 0.6603889154655334,
+    "support": 297
+  }
+}

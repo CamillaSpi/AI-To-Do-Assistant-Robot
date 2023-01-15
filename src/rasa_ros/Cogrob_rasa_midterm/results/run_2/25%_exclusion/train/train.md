@@ -1,0 +1,978 @@
+## intent:bot_challenge
+- Sto parlando con un umano?
+- Sto parlando con un bot?
+- Sei un bot?
+
+## intent:goodbye
+- buona giornata
+- ci si vede
+- alla prossima
+- ci vediamo più tardi
+- ciao ciao
+- è stato un piacere
+
+## intent:help
+- Cosa facciamo adesso?
+- Cosa puoi fare?
+- Ho bisogno di aiuto
+- Non so cosa fare
+- Per favore aiuto
+
+## intent:greet
+- Buon pomeriggio
+- buona sera
+- buona mattina
+- Hey
+- Buongiorno
+- Salve
+- Buonasera
+
+## intent:affirm
+- sisi
+- esatto
+- affermativo
+- indubbiamente
+- sì
+- yes
+
+## intent:mood_great
+- Sono grande
+- Estremamente buono
+- Perfetto
+- Sto per salvare il mondo
+- Grandioso
+- Così perfetto
+- Super entusiasta
+
+## intent:ask_name
+- chi sono
+- chi sono?
+- dici il mio nome
+- qual è il mio nome?
+- mi hai riconosciuto?
+- sai chi sono?
+- dimmi il mio nome
+- mi hai già visto prima?
+
+## intent:mood_unhappy
+- Triste
+- Super triste
+- Sono deluso
+- Infelice
+- La mia giornata è stata orribile
+- Non mi sento molto bene
+- Così triste
+- Non bene
+
+## intent:deny
+- non mi piace
+- n
+- non credo
+- non mi va
+- negativo
+- mai
+- niente da fare
+- no mi dispiace
+
+## intent:clean_activities
+- cancella le mie attività
+- rimuovi le attività
+- cancella tutte le mie attività completate
+- rimuovi tutte le attività
+- rimuovi tutte le mie attività completate
+- elimina tutte le attività
+- per favore, elimina le attività
+- per favore, rimuovi tutte le mie attività completate
+
+## intent:view_categories
+- Puoi mostrare le mie categorie?
+- posso vedere le mie categorie?
+- quali sono le categorie aggiunte?
+- quali sono le categorie inserite?
+- quali sono i miei elenchi?
+- posso vedere quali sono le mie categorie?
+- mostra le categorie
+- mostrami le mie categorie
+- fammi vedere tutte le mie categorie
+- quali sono le categorie create?
+- voglio vedere tutte le categorie inserite
+- voglio vedere tutte le mie categorie
+
+## intent:remind_me_of
+- aiutami a non dimenticare l'attività [ascoltare la registrazione della lezione](activity) nella categoria [università](category) per domani
+- ricordami il [pranzo di lavoro](activity)
+- ricordami di [cucinare la cena](activity) nella categoria [impegni domestici](category) alle 8:30
+- vuoi aiutarmi a ricordare?
+- imposta un promemoria per l'attività [chiamare mia madre](activity) nella categoria [famiglia](category) per la prossima mattina
+- aiutami a ricordare un'attività
+- non posso dimenticare di fare l'attività [nuoto](activity) nella categoria [salute fisica](category) per il prossimo lunedì
+- aiutami a non dimenticare l'attività [studio](activity) nella categoria [scuola](category) per domani
+- imposta un promemoria per l'attività [andare al cinema](activity) nella categoria [cultura](category) per domani mattina
+- ricordami di [cucinare il pranzo](activity) nella categoria [casa](category) alle 8:30
+- aiutami a ricordare il [pagamento delle tasse](activity) il 20 dicembre
+- aiutami a non dimenticare l'attività [ripassare matematica](activity) nella categoria [scuola](category) per domani
+- aiutami a ricordare di [andare al compleanno](activity) il 12/18/2022
+- ricordami di [fare shopping](activity) nella categoria [personale](category) alle 8:30
+- voglio impostare un promemoria per l'attività [andare dal parrucchiere](activity)
+- non posso dimenticare di fare l'attività [andare alla posta](activity) nella categoria [commissioni](category) lunedi prossimo
+- non posso dimenticare di [fare gli esercizi](activity) alle 19:00
+- imposta un promemoria
+- aiutami a ricordare il [pranzo di lavoro](activity) dopodomani alle 12
+- imposta un promemoria per l'attività [chiamare il dottore](activity) nella categoria [visite mediche](category) nella prossima mattina
+- ricordami di [mangiare frutta](activity)
+
+## intent:view_activities
+- mostra le attività nella categoria [progetti](category)
+- mostra la mia attività [non fatta](activity_status) nella categoria [impegni](category)
+- mostra le mie attività [non sviluppate](activity_status)
+- mostra attività nella categoria [palestra](category) per questa sera
+- voglio vedere tutte le mie attività
+- mostra le mie attività
+- voglio vedere tutte le mie attività [completate](activity_status)
+- quali sono le mie attività?
+- quali sono le mie attività per domani mattina?
+- cosa ho da fare?
+- quali sono le mie attività [terminate](activity_status)?
+- quali sono le mie attività [concluse](activity_status)?
+- mostrami cosa devo fare oggi
+- mostra le attività [incompiute](activity_status) nella categoria [lavoro](category)
+- mostrami attività [eseguite](activity_status) nella categoria [scuola](category)
+- cosa mi manca da fare oggi?
+- fammi vedere le attività per mercoledì sera
+- quali sono le mie attività create?
+- voglio vedere tutte le mie attività [incomplete](activity_status)
+- quali sono le mie attività create per domenica?
+- fammi vedere le mie attività per martedì pomeriggio
+- voglio vedere tutte le mie attività aggiunte
+
+## intent:modify_category
+- voglio cambiare la categoria [lavoro]{"entity": "category", "role": "old"} con la categoria [impegni]{"entity": "category", "role": "new"}
+- sostituire la categoria [banca]{"entity": "category", "role": "old"} nella categoria [finanza]{"entity": "category", "role": "new"}
+- variare la categoria [famiglia]{"entity": "category", "role": "old"} con [giornaliero/settimanale]{"entity": "category", "role": "new"}
+- trasformare la categoria [vacanza]{"entity": "category", "role": "old"} in [banca]{"entity": "category", "role": "new"}
+- alterare la categoria [tempo libero]{"entity": "category", "role": "old"} con [palestra]{"entity": "category", "role": "new"}
+- convertire la categoria [genitori]{"entity": "category", "role": "old"} con [casa]{"entity": "category", "role": "new"}
+- voglio sostituire la categoria [divertimento]{"entity": "category", "role": "old"} con [svago]{"entity": "category", "role": "new"}
+- cambiare la categoria [università]{"entity": "category", "role": "old"} con la categoria [cura della persona]{"entity": "category", "role": "new"}
+- cambiare il nome della categoria [divertimento]{"entity": "category", "role": "old"} con il nome [cura personale]{"entity": "category", "role": "new"}
+- alterare la categoria [cura personale]{"entity": "category", "role": "old"} in [divertimento]{"entity": "category", "role": "new"}
+- voglio alterare la categoria [annuale]{"entity": "category", "role": "old"} a [estate]{"entity": "category", "role": "new"}
+- per favore, cambiare la categoria [cura della persona]{"entity": "category", "role": "old"} con la categoria [università]{"entity": "category", "role": "new"}
+- modificare la categoria [giornaliero/settimanale]{"entity": "category", "role": "old"} in [famiglia]{"entity": "category", "role": "new"}
+- variare il nome della categoria [personale]{"entity": "category", "role": "old"} con il nome [sport]{"entity": "category", "role": "new"}
+- trasformare la categoria [famiglia]{"entity": "category", "role": "old"} con [amicizia]{"entity": "category", "role": "new"}
+- voglio modificare una categoria
+- sostituire la categoria [esami]{"entity": "category", "role": "old"} in [università]{"entity": "category", "role": "new"}
+- voglio sostituire la categoria [impegni]{"entity": "category", "role": "old"} con la categoria [lavoro]{"entity": "category", "role": "new"}
+- modificare la categoria [amicizia]{"entity": "category", "role": "old"} in [famiglia]{"entity": "category", "role": "new"}
+- sostituire la categoria [faccende domestiche]{"entity": "category", "role": "old"} con [benessere]{"entity": "category", "role": "new"}
+- voglio trasformare la categoria [scadenze]{"entity": "category", "role": "old"} in [commissioni]{"entity": "category", "role": "new"}
+- sostituire la categoria [scuola]{"entity": "category", "role": "old"} con [eventi]{"entity": "category", "role": "new"}
+- per favore, variare la categoria [finanza]{"entity": "category", "role": "old"} nella categoria [banca]{"entity": "category", "role": "new"}
+- convertire la categoria [sport]{"entity": "category", "role": "old"} in [personale]{"entity": "category", "role": "new"}
+- convertire la categoria [benessere]{"entity": "category", "role": "old"} in [faccende domestiche]{"entity": "category", "role": "new"}
+- sostituire la categoria [banca]{"entity": "category", "role": "old"} con [vacanza]{"entity": "category", "role": "new"}
+
+## intent:add_category
+- voglio aggiungere una categoria [pagamenti](category)
+- voglio aggiungere una categoria
+- aggiungi [sport](category) categoria
+- ciao, voglio aggiungere una categoria [settimanale](category)
+- ciao, voglio inserire la categoria [quotidiana](category)
+- la categoria da inserire è [volontariato](category)
+- voglio aggiungere la categoria [stile di vita](category)
+- crea una nuova categoria
+- categoria: [pagamenti](category)
+- inserisci la categoria [farmaci](category)
+- inserisci [vacanze](category) categoria
+- nuova categoria: [lavoro](category)
+- ciao, inserisci la seguente [divertimento](category)
+- la categoria da mettere è [casa](category)
+- voglio aggiungere la categoria [università](category)
+- ciao, voglio inserire una nuova categoria [ricerca](category)
+- aggiungi la categoria [studio](category)
+- voglio usare una nuova categoria
+- inserisci [amici](category)
+- voglio inserire la categoria [professione](category)
+- voglio mettere la categoria [vacanza](category)
+- categoria: [scuola](category)
+- ciao, voglio mettere una nuova categoria [eventi](category)
+- metti [sport](category) categoria
+- metti la categoria [ingegneria](category)
+- aggiungi la nuova categoria [banca](category)
+- categoria: [bollette](category)
+- ciao, voglio aggiungere la categoria [faccende domestiche](category)
+- ciao, inserisci la seguente categoria [cultura](category)
+- ciao, inserisci la seguente categoria [spesa](category)
+- nuova categoria: [volontariato](category)
+- aggiungi la categoria [relazioni](category)
+
+## intent:modify_activity_deadline
+- voglio cambiare la scadenza dell'attività [pub](activity) nella categoria [svago](category) al 27 settembre 1998
+- modifica il termine dell'attività [leggere il giornale](activity) nella categoria [cultura](category) con domenica
+- cambia la scadenza dell'attività [raccogliere fondi](activity) nella categoria [volontariato](category) a lunedì
+- per l'attività [bollette](activity) nella categoria [finanza](category) modificare la deadline dal 4 novembre al 22 ottobre 1922
+- per l'attività [studiare in biblioteca](activity) nella categoria [università](category) modifica il termine nel 22 ottobre 1922
+- modifica il termine dell'attività [revisione del progetto](activity) nella categoria [università](category) in domenica
+- alterare la scadenza
+- per l'attività [nuotare](activity) modifica la scadenza al 22 luglio 1922
+- altera la scadenza dell'attività [cantare](activity) in domenica
+- altera la scadenza dell'attività [cena di Natale](activity) nella categoria [eventi](category)
+- sostituisci il termine dell'attività [mostra d'arte](activity) da lunedì a venerdì
+- voglio modificare la scadenza dell'attività [dipingere](activity) a domani alle 18:00
+- per l'attività [prendere le medicine](activity) nella categoria [salute personale](category) trasformare la scadenza in lunedì
+- altera la scadenza dell'attività [pagare l'affitto](activity) nella categoria [mensile](category) da oggi al 04/21/2023
+- nella categoria [creatività](category) sostituisci la deadline dell'attività [disegnare](activity) da 22 settembre a 25 settembre
+- voglio cambiare il termine dell'attività [uscire con gli amici](activity) nella categoria [eventi](category) con 27 settembre 1998
+- altera la deadline dell'attività [pagare le bollette](activity) da domenica a mercoledì
+- nella categoria [famiglia](category) sostituisci il termine dell'attività [accompagnare mio figlio](activity)
+- voglio cambiare la scadenza dell'attività [compito di matematica](activity) dal 25 settembre al 27 settembre 1998
+- voglio cambiare la scadenza dell'attività [andare dal parrucchiere](activity) nella categoria [personale](category) da 25 settembre a 27 settembre 1998
+- voglio cambiare il termine dell'attività [chiamare mia madre](activity) al 27 settembre 1998
+- modifica il termine dell'attività [revisione del progetto](activity) nella categoria [università](category)
+- altera la scadenza dell'attività [aiutare il nonno](activity) alle 22:00
+- altera la deadline dell'attività [pagare il supermercato](activity) nella categoria [pagamenti](category) in domenica
+- altera la scadenza dell'attività [uscire con gli amici](activity) nella categoria [svago](category) a domenica
+- per l'attività [andare in chiesa](activity) nella categoria [personale](category) modificare la scadenza con 22 ottobre 1922
+- cambia la deadline dell'attività [aiutare la nonna](activity) nella categoria [famiglia](category) con lunedì
+- altera la deadline dell'attività [andare al mare](activity) nella categoria [tempo libero](category) in domenica
+- voglio cambiare il termine dell'attività [ascoltare il podcast](activity) nella categoria [musica](category) con 27 settembre 1998
+- altera la scadenza dell'attività [viaggio con la mamma](activity) nella categoria [vacanza](category) dal 07/11/2022 a domenica
+- voglio cambiare la scadenza dell'attività [andare dal parrucchiere](activity) nella categoria [personale](category)
+- nella categoria [cultura](category) sostituisci la scadenza dell'attività [mostra di pittura](activity) dal 22 settembre al 25 settembre
+- modifica la deadline dell'attività [cena con i nonni](activity) dal 20 febbraio a 26 febbraio
+- per l'attività [invito di compleanno](activity) nella categoria [amici](category) modifica la scadenza con il 22 ottobre 1922
+- nella categoria [famiglia](category) sostituisci il termine dell'attività [accompagnare mio figlio](activity) dal 10/12/2022 al 12/13/2022
+
+## intent:remove_category
+- voglio eliminare la categoria [progetti](category)
+- rimuovi [università](category) tra le mie categorie
+- ciao, voglio togliere la categoria [assistenza sanitaria](category)
+- ciao, voglio rimuovere la categoria [famiglia](category)
+- ciao, per favore rimuovi la seguente categoria [spesa](category)
+- ciao, per favore annulla la seguente categoria [divertimento](category)
+- ciao, voglio rimuovere la categoria [desideri](category)
+- ciao, voglio rimuovere la categoria [salute personale](category)
+- cancella la categoria [finanza](category)
+- ciao, voglio togliere una categoria [eventi](category)
+- voglio cancellare la categoria [studio](category)
+- voglio eliminare la categoria [sport](category)
+- voglio togliere la categoria [mensile](category)
+- rimuovere la categoria [visite mediche](category)
+- ciao, voglio eliminare la categoria [imminenti](category)
+- non voglio usare la categoria [medico](category)
+- voglio togliere la categoria [settimanale](category)
+- voglio togliere la categoria [scuola](category)
+- voglio togliere la categoria [palestra](category)
+- rimuovere la categoria [ingegneria](category)
+- eliminare la categoria [relazioni](category)
+- voglio cancellare una categoria
+- la categoria da cancellare è [volontariato](category)
+- ciao, voglio rimuovere la categoria [faccende domestiche](category)
+- fai scomparire [spesa](category) dalle mie categorie
+- ciao, voglio cancellare la categoria [annuale](category)
+- ciao, voglio cancellare una categoria [ricerca](category)
+- ciao, voglio togliere la categoria [lavoro](category)
+- ciao, voglio eliminare la categoria [casa](category)
+- la categoria da eliminare è [casa](category)
+- togliere la categoria [svago](category)
+- cancella una categoria
+- rimuovi [sport](category) dalle mie categorie
+- voglio cancellare la categoria [università](category)
+- categoria da togliere: [cura personale](category)
+- ciao, per favore cestina la seguente categoria [finanza](category)
+- togliere la vecchia categoria [dieta](category)
+
+## intent:set_status_activity
+- imposta [non sviluppata](activity_status) l'attività [suona la chitarra](activity) nella categoria [musica](category)
+- ciao, imposta un'attività [non completata](activity_status)
+- imposta [completato](activity_status) [andare al mare](activity) in [viaggio](category)
+- ciao, metti [completa](activity_status) l'attività [jogging](activity) in [salute fisica](category)
+- imposta [completato](activity_status) [ripetere la presentazione](activity) nella categoria [progetti](category)
+- ciao, imposta come [completa](activity_status) l'attività [partita di pallone](activity) in [palestra](category)
+- imposta [completato](activity_status) [pulire la cucina](activity) nella categoria [casa](category)
+- imposta [non fatto](activity_status) l'attività [cucina la pizza](activity) in [casa](category)
+- imposta [non fatto](activity_status) [ripeti matematica](activity) nella categoria [scuola](category)
+- voglio impostare [non completata](activity_status) l'attività [postare selfie](activity) in [sociale](category)
+- imposta [sviluppata](activity_status) l'attività [suona la chitarra](activity) nella categoria [musica](category)
+- ciao, poni [fatto](activity_status) [pulisci il bagno](activity) in [casa](category)
+- imposta [non finita](activity_status) [chiama il medico](activity)
+- imposta [incompleta](activity_status) [ascoltare musica](activity) in [personale](category)
+- poni [non completata](activity_status) [suonare la chitarra](activity)
+- poni [completata](activity_status) [suonare la chitarra](activity)
+- imposta [fatto](activity_status) l'attività [cucina la pizza](activity) in [casa](category)
+- metti come [terminato](activity_status) [nuotare](activity) in [sport](category)
+- imposta [non fatto](activity_status) [powerpoint](activity) nella categoria [programmi](category)
+- poni come [incompleta](activity_status) l'attività [suonare il pianoforte](activity) in [musica](category)
+- imposta [completato](activity_status) [chiamare il capo](activity) nella categoria [lavoro](category)
+- imposta [non completato](activity_status) [pulire la cucina](activity) nella categoria [casa](category)
+- imposta [fatto](activity_status) [ripeti matematica](activity) nella categoria [scuola](category)
+- poni [non fatta](activity_status) l'attività [shampoo](activity) nella categoria [quotidiano](category)
+- imposta come [non sviluppata](activity_status) [giocare a carte](activity)
+- imposta come [concluso](activity_status) [giardinaggio](activity) nella categoria [giardino](category)
+- imposta [incompleto](activity_status) [ripetere la presentazione](activity) nella categoria [progetti](category)
+- imposta [completata](activity_status) [chiama il medico](activity)
+- ciao, imposta [non terminata](activity_status) [annaffia le piante](activity)
+- ciao, voglio porre come [eseguito](activity_status) [ripetizioni](activity) nella categoria [laurea](category)
+- imposta [fatta](activity_status) l'attività [vai in farmacia](activity) nella categoria [benessere](category)
+- metti [fatta](activity_status) [guardare la partita](activity) in [intrattenimento](category)
+- imposta come [sviluppata](activity_status) [giocare a carte](activity)
+- ciao, imposta come [incompleta](activity_status) l'attività [partita di pallone](activity) in [palestra](category)
+- imposta come [non fatta](activity_status) [leggere](activity)
+- poni come [non terminata](activity_status) [riposare](activity) in [salute](category)
+- imposta [incompiuta](activity_status) [andare a correre](activity)
+- voglio impostare [completata](activity_status) un'attività
+- imposta [completato](activity_status) [spegni il forno](activity) in [casa](category)
+- imposta [completato](activity_status) [ascoltare musica](activity) in [personale](category)
+- ciao, voglio impostare [non completata](activity_status) l'attività [taekwondo](activity) nella categoria [arti marziali](category)
+- voglio impostare [non fatta](activity_status) un'attività in un elenco
+- ciao, poni [non fatto](activity_status) [pulisci il bagno](activity) in [casa](category)
+- ciao, metti [completato](activity_status) [andare dal parrucchiere](activity) nella categoria [benessere](category)
+- imposta [non terminato](activity_status) [cena con gli amici](activity)
+- imposta [terminato](activity_status) [cena con gli amici](activity)
+- ciao, imposta [completato](activity_status) l'attività [aiuta mio nonno](activity) nella categoria [genitori](category)
+- imposta come [fatta](activity_status) [leggere](activity)
+- imposta un'attività [completata](activity_status)
+
+## intent:modify_activity_category
+- converti la categoria [urgente]{"entity": "category", "role": "old"} dell'attività [fare benzina](activity)
+- per l'attività [preparare i biscotti](activity) modifica la categoria [dieta]{"entity": "category", "role": "old"} in [casa]{"entity": "category", "role": "new"}
+- per l'attività [partecipare alla conferenza](activity) trasforma la categoria [cultura]{"entity": "category", "role": "old"} in [lavoro]{"entity": "category", "role": "new"}
+- voglio cambiare la categoria [viaggio]{"entity": "category", "role": "old"} dell'attività [prenotare l'hotel](activity) in [desideri]{"entity": "category", "role": "new"}
+- per l'attività [mangiare sano](activity) modifica la categoria [stile di vita]{"entity": "category", "role": "old"} in [dieta]{"entity": "category", "role": "new"}
+- sostituisci la categoria [faccende domestiche]{"entity": "category", "role": "old"} dell'attività [preparare la colazione](activity)
+- per l'attività [prenotare il treno](activity) aggiorna la categoria [imminente]{"entity": "category", "role": "old"} in [vacanza]{"entity": "category", "role": "new"}
+- sostituire la categoria [casa]{"entity": "category", "role": "old"} dell'attività [preparare il pranzo](activity) con la categoria [faccende domestiche]{"entity": "category", "role": "new"}
+- convertire la categoria [commissioni]{"entity": "category", "role": "old"} dell'attività [lavare la macchina](activity) con [importante]{"entity": "category", "role": "new"}
+- per l'attività [preparare i biscotti](activity) modifica la categoria [casa]{"entity": "category", "role": "old"} in [dieta]{"entity": "category", "role": "new"}
+- per l'attività [giocare a carte](activity) cambiare la categoria [amici]{"entity": "category", "role": "old"} in [svago]{"entity": "category", "role": "new"}
+- cambia la categoria [esami]{"entity": "category", "role": "old"} dell'attività [studiare](activity) in categoria [progetti]{"entity": "category", "role": "new"}
+- modifica la categoria dell'attività [andare al mare](activity)
+- trasformare la categoria [finanza]{"entity": "category", "role": "old"} dell'attività [andare in banca](activity) in categoria [economia]{"entity": "category", "role": "new"}
+- sostituisci la categoria [famiglia]{"entity": "category", "role": "old"} dell'attività [preparare la colazione](activity) con la categoria [faccende domestiche]{"entity": "category", "role": "new"}
+- voglio cambiare la categoria [desideri]{"entity": "category", "role": "old"} dell'attività [prenotare l'hotel](activity) in [viaggio]{"entity": "category", "role": "new"}
+- per l'attività [ritirare il pacco](activity) aggiornare la categoria [commissioni]{"entity": "category", "role": "old"} in [imminente]{"entity": "category", "role": "new"}
+- voglio cambiare la categoria [sport]{"entity": "category", "role": "old"} dell'attività [yoga](activity) con la categoria [palestra]{"entity": "category", "role": "new"}
+- modifica la categoria [dieta]{"entity": "category", "role": "old"} dell'attività [camminare all'aperto](activity)
+- per l'attività [riposare](activity) modificare la categoria [stile di vita]{"entity": "category", "role": "old"} in [dieta]{"entity": "category", "role": "new"}
+- per l'attività [giocare a carte](activity) cambiare la categoria [svago]{"entity": "category", "role": "old"} in [amici]{"entity": "category", "role": "new"}
+- trasforma la categoria [università]{"entity": "category", "role": "old"} dell'attività [studiare](activity) in categoria [progetti]{"entity": "category", "role": "new"}
+- per l'attività [giocare a pallone](activity) trasforma la categoria [sport]{"entity": "category", "role": "old"} in [svago]{"entity": "category", "role": "new"}
+- per l'attività [fare intervento](activity) modifica la categoria
+- per l'attività [pulire la casa](activity) nella categoria [faccende domestiche]{"entity": "category", "role": "old"} sostituisci la categoria con [quotidiano]{"entity": "category", "role": "new"}
+- converti la categoria [sport]{"entity": "category", "role": "old"} dell'attività [correre](activity) con [cura della persona]{"entity": "category", "role": "new"}
+- modifica la categoria [tempo libero]{"entity": "category", "role": "old"} di [camminare all'aperto](activity) in [dieta]{"entity": "category", "role": "new"}
+- per l'attività [andare in farmacia](activity) modificare la categoria [salute]{"entity": "category", "role": "old"} in [salute personale]{"entity": "category", "role": "new"}
+- sostituisci la categoria [faccende domestiche]{"entity": "category", "role": "old"} dell'attività [preparare la colazione](activity) con la categoria [famiglia]{"entity": "category", "role": "new"}
+- per l'attività [giocare a pallone](activity) trasforma la categoria [svago]{"entity": "category", "role": "old"} in [sport]{"entity": "category", "role": "new"}
+- per l'attività [dormire](activity) modifica la categoria [riposo]{"entity": "category", "role": "old"} in [salute]{"entity": "category", "role": "new"}
+- per l'attività [dormire](activity) modifica la categoria [salute]{"entity": "category", "role": "old"} in [riposo]{"entity": "category", "role": "new"}
+- convertire la categoria [giornaliero/settimanale]{"entity": "category", "role": "old"} dell'attività [yoga](activity) con [sport]{"entity": "category", "role": "new"}
+- modifica la categoria [dieta]{"entity": "category", "role": "old"} di [camminare all'aperto](activity) in [tempo libero]{"entity": "category", "role": "new"}
+- convertire la categoria [importante]{"entity": "category", "role": "old"} dell'attività [lavare la macchina](activity) con [commissioni]{"entity": "category", "role": "new"}
+- modificare la categoria [lavoro]{"entity": "category", "role": "old"} dell'attività [pranzo di lavoro](activity) in [pranzo]{"entity": "category", "role": "new"}
+- sostituire la categoria [Natale]{"entity": "category", "role": "old"} dell'attività [fare i regali](activity) con la categoria [tempo libero]{"entity": "category", "role": "new"}
+- modifica la categoria [vacanze]{"entity": "category", "role": "old"} dell'attività [andare al mare](activity) in [svago]{"entity": "category", "role": "new"}
+- modificare la categoria [alimentazione]{"entity": "category", "role": "old"} di [camminare all'aperto](activity) in [tempo libero]{"entity": "category", "role": "new"}
+- transformare la categoria [progetto]{"entity": "category", "role": "old"} dell'attività [prepare il powerpoint](activity) in categoria [university]{"entity": "category", "role": "new"}
+- sostituire la categoria [tempo libero]{"entity": "category", "role": "old"} dell'attività [fare i regali](activity)
+- convertire la categoria [sport]{"entity": "category", "role": "old"} dell'attività [yoga](activity) con [giornaliero/settimanale]{"entity": "category", "role": "new"}
+- modifica la categoria [svago]{"entity": "category", "role": "old"} dell'attività [andare al mare](activity) in [vacanze]{"entity": "category", "role": "new"}
+- per l'attività [andare in farmacia](activity) modificare la categoria [salute personale]{"entity": "category", "role": "old"} in [salute]{"entity": "category", "role": "new"}
+- per l'attività [pulire la casa](activity) nella categoria [faccende domestiche]{"entity": "category", "role": "old"} sostituire la categoria con [quotidiano]{"entity": "category", "role": "new"}
+- trasforma la categoria [università]{"entity": "category", "role": "old"} dell'attività [preparare l'esame](activity) in categoria [studio]{"entity": "category", "role": "new"}
+- sostituisci la categoria [tempo libero]{"entity": "category", "role": "old"} dell'attività [comprare i regali](activity) con la categoria [Natale]{"entity": "category", "role": "new"}
+- trasforma la categoria [università]{"entity": "category", "role": "old"} dell'attività [preparare il powerpoint](activity) in categoria [progetto]{"entity": "category", "role": "new"}
+- per l'attività [guardare il match](activity) trasformare la categoria [tempo libero]{"entity": "category", "role": "old"} in [famiglia]{"entity": "category", "role": "new"}
+- voglio cambiare la categoria [palestra]{"entity": "category", "role": "old"} dell'attività [boxe](activity) con la categoria [sport]{"entity": "category", "role": "new"}
+- converti la categoria [cura della persona]{"entity": "category", "role": "old"} dell'attività [correre](activity) con [sport]{"entity": "category", "role": "new"}
+
+## intent:modify_activity_name
+- per l'attività [prendere il treno]{"entity": "activity", "role": "old"} in [viaggio](category) trasforma il nome con [prendere l'autobus]{"entity": "activity", "role": "new"}
+- per l'attività [leggere un giornale]{"entity": "activity", "role": "old"} trasforma il nome con [scrivere un articolo]{"entity": "activity", "role": "new"}
+- nella categoria [università](category) cambia l'attività [seguire la lezione]{"entity": "activity", "role": "old"}  con il nome [andare a ricevimento]{"entity": "activity", "role": "new"}
+- per l'attività [andare al cinema]{"entity": "activity", "role": "old"} trasforma il nome con [andare a teatro]{"entity": "activity", "role": "new"}
+- voglio cambiare l'attività con nome [organizzare raccolta fondi]{"entity": "activity", "role": "old"} nella categoria [volontariato](category)
+- per l'attività [leggere l'articolo]{"entity": "activity", "role": "old"} nella categoria [impegni](category) trasforma il nome con [leggere un libro]{"entity": "activity", "role": "new"}
+- voglio cambiare l'attività con nome [andare in montagna]{"entity": "activity", "role": "old"} nella categoria [vacanza](category) con [andare a sciare]{"entity": "activity", "role": "new"}
+- voglio cambiare l'attività con nome [leggere]{"entity": "activity", "role": "old"} con [leggere un libro]{"entity": "activity", "role": "new"}
+- voglio cambiare il nome dell'attività [esame]{"entity": "activity", "role": "old"} nella categoria [università](category) con il nome [studio]{"entity": "activity", "role": "new"}
+- nella categoria [amicizia](category) sostituisci il nome dell'attività [andare a mangiare una pizza]{"entity": "activity", "role": "old"}
+- voglio cambiare l'attività con il nome [prenotare l'aereo]{"entity": "activity", "role": "old"} con [prenotare il treno]{"entity": "activity", "role": "new"}
+- nella categoria [scuola](category) sostituisci il nome dell'attività [interrogazione di matematica]{"entity": "activity", "role": "old"}  con il nome [compito di matematica]{"entity": "activity", "role": "new"}
+- modifica il nome dell'attività [andare dal dottore]{"entity": "activity", "role": "old"} con il nome [andare dal dentista]{"entity": "activity", "role": "new"}
+- voglio cambiare il nome dell'attività [boxe]{"entity": "activity", "role": "old"} nella categoria [sport](category) con il nome [nuoto]{"entity": "activity", "role": "new"}
+- voglio cambiare il nome dell'attività [studio]{"entity": "activity", "role": "old"} nella categoria [cultura](category) con nome [esame]{"entity": "activity", "role": "new"}
+- nella categoria [scuola](category) sostituisci il nome dell'attività [compito di matematica]{"entity": "activity", "role": "old"}  con il nome [interrogazione di matematica]{"entity": "activity", "role": "new"}
+- cambia il nome dell'attività [nuotare]{"entity": "activity", "role": "old"} nella categoria [attività fisica](category) con nome [jogging]{"entity": "activity", "role": "new"}
+- voglio cambiare il nome dell'attività [canto]{"entity": "activity", "role": "old"} con nome [ballo]{"entity": "activity", "role": "new"}
+- voglio cambiare l'attività con il nome [fare beneficenza]{"entity": "activity", "role": "old"} nella categoria [volontariato](category) con [organizzare raccolta fondi]{"entity": "activity", "role": "new"}
+- voglio cambiare l'attività con il nome [uscire con mia madre]{"entity": "activity", "role": "old"} in [famiglia](category)
+- per l'attività [leggere un libro]{"entity": "activity", "role": "old"} nella categoria [impegni](category) trasforma il nome con [leggere l'articolo]{"entity": "activity", "role": "new"}
+- voglio cambiare il nome dell'attività [nuoto]{"entity": "activity", "role": "old"} nella categoria [sport](category) con il nome [boxe]{"entity": "activity", "role": "new"}
+- per l'attività [completare il powerpoint]{"entity": "activity", "role": "old"} modifica il nome con [completare la relazione]{"entity": "activity", "role": "new"}
+- sostituisci il nome dell'attività [pubblicare l'articolo]{"entity": "activity", "role": "old"}  con il nome [scrivere l'articolo]{"entity": "activity", "role": "new"}
+- per l'attività [completare la relazione]{"entity": "activity", "role": "old"} modifica il nome con [completare il powerpoint]{"entity": "activity", "role": "new"}
+- nella categoria [scuola](category) sostituire il nome dell'attività [interrogazione di latino]{"entity": "activity", "role": "old"}  con nome [compito di latino]{"entity": "activity", "role": "new"}
+- modifica il nome dell'attività [pulire la casa]{"entity": "activity", "role": "old"} nella categoria [faccende domestiche](category)
+- per l'attività [suonare la chitarra]{"entity": "activity", "role": "old"} nella categoria [tempo libero](category) modifica il nome con [andare a giocare a calcio]{"entity": "activity", "role": "new"}
+- sostituire il nome dell'attività [guardare il telegiornale]{"entity": "activity", "role": "old"}  with name [leggere il giornare]{"entity": "activity", "role": "new"}
+- voglio cambiare l'attività con nome [andare a sciare]{"entity": "activity", "role": "old"} nella categoria [vacanza](category) con [andare in montagna]{"entity": "activity", "role": "new"}
+- sostituisci il nome dell'attività [scrivere l'articolo]{"entity": "activity", "role": "old"}  con il nome [pubblicare l'articolo]{"entity": "activity", "role": "new"}
+- voglio cambiare il nome dell'attività [boxe]{"entity": "activity", "role": "old"} nella categoria [sport](category)
+- voglio cambiare l'attività con il nome [andare in montagna]{"entity": "activity", "role": "old"} nella categoria [vacanza](category) con [andare a sciare]{"entity": "activity", "role": "new"}
+- voglio cambiare l'attività con nome [fare beneficenza]{"entity": "activity", "role": "old"} nella categoria [impegni sociali](category)
+- sostituisci il nome dell'attività [imparare l'inglese]{"entity": "activity", "role": "old"}  con il nome [camminare]{"entity": "activity", "role": "new"}
+- voglio cambiare l'attività con il nome [aiutare la sorella]{"entity": "activity", "role": "old"} nella categoria [famiglia](category) con [aiutare la zia]{"entity": "activity", "role": "new"}
+- voglio cambiare il nome dell'attività [fare taekwondo]{"entity": "activity", "role": "old"} nella categoria [sport](category) con il nome [andare a nuotare]{"entity": "activity", "role": "new"}
+- sostituire il nome dell'attività [leggere il giornare]{"entity": "activity", "role": "old"}  con nome [guardare il telegiornale]{"entity": "activity", "role": "new"}
+- voglio cambiare il nome dell'attività [ballo]{"entity": "activity", "role": "old"} con il nome [canto]{"entity": "activity", "role": "new"}
+- modificare il nome dell'attività [revisione]{"entity": "activity", "role": "old"} nella categoria [report](category) con nome [rileggere]{"entity": "activity", "role": "new"}
+- cambia il nome dell'attività [mostra d'arte]{"entity": "activity", "role": "old"} con il nome [pittura]{"entity": "activity", "role": "new"}
+- voglio cambiare il nome dell'attività [esame]{"entity": "activity", "role": "old"} nella categoria [cultura](category) con nome [studio]{"entity": "activity", "role": "new"}
+- cambiare il nome dell'attività [meditazione]{"entity": "activity", "role": "old"}  con nome [chiesa]{"entity": "activity", "role": "new"}
+- modifica il nome dell'attività [rileggere]{"entity": "activity", "role": "old"} nella categoria [consegna](category) con il nome [revisione]{"entity": "activity", "role": "new"}
+- cambia il nome dell'attività [chiesa]{"entity": "activity", "role": "old"}  con il nome [meditazione]{"entity": "activity", "role": "new"}
+- sostituisci il nome dell'attività [camminare]{"entity": "activity", "role": "old"}  con il nome [imparare l'inglese]{"entity": "activity", "role": "new"}
+- voglio cambiare il nome dell'attività [andare a fisioterapia]{"entity": "activity", "role": "old"}
+- voglio cambiare il nome dell'attività [editare un video]{"entity": "activity", "role": "old"} con il nome [modificare un video]{"entity": "activity", "role": "new"}
+- modifica il nome dell'attività [preparare la colazione]{"entity": "activity", "role": "old"} con il nome [pulire il giardino]{"entity": "activity", "role": "new"}
+- modifica il nome dell'attività [pilates]{"entity": "activity", "role": "old"} con il nome [yoga]{"entity": "activity", "role": "new"}
+- voglio cambiare l'attività con il nome [andare a nuotare]{"entity": "activity", "role": "old"} con [andare al parco]{"entity": "activity", "role": "new"}
+- nella categoria [eventi](category) cambia il nome dell'attività [andare dal parrucchiere]{"entity": "activity", "role": "old"}  con il nome [tagliare i capelli]{"entity": "activity", "role": "new"}
+- nella categoria [eventi](category) cambia il nome dell'attività [tagliare i capelli]{"entity": "activity", "role": "old"}
+- nella categoria [eventi](category) cambia il nome dell'attività [tagliare i capelli]{"entity": "activity", "role": "old"}  con il nome [andare dal parrucchiere]{"entity": "activity", "role": "new"}
+- voglio cambiare l'attività con il nome [andare al parco]{"entity": "activity", "role": "old"} con [andare a nuotare]{"entity": "activity", "role": "new"}
+- cambia il nome dell'attività [fare una presentazione]{"entity": "activity", "role": "old"}  con il nome [viaggiare per lavoro]{"entity": "activity", "role": "new"}
+- nella categoria [amicizia](category) sostituisci il nome dell'attività [andare a mangiare una pizza]{"entity": "activity", "role": "old"}  con il nome [andare al pub]{"entity": "activity", "role": "new"}
+- cambiare il nome dell'attività [chiesa]{"entity": "activity", "role": "old"}  con nome [meditazione]{"entity": "activity", "role": "new"}
+- voglio cambiare l'attività con il nome [andare a sciare]{"entity": "activity", "role": "old"} nella categoria [vacanza](category) con [andare in montagna]{"entity": "activity", "role": "new"}
+- per l'attività [parrucchiere]{"entity": "activity", "role": "old"} nella categoria [cura personale](category) modifica il nome con [yoga]{"entity": "activity", "role": "new"}
+- per l'attività [andare a teatro]{"entity": "activity", "role": "old"} trasforma il nome con [andare al cinema]{"entity": "activity", "role": "new"}
+- per l'attività [andare a giocare a calcio]{"entity": "activity", "role": "old"} nella categoria [tempo libero](category) modifica il nome con [suonare la chitarra]{"entity": "activity", "role": "new"}
+- modifica il nome di una attività
+
+## intent:remove_item
+- voglio eliminare un'attività
+- ciao, voglio eliminare un'attività dalla mia lista
+- cancella [passeggiata](activity) nella categoria [giornaliera](category) alle 7:00
+- rimuovi [revisione del progetto](activity) nella categoria [lavoro](category) alle 10:25
+- ciao, voglio cancellare un'attività nella categoria [marketing](category) alle 18:30
+- cancella [ascoltare un podcast](activity) nella categoria [intrattenimento](category) alle 12:35
+- elimina [andare dall'estetista](activity) nella categoria [personale](category)
+- elimina l'attività [nuotare](activity) nella categoria [divertimento](category)
+- elimina l'attività [psicologo](activity) nella categoria [mente](category)
+- rimuovi [correre](activity)
+- ciao, voglio cancellare un'attività dalla mia lista
+- rimuovi [dentista](activity) nella categoria [assistenza sanitaria](category) alle 22:20
+- elimina [shampoo](activity) nella categoria [quotidiana](category)
+- cancella [windsurf](activity) alle 01:45
+- cancella [parrucchiere](activity) nella categoria [benessere](category) alle 13:39
+- cancella [studiare per l'esame](activity) nella categoria [università](category) alle 7:00
+- rimuovi [camminare nel giardino](activity)
+- voglio cancellare un'attività nella categoria [comunicazione](category) alle 21:10
+- ciao, voglio eliminare un'attività dall'elenco [teatro](category)
+- cancella [andare al mercato](activity) nella categoria [spesa](category) alle 21:10
+- cancella [consultare il blog](activity) nella categoria [hobby](category) alle 14:50
+- cancella [camminare](activity) nella categoria [salute personale](category) alle 6:30
+- elimina l'attività [andare in banca](activity) nella categoria [finanza](category)
+- cancella [preparare la colazione](activity) nella categoria [dieta](category) alle 7:30
+- elimina [alzarsi](activity)
+- cancella [unghie](activity) nella categoria [estetica](category) alle 9:40
+- elimina l'attività [andare a nuotare](activity) nella categoria [sport](category)
+- cancella [fare shopping](activity) alle 00:00
+- rimuovi [andare all'ufficio postale](activity) nella categoria [pacchi](category) alle 17:30
+- cancella [studiare il latino](activity) nella categoria [scuola](category) alle 2:55
+- cancellare l'attività [scrivere la relazione](activity) nella categoria [ricerca](category)
+- cancellare l'attività [fare il powerpoint](activity) nella categoria [imminente](category)
+- voglio cancellare un'attività nella categoria [commissioni](category) alle 19:00
+- ciao, voglio cancellare un'attività nella categoria [cura](category) alle 3:29
+- elimina [fare una presentazione](activity) nella categoria [società](category)
+- rimuovi l'attività [studiare matematica](activity) nella categoria [università](category)
+- voglio cancellare un'attività nella categoria [business](category) alle 6:30
+- rimuovi [fare shopping](activity) nella categoria [faccende domestiche](category)
+- cancella [arrampicata](activity) nella categoria [estate](category) alle 18:30
+- rimuovi l'attività [boxe](activity) nella categoria [settimanale](category)
+- ciao, voglio cancellare un'attività nella categoria [stile di vita](category) alle 16:00
+- ciao, voglio eliminare un'attività dall'elenco [divertimento](category)
+- ciao, voglio rimuovere un'attività dall'elenco [ricreazione](category)
+- rimuovi [videoconferenza](activity) nella categoria [teamwork](category)
+- rimuovi [rivisitare la presentazione](activity) nella categoria [scuola](category)
+- rimuovi [annaffiare le piante](activity) nella categoria [faccende domestiche](category) alle 13:29
+- ciao, voglio cancellare un'attività nella categoria [commissioni](category) alle 22:20
+- elimina l'attività [giocare](activity) nella categoria [intrattenimento](category)
+- elimina [imparare lo spagnolo](activity) nella categoria [lingue](category)
+- cancellare [andare in escursione](activity) nella categoria [tempo libero](category)
+- rimuovi [uscire](activity) nella categoria [società](category) alle 17:30
+- cancella [andare in chiesa](activity) nella categoria [personale](category) alle 19:41
+- rimuovi [lavare l'auto](activity) nella categoria [faccende domestiche](category) alle 22:20
+- ciao, voglio cancellare un'attività dall'elenco [pianificazioni](category)
+- elimina [riposo](activity) nella categoria [salute](category)
+- cancella [aiutare mia madre](activity) alle 01:45
+- cancella [andare a cantare](activity) alle 11:00
+- rimuovi l'attività [leggere](activity) nella categoria [cultura](category)
+- voglio rimuovere un'attività dall'elenco [spettacolo](category)
+- cancella [pagare mutuo](activity) nella categoria [finanza](category) alle 16:00
+- cancella [fare il pieno](activity) nella categoria [auto](category) alle 20:00
+- voglio cancellare un'attività nella categoria [negozio](category) alle 7:00
+- elimina [correre](activity) nella categoria [quotidiana](category)
+- voglio cancellare un'attività nella categoria [imminente](category) alle 16:30
+- rimuovi [giocare a basket](activity) alle 3:00
+- rimuovi [andare al cinema](activity) alle 13:00
+
+## intent:presentation
+- [natascia](name)
+- ciao, sono [pierfrancesco](name)
+- ciao, sono [matteo](name)
+- [lucio](name)
+- sono [antonino](name)
+- [cathrine](name)
+- [cinzia](name)
+- il mio nome è [alessia](name)
+- [rosa](name)
+- [guendalina](name)
+- [alberigo](name)
+- [michi](name)
+- [anna](name)
+- [galatea](name)
+- utente
+- [gerry](name)
+- [vito](name)
+- [elza](name)
+- [nerone](name)
+- [speranza](name)
+- [salvatore](name)
+- [astra](name)
+- voglio registrarmi
+- [gerardo](name)
+- [violeta](name)
+- [isabella](name)
+- [azzurra](name)
+- sono [giorgino](name)
+- voglio creare un utente
+- il mio nome è [ferdi](name)
+- [fabio](name)
+- [Foca](name)
+- [romi](name)
+- impostare un utente
+- [ursola](name)
+- [edvige](name)
+- [valerio](name)
+- nuovo account
+- sono [Nando](name)
+- [edoardo](name)
+- ciao, sono [mattia](name)
+- [giusy](name)
+- [anacleto](name)
+- [alberto](name)
+- [olivia](name)
+- [giuseppe](name)
+- [mirella](name)
+- [riziero](name)
+- [fabiano](name)
+- [venturino](name)
+- [andrea](name)
+- sono [giulio](name)
+- ciao, sono [marco](name)
+- [flaviano](name)
+- [jhon](name)
+- sono [antonio](name)
+- creare un account
+- ciao sono [ferdi](name)
+- ciao, sono [nando](name)
+- [lucilla](name)
+- [pierino](name)
+- sono [simo](name)
+- voglio iscrivermi
+- [ernesto](name)
+- [ornella](name)
+- [donatello](name)
+- [kikka](name)
+- fammi iscrivere
+- [amadeo](name)
+- [isolda](name)
+- [silviero](name)
+- [lorenzo](name)
+- [edmondo](name)
+- [christian](name)
+- [alessandra](name)
+- il mio nome [Dario](name)
+- account
+- [federico](name)
+- il mio nome è [Xavier](name)
+- [francesca](name)
+- [riccardo](name)
+- [betti](name)
+- [vinci](name)
+- [roberto](name)
+- [elga](name)
+- [isa](name)
+- crea un utente
+- [marianna](name)
+- il mio nome è [Ugo](name)
+- impostare un account
+- sono [carla](name)
+- [anita](name)
+- [antonella](name)
+- ciao sono [marcello](name)
+- fammi creare un account
+- sono [giorgio](name)
+- hi, il mio nome è [Simonetta](name)
+- [eugenio](name)
+- [gianni](name)
+- [amichela](name)
+- sono [giorgia](name)
+- [arisa](name)
+- [rametta](name)
+- sono [carolina](name)
+- [grazia](name)
+- [gisel](name)
+- [pino](name)
+- [nino](name)
+- [tina](name)
+
+## intent:inform
+- [cercare](activity)
+- [riscuotere affitto](activity)
+- [sfizi](category)
+- [materie](category)
+- [bolletta](activity)
+- [studiare per l'esame](activity)
+- [partitella](activity)
+- [comprare le scarpe](activity)
+- [cuocere biscotti](activity)
+- [viaggiare](activity)
+- [ritirare carta di indentità](activity)
+- il prossimo venerdì
+- [calendario](category)
+- oggi
+- [magistrale](category)
+- in 5 minuti
+- [fare shopping](activity)
+- [musica](category)
+- [farmaci](category)
+- tra 26 minuti
+- [lavoro](category)
+- [fare il rifornimento](activity)
+- [zaino](category)
+- [pagamenti](category)
+- [bambino](category)
+- [giocare a carte](activity)
+- [partecipare a una conferenza](activity)
+- [cena con gli amici](activity)
+- [accompagnare mio figlio](activity)
+- [spegnere il gas](activity)
+- 12/10/2022 alle 18:00
+- [viaggio in spagna](activity)
+- [prenotare il ristorante](activity)
+- [medico](category)
+- alle 21
+- [aggiustare la porta](activity)
+- [guardare mio figlio](activity)
+- [cucinare](activity)
+- [frigo](category)
+- [fare saldo annuale](activity)
+- [ristorante](category)
+- [presentare domanda](activity)
+- [andare alla banca](activity)
+- [triennale](category)
+- [nuoto](activity)
+- [rapidamente](category)
+- [suonare la chitarra](activity)
+- [settimanale](category)
+- [uscire con gli amici](activity)
+- [fare bilancio](activity)
+- [guardare un film](activity)
+- [lista](category)
+- [corso](activity)
+- [uscire in barca](activity)
+- [borsa](category)
+- [viaggi](category)
+- 6:30
+- [armadietto](category)
+- domani
+- [cose da fare oggi](category)
+- 09/12/2030 alle 13:00
+- [compiti vacanze](category)
+- [andare a letto](activity)
+- [volte](category)
+- [uscita con la famiglia](activity)
+- tra 1 ora
+- [suonare](activity)
+- [dipingere](activity)
+- [ritirare stipendio](activity)
+- ieri
+- [giocare a calcio](activity)
+- [salute](category)
+- [rata casa](activity)
+- [quotidiano](category)
+- [andare a fare shopping](activity)
+- [progetti](category)
+- [scuola](category)
+- [pagare le bollette](activity)
+- [ascoltare musica](activity)
+- [dormire](activity)
+- [eventi](category)
+- [comprare un giubbino](activity)
+- lunedì prossimo
+- [andare dai nonni](activity)
+- [riparazioni](category)
+- oggi alle 21
+- [volontariato](category)
+- [fumetti](category)
+- [giocare partita](activity)
+- [negozio](category)
+- [sport](category)
+- [lavori](category)
+- [famiglia](category)
+- [da comprare](category)
+- in 5 secondi
+- 08/06/2025
+- [bollette](category)
+- [compiti](category)
+- [ricerca](category)
+- [esame patente](activity)
+- tra 4 ore
+- [aggiustare orologio](activity)
+- [saldare prestito](activity)
+- [inviare un'e-mail al capo](activity)
+- 14:00
+- [palestra](category)
+- [correre](activity)
+- in 30 secondi
+- [biblioteca](category)
+- [macchine](category)
+- [carro](category)
+- [intervento](activity)
+- 9:30
+- [andare in biblioteca](activity)
+- tra 57 secondi
+- [odierne](category)
+- [cena con i parenti](activity)
+- [fare la valigia](activity)
+- [fare ripetizioni](activity)
+- alle 18:00
+- [dottorato](category)
+- [nuotare](activity)
+- [arredamento](category)
+- [faccende di casa](category)
+- [sciare](activity)
+- [fare un ripasso di matematica](activity)
+- [analisi](activity)
+- [viaggio in Brasile](activity)
+- [investire](activity)
+- [dieta](category)
+- [allenamenti](category)
+- [impegni](category)
+
+## intent:add_item
+- inserire [andare al supermercato](activity) nella categoria [cibo](category) alle 6:30
+- inserisci [nuotare](activity) in [sport](category)
+- ciao, voglio inserire un'attività nell'elenco [imminenti](category)
+- vorrei mettere una nuova attività [fare shopping](activity) in [personale](category)
+- nella categoria [vacanze](category), voglio inserire un'attività [cena di Natale](activity)
+- aggiungi una nuova attività [riunione](activity) in [team](category) alle 12:35
+- voglio inserire un'attività nell'elenco [computer](category)
+- voglio aggiungere un'attività alla lista [cura del corpo](category)
+- inserisci l'attività [annaffiare le piante](activity) nella categoria [casa](category)
+- voglio aggiungere un'attività alla lista [divertimento](category) alle 21:10
+- inserisci l'attività [giocare a basket](activity)
+- aggiungere [robotica](activity) nella categoria [università](category) alle 8:00
+- inserire [inviare una email](activity) nella categoria [lavoro](category) alle 16:00
+- inserisci [chiesa](activity) in [settimanale](category) alle 16:00
+- inserire [windsurf](activity) nella categoria [estate](category) alle 20:30
+- ciao, vorrei inserire un'attività nell'elenco [stile di vita](category) alle 14:50
+- inserisci [leggere un libro](activity) nella categoria [cultura](category)
+- voglio inserire un'attività nella lista [piacere](category) alle 9:40
+- aggiungi [organizzare la cucina](activity) nella categoria [casa](category)
+- ciao, voglio inserire una nuova attività [andare sulla neve](activity) nella categoria [vacanze](category)
+- inserisci l'attività [leggere](activity) nella categoria [cultura](category)
+- inserire l'attività [fare benzina](activity) nella categoria [auto](category) alle 16:00
+- aggiungi un'attività in [musica](category)
+- ciao, aggiungi una nuova attività [guardare il match](activity) nella categoria [interessi](category)
+- voglio inserire una nuova attività nell'elenco [spettacolo](category)
+- inserire l'attività [prenotare il ristorante](activity) nella categoria [evento](category) alle 7:00
+- inserire [consultare il blog](activity) alle 3:00
+- inserire [prenotare il treno](activity) nella categoria [viaggio](category) alle 6:30
+- inserire [videoconferenza](activity) nella categoria [progetto](category) alle 14:50
+- ciao, aggiungi [scrivere un messaggio](activity)
+- inserisci l'attività [andare al concerto](activity) in [musica](category) alle 17:30
+- metti l'attività [ricerca](activity) in [aggiornamenti](category) alle 18:30
+- ciao, voglio inserire un'attività nella lista [urgente](category)
+- ciao, vorrei inserire un'attività in un elenco [spesa](category) alle 21:10
+- ciao, inserisci [taekwondo](activity) nella categoria [arti marziali](category)
+- ciao, vorrei inserire un'attività nell'elenco [marketing](category) alle 17:30
+- nella categoria [giornaliera](category) crea una nuova attività [camminare](activity)
+- creare l'attività [dentista](activity) nella categoria [mensile](category) alle 20:00
+- ciao, vorrei aggiungere un'attività nella lista [teatro](category) alle 18:30
+- vorrei mettere l'attività all'elenco [apprendimento](category)
+- ciao, vorrei inserire un'attività nella mia lista alle 12:37
+- inserire l'attività [preparare lo zaino](activity) nella categoria [organizzazione](category) alle 18:30
+- nella categoria [corso](category) inserire [incontro](activity) alle 20:30
+- vorrei inserire la nuova attività [giocare ai videogiochi](activity) alla categoria [svago](category)
+- ciao, vorrei inserire un'attività in un elenco alle 13:39
+- inserire [cuocire biscotti](activity) alle 13:00
+- vorrei creare un'attività nella categoria [pianificazioni](category) alle 6:30
+- metti [trello](activity) in [teamwork](category) alle 2:55
+- inserisci [giocare](activity) nella categoria [divertimento](category)
+- inserisci [andare in palestra](activity)
+- aggiungi l'attività [nuotare](activity)
+- aggiungi [boxe](activity) nella categoria [sport](category)
+- ciao, voglio inserire un'attività [imparare lo spagnolo](activity) nella categoria [cultura](category)
+- inserisci l'attività [fare la spesa](activity) in [quotidiano](category)
+- voglio creare un'attività nella mia lista
+- metti [fare una doccia](activity) in [cura personale](category) alle 4:25
+- inserisci [dormire](activity) nella categoria [benessere](category)
+- aggiungi [fare selfie](activity) alle 01:45
+- inserire [prenotare le vacanze](activity) nella categoria [vacanza](category) alle 4:25
+- metti [nuotare](activity)
+- ciao, aggiungi [formazione](activity)
+- inserisci [termine sprint](activity) in categoria [ingegneria](category) alle 8:00
+- ciao, voglio inserire una nuova attività [cena con gli amici](activity) nella categoria [amicizia](category)
+- ciao, voglio aggiungere un'attività [parrucchiere](activity) nella categoria [benessere](category)
+- ciao, voglio inserire una nuova attività nella categoria [autunno](category)
+- inserisci l'attività [fare giardinaggio](activity) in [casa](category)
+- ciao, inserisci [andare al ristorante](activity) nella categoria [svago](category)
+- ciao, nella categoria [viaggi](category) inserisci [preparare i bagagli](activity)
+- vorrei inserire un'attività [andare al cinema](activity) all'elenco [amicizia](category)
+- inserire [prenotazione](activity) alle 00:00
+- nella categoria [università](category) aggiungi l'attività [esame](activity)
+- metti l'attività [studiare](activity) in [scuola](category)
+- inserire l'attività [ripetere](activity) nella categoria [esame](category) alle 22:20
+- ciao, voglio inserire un'attività nella lista [impegni](category)
+- ciao, nella categoria [creatività](category) inserisci [dipingere](activity)
+- voglio inserire un'attività nella categoria [tempo libero](category)
+- aggiungi [prenota il volo](activity) in categoria [viaggio](category) alle 16:30
+- vorrei aggiungere un'attività [passeggiata](activity) alla categoria [quotidiano](category)
+- ciao, nella categoria [salute](category) voglio inserire l'attività [andare dal dentista](activity)
+- ciao, inserisci [guardare lo spettacolo](activity) nella categoria [interesse](category)
+- vorrei inserire un'attività [pagamenti](activity) alla categoria [finanza](category)
+- aggiungere l'attività [spegnere la luce](activity) nella categoria [necessari](category) alle 3:29
+- aggiungi l'attività [pulire](activity) in [casa](category)
+- ciao, voglio inserire un'attività nell'elenco [priorità](category)
+- aggiungi [fare le pulizie](activity) in [settimanale](category)
+- inserisci l'attività [volontariato](activity) in categoria [beneficenza](category) alle 13:39
+- crea l'attività [cena](activity) nella categoria [cucina](category)
+- metti attività [pizza](activity) in [amici](category) alle 7:00
+- ciao, aggiungi [psicologo](activity) nella categoria [mente](category)
+- ciao, voglio aggiungere un'attività [farmacia](activity) nella categoria [salute](category)
+- vorrei aggiungere un'attività nella lista [parenti](category) per domani
+- voglio aggiungere un'attività nell'elenco [leadership](category)
+- ciao, inserisci [partecipare alla lezione](activity) nella categoria [corsi](category)
+- ciao, inserisci [allenamento](activity)
+- aggiungi [andare dall'estetista](activity)
+- inserisci una nuova attività [guardare la partita](activity)
+- ciao, voglio aggiungere un'attività alla categoria [educazione](category)
+- vorrei mettere l'attività [pagare le bollette](activity) alla categoria [banca](category)
+- ciao, voglio inserire un'attività in un elenco
+- ciao, inserisci l'attività [giocare a carte](activity) nella categoria [divertimento](category)
+- vorrei mettere l'attività [suonare](activity) in [settimanale](category)
+- inserire l'attività [bollette](activity) nella categoria [importante](category) alle 11:00
+- aggiungere [cucinare per cena](activity) alle 20:45
+- ciao, vorrei aggiungere un'attività all'elenco [business](category) alle 18:30
+- ciao, inserisci l'attività [mandare e-mail](activity) nella categoria [progetti](category)
+- inserire l'attività [disegnare](activity) nella categoria [creatività](category) alle 5:12
+- aggiungere [risposare](activity) nella categoria [cura della mente](category) alle 2:55
+- inserisci l'attività [conferenza](activity) in [lavoro](category)
+- ciao, aggiungi [acquistare una pizza](activity) nella categoria [mangiare](category)
+- aggiungi [suonare il pianoforte](activity) in [musica](category)
+- aggiungere l'attività [cucinare](activity) nella categoria [casa](category) alle 21:10
+- ciao, voglio inserire un'attività [judo](activity) nella categoria [palestra](category)
+- inserisci [prendere la pillola](activity) alle 9:30
+- aggiungi nuova attività [andare al teatro](activity) in [cultura](category) alle 12:35
+- ciao, vorrei inserire un'attività nell'elenco [coaching](category) alle 19:00
+- vorrei inserire una nuova attività [manicure](activity) all'elenco [estetica](category)
+- vorrei mettere un'attività [esercizi](activity) in [sport](category)
+- ciao, voglio inserire un'attività nell'elenco [business](category)
+- aggiungi attività [junkfood](activity) in categoria [settimanale](category) alle 11:00
+- ciao, inserisci l'attività [riparare l'auto](activity) nella categoria [impegni](category)
+- inserire l'attività [denti](activity) nella categoria [salute](category) alle 12:35
+- aggiungi [andare a sciare](activity) in [hobby](category) alle 20:00
+- inserisci [fare stand up](activity)
+- ciao, aggiungi l'attività [preparare la pasta](activity) nella categoria [cibo](category)
+- ciao, inserisci [lezione di canto](activity) nella categoria [tempo libero](category)
+- ciao, inserisci l'attività [andare a teatro](activity) nella categoria [arte](category)
+- aggiungi [partita](activity) alle 11:00
+- inserisci l'attività [fare yoga](activity) nella categoria [benessere](category)
+- inserisci [il compleanno del mio amico](activity) in [eventi](category) alle 14:50
+- ciao, inserisci [ripetere il discorso](activity) nella categoria [esame](category)
+- inserisci [laurea](activity) alle 00:00
+- ciao, vorrei inserire un'attività nella lista [cultura](category) alle 16:00
+- ciao, inserisci l'attività [studiare la filosofia](activity) nella categoria [scuola](category)
+- ciao, aggiungi l'attività [e-reading](activity) nella categoria [università](category)
+- vorrei aggiungere una nuova attività
+- aggiungi [correre](activity)
+- vorrei mettere un'attività [cena con gli amici](activity) in [amicizia](category)
+- ciao, voglio inserire un'attività [pagare le bollette](activity) nella categoria [finanza](category)
+- inserisci [fare una passeggiata](activity) in [quotidiano](category)
+- ciao, inserisci l'attività [torneo di calcio](activity) nella categoria [sport](category)
+- ciao, vorrei inserire un'attività nella lista [politica](category) alle 17:30
+- vorrei aggiungere un'attività all'elenco [deepwork](category)
+- metti [fare jogging](activity) in [sport](category)
+- vorrei aggiungere la nuova attività [andare in banca](activity) alla categoria [finanza](category)
+- ciao, voglio aggiungere un'attività alla lista [annuale](category)
+- aggiungi [pulire la casa](activity) nella categoria [casa](category)
+- ciao, voglio inserire un'attività nella mia lista
+- creare l'attività [fare shopping](activity) nella categoria [casa](category) alle 9:40
+- ciao, aggiungi l'attività [regali](activity) nella categoria [natale](category)
+- inserisci attività [apportare correzioni](activity) in categoria [lavoro](category) alle 13:39
+- nella categoria [salute](category) inserisci un'attività [andare dal medico](activity)
+- ciao, vorrei inserire un'attività nella categoria [giustizia](category) alle 22:20
+- ciao, crea [chiamata di gruppo](activity) nella categoria [studio](category)
+- ciao, vorrei inserire un'attività nella categoria [dieta](category) alle 14:50
+- nella categoria [estate](category), voglio aggiungere l'attività [arrampicata](activity)
+- ciao, vorrei aggiungere un'attività nella lista [hobby](category) alle 3:29
+- ciao, vorrei mettere un'attività nell'elenco [blog](category) alle 22:20
+- ciao, voglio inserire un'attività [andare a boxe](activity) nella categoria [sport](category)
+- aggiungi [fare una passeggiata all'aria aperta](activity) in [tempo libero](category) oggi alle 12
+- aggiungi [chiamare mia madre](activity) alle 13:00
+- inserisci l'attività [fare stretching](activity) in [palestra](category)
+- voglio inserire un'attività nell'elenco [documentazione](category)
+- ciao, inserisci [ascoltare musica](activity)
+- ciao, vorrei aggiungere una nuova attività all'elenco [comunicazione](category) alle 9:40
+- metti l'attività [gioca a baseball](activity) in categoria [sport](category) alle 21:10
+- inserisci attività [controllare e-mail](activity) in [lavoro](category) alle 9:40
+- ciao, crea [partecipare a un corso](activity) nella categoria [laurea](category)
+
+## synonym:completata
+- terminata
+- completata
+- completato
+- completo
+- concluse
+- fatta
+- fatto
+- fatte
+- finita
+- finito
+- eseguita
+- eseguite
+- sviluppata
+- sviluppate
+- conclusa
+- completa
+- terminato
+- terminate
+- completate
+
+## synonym:incompleta
+- ineseguita
+- non eseguita
+- incompleto
+- incomplete
+- non sviluppate
+- non conclusa
+- non completo
+- incompleta
+- non completato
+- non sviluppata
+- non finita
+- non fatta
+- non fatto
+- non finito
+- non terminata
+- non terminato
+- incompiuta
+- incompiute
+- non completata
+- non completa

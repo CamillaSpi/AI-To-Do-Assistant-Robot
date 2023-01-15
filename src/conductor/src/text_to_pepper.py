@@ -16,9 +16,9 @@ def callback(msg):
     try:
         resp = tts(msg.data).ack
         if resp!= 'ACK':
-            print("There is an error in msg, maybe")
+            rospy.loginfo("There is an error in msg, maybe")
     except rospy.ServiceException as e:
-        print("Service call failed: %s", e)
+        rospy.loginfo("Service call failed: %s", e)
     pub.publish(Bool(True))
     
 def listener():

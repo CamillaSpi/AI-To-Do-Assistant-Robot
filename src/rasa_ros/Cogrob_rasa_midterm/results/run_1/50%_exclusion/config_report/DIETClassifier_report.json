@@ -1,0 +1,92 @@
+{
+  "name": {
+    "precision": 0.9354838709677419,
+    "recall": 0.90625,
+    "f1-score": 0.9206349206349206,
+    "support": 32,
+    "confused_with": {
+      "category": 1
+    }
+  },
+  "activity.new": {
+    "precision": 0.45454545454545453,
+    "recall": 0.5,
+    "f1-score": 0.47619047619047616,
+    "support": 40,
+    "confused_with": {
+      "activity.old": 18
+    }
+  },
+  "category": {
+    "precision": 0.8282208588957055,
+    "recall": 0.9310344827586207,
+    "f1-score": 0.8766233766233766,
+    "support": 145,
+    "confused_with": {
+      "activity": 6
+    }
+  },
+  "category.old": {
+    "precision": 0.84375,
+    "recall": 0.75,
+    "f1-score": 0.7941176470588235,
+    "support": 36,
+    "confused_with": {
+      "category": 4
+    }
+  },
+  "activity_status": {
+    "precision": 0.8846153846153846,
+    "recall": 0.8518518518518519,
+    "f1-score": 0.8679245283018868,
+    "support": 27,
+    "confused_with": {
+      "activity": 1
+    }
+  },
+  "category.new": {
+    "precision": 0.9310344827586207,
+    "recall": 0.8709677419354839,
+    "f1-score": 0.9,
+    "support": 31,
+    "confused_with": {
+      "category.old": 2
+    }
+  },
+  "activity.old": {
+    "precision": 0.5,
+    "recall": 0.4423076923076923,
+    "f1-score": 0.4693877551020408,
+    "support": 52,
+    "confused_with": {
+      "activity.new": 24
+    }
+  },
+  "activity": {
+    "precision": 0.9172413793103448,
+    "recall": 0.869281045751634,
+    "f1-score": 0.8926174496644296,
+    "support": 306,
+    "confused_with": {
+      "category": 15
+    }
+  },
+  "micro avg": {
+    "precision": 0.8320726172465961,
+    "recall": 0.8221225710014948,
+    "f1-score": 0.8270676691729323,
+    "support": 669
+  },
+  "macro avg": {
+    "precision": 0.7868614288866564,
+    "recall": 0.7652116018256603,
+    "f1-score": 0.7746870191969943,
+    "support": 669
+  },
+  "weighted avg": {
+    "precision": 0.8340909910489707,
+    "recall": 0.8221225710014948,
+    "f1-score": 0.8267408468448674,
+    "support": 669
+  }
+}

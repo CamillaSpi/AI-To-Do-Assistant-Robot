@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from tensorflow.python.ops.gen_logging_ops import Print
+from tensorflow.python.ops.gen_logging_ops import rospy.loginfo
 import rospy
 from std_msgs.msg import Int16MultiArray,Float32MultiArray,Int16
 import numpy as np
@@ -57,7 +57,7 @@ def registration(msg):
     lock.acquire()
     for msg in phrases:
         pub1.publish(msg)
-        print(msg)
+        rospy.loginfo(msg)
         audioAndData = rospy.wait_for_message("RecivedAudio",Int16MultiArray) 
         data = audioAndData.data
         ukn = elaboration(data)
@@ -67,7 +67,7 @@ def registration(msg):
             features_dataBase = np.array([ukn[0]])
         labels.append(number_of_users)
     pub1.publish("Perfetto, ti ho riconosciuto, ora dimmi il tuo nome!")
-    print("Perfetto, ti ho riconosciuto, ora dimmi il tuo nome!")
+    rospy.loginfo("Perfetto, ti ho riconosciuto, ora dimmi il tuo nome!")
     number_of_users+=1
     lock.release()
     return 'ACK'
@@ -102,15 +102,15 @@ def listener():
                 # quindi ukn restituisce tutti i valori distanza dei campioni rispetto a ukn. e calcolo la distanza media tra tutti i campioni. 
 
                 id_label, prob_voices = dist2id(cos_dist, labels, TH, mode='avg') #id_label saranno id incrementali
-                print("prob_voices", prob_voices)
+                rospy.loginfo("prob_voices", prob_voices)
             else:
                 prob_voices = [] 
             lock.release()
 
     except rospy.exceptions.ROSInterruptException:
-        print("vado in close speaker")
+        rospy.loginfo("vado in close speaker")
         save_identities(features_dataBase,labels,number_of_users)
-        print("Salvato db speaker")
+        rospy.loginfo("Salvato db speaker")
 
 def return_idLabel(req):
     global id_label
@@ -128,10 +128,10 @@ def naturalLearning(msg):
     id = msg.data
 
     lock.acquire()
-    print(features_dataBase.shape, len(labels))
+    rospy.loginfo(features_dataBase.shape, len(labels))
     # should never be None, but to be safe
     if last_features.all()!=None:
-        print('added new campionbe')
+        rospy.loginfo('added new campionbe')
         try:
             features_dataBase = np.concatenate((features_dataBase,last_features),axis=0)
         except:
@@ -148,7 +148,7 @@ def voiceLabelServer():
     p = rospy.Subscriber(
         'naturalLearningVoice', Int16, naturalLearning)
 
-    print("readyToGiveLabels")
+    rospy.loginfo("readyToGiveLabels")
 
 if __name__ == '__main__':
     voiceLabelServer()

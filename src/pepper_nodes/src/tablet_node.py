@@ -40,7 +40,7 @@ class TabletNode:
         except:
             # self.tablet_proxy = self.session.get_service("ALTabletService")
             # self.tablet_proxy.executeJS(msg.js)
-            print("No service found, jump injection")
+            rospy.loginfo("No service found, jump injection")
             
         return "ACK"
     
