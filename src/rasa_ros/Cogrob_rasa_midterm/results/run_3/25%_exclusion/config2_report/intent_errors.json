@@ -1,0 +1,290 @@
+[
+  {
+    "text": "Sto parlando con un bot?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "alla prossima",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "buona notte",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.7818557620048523
+    }
+  },
+  {
+    "text": "Cosa puoi fare?",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.32078132033348083
+    }
+  },
+  {
+    "text": "Ho bisogno di assistenza",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "modify_activity_deadline",
+      "confidence": 0.4479120671749115
+    }
+  },
+  {
+    "text": "ciao",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.746512770652771
+    }
+  },
+  {
+    "text": "Ciao",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.69739830493927
+    }
+  },
+  {
+    "text": "indubbiamente",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "corretto",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999992251396179
+    }
+  },
+  {
+    "text": "Mi sento molto bene",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.896047830581665
+    }
+  },
+  {
+    "text": "Sto per salvare il mondo",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9901139736175537
+    }
+  },
+  {
+    "text": "chi sono",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "sai chi sono?",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "sapresti dirmi chi sono?",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.31189411878585815
+    }
+  },
+  {
+    "text": "non mi piace",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.37927335500717163
+    }
+  },
+  {
+    "text": "no mi dispiace",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.49748581647872925
+    }
+  },
+  {
+    "text": "mostra la mia attività non fatta nella categoria impegni",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.7625499367713928
+    }
+  },
+  {
+    "text": "quali sono le mie attività aggiunte?",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9987235069274902
+    }
+  },
+  {
+    "text": "nella categoria famiglia sostituisci il termine dell'attività accompagnare mio figlio dal 10/12/2022 al 12/13/2022",
+    "intent": "modify_activity_deadline",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9953582882881165
+    }
+  },
+  {
+    "text": "modifica il termine dell'attività leggere il giornale nella categoria cultura con domenica",
+    "intent": "modify_activity_deadline",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.7638627886772156
+    }
+  },
+  {
+    "text": "metti non completata l'attività cena fuori nella categoria svago",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9869526624679565
+    }
+  },
+  {
+    "text": "Foca",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "nerone",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999989867210388
+    }
+  },
+  {
+    "text": "mimmo",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.4255698025226593
+    }
+  },
+  {
+    "text": "ursola",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "cinzia",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.5019216537475586
+    }
+  },
+  {
+    "text": "venturino",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999985694885254
+    }
+  },
+  {
+    "text": "il mio nome Dario",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.8940135836601257
+    }
+  },
+  {
+    "text": "romi",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "andare a fare shopping",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "ieri",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "to do",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9999963641166687
+    }
+  },
+  {
+    "text": "suonare la chitarra",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.5660491585731506
+    }
+  },
+  {
+    "text": "armadietto",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.20553478598594666
+    }
+  },
+  {
+    "text": "dieta",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.28073447942733765
+    }
+  },
+  {
+    "text": "mensile",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  }
+]

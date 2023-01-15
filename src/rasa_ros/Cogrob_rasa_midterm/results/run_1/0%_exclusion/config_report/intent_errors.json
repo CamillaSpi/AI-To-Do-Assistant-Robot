@@ -1,0 +1,106 @@
+[
+  {
+    "text": "buona giornata",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.4660925567150116
+    }
+  },
+  {
+    "text": "Cosa facciamo adesso?",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.7211483716964722
+    }
+  },
+  {
+    "text": "sisi",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9999999403953552
+    }
+  },
+  {
+    "text": "affermativo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.999984622001648
+    }
+  },
+  {
+    "text": "Estremamente buono",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.6239222884178162
+    }
+  },
+  {
+    "text": "Così buono",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.4385298192501068
+    }
+  },
+  {
+    "text": "La mia giornata è stata orribile",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.25243082642555237
+    }
+  },
+  {
+    "text": "Non bene",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6857672929763794
+    }
+  },
+  {
+    "text": "voglio modificare il nome di una categoria",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.47285059094429016
+    }
+  },
+  {
+    "text": "non voglio usare la categoria eventi",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.820434033870697
+    }
+  },
+  {
+    "text": "non voglio usare la categoria medico",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.904094398021698
+    }
+  },
+  {
+    "text": "grazia",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.3700992166996002
+    }
+  },
+  {
+    "text": "inserisci yoga",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.48781803250312805
+    }
+  }
+]

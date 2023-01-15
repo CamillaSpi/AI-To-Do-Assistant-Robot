@@ -1,0 +1,114 @@
+[
+  {
+    "text": "buona giornata",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6755544543266296
+    }
+  },
+  {
+    "text": "è stato un piacere",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9997058510780334
+    }
+  },
+  {
+    "text": "Non so cosa fare",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.8911811113357544
+    }
+  },
+  {
+    "text": "Aiuto",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.7773112654685974
+    }
+  },
+  {
+    "text": "si",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.985053539276123
+    }
+  },
+  {
+    "text": "Non bene",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.5723547339439392
+    }
+  },
+  {
+    "text": "negativo",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.28307783603668213
+    }
+  },
+  {
+    "text": "cosa ho da fare?",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.7367973327636719
+    }
+  },
+  {
+    "text": "nella categoria famiglia sostituisci il termine dell'attività accompagnare mio figlio dal 10/12/2022 al 12/13/2022",
+    "intent": "modify_activity_deadline",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999935626983643
+    }
+  },
+  {
+    "text": "memo",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.3703007400035858
+    }
+  },
+  {
+    "text": "domani mattina",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.2835448086261749
+    }
+  },
+  {
+    "text": "alle 18:00",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.6718565225601196
+    }
+  },
+  {
+    "text": "ieri",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.8603242039680481
+    }
+  },
+  {
+    "text": "metti fare jogging in sport",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.9817715883255005
+    }
+  }
+]

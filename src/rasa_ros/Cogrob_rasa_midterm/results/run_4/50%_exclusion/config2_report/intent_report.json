@@ -1,0 +1,210 @@
+{
+  "view_activities": {
+    "precision": 1.0,
+    "recall": 0.875,
+    "f1-score": 0.9333333333333333,
+    "support": 8,
+    "confused_with": {
+      "help": 1
+    }
+  },
+  "modify_category": {
+    "precision": 1.0,
+    "recall": 0.875,
+    "f1-score": 0.9333333333333333,
+    "support": 8,
+    "confused_with": {
+      "modify_activity_category": 1
+    }
+  },
+  "affirm": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "clean_activities": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "view_categories": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "ask_name": {
+    "precision": 1.0,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.8,
+    "support": 3,
+    "confused_with": {
+      "presentation": 1
+    }
+  },
+  "help": {
+    "precision": 0.5,
+    "recall": 0.5,
+    "f1-score": 0.5,
+    "support": 2,
+    "confused_with": {
+      "deny": 1
+    }
+  },
+  "mood_great": {
+    "precision": 1.0,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.5,
+    "support": 3,
+    "confused_with": {
+      "inform": 1,
+      "goodbye": 1
+    }
+  },
+  "add_item": {
+    "precision": 0.9491525423728814,
+    "recall": 1.0,
+    "f1-score": 0.9739130434782608,
+    "support": 56,
+    "confused_with": {}
+  },
+  "remove_category": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 12,
+    "confused_with": {}
+  },
+  "deny": {
+    "precision": 0.6666666666666666,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.6666666666666666,
+    "support": 3,
+    "confused_with": {
+      "inform": 1
+    }
+  },
+  "goodbye": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2,
+    "confused_with": {
+      "presentation": 1,
+      "greet": 1
+    }
+  },
+  "modify_activity_deadline": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 12,
+    "confused_with": {}
+  },
+  "remind_me_of": {
+    "precision": 0.875,
+    "recall": 1.0,
+    "f1-score": 0.9333333333333333,
+    "support": 7,
+    "confused_with": {}
+  },
+  "presentation": {
+    "precision": 0.7586206896551724,
+    "recall": 0.6111111111111112,
+    "f1-score": 0.676923076923077,
+    "support": 36,
+    "confused_with": {
+      "inform": 13,
+      "set_status_activity": 1
+    }
+  },
+  "greet": {
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "f1-score": 0.8,
+    "support": 2,
+    "confused_with": {}
+  },
+  "remove_item": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 23,
+    "confused_with": {}
+  },
+  "inform": {
+    "precision": 0.6923076923076923,
+    "recall": 0.8181818181818182,
+    "f1-score": 0.7500000000000001,
+    "support": 44,
+    "confused_with": {
+      "presentation": 5,
+      "modify_activity_category": 1
+    }
+  },
+  "set_status_activity": {
+    "precision": 0.9375,
+    "recall": 0.9375,
+    "f1-score": 0.9375,
+    "support": 16,
+    "confused_with": {
+      "add_item": 1
+    }
+  },
+  "bot_challenge": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1,
+    "confused_with": {}
+  },
+  "mood_unhappy": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "add_category": {
+    "precision": 1.0,
+    "recall": 0.8181818181818182,
+    "f1-score": 0.9,
+    "support": 11,
+    "confused_with": {
+      "add_item": 1,
+      "inform": 1
+    }
+  },
+  "modify_activity_name": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 21,
+    "confused_with": {}
+  },
+  "modify_activity_category": {
+    "precision": 0.8947368421052632,
+    "recall": 1.0,
+    "f1-score": 0.9444444444444444,
+    "support": 17,
+    "confused_with": {}
+  },
+  "accuracy": 0.8855218855218855,
+  "macro avg": {
+    "precision": 0.8725271291572643,
+    "recall": 0.8375683922558922,
+    "f1-score": 0.8437269679796854,
+    "support": 297
+  },
+  "weighted avg": {
+    "precision": 0.88751947916205,
+    "recall": 0.8855218855218855,
+    "f1-score": 0.8815844559805912,
+    "support": 297
+  }
+}

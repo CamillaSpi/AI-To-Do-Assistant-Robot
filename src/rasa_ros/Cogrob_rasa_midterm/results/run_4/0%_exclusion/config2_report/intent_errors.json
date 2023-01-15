@@ -1,0 +1,194 @@
+[
+  {
+    "text": "buona giornata",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.4774881899356842
+    }
+  },
+  {
+    "text": "è stato un piacere",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.20385557413101196
+    }
+  },
+  {
+    "text": "Non so cosa fare",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.3505309820175171
+    }
+  },
+  {
+    "text": "Non bene",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6165498495101929
+    }
+  },
+  {
+    "text": "chi sono",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9992314577102661
+    }
+  },
+  {
+    "text": "negativo",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "cosa ho da fare?",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.8561887145042419
+    }
+  },
+  {
+    "text": "ciao, voglio inserire una nuova categoria ricerca",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.7564670443534851
+    }
+  },
+  {
+    "text": "nella categoria famiglia sostituisci il termine dell'attività accompagnare mio figlio dal 10/12/2022 al 12/13/2022",
+    "intent": "modify_activity_deadline",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999998211860657
+    }
+  },
+  {
+    "text": "stefano",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.3341653347015381
+    }
+  },
+  {
+    "text": "natascia",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "violeta",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Foca",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "amadeo",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "anita",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "memo",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.3443775475025177
+    }
+  },
+  {
+    "text": "jhon",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.4856968820095062
+    }
+  },
+  {
+    "text": "lucio",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "alzarsi",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9999432563781738
+    }
+  },
+  {
+    "text": "carrello",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "carro",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "ieri",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.34208422899246216
+    }
+  },
+  {
+    "text": "metti preparare la presentazione in progetti",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.7058990001678467
+    }
+  },
+  {
+    "text": "ciao, voglio creare un'attività per la lista primavera",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.3645234704017639
+    }
+  }
+]

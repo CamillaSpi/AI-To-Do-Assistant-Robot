@@ -1,0 +1,266 @@
+[
+  {
+    "text": "Sto parlando con un bot?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.3359055817127228
+    }
+  },
+  {
+    "text": "alla prossima",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.2767845392227173
+    }
+  },
+  {
+    "text": "buona notte",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.7680876851081848
+    }
+  },
+  {
+    "text": "Cosa puoi fare?",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.24148790538311005
+    }
+  },
+  {
+    "text": "ciao",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.5903056263923645
+    }
+  },
+  {
+    "text": "Ciao",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.5903056263923645
+    }
+  },
+  {
+    "text": "indubbiamente",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.3007690906524658
+    }
+  },
+  {
+    "text": "corretto",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "modify_activity_deadline",
+      "confidence": 0.35774409770965576
+    }
+  },
+  {
+    "text": "Mi sento molto bene",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.32644522190093994
+    }
+  },
+  {
+    "text": "Sto per salvare il mondo",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.4387449026107788
+    }
+  },
+  {
+    "text": "Sono triste",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.4653937816619873
+    }
+  },
+  {
+    "text": "chi sono",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.2745569348335266
+    }
+  },
+  {
+    "text": "sai chi sono?",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.401138573884964
+    }
+  },
+  {
+    "text": "sapresti dirmi chi sono?",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.25343891978263855
+    }
+  },
+  {
+    "text": "non mi piace",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.4838007092475891
+    }
+  },
+  {
+    "text": "no mi dispiace",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.4898848831653595
+    }
+  },
+  {
+    "text": "mostra la mia attività non fatta nella categoria impegni",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.8145073056221008
+    }
+  },
+  {
+    "text": "mostra attività",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.536191999912262
+    }
+  },
+  {
+    "text": "voglio cambiare la categoria lavoro con la categoria impegni",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.6742908954620361
+    }
+  },
+  {
+    "text": "voglio usare una nuova categoria eventi",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.9712448716163635
+    }
+  },
+  {
+    "text": "ciao, voglio inserire una nuova categoria ricerca",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.999981164932251
+    }
+  },
+  {
+    "text": "voglio usare una nuova categoria medico",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.9669086337089539
+    }
+  },
+  {
+    "text": "ciao, inserisci la seguente divertimento",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "voglio inserire la categoria professione",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9680408835411072
+    }
+  },
+  {
+    "text": "fammi iscrivere",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.4144570827484131
+    }
+  },
+  {
+    "text": "il mio nome Dario",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.41254299879074097
+    }
+  },
+  {
+    "text": "controllare il mercato",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.4255218207836151
+    }
+  },
+  {
+    "text": "studiare per l'esame",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.758486807346344
+    }
+  },
+  {
+    "text": "to do",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.18278194963932037
+    }
+  },
+  {
+    "text": "creare partecipare a una conferenza nella categoria lavoro alle 20:00",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "remove_item",
+      "confidence": 0.5675575137138367
+    }
+  },
+  {
+    "text": "metti l'attività acquistare un regalo di natale in categoria imminente alle 9:40",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.7400098443031311
+    }
+  },
+  {
+    "text": "metti l'attività fare un bagno in cura personale",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.4898717999458313
+    }
+  },
+  {
+    "text": "vorrei creare l'attività festa di compleanno all'elenco eventi",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.49815189838409424
+    }
+  }
+]

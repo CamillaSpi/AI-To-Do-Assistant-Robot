@@ -1,0 +1,274 @@
+[
+  {
+    "text": "buona giornata",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.48416170477867126
+    }
+  },
+  {
+    "text": "è stato un piacere",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.4252568483352661
+    }
+  },
+  {
+    "text": "Non so cosa fare",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.25981900095939636
+    }
+  },
+  {
+    "text": "Stupefacente",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Così buono",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.3210862874984741
+    }
+  },
+  {
+    "text": "dimmi il mio nome",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.7149747014045715
+    }
+  },
+  {
+    "text": "negativo",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9784151315689087
+    }
+  },
+  {
+    "text": "cosa ho da fare?",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.3542211055755615
+    }
+  },
+  {
+    "text": "convertire la categoria genitori con casa",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.9956406354904175
+    }
+  },
+  {
+    "text": "ciao, voglio inserire una nuova categoria ricerca",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.7893723845481873
+    }
+  },
+  {
+    "text": "categoria: pagamenti",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9014960527420044
+    }
+  },
+  {
+    "text": "metti completata l'attività cena fuori nella categoria svago",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9998103380203247
+    }
+  },
+  {
+    "text": "gerardo",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.6674400568008423
+    }
+  },
+  {
+    "text": "nuovo utente",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.7842040061950684
+    }
+  },
+  {
+    "text": "natascia",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "violeta",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999996423721313
+    }
+  },
+  {
+    "text": "Foca",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "kikka",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9557783007621765
+    }
+  },
+  {
+    "text": "amadeo",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999990463256836
+    }
+  },
+  {
+    "text": "impostare un utente",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.844628095626831
+    }
+  },
+  {
+    "text": "anita",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999713897705078
+    }
+  },
+  {
+    "text": "peppe",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "antonella",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.7819787859916687
+    }
+  },
+  {
+    "text": "jhon",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.7810928821563721
+    }
+  },
+  {
+    "text": "lucio",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9978305697441101
+    }
+  },
+  {
+    "text": "nik",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9987955093383789
+    }
+  },
+  {
+    "text": "lunedì prossimo",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.7323194146156311
+    }
+  },
+  {
+    "text": "fare saldo annuale",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.3635963797569275
+    }
+  },
+  {
+    "text": "partecipare a una conferenza",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.8991190195083618
+    }
+  },
+  {
+    "text": "carrello",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9802843928337097
+    }
+  },
+  {
+    "text": "venerdì",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9999134540557861
+    }
+  },
+  {
+    "text": "dottorato",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9997397065162659
+    }
+  },
+  {
+    "text": "alle 18:00",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.7864184379577637
+    }
+  },
+  {
+    "text": "ieri",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9990009069442749
+    }
+  }
+]

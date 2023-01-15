@@ -1,0 +1,88 @@
+{
+  "name": {
+    "precision": 1.0,
+    "recall": 0.90625,
+    "f1-score": 0.9508196721311475,
+    "support": 32,
+    "confused_with": {
+      "activity.new": 1
+    }
+  },
+  "activity.new": {
+    "precision": 0.8529411764705882,
+    "recall": 0.725,
+    "f1-score": 0.7837837837837837,
+    "support": 40,
+    "confused_with": {
+      "activity.old": 11
+    }
+  },
+  "category": {
+    "precision": 0.9251700680272109,
+    "recall": 0.9379310344827586,
+    "f1-score": 0.9315068493150684,
+    "support": 145,
+    "confused_with": {
+      "activity": 9
+    }
+  },
+  "category.old": {
+    "precision": 1.0,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.9090909090909091,
+    "support": 36,
+    "confused_with": {
+      "category.new": 6
+    }
+  },
+  "activity_status": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 27,
+    "confused_with": {}
+  },
+  "category.new": {
+    "precision": 0.8378378378378378,
+    "recall": 1.0,
+    "f1-score": 0.911764705882353,
+    "support": 31,
+    "confused_with": {}
+  },
+  "activity.old": {
+    "precision": 0.8,
+    "recall": 0.9230769230769231,
+    "f1-score": 0.8571428571428571,
+    "support": 52,
+    "confused_with": {
+      "activity.new": 4
+    }
+  },
+  "activity": {
+    "precision": 0.959731543624161,
+    "recall": 0.934640522875817,
+    "f1-score": 0.9470198675496688,
+    "support": 306,
+    "confused_with": {
+      "category": 9
+    }
+  },
+  "micro avg": {
+    "precision": 0.9305135951661632,
+    "recall": 0.9207772795216741,
+    "f1-score": 0.9256198347107438,
+    "support": 669
+  },
+  "macro avg": {
+    "precision": 0.9219600782449748,
+    "recall": 0.9075289767211041,
+    "f1-score": 0.9113910806119734,
+    "support": 669
+  },
+  "weighted avg": {
+    "precision": 0.9335099136692607,
+    "recall": 0.9207772795216741,
+    "f1-score": 0.9255568918706815,
+    "support": 669
+  }
+}

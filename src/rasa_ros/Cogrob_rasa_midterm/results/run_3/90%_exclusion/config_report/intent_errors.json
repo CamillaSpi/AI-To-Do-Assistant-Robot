@@ -1,0 +1,706 @@
+[
+  {
+    "text": "Sto parlando con un bot?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.18713711202144623
+    }
+  },
+  {
+    "text": "alla prossima",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.23597611486911774
+    }
+  },
+  {
+    "text": "Cosa puoi fare?",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.2766093909740448
+    }
+  },
+  {
+    "text": "Ho bisogno di assistenza",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.34089019894599915
+    }
+  },
+  {
+    "text": "ciao",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.6038063764572144
+    }
+  },
+  {
+    "text": "Ciao",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.6038063764572144
+    }
+  },
+  {
+    "text": "indubbiamente",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.4705639183521271
+    }
+  },
+  {
+    "text": "corretto",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.1962258368730545
+    }
+  },
+  {
+    "text": "Mi sento molto bene",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.2962512671947479
+    }
+  },
+  {
+    "text": "Sto per salvare il mondo",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "modify_activity_deadline",
+      "confidence": 0.3216007351875305
+    }
+  },
+  {
+    "text": "Così buono",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.33391058444976807
+    }
+  },
+  {
+    "text": "Sono triste",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.3862636983394623
+    }
+  },
+  {
+    "text": "chi sono",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.1741127371788025
+    }
+  },
+  {
+    "text": "sai chi sono?",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.3943890333175659
+    }
+  },
+  {
+    "text": "sapresti dirmi chi sono?",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.30601540207862854
+    }
+  },
+  {
+    "text": "assolutamente no",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "view_categories",
+      "confidence": 0.17945653200149536
+    }
+  },
+  {
+    "text": "no mi dispiace",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.13684067130088806
+    }
+  },
+  {
+    "text": "rimuovi tutte le attività terminate",
+    "intent": "clean_activities",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.34078249335289
+    }
+  },
+  {
+    "text": "quali sono le categorie aggiunte?",
+    "intent": "view_categories",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.6599598526954651
+    }
+  },
+  {
+    "text": "voglio vedere tutte le mie categorie",
+    "intent": "view_categories",
+    "intent_prediction": {
+      "name": "clean_activities",
+      "confidence": 0.34604254364967346
+    }
+  },
+  {
+    "text": "fammi vedere tutte le mie categorie",
+    "intent": "view_categories",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.4010251462459564
+    }
+  },
+  {
+    "text": "non posso dimenticare di fare l'attività nuoto nella categoria salute fisica per il prossimo lunedì",
+    "intent": "remind_me_of",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.34419456124305725
+    }
+  },
+  {
+    "text": "imposta un promemoria per l'attività andare al cinema nella categoria cultura per domani mattina",
+    "intent": "remind_me_of",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.698187530040741
+    }
+  },
+  {
+    "text": "non posso dimenticare di fare l'attività parlare con il professore nella categoria progetto per domenica prossima",
+    "intent": "remind_me_of",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.3968728184700012
+    }
+  },
+  {
+    "text": "non posso dimenticare di andare dal veterinario alle 19:00",
+    "intent": "remind_me_of",
+    "intent_prediction": {
+      "name": "remove_item",
+      "confidence": 0.6468002200126648
+    }
+  },
+  {
+    "text": "mostra la mia attività non fatta nella categoria impegni",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.45655977725982666
+    }
+  },
+  {
+    "text": "mostra attività",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.37302055954933167
+    }
+  },
+  {
+    "text": "voglio vedere tutte le mie attività completate",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "clean_activities",
+      "confidence": 0.598345160484314
+    }
+  },
+  {
+    "text": "per favore, variare la categoria finanza nella categoria banca",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.564055860042572
+    }
+  },
+  {
+    "text": "cambiare la categoria università in esami",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.7101288437843323
+    }
+  },
+  {
+    "text": "modificare la categoria amicizia in famiglia",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.5905741453170776
+    }
+  },
+  {
+    "text": "per favore, voglio sostituire la categoria cura a stile di vita",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.5350065231323242
+    }
+  },
+  {
+    "text": "alterare la categoria sociale in volontariato",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.3381148874759674
+    }
+  },
+  {
+    "text": "convertire la categoria benessere in faccende domestiche",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.47691577672958374
+    }
+  },
+  {
+    "text": "voglio cambiare la categoria lavoro con la categoria impegni",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.7904216647148132
+    }
+  },
+  {
+    "text": "ciao, voglio inserire una nuova categoria ricerca",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.952332079410553
+    }
+  },
+  {
+    "text": "voglio aggiungere una categoria",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.46137136220932007
+    }
+  },
+  {
+    "text": "voglio usare una nuova categoria medico",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.4980142116546631
+    }
+  },
+  {
+    "text": "aggiungi la categoria studio",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.3543054461479187
+    }
+  },
+  {
+    "text": "categoria: bollette",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.4979161024093628
+    }
+  },
+  {
+    "text": "aggiungi la categoria relazioni",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.349647581577301
+    }
+  },
+  {
+    "text": "ciao, inserisci la seguente divertimento",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9339139461517334
+    }
+  },
+  {
+    "text": "voglio inserire la categoria professione",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.7354256510734558
+    }
+  },
+  {
+    "text": "metti sport categoria",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.2540633976459503
+    }
+  },
+  {
+    "text": "per l'attività studiare in biblioteca nella categoria università modifica il termine nel 22 ottobre 1922",
+    "intent": "modify_activity_deadline",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.6916552186012268
+    }
+  },
+  {
+    "text": "modifica il termine dell'attività leggere il giornale nella categoria cultura con domenica",
+    "intent": "modify_activity_deadline",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.994275689125061
+    }
+  },
+  {
+    "text": "altera il termine dell'attività karaoke da 18:00 alle 20:00",
+    "intent": "modify_activity_deadline",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.8015890121459961
+    }
+  },
+  {
+    "text": "modifica il termine dell'attività revisione del progetto nella categoria università",
+    "intent": "modify_activity_deadline",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.8222525715827942
+    }
+  },
+  {
+    "text": "categoria da togliere: cura personale",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.39020392298698425
+    }
+  },
+  {
+    "text": "ciao, per favore elimina la seguente categoria medica",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.3722189962863922
+    }
+  },
+  {
+    "text": "metti non completata l'attività cena fuori nella categoria svago",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9582614898681641
+    }
+  },
+  {
+    "text": "ciao, metti non completato andare dal parrucchiere nella categoria benessere",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.38059350848197937
+    }
+  },
+  {
+    "text": "per l'attività mangiare sano modifica la categoria dieta in stile di vita",
+    "intent": "modify_activity_category",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.46733373403549194
+    }
+  },
+  {
+    "text": "modifica la categoria vacanze dell'attività andare al mare",
+    "intent": "modify_activity_category",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.9895308017730713
+    }
+  },
+  {
+    "text": "voglio cambiare la categoria palestra dell'attività boxe con la categoria sport",
+    "intent": "modify_activity_category",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.4463732838630676
+    }
+  },
+  {
+    "text": "modifica la categoria svago dell'attività andare al mare in vacanze",
+    "intent": "modify_activity_category",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.9585171937942505
+    }
+  },
+  {
+    "text": "per l'attività guardare il match trasformare la categoria famiglia in tempo libero",
+    "intent": "modify_activity_category",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.6033158302307129
+    }
+  },
+  {
+    "text": "voglio rimuovere un'attività dall'elenco spettacolo",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.6374079585075378
+    }
+  },
+  {
+    "text": "rimuovi giocare a basket alle 3:00",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9768721461296082
+    }
+  },
+  {
+    "text": "cancellare l'attività scrivere la relazione nella categoria ricerca",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.4052283763885498
+    }
+  },
+  {
+    "text": "cancellare compilare il modulo nella categoria impegni",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.44495099782943726
+    }
+  },
+  {
+    "text": "elimina l'attività suonare il pianoforte nella categoria musica",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.7009721994400024
+    }
+  },
+  {
+    "text": "rimuovi fare shopping nella categoria faccende domestiche",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.8480085730552673
+    }
+  },
+  {
+    "text": "elimina alzarsi",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.48971670866012573
+    }
+  },
+  {
+    "text": "voglio eliminare un'attività dall'elenco leadership",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.7479307651519775
+    }
+  },
+  {
+    "text": "voglio eliminare un'attività dall'elenco scuola",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.7628809213638306
+    }
+  },
+  {
+    "text": "rimuovi riordinare l'armadio nella categoria faccende domestiche alle 10:25",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9970670342445374
+    }
+  },
+  {
+    "text": "rimuovi correre",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.5975475311279297
+    }
+  },
+  {
+    "text": "ciao, voglio rimuovere un'attività dall'elenco ricreazione",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9834925532341003
+    }
+  },
+  {
+    "text": "rimuovi l'attività studiare matematica nella categoria università",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.4205707907676697
+    }
+  },
+  {
+    "text": "elimina fare una presentazione nella categoria società",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.2955441176891327
+    }
+  },
+  {
+    "text": "Foca",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.43172091245651245
+    }
+  },
+  {
+    "text": "pino",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.46725350618362427
+    }
+  },
+  {
+    "text": "mimmo",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.3741242289543152
+    }
+  },
+  {
+    "text": "benedetto",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.22039800882339478
+    }
+  },
+  {
+    "text": "il mio nome Dario",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.6939685344696045
+    }
+  },
+  {
+    "text": "fare la valigia",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.3010876178741455
+    }
+  },
+  {
+    "text": "cercare",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.17567579448223114
+    }
+  },
+  {
+    "text": "fare il rifornimento",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.28945767879486084
+    }
+  },
+  {
+    "text": "controllare il mercato",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.4033171236515045
+    }
+  },
+  {
+    "text": "viaggio in spagna",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.2854447364807129
+    }
+  },
+  {
+    "text": "studiare per l'esame",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.28184348344802856
+    }
+  },
+  {
+    "text": "dottorato",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.16770952939987183
+    }
+  },
+  {
+    "text": "cucinare per cena",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.6730254292488098
+    }
+  },
+  {
+    "text": "suonare la chitarra",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "modify_activity_deadline",
+      "confidence": 0.2902544140815735
+    }
+  },
+  {
+    "text": "vorrei aggiungere un'attività passeggiata alla categoria quotidiano",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.41084688901901245
+    }
+  },
+  {
+    "text": "metti fare jogging in sport",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.899847149848938
+    }
+  },
+  {
+    "text": "ciao, aggiungi psicologo nella categoria mente",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "remove_item",
+      "confidence": 0.47619563341140747
+    }
+  }
+]

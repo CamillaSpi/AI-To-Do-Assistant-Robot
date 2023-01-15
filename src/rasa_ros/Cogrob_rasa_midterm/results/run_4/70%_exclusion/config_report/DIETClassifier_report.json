@@ -1,0 +1,94 @@
+{
+  "name": {
+    "precision": 0.9375,
+    "recall": 0.9375,
+    "f1-score": 0.9375,
+    "support": 32,
+    "confused_with": {
+      "category": 1
+    }
+  },
+  "activity.new": {
+    "precision": 0.3333333333333333,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.3333333333333333,
+    "support": 36,
+    "confused_with": {
+      "activity.old": 16
+    }
+  },
+  "category": {
+    "precision": 0.8142857142857143,
+    "recall": 0.8085106382978723,
+    "f1-score": 0.8113879003558718,
+    "support": 141,
+    "confused_with": {
+      "activity": 14
+    }
+  },
+  "category.old": {
+    "precision": 0.625,
+    "recall": 0.6060606060606061,
+    "f1-score": 0.6153846153846154,
+    "support": 33,
+    "confused_with": {
+      "category.new": 8,
+      "category": 2
+    }
+  },
+  "activity_status": {
+    "precision": 1.0,
+    "recall": 0.8260869565217391,
+    "f1-score": 0.9047619047619047,
+    "support": 23,
+    "confused_with": {
+      "activity": 1
+    }
+  },
+  "category.new": {
+    "precision": 0.5,
+    "recall": 0.5,
+    "f1-score": 0.5,
+    "support": 26,
+    "confused_with": {
+      "category.old": 7,
+      "category": 2
+    }
+  },
+  "activity.old": {
+    "precision": 0.5,
+    "recall": 0.3673469387755102,
+    "f1-score": 0.42352941176470593,
+    "support": 49,
+    "confused_with": {
+      "activity.new": 20
+    }
+  },
+  "activity": {
+    "precision": 0.8714285714285714,
+    "recall": 0.7973856209150327,
+    "f1-score": 0.832764505119454,
+    "support": 306,
+    "confused_with": {
+      "category": 16
+    }
+  },
+  "micro avg": {
+    "precision": 0.7820299500831946,
+    "recall": 0.7275541795665634,
+    "f1-score": 0.7538091419406575,
+    "support": 646
+  },
+  "macro avg": {
+    "precision": 0.6976934523809524,
+    "recall": 0.6470280117380117,
+    "f1-score": 0.6698327088399856,
+    "support": 646
+  },
+  "weighted avg": {
+    "precision": 0.7811090225563909,
+    "recall": 0.7275541795665634,
+    "f1-score": 0.7524795507901201,
+    "support": 646
+  }
+}

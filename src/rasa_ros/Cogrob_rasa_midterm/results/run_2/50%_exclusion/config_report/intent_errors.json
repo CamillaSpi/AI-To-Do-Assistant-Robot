@@ -1,0 +1,178 @@
+[
+  {
+    "text": "tu chi sei?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.8909053802490234
+    }
+  },
+  {
+    "text": "buona notte",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9839459657669067
+    }
+  },
+  {
+    "text": "arrivederci",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.43998342752456665
+    }
+  },
+  {
+    "text": "Aiuto",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9971134662628174
+    }
+  },
+  {
+    "text": "certo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.4273248016834259
+    }
+  },
+  {
+    "text": "Meraviglioso",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9835228323936462
+    }
+  },
+  {
+    "text": "Stupefacente",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "nono",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9493891596794128
+    }
+  },
+  {
+    "text": "mostra attività",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9416587948799133
+    }
+  },
+  {
+    "text": "voglio modificare il nome della categoria svago con il nome divertimento",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.998572826385498
+    }
+  },
+  {
+    "text": "voglio modificare il nome di una categoria",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.7898488640785217
+    }
+  },
+  {
+    "text": "aggiungi sport",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.7748847007751465
+    }
+  },
+  {
+    "text": "voglio inserire una categoria",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.7722671627998352
+    }
+  },
+  {
+    "text": "nuova categoria da inserire: finanze",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9999979734420776
+    }
+  },
+  {
+    "text": "inserisci tempo libero",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.8470041155815125
+    }
+  },
+  {
+    "text": "ciao, voglio inserire la categoria progetti",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9999998807907104
+    }
+  },
+  {
+    "text": "metti non terminata l'attività acquistare una bicicletta in negozio",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9928995370864868
+    }
+  },
+  {
+    "text": "metti completata l'attività cena fuori nella categoria svago",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.977953314781189
+    }
+  },
+  {
+    "text": "metti terminata l'attività acquistare una bicicletta in negozio",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9999258518218994
+    }
+  },
+  {
+    "text": "da oggi a domani",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.2738978862762451
+    }
+  },
+  {
+    "text": "08/09/2025",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.33337122201919556
+    }
+  },
+  {
+    "text": "domani mattina",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.2466128170490265
+    }
+  }
+]

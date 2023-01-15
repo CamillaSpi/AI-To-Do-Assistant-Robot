@@ -1,0 +1,3916 @@
+[
+  {
+    "text": "buona giornata",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 6,
+        "end": 14,
+        "confidence_entity": 0.7509903311729431,
+        "value": "giornata",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "è stato un piacere",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "activity_status",
+        "start": 2,
+        "end": 10,
+        "confidence_entity": 0.8111053705215454,
+        "value": "stato un",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 11,
+        "end": 18,
+        "confidence_entity": 0.8969958424568176,
+        "value": "piacere",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Non so cosa fare",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "activity_status",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.9536207914352417,
+        "value": "Non",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 12,
+        "end": 16,
+        "confidence_entity": 0.9938083291053772,
+        "value": "fare",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "buon giorno",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "name",
+        "start": 5,
+        "end": 11,
+        "confidence_entity": 0.3638923466205597,
+        "value": "giorno",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "esatto",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.5634034276008606,
+        "value": "esatto",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Stupefacente",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 12,
+        "confidence_entity": 0.8224415183067322,
+        "value": "Stupefacente",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "sapresti dirmi chi sono?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 8,
+        "confidence_entity": 0.3497373163700104,
+        "value": "sapresti",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "no mi dispiace",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 6,
+        "end": 14,
+        "confidence_entity": 0.744353711605072,
+        "value": "dispiace",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "negativo",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 8,
+        "confidence_entity": 0.9738849997520447,
+        "value": "negativo",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "non mi piace",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 7,
+        "end": 12,
+        "confidence_entity": 0.7097098231315613,
+        "value": "piace",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ricordami di cucinare il pranzo nella categoria casa alle 8:30",
+    "entities": [
+      {
+        "start": 13,
+        "end": 31,
+        "value": "cucinare il pranzo",
+        "entity": "activity"
+      },
+      {
+        "start": 48,
+        "end": 52,
+        "value": "casa",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 13,
+        "end": 24,
+        "confidence_entity": 0.9997225403785706,
+        "value": "cucinare il",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 25,
+        "end": 31,
+        "confidence_entity": 0.9924693703651428,
+        "value": "pranzo",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 48,
+        "end": 52,
+        "confidence_entity": 0.9975825548171997,
+        "value": "casa",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "aiutami a non dimenticare l'attività ascoltare la registrazione della lezione nella categoria università per domani",
+    "entities": [
+      {
+        "start": 37,
+        "end": 77,
+        "value": "ascoltare la registrazione della lezione",
+        "entity": "activity"
+      },
+      {
+        "start": 94,
+        "end": 104,
+        "value": "università",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 47,
+        "end": 49,
+        "confidence_entity": 0.585612952709198,
+        "value": "la",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 70,
+        "end": 77,
+        "confidence_entity": 0.8016795516014099,
+        "value": "lezione",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 94,
+        "end": 104,
+        "confidence_entity": 0.9998569488525391,
+        "value": "università",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "non posso dimenticare di fare l'attività nuoto nella categoria salute fisica per il prossimo lunedì",
+    "entities": [
+      {
+        "start": 41,
+        "end": 46,
+        "value": "nuoto",
+        "entity": "activity"
+      },
+      {
+        "start": 63,
+        "end": 76,
+        "value": "salute fisica",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 41,
+        "end": 46,
+        "confidence_entity": 0.9983591437339783,
+        "role": "old",
+        "confidence_role": 0.9825890064239502,
+        "value": "nuoto",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 63,
+        "end": 76,
+        "confidence_entity": 0.9986805319786072,
+        "value": "salute fisica",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "imposta un promemoria per l'attività chiamare la mia ragazza nella categoria sociale nella prossima mattina",
+    "entities": [
+      {
+        "start": 37,
+        "end": 60,
+        "value": "chiamare la mia ragazza",
+        "entity": "activity"
+      },
+      {
+        "start": 77,
+        "end": 84,
+        "value": "sociale",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 37,
+        "end": 52,
+        "confidence_entity": 0.9997020363807678,
+        "value": "chiamare la mia",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 53,
+        "end": 60,
+        "confidence_entity": 0.4805663824081421,
+        "value": "ragazza",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 77,
+        "end": 84,
+        "confidence_entity": 0.9995918869972229,
+        "value": "sociale",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ricordami la riunione di lavoro domani mattina",
+    "entities": [
+      {
+        "start": 13,
+        "end": 31,
+        "value": "riunione di lavoro",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 13,
+        "end": 21,
+        "confidence_entity": 0.678351879119873,
+        "value": "riunione",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 25,
+        "end": 31,
+        "confidence_entity": 0.9993836879730225,
+        "value": "lavoro",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "mostrami le mie attività fatte",
+    "entities": [
+      {
+        "start": 25,
+        "end": 30,
+        "value": "fatte",
+        "entity": "activity_status"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "mostrami cosa devo fare oggi",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 19,
+        "end": 28,
+        "confidence_entity": 0.5002248883247375,
+        "value": "fare oggi",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "cosa ho da fare?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.4169905185699463,
+        "value": "cosa ho",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 11,
+        "end": 15,
+        "confidence_entity": 0.993463397026062,
+        "value": "fare",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "alterare la categoria tempo libero con palestra",
+    "entities": [
+      {
+        "start": 22,
+        "end": 34,
+        "value": "tempo libero",
+        "entity": "category",
+        "role": "old"
+      },
+      {
+        "start": 39,
+        "end": 47,
+        "value": "palestra",
+        "entity": "category",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 22,
+        "end": 27,
+        "confidence_entity": 0.9998459815979004,
+        "role": "new",
+        "confidence_role": 0.6321182250976562,
+        "value": "tempo",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 28,
+        "end": 34,
+        "confidence_entity": 0.9999454021453857,
+        "value": "libero",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 39,
+        "end": 47,
+        "confidence_entity": 0.9976245760917664,
+        "role": "new",
+        "confidence_role": 0.9299992322921753,
+        "value": "palestra",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "convertire la categoria genitori con casa",
+    "entities": [
+      {
+        "start": 24,
+        "end": 32,
+        "value": "genitori",
+        "entity": "category",
+        "role": "old"
+      },
+      {
+        "start": 37,
+        "end": 41,
+        "value": "casa",
+        "entity": "category",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 24,
+        "end": 32,
+        "confidence_entity": 0.95460045337677,
+        "role": "old",
+        "confidence_role": 0.7914901375770569,
+        "value": "genitori",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 37,
+        "end": 41,
+        "confidence_entity": 0.9565448760986328,
+        "role": "new",
+        "confidence_role": 0.9021223783493042,
+        "value": "casa",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "sostituire la categoria estate in annuale",
+    "entities": [
+      {
+        "start": 24,
+        "end": 30,
+        "value": "estate",
+        "entity": "category",
+        "role": "old"
+      },
+      {
+        "start": 34,
+        "end": 41,
+        "value": "annuale",
+        "entity": "category",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 34,
+        "end": 41,
+        "confidence_entity": 0.6673986911773682,
+        "role": "new",
+        "confidence_role": 0.9463191032409668,
+        "value": "annuale",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "sostituire la categoria faccende domestiche con benessere",
+    "entities": [
+      {
+        "start": 24,
+        "end": 43,
+        "value": "faccende domestiche",
+        "entity": "category",
+        "role": "old"
+      },
+      {
+        "start": 48,
+        "end": 57,
+        "value": "benessere",
+        "entity": "category",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 24,
+        "end": 43,
+        "confidence_entity": 0.9969375133514404,
+        "role": "old",
+        "confidence_role": 0.8948081135749817,
+        "value": "faccende domestiche",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 48,
+        "end": 57,
+        "confidence_entity": 0.9841721653938293,
+        "role": "new",
+        "confidence_role": 0.5486055016517639,
+        "value": "benessere",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "trasformare la categoria famiglia con amicizia",
+    "entities": [
+      {
+        "start": 25,
+        "end": 33,
+        "value": "famiglia",
+        "entity": "category",
+        "role": "old"
+      },
+      {
+        "start": 38,
+        "end": 46,
+        "value": "amicizia",
+        "entity": "category",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 25,
+        "end": 33,
+        "confidence_entity": 0.9992247819900513,
+        "role": "old",
+        "confidence_role": 0.9997802376747131,
+        "value": "famiglia",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 38,
+        "end": 46,
+        "confidence_entity": 0.963275671005249,
+        "role": "new",
+        "confidence_role": 0.5188075304031372,
+        "value": "amicizia",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "sostituisci la scadenza dell'attività torneo di calcio al 25 novembre",
+    "entities": [
+      {
+        "start": 38,
+        "end": 54,
+        "value": "torneo di calcio",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 48,
+        "end": 54,
+        "confidence_entity": 0.7907746434211731,
+        "value": "calcio",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "nella categoria famiglia sostituisci il termine dell'attività accompagnare mio figlio dal 10/12/2022 al 12/13/2022",
+    "entities": [
+      {
+        "start": 16,
+        "end": 24,
+        "value": "famiglia",
+        "entity": "category"
+      },
+      {
+        "start": 62,
+        "end": 85,
+        "value": "accompagnare mio figlio",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 16,
+        "end": 24,
+        "confidence_entity": 0.9989919066429138,
+        "value": "famiglia",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 62,
+        "end": 78,
+        "confidence_entity": 0.9588243961334229,
+        "value": "accompagnare mio",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 79,
+        "end": 85,
+        "confidence_entity": 0.8296590447425842,
+        "value": "figlio",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "nella categoria cultura sostituisci la scadenza dell'attività mostra di pittura dal 22 settembre al 25 settembre",
+    "entities": [
+      {
+        "start": 16,
+        "end": 23,
+        "value": "cultura",
+        "entity": "category"
+      },
+      {
+        "start": 62,
+        "end": 79,
+        "value": "mostra di pittura",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 16,
+        "end": 23,
+        "confidence_entity": 0.9095522165298462,
+        "value": "cultura",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 62,
+        "end": 68,
+        "confidence_entity": 0.5940797328948975,
+        "value": "mostra",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 72,
+        "end": 79,
+        "confidence_entity": 0.9998880624771118,
+        "role": "old",
+        "confidence_role": 0.9046079516410828,
+        "value": "pittura",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "modifica la scadenza dell'attività esame della patente da venerdì a lunedi",
+    "entities": [
+      {
+        "start": 35,
+        "end": 54,
+        "value": "esame della patente",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 35,
+        "end": 40,
+        "confidence_entity": 0.9938774704933167,
+        "value": "esame",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "sostituisci la scadenza dell'attività torneo di calcio",
+    "entities": [
+      {
+        "start": 38,
+        "end": 54,
+        "value": "torneo di calcio",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 48,
+        "end": 54,
+        "confidence_entity": 0.8930295705795288,
+        "role": "new",
+        "confidence_role": 0.876376211643219,
+        "value": "calcio",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "modifica il termine dell'attività leggere il giornale nella categoria cultura con domenica",
+    "entities": [
+      {
+        "start": 34,
+        "end": 53,
+        "value": "leggere il giornale",
+        "entity": "activity"
+      },
+      {
+        "start": 70,
+        "end": 77,
+        "value": "cultura",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 34,
+        "end": 41,
+        "confidence_entity": 0.9996616840362549,
+        "role": "old",
+        "confidence_role": 0.6762426495552063,
+        "value": "leggere",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 42,
+        "end": 44,
+        "confidence_entity": 0.9994268417358398,
+        "value": "il",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 45,
+        "end": 53,
+        "confidence_entity": 0.999951958656311,
+        "role": "old",
+        "confidence_role": 0.5688408017158508,
+        "value": "giornale",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 70,
+        "end": 77,
+        "confidence_entity": 0.9997325539588928,
+        "value": "cultura",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ciao, voglio rimuovere la categoria faccende domestiche",
+    "entities": [
+      {
+        "start": 36,
+        "end": 55,
+        "value": "faccende domestiche",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 36,
+        "end": 44,
+        "confidence_entity": 0.9966558218002319,
+        "value": "faccende",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 45,
+        "end": 55,
+        "confidence_entity": 0.999659538269043,
+        "role": "new",
+        "confidence_role": 0.7876157760620117,
+        "value": "domestiche",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ciao, metti completato andare dal parrucchiere nella categoria benessere",
+    "entities": [
+      {
+        "start": 12,
+        "end": 22,
+        "value": "completato",
+        "entity": "activity_status"
+      },
+      {
+        "start": 23,
+        "end": 46,
+        "value": "andare dal parrucchiere",
+        "entity": "activity"
+      },
+      {
+        "start": 63,
+        "end": 72,
+        "value": "benessere",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity_status",
+        "start": 12,
+        "end": 22,
+        "confidence_entity": 0.9964674711227417,
+        "value": "completata",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 23,
+        "end": 46,
+        "confidence_entity": 0.9995068311691284,
+        "value": "andare dal parrucchiere",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 63,
+        "end": 72,
+        "confidence_entity": 0.5688412189483643,
+        "value": "benessere",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ciao, imposta completato annaffia le piante",
+    "entities": [
+      {
+        "start": 14,
+        "end": 24,
+        "value": "completato",
+        "entity": "activity_status"
+      },
+      {
+        "start": 25,
+        "end": 43,
+        "value": "annaffia le piante",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity_status",
+        "start": 14,
+        "end": 24,
+        "confidence_entity": 0.9981350898742676,
+        "value": "completata",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 25,
+        "end": 36,
+        "confidence_entity": 0.7586689591407776,
+        "value": "annaffia le",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 37,
+        "end": 43,
+        "confidence_entity": 0.9790062308311462,
+        "value": "piante",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ciao, imposta completato l'attività aiuta mio nonno nella categoria genitori",
+    "entities": [
+      {
+        "start": 14,
+        "end": 24,
+        "value": "completato",
+        "entity": "activity_status"
+      },
+      {
+        "start": 36,
+        "end": 51,
+        "value": "aiuta mio nonno",
+        "entity": "activity"
+      },
+      {
+        "start": 68,
+        "end": 76,
+        "value": "genitori",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity_status",
+        "start": 14,
+        "end": 24,
+        "confidence_entity": 0.9588873386383057,
+        "value": "completata",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 46,
+        "end": 51,
+        "confidence_entity": 0.854523777961731,
+        "value": "nonno",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 68,
+        "end": 76,
+        "confidence_entity": 0.9984169006347656,
+        "value": "genitori",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "metti completata l'attività cena fuori nella categoria svago",
+    "entities": [
+      {
+        "start": 6,
+        "end": 16,
+        "value": "completata",
+        "entity": "activity_status"
+      },
+      {
+        "start": 28,
+        "end": 38,
+        "value": "cena fuori",
+        "entity": "activity"
+      },
+      {
+        "start": 55,
+        "end": 60,
+        "value": "svago",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity_status",
+        "start": 6,
+        "end": 16,
+        "confidence_entity": 0.5318334102630615,
+        "value": "completata",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 28,
+        "end": 38,
+        "confidence_entity": 0.6419053673744202,
+        "value": "cena fuori",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 55,
+        "end": 60,
+        "confidence_entity": 0.9999262094497681,
+        "role": "new",
+        "confidence_role": 0.7017837762832642,
+        "value": "svago",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ciao, imposta non terminata annaffia le piante",
+    "entities": [
+      {
+        "start": 14,
+        "end": 27,
+        "value": "non terminata",
+        "entity": "activity_status"
+      },
+      {
+        "start": 28,
+        "end": 46,
+        "value": "annaffia le piante",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity_status",
+        "start": 14,
+        "end": 27,
+        "confidence_entity": 0.9949290752410889,
+        "value": "incompleta",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 28,
+        "end": 36,
+        "confidence_entity": 0.8198009133338928,
+        "value": "annaffia",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 40,
+        "end": 46,
+        "confidence_entity": 0.965865433216095,
+        "value": "piante",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "imposta completato pulire la cucina nella categoria casa",
+    "entities": [
+      {
+        "start": 8,
+        "end": 18,
+        "value": "completato",
+        "entity": "activity_status"
+      },
+      {
+        "start": 19,
+        "end": 35,
+        "value": "pulire la cucina",
+        "entity": "activity"
+      },
+      {
+        "start": 52,
+        "end": 56,
+        "value": "casa",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity_status",
+        "start": 8,
+        "end": 18,
+        "confidence_entity": 0.9987595081329346,
+        "value": "completata",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "activity",
+        "start": 19,
+        "end": 28,
+        "confidence_entity": 0.9980807304382324,
+        "value": "pulire la",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 29,
+        "end": 35,
+        "confidence_entity": 0.9989734888076782,
+        "value": "cucina",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 52,
+        "end": 56,
+        "confidence_entity": 0.5520591139793396,
+        "value": "casa",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "voglio cambiare la categoria dell'attività boxe",
+    "entities": [
+      {
+        "start": 43,
+        "end": 47,
+        "value": "boxe",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 43,
+        "end": 47,
+        "confidence_entity": 0.999592125415802,
+        "role": "new",
+        "confidence_role": 0.8742901086807251,
+        "value": "boxe",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "convertire la categoria commissioni dell'attività lavare la macchina con importante",
+    "entities": [
+      {
+        "start": 24,
+        "end": 35,
+        "value": "commissioni",
+        "entity": "category",
+        "role": "old"
+      },
+      {
+        "start": 50,
+        "end": 68,
+        "value": "lavare la macchina",
+        "entity": "activity"
+      },
+      {
+        "start": 73,
+        "end": 83,
+        "value": "importante",
+        "entity": "category",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 24,
+        "end": 35,
+        "confidence_entity": 0.9994795918464661,
+        "role": "old",
+        "confidence_role": 0.9993149042129517,
+        "value": "commissioni",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 50,
+        "end": 56,
+        "confidence_entity": 0.9705962538719177,
+        "value": "lavare",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 73,
+        "end": 83,
+        "confidence_entity": 0.9996576309204102,
+        "role": "new",
+        "confidence_role": 0.9969404935836792,
+        "value": "importante",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "trasforma la categoria università dell'attività preparare l'esame in categoria studio",
+    "entities": [
+      {
+        "start": 23,
+        "end": 33,
+        "value": "università",
+        "entity": "category",
+        "role": "old"
+      },
+      {
+        "start": 48,
+        "end": 65,
+        "value": "preparare l'esame",
+        "entity": "activity"
+      },
+      {
+        "start": 79,
+        "end": 85,
+        "value": "studio",
+        "entity": "category",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 23,
+        "end": 33,
+        "confidence_entity": 0.9997900128364563,
+        "role": "old",
+        "confidence_role": 0.9984063506126404,
+        "value": "università",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 48,
+        "end": 65,
+        "confidence_entity": 0.9990395903587341,
+        "value": "preparare l'esame",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 79,
+        "end": 85,
+        "confidence_entity": 0.9975236058235168,
+        "role": "new",
+        "confidence_role": 0.9622534513473511,
+        "value": "studio",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "per l'attività mangiare sano modifica la categoria dieta in stile di vita",
+    "entities": [
+      {
+        "start": 15,
+        "end": 28,
+        "value": "mangiare sano",
+        "entity": "activity"
+      },
+      {
+        "start": 51,
+        "end": 56,
+        "value": "dieta",
+        "entity": "category",
+        "role": "old"
+      },
+      {
+        "start": 60,
+        "end": 73,
+        "value": "stile di vita",
+        "entity": "category",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 15,
+        "end": 23,
+        "confidence_entity": 0.48217007517814636,
+        "value": "mangiare",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 24,
+        "end": 28,
+        "confidence_entity": 0.777583122253418,
+        "role": "old",
+        "confidence_role": 0.6580075621604919,
+        "value": "sano",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 51,
+        "end": 56,
+        "confidence_entity": 0.9973894953727722,
+        "role": "old",
+        "confidence_role": 0.9135888814926147,
+        "value": "dieta",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 60,
+        "end": 65,
+        "confidence_entity": 0.9977893829345703,
+        "role": "old",
+        "confidence_role": 0.824184775352478,
+        "value": "stile",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 66,
+        "end": 73,
+        "confidence_entity": 0.9810739159584045,
+        "role": "new",
+        "confidence_role": 0.4903755784034729,
+        "value": "di vita",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "per l'attività andare al mercato aggiorna la categoria impegni domestici in spesa",
+    "entities": [
+      {
+        "start": 15,
+        "end": 32,
+        "value": "andare al mercato",
+        "entity": "activity"
+      },
+      {
+        "start": 55,
+        "end": 72,
+        "value": "impegni domestici",
+        "entity": "category",
+        "role": "old"
+      },
+      {
+        "start": 76,
+        "end": 81,
+        "value": "spesa",
+        "entity": "category",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 15,
+        "end": 32,
+        "confidence_entity": 0.9996788501739502,
+        "value": "andare al mercato",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 55,
+        "end": 62,
+        "confidence_entity": 0.9981166124343872,
+        "role": "old",
+        "confidence_role": 0.99934321641922,
+        "value": "impegni",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 63,
+        "end": 72,
+        "confidence_entity": 0.9514253735542297,
+        "role": "new",
+        "confidence_role": 0.62871253490448,
+        "value": "domestici",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 76,
+        "end": 81,
+        "confidence_entity": 0.999329686164856,
+        "value": "spesa",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "per l'attività pulire la casa nella categoria faccende domestiche sostituire la categoria con quotidiano",
+    "entities": [
+      {
+        "start": 15,
+        "end": 29,
+        "value": "pulire la casa",
+        "entity": "activity"
+      },
+      {
+        "start": 46,
+        "end": 65,
+        "value": "faccende domestiche",
+        "entity": "category",
+        "role": "old"
+      },
+      {
+        "start": 94,
+        "end": 104,
+        "value": "quotidiano",
+        "entity": "category",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 15,
+        "end": 29,
+        "confidence_entity": 0.9970355033874512,
+        "value": "pulire la casa",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 46,
+        "end": 65,
+        "confidence_entity": 0.9971711039543152,
+        "role": "new",
+        "confidence_role": 0.6697098016738892,
+        "value": "faccende domestiche",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 94,
+        "end": 104,
+        "confidence_entity": 0.9987648725509644,
+        "role": "old",
+        "confidence_role": 0.5409572124481201,
+        "value": "quotidiano",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "per l'attività mangiare sano modifica la categoria stile di vita in dieta",
+    "entities": [
+      {
+        "start": 15,
+        "end": 28,
+        "value": "mangiare sano",
+        "entity": "activity"
+      },
+      {
+        "start": 51,
+        "end": 64,
+        "value": "stile di vita",
+        "entity": "category",
+        "role": "old"
+      },
+      {
+        "start": 68,
+        "end": 73,
+        "value": "dieta",
+        "entity": "category",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 24,
+        "end": 28,
+        "confidence_entity": 0.7742291688919067,
+        "role": "old",
+        "confidence_role": 0.6477120518684387,
+        "value": "sano",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 51,
+        "end": 64,
+        "confidence_entity": 0.977732241153717,
+        "role": "old",
+        "confidence_role": 0.8671018481254578,
+        "value": "stile di vita",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 68,
+        "end": 73,
+        "confidence_entity": 0.9974368214607239,
+        "role": "new",
+        "confidence_role": 0.9986075758934021,
+        "value": "dieta",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "modifica la categoria svago dell'attività andare al mare in vacanze",
+    "entities": [
+      {
+        "start": 22,
+        "end": 27,
+        "value": "svago",
+        "entity": "category",
+        "role": "old"
+      },
+      {
+        "start": 42,
+        "end": 56,
+        "value": "andare al mare",
+        "entity": "activity"
+      },
+      {
+        "start": 60,
+        "end": 67,
+        "value": "vacanze",
+        "entity": "category",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 22,
+        "end": 27,
+        "confidence_entity": 0.998839795589447,
+        "role": "old",
+        "confidence_role": 0.944139838218689,
+        "value": "svago",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 42,
+        "end": 56,
+        "confidence_entity": 0.9999231100082397,
+        "value": "andare al mare",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 60,
+        "end": 67,
+        "confidence_entity": 0.6173534989356995,
+        "role": "old",
+        "confidence_role": 0.3768036365509033,
+        "value": "vacanze",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "per l'attività pulire la casa nella categoria faccende domestiche sostituisci la categoria con quotidiano",
+    "entities": [
+      {
+        "start": 15,
+        "end": 29,
+        "value": "pulire la casa",
+        "entity": "activity"
+      },
+      {
+        "start": 46,
+        "end": 65,
+        "value": "faccende domestiche",
+        "entity": "category",
+        "role": "old"
+      },
+      {
+        "start": 95,
+        "end": 105,
+        "value": "quotidiano",
+        "entity": "category",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 15,
+        "end": 29,
+        "confidence_entity": 0.9967254400253296,
+        "value": "pulire la casa",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 46,
+        "end": 65,
+        "confidence_entity": 0.9977931976318359,
+        "role": "new",
+        "confidence_role": 0.6455476880073547,
+        "value": "faccende domestiche",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 95,
+        "end": 105,
+        "confidence_entity": 0.9988735318183899,
+        "role": "old",
+        "confidence_role": 0.5933102369308472,
+        "value": "quotidiano",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "sostituire la categoria casa dell'attività preparare il pranzo con la categoria faccende domestiche",
+    "entities": [
+      {
+        "start": 24,
+        "end": 28,
+        "value": "casa",
+        "entity": "category",
+        "role": "old"
+      },
+      {
+        "start": 43,
+        "end": 62,
+        "value": "preparare il pranzo",
+        "entity": "activity"
+      },
+      {
+        "start": 80,
+        "end": 99,
+        "value": "faccende domestiche",
+        "entity": "category",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 24,
+        "end": 28,
+        "confidence_entity": 0.9636990427970886,
+        "role": "old",
+        "confidence_role": 0.9985411167144775,
+        "value": "casa",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 43,
+        "end": 55,
+        "confidence_entity": 0.9981850981712341,
+        "value": "preparare il",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 56,
+        "end": 69,
+        "confidence_entity": 0.9829592704772949,
+        "value": "pranzo con la",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 80,
+        "end": 99,
+        "confidence_entity": 0.9970699548721313,
+        "role": "new",
+        "confidence_role": 0.9944096207618713,
+        "value": "faccende domestiche",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "voglio cambiare l'attività con nome andare in montagna nella categoria vacanza con andare a sciare",
+    "entities": [
+      {
+        "start": 36,
+        "end": 54,
+        "value": "andare in montagna",
+        "entity": "activity",
+        "role": "old"
+      },
+      {
+        "start": 71,
+        "end": 78,
+        "value": "vacanza",
+        "entity": "category"
+      },
+      {
+        "start": 83,
+        "end": 98,
+        "value": "andare a sciare",
+        "entity": "activity",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 36,
+        "end": 42,
+        "confidence_entity": 0.9996790885925293,
+        "role": "old",
+        "confidence_role": 0.912494957447052,
+        "value": "andare",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 46,
+        "end": 54,
+        "confidence_entity": 0.6808751225471497,
+        "role": "old",
+        "confidence_role": 0.2930777668952942,
+        "value": "montagna",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 71,
+        "end": 78,
+        "confidence_entity": 0.9981790781021118,
+        "value": "vacanza",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 83,
+        "end": 91,
+        "confidence_entity": 0.9963086247444153,
+        "role": "new",
+        "confidence_role": 0.9967314004898071,
+        "value": "andare a",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 92,
+        "end": 98,
+        "confidence_entity": 0.649817943572998,
+        "role": "new",
+        "confidence_role": 0.6365140676498413,
+        "value": "sciare",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "modifica il nome dell'attività preparare la colazione con il nome pulire il giardino",
+    "entities": [
+      {
+        "start": 31,
+        "end": 53,
+        "value": "preparare la colazione",
+        "entity": "activity",
+        "role": "old"
+      },
+      {
+        "start": 66,
+        "end": 84,
+        "value": "pulire il giardino",
+        "entity": "activity",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 31,
+        "end": 43,
+        "confidence_entity": 0.9985851049423218,
+        "role": "old",
+        "confidence_role": 0.6604453325271606,
+        "value": "preparare la",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 44,
+        "end": 53,
+        "confidence_entity": 0.999987006187439,
+        "value": "colazione",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 66,
+        "end": 72,
+        "confidence_entity": 0.9994375109672546,
+        "role": "new",
+        "confidence_role": 0.8995294570922852,
+        "value": "pulire",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 76,
+        "end": 84,
+        "confidence_entity": 0.9772232174873352,
+        "role": "new",
+        "confidence_role": 0.48338693380355835,
+        "value": "giardino",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "voglio cambiare il nome dell'attività boxe nella categoria sport con il nome nuoto",
+    "entities": [
+      {
+        "start": 38,
+        "end": 42,
+        "value": "boxe",
+        "entity": "activity",
+        "role": "old"
+      },
+      {
+        "start": 59,
+        "end": 64,
+        "value": "sport",
+        "entity": "category"
+      },
+      {
+        "start": 77,
+        "end": 82,
+        "value": "nuoto",
+        "entity": "activity",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 38,
+        "end": 42,
+        "confidence_entity": 0.9999444484710693,
+        "role": "new",
+        "confidence_role": 0.5224039554595947,
+        "value": "boxe",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 59,
+        "end": 64,
+        "confidence_entity": 0.9999656677246094,
+        "value": "sport",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 77,
+        "end": 82,
+        "confidence_entity": 0.9979562759399414,
+        "role": "new",
+        "confidence_role": 0.8830016851425171,
+        "value": "nuoto",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "modifica il nome dell'attività rileggere nella categoria consegna con il nome revisione",
+    "entities": [
+      {
+        "start": 31,
+        "end": 40,
+        "value": "rileggere",
+        "entity": "activity",
+        "role": "old"
+      },
+      {
+        "start": 57,
+        "end": 65,
+        "value": "consegna",
+        "entity": "category"
+      },
+      {
+        "start": 78,
+        "end": 87,
+        "value": "revisione",
+        "entity": "activity",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 31,
+        "end": 40,
+        "confidence_entity": 0.9998782873153687,
+        "role": "new",
+        "confidence_role": 0.9478986263275146,
+        "value": "rileggere",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 57,
+        "end": 65,
+        "confidence_entity": 0.9893942475318909,
+        "value": "consegna",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 78,
+        "end": 87,
+        "confidence_entity": 0.9981623291969299,
+        "role": "new",
+        "confidence_role": 0.9169933795928955,
+        "value": "revisione",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "nella categoria scuola sostituire il nome dell'attività interrogazione di latino  con nome compito di latino",
+    "entities": [
+      {
+        "start": 16,
+        "end": 22,
+        "value": "scuola",
+        "entity": "category"
+      },
+      {
+        "start": 56,
+        "end": 80,
+        "value": "interrogazione di latino",
+        "entity": "activity",
+        "role": "old"
+      },
+      {
+        "start": 91,
+        "end": 108,
+        "value": "compito di latino",
+        "entity": "activity",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 16,
+        "end": 22,
+        "confidence_entity": 0.9994480013847351,
+        "value": "scuola",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 34,
+        "end": 36,
+        "confidence_entity": 0.9239830374717712,
+        "role": "old",
+        "confidence_role": 0.5437434315681458,
+        "value": "il",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 56,
+        "end": 73,
+        "confidence_entity": 0.779526948928833,
+        "value": "interrogazione di",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 91,
+        "end": 98,
+        "confidence_entity": 0.517318844795227,
+        "role": "new",
+        "confidence_role": 0.7566937804222107,
+        "value": "compito",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 99,
+        "end": 101,
+        "confidence_entity": 0.6643702387809753,
+        "value": "di",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 102,
+        "end": 108,
+        "confidence_entity": 0.811431884765625,
+        "value": "latino",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "voglio cambiare l'attività con il nome prenotare l'aereo con prenotare il treno",
+    "entities": [
+      {
+        "start": 39,
+        "end": 56,
+        "value": "prenotare l'aereo",
+        "entity": "activity",
+        "role": "old"
+      },
+      {
+        "start": 61,
+        "end": 79,
+        "value": "prenotare il treno",
+        "entity": "activity",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 31,
+        "end": 33,
+        "confidence_entity": 0.9988771080970764,
+        "value": "il",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 39,
+        "end": 50,
+        "confidence_entity": 0.9442840814590454,
+        "value": "prenotare l",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 51,
+        "end": 56,
+        "confidence_entity": 0.9986856579780579,
+        "role": "new",
+        "confidence_role": 0.5021079778671265,
+        "value": "aereo",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 61,
+        "end": 70,
+        "confidence_entity": 0.9995866417884827,
+        "role": "new",
+        "confidence_role": 0.6725286245346069,
+        "value": "prenotare",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 74,
+        "end": 79,
+        "confidence_entity": 0.999896764755249,
+        "role": "new",
+        "confidence_role": 0.9228499531745911,
+        "value": "treno",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "modifica il nome dell'attività cucinare la cena nella categoria casa",
+    "entities": [
+      {
+        "start": 31,
+        "end": 47,
+        "value": "cucinare la cena",
+        "entity": "activity",
+        "role": "old"
+      },
+      {
+        "start": 64,
+        "end": 68,
+        "value": "casa",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 31,
+        "end": 47,
+        "confidence_entity": 0.991783857345581,
+        "value": "cucinare la cena",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 64,
+        "end": 68,
+        "confidence_entity": 0.9944586753845215,
+        "role": "new",
+        "confidence_role": 0.4958726465702057,
+        "value": "casa",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "voglio cambiare il nome dell'attività andare a fisioterapia",
+    "entities": [
+      {
+        "start": 38,
+        "end": 59,
+        "value": "andare a fisioterapia",
+        "entity": "activity",
+        "role": "old"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 38,
+        "end": 46,
+        "confidence_entity": 0.9993414282798767,
+        "role": "old",
+        "confidence_role": 0.9585306644439697,
+        "value": "andare a",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 47,
+        "end": 59,
+        "confidence_entity": 0.9996985197067261,
+        "value": "fisioterapia",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "cambia il nome dell'attività chiesa  con il nome meditazione",
+    "entities": [
+      {
+        "start": 29,
+        "end": 35,
+        "value": "chiesa",
+        "entity": "activity",
+        "role": "old"
+      },
+      {
+        "start": 49,
+        "end": 60,
+        "value": "meditazione",
+        "entity": "activity",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 29,
+        "end": 35,
+        "confidence_entity": 0.9997414946556091,
+        "role": "new",
+        "confidence_role": 0.8215870261192322,
+        "value": "chiesa",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 49,
+        "end": 60,
+        "confidence_entity": 0.9988040924072266,
+        "role": "old",
+        "confidence_role": 0.8108416795730591,
+        "value": "meditazione",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "cambia il nome dell'attività nuotare nella categoria attività fisica con nome jogging",
+    "entities": [
+      {
+        "start": 29,
+        "end": 36,
+        "value": "nuotare",
+        "entity": "activity",
+        "role": "old"
+      },
+      {
+        "start": 53,
+        "end": 68,
+        "value": "attività fisica",
+        "entity": "category"
+      },
+      {
+        "start": 78,
+        "end": 85,
+        "value": "jogging",
+        "entity": "activity",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 29,
+        "end": 36,
+        "confidence_entity": 0.9993298053741455,
+        "role": "old",
+        "confidence_role": 0.9568336009979248,
+        "value": "nuotare",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 62,
+        "end": 68,
+        "confidence_entity": 0.9984214305877686,
+        "role": "old",
+        "confidence_role": 0.6125215291976929,
+        "value": "fisica",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 78,
+        "end": 85,
+        "confidence_entity": 0.9920926690101624,
+        "role": "new",
+        "confidence_role": 0.9773377180099487,
+        "value": "jogging",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "sostituire il nome dell'attività guardare il telegiornale  with name leggere il giornare",
+    "entities": [
+      {
+        "start": 33,
+        "end": 57,
+        "value": "guardare il telegiornale",
+        "entity": "activity",
+        "role": "old"
+      },
+      {
+        "start": 69,
+        "end": 88,
+        "value": "leggere il giornare",
+        "entity": "activity",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 33,
+        "end": 41,
+        "confidence_entity": 0.9999579191207886,
+        "role": "old",
+        "confidence_role": 0.865453839302063,
+        "value": "guardare",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 42,
+        "end": 44,
+        "confidence_entity": 0.9981780052185059,
+        "value": "il",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 45,
+        "end": 57,
+        "confidence_entity": 0.9998455047607422,
+        "role": "old",
+        "confidence_role": 0.9539704918861389,
+        "value": "telegiornale",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 59,
+        "end": 68,
+        "confidence_entity": 0.8568830490112305,
+        "role": "old",
+        "confidence_role": 0.6177592277526855,
+        "value": "with name",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 69,
+        "end": 76,
+        "confidence_entity": 0.9945593476295471,
+        "role": "old",
+        "confidence_role": 0.7948657870292664,
+        "value": "leggere",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 80,
+        "end": 88,
+        "confidence_entity": 0.9870210289955139,
+        "role": "new",
+        "confidence_role": 0.6202090382575989,
+        "value": "giornare",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "cambiare il nome dell'attività chiesa  con nome meditazione",
+    "entities": [
+      {
+        "start": 31,
+        "end": 37,
+        "value": "chiesa",
+        "entity": "activity",
+        "role": "old"
+      },
+      {
+        "start": 48,
+        "end": 59,
+        "value": "meditazione",
+        "entity": "activity",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 31,
+        "end": 37,
+        "confidence_entity": 0.9998200535774231,
+        "role": "new",
+        "confidence_role": 0.8168649077415466,
+        "value": "chiesa",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 48,
+        "end": 59,
+        "confidence_entity": 0.9990599751472473,
+        "role": "old",
+        "confidence_role": 0.8729668259620667,
+        "value": "meditazione",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "per l'attività completare la relazione modifica il nome con completare il powerpoint",
+    "entities": [
+      {
+        "start": 15,
+        "end": 38,
+        "value": "completare la relazione",
+        "entity": "activity",
+        "role": "old"
+      },
+      {
+        "start": 60,
+        "end": 84,
+        "value": "completare il powerpoint",
+        "entity": "activity",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 15,
+        "end": 38,
+        "confidence_entity": 0.9985253214836121,
+        "role": "old",
+        "confidence_role": 0.5511022806167603,
+        "value": "completare la relazione",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 60,
+        "end": 70,
+        "confidence_entity": 0.9991273283958435,
+        "role": "new",
+        "confidence_role": 0.9742223620414734,
+        "value": "completare",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 74,
+        "end": 84,
+        "confidence_entity": 0.9993168115615845,
+        "role": "new",
+        "confidence_role": 0.7461816668510437,
+        "value": "powerpoint",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "cambia il nome dell'attività attività all'aperto nella categoria salute fisica",
+    "entities": [
+      {
+        "start": 29,
+        "end": 48,
+        "value": "attività all'aperto",
+        "entity": "activity",
+        "role": "old"
+      },
+      {
+        "start": 65,
+        "end": 78,
+        "value": "salute fisica",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 42,
+        "end": 48,
+        "confidence_entity": 0.9982396364212036,
+        "value": "aperto",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 65,
+        "end": 71,
+        "confidence_entity": 0.9991289973258972,
+        "value": "salute",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 72,
+        "end": 78,
+        "confidence_entity": 0.9993676543235779,
+        "role": "new",
+        "confidence_role": 0.8566885590553284,
+        "value": "fisica",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "elimina riposo nella categoria salute",
+    "entities": [
+      {
+        "start": 8,
+        "end": 14,
+        "value": "riposo",
+        "entity": "activity"
+      },
+      {
+        "start": 31,
+        "end": 37,
+        "value": "salute",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 8,
+        "end": 14,
+        "confidence_entity": 0.9797776341438293,
+        "value": "riposo",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 31,
+        "end": 37,
+        "confidence_entity": 0.9936443567276001,
+        "value": "salute",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "elimina l'attività andare in banca nella categoria finanza",
+    "entities": [
+      {
+        "start": 19,
+        "end": 34,
+        "value": "andare in banca",
+        "entity": "activity"
+      },
+      {
+        "start": 51,
+        "end": 58,
+        "value": "finanza",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 19,
+        "end": 25,
+        "confidence_entity": 0.9978606104850769,
+        "value": "andare",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 29,
+        "end": 34,
+        "confidence_entity": 0.9979193806648254,
+        "value": "banca",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 51,
+        "end": 58,
+        "confidence_entity": 0.9999480247497559,
+        "value": "finanza",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "cancella andare in chiesa nella categoria personale alle 19:41",
+    "entities": [
+      {
+        "start": 9,
+        "end": 25,
+        "value": "andare in chiesa",
+        "entity": "activity"
+      },
+      {
+        "start": 42,
+        "end": 51,
+        "value": "personale",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 9,
+        "end": 15,
+        "confidence_entity": 0.9985194802284241,
+        "value": "andare",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 19,
+        "end": 25,
+        "confidence_entity": 0.9784440398216248,
+        "value": "chiesa",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 42,
+        "end": 51,
+        "confidence_entity": 0.9338017106056213,
+        "value": "personale",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "elimina alzarsi",
+    "entities": [
+      {
+        "start": 8,
+        "end": 15,
+        "value": "alzarsi",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 8,
+        "end": 15,
+        "confidence_entity": 0.937949538230896,
+        "value": "alzarsi",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "cancella andare all'ufficio nella categoria progetto alle 16:00",
+    "entities": [
+      {
+        "start": 9,
+        "end": 27,
+        "value": "andare all'ufficio",
+        "entity": "activity"
+      },
+      {
+        "start": 44,
+        "end": 52,
+        "value": "progetto",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 9,
+        "end": 27,
+        "confidence_entity": 0.9987142086029053,
+        "value": "andare all'ufficio",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 44,
+        "end": 52,
+        "confidence_entity": 0.9960514903068542,
+        "value": "progetto",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "piero",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "piero",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.8810169100761414,
+        "value": "piero",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "gerry",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "gerry",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.5053382515907288,
+        "value": "gerry",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "il mio nome è alessia",
+    "entities": [
+      {
+        "start": 14,
+        "end": 21,
+        "value": "alessia",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 14,
+        "end": 21,
+        "confidence_entity": 0.9674920439720154,
+        "value": "alessia",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "natascia",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "natascia",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity_status",
+        "start": 0,
+        "end": 8,
+        "confidence_entity": 0.4498182237148285,
+        "value": "natascia",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "violeta",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "violeta",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.8386562466621399,
+        "value": "violeta",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ciao sono marcello",
+    "entities": [
+      {
+        "start": 10,
+        "end": 18,
+        "value": "marcello",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Foca",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "Foca",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.5107384324073792,
+        "value": "Foca",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "adele",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "adele",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "ciao, sono pierfrancesco",
+    "entities": [
+      {
+        "start": 11,
+        "end": 24,
+        "value": "pierfrancesco",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 11,
+        "end": 24,
+        "confidence_entity": 0.8693413138389587,
+        "value": "pierfrancesco",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "amadeo",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "amadeo",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.7862913012504578,
+        "value": "amadeo",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "anita",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "anita",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.44376876950263977,
+        "value": "anita",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "peppe",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "peppe",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "antonella",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "antonella",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.4805319607257843,
+        "value": "antonella",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "memo",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "memo",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "nik",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "nik",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "faustino",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "faustino",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 8,
+        "confidence_entity": 0.8117020726203918,
+        "value": "faustino",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "vincenzo",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "vincenzo",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 8,
+        "confidence_entity": 0.9704167246818542,
+        "value": "vincenzo",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "scrivere una lettera",
+    "entities": [
+      {
+        "start": 0,
+        "end": 20,
+        "value": "scrivere una lettera",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 12,
+        "confidence_entity": 0.5450682640075684,
+        "value": "scrivere una",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 13,
+        "end": 20,
+        "confidence_entity": 0.41455814242362976,
+        "value": "lettera",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "preparare la vasca",
+    "entities": [
+      {
+        "start": 0,
+        "end": 18,
+        "value": "preparare la vasca",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 12,
+        "confidence_entity": 0.8869059085845947,
+        "value": "preparare la",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 13,
+        "end": 18,
+        "confidence_entity": 0.9892286062240601,
+        "value": "vasca",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "alzarsi",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "alzarsi",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.9308883547782898,
+        "value": "alzarsi",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "esame patente",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "esame patente",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.965901255607605,
+        "value": "esame",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity_status",
+        "start": 6,
+        "end": 13,
+        "confidence_entity": 0.6146339774131775,
+        "value": "patente",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ascoltare musica",
+    "entities": [
+      {
+        "start": 0,
+        "end": 16,
+        "value": "ascoltare musica",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.46421220898628235,
+        "value": "ascoltare",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 10,
+        "end": 16,
+        "confidence_entity": 0.7414115071296692,
+        "value": "musica",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "appuntamento romantico",
+    "entities": [
+      {
+        "start": 0,
+        "end": 22,
+        "value": "appuntamento romantico",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 12,
+        "confidence_entity": 0.9074676036834717,
+        "value": "appuntamento",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "name",
+        "start": 13,
+        "end": 22,
+        "confidence_entity": 0.5030133724212646,
+        "value": "romantico",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "andare in biblioteca",
+    "entities": [
+      {
+        "start": 0,
+        "end": 20,
+        "value": "andare in biblioteca",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.9994717240333557,
+        "value": "andare",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 10,
+        "end": 20,
+        "confidence_entity": 0.9998793601989746,
+        "value": "biblioteca",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "faccende di casa",
+    "entities": [
+      {
+        "start": 0,
+        "end": 16,
+        "value": "faccende di casa",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 8,
+        "confidence_entity": 0.982658326625824,
+        "value": "faccende",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 12,
+        "end": 16,
+        "confidence_entity": 0.9384956359863281,
+        "value": "casa",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "carrello",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "carrello",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 8,
+        "confidence_entity": 0.6987067461013794,
+        "value": "carrello",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "carro",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "carro",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.9683218598365784,
+        "value": "carro",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "viaggio in Spagna",
+    "entities": [
+      {
+        "start": 0,
+        "end": 17,
+        "value": "viaggio in Spagna",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 7,
+        "confidence_entity": 0.9104515314102173,
+        "value": "viaggio",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 11,
+        "end": 17,
+        "confidence_entity": 0.39146095514297485,
+        "value": "Spagna",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ieri",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.9386085867881775,
+        "value": "ieri",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ciao, aggiungi l'attività regali nella categoria natale",
+    "entities": [
+      {
+        "start": 26,
+        "end": 32,
+        "value": "regali",
+        "entity": "activity"
+      },
+      {
+        "start": 49,
+        "end": 55,
+        "value": "natale",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 49,
+        "end": 55,
+        "confidence_entity": 0.98546302318573,
+        "value": "natale",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "voglio inserire una nuova attività nell'elenco spettacolo",
+    "entities": [
+      {
+        "start": 47,
+        "end": 57,
+        "value": "spettacolo",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 47,
+        "end": 57,
+        "confidence_entity": 0.7770628333091736,
+        "value": "spettacolo",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "voglio aggiungere un'attività alla lista cura del corpo",
+    "entities": [
+      {
+        "start": 41,
+        "end": 55,
+        "value": "cura del corpo",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 41,
+        "end": 49,
+        "confidence_entity": 0.66,
+        "value": "cura del",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 50,
+        "end": 55,
+        "confidence_entity": 0.3159777522087097,
+        "value": "corpo",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ciao, voglio aggiungere l'attività inviare un'email all'elenco comunicazione",
+    "entities": [
+      {
+        "start": 35,
+        "end": 51,
+        "value": "inviare un'email",
+        "entity": "activity"
+      },
+      {
+        "start": 63,
+        "end": 76,
+        "value": "comunicazione",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 35,
+        "end": 55,
+        "confidence_entity": 0.9968104958534241,
+        "value": "inviare un'email all",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 63,
+        "end": 76,
+        "confidence_entity": 0.9960284233093262,
+        "value": "comunicazione",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ciao, vorrei aggiungere un'attività all'elenco business alle 18:30",
+    "entities": [
+      {
+        "start": 47,
+        "end": 55,
+        "value": "business",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "nella categoria corso inserire incontro alle 20:30",
+    "entities": [
+      {
+        "start": 16,
+        "end": 21,
+        "value": "corso",
+        "entity": "category"
+      },
+      {
+        "start": 31,
+        "end": 39,
+        "value": "incontro",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 16,
+        "end": 21,
+        "confidence_entity": 0.915818989276886,
+        "value": "corso",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 31,
+        "end": 39,
+        "confidence_entity": 0.46961522102355957,
+        "value": "incontro",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ciao, inserisci l'attività e-commerce nella categoria tecnologia",
+    "entities": [
+      {
+        "start": 27,
+        "end": 37,
+        "value": "e-commerce",
+        "entity": "activity"
+      },
+      {
+        "start": 54,
+        "end": 64,
+        "value": "tecnologia",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 27,
+        "end": 37,
+        "confidence_entity": 0.971187174320221,
+        "value": "e-commerce",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 54,
+        "end": 64,
+        "confidence_entity": 0.7108625173568726,
+        "value": "tecnologia",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ciao, vorrei inserire un'attività nell'elenco coaching alle 19:00",
+    "entities": [
+      {
+        "start": 46,
+        "end": 54,
+        "value": "coaching",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 46,
+        "end": 54,
+        "confidence_entity": 0.8254324793815613,
+        "value": "coaching",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "inserire l'attività ripetere nella categoria esame alle 22:20",
+    "entities": [
+      {
+        "start": 20,
+        "end": 28,
+        "value": "ripetere",
+        "entity": "activity"
+      },
+      {
+        "start": 45,
+        "end": 50,
+        "value": "esame",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 20,
+        "end": 28,
+        "confidence_entity": 0.9998055100440979,
+        "value": "ripetere",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 45,
+        "end": 50,
+        "confidence_entity": 0.9997336268424988,
+        "value": "esame",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "nella categoria benessere aggiungere l'attività andare dal parrucchiere alle 21:10",
+    "entities": [
+      {
+        "start": 16,
+        "end": 25,
+        "value": "benessere",
+        "entity": "category"
+      },
+      {
+        "start": 48,
+        "end": 71,
+        "value": "andare dal parrucchiere",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 16,
+        "end": 25,
+        "confidence_entity": 0.9912689924240112,
+        "value": "benessere",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 48,
+        "end": 71,
+        "confidence_entity": 0.9996896982192993,
+        "value": "andare dal parrucchiere",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "inserisci l'attività fare esercizi di routine nella categoria sport",
+    "entities": [
+      {
+        "start": 21,
+        "end": 45,
+        "value": "fare esercizi di routine",
+        "entity": "activity"
+      },
+      {
+        "start": 62,
+        "end": 67,
+        "value": "sport",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 21,
+        "end": 37,
+        "confidence_entity": 0.9826374650001526,
+        "value": "fare esercizi di",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 62,
+        "end": 67,
+        "confidence_entity": 0.9999455213546753,
+        "value": "sport",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "vorrei inserire un'attività alla categoria cura della mente",
+    "entities": [
+      {
+        "start": 43,
+        "end": 59,
+        "value": "cura della mente",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 43,
+        "end": 47,
+        "confidence_entity": 0.7869806885719299,
+        "value": "cura",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 54,
+        "end": 59,
+        "confidence_entity": 0.9998617172241211,
+        "value": "mente",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ciao, voglio aggiungere un'attività parrucchiere nella categoria benessere",
+    "entities": [
+      {
+        "start": 36,
+        "end": 48,
+        "value": "parrucchiere",
+        "entity": "activity"
+      },
+      {
+        "start": 65,
+        "end": 74,
+        "value": "benessere",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 36,
+        "end": 48,
+        "confidence_entity": 0.999630331993103,
+        "role": "old",
+        "confidence_role": 0.5074307322502136,
+        "value": "parrucchiere",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 65,
+        "end": 74,
+        "confidence_entity": 0.9637510776519775,
+        "value": "benessere",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "aggiungere risposare nella categoria cura della mente alle 2:55",
+    "entities": [
+      {
+        "start": 11,
+        "end": 20,
+        "value": "risposare",
+        "entity": "activity"
+      },
+      {
+        "start": 37,
+        "end": 53,
+        "value": "cura della mente",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 11,
+        "end": 20,
+        "confidence_entity": 0.9989984631538391,
+        "value": "risposare",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 37,
+        "end": 41,
+        "confidence_entity": 0.7464250922203064,
+        "value": "cura",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 48,
+        "end": 53,
+        "confidence_entity": 0.9987133741378784,
+        "value": "mente",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "aggiungere l'attività uscire con gli amici nella categoria società alle 19:41",
+    "entities": [
+      {
+        "start": 22,
+        "end": 42,
+        "value": "uscire con gli amici",
+        "entity": "activity"
+      },
+      {
+        "start": 59,
+        "end": 66,
+        "value": "società",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 22,
+        "end": 28,
+        "confidence_entity": 0.9995031356811523,
+        "role": "old",
+        "confidence_role": 0.7744632959365845,
+        "value": "uscire",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 33,
+        "end": 42,
+        "confidence_entity": 0.9400145411491394,
+        "value": "gli amici",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 59,
+        "end": 66,
+        "confidence_entity": 0.9999575614929199,
+        "value": "società",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "inserisci l'attività prenotare il pub in amicizia alle 19:41",
+    "entities": [
+      {
+        "start": 21,
+        "end": 37,
+        "value": "prenotare il pub",
+        "entity": "activity"
+      },
+      {
+        "start": 41,
+        "end": 49,
+        "value": "amicizia",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 21,
+        "end": 37,
+        "confidence_entity": 0.7842241525650024,
+        "value": "prenotare il pub",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 41,
+        "end": 49,
+        "confidence_entity": 0.9998679161071777,
+        "value": "amicizia",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ciao, vorrei inserire un'attività nella categoria giustizia alle 22:20",
+    "entities": [
+      {
+        "start": 50,
+        "end": 59,
+        "value": "giustizia",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 50,
+        "end": 59,
+        "confidence_entity": 0.9919573068618774,
+        "value": "giustizia",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "inserisci l'attività andare in farmacia",
+    "entities": [
+      {
+        "start": 21,
+        "end": 39,
+        "value": "andare in farmacia",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 21,
+        "end": 27,
+        "confidence_entity": 0.9997512698173523,
+        "value": "andare",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 31,
+        "end": 39,
+        "confidence_entity": 0.9961058497428894,
+        "value": "farmacia",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "inserire andare al supermercato nella categoria cibo alle 6:30",
+    "entities": [
+      {
+        "start": 9,
+        "end": 31,
+        "value": "andare al supermercato",
+        "entity": "activity"
+      },
+      {
+        "start": 48,
+        "end": 52,
+        "value": "cibo",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 9,
+        "end": 31,
+        "confidence_entity": 0.9997057318687439,
+        "value": "andare al supermercato",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 48,
+        "end": 52,
+        "confidence_entity": 0.5671805739402771,
+        "value": "cibo",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ciao, voglio creare l'attività andare nel centro della città nell'elenco commissioni",
+    "entities": [
+      {
+        "start": 31,
+        "end": 60,
+        "value": "andare nel centro della città",
+        "entity": "activity"
+      },
+      {
+        "start": 73,
+        "end": 84,
+        "value": "commissioni",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 31,
+        "end": 37,
+        "confidence_entity": 0.9999755620956421,
+        "value": "andare",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 42,
+        "end": 54,
+        "confidence_entity": 0.5542945265769958,
+        "value": "centro della",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 73,
+        "end": 84,
+        "confidence_entity": 0.9999454021453857,
+        "value": "commissioni",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]
