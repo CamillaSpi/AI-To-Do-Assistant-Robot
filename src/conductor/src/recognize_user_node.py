@@ -5,7 +5,7 @@ import numpy as np
 from ros_audio_pkg.msg import RecognizedSpoke
 from pepper_nodes.srv import *
 from ros_audio_pkg.srv import idLabel,Registration
-from facial_emotion_recognition.srv import video_detect_user
+from face_recognition.srv import video_detect_user
 import time
 
 #i messaggi correttamente riconosciuti verranno mandati a rasa
@@ -17,7 +17,6 @@ pub_recogizer_node = rospy.Publisher('startRegistration', Bool, queue_size=10)
 
 
 natural_learning_voice = rospy.Publisher('naturalLearningVoice', Int16, queue_size=10)
-natural_learning_face = rospy.Publisher('naturalLearningFace', Int16, queue_size=10)
 
 # Init node
 rospy.init_node('recognize_user', anonymous=True)
@@ -68,15 +67,15 @@ def recognize_user(text_to_send):
             print('ti riconosco',toSend)
 
             # natural learning 
-            if id_voice_prob_arr[id_max] < 0.28:
+            if id_voice_prob_arr[id_max] < 0.35:
                 natural_learning_voice.publish(id_max)
                
 
         else:
             print('non ti  riconosco') #qui bisogna avviare la registrazione
             pub_recogizer_node.publish(Bool(True))
-            mario = startVoiceRegistration()
-            print('ricevuta risposta'  ,mario)
+            reg_response = startVoiceRegistration()
+            print('ricevuta risposta'  ,reg_response)
             #l'utente non è stato correttamente riconosciuto
             # pub2.publish("I can't recognize you")
     except rospy.ServiceException as e:

@@ -1,5 +1,5 @@
 conductor
-/home/mattia/Desktop/DefinitivoCog/devel/.private/conductor/cmake.lock /home/mattia/Desktop/DefinitivoCog/devel/./cmake.lock
-/home/mattia/Desktop/DefinitivoCog/devel/.private/conductor/share/conductor/cmake/conductorConfig.cmake /home/mattia/Desktop/DefinitivoCog/devel/share/conductor/cmake/conductorConfig.cmake
-/home/mattia/Desktop/DefinitivoCog/devel/.private/conductor/share/conductor/cmake/conductorConfig-version.cmake /home/mattia/Desktop/DefinitivoCog/devel/share/conductor/cmake/conductorConfig-version.cmake
-/home/mattia/Desktop/DefinitivoCog/devel/.private/conductor/lib/pkgconfig/conductor.pc /home/mattia/Desktop/DefinitivoCog/devel/lib/pkgconfig/conductor.pc
+/home/nando/Desktop/DefinitivoCog/devel/.private/conductor/cmake.lock /home/nando/Desktop/DefinitivoCog/devel/./cmake.lock
+/home/nando/Desktop/DefinitivoCog/devel/.private/conductor/lib/pkgconfig/conductor.pc /home/nando/Desktop/DefinitivoCog/devel/lib/pkgconfig/conductor.pc
+/home/nando/Desktop/DefinitivoCog/devel/.private/conductor/share/conductor/cmake/conductorConfig-version.cmake /home/nando/Desktop/DefinitivoCog/devel/share/conductor/cmake/conductorConfig-version.cmake
+/home/nando/Desktop/DefinitivoCog/devel/.private/conductor/share/conductor/cmake/conductorConfig.cmake /home/nando/Desktop/DefinitivoCog/devel/share/conductor/cmake/conductorConfig.cmake

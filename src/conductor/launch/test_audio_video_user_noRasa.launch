@@ -11,10 +11,10 @@
     <node pkg="ros_audio_pkg" type="asr.py" name="asr" output="screen"/>
     <node pkg="ros_audio_pkg" type="speaker_identification.py" name="speaker_identification" output="screen"/>
 
-    <node pkg="facial_emotion_recognition" type="acquisition_node.py" name="acquisition_node" output="screen"/>
-    <node pkg="facial_emotion_recognition" type="detector_node.py" name="detector_node" output="screen"/>
-    <node pkg="facial_emotion_recognition" type="face_reidentification_node.py" name="ace_reidentification_node" output="screen"/>
-    <node pkg="facial_emotion_recognition" type="visualization_node.py" name="visualization_node" output="screen"/> 
+    <node pkg="face_recognition" type="acquisition_node.py" name="acquisition_node" output="screen"/>
+    <node pkg="face_recognition" type="detector_node.py" name="detector_node" output="screen"/>
+    <node pkg="face_recognition" type="face_reidentification_node.py" name="ace_reidentification_node" output="screen"/>
+    <node pkg="face_recognition" type="visualization_node.py" name="visualization_node" output="screen"/> 
 
     <node pkg="conductor" type="recognize_user_node.py" name="recognize_user_node" output="screen"/>
     <node pkg="conductor" name="test_tts_node" type="test_tts_node.py" output="screen"/>
@@ -34,10 +34,10 @@
     <node pkg="ros_audio_pkg" type="asr.py" name="asr" output="screen"/>
     <node pkg="ros_audio_pkg" type="speaker_identification.py" name="speaker_identification" output="screen"/>
 
-    <node pkg="facial_emotion_recognition" type="acquisition_node.py" name="acquisition_node" output="screen" />
-    <node pkg="facial_emotion_recognition" type="detector_node.py" name="detector_node" args="--listen_on_detect=$(arg lod)" output="screen" />
-    <node pkg="facial_emotion_recognition" type="face_reidentification_node.py" name="ace_reidentification_node" output="screen"/>
-    <node pkg="facial_emotion_recognition" type="visualization_node.py" name="visualization_node" output="screen"/> 
+    <node pkg="face_recognition" type="acquisition_node.py" name="acquisition_node" output="screen" />
+    <node pkg="face_recognition" type="detector_node.py" name="detector_node" args="--listen_on_detect=$(arg lod)" output="screen" />
+    <node pkg="face_recognition" type="face_reidentification_node.py" name="ace_reidentification_node" output="screen"/>
+    <node pkg="face_recognition" type="visualization_node.py" name="visualization_node" output="screen"/> 
 
     <node pkg="conductor" type="recognize_user_node.py" name="recognize_user_node" output="screen"/>
     <node pkg="conductor" name="url2pepper" type="url_to_pepper.py" output="screen"/>

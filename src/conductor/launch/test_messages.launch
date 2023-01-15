@@ -4,10 +4,10 @@
     <node pkg="ros_audio_pkg" type="speaker_identification.py" name="speaker_identification" output="screen"/>
 
     
-    <node pkg="facial_emotion_recognition" type="acquisition_node.py" name="acquisition_node" output="screen"/>
-    <node pkg="facial_emotion_recognition" type="detector_node.py" name="detector_node" output="screen"/>
-    <node pkg="facial_emotion_recognition" type="face_reidentification_node.py" name="ace_reidentification_node" output="screen"/>
-    <node pkg="facial_emotion_recognition" type="visualization_node.py" name="visualization_node" output="screen"/> 
+    <node pkg="no_pepper_nodes" type="test_camera_node.py" name="test_camera_node" output="screen"/>
+    <node pkg="face_recognition" type="detector_node.py" name="detector_node" output="screen"/>
+    <node pkg="face_recognition" type="face_reidentification_node.py" name="ace_reidentification_node" output="screen"/>
+    <node pkg="face_recognition" type="visualization_node.py" name="visualization_node" output="screen"/> 
 
     <node pkg="conductor" type="recognize_user_node.py" name="recognize_user_node" output="screen"/>
 </launch>
