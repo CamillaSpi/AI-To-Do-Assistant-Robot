@@ -12,12 +12,6 @@ REF_PATH = os.path.dirname(os.path.abspath(__file__))
 
 rospy.init_node('visualization_node')
 
-labelConversation = {
-    0:'nando',
-    1:'vito',
-    2:'camila',
-    3:'mattia'
-}
 global i 
 i = 0
 def rcv_identity(msg):
@@ -30,8 +24,8 @@ def rcv_identity(msg):
             frame_face = ros_numpy.numpify(d.source_img)
         id = d.results[0].id
         identity = 'unrecognized user'
-        if id < 4:
-            identity = labelConversation[id]
+        if id >= 0:
+            identity = 'recognized user'
         #print(identity)
         cv2.putText(frame_face, identity, (round(d.bbox.center.y-d.bbox.size_y/2+d.bbox.size_x //20), round(d.bbox.center.x-d.bbox.size_x/2+d.bbox.size_y//20)), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2, cv2.LINE_AA)
     cv2.imshow("identity Demo", frame_face)
