@@ -1,0 +1,122 @@
+[
+  {
+    "text": "arrivederci",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "è stato un piacere",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.570384681224823
+    }
+  },
+  {
+    "text": "Ho bisogno di assistenza",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.4407798945903778
+    }
+  },
+  {
+    "text": "Salve",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.5823081135749817
+    }
+  },
+  {
+    "text": "affermativo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999776482582092
+    }
+  },
+  {
+    "text": "Super entusiasta",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.25110915303230286
+    }
+  },
+  {
+    "text": "Mi sento molto bene",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.8882170915603638
+    }
+  },
+  {
+    "text": "mi hai già visto prima?",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.7366827726364136
+    }
+  },
+  {
+    "text": "voglio modificare il nome della categoria svago con il nome divertimento",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.8461437821388245
+    }
+  },
+  {
+    "text": "cambiare il nome della categoria divertimento con il nome cura personale",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.9942317605018616
+    }
+  },
+  {
+    "text": "aggiungi sport",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.6310799717903137
+    }
+  },
+  {
+    "text": "il mio nome è matti",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.5684506893157959
+    }
+  },
+  {
+    "text": "corda",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9999996423721313
+    }
+  },
+  {
+    "text": "metti preparare la presentazione in progetti",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.7599870562553406
+    }
+  },
+  {
+    "text": "inserisci yoga",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.9980100989341736
+    }
+  }
+]

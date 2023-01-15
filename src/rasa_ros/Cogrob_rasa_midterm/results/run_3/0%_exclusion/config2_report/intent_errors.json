@@ -1,0 +1,242 @@
+[
+  {
+    "text": "arrivederci",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Non so cosa fare",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.32314956188201904
+    }
+  },
+  {
+    "text": "Salve",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "buona mattina",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.5444031953811646
+    }
+  },
+  {
+    "text": "affermativo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9754781126976013
+    }
+  },
+  {
+    "text": "Sto per salvare il mondo",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9875965118408203
+    }
+  },
+  {
+    "text": "puoi dire il mio nome?",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.5323764681816101
+    }
+  },
+  {
+    "text": "mai",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.41153135895729065
+    }
+  },
+  {
+    "text": "mostra la mia attività non fatta nella categoria impegni",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.6620579361915588
+    }
+  },
+  {
+    "text": "inserisci amici",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "fai scomparire spesa dalle mie categorie",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "view_categories",
+      "confidence": 0.7723320126533508
+    }
+  },
+  {
+    "text": "valerio",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "vito",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "marzia",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "ernesto",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "edoardo",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9992680549621582
+    }
+  },
+  {
+    "text": "grazia",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.8162901401519775
+    }
+  },
+  {
+    "text": "teresa",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "stefano",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.47888439893722534
+    }
+  },
+  {
+    "text": "marta",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "voglio registrarmi",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.7929725646972656
+    }
+  },
+  {
+    "text": "benedetto",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9994014501571655
+    }
+  },
+  {
+    "text": "Foca",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "prossima domenica",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.5100840926170349
+    }
+  },
+  {
+    "text": "il prossimo venerdì",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.8347959518432617
+    }
+  },
+  {
+    "text": "progetti",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.5824004411697388
+    }
+  },
+  {
+    "text": "fumetti",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.5902729630470276
+    }
+  },
+  {
+    "text": "lunedì prossimo",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.9166983366012573
+    }
+  },
+  {
+    "text": "corda",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.6261446475982666
+    }
+  },
+  {
+    "text": "ieri",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  }
+]

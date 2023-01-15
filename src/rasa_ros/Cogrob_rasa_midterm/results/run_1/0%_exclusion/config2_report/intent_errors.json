@@ -1,0 +1,234 @@
+[
+  {
+    "text": "ci vediamo in giro",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9969126582145691
+    }
+  },
+  {
+    "text": "buona notte",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.8777299523353577
+    }
+  },
+  {
+    "text": "Salve",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "yes",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "certo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Grandioso",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.33538898825645447
+    }
+  },
+  {
+    "text": "Sono grande",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "pulisci tutte le attività completate",
+    "intent": "clean_activities",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.7764252424240112
+    }
+  },
+  {
+    "text": "cosa ho da fare?",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.9461010098457336
+    }
+  },
+  {
+    "text": "cambiare il nome della categoria divertimento con il nome cura personale",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.9777972102165222
+    }
+  },
+  {
+    "text": "rimuovi università tra le mie categorie",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "view_categories",
+      "confidence": 0.3883589208126068
+    }
+  },
+  {
+    "text": "ciao, per favore annulla la seguente categoria divertimento",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "modify_category",
+      "confidence": 0.6903969645500183
+    }
+  },
+  {
+    "text": "ciao, metti incompiuta l'attività jogging in salute fisica",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9999971389770508
+    }
+  },
+  {
+    "text": "teresa",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "ale",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999239444732666
+    }
+  },
+  {
+    "text": "laura",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "elza",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.2368849813938141
+    }
+  },
+  {
+    "text": "nerone",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "michi",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.6701616644859314
+    }
+  },
+  {
+    "text": "nuovo utente",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.27339494228363037
+    }
+  },
+  {
+    "text": "grazia",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.4268172085285187
+    }
+  },
+  {
+    "text": "nik",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.45861658453941345
+    }
+  },
+  {
+    "text": "aggiustare la porta",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.20727324485778809
+    }
+  },
+  {
+    "text": "porto",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.1719868928194046
+    }
+  },
+  {
+    "text": "materie",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9996694922447205
+    }
+  },
+  {
+    "text": "odierne",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "corda",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.7973692417144775
+    }
+  },
+  {
+    "text": "alle 21",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remove_item",
+      "confidence": 0.258295476436615
+    }
+  },
+  {
+    "text": "spese",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  }
+]

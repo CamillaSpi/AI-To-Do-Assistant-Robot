@@ -1,0 +1,138 @@
+[
+  {
+    "text": "ci si vede",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.3234194815158844
+    }
+  },
+  {
+    "text": "arrivederci",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.4894842207431793
+    }
+  },
+  {
+    "text": "Non so cosa fare",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6602382063865662
+    }
+  },
+  {
+    "text": "Aiuto",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Salve",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "affermativo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999999403953552
+    }
+  },
+  {
+    "text": "Sono grande",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.8874878287315369
+    }
+  },
+  {
+    "text": "Sto per salvare il mondo",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.28029900789260864
+    }
+  },
+  {
+    "text": "pulisci tutte le attività completate",
+    "intent": "clean_activities",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.836884081363678
+    }
+  },
+  {
+    "text": "mostra la mia attività non fatta nella categoria impegni",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.8272688984870911
+    }
+  },
+  {
+    "text": "inserisci amici",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "rimuovi università tra le mie categorie",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "view_categories",
+      "confidence": 0.4466495215892792
+    }
+  },
+  {
+    "text": "fai scomparire spesa dalle mie categorie",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "view_categories",
+      "confidence": 0.5503038763999939
+    }
+  },
+  {
+    "text": "chicca",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.44709402322769165
+    }
+  },
+  {
+    "text": "voglio registrarmi",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.2398952692747116
+    }
+  },
+  {
+    "text": "prossima domenica",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.3652474880218506
+    }
+  },
+  {
+    "text": "il prossimo venerdì",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.5473750233650208
+    }
+  }
+]

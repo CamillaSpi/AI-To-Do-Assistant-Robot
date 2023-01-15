@@ -1,0 +1,258 @@
+[
+  {
+    "text": "arrivederci",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "è stato un piacere",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Salve",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "affermativo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Super entusiasta",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9899651408195496
+    }
+  },
+  {
+    "text": "Mi sento molto bene",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.9774609208106995
+    }
+  },
+  {
+    "text": "rimuovi le attività",
+    "intent": "clean_activities",
+    "intent_prediction": {
+      "name": "remove_item",
+      "confidence": 0.8253771662712097
+    }
+  },
+  {
+    "text": "voglio modificare il nome della categoria svago con il nome divertimento",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.9943150281906128
+    }
+  },
+  {
+    "text": "cambiare il nome della categoria divertimento con il nome cura personale",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.9999064207077026
+    }
+  },
+  {
+    "text": "ciao, per favore annulla la seguente categoria divertimento",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "modify_category",
+      "confidence": 0.5715590119361877
+    }
+  },
+  {
+    "text": "grazia",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.8476095199584961
+    }
+  },
+  {
+    "text": "vito",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.35568225383758545
+    }
+  },
+  {
+    "text": "jhon",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.3721279799938202
+    }
+  },
+  {
+    "text": "geppy",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.442619651556015
+    }
+  },
+  {
+    "text": "elga",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6014870405197144
+    }
+  },
+  {
+    "text": "betti",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.7244006395339966
+    }
+  },
+  {
+    "text": "guendalina",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "azzurra",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "salvatore",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "galatea",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.3747817277908325
+    }
+  },
+  {
+    "text": "nik",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.4587686061859131
+    }
+  },
+  {
+    "text": "edvige",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "olivia",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "mensile",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "carrello",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "carro",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.43958818912506104
+    }
+  },
+  {
+    "text": "tempo libero",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.44116032123565674
+    }
+  },
+  {
+    "text": "corda",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.3920014798641205
+    }
+  },
+  {
+    "text": "nuoto",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.3426761329174042
+    }
+  },
+  {
+    "text": "sfizi",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "relax",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "ciao, voglio creare un'attività per la lista primavera",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.6849639415740967
+    }
+  }
+]

@@ -1,0 +1,138 @@
+[
+  {
+    "text": "tu chi sei?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.9254111647605896
+    }
+  },
+  {
+    "text": "buona notte",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.7764880061149597
+    }
+  },
+  {
+    "text": "Aiuto",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Aiutami",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.45609331130981445
+    }
+  },
+  {
+    "text": "ciao",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.5058683753013611
+    }
+  },
+  {
+    "text": "Salve",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9996651411056519
+    }
+  },
+  {
+    "text": "yes",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "certo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.44962021708488464
+    }
+  },
+  {
+    "text": "Grandioso",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9867964386940002
+    }
+  },
+  {
+    "text": "Sono grande",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9995539784431458
+    }
+  },
+  {
+    "text": "non mi va",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.45010069012641907
+    }
+  },
+  {
+    "text": "non mi piace",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.2774491310119629
+    }
+  },
+  {
+    "text": "pulisci tutte le attività completate",
+    "intent": "clean_activities",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.7845276594161987
+    }
+  },
+  {
+    "text": "cosa ho da fare?",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.7073283791542053
+    }
+  },
+  {
+    "text": "rimuovi università tra le mie categorie",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "clean_activities",
+      "confidence": 0.5345048308372498
+    }
+  },
+  {
+    "text": "odierne",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "view_categories",
+      "confidence": 0.47028982639312744
+    }
+  },
+  {
+    "text": "to do",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9354546666145325
+    }
+  }
+]
