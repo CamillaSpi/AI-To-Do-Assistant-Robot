@@ -100,7 +100,7 @@ responses:
   utter_ask_add_item_form_activity:
   - text: Inserisci la nuova attività
   utter_ask_category:
-  - text: Inserisci la categoria dell'elemento
+  - text: Inserisci la categoria
   utter_ask_add_category_form_category:
   - text: Inserisci la nuova categoria
   utter_confirm_choice:

@@ -507,6 +507,10 @@ nlu:
     - [universita](category)
     - oggi alle 21
     - in 5 minuti
+    - il 15 marzo
+    - il 5 maggio
+    - il 20 agosto
+    - a giugno
     - [cena con i parenti](activity)
     - [famiglia](category)
     - da oggi a domani
@@ -547,6 +551,7 @@ nlu:
     - metti l'attività [studiare](activity) in [scuola](category)
     - inserisci l'attività [conferenza](activity) in [lavoro](category)
     - aggiungi l'attività [pulire](activity) in [casa](category)
+    - aggiungi l'attività [pulire](activity) in [casa](category) per domani
     - inserisci l'attività [fare stretching](activity) in [palestra](category)
     - aggiungi l'attività [inviare il codice](activity) in [impegni](category)
     - inserisci l'attività [fare giardinaggio](activity) in [casa](category)
@@ -1319,10 +1324,10 @@ nlu:
     - cambia la scadenza dell'attività [raccogliere fondi](activity) nella categoria [volontariato](category) a lunedì
     - cambia la scadenza dell'attività [raccogliere fondi](activity)
     - per l'attività [andare in chiesa](activity) nella categoria [personale](category) modificare la scadenza con 22 ottobre 1922
-    - per l'attività [bollette](activity) nella categoria [finanza](category) modificare la deadline dal 4 novembre al 22 ottobre 1922
+    - per l'attività [bollette](activity) nella categoria [finanza](category) modificare la deadline dal 4 novembre al 22 gennaio 1922
     - per l'attività [prenotare l'aereo](activity) nella categoria [vacanza](category) trasformare la deadline in lunedì
     - per l'attività [appunti](activity) nella categoria [scuola](category) trasformare la scadenza in lunedì
-    - voglio cambiare il termine dell'attività [uscire con gli amici](activity) nella categoria [eventi](category) con 27 settembre 1998
+    - voglio cambiare il termine dell'attività [uscire con gli amici](activity) nella categoria [eventi](category) con 27 aprile 1998
     - voglio cambiare la scadenza dell'attività [pub](activity) nella categoria [svago](category) al 27 settembre 1998
     - voglio modificare la scadenza dell'attività [disegnare un ritratto](activity) nella categoria [lavoro](category) a domani alle 18:00
     - voglio modificare la deadline dell'attività [suonare la chitarra](activity) nella categoria [musica](category) in domani alle 18:00
@@ -1337,7 +1342,7 @@ nlu:
     - altera la scadenza dell'attività [pagare l'affitto](activity) nella categoria [mensile](category) da oggi al 04/21/2023
     - altera la scadenza dell'attività [cena di Natale](activity) nella categoria [eventi](category) con lunedì
     - altera la scadenza dell'attività [cena di Natale](activity) nella categoria [eventi](category)
-    - per l'attività [invito di compleanno](activity) nella categoria [amici](category) modifica la scadenza con il 22 ottobre 1922
+    - per l'attività [invito di compleanno](activity) nella categoria [amici](category) modifica la scadenza con il 22 febbraio 1922
     - per l'attività [studiare in biblioteca](activity) nella categoria [università](category) modifica il termine nel 22 ottobre 1922
     - per l'attività [pulire la mia camera da letto](activity) nella categoria [casa](category) trasformare la deadline in lunedì
     - per l'attività [prendere le medicine](activity) nella categoria [salute personale](category) trasformare la scadenza in lunedì
