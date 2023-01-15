@@ -136,20 +136,38 @@ def predict_identity(resized_face, rejection_threshold=0.5):
 
 def face_reidentification(image):
     return predict_identity(cv2.imread(image))
-
+from sklearn.metrics import confusion_matrix
+import seaborn as sn
+import pandas as pd
+import matplotlib.pyplot as plt
 
 number_of_known_people = 4
 accuracy = 0
 count = 0
+y_preds = []
+y_labels = []
 
-for i in range(0,number_of_known_people):
-    person_path = os.path.join(REF_PATH, str(i).zfill(1))
+for y_test in range(0,number_of_known_people):
+    person_path = os.path.join(REF_PATH, str(y_test).zfill(1))
     person = []
+
+
     print(person_path)
     for filename in tqdm(glob(os.path.join(person_path,'*.png'))):
         count +=1
-        if (i == predict_identity(cv2.imread(filename))):
+        y_prediction = predict_identity(cv2.imread(filename))
+        y_preds.append(y_prediction)
+        y_labels.append(y_test)
+        if (y_test == y_prediction):
             accuracy +=1
+
+result = confusion_matrix(y_labels, y_preds , normalize='pred')
+df_cm = pd.DataFrame(result, index = [i for i in range(0,4)],
+                  columns = [i for i in range(0,4)])
+sn.set(font_scale=1.4) # for label size
+sn.heatmap(df_cm, annot=True, annot_kws={"size": 16}) # font size
+
+plt.show()
 
 print("the accuracy is {:.2f}".format(accuracy/count))
         
