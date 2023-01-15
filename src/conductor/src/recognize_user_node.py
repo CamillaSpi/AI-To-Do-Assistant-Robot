@@ -67,7 +67,7 @@ def recognize_user(text_to_send):
             print('ti riconosco',toSend)
 
             # natural learning 
-            if id_voice_prob_arr[id_max] < 0.28:
+            if id_voice_prob_arr[id_max] < 0.35:
                 natural_learning_voice.publish(id_max)
                
 
