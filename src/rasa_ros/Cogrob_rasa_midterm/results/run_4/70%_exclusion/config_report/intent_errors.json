@@ -1,0 +1,258 @@
+[
+  {
+    "text": "buona giornata",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.3830658197402954
+    }
+  },
+  {
+    "text": "è stato un piacere",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.687630832195282
+    }
+  },
+  {
+    "text": "Non so cosa fare",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.7142385840415955
+    }
+  },
+  {
+    "text": "Aiuto",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9873892664909363
+    }
+  },
+  {
+    "text": "esatto",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.6310438513755798
+    }
+  },
+  {
+    "text": "si",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.5612638592720032
+    }
+  },
+  {
+    "text": "Stupefacente",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.6325909495353699
+    }
+  },
+  {
+    "text": "Meraviglioso",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.7300910353660583
+    }
+  },
+  {
+    "text": "Non bene",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.8774998188018799
+    }
+  },
+  {
+    "text": "dimmi il mio nome",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9558920860290527
+    }
+  },
+  {
+    "text": "negativo",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.8647022247314453
+    }
+  },
+  {
+    "text": "ricordami di cucinare il pranzo nella categoria casa alle 8:30",
+    "intent": "remind_me_of",
+    "intent_prediction": {
+      "name": "remove_item",
+      "confidence": 0.38193872570991516
+    }
+  },
+  {
+    "text": "ricordami la riunione di lavoro domani mattina",
+    "intent": "remind_me_of",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.3554479777812958
+    }
+  },
+  {
+    "text": "mostrami cosa devo fare oggi",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "view_categories",
+      "confidence": 0.25622546672821045
+    }
+  },
+  {
+    "text": "cosa ho da fare?",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.2895691394805908
+    }
+  },
+  {
+    "text": "trasformare la categoria famiglia con amicizia",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.5096094012260437
+    }
+  },
+  {
+    "text": "ciao, voglio inserire una nuova categoria ricerca",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9993575215339661
+    }
+  },
+  {
+    "text": "ciao, voglio aggiungere una categoria settimanale",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.8968828320503235
+    }
+  },
+  {
+    "text": "metti la categoria ingegneria",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.8586511611938477
+    }
+  },
+  {
+    "text": "la categoria da aggiungere è università",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.4252427816390991
+    }
+  },
+  {
+    "text": "rimuovi università tra le mie categorie",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "view_categories",
+      "confidence": 0.7172214388847351
+    }
+  },
+  {
+    "text": "elimina fare una presentazione nella categoria società",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.5061270594596863
+    }
+  },
+  {
+    "text": "ciao, voglio rimuovere un'attività dall'elenco ricreazione",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9912022352218628
+    }
+  },
+  {
+    "text": "Foca",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9981532692909241
+    }
+  },
+  {
+    "text": "fare shopping",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9958548545837402
+    }
+  },
+  {
+    "text": "faccende di casa",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.7335655689239502
+    }
+  },
+  {
+    "text": "6:30",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.5343843102455139
+    }
+  },
+  {
+    "text": "viaggio in Spagna",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.5164066553115845
+    }
+  },
+  {
+    "text": "ieri",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.866574227809906
+    }
+  },
+  {
+    "text": "vorrei creare una nuova attività",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.7429416179656982
+    }
+  },
+  {
+    "text": "metti preparare la presentazione in progetti",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.864220917224884
+    }
+  },
+  {
+    "text": "metti fare jogging in sport",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.890369176864624
+    }
+  }
+]

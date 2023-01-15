@@ -1,0 +1,130 @@
+[
+  {
+    "text": "alla prossima",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8684933185577393
+    }
+  },
+  {
+    "text": "buona notte",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.8419313430786133
+    }
+  },
+  {
+    "text": "Ho bisogno di assistenza",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.7800402045249939
+    }
+  },
+  {
+    "text": "ciao",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.8208310008049011
+    }
+  },
+  {
+    "text": "Ciao",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.8208310008049011
+    }
+  },
+  {
+    "text": "indubbiamente",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.7324082255363464
+    }
+  },
+  {
+    "text": "corretto",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.22991281747817993
+    }
+  },
+  {
+    "text": "Mi sento molto bene",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.787430465221405
+    }
+  },
+  {
+    "text": "Sto per salvare il mondo",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.6137391328811646
+    }
+  },
+  {
+    "text": "chi sono",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9999881982803345
+    }
+  },
+  {
+    "text": "sai chi sono?",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.5768721699714661
+    }
+  },
+  {
+    "text": "sapresti dirmi chi sono?",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.4185504913330078
+    }
+  },
+  {
+    "text": "non mi piace",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.49054402112960815
+    }
+  },
+  {
+    "text": "cercare",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9797048568725586
+    }
+  },
+  {
+    "text": "to do",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.8729329109191895
+    }
+  },
+  {
+    "text": "metti fare jogging in sport",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.897101879119873
+    }
+  }
+]

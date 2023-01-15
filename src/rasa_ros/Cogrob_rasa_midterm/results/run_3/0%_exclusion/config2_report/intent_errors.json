@@ -1,0 +1,226 @@
+[
+  {
+    "text": "Sto parlando con un bot?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999977350234985
+    }
+  },
+  {
+    "text": "alla prossima",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "buona notte",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9003883600234985
+    }
+  },
+  {
+    "text": "Cosa puoi fare?",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.46916648745536804
+    }
+  },
+  {
+    "text": "ciao",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.866202175617218
+    }
+  },
+  {
+    "text": "Ciao",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.8694668412208557
+    }
+  },
+  {
+    "text": "indubbiamente",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "corretto",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Mi sento molto bene",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.96321702003479
+    }
+  },
+  {
+    "text": "Sto per salvare il mondo",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9999997615814209
+    }
+  },
+  {
+    "text": "Così buono",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6526612639427185
+    }
+  },
+  {
+    "text": "mostra la mia attività non fatta nella categoria impegni",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.9638413786888123
+    }
+  },
+  {
+    "text": "nella categoria famiglia sostituisci il termine dell'attività accompagnare mio figlio dal 10/12/2022 al 12/13/2022",
+    "intent": "modify_activity_deadline",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9987125396728516
+    }
+  },
+  {
+    "text": "gizio",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Foca",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "pino",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "nerone",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "mimmo",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.24150030314922333
+    }
+  },
+  {
+    "text": "ursola",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "cinzia",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999998807907104
+    }
+  },
+  {
+    "text": "michi",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.6589542627334595
+    }
+  },
+  {
+    "text": "venturino",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "benedetto",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.46088993549346924
+    }
+  },
+  {
+    "text": "tina",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.27264419198036194
+    }
+  },
+  {
+    "text": "il mio nome Dario",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.862476110458374
+    }
+  },
+  {
+    "text": "studiare per l'esame",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remove_item",
+      "confidence": 0.35924723744392395
+    }
+  },
+  {
+    "text": "laboratorio",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "mensile",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.7292608022689819
+    }
+  }
+]

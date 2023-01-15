@@ -1,0 +1,370 @@
+[
+  {
+    "text": "Sto parlando con un bot?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9995469450950623
+    }
+  },
+  {
+    "text": "alla prossima",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.818021297454834
+    }
+  },
+  {
+    "text": "Cosa puoi fare?",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.41533395648002625
+    }
+  },
+  {
+    "text": "Ho bisogno di assistenza",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.3642424941062927
+    }
+  },
+  {
+    "text": "ciao",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.8884963989257812
+    }
+  },
+  {
+    "text": "Ciao",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.8835809230804443
+    }
+  },
+  {
+    "text": "indubbiamente",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "corretto",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.8429250121116638
+    }
+  },
+  {
+    "text": "Mi sento molto bene",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.893912136554718
+    }
+  },
+  {
+    "text": "Sto per salvare il mondo",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.21945108473300934
+    }
+  },
+  {
+    "text": "mostra la mia attività non fatta nella categoria impegni",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.8461616635322571
+    }
+  },
+  {
+    "text": "voglio vedere tutte le mie attività completate",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "clean_activities",
+      "confidence": 0.47424429655075073
+    }
+  },
+  {
+    "text": "modificare la categoria amicizia in famiglia",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.651925265789032
+    }
+  },
+  {
+    "text": "nella categoria famiglia sostituisci il termine dell'attività accompagnare mio figlio dal 10/12/2022 al 12/13/2022",
+    "intent": "modify_activity_deadline",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9929856657981873
+    }
+  },
+  {
+    "text": "elimina alzarsi",
+    "intent": "remove_item",
+    "intent_prediction": {
+      "name": "remove_category",
+      "confidence": 0.5237982273101807
+    }
+  },
+  {
+    "text": "sono giorgia",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.37260276079177856
+    }
+  },
+  {
+    "text": "gizio",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "edoardo",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9956341981887817
+    }
+  },
+  {
+    "text": "Foca",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "fammi iscrivere",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999816417694092
+    }
+  },
+  {
+    "text": "il mio nome è alessia",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.5202222466468811
+    }
+  },
+  {
+    "text": "hi bot, il mio nome è Gianluca",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.6963651180267334
+    }
+  },
+  {
+    "text": "nerone",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.6413049101829529
+    }
+  },
+  {
+    "text": "elga",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.999994695186615
+    }
+  },
+  {
+    "text": "lucio",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9995758533477783
+    }
+  },
+  {
+    "text": "michi",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.7283127307891846
+    }
+  },
+  {
+    "text": "benedetto",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.3995826542377472
+    }
+  },
+  {
+    "text": "il mio nome Dario",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.6642653346061707
+    }
+  },
+  {
+    "text": "romi",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999995827674866
+    }
+  },
+  {
+    "text": "gianni",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9360159635543823
+    }
+  },
+  {
+    "text": "fare il rifornimento",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.3042762279510498
+    }
+  },
+  {
+    "text": "farmaci",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.5310224890708923
+    }
+  },
+  {
+    "text": "controllare il mercato",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.3377876281738281
+    }
+  },
+  {
+    "text": "ieri",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9998959302902222
+    }
+  },
+  {
+    "text": "laboratorio",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.23791609704494476
+    }
+  },
+  {
+    "text": "tempo libero",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.3219257593154907
+    }
+  },
+  {
+    "text": "cuocere biscotti",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.3260824978351593
+    }
+  },
+  {
+    "text": "alzarsi",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.2909124493598938
+    }
+  },
+  {
+    "text": "ascoltare musica",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9999828338623047
+    }
+  },
+  {
+    "text": "aggiustare orologio",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9988609552383423
+    }
+  },
+  {
+    "text": "to do",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.734527587890625
+    }
+  },
+  {
+    "text": "il prossimo venerdì",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.5269911885261536
+    }
+  },
+  {
+    "text": "dieta",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.3239707946777344
+    }
+  },
+  {
+    "text": "mensile",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.6372637748718262
+    }
+  },
+  {
+    "text": "metti fare jogging in sport",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.9970661997795105
+    }
+  },
+  {
+    "text": "ciao, voglio creare un'attività per la lista primavera",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.8417895436286926
+    }
+  }
+]

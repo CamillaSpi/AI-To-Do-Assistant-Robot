@@ -1,0 +1,114 @@
+[
+  {
+    "text": "buona giornata",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.36036303639411926
+    }
+  },
+  {
+    "text": "è stato un piacere",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Non so cosa fare",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.4526108503341675
+    }
+  },
+  {
+    "text": "Aiuto",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9998804926872253
+    }
+  },
+  {
+    "text": "esatto",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9800702333450317
+    }
+  },
+  {
+    "text": "Non bene",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6598960757255554
+    }
+  },
+  {
+    "text": "chi sono",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9716539978981018
+    }
+  },
+  {
+    "text": "negativo",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.27190589904785156
+    }
+  },
+  {
+    "text": "non mi piace",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.31461435556411743
+    }
+  },
+  {
+    "text": "cosa ho da fare?",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "help",
+      "confidence": 0.7754112482070923
+    }
+  },
+  {
+    "text": "nella categoria famiglia sostituisci il termine dell'attività accompagnare mio figlio dal 10/12/2022 al 12/13/2022",
+    "intent": "modify_activity_deadline",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999961256980896
+    }
+  },
+  {
+    "text": "alle 18:00",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remove_item",
+      "confidence": 0.7465232610702515
+    }
+  },
+  {
+    "text": "metti fare jogging in sport",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.9972825646400452
+    }
+  },
+  {
+    "text": "vorrei aggiungere una nuova attività",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.8579568862915039
+    }
+  }
+]

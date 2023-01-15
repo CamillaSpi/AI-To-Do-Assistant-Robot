@@ -1,0 +1,91 @@
+{
+  "name": {
+    "precision": 0.8636363636363636,
+    "recall": 0.5757575757575758,
+    "f1-score": 0.6909090909090909,
+    "support": 33,
+    "confused_with": {
+      "activity": 3
+    }
+  },
+  "activity.new": {
+    "precision": 0.9722222222222222,
+    "recall": 0.8974358974358975,
+    "f1-score": 0.9333333333333333,
+    "support": 39,
+    "confused_with": {
+      "activity": 2
+    }
+  },
+  "category": {
+    "precision": 0.8951048951048951,
+    "recall": 0.8590604026845637,
+    "f1-score": 0.8767123287671232,
+    "support": 149,
+    "confused_with": {
+      "activity": 11
+    }
+  },
+  "category.old": {
+    "precision": 0.8571428571428571,
+    "recall": 0.6666666666666666,
+    "f1-score": 0.75,
+    "support": 27,
+    "confused_with": {
+      "category.new": 8,
+      "activity": 1
+    }
+  },
+  "activity_status": {
+    "precision": 0.96,
+    "recall": 0.96,
+    "f1-score": 0.96,
+    "support": 25,
+    "confused_with": {}
+  },
+  "category.new": {
+    "precision": 0.7435897435897436,
+    "recall": 0.9354838709677419,
+    "f1-score": 0.8285714285714285,
+    "support": 31,
+    "confused_with": {
+      "category.old": 2
+    }
+  },
+  "activity.old": {
+    "precision": 0.9166666666666666,
+    "recall": 0.9166666666666666,
+    "f1-score": 0.9166666666666666,
+    "support": 48,
+    "confused_with": {
+      "activity": 2
+    }
+  },
+  "activity": {
+    "precision": 0.9166666666666666,
+    "recall": 0.8928571428571429,
+    "f1-score": 0.9046052631578947,
+    "support": 308,
+    "confused_with": {
+      "category": 11
+    }
+  },
+  "micro avg": {
+    "precision": 0.9022082018927445,
+    "recall": 0.8666666666666667,
+    "f1-score": 0.884080370942813,
+    "support": 660
+  },
+  "macro avg": {
+    "precision": 0.8906286768786769,
+    "recall": 0.8379910278795318,
+    "f1-score": 0.8575997639256921,
+    "support": 660
+  },
+  "weighted avg": {
+    "precision": 0.9035072250981342,
+    "recall": 0.8666666666666667,
+    "f1-score": 0.8824004126131019,
+    "support": 660
+  }
+}

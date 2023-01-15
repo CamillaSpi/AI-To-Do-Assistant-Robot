@@ -1,0 +1,282 @@
+[
+  {
+    "text": "ci vediamo più tardi",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9364216327667236
+    }
+  },
+  {
+    "text": "buona giornata",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.46525824069976807
+    }
+  },
+  {
+    "text": "Cosa facciamo adesso?",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9993476867675781
+    }
+  },
+  {
+    "text": "buon giorno",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.45257729291915894
+    }
+  },
+  {
+    "text": "affermativo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6905156970024109
+    }
+  },
+  {
+    "text": "Estremamente buono",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.6391181349754333
+    }
+  },
+  {
+    "text": "La mia giornata è stata orribile",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.9652076363563538
+    }
+  },
+  {
+    "text": "dimmi il mio nome",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.6523360013961792
+    }
+  },
+  {
+    "text": "no grazie",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.318073570728302
+    }
+  },
+  {
+    "text": "non credo",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9968399405479431
+    }
+  },
+  {
+    "text": "assolutamente no",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.4290224611759186
+    }
+  },
+  {
+    "text": "cancella le mie attività",
+    "intent": "clean_activities",
+    "intent_prediction": {
+      "name": "remove_item",
+      "confidence": 0.6774284839630127
+    }
+  },
+  {
+    "text": "sostituire la categoria estate in annuale",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.4914897084236145
+    }
+  },
+  {
+    "text": "per favore, cambiare la categoria cura della persona con la categoria università",
+    "intent": "modify_category",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.5768738389015198
+    }
+  },
+  {
+    "text": "inserisci la categoria farmaci",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.97589510679245
+    }
+  },
+  {
+    "text": "metti sport",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9378477931022644
+    }
+  },
+  {
+    "text": "ciao, inserisci la seguente divertimento",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9962380528450012
+    }
+  },
+  {
+    "text": "ciao, metti incompiuta l'attività jogging in salute fisica",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9999995231628418
+    }
+  },
+  {
+    "text": "nik",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.849770188331604
+    }
+  },
+  {
+    "text": "chiara",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "diodato",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9913657307624817
+    }
+  },
+  {
+    "text": "alberigo",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999984502792358
+    }
+  },
+  {
+    "text": "arianna",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.769133985042572
+    }
+  },
+  {
+    "text": "fabiano",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9890761375427246
+    }
+  },
+  {
+    "text": "vinci",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9990912675857544
+    }
+  },
+  {
+    "text": "molly",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.3545050323009491
+    }
+  },
+  {
+    "text": "anita",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "violeta",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.99916672706604
+    }
+  },
+  {
+    "text": "valerio",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9998732209205627
+    }
+  },
+  {
+    "text": "zaino",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "corda",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.8930033445358276
+    }
+  },
+  {
+    "text": "pagare le bollette",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.6905129551887512
+    }
+  },
+  {
+    "text": "divertimento",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "modify_category",
+      "confidence": 0.8133884072303772
+    }
+  },
+  {
+    "text": "andare dai nonni",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.6120667457580566
+    }
+  },
+  {
+    "text": "uscire con gli amici",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9985142946243286
+    }
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "text": "ci vediamo più tardi",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.3251323103904724
+    }
+  },
+  {
+    "text": "Cosa facciamo adesso?",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.24414275586605072
+    }
+  },
+  {
+    "text": "Buon pomeriggio",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.4708138108253479
+    }
+  },
+  {
+    "text": "buon giorno",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.3859724998474121
+    }
+  },
+  {
+    "text": "sisi",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9999973773956299
+    }
+  },
+  {
+    "text": "affermativo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.157994344830513
+    }
+  },
+  {
+    "text": "Estremamente buono",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.6282951235771179
+    }
+  },
+  {
+    "text": "Sono stupefacente",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.850038468837738
+    }
+  },
+  {
+    "text": "La mia giornata è stata orribile",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.3757847845554352
+    }
+  },
+  {
+    "text": "dimmi il mio nome",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.954717755317688
+    }
+  },
+  {
+    "text": "ciao, inserisci la seguente divertimento",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.999970018863678
+    }
+  },
+  {
+    "text": "ciao, metti incompiuta l'attività jogging in salute fisica",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "chiara",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.47108620405197144
+    }
+  },
+  {
+    "text": "partitella",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.6011333465576172
+    }
+  },
+  {
+    "text": "azienda",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.5134994387626648
+    }
+  }
+]

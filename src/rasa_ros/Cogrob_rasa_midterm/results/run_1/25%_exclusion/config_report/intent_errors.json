@@ -1,0 +1,138 @@
+[
+  {
+    "text": "buona giornata",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.844973087310791
+    }
+  },
+  {
+    "text": "Cosa facciamo adesso?",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.5251514911651611
+    }
+  },
+  {
+    "text": "Per favore aiutami",
+    "intent": "help",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.5983049869537354
+    }
+  },
+  {
+    "text": "sisi",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "affermativo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Estremamente buono",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.6371351480484009
+    }
+  },
+  {
+    "text": "Così buono",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.5528064370155334
+    }
+  },
+  {
+    "text": "La mia giornata è stata orribile",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.2926422953605652
+    }
+  },
+  {
+    "text": "Non bene",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.7832227945327759
+    }
+  },
+  {
+    "text": "mostrami attività eseguite nella categoria scuola",
+    "intent": "view_activities",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9999827146530151
+    }
+  },
+  {
+    "text": "ciao, voglio inserire la categoria quotidiana",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9931434392929077
+    }
+  },
+  {
+    "text": "ciao, inserisci la seguente divertimento",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "non voglio usare la categoria eventi",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.8945792317390442
+    }
+  },
+  {
+    "text": "non voglio usare la categoria medico",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.887315571308136
+    }
+  },
+  {
+    "text": "metti come finita alzati in quotidiano",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "ciao, metti incompiuta l'attività jogging in salute fisica",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9999994039535522
+    }
+  },
+  {
+    "text": "grazia",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.1765507012605667
+    }
+  }
+]

@@ -1,0 +1,346 @@
+[
+  {
+    "text": "tu chi sei?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.7552168369293213
+    }
+  },
+  {
+    "text": "buona notte",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.8710653185844421
+    }
+  },
+  {
+    "text": "arrivederci",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Ehi",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.36862990260124207
+    }
+  },
+  {
+    "text": "certo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Così buono",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.7715882658958435
+    }
+  },
+  {
+    "text": "puoi pronuniciare il mio nome?",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "modify_category",
+      "confidence": 0.2896277606487274
+    }
+  },
+  {
+    "text": "no grazie",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.33930703997612
+    }
+  },
+  {
+    "text": "posso vedere quali sono i miei elenchi?",
+    "intent": "view_categories",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.687528669834137
+    }
+  },
+  {
+    "text": "aggiungi sport",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "inserisci tempo libero",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.8875468969345093
+    }
+  },
+  {
+    "text": "metti completata l'attività cena fuori nella categoria svago",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "metti terminata l'attività acquistare una bicicletta in negozio",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9999977946281433
+    }
+  },
+  {
+    "text": "metti non completata l'attività cena fuori nella categoria svago",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9882485866546631
+    }
+  },
+  {
+    "text": "ciao sono cami",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.3700416684150696
+    }
+  },
+  {
+    "text": "paola",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "pierluigi",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "ciao sono Luke",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.45245498418807983
+    }
+  },
+  {
+    "text": "chicca",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.9552246332168579
+    }
+  },
+  {
+    "text": "benedetto",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.496122807264328
+    }
+  },
+  {
+    "text": "paolo",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "memo",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9992318153381348
+    }
+  },
+  {
+    "text": "ale",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "lilly",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "chiara",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8609806299209595
+    }
+  },
+  {
+    "text": "liliana",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "orlando",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.30072614550590515
+    }
+  },
+  {
+    "text": "ercole",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.2706538140773773
+    }
+  },
+  {
+    "text": "hi bot, il mio nome è Gianluca",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.44394224882125854
+    }
+  },
+  {
+    "text": "marta",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "gizio",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "molly",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.3793395757675171
+    }
+  },
+  {
+    "text": "giberto",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "il mio nome è matti",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "ask_name",
+      "confidence": 0.6381717920303345
+    }
+  },
+  {
+    "text": "incontro genitori",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.4066287875175476
+    }
+  },
+  {
+    "text": "fare attività fisica",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "view_activities",
+      "confidence": 0.5280914306640625
+    }
+  },
+  {
+    "text": "camminare",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.23928114771842957
+    }
+  },
+  {
+    "text": "fare una doccia",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "scrivere una lettera",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9969702959060669
+    }
+  },
+  {
+    "text": "università",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.23698824644088745
+    }
+  },
+  {
+    "text": "chiamare mia madre",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9990556836128235
+    }
+  },
+  {
+    "text": "universita",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.9999464750289917
+    }
+  },
+  {
+    "text": "ciao, voglio creare un'attività per la lista primavera",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "modify_activity_category",
+      "confidence": 0.9913939833641052
+    }
+  }
+]

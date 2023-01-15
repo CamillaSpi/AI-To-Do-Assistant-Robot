@@ -1,0 +1,90 @@
+{
+  "name": {
+    "precision": 1.0,
+    "recall": 0.9393939393939394,
+    "f1-score": 0.96875,
+    "support": 33,
+    "confused_with": {}
+  },
+  "activity.new": {
+    "precision": 0.8,
+    "recall": 0.8205128205128205,
+    "f1-score": 0.810126582278481,
+    "support": 39,
+    "confused_with": {
+      "activity.old": 6
+    }
+  },
+  "category": {
+    "precision": 0.8590604026845637,
+    "recall": 0.8590604026845637,
+    "f1-score": 0.8590604026845637,
+    "support": 149,
+    "confused_with": {
+      "activity": 11
+    }
+  },
+  "category.old": {
+    "precision": 0.7692307692307693,
+    "recall": 0.7407407407407407,
+    "f1-score": 0.7547169811320754,
+    "support": 27,
+    "confused_with": {
+      "category.new": 5,
+      "category": 2
+    }
+  },
+  "activity_status": {
+    "precision": 0.96,
+    "recall": 0.96,
+    "f1-score": 0.96,
+    "support": 25,
+    "confused_with": {}
+  },
+  "category.new": {
+    "precision": 0.8285714285714286,
+    "recall": 0.9354838709677419,
+    "f1-score": 0.8787878787878788,
+    "support": 31,
+    "confused_with": {
+      "category.old": 1
+    }
+  },
+  "activity.old": {
+    "precision": 0.7872340425531915,
+    "recall": 0.7708333333333334,
+    "f1-score": 0.7789473684210526,
+    "support": 48,
+    "confused_with": {
+      "activity.new": 8,
+      "activity": 2
+    }
+  },
+  "activity": {
+    "precision": 0.9072164948453608,
+    "recall": 0.8516129032258064,
+    "f1-score": 0.8785357737104825,
+    "support": 310,
+    "confused_with": {
+      "category": 17
+    }
+  },
+  "micro avg": {
+    "precision": 0.8773291925465838,
+    "recall": 0.8534743202416919,
+    "f1-score": 0.8652373660030628,
+    "support": 662
+  },
+  "macro avg": {
+    "precision": 0.8639141422356643,
+    "recall": 0.8597047513573683,
+    "f1-score": 0.8611156233768167,
+    "support": 662
+  },
+  "weighted avg": {
+    "precision": 0.8786696261322661,
+    "recall": 0.8534743202416919,
+    "f1-score": 0.8654366057043976,
+    "support": 662
+  }
+}

@@ -1,0 +1,266 @@
+[
+  {
+    "text": "buona giornata",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9165588617324829
+    }
+  },
+  {
+    "text": "sisi",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "affermativo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "Estremamente buono",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.43502336740493774
+    }
+  },
+  {
+    "text": "Così buono",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.46955806016921997
+    }
+  },
+  {
+    "text": "La mia giornata è stata orribile",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "set_status_activity",
+      "confidence": 0.8577054142951965
+    }
+  },
+  {
+    "text": "Non bene",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.8168351650238037
+    }
+  },
+  {
+    "text": "puoi pronuniciare il mio nome?",
+    "intent": "ask_name",
+    "intent_prediction": {
+      "name": "modify_activity_name",
+      "confidence": 0.6163780689239502
+    }
+  },
+  {
+    "text": "no grazie",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.8073684573173523
+    }
+  },
+  {
+    "text": "ciao, inserisci la seguente divertimento",
+    "intent": "add_category",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9370653629302979
+    }
+  },
+  {
+    "text": "non voglio usare la categoria eventi",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.9642139673233032
+    }
+  },
+  {
+    "text": "non voglio usare la categoria medico",
+    "intent": "remove_category",
+    "intent_prediction": {
+      "name": "add_category",
+      "confidence": 0.9721111059188843
+    }
+  },
+  {
+    "text": "metti come finita alzati in quotidiano",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "ciao, voglio porre come non eseguita ripetizioni nella categoria laurea",
+    "intent": "set_status_activity",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.9427154064178467
+    }
+  },
+  {
+    "text": "modificare la categoria alimentazione di camminare all'aperto in tempo libero",
+    "intent": "modify_activity_category",
+    "intent_prediction": {
+      "name": "modify_category",
+      "confidence": 0.7311771512031555
+    }
+  },
+  {
+    "text": "modificare la categoria tempo libero di camminare all'aperto in alimentazione",
+    "intent": "modify_activity_category",
+    "intent_prediction": {
+      "name": "modify_category",
+      "confidence": 0.7109168767929077
+    }
+  },
+  {
+    "text": "grazia",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5959137082099915
+    }
+  },
+  {
+    "text": "nik",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.7748867869377136
+    }
+  },
+  {
+    "text": "chiara",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "diodato",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "molly",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.2965482175350189
+    }
+  },
+  {
+    "text": "anita",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9999980330467224
+    }
+  },
+  {
+    "text": "ciao sono cami",
+    "intent": "presentation",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.4964420199394226
+    }
+  },
+  {
+    "text": "zaino",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "partitella",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "corda",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.6881119608879089
+    }
+  },
+  {
+    "text": "andare nello studio",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "add_item",
+      "confidence": 0.7688108086585999
+    }
+  },
+  {
+    "text": "andare dai nonni",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.5627416968345642
+    }
+  },
+  {
+    "text": "lavoro",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 0.5925816893577576
+    }
+  },
+  {
+    "text": "analisi",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "cucinare per cena",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "remind_me_of",
+      "confidence": 0.2382006049156189
+    }
+  },
+  {
+    "text": "triennale",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "presentation",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "metti fare una doccia in cura personale alle 4:25",
+    "intent": "add_item",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9014683961868286
+    }
+  }
+]

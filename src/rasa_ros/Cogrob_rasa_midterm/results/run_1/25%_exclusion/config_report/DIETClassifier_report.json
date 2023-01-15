@@ -1,0 +1,90 @@
+{
+  "name": {
+    "precision": 0.9655172413793104,
+    "recall": 0.875,
+    "f1-score": 0.9180327868852458,
+    "support": 32,
+    "confused_with": {
+      "activity.new": 1
+    }
+  },
+  "activity.new": {
+    "precision": 0.6739130434782609,
+    "recall": 0.775,
+    "f1-score": 0.7209302325581396,
+    "support": 40,
+    "confused_with": {
+      "activity.old": 8
+    }
+  },
+  "category": {
+    "precision": 0.9436619718309859,
+    "recall": 0.9241379310344827,
+    "f1-score": 0.9337979094076655,
+    "support": 145,
+    "confused_with": {
+      "activity": 9
+    }
+  },
+  "category.old": {
+    "precision": 0.875,
+    "recall": 0.7777777777777778,
+    "f1-score": 0.823529411764706,
+    "support": 36,
+    "confused_with": {
+      "category.new": 8
+    }
+  },
+  "activity_status": {
+    "precision": 0.896551724137931,
+    "recall": 0.9629629629629629,
+    "f1-score": 0.9285714285714286,
+    "support": 27,
+    "confused_with": {}
+  },
+  "category.new": {
+    "precision": 0.7837837837837838,
+    "recall": 0.9354838709677419,
+    "f1-score": 0.8529411764705881,
+    "support": 31,
+    "confused_with": {
+      "category.old": 2
+    }
+  },
+  "activity.old": {
+    "precision": 0.8085106382978723,
+    "recall": 0.7307692307692307,
+    "f1-score": 0.7676767676767676,
+    "support": 52,
+    "confused_with": {
+      "activity.new": 13
+    }
+  },
+  "activity": {
+    "precision": 0.9562289562289562,
+    "recall": 0.9281045751633987,
+    "f1-score": 0.9419568822553898,
+    "support": 306,
+    "confused_with": {
+      "category": 4
+    }
+  },
+  "micro avg": {
+    "precision": 0.9074355083459787,
+    "recall": 0.8938714499252616,
+    "f1-score": 0.9006024096385541,
+    "support": 669
+  },
+  "macro avg": {
+    "precision": 0.8628959198921375,
+    "recall": 0.8636545435844494,
+    "f1-score": 0.8609295744487413,
+    "support": 669
+  },
+  "weighted avg": {
+    "precision": 0.9108174394997499,
+    "recall": 0.8938714499252616,
+    "f1-score": 0.9012445696586732,
+    "support": 669
+  }
+}
