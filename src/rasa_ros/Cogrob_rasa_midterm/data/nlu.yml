@@ -93,8 +93,8 @@ nlu:
     - tu chi sei?
 - intent: reset_conversation
   examples: |
-    - Annulla
-    - Riproviamo dall'inizio
+    - annulla
+    - riproviamo dall'inizio
     - riproviamo
     - partiamo da zero
     - partiamo dall'inizio
