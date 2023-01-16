@@ -45,7 +45,7 @@ global features_dataBase
 global labels
 global last_features
 
-# Load model, rete siamese basata su resnet/vgg. addestrata con triplette loss. disponibile pubblicamente su keras.
+# Load model, siamese network based on resnet/vgg. trained with triplet loss. publicly available on keras.
 model = get_deep_speaker(os.path.join(REF_PATH,'deep_speaker.h5'))
 
 # Treshold
@@ -62,7 +62,8 @@ def elaboration(data):
     # Prediction
     ukn = model.predict(np.expand_dims(ukn, 0))
     return ukn
-# ,"add activity run in category gym for tomorrow","add activity run in category gym for tomorrow", "remove the category study in university","update the activity walk in personal" , "show my activity", "remind me to play guitar in freetime"
+
+# Phrases to repeat during recording
 phrases = ["Mi sembra di non conoscerti, ripeti dopo di me: Ciao Pepper" ,"aggiungi attività corsa nella categoria palestra per domani", "rimuovi la categoria studio in università","aggiorna l'attività passeggiata in personale" , "mostra le mie attività", "ricordami di suonare la chitarra nel tempo libero"]
 
 def registration(msg):
@@ -99,23 +100,20 @@ def listener():
     features_dataBase,labels,number_of_users = load_identities()
     try:
         while not rospy.is_shutdown():
-            #mi vado a checkare che si tratti di testo, altrimenti ptrei riconocere il rumore, o comunque avere problemi.
-            # co wwait for message, ascolto solo qando voglio, ho operazione "sincrona"
+            
+
             recivedAudio = rospy.wait_for_message("RecivedAudio",Int16MultiArray) 
             lock.acquire()
 
             last_features = ukn = elaboration(recivedAudio.data)
 
             if len(features_dataBase) > 0:
-                # Distance between the sample and the support set, caolcolo distanza coseno e quelle che ho memorizzato finora.
+                # Distance between the sample and the support set
                 emb_voice = np.repeat(ukn, len(features_dataBase), 0)
-                # faccio distanza coseno con tutti quanti gli elementi.
+                # using np.repeat allows us to optimize matrix operations later
                 cos_dist = batch_cosine_similarity(np.array(features_dataBase), emb_voice)
                 
-                # Matching, in base alle label e tresh dice distanza.
-                # quindi ukn restituisce tutti i valori distanza dei campioni rispetto a ukn. e calcolo la distanza media tra tutti i campioni. 
-
-                id_label, prob_voices = dist2id(cos_dist, labels, TH, mode='avg') #id_label saranno id incrementali
+                _, prob_voices = dist2id(cos_dist, labels, TH, mode='avg') # prob_voices contains the different probabilities divided by the users
             else:
                 prob_voices = [] 
             lock.release()
