@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 
-from __future__ import rospy.loginfo_function
 
 from pepper_nodes.srv import Text2Speech
 import rospy
 
 def handle_speech(req):
-    rospy.loginfo('Speech ',req)
+    print('Speech ',req)
     return 'ACK'
 
 def tts_server():

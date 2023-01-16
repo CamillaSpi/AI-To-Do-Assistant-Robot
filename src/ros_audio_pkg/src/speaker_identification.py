@@ -57,7 +57,7 @@ def registration(msg):
     lock.acquire()
     for msg in phrases:
         pub1.publish(msg)
-        rospy.loginfo(msg)
+        print(msg)
         audioAndData = rospy.wait_for_message("RecivedAudio",Int16MultiArray) 
         data = audioAndData.data
         ukn = elaboration(data)
@@ -102,7 +102,6 @@ def listener():
                 # quindi ukn restituisce tutti i valori distanza dei campioni rispetto a ukn. e calcolo la distanza media tra tutti i campioni. 
 
                 id_label, prob_voices = dist2id(cos_dist, labels, TH, mode='avg') #id_label saranno id incrementali
-                rospy.loginfo("prob_voices", prob_voices)
             else:
                 prob_voices = [] 
             lock.release()
@@ -128,7 +127,7 @@ def naturalLearning(msg):
     id = msg.data
 
     lock.acquire()
-    rospy.loginfo(features_dataBase.shape, len(labels))
+    print(features_dataBase.shape, len(labels))
     # should never be None, but to be safe
     if last_features.all()!=None:
         rospy.loginfo('added new campionbe')
