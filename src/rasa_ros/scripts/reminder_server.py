@@ -16,7 +16,7 @@ def create_app() -> Sanic:
     bot_app = Sanic("callback_server", configure_logging=False)
 
     @bot_app.post("/bot")
-    def rospy.loginfo_response(request: Request) -> HTTPResponse:
+    def print_response(request: Request) -> HTTPResponse:
         """rospy.loginfo bot response to the console."""
         text = request.json.get("text")
         rospy.loginfo(text)
