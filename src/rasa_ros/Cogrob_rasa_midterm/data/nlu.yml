@@ -122,14 +122,14 @@ nlu:
     - ciao, sono [ferdinando](name)
     - ciao, sono [nando](name)
     - ciao, sono [camilla](name)
-    - ciao, sono [marco](name)
+    - ciao Pepper, sono [marco](name)
     - ciao, sono [matteo](name)
     - ciao, sono [michele](name)
     - ciao, sono [pierfrancesco](name)
     - ciao sono [ferdi](name)
     - ciao sono [cami](name)
     - ciao sono [alex](name)
-    - ciao sono [marcello](name)
+    - ciao Pepper sono [marcello](name)
     - il mio nome è [matti](name)
     - il mio nome è [alessia](name)
     - il mio nome è [ferdi](name)
@@ -146,7 +146,7 @@ nlu:
     - fammi creare un account
     - voglio iscrivermi
     - voglio registrarmi
-    - ciao il mio nome è [Kevin](name)
+    - ciao Pepper il mio nome è [Kevin](name)
     - fammi iscrivere
     - iscrizione
     - account
@@ -164,9 +164,9 @@ nlu:
     - voglio creare un utente
     - nuovo utente
     - il mio nome è [Ugo](name)
-    - hi bot, il mio nome è [Gianluca](name)
+    - ciao bot, il mio nome è [Gianluca](name)
     - il mio nome è [Xavier](name)
-    - hi, il mio nome è [Simonetta](name)
+    - hey, il mio nome è [Simonetta](name)
     - il mio nome [Dario](name)
     - [nino](name)
     - [adele](name)
@@ -700,7 +700,7 @@ nlu:
     - ciao, inserisci [medicine](activity) nella categoria [settimanale](category)
     - ciao, aggiungi [psicologo](activity) nella categoria [mente](category)
     - ciao, inserisci [scrivere](activity) nella categoria [hobby](category)
-    - ciao, inserisci [partecipare alla lezione](activity) nella categoria [corsi](category)
+    - ciao Pepper, inserisci [partecipare alla lezione](activity) nella categoria [corsi](category)
     - ciao, aggiungi [cucinare la cena](activity) nella categoria [casa](category)
     - ciao, inserisci [guardare lo spettacolo](activity) nella categoria [interesse](category)
     - ciao, inserisci [ripetere il discorso](activity) nella categoria [esame](category)
@@ -711,7 +711,7 @@ nlu:
     - ciao, inserisci l'attività [torneo di calcio](activity) nella categoria [sport](category)
     - ciao, inserisci l'attività [caffè](activity) nella categoria [amicizia](category)
     - ciao, inserisci [lezione di canto](activity) nella categoria [tempo libero](category)
-    - ciao, aggiungi [comprare cibo](activity) nella categoria [dieta](category)
+    - ciao Pepper, aggiungi [comprare cibo](activity) nella categoria [dieta](category)
     - ciao, aggiungi [acquistare una pizza](activity) nella categoria [mangiare](category)
     - ciao, inserisci [taekwondo](activity) nella categoria [arti marziali](category)
     - ciao, crea [chiamata di gruppo](activity) nella categoria [studio](category)
@@ -735,7 +735,7 @@ nlu:
     - ciao, voglio inserire una nuova attività [leggere un paper](activity) nell'elenco [ricerca](category)
     - ciao, voglio aggiungere l'attività [powerpoint](activity) all'elenco [programmi](category)
     - ciao, voglio aggiungere l'attività [inviare un'email](activity) all'elenco [comunicazione](category)
-    - ciao, voglio inserire una nuova attività [andare sulla neve](activity) nella categoria [vacanze](category)
+    - ciao Pepper, voglio inserire una nuova attività [andare sulla neve](activity) nella categoria [vacanze](category)
     - ciao, voglio inserire una nuova attività [cena con gli amici](activity) nella categoria [amicizia](category)
     - ciao, voglio inserire un'attività [sci](activity) nell'elenco [inverno](category)
     - ciao, voglio creare l'attività [giardinaggio](activity) nell'elenco [giardino](category)
@@ -752,7 +752,7 @@ nlu:
     - ciao, voglio inserire un'attività nell'elenco [faccende domestiche](category)
     - ciao, voglio aggiungere un'attività nell'elenco [visite mediche](category)
     - ciao, voglio aggiungere un'attività nell'elenco [vacanze di pasqua](category)
-    - ciao, voglio inserire un'attività nell'elenco [imminenti](category)
+    - ciao Pepper, voglio inserire un'attività nell'elenco [imminenti](category)
     - voglio aggiungere un'attività nell'elenco [necessari](category)
     - voglio inserire un'attività nell'elenco [documentazione](category)
     - voglio inserire una nuova attività nell'elenco [spettacolo](category)
@@ -808,7 +808,7 @@ nlu:
     - ciao, vorrei mettere un'attività nell'elenco [blog](category) alle 22:20
     - ciao, vorrei aggiungere un'attività all'elenco [vita](category) alle 16:00
     - ciao, vorrei inserire un'attività nell'elenco [stile di vita](category) alle 14:50
-    - ciao, vorrei inserire un'attività nell'elenco [sociale](category) alle 3:29
+    - ciao Pepper, vorrei inserire un'attività nell'elenco [sociale](category) alle 3:29
     - ciao, vorrei mettere un'attività nella mia lista alle 12:37
     - ciao, vorrei inserire un'attività nella mia lista alle 18:14
     - aggiungi [fare una passeggiata all'aria aperta](activity) in [tempo libero](category) oggi alle 12
@@ -920,7 +920,7 @@ nlu:
     - voglio cancellare un'attività nella categoria [business](category) alle 6:30
     - ciao, voglio cancellare un'attività nella categoria [marketing](category) alle 18:30
     - ciao, voglio cancellare un'attività nella categoria [blog](category) alle 17:30
-    - ciao, voglio cancellare un'attività nella categoria [commissioni](category) alle 22:20
+    - ciao Pepper, voglio cancellare un'attività nella categoria [commissioni](category) alle 22:20
     - ciao, voglio cancellare un'attività nella categoria [stile di vita](category) alle 16:00
     - ciao, voglio cancellare un'attività nella categoria [sociale](category) alle 14:50
     - ciao, voglio cancellare un'attività nella categoria [cura](category) alle 3:29
@@ -934,7 +934,7 @@ nlu:
     - imposta [completato](activity_status) [andare a correre](activity)
     - poni [completata](activity_status) [suonare la chitarra](activity)
     - imposta come [fatta](activity_status) [leggere](activity)
-    - ciao, imposta [completato](activity_status) [annaffia le piante](activity)
+    - ciao Pepper, imposta [completato](activity_status) [annaffia le piante](activity)
     - imposta come [completato](activity_status) [nuotare](activity)
     - imposta [completata](activity_status) [chiama il medico](activity)
     - imposta come [sviluppata](activity_status) [giocare a carte](activity)
@@ -965,7 +965,7 @@ nlu:
     - metti [completata](activity_status) l'attività [cena fuori](activity) nella categoria [svago](category)
     - imposta [fatta](activity_status) l'attività [vai in farmacia](activity) nella categoria [benessere](category)
     - poni [fatta](activity_status) l'attività [shampoo](activity) nella categoria [benessere personale](category)
-    - ciao, imposta [completato](activity_status) l'attività [aiuta mio nonno](activity) nella categoria [genitori](category)
+    - ciao Pepper, imposta [completato](activity_status) l'attività [aiuta mio nonno](activity) nella categoria [genitori](category)
     - imposta [sviluppata](activity_status) l'attività [suona la chitarra](activity) nella categoria [musica](category)
     - ciao, voglio impostare [completata](activity_status) l'attività [taekwondo](activity) nella categoria [arti marziali](category)
     - voglio impostare [completata](activity_status) un'attività
@@ -1039,7 +1039,7 @@ nlu:
     - nuova categoria: [scuola](category)
     - voglio mettere una nuova categoria [vacanza](category)
     - voglio aggiungere una nuova categoria [tempo libero](category)
-    - ciao, voglio inserire una nuova categoria [ricerca](category)
+    - ciao Pepper, voglio inserire una nuova categoria [ricerca](category)
     - ciao, voglio mettere una nuova categoria [eventi](category)
     - ciao, voglio aggiungere una categoria [settimanale](category)
     - ciao, voglio inserire la categoria [quotidiana](category)
@@ -1052,7 +1052,7 @@ nlu:
     - categoria: [pagamenti](category)
     - ciao, voglio aggiungere la categoria [faccende domestiche](category)
     - voglio aggiungere una categoria [pagamenti](category)
-    - ciao, inserisci la seguente [divertimento](category)
+    - ciao Pepper, inserisci la seguente [divertimento](category)
     - voglio aggiungere la categoria [stile di vita](category)
     - ciao, voglio aggiungere la categoria [commissioni](category)
     - viao, voglio mettere la categoria [genitori](category)
@@ -1079,7 +1079,7 @@ nlu:
     - ciao, voglio rimuovere la categoria [salute personale](category)
     - ciao, voglio eliminare la categoria [finanza](category)
     - ciao, voglio rimuovere la categoria [famiglia](category)
-    - ciao, voglio togliere la categoria [assistenza sanitaria](category)
+    - ciao Pepper, voglio togliere la categoria [assistenza sanitaria](category)
     - ciao, voglio rimuovere la categoria [faccende domestiche](category)
     - voglio togliere la categoria [palestra](category)
     - voglio eliminare la categoria [sport](category)
@@ -1117,7 +1117,7 @@ nlu:
     - categoria da cestinare: [commissioni](category)
     - categoria da cancellare: [finanze](category)
     - ciao, per favore elimina la seguente categoria [medica](category)
-    - ciao, per favore cestina la seguente categoria [finanza](category)
+    - ciao Pepper, per favore cestina la seguente categoria [finanza](category)
     - ciao, per favore rimuovi la seguente categoria [spesa](category)
     - ciao, voglio eliminare la categoria [casa](category)
     - ciao, per favore annulla la seguente categoria [divertimento](category)
@@ -1547,7 +1547,7 @@ nlu:
     - ricordami di [prendere la pillola](activity) in [cura personale](category)
 - intent: ask_name
   examples: |
-    - chi sono?
+    - ciao Pepper, chi sono?
     - sai chi sono?
     - sapresti dirmi chi sono?
     - mi hai già visto prima?
