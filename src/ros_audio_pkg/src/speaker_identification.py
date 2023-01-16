@@ -1,4 +1,22 @@
 #!/usr/bin/python3
+
+"""
+This is a Python script that uses the ROS framework and several other libraries, including Tensorflow, NumPy, and pickle, to perform speaker identification. 
+The script loads a pre-trained deep learning model (deep_speaker.h5) that has been trained to recognize and compare speaker's voice.
+
+The elaboration function takes audio data as input, processes it, and returns 
+the audio data in a format that can be used by the deep learning model. 
+The registration function takes input from a microphone and uses the elaboration 
+function to process the audio data, and then save the data in the features_dataBase, using phrases that the robot will say to the user to 
+guide the user through the registration process, asking them to repeat certain phrases to improve the accuracy of the model.
+
+The listener function subscribes to a ROS topic for microphone data, and calls the registration function when new data is received. 
+The script also uses the ros_audio_pkg package and srv to publish and receive data from ROS topics.
+The script also uses a Lock object to prevent multiple threads from accessing and modifying the shared variables 
+at the same time, this can be seen in registration function and listener function.
+
+"""
+
 from tensorflow.python.ops.gen_logging_ops import Print
 import rospy
 from std_msgs.msg import Int16MultiArray,Float32MultiArray,Int16
@@ -21,20 +39,17 @@ from threading import Lock
 REF_PATH = os.path.dirname(os.path.abspath(__file__))
 RATE = 16000
 lock = Lock()
-global id_label
 global prob_voices
 global number_of_users
 global features_dataBase
 global labels
 global last_features
 
-# Load model, rete siamese basata su resnet/vgg. addestrata con triplette loss. disponibile pubblicamente su keras, non e la migliore
-# la maggior parte implementate in pytorch.
+# Load model, rete siamese basata su resnet/vgg. addestrata con triplette loss. disponibile pubblicamente su keras.
 model = get_deep_speaker(os.path.join(REF_PATH,'deep_speaker.h5'))
 
-n_embs = 0
-# treshold
-TH = 0.60 #0.75 prima
+# Treshold
+TH = 0.60
 
 pub1 = rospy.Publisher('toSpeech', String, queue_size=10)
 
@@ -75,7 +90,6 @@ def registration(msg):
 
 
 def listener():
-    global id_label
     global prob_voices
     global number_of_users
     global features_dataBase
@@ -112,7 +126,6 @@ def listener():
         rospy.loginfo("Salvato db speaker")
 
 def return_idLabel(req):
-    global id_label
     global prob_voices
     toReturn = Float32MultiArray() 
     lock.acquire()
