@@ -1,4 +1,22 @@
 #!/usr/bin/python3
+
+"""
+This is a Python script that uses the ROS framework and several other libraries, including Tensorflow, NumPy, and pickle, to perform speaker identification. 
+The script loads a pre-trained deep learning model (deep_speaker.h5) that has been trained to recognize and compare speaker's voice.
+
+The elaboration function takes audio data as input, processes it, and returns 
+the audio data in a format that can be used by the deep learning model. 
+The registration function takes input from a microphone and uses the elaboration 
+function to process the audio data, and then save the data in the features_dataBase, using phrases that the robot will say to the user to 
+guide the user through the registration process, asking them to repeat certain phrases to improve the accuracy of the model.
+
+The listener function subscribes to a ROS topic for microphone data, and calls the registration function when new data is received. 
+The script also uses the ros_audio_pkg package and srv to publish and receive data from ROS topics.
+The script also uses a Lock object to prevent multiple threads from accessing and modifying the shared variables 
+at the same time, this can be seen in registration function and listener function.
+
+"""
+
 from tensorflow.python.ops.gen_logging_ops import Print
 import rospy
 from std_msgs.msg import Int16MultiArray,Float32MultiArray,Int16
@@ -21,20 +39,17 @@ from threading import Lock
 REF_PATH = os.path.dirname(os.path.abspath(__file__))
 RATE = 16000
 lock = Lock()
-global id_label
 global prob_voices
 global number_of_users
 global features_dataBase
 global labels
 global last_features
 
-# Load model, rete siamese basata su resnet/vgg. addestrata con triplette loss. disponibile pubblicamente su keras, non e la migliore
-# la maggior parte implementate in pytorch.
+# Load model, siamese network based on resnet/vgg. trained with triplet loss. publicly available on keras.
 model = get_deep_speaker(os.path.join(REF_PATH,'deep_speaker.h5'))
 
-n_embs = 0
-# treshold
-TH = 0.60 #0.75 prima
+# Treshold
+TH = 0.60
 
 pub1 = rospy.Publisher('toSpeech', String, queue_size=10)
 
@@ -47,7 +62,8 @@ def elaboration(data):
     # Prediction
     ukn = model.predict(np.expand_dims(ukn, 0))
     return ukn
-# ,"add activity run in category gym for tomorrow","add activity run in category gym for tomorrow", "remove the category study in university","update the activity walk in personal" , "show my activity", "remind me to play guitar in freetime"
+
+# Phrases to repeat during recording
 phrases = ["Mi sembra di non conoscerti, ripeti dopo di me: Ciao Pepper" ,"aggiungi attività corsa nella categoria palestra per domani", "rimuovi la categoria studio in università","aggiorna l'attività passeggiata in personale" , "mostra le mie attività", "ricordami di suonare la chitarra nel tempo libero"]
 
 def registration(msg):
@@ -75,7 +91,6 @@ def registration(msg):
 
 
 def listener():
-    global id_label
     global prob_voices
     global number_of_users
     global features_dataBase
@@ -85,23 +100,20 @@ def listener():
     features_dataBase,labels,number_of_users = load_identities()
     try:
         while not rospy.is_shutdown():
-            #mi vado a checkare che si tratti di testo, altrimenti ptrei riconocere il rumore, o comunque avere problemi.
-            # co wwait for message, ascolto solo qando voglio, ho operazione "sincrona"
+            
+
             recivedAudio = rospy.wait_for_message("RecivedAudio",Int16MultiArray) 
             lock.acquire()
 
             last_features = ukn = elaboration(recivedAudio.data)
 
             if len(features_dataBase) > 0:
-                # Distance between the sample and the support set, caolcolo distanza coseno e quelle che ho memorizzato finora.
+                # Distance between the sample and the support set
                 emb_voice = np.repeat(ukn, len(features_dataBase), 0)
-                # faccio distanza coseno con tutti quanti gli elementi.
+                # using np.repeat allows us to optimize matrix operations later
                 cos_dist = batch_cosine_similarity(np.array(features_dataBase), emb_voice)
                 
-                # Matching, in base alle label e tresh dice distanza.
-                # quindi ukn restituisce tutti i valori distanza dei campioni rispetto a ukn. e calcolo la distanza media tra tutti i campioni. 
-
-                id_label, prob_voices = dist2id(cos_dist, labels, TH, mode='avg') #id_label saranno id incrementali
+                _, prob_voices = dist2id(cos_dist, labels, TH, mode='avg') # prob_voices contains the different probabilities divided by the users
             else:
                 prob_voices = [] 
             lock.release()
@@ -112,7 +124,6 @@ def listener():
         rospy.loginfo("Salvato db speaker")
 
 def return_idLabel(req):
-    global id_label
     global prob_voices
     toReturn = Float32MultiArray() 
     lock.acquire()

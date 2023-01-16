@@ -1,4 +1,25 @@
 #!/usr/bin/python3
+
+"""
+This is a Python script that uses the ROS framework and several other libraries, including NumPy, SpeechRecognition, and PyAudio, 
+to record audio and publish it to a ROS topic. The script is intended to be used with a ReSpeaker USB microphone array, 
+but it can also work with other microphones.
+
+The find_device_index function scans the available audio devices and returns the index of the ReSpeaker USB microphone array.
+If a device with the name "ReSpeaker" is identified, it indicates that the project's designated microphone is being used, rather than a 
+standard computer microphone. As this microphone is a multiarray, it is necessary to first increase the sample rate, and then decrease 
+it again to separate the audio streams of each individual microphone. The microphone with the highest amplitude will then be selected.
+
+
+The callback function is called by the background thread created by the SpeechRecognition library and takes audio data as input, 
+processes it, and publishes it to a ROS topic. The rcv_person function is a callback function that is triggered when a message is received on 
+the "isListening" topic.
+
+The script also subscribes to a ROS topic called "isListening", and when a message is received on this topic,
+ the rcv_person function is called. This function starts or stops the background listening
+"""
+
+
 import rospy
 from std_msgs.msg import Int16MultiArray, Bool
 import numpy as np
@@ -34,7 +55,6 @@ device_index = find_device_index()
 if device_index < 0:
     rospy.loginfo('No ReSpeaker USB device found')
     num_microphone = 1
-    # num_microphone = 1
 else:
     rospy.loginfo('Find ReSpeaker USB Device')
     num_microphone = 4
@@ -66,8 +86,7 @@ m = sr.Microphone(device_index=None,
 
 # Calibration within the environment
 # we only need to calibrate once, before we start listening
-# necessario per andare a calibrare il segnale.
-# se c'e molto rumore non riesce a comrpedenre bene, vado quindi a sistemare questa cosa
+
 rospy.loginfo("Calibrating...")
 with m as source:
     r.adjust_for_ambient_noise(source,duration=3)  
