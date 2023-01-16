@@ -1,4 +1,13 @@
 #!/usr/bin/env python3
+"""
+This script is a ROS node that creates a webhook for a chatbot, 
+using the Sanic framework and the Rasa webhook API. 
+The node creates a service that receives a message and an ID, and sends them to the chatbot, 
+using the requests library. The chatbot's response is returned to the service client. The node also creates two 
+publishers, one to send the bot's response to a speech synthesizer, and one to send a message to an external web page. 
+The script also uses the rospy library to initialize the node and handle ROS topics.
+"""
+
 from rasa_ros.srv import Dialogue, DialogueResponse
 from sanic import Sanic, response
 from sanic.request import Request

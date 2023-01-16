@@ -128,7 +128,7 @@ def testFunction():
 def main():
     rospy.init_node('writing')
     rospy.wait_for_service('dialogue_server')
-    testFunction()
+    # testFunction() # To be used in case of testing 
     message = RecognizedSpoke()  
     message.msg = "/session_start"
     message.id = -1
