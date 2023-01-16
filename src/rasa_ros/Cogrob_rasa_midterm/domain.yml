@@ -30,6 +30,7 @@ intents:
 - EXTERNAL_reminder
 - start_session
 - ask_name
+- reset_conversation
 entities:
 - activity
 - activity_status
@@ -119,6 +120,8 @@ responses:
   - text: Mi dispiace, non posso aiutarti, puoi ripetere?.
   utter_ask_rephrase:
   - text: Ti chiedo scusa, non ho capito molto bene. Potresti riformulare?
+  utter_restart_conversation:
+  - text: Ok ricominciamo dall'inizio.
 actions:
 - action_add_category
 - action_add_item
@@ -158,6 +161,7 @@ actions:
 - utter_happy
 - utter_iamabot
 - utter_modification_choice
+- utter_restart_conversation
 forms:
   recognize_user_form:
     required_slots:

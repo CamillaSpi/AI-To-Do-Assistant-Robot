@@ -91,6 +91,20 @@ nlu:
     - Sto parlando con un bot?
     - Sto parlando con un umano?
     - tu chi sei?
+- intent: reset_conversation
+  examples: |
+    - Annulla
+    - Riproviamo dall'inizio
+    - riproviamo
+    - partiamo da zero
+    - partiamo dall'inizio
+    - ricomincia
+    - stop 
+    - annulla tutto
+    - ferma tutto
+    - ferma e ricomincia
+    - non stai capendo nulla
+    - torna a zero
 - intent: help
   examples: |
     - Cosa puoi fare?
