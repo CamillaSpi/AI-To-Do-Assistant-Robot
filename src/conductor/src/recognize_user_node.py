@@ -8,28 +8,35 @@ from ros_audio_pkg.srv import idLabel,Registration
 from face_recognition.srv import video_detect_user
 import time
 
-#i messaggi correttamente riconosciuti verranno mandati a rasa
+#Creating a publisher on text2answer topic on which we will send the messages to rasa
 pub1 = rospy.Publisher('text2answer', RecognizedSpoke, queue_size=10)
-#i messaggi non correttamente riconosciuti verranno notificati
-pub2 = rospy.Publisher('toSpeech', String, queue_size=10)
 
+#Creating a publisher on startRegistration topic on which we will sent a boolean to start the audio registration, when the user is not recognized
 pub_recogizer_node = rospy.Publisher('startRegistration', Bool, queue_size=10)
 
+#Creating a publisher on naturalLearningVoice topic on which we will send the information for the natural learning procedure of speech recognition
 natural_learning_voice = rospy.Publisher('naturalLearningVoice', Int16, queue_size=10)
 
-# Init node
 rospy.init_node('recognize_user', anonymous=True)
 rejection_threshold = 0.60
+
+#Obtaining datas of identification with voice and video services from speaker identification and face reidentification
 rospy.wait_for_service('voiceLabelServices')
 rospy.wait_for_service('videoLabelServices')
 rospy.wait_for_service('voiceRegistrationService')
 obtain_audio_prob = rospy.ServiceProxy('voiceLabelServices', idLabel)
 obtain_video_prob = rospy.ServiceProxy('videoLabelServices', video_detect_user)
+#audio registration service used when a person is not recognized
 startVoiceRegistration = rospy.ServiceProxy('voiceRegistrationService', Registration)
 
 
 
-#function to recognize user with both audio and video
+"""
+Function to recognize user with both audio and video; we give more importance to the face information, so the probabilities are multiplied 
+by a factor that is higher for face probabilities. We use also a threshold value that has to be reached by the sum of the probabilities
+between audio and video by every user, if it is not reached the registration of a new, unknown, user starts. When the user is recognized
+we send the information of the id of the user and the text he has told to rasa, publishing on text2answer topic. 
+"""
 def recognize_user(text_to_send):
     try:
 
@@ -71,8 +78,6 @@ def recognize_user(text_to_send):
             pub_recogizer_node.publish(Bool(True))
             reg_response = startVoiceRegistration()
             print('ricevuta risposta'  ,reg_response)
-            #l'utente non è stato correttamente riconosciuto
-            # pub2.publish("I can't recognize you")
     except rospy.ServiceException as e:
         rospy.loginfo("Service call failed: %s", e)
 
