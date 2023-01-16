@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+"""
 
+"""
 import rospy
 from std_msgs.msg import String
 from rasa_ros.srv import Dialogue, DialogueResponse
@@ -16,90 +18,90 @@ def testFunction():
     message.id = 5
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "add run in gym"
+    message.msg = "aggiungi correre in palestra"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
     message.msg = "no"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "update the activity named run in gym into walk"
+    message.msg = "modifica il nome dell'attivita correre in palestra con il nome camminare"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
     message.msg = "no"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "set walk in gym as completed"
+    message.msg = "imposta camminare in palestra come completata"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
     message.msg = "no"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "set walk in gym as uncompleted"
+    message.msg = "imposta camminare in palestra come incompleta"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
     message.msg = "no"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "add the category personal"
+    message.msg = "aggiungi la categoria personale"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "modify the category personal in category university"
+    message.msg = "modifica la categoria personale nella categoria universita"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "yes"
+    message.msg = "si"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "remove the category university"
+    message.msg = "rimuovi la categoria universita"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "yes"
+    message.msg = "si"
     dialogue_service(message.msg,message.id) 
-    message.msg = "clean completed activity"
-    dialogue_service(message.msg,message.id) 
-    time.sleep(0.5)
-    message.msg = "yes"
+    message.msg = "rimuovi le attivita completate"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "show my activities"
+    message.msg = "si"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "show my categories"
+    message.msg = "mostra le mie attivita"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "remind me to call john in personal for yesterday"
+    message.msg = "mostra le mie categorie"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "remove walk in gym"
+    message.msg = "ricordami di chiamare john in personale per ieri"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "no"
-    dialogue_service(message.msg,message.id) 
-    time.sleep(0.5)
-    message.msg = "yes"
-    dialogue_service(message.msg,message.id) 
-    time.sleep(0.5)
-    message.msg = "add study in personal for today"
+    message.msg = "rimuovi camminare in palestra"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
     message.msg = "no"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "modify the activity named study in personal with the name play"
+    message.msg = "si"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "yes"
+    message.msg = "aggiungi studiare in personale per oggi"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "today"
+    message.msg = "no"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "modify the deadline of the activity play in personal"
+    message.msg = "modifica il nome dell'attivita chiamata studiare in personale con il nome giocare"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "from today to now"
+    message.msg = "si"
     dialogue_service(message.msg,message.id) 
     time.sleep(0.5)
-    message.msg = "remind me to breath in personal in 20 seconds"
+    message.msg = "oggi"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "modifica la scadenza dell'attivita giocare in personale"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "da oggi a ora"
+    dialogue_service(message.msg,message.id) 
+    time.sleep(0.5)
+    message.msg = "ricordami di respirare in personale in 20 secondi"
     dialogue_service(message.msg,message.id) 
 
 
@@ -108,7 +110,7 @@ def testFunction():
 def main():
     rospy.init_node('writing')
     rospy.wait_for_service('dialogue_server')
-    # testFunction()
+    testFunction()
     message = RecognizedSpoke()  
     message.msg = "/session_start"
     message.id = -1
