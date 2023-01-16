@@ -160,7 +160,7 @@ def registration(msg):
     number_of_users +=1
     lock.release()
     t2 = datetime.now()
-    rospy.loginfo('la procedura di registrazione ha impiegato', (t2-t1))
+    print('la procedura di registrazione ha impiegato', (t2-t1))
 
 
 def elaboration(d, im):

@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 
-from __future__ import rospy.loginfo_function
 
 from pepper_nodes.srv import LoadUrl
 import rospy
 
 def handle_speech(req):
-    rospy.loginfo("I'm sending to tablet ", req)
+    print("I'm sending to tablet ", req)
     return 'ACK'
 
 def url_server():

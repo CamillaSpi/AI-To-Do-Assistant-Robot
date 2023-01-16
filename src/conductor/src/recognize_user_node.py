@@ -36,12 +36,11 @@ def recognize_user(text_to_send):
         id_face_prob = obtain_video_prob().answer
         faces_stride = id_face_prob.layout.dim[0].stride
         id_face_prob_arr = np.asarray(id_face_prob.data)
-        rospy.loginfo("values faces: ", id_face_prob_arr )
-        rospy.loginfo("faces_stride", faces_stride)
+        print("values faces: ", id_face_prob_arr )
 
         id_voice_prob = obtain_audio_prob().prob_voices
         id_voice_prob_arr = np.asarray(id_voice_prob.data)
-        rospy.loginfo("value voices", id_voice_prob_arr)
+        print("value voices", id_voice_prob_arr)
         
         
         start = 0
@@ -51,12 +50,11 @@ def recognize_user(text_to_send):
         while start != len(id_face_prob_arr):
             stop = start + faces_stride
             sum = np.sum([id_voice_prob_arr*0.40,id_face_prob_arr[start:stop]*0.60], axis = 0)
-            rospy.loginfo(sum)
             if(max < np.max(sum)):
                 max = np.max(sum)
                 id_max = np.argmax(sum)
             start = stop
-        rospy.loginfo("id_max",id_max,"max", max)
+        print("id_max",id_max,"max", max)
         if(max>rejection_threshold):
             #l'utente è stato correttamente riconosciuto quindi devo inviare tutto a rasa
             toSend = RecognizedSpoke()
@@ -72,7 +70,7 @@ def recognize_user(text_to_send):
             rospy.loginfo('Utente Non riconosciuto, inizio registrazione') #qui bisogna avviare la registrazione
             pub_recogizer_node.publish(Bool(True))
             reg_response = startVoiceRegistration()
-            rospy.loginfo('ricevuta risposta'  ,reg_response)
+            print('ricevuta risposta'  ,reg_response)
             #l'utente non è stato correttamente riconosciuto
             # pub2.publish("I can't recognize you")
     except rospy.ServiceException as e:

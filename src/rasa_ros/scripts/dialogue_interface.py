@@ -118,14 +118,14 @@ def main():
 
     while not rospy.is_shutdown():
         message = rospy.wait_for_message("text2answer",RecognizedSpoke)
-        rospy.loginfo("messaggio arrivato nel dialogue interface: ", message)
+        print("messaggio arrivato nel dialogue interface: ", message)
         if message == 'exit': 
             break
         try:
             dialogue_service(message.msg,message.id)
             rospy.loginfo('risposta ricevuta')
         except rospy.ServiceException as e:
-            rospy.loginfo("Service call failed: %s"%e)
+            print("Service call failed: %s"%e)
 
 if __name__ == '__main__':
     try: 

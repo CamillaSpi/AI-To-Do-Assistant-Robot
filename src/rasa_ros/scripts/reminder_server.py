@@ -22,7 +22,7 @@ def create_app() -> Sanic:
         rospy.loginfo(text)
         try:
             json_query = request.json.get('custom')['query']
-            rospy.loginfo('ho riceuvto ' , json_query)
+            print('ho riceuvto ' , json_query)
             if "js" not in json_query:
                 pub2.publish(f'http://10.0.1.248:80/webPage/index.php?query={json_query}')
                 rospy.loginfo(f'http://10.0.1.248:80/webPage/index.php?query={json_query}')
@@ -44,7 +44,7 @@ def create_app() -> Sanic:
 def handle_service(req):
     input_text = req.input_text
     id = req.id
-    rospy.loginfo('USER:' , input_text)
+    print('USER:' , input_text)
     # # Get answer        
     get_answer_url = 'http://localhost:5005/webhooks/callback/webhook'
     message = {
