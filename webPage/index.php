@@ -83,7 +83,7 @@ if (isset($_POST['ajax'])) {
                         }
                         
                     }
-                    echo "</tr>";   
+                    echo "</tr>";     
                     break;
                 }
             }
@@ -233,11 +233,11 @@ echo "<script type='text/javascript'>
             dataType: 'html',   //expect html to be returned    
             data: { ajax: 'true', chosenOptionArray: matrix, query: queryString, numOldRow: numRow}, 
             success: function(response){   
-                alert('vediamo');
+                
                 html = $.parseHTML( response );
                 array = html[0].textContent.split(' ');
                 if(array[0]=='refresh'){
-                    alert('sono in refresh, ma da jssss');
+                    
                     var reload = document.getElementById('refresh');
                     reload.click();
                 }else{
@@ -249,35 +249,39 @@ echo "<script type='text/javascript'>
                             $(row).hide(1000).delay(2000).queue(function() { $(this).remove(); });
                         }                    
                         var tooOld = document.getElementById('numOldRows').innerText;
-                        alert(tooOld);
+                        
                         document.getElementById('numOldRows').innerText=parseInt(tooOld)-1;
                         if(array[2] == 'restart'){
-                            alert('sono a metà della modifica');
+                            
                             document.getElementById('clickMe').click();
                         }
                     }else if(array[0]=='select'){}else{
-                        alert('sto per aggiungere');
+                        
                         var tooOld = document.getElementById('numOldRows').innerText;
                         document.getElementById('numOldRows').innerText=parseInt(tooOld)+1;
                         var idWhereAppend = html[0].childNodes[1].textContent;
                         
+                        
+                        htmlString=response.split('</tr>')[0];
+                        htmlString = htmlString.concat('</tr>');
+                        
                         if(idWhereAppend == ''){
                             var table = document.getElementById('responsecontainer');
-                            alert(table);
+                            
                             var allRows = table.childNodes;
                             for(var i = 0; i < allRows.length; i++){
                                 idWhereAppend=table.childNodes[i].id;
                                 if(idWhereAppend === undefined){
-                                    alert('non ci siamo');
+                                    
                                 }else{
                                     break;
                                 }
                             }
                             var idWhereAppend = '#'.concat(idWhereAppend);
-                            $(response).insertBefore(idWhereAppend).hide().fadeIn(1000);
+                            $(htmlString).insertBefore(idWhereAppend).hide().fadeIn(1000);
                         }else{
                             var idWhereAppend = '#'.concat(idWhereAppend);
-                            $(response).insertAfter(idWhereAppend).hide().fadeIn(1000); 
+                            $(htmlString).insertAfter(idWhereAppend).hide().fadeIn(1000); 
                         }
                         
                         
@@ -296,7 +300,7 @@ echo "
         var queryString = document.getElementById('queryDone').innerText;
         var numRow = document.getElementById('numOldRows').innerText;
         text = document.URL;
-        alert('ora refresho tutto');
+        
         if (text.includes('possessions') && numRow > 1){
             var inject = document.getElementById('clickMe');
             inject.click();
