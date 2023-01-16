@@ -757,4 +757,4 @@ class ActionRecognizeUser(Action):
 
         dispatcher.utter_message(f"Hey penso tu sia {associated_name}!")
 
-        return []
+        return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None), SlotSet("name", associated_name)]
