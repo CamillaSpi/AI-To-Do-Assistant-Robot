@@ -47,6 +47,7 @@ rules:
   - active_loop: reminder_form
   - active_loop: null
   - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
     - requested_slot: null
   - action: action_reminder_item
 
