@@ -19,7 +19,7 @@ natural_learning_voice = rospy.Publisher('naturalLearningVoice', Int16, queue_si
 
 # Init node
 rospy.init_node('recognize_user', anonymous=True)
-rejection_threshold = 0.65
+rejection_threshold = 0.60
 rospy.wait_for_service('voiceLabelServices')
 rospy.wait_for_service('videoLabelServices')
 rospy.wait_for_service('voiceRegistrationService')
