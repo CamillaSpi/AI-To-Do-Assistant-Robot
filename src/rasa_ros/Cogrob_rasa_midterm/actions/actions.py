@@ -56,7 +56,7 @@ class ActionSessionStart(Action):
             Database.initDb(1)    
 
         lista = Database.getAllReminder()
-        rospy.loginfo(len(lista), 'reminder ripristinati')
+        print(len(lista), 'reminder ripristinati')
         for element in lista:
             deadline = element[3]
             time_remind = parser.parse(deadline)-timedelta(seconds = 20)
@@ -397,7 +397,7 @@ class actionModifyCategory(Action):
             category_new = ' '.join([str(elem) for elem in category_new])
         
         if (Database.doesPossessionExists(id,category_new) == False):
-            rospy.loginfo(category_new)
+            print(category_new)
             returnedValue = Database.modifyCategory(id, category_old, category_new)
             if (returnedValue):  
                 text = f"{associated_name}, categoria {category_old} modificata in {category_new} ."
@@ -487,7 +487,7 @@ class actionModifyActivity(Action):
         
       
         if (Database.doesUnfoldingsExists(id,category_new,activity_new,timenew) == False):
-            rospy.loginfo("nel db sto per cercare: ", id, cat_to_modify, act_to_modify, timeold,category_new, activity_new, timenew)
+            print("nel db sto per cercare: ", id, cat_to_modify, act_to_modify, timeold,category_new, activity_new, timenew)
             returnedValue = Database.modifyActivity(id, cat_to_modify, act_to_modify, timeold,category_new, activity_new, timenew)
             if (returnedValue):  
                 text = f"{associated_name}, l'attività {act_to_modify} è stata modificata"
@@ -714,7 +714,7 @@ class ActionReactToReminder(Action):
         activity = entities['activity']
         category = entities['category']
         expired = entities['expired']
-        rospy.loginfo(expired)
+        print(expired)
         Database.updateReminder(id_user,category, activity, deadline, False)
         if(expired):
             text = f"{name}, il reminder per l'attività {activity} in {category} è scaduto!"
@@ -722,14 +722,14 @@ class ActionReactToReminder(Action):
                 dispatcher.utter_message(text=text) 
             else:
                 dispatcher.utter_message(text=text,json_message={'query':'js'}) 
-            rospy.loginfo("ti sei scordato ", activity, category)
+            print("ti sei scordato ", activity, category)
         else: 
             text = f"{name}, ricordati dell'attività {activity} in {category} tra cinque minuti!"
             if rasa_only:
                 dispatcher.utter_message(text=text) 
             else:
                 dispatcher.utter_message(text=text,json_message={'query':'js'}) 
-            rospy.loginfo("sei ancora in tempo per ricordarti", activity, category)
+            print("sei ancora in tempo per ricordarti", activity, category)
 
         #aggiunta per far si che una volta notificato un reminder questo non venga più notificato successivamente
         return []

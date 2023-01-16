@@ -48,7 +48,7 @@ def save_identities(features_dataBase,labels,number_of_users):
 
 
 def load_identities():
-    rospy.loginfo("sono in load speaker")
+    print("sono in load speaker")
     try:
         with open(REF_PATH + '/../../dataBase/json_data.json','r') as in_file:
             tmp= json.load(in_file)

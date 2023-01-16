@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from tensorflow.python.ops.gen_logging_ops import rospy.loginfo
+from tensorflow.python.ops.gen_logging_ops import Print
 import rospy
 from std_msgs.msg import Int16MultiArray,Float32MultiArray,Int16
 import numpy as np
