@@ -572,15 +572,17 @@ class actionResetSlot(Action):
         SlotSet("activity_status",None)
         ]
 
-class actionResetSlot(Action):
+class actionResetConversation(Action):
     def name(self) -> Text:
         return "action_reset_tracker"
     
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        return [SessionStarted() ,FollowupAction("action_session_start"),FollowupAction("action_listen")]
+        if not rasa_only:
+            return [SessionStarted() ,FollowupAction("action_session_start"),FollowupAction("action_listen"),SlotSet("name", 'tmp')]
+        else:
+            return [SessionStarted() ,FollowupAction("action_session_start"),FollowupAction("action_listen"),SlotSet("name", None)]
 
 class actionRemindItem(Action):
     def name(self) -> Text:
