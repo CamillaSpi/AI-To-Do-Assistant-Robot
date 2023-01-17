@@ -242,7 +242,7 @@ def recognize():
         rospy.loginfo('vado in close Face')
         save_identities()
 
-    except rospy.exceptions.ROSInterruptException:
+    except rospy.exceptions.ROSInterruptException or rospy.exceptions.ROSException:
         rospy.loginfo("vado in close Face")
         save_identities()
         rospy.loginfo("Salvato db face")

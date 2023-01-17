@@ -142,6 +142,8 @@ class Database:
 
   @staticmethod
   def createUser(ID,name):
+    print(ID, type(ID))
+    print(name, type(name))
     try:
       conn.execute('''
         INSERT INTO users (ID,name) VALUES (?,?);
@@ -149,7 +151,7 @@ class Database:
       conn.commit()
       return True
     except sqlite3.IntegrityError as e:
-        print(e)
+        print('expcetion add users ' , e)
         return False
 
   @staticmethod
