@@ -60,7 +60,7 @@ rules:
   steps:
   - intent: reset_conversation
   - action: utter_restart_conversation
-  - action: action_reset_slot
+  - action: action_reset_tracker
 
 - rule: react to remind
   steps: 

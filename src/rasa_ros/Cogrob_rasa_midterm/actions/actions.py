@@ -12,7 +12,7 @@ from unicodedata import category
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet, ReminderScheduled,SessionStarted,ActionExecuted,EventType
+from rasa_sdk.events import SlotSet, ReminderScheduled,SessionStarted,ActionExecuted,EventType,FollowupAction
 from rasa_sdk.forms import FormValidationAction
 from rasa_sdk.types import DomainDict
 from datetime import datetime, timedelta
@@ -571,6 +571,16 @@ class actionResetSlot(Action):
         SlotSet("time",None),
         SlotSet("activity_status",None)
         ]
+
+class actionResetSlot(Action):
+    def name(self) -> Text:
+        return "action_reset_tracker"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        return [SessionStarted() ,FollowupAction("action_session_start"),FollowupAction("action_listen")]
 
 class actionRemindItem(Action):
     def name(self) -> Text:
