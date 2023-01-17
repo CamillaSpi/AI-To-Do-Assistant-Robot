@@ -42,7 +42,7 @@ def listener():
             cv2.imshow("PepperAcquisition", img)
             k = cv2.waitKey(5)
     except rospy.exceptions.ROSInterruptException:
-        rospy.loginfo("vado in close in massiccianza e salvo il file")
+        rospy.loginfo("vado in close e salvo il file")
         out.release()
         cv2.destroyAllWindows()
 
