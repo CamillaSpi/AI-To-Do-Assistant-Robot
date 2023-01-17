@@ -1,0 +1,300 @@
+[
+  {
+    "text": "modificare la categoria pranzo dell'attività pranzo di lavoro in lavoro",
+    "entities": [
+      {
+        "start": 24,
+        "end": 30,
+        "value": "pranzo",
+        "entity": "category",
+        "role": "old"
+      },
+      {
+        "start": 45,
+        "end": 61,
+        "value": "pranzo di lavoro",
+        "entity": "activity"
+      },
+      {
+        "start": 65,
+        "end": 71,
+        "value": "lavoro",
+        "entity": "category",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 24,
+        "end": 30,
+        "confidence_entity": 0.6374844908714294,
+        "value": "pranzo",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 45,
+        "end": 61,
+        "confidence_entity": 0.6561586856842041,
+        "value": "pranzo di lavoro",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 65,
+        "end": 71,
+        "confidence_entity": 0.661022961139679,
+        "role": "new",
+        "confidence_role": 0.8263049125671387,
+        "value": "lavoro",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "modificare la categoria lavoro di pranzo di lavoro",
+    "entities": [
+      {
+        "start": 24,
+        "end": 30,
+        "value": "lavoro",
+        "entity": "category",
+        "role": "old"
+      },
+      {
+        "start": 34,
+        "end": 50,
+        "value": "pranzo di lavoro",
+        "entity": "activity"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "category",
+        "start": 24,
+        "end": 30,
+        "confidence_entity": 0.7624680399894714,
+        "role": "old",
+        "confidence_role": 0.7893111109733582,
+        "value": "lavoro",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 31,
+        "end": 33,
+        "confidence_entity": 0.5576430559158325,
+        "value": "di",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 34,
+        "end": 50,
+        "confidence_entity": 0.818782389163971,
+        "value": "pranzo di lavoro",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "voglio cambiare il termine dell'attività uscire con gli amici nella categoria eventi con 27 aprile 1998",
+    "entities": [
+      {
+        "start": 41,
+        "end": 61,
+        "value": "uscire con gli amici",
+        "entity": "activity"
+      },
+      {
+        "start": 78,
+        "end": 84,
+        "value": "eventi",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 41,
+        "end": 61,
+        "confidence_entity": 0.9498134255409241,
+        "value": "uscire con gli amici",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 78,
+        "end": 88,
+        "confidence_entity": 0.5231480598449707,
+        "value": "eventi con",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "cambia il nome dell'attività attività all'aperto nella categoria salute fisica",
+    "entities": [
+      {
+        "start": 29,
+        "end": 48,
+        "value": "attività all'aperto",
+        "entity": "activity",
+        "role": "old"
+      },
+      {
+        "start": 65,
+        "end": 78,
+        "value": "salute fisica",
+        "entity": "category"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 20,
+        "end": 28,
+        "confidence_entity": 0.6116536855697632,
+        "role": "old",
+        "confidence_role": 0.7289152145385742,
+        "value": "attività",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 29,
+        "end": 48,
+        "confidence_entity": 0.6922697424888611,
+        "role": "old",
+        "confidence_role": 0.7187092304229736,
+        "value": "attività all'aperto",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 65,
+        "end": 78,
+        "confidence_entity": 0.9946714043617249,
+        "value": "salute fisica",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "voglio cambiare l'attività con nome leggere con leggere un libro",
+    "entities": [
+      {
+        "start": 36,
+        "end": 43,
+        "value": "leggere",
+        "entity": "activity",
+        "role": "old"
+      },
+      {
+        "start": 48,
+        "end": 64,
+        "value": "leggere un libro",
+        "entity": "activity",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 36,
+        "end": 43,
+        "confidence_entity": 0.8534680008888245,
+        "role": "old",
+        "confidence_role": 0.9060425758361816,
+        "value": "leggere",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 48,
+        "end": 55,
+        "confidence_entity": 0.8443042635917664,
+        "role": "old",
+        "confidence_role": 0.8971073627471924,
+        "value": "leggere",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 56,
+        "end": 64,
+        "confidence_entity": 0.9988957643508911,
+        "role": "new",
+        "confidence_role": 0.8362533450126648,
+        "value": "un libro",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "per l'attività leggere un libro nella categoria impegni trasforma il nome con leggere l'articolo",
+    "entities": [
+      {
+        "start": 15,
+        "end": 31,
+        "value": "leggere un libro",
+        "entity": "activity",
+        "role": "old"
+      },
+      {
+        "start": 48,
+        "end": 55,
+        "value": "impegni",
+        "entity": "category"
+      },
+      {
+        "start": 78,
+        "end": 96,
+        "value": "leggere l'articolo",
+        "entity": "activity",
+        "role": "new"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "activity",
+        "start": 4,
+        "end": 6,
+        "confidence_entity": 0.4998188614845276,
+        "role": "new",
+        "confidence_role": 0.4692700207233429,
+        "value": "l'",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 15,
+        "end": 31,
+        "confidence_entity": 0.9984613656997681,
+        "role": "old",
+        "confidence_role": 0.5834845304489136,
+        "value": "leggere un libro",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "category",
+        "start": 48,
+        "end": 55,
+        "confidence_entity": 0.9993818998336792,
+        "value": "impegni",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "activity",
+        "start": 78,
+        "end": 96,
+        "confidence_entity": 0.9869893193244934,
+        "role": "new",
+        "confidence_role": 0.5152025818824768,
+        "value": "leggere l'articolo",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]
