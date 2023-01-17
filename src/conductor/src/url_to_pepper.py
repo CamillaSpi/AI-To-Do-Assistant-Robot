@@ -7,8 +7,7 @@ it calls the 'execute_js' service by notifying to the related service on Pepper 
 If the message contains the string "reload", it calls the 'execute_js' service by notifying to the related service on Pepper 
 to reload the current webpage on the tablet. If the message does not contain "js" or "reload", it calls the 'load_url' service to 
 load the URL specified in the message on the tablet. If the service call returns an 'ACK' response, it considers the operation successful, 
-otherwise it logs an error message. It also has a publisher 'isListening' that publish a message indicating if the node is currently
-executing a command or not.
+otherwise it logs an error message.
 """
 
 import rospy
