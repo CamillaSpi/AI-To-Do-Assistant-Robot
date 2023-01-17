@@ -18,7 +18,7 @@ pub_recogizer_node = rospy.Publisher('startRegistration', Bool, queue_size=10)
 natural_learning_voice = rospy.Publisher('naturalLearningVoice', Int16, queue_size=10)
 
 rospy.init_node('recognize_user', anonymous=True)
-rejection_threshold = 0.60 #threshold value that marks wheter a person is considered recognized or not
+rejection_threshold = 0.55 #threshold value that marks wheter a person is considered recognized or not
 
 #Obtaining datas of identification with voice and video services from speaker identification and face reidentification
 rospy.wait_for_service('voiceLabelServices')

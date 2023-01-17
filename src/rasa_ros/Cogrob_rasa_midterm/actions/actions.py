@@ -580,9 +580,9 @@ class actionResetConversation(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         if not rasa_only:
-            return [SessionStarted() ,FollowupAction("action_session_start"),FollowupAction("action_listen"),SlotSet("name", 'tmp')]
+            return [SessionStarted() ,FollowupAction("action_session_start"),SlotSet("name", 'tmp')]
         else:
-            return [SessionStarted() ,FollowupAction("action_session_start"),FollowupAction("action_listen"),SlotSet("name", None)]
+            return [SessionStarted() ,FollowupAction("action_session_start"),SlotSet("name", None)]
 
 class actionRemindItem(Action):
     def name(self) -> Text:
