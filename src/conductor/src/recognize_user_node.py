@@ -18,7 +18,7 @@ pub_recogizer_node = rospy.Publisher('startRegistration', Bool, queue_size=10)
 natural_learning_voice = rospy.Publisher('naturalLearningVoice', Int16, queue_size=10)
 
 rospy.init_node('recognize_user', anonymous=True)
-rejection_threshold = 0.60
+rejection_threshold = 0.60 #threshold value that marks wheter a person is considered recognized or not
 
 #Obtaining datas of identification with voice and video services from speaker identification and face reidentification
 rospy.wait_for_service('voiceLabelServices')
@@ -34,8 +34,9 @@ startVoiceRegistration = rospy.ServiceProxy('voiceRegistrationService', Registra
 """
 Function to recognize user with both audio and video; we give more importance to the face information, so the probabilities are multiplied 
 by a factor that is higher for face probabilities. We use also a threshold value that has to be reached by the sum of the probabilities
-between audio and video by every user, if it is not reached the registration of a new, unknown, user starts. When the user is recognized
-we send the information of the id of the user and the text he has told to rasa, publishing on text2answer topic. 
+between audio and video by every user, if it is not reached the registration of a new, unknown, user starts, publishing on the StartRegistration topic,
+and through voiceRegistrationService. 
+When the user is recognized we send the information of the id of the user and the text he has told to rasa, publishing on text2answer topic. 
 """
 def recognize_user(text_to_send):
     try:
@@ -63,18 +64,18 @@ def recognize_user(text_to_send):
             start = stop
         print("id_max",id_max,"max", max)
         if(max>rejection_threshold):
-            #l'utente è stato correttamente riconosciuto quindi devo inviare tutto a rasa
+            #user correctly recognized, so RecognizedSpoke that is a structured type composed by the text to analyze and the user id, is sent to rasa
             toSend = RecognizedSpoke()
             toSend.msg = text_to_send.data
             toSend.id = id_max
             pub1.publish(toSend)
             rospy.loginfo('Utente riconosciuto')
 
-            # natural learning 
+            #if confidence voice prediction is under a certain threshold it's necessary to start natural learning procedure
             if id_voice_prob_arr[id_max] < 0.35:
                 natural_learning_voice.publish(id_max)
         else:
-            rospy.loginfo('Utente Non riconosciuto, inizio registrazione') #qui bisogna avviare la registrazione
+            rospy.loginfo('Utente Non riconosciuto, inizio registrazione') ##user not recognized, it is necessary to start registration
             pub_recogizer_node.publish(Bool(True))
             reg_response = startVoiceRegistration()
             print('ricevuta risposta'  ,reg_response)
