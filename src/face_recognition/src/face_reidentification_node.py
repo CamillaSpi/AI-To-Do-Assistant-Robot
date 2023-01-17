@@ -44,7 +44,7 @@ import numpy as np
 from vision_msgs.msg import Detection2DArray, ObjectHypothesisWithPose
 
 from face_recognition.srv import video_detect_user
-from std_msgs.msg import Int32MultiArray, Float32MultiArray, MultiArrayDimension, Bool
+from std_msgs.msg import Float32MultiArray, MultiArrayDimension, Bool
 
 import json
 from json import JSONEncoder
@@ -191,7 +191,6 @@ def registration(msg):
             else:
                 database = np.concatenate((database, feature_vector))
             labels = np.append(labels,number_of_users)
-    # Predict
     number_of_users +=1
     lock.release()
     t2 = datetime.now()
@@ -220,11 +219,10 @@ def predict_identity(resized_face, rejection_threshold=7000):
         emb_face = np.repeat(feature_vector, len(
             database), 0)
         cos_dist = batch_cosine_similarity(np.array(database), emb_face)
-        # id_label = dist2id(cos_dist, labels, rejection_threshold, mode='avg')
         id_label, ids_prob = dist2id(
             cos_dist, labels, rejection_threshold, mode='avg',filter_under_th=number_of_users==1)
     else:
-        id_label = number_of_users        # non so a che serve, probabilmente la togliamo proprio
+        id_label = number_of_users      
         ids_prob = []
     return (id_label), ids_prob
 
