@@ -3,17 +3,17 @@
 """
 This is a Python script that uses the ROS framework, the speech_recognition library, and the ros_audio_pkg package to save audio data.
 The script then creates a variable count initialized to 0, it will be used to name the files. 
-The script initializes a ROS node and creates a publisher object that will be used to publish the audio and text data to a topic.
+The script initializes a ROS node and subscripts to mic_data topic on which it will receive audio data. 
+In the callback function we save audio samples. 
 This script was used only in test phase.
 """
 
 import rospy
-from std_msgs.msg import Int16MultiArray, String
+from std_msgs.msg import Int16MultiArray
 import numpy as np
 
 from speech_recognition import AudioData
 import speech_recognition as sr
-from ros_audio_pkg.msg import AudioAndText
 import os
 #from datetime import datetime
 
@@ -22,9 +22,8 @@ r = sr.Recognizer()
 
 # Init node
 rospy.init_node('speech_recognition', anonymous=True)
-pub1 = rospy.Publisher('AudioAndText', AudioAndText, queue_size=10)
 count = 0
-# this is called from the background thread
+
 def callback(audio):
     data = np.array(audio.data,dtype=np.int16)
     audio_data = AudioData(data.tobytes(), 16000, 2)

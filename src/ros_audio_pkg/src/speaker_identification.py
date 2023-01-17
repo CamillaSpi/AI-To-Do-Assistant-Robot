@@ -8,7 +8,7 @@ The elaboration function takes audio data as input, processes it, and returns
 the audio data in a format that can be used by the deep learning model. 
 The registration function takes input from a microphone and uses the elaboration 
 function to process the audio data, and then save the data in the features_dataBase, using phrases that the robot will say to the user to 
-guide the user through the registration process, asking them to repeat certain phrases to improve the accuracy of the model.
+guide him through the registration process, asking them to repeat certain phrases to improve the accuracy of the model.
 
 The listener function subscribes to a ROS topic for microphone data, and calls the registration function when new data is received. 
 The script also uses the ros_audio_pkg package and srv to publish and receive data from ROS topics.
@@ -17,19 +17,16 @@ at the same time, this can be seen in registration function and listener functio
 
 """
 
-from tensorflow.python.ops.gen_logging_ops import Print
 import rospy
 from std_msgs.msg import Int16MultiArray,Float32MultiArray,Int16
 import numpy as np
-import pickle
 import os
 
 from identification.deep_speaker.audio import get_mfcc
 from identification.deep_speaker.model import get_deep_speaker
 from identification.utils import batch_cosine_similarity, dist2id
-from std_msgs.msg import Int16MultiArray, String,Bool
+from std_msgs.msg import Int16MultiArray, String
 from identification.identities_mng import save_identities, load_identities
-from ros_audio_pkg.msg import RecognizedSpoke,AudioAndText
 from ros_audio_pkg.srv import idLabel,Registration
 import rospy
 from threading import Lock
@@ -48,23 +45,21 @@ global last_features
 # Load model, siamese network based on resnet/vgg. trained with triplet loss. publicly available on keras.
 model = get_deep_speaker(os.path.join(REF_PATH,'deep_speaker.h5'))
 
-# Treshold
+# Threshold
 TH = 0.60
 
 pub1 = rospy.Publisher('toSpeech', String, queue_size=10)
 
 def elaboration(data):
     audio_data = np.array(data)
-    # to float32, casto!
     audio_data = audio_data.astype(np.float32, order='C') / 32768.0
-    # Processing, prenod lo spettrogramma di MEL(simile all'orecchio umano.)
     ukn = get_mfcc(audio_data, RATE)
     # Prediction
     ukn = model.predict(np.expand_dims(ukn, 0))
     return ukn
 
 # Phrases to repeat during recording
-phrases = ["Mi sembra di non conoscerti, ripeti dopo di me: Ciao Pepper"] #,"aggiungi attività corsa nella categoria palestra per domani", "rimuovi la categoria studio in università","aggiorna l'attività passeggiata in personale" , "mostra le mie attività", "ricordami di suonare la chitarra nel tempo libero"]
+phrases = ["Mi sembra di non conoscerti, ripeti dopo di me: Ciao Pepper","aggiungi attività corsa nella categoria palestra per domani", "rimuovi la categoria studio in università","aggiorna l'attività passeggiata in personale" , "mostra le mie attività", "ricordami di suonare la chitarra nel tempo libero"]
 
 def registration(msg):
     global features_dataBase
@@ -140,7 +135,6 @@ def naturalLearning(msg):
 
     lock.acquire()
     print(features_dataBase.shape, len(labels))
-    # should never be None, but to be safe
     if last_features.all()!=None:
         rospy.loginfo('added new campionbe')
         try:
