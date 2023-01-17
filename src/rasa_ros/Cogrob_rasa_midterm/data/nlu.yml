@@ -12,6 +12,7 @@ nlu:
     - hey
     - buona mattina
     - buon pomeriggio
+    - ciao pepper
 - intent: goodbye
   examples: |
     - arrivederci
@@ -1604,3 +1605,6 @@ nlu:
     - incompiute 
     - non completata
     - non completa
+    - non completate
+    - non fatte
+    - non finite
