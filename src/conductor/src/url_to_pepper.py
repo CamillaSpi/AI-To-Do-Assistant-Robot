@@ -12,13 +12,11 @@ otherwise it logs an error message.
 
 import rospy
 from std_msgs.msg import String
-import numpy as np
 from pepper_nodes.srv import LoadUrl, ExecuteJS
-import time
 
 # Init node
 rospy.init_node('url_to_pepper', anonymous=True)
-#rospy.wait_for_service('load_url')
+
 load_url = rospy.ServiceProxy('load_url', LoadUrl)
 execute_js = rospy.ServiceProxy('execute_js', ExecuteJS)
 # this is called from the background thread
