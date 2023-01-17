@@ -108,10 +108,10 @@ df_cm = pd.DataFrame(result, index = [i for i in range(0,4)],
 sn.set(font_scale=1.4) # for label size
 sn.heatmap(df_cm, annot=True, annot_kws={"size": 16}) # font size
 
-rospy.loginfo(y_labels)
-rospy.loginfo(y_preds)
+print(y_labels)
+print(y_preds)
 
 plt.show()
 
 
-rospy.loginfo("the accuracy is {:.2f}".format(accuracy/count))
+print("the accuracy is {:.2f}".format(accuracy/count))
