@@ -41,7 +41,7 @@ def callback(audio):
         
         pub1.publish(audio)
         time.sleep(0.2)
-        pub2.publish(spoken_text)
+        pub2.publish(spoken_text.lower())
     except sr.UnknownValueError:
         rospy.loginfo("Google Speech Recognition non riesce a capire da questo file audio")
         pubSpeech.publish("Scusa, puoi ripetere")

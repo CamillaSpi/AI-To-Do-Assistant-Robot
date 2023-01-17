@@ -1,8 +1,0 @@
-<launch>
-    <arg name="node_start_delay" default="25.0" />  
-    <arg name="node_start_delay2" default="35.0" />  
-    
-    <node pkg="conductor" name="imageFromPepper" type="image_node.py" output="screen"/>
-    <node pkg="conductor" name="test_camera_node" type="test_camera_node.py" output="screen"/>
-
-</launch>
