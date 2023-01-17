@@ -3,11 +3,12 @@
 """
 This is a Python script that uses the ROS framework, the speech_recognition library, 
 and the ros_audio_pkg package to perform speech recognition on audio data.
-The script creates publisher objects that will be used to publish the received audio, 
-the interpreted text to different topics and, if necessary, ask to rephrase. 
-The script then defines a callback function that will be called when new audio data is received. 
-The callback function uses the Recognizer object to recognize speech in the audio data using Google's speech recognition service.
-The recognized text is then logged and published to a ROS topic.
+The script creates publisher objects that will be used to publish on the received audio, interpretedtext and tospeech topics.
+The script starts when voice data are received; the callback function, called when new audio data is received, 
+uses the Recognizer object to recognize speech in the audio data using Google's speech recognition service.
+The audio received is published on recivedAudio, used by speaker identification, the text recognized is published
+on interpretedText topic and will be elaborated by the recognize user node in conductor. At the end, if the text
+of the audio data is not recognized, a publish on toSpeech topic is done to let the bot say this sentence.
 """
 
 
@@ -17,7 +18,6 @@ import numpy as np
 
 from speech_recognition import AudioData
 import speech_recognition as sr
-from ros_audio_pkg.msg import AudioAndText
 import time
 
 # Initialize a Recognizer
@@ -29,7 +29,6 @@ pub1 = rospy.Publisher('RecivedAudio', Int16MultiArray, queue_size=10) #publish 
 pub2 = rospy.Publisher('InterpretedText', String, queue_size=10) #publish the recognized text
 pubSpeech = rospy.Publisher('toSpeech', String,queue_size=10)
 
-# this is called from the background thread
 def callback(audio):
     data = np.array(audio.data,dtype=np.int16)
     audio_data = AudioData(data.tobytes(), 16000, 2)

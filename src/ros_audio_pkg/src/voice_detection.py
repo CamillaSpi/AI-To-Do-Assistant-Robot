@@ -7,12 +7,12 @@ but it can also work with other microphones.
 
 The find_device_index function scans the available audio devices and returns the index of the ReSpeaker USB microphone array.
 If a device with the name "ReSpeaker" is identified, it indicates that the project's designated microphone is being used, rather than a 
-standard computer microphone. As this microphone is a multiarray, it is necessary to first increase the sample rate, and then decrease 
-it again to separate the audio streams of each individual microphone. The microphone with the highest amplitude will then be selected.
+standard computer microphone. 
 
-
-The callback function is called by the background thread created by the SpeechRecognition library and takes audio data as input, 
-processes it, and publishes it to a ROS topic. The rcv_person function is a callback function that is triggered when a message is received on 
+The callback function is called by the background thread created by the SpeechRecognition library and takes audio data as input and processes it:
+as this microphone is a multiarray, it is necessary to first increase the sample rate, and then decrease it again to separate the audio streams 
+of each individual microphone. The microphone with the highest amplitude will then be selected. Then the audio is published on mic_data topic used
+by other nodes. The rcv_person function is a callback function that is triggered when a message is received on 
 the "isListening" topic.
 
 The script also subscribes to a ROS topic called "isListening", and when a message is received on this topic,
@@ -24,7 +24,6 @@ import rospy
 from std_msgs.msg import Int16MultiArray, Bool
 import numpy as np
 
-import time
 import speech_recognition as sr
 import pyaudio
 
@@ -60,12 +59,11 @@ else:
     num_microphone = 4
 
 
-# this is called from the background thread
 def callback(recognizer, audio):
     data = np.frombuffer(audio.get_raw_data(), dtype=np.int16)
     max = np.sum(data[0::num_microphone])
     toSend = data[0::num_microphone]
-    #though this for loop we search for the microphone with the max summed value, this should correspond to the principal microphone where the speaker is talking
+    #through this for loop we search for the microphone with the max summed value, this should correspond to the principal microphone where the speaker is talking
     for x in range(1,num_microphone): 
         tmp = np.sum(data[x::num_microphone])
         if max < tmp:
