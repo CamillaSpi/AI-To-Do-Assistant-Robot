@@ -142,8 +142,6 @@ class Database:
 
   @staticmethod
   def createUser(ID,name):
-    print(ID, type(ID))
-    print(name, type(name))
     try:
       conn.execute('''
         INSERT INTO users (ID,name) VALUES (?,?);

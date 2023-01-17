@@ -25,6 +25,9 @@ from time import sleep
 import json
 import os
 
+global id
+id = None
+
 global rasa_only
 rasa_only = False
 
@@ -43,6 +46,7 @@ class ActionSessionStart(Action):
         amdam_tz = pytz.timezone('Europe/Amsterdam')
         actual_time = datetime.now()
         actual_time_tz = amdam_tz.localize(actual_time, is_dst = True)
+        global id
         id=tracker.current_state()["sender_id"]
      
         try:
@@ -86,6 +90,7 @@ class actionCreateUser(Action):
         
         name = tracker.get_slot("name")
 
+        global id
         id=tracker.current_state()["sender_id"]
         
         try:
@@ -114,7 +119,7 @@ class actionAddItem(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
+        global id
         if not rasa_only:
             id=int(tracker.current_state()["sender_id"])
 
@@ -157,7 +162,7 @@ class actionRemoveItem(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
-        
+        global id
         if not rasa_only:
             id=int(tracker.current_state()["sender_id"])
 
@@ -193,7 +198,7 @@ class actionAddCategory(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
-        
+        global id
         if not rasa_only:
             id=int(tracker.current_state()["sender_id"])
         
@@ -225,7 +230,7 @@ class actionRemoveCategory(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
-        
+        global id
         if not rasa_only:
             id=int(tracker.current_state()["sender_id"])
 
@@ -256,7 +261,7 @@ class actionSetStatusActivity(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+        global id
         if not rasa_only:
             id=int(tracker.current_state()["sender_id"])
 
@@ -299,7 +304,7 @@ class actionSetInComplete(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+        global id
         if not rasa_only:
             id=int(tracker.current_state()["sender_id"])
      
@@ -330,7 +335,7 @@ class showActivities(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+        global id
         if not rasa_only:
             id=int(tracker.current_state()["sender_id"])
         
@@ -361,7 +366,7 @@ class showCategories(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+        global id
         if not rasa_only:
             id=int(tracker.current_state()["sender_id"])
         
@@ -388,7 +393,7 @@ class actionModifyCategory(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+        global id
         if not rasa_only:
             id=int(tracker.current_state()["sender_id"])
         
@@ -427,7 +432,7 @@ class actionModifyActivity(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         possibleDeadlineErrorFlag=False
-        
+        global id
         if not rasa_only:
             id=int(tracker.current_state()["sender_id"])
 
@@ -529,7 +534,7 @@ class actionCleanCompletedActivities(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+        global id
         if not rasa_only:
             id=int(tracker.current_state()["sender_id"]) 
         
@@ -574,7 +579,7 @@ class actionRemindItem(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+        global id
         if not rasa_only:
             id=int(tracker.current_state()["sender_id"])
 
@@ -766,7 +771,7 @@ class ActionRecognizeUser(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
-      
+        global id
         if not rasa_only:
             id=int(tracker.current_state()["sender_id"])
         
