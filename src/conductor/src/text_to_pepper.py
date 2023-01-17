@@ -1,4 +1,17 @@
 #!/usr/bin/python3
+
+"""
+This python script is a ROS node that listens to a topic called "toSpeech" and when it receives a message it calls a service called "tts" 
+(Text2Speech) to make Pepper robot say the message. It first checks if the service "tts" is running and if it isn't it waits for it to start.
+Then it creates a publisher called "isListening" which will publish a boolean value indicating whether Pepper is talking or not. 
+When a message is received on the "toSpeech" topic it publish on the topic "isListening" the value False, 
+in this way it will notify the audio package to mute the microphone because pePepperpper is about to speak, 
+it calls the "tts" service with the message and logs any error if the service call fails, then it publish on the topic "isListening" the value True,
+so the microphone can be actived.
+It then enters a loop to listen for new messages on the topic "toSpeech". 
+"""
+
+
 import rospy
 from std_msgs.msg import String,Bool
 import numpy as np
