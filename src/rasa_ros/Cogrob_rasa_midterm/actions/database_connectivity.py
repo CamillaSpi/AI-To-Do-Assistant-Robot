@@ -149,7 +149,7 @@ class Database:
       conn.commit()
       return True
     except sqlite3.IntegrityError as e:
-        print(e)
+        print('expcetion add users ' , e)
         return False
 
   @staticmethod

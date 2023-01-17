@@ -64,7 +64,7 @@ def elaboration(data):
     return ukn
 
 # Phrases to repeat during recording
-phrases = ["Mi sembra di non conoscerti, ripeti dopo di me: Ciao Pepper" ,"aggiungi attività corsa nella categoria palestra per domani", "rimuovi la categoria studio in università","aggiorna l'attività passeggiata in personale" , "mostra le mie attività", "ricordami di suonare la chitarra nel tempo libero"]
+phrases = ["Mi sembra di non conoscerti, ripeti dopo di me: Ciao Pepper"] #,"aggiungi attività corsa nella categoria palestra per domani", "rimuovi la categoria studio in università","aggiorna l'attività passeggiata in personale" , "mostra le mie attività", "ricordami di suonare la chitarra nel tempo libero"]
 
 def registration(msg):
     global features_dataBase
