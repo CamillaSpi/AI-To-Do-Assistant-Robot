@@ -1,4 +1,22 @@
 #!/usr/bin/env python3
+
+
+"""
+
+This script is a ROS node that detects faces in an image stream, publishes the bounding
+boxes of the detected faces as a Detection2DArray message, and if the --listen_on_detect option is set to True, 
+it also publishes a Bool message on the "isListening" topic. The node uses OpenCV's DNN (deep neural network) module 
+to detect the faces. The DNN model used is the "opencv_face_detector" and the corresponding prototxt file is "opencv_face_detector.pbtxt". 
+The script starts by loading the model and setting up the node, then it defines a detect_face function that is called every time a 
+new image message is received. The function first converts the image message to a numpy array and then passes it to the getFaceBox 
+function, which applies the DNN model to the image and returns the image with bounding boxes around the detected faces and a list of 
+bounding boxes. The script then creates a Detection2DArray message and appends a Detection2D message for each bounding box, and publishes 
+the message. 
+
+The --listen_on_detect args it allows us to decide if the microphone should be deactivated in case of non-detect of the person
+
+"""
+
 import cv2
 import os
 import rospy

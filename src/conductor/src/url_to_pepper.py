@@ -1,4 +1,16 @@
 #!/usr/bin/python3
+
+"""
+This python script is a ROS node that listens to a topic called 'toShow' and when a message is received, 
+it checks the content of the message and takes appropriate action. If the message contains the string "js", 
+it calls the 'execute_js' service by notifying to the related service on Pepper to execute a JavaScript injection on the loaded webpage.
+If the message contains the string "reload", it calls the 'execute_js' service by notifying to the related service on Pepper 
+to reload the current webpage on the tablet. If the message does not contain "js" or "reload", it calls the 'load_url' service to 
+load the URL specified in the message on the tablet. If the service call returns an 'ACK' response, it considers the operation successful, 
+otherwise it logs an error message. It also has a publisher 'isListening' that publish a message indicating if the node is currently
+executing a command or not.
+"""
+
 import rospy
 from std_msgs.msg import String
 import numpy as np

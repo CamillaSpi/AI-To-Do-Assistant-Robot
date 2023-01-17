@@ -144,6 +144,7 @@ actions:
 - action_set_status_activity
 - action_view_activities
 - action_view_categories
+- action_reset_tracker
 - utter_ask_activity
 - utter_ask_category
 - utter_ask_if_deadline

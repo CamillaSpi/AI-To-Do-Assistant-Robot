@@ -149,7 +149,7 @@ class Database:
       conn.commit()
       return True
     except sqlite3.IntegrityError as e:
-        print(e)
+        print('expcetion add users ' , e)
         return False
 
   @staticmethod
@@ -346,7 +346,6 @@ class Database:
       print("ci sono altri con questa activity")
       return
     else:
-      print("nessuno la tiene, elimino in activities")
       conn.execute('''
         DELETE FROM activities WHERE name == ? 
       ''', (activity,))
@@ -361,7 +360,6 @@ class Database:
       print("ci sono altri con questa category")
       return
     else:
-      print("nessuno la tiene, elimino in categories")
       conn.execute('''
         DELETE FROM categories WHERE name == ? 
       ''', (category,))

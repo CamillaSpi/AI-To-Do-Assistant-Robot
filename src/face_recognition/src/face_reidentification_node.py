@@ -1,4 +1,38 @@
 #!/usr/bin/env python3
+
+"""
+
+
+This script is a ROS node that uses the VGGFace library to perform face recognition on a video stream. 
+TThe node is subscribed to the topic in which, in the presence of one or more people, the image and information relating to the 
+boundingbox are published. The "croped" face features are extracted and then compares the face to a database of 
+known faces to identify the person. The node also includes functionality to save the database to a json file 
+and to load the database from a json file. The node publishes the identity of the person along with the detection 
+of the face to a topic called "identity". 
+
+This code defines two functions, save_identities() and load_identities(), 
+which are used to save and load a dataset and labels from a json file. 
+The NumpyArrayEncoder class is used to convert numpy arrays to a format that can be dumped to json.
+
+The save_identities() function uses the json.dump() method to write the dataset, 
+labels, and number of users to a json file. The cls parameter is used to specify that 
+the NumpyArrayEncoder class should be used to convert the numpy arrays.
+
+The load_identities() function uses the json.load() method to read the json file and 
+convert it back to numpy arrays. If the json file cannot be read, the function returns empty arrays.
+This script defines a function called "registration" which is used to register new users. 
+
+When the function is called (when a message on topic startRegistration is published), it initializes some global variables, including a variable called "number_of_users" which 
+keeps track of the number of registered users. The function then enters a loop which listens for messages on the "face_reidentification" 
+topic, which contain images of faces. For each image received, the function performs some image processing to extract features from the face, 
+and appends these features to a global variable called "database". The function also appends a label to a global variable called "labels", 
+which corresponds to the current value of "number_of_users". When the loop exits, the function increments the "number_of_users" variable, 
+releases a lock, and prints the time it took to register the user.
+
+"""
+
+
+
 from datetime import datetime
 import os
 import cv2
@@ -226,7 +260,7 @@ def recognize():
         rospy.loginfo('vado in close Face')
         save_identities()
 
-    except rospy.exceptions.ROSInterruptException:
+    except rospy.exceptions.ROSInterruptException or rospy.exceptions.ROSException:
         rospy.loginfo("vado in close Face")
         save_identities()
         rospy.loginfo("Salvato db face")

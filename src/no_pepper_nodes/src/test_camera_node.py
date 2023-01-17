@@ -1,4 +1,18 @@
 #!/usr/bin/env python3
+
+"""
+Used in testing, specifically when the use of pepper was not possible
+
+This script is a simple implementation of a ROS node that captures video frames from the default camera 
+device and publishes them as ROS Image messages on the topic "in_rgb1". 
+The node uses the OpenCV library to capture the video frames and the ros_numpy library to convert the frames to ROS Image messages. 
+It also uses time.sleep function to set a delay in between frames. The node initializes with a publisher named "in_rgb1" and a sleep 
+time of 2 seconds before starting the capturing process. It runs in a while loop until rospy shutdown is called and in each iteration, 
+it captures a frame, converts it to ROS Image message, publishes it and sleeps for 0.35 seconds. If the capturing process fails or rospy 
+shutdown is called, the function releases the camera.
+"""
+
+
 import rospy
 import cv2
 from sensor_msgs.msg import Image
@@ -30,10 +44,3 @@ if __name__ == '__main__':
         acquire_and_pub()
     except rospy.ROSInterruptException:
         pass
-
-            
-     
-    
-
-
-
