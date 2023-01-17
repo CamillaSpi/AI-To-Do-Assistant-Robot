@@ -25,9 +25,6 @@ from time import sleep
 import json
 import os
 
-global id
-id = None
-
 global rasa_only
 rasa_only = False
 
@@ -86,8 +83,11 @@ class actionCreateUser(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        global id
+        
         name = tracker.get_slot("name")
+
+        id=tracker.current_state()["sender_id"]
+        
         if type(id) != int:
             m = hashlib.sha256()
             id = m.update(str(name.lower()).encode())
@@ -113,7 +113,8 @@ class actionAddItem(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        global id
+        if not rasa_only:
+            id=tracker.current_state()["sender_id"]
 
         associated_name = Database.getName(id)
         if associated_name == None: # if user ask somethings without previously login
@@ -154,8 +155,9 @@ class actionRemoveItem(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
-      
-        global id
+        
+        if not rasa_only:
+            id=tracker.current_state()["sender_id"]
 
         associated_name = Database.getName(id)
         if associated_name == None:
@@ -190,7 +192,8 @@ class actionAddCategory(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
         
-        global id
+        if not rasa_only:
+            id=tracker.current_state()["sender_id"]
         
         associated_name = Database.getName(id)
         if associated_name == None:
@@ -221,8 +224,9 @@ class actionRemoveCategory(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
         
-        global id
-        
+        if not rasa_only:
+            id=tracker.current_state()["sender_id"]
+
         associated_name = Database.getName(id)
         if associated_name == None:
             actionCreateUser.run(self,dispatcher,tracker,domain)
@@ -251,8 +255,8 @@ class actionSetStatusActivity(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        global id
-        #aggiunta
+        if not rasa_only:
+            id=tracker.current_state()["sender_id"]
 
         associated_name = Database.getName(id)
         if associated_name == None:
@@ -294,7 +298,8 @@ class actionSetInComplete(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        global id
+        if not rasa_only:
+            id=tracker.current_state()["sender_id"]
      
         associated_name = Database.getName(id)
         if associated_name == None:
@@ -324,15 +329,13 @@ class showActivities(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        global id
-        #aggiunta
+        if not rasa_only:
+            id=tracker.current_state()["sender_id"]
+        
         associated_name = Database.getName(id)
         if associated_name == None:
             actionCreateUser.run(self,dispatcher,tracker,domain)
             associated_name = Database.getName(id)
-            
-
-
 
         category = tracker.get_slot("category")
         activity_status = tracker.get_slot("activity_status")
@@ -357,8 +360,8 @@ class showCategories(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        global id
-        #aggiunta
+        if not rasa_only:
+            id=tracker.current_state()["sender_id"]
         
         associated_name = Database.getName(id)
         if associated_name == None:
@@ -384,7 +387,8 @@ class actionModifyCategory(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        global id
+        if not rasa_only:
+            id=tracker.current_state()["sender_id"]
         
         associated_name = Database.getName(id)
         if associated_name == None:
@@ -421,7 +425,9 @@ class actionModifyActivity(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         possibleDeadlineErrorFlag=False
-        global id
+        
+        if not rasa_only:
+            id=tracker.current_state()["sender_id"]
 
         category_old = tracker.get_slot("category_old")
         activity_old = tracker.get_slot("activity_old")
@@ -522,7 +528,8 @@ class actionCleanCompletedActivities(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        global id 
+        if not rasa_only:
+            id=tracker.current_state()["sender_id"] 
         
         associated_name = Database.getName(id)
         if associated_name == None:
@@ -566,7 +573,9 @@ class actionRemindItem(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        global id
+        if not rasa_only:
+            id=tracker.current_state()["sender_id"]
+
         activity = tracker.get_slot("activity")
         category = tracker.get_slot("category")
         reminderSlot = tracker.get_slot("reminder")
@@ -756,7 +765,8 @@ class ActionRecognizeUser(Action):
     ) -> List[Dict[Text, Any]]:
 
       
-        global id
+        if not rasa_only:
+            id=tracker.current_state()["sender_id"]
         
         associated_name = Database.getName(id)
         if associated_name == None:
