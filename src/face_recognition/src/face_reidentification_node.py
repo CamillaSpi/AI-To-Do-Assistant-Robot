@@ -10,6 +10,19 @@ known faces to identify the person. The node also includes functionality to save
 and to load the database from a json file. The node publishes the identity of the person along with the detection 
 of the face to a topic called "identity". 
 
+This code defines two functions, save_identities() and load_identities(), 
+which are used to save and load a dataset and labels from a json file. 
+The NumpyArrayEncoder class is used to convert numpy arrays to a format that can be dumped to json.
+
+The save_identities() function uses the json.dump() method to write the dataset, 
+labels, and number of users to a json file. The cls parameter is used to specify that 
+the NumpyArrayEncoder class should be used to convert the numpy arrays.
+
+The load_identities() function uses the json.load() method to read the json file and 
+convert it back to numpy arrays. If the json file cannot be read, the function returns empty arrays.
+
+Overall, these functions provide a way to persistently save and load datasets and labels, 
+which can be useful in scenarios where the data needs to be loaded back into the program at a later time.
 
 """
 
