@@ -14,7 +14,6 @@ It then enters a loop to listen for new messages on the topic "toSpeech".
 
 import rospy
 from std_msgs.msg import String,Bool
-import numpy as np
 from pepper_nodes.srv import *
 
 
