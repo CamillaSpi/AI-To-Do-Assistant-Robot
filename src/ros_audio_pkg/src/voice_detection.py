@@ -105,7 +105,7 @@ def rcv_person(msg):
             rospy.loginfo('stop ascolto')
         else:
             stop_listening = r.listen_in_background(m, callback)
-            rospy.loginfo('asolto')
+            rospy.loginfo('ascolto')
         old_bool = msg.data
         
 
