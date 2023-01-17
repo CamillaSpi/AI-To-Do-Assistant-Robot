@@ -114,6 +114,7 @@ def listener():
                 cos_dist = batch_cosine_similarity(np.array(features_dataBase), emb_voice)
                 
                 _, prob_voices = dist2id(cos_dist, labels, TH, mode='avg') # prob_voices contains the different probabilities divided by the users
+                print("voice probability", prob_voices)
             else:
                 prob_voices = [] 
             lock.release()
