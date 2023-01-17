@@ -20,9 +20,14 @@ the NumpyArrayEncoder class should be used to convert the numpy arrays.
 
 The load_identities() function uses the json.load() method to read the json file and 
 convert it back to numpy arrays. If the json file cannot be read, the function returns empty arrays.
+This script defines a function called "registration" which is used to register new users. 
 
-Overall, these functions provide a way to persistently save and load datasets and labels, 
-which can be useful in scenarios where the data needs to be loaded back into the program at a later time.
+When the function is called (when a message on topic startRegistration is published), it initializes some global variables, including a variable called "number_of_users" which 
+keeps track of the number of registered users. The function then enters a loop which listens for messages on the "face_reidentification" 
+topic, which contain images of faces. For each image received, the function performs some image processing to extract features from the face, 
+and appends these features to a global variable called "database". The function also appends a label to a global variable called "labels", 
+which corresponds to the current value of "number_of_users". When the loop exits, the function increments the "number_of_users" variable, 
+releases a lock, and prints the time it took to register the user.
 
 """
 
