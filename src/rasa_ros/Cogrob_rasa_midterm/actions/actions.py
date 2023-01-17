@@ -659,7 +659,6 @@ class actionAskCategoryOld(Action):
         else:
             dispatcher.utter_message(text=f"Qual è la nuova categoria?")
             return[SlotSet("category_old",category),SlotSet("category",None),SlotSet("category_new",None),SlotSet("requested_slot","category")]    
-        
 class actionAskCategoryNew(Action):
     def name(self) -> Text:
         return "action_ask_category_new"
@@ -674,7 +673,8 @@ class actionAskCategoryNew(Action):
         if(category_new == None and (category == None or category == category_old)):
             dispatcher.utter_message(text=f"Qual è la nuova categoria?")
             return[SlotSet("requested_slot","category")]
-        else:False
+        else:
+            return[SlotSet("category_new",category),SlotSet("category",None),SlotSet("requested_slot",None)]    
 class actionAskActivityOld(Action):
     def name(self) -> Text:
         return "action_ask_activity_old"

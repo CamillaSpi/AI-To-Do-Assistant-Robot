@@ -4,8 +4,8 @@
 
 
 This script is a ROS node that uses the VGGFace library to perform face recognition on a video stream. 
-TThe node is subscribed to the topic in which, in the presence of one or more people, the image and information relating to the 
-boundingbox are published. The "croped" face features are extracted and then compares the face to a database of 
+The node is subscribed to the topic face_reidentification on which, in the presence of one or more people, the image and information relating to the 
+boundingbox are published. The "cropped" face features are extracted and then the detected face is compared to a database of 
 known faces to identify the person. The node also includes functionality to save the database to a json file 
 and to load the database from a json file. The node publishes the identity of the person along with the detection 
 of the face to a topic called "identity". 
