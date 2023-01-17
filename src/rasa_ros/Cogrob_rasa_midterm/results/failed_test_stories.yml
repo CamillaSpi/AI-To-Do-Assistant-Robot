@@ -1,1 +1,2086 @@
-# None of the test stories failed - all good!
+version: "2.0"
+stories:
+- story: test5 modify deadline of activity with deadline passing all step by step (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: michele
+  - slot_was_set:
+    - name: michele
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_deadline
+    entities:
+    - activity: correre
+  - slot_was_set:
+    - activity: correre
+  - action: modify_activity_deadline_form
+  - active_loop: modify_activity_deadline_form
+  - slot_was_set:
+    - category: sport
+  - active_loop: null
+  - action: action_modify_activity
+- story: test1 modify activity name passing all but no deadline si deadline (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: Carola
+  - slot_was_set:
+    - name: Carola
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_name  # predicted: add_item: modificare l'attività [parrucchiere](activity) nella categoria [cura personale](category) con [estetista](activity)
+    entities:
+    - activity: parrucchiere
+    - category: cura personale
+    - activity: estetista
+  - slot_was_set:
+    - activity: estetista
+  - slot_was_set:
+    - category: cura personale
+  - action: modify_activity_name_form
+  - active_loop: modify_activity_name_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-02-02T00:00:00.000+01:00'
+  - active_loop: null
+  - action: action_modify_activity
+- story: test2 modify activity name passing all step by step but no deadline si deadline (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: Cristina
+  - slot_was_set:
+    - name: Cristina
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_name
+    entities:
+    - activity: andare a correre
+  - slot_was_set:
+    - activity: andare a correre
+  - action: modify_activity_name_form
+  - active_loop: modify_activity_name_form
+  - slot_was_set:
+    - category: cura personale
+  - slot_was_set:
+    - activity: nuotare
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-02-02T00:00:00.000+01:00'
+  - active_loop: null
+  - action: action_modify_activity
+- story: test3 modify activity name passing two of three but no deadline si deadline (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: Alessandro
+  - slot_was_set:
+    - name: Alessandro
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_name
+    entities:
+    - activity: andare al mercato
+    - category: faccende domestiche
+  - slot_was_set:
+    - activity: andare al mercato
+  - slot_was_set:
+    - category: faccende domestiche
+  - action: modify_activity_name_form
+  - active_loop: modify_activity_name_form
+  - slot_was_set:
+    - activity: fare la spesa
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-07-07T00:00:00.000+01:00'
+  - active_loop: null
+  - action: action_modify_activity
+- story: test4 modify activity name passing two of three but no deadline si deadline (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: Alessio
+  - slot_was_set:
+    - name: Alessio
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_name
+    entities:
+    - activity: mangiare la pizza
+    - activity: andare al pub
+  - slot_was_set:
+    - activity: andare al pub
+  - action: modify_activity_name_form
+  - active_loop: modify_activity_name_form
+  - slot_was_set:
+    - category: tempo libero
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-04-04T00:00:00.000+01:00'
+  - active_loop: null
+  - action: action_modify_activity
+- story: test1 modify activity name passing all but no deadline no deadline (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: Alessandra
+  - slot_was_set:
+    - name: Alessandra
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_name  # predicted: add_item: modificare l'attività [parrucchiere](activity) nella categoria [cura personale](category) con [estetista](activity)
+    entities:
+    - activity: parrucchiere
+    - category: cura personale
+    - activity: estetista
+  - slot_was_set:
+    - activity: estetista
+  - slot_was_set:
+    - category: cura personale
+  - action: modify_activity_name_form
+  - active_loop: modify_activity_name_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: deny
+  - action: action_modify_activity
+- story: test4 modify activity name passing two of three but no deadline no deadline (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: vito
+  - slot_was_set:
+    - name: vito
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_name
+    entities:
+    - activity: studiare
+  - slot_was_set:
+    - activity: esame
+  - action: modify_activity_name_form
+  - active_loop: modify_activity_name_form
+  - slot_was_set:
+    - category: università
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: deny
+  - action: action_modify_activity
+- story: test1 modify activity name passing all also deadline (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: nicola
+  - slot_was_set:
+    - name: nicola
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_name
+    entities:
+    - activity: prendere le medicine
+    - category: salute
+    - activity: prendere la pillola
+  - slot_was_set:
+    - activity: prendere la pillola
+  - slot_was_set:
+    - category: salute
+  - slot_was_set:
+    - time: '2023-04-04T00:00:00.000+01:00'
+  - action: modify_activity_name_form
+  - active_loop: modify_activity_name_form
+  - active_loop: null
+  - action: action_modify_activity
+- story: test2 modify activity name passing all also deadline but in steps (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: enzo
+  - slot_was_set:
+    - name: enzo
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_name  # predicted: modify_activity_deadline: modificare l'attività [dentista del](activity) [04/04/2023]{"entity": "time", "value": "2023-04-04T00:00:00.000+02:00"}
+    entities:
+    - activity: dentista
+  - slot_was_set:
+    - activity: dentista
+  - slot_was_set:
+    - time: '2023-04-04T00:00:00.000+01:00'
+  - action: modify_activity_name_form
+  - active_loop: modify_activity_name_form
+  - slot_was_set:
+    - category: salute personale
+  - slot_was_set:
+    - activity: andare dal dottore
+  - active_loop: null
+  - action: action_modify_activity
+- story: test3 modify activity name passing all also deadline but in steps (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: camilla
+  - slot_was_set:
+    - name: camilla
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_name
+    entities:
+    - activity: fare i compiti
+  - slot_was_set:
+    - activity: fare i compiti
+  - slot_was_set:
+    - time: '2023-05-05T00:00:00.000+01:00'
+  - action: modify_activity_name_form
+  - active_loop: modify_activity_name_form
+  - slot_was_set:
+    - activity: studiare per interrogazione
+  - active_loop: null
+  - action: action_modify_activity
+- story: test4 modify activity name passing all also deadline but in steps (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: mattia
+  - slot_was_set:
+    - name: mattia
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_name
+    entities:
+    - activity: correre
+    - activity: fare jogging
+  - slot_was_set:
+    - activity: fare jogging
+  - slot_was_set:
+    - time: '2023-04-04T00:00:00.000+01:00'
+  - action: modify_activity_name_form
+  - active_loop: modify_activity_name_form
+  - slot_was_set:
+    - category: salute personale
+  - active_loop: null
+  - action: action_modify_activity
+- story: test1 modify activity category passing all but no deadline si deadline (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: Carola
+  - slot_was_set:
+    - name: Carola
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_category
+    entities:
+    - category: cura personale
+    - activity: parrucchiere
+    - category: svago
+  - slot_was_set:
+    - activity: parrucchiere
+  - slot_was_set:
+    - category: svago
+  - action: modify_activity_category_form
+  - active_loop: modify_activity_category_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-02-02T00:00:00.000+01:00'
+  - active_loop: null
+  - action: action_modify_activity
+- story: test2 modify activity category passing all step by step but no deadline si deadline (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: Cristina
+  - slot_was_set:
+    - name: Cristina
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_category
+    entities:
+    - activity: andare a correre
+  - slot_was_set:
+    - activity: andare a correre
+  - action: modify_activity_category_form
+  - active_loop: modify_activity_category_form
+  - slot_was_set:
+    - category: cura personale
+  - slot_was_set:
+    - category: dieta
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-02-02T00:00:00.000+01:00'
+  - active_loop: null
+  - action: action_modify_activity
+- story: test3 modify activity category passing two of three but no deadline si deadline (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: Alessandro
+  - slot_was_set:
+    - name: Alessandro
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_category
+    entities:
+    - category: faccende domestiche
+    - activity: andare al mercato
+  - slot_was_set:
+    - activity: andare al mercato
+  - slot_was_set:
+    - category: faccende domestiche
+  - action: modify_activity_category_form
+  - active_loop: modify_activity_category_form
+  - slot_was_set:
+    - category: casa
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-07-07T00:00:00.000+01:00'
+  - active_loop: null
+  - action: action_modify_activity
+- story: test4 modify activity category passing two of three but no deadline si deadline (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: Alessio
+  - slot_was_set:
+    - name: Alessio
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_category
+    entities:
+    - category: svago
+    - category: tempo libero
+  - slot_was_set:
+    - category: tempo libero
+  - action: modify_activity_category_form
+  - active_loop: modify_activity_category_form
+  - slot_was_set:
+    - activity: andare al pub
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-04-04T00:00:00.000+01:00'
+  - active_loop: null
+  - action: action_modify_activity
+- story: test3 modify activity category passing two of three but no deadline no deadline (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: luigi
+  - slot_was_set:
+    - name: luigi
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_category  # predicted: modify_activity_name: cambia il nome della categoria [dieta](activity) dell'attività [andare in palestra](activity)
+    entities:
+    - category: dieta  # predicted: activity: dieta
+    - activity: andare in palestra
+  - slot_was_set:
+    - activity: andare in palestra
+  - slot_was_set:
+    - category: dieta
+  - action: modify_activity_category_form
+  - active_loop: modify_activity_category_form
+  - slot_was_set:
+    - category: salute
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: deny
+  - action: action_modify_activity
+- story: presentation and aggiungi activity (dobule) with deadline 1 with reminder (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: matilde
+  - slot_was_set:
+    - name: matilde
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: utter_ask_if_reminder
+  - intent: affirm
+  - action: action_set_reminder_slot
+  - action: action_reminder_item
+- story: test4 modify activity category passing two of three but no deadline no deadline (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: vito
+  - slot_was_set:
+    - name: vito
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_category
+    entities:
+    - category: università
+    - category: cultura
+  - slot_was_set:
+    - category: cultura
+  - action: modify_activity_category_form
+  - active_loop: modify_activity_category_form
+  - slot_was_set:
+    - activity: esame
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: deny
+  - action: action_modify_activity
+- story: test1 modify activity category passing all also deadline (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: nicola
+  - slot_was_set:
+    - name: nicola
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_category  # predicted: modify_activity_name: modifica il nome della categoria [salute](category) dell'attività [prendere le medicine](activity) del [04/04/2023]{"entity": "time", "value": "2023-04-04T00:00:00.000+02:00"} con il nome [cure mediche](category)
+    entities:
+    - category: salute
+    - activity: prendere le medicine
+    - category: cure mediche
+  - slot_was_set:
+    - activity: prendere le medicine
+  - slot_was_set:
+    - category: cure mediche
+  - slot_was_set:
+    - time: '2023-04-04T00:00:00.000+01:00'
+  - action: modify_activity_category_form
+  - active_loop: modify_activity_category_form
+  - active_loop: null
+  - action: action_modify_activity
+- story: test2 modify activity category passing all also deadline but in steps (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: enzo
+  - slot_was_set:
+    - name: enzo
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_category
+    entities:
+    - category: svago
+  - slot_was_set:
+    - category: svago
+  - slot_was_set:
+    - time: '2023-04-04T00:00:00.000+01:00'
+  - action: modify_activity_category_form
+  - active_loop: modify_activity_category_form
+  - slot_was_set:
+    - activity: mostra d'arte
+  - slot_was_set:
+    - category: cultura
+  - active_loop: null
+  - action: action_modify_activity
+- story: test3 modify activity category passing all also deadline but in steps (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: camilla
+  - slot_was_set:
+    - name: camilla
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_category  # predicted: modify_activity_name: sostituisci il nome della categoria [scuola](activity) dell'attività [fare i compiti](activity) del [05/05/2023]{"entity": "time", "value": "2023-05-05T00:00:00.000+02:00"}
+    entities:
+    - category: scuola  # predicted: activity: scuola
+    - activity: fare i compiti
+  - slot_was_set:
+    - activity: fare i compiti
+  - slot_was_set:
+    - category: scuola
+  - slot_was_set:
+    - time: '2023-05-05T00:00:00.000+01:00'
+  - action: modify_activity_category_form
+  - active_loop: modify_activity_category_form
+  - slot_was_set:
+    - category: imminente
+  - active_loop: null
+  - action: action_modify_activity
+- story: test4 modify activity category passing all also deadline but in steps (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: mattia
+  - slot_was_set:
+    - name: mattia
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_category  # predicted: modify_activity_name: voglio modificare il nome della categoria [sport](category) di un'attività del [06/06/2023]{"entity": "time", "value": "2023-06-06T00:00:00.000+02:00"} con il nome [salute fisica](category)
+    entities:
+    - activity: sport  # predicted: category: sport
+    - category: salute fisica
+  - slot_was_set:
+    - activity: sport
+  - slot_was_set:
+    - category: salute fisica
+  - slot_was_set:
+    - time: '2023-04-04T00:00:00.000+01:00'
+  - action: modify_activity_category_form
+  - active_loop: modify_activity_category_form
+  - slot_was_set:
+    - activity: pilates
+  - active_loop: null
+  - action: action_modify_activity
+- story: presentation and aggiungi activity (dobule) with deadline 1 without reminder (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: matilde
+  - slot_was_set:
+    - name: matilde
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: utter_ask_if_reminder
+  - intent: deny
+  - action: action_add_item
+- story: later presentation and aggiungi activity (triple) with deadline 1 with reminder (./tests/test_stories.yml)
+  steps:
+  - intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - slot_was_set:
+    - name: matilde
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: Assistenza sanitaria
+  - active_loop: null
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - action: utter_ask_if_reminder
+  - intent: affirm
+  - action: action_set_reminder_slot
+  - action: action_reminder_item
+- story: later presentation and aggiungi activity (triple) with deadline 1 wihout reminder (./tests/test_stories.yml)
+  steps:
+  - intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - slot_was_set:
+    - name: matilde
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: Assistenza sanitaria
+  - active_loop: null
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - action: utter_ask_if_reminder
+  - intent: deny
+  - action: action_add_item
+- story: presentation and aggiungi activity (triple) with deadline 1 with reminder (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: matilde
+  - slot_was_set:
+    - name: matilde
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - active_loop: null
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - action: utter_ask_if_reminder
+  - intent: affirm
+  - action: action_set_reminder_slot
+  - action: action_reminder_item
+- story: presentation and aggiungi activity (triple) with deadline 1 without reminder (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: matilde
+  - slot_was_set:
+    - name: matilde
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - active_loop: null
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - action: utter_ask_if_reminder
+  - intent: deny
+  - action: action_add_item
+- story: presentation and fake rimuovi activity (single) without deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: ferdinando
+  - slot_was_set:
+    - name: ferdinando
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: deny
+  - action: utter_confirm_choice
+  - intent: affirm  # predicted: deny: no
+  - action: action_remove_item
+- story: later presentation and fake rimuovi activity (double) without deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - slot_was_set:
+    - name: ferdinando
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: deny
+  - action: utter_confirm_choice
+  - intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+- story: later presentation and real rimuovi activity (double) without deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - slot_was_set:
+    - name: ferdinando
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: deny
+  - action: utter_confirm_choice
+  - intent: affirm
+  - action: action_remove_item
+- story: presentation and fake rimuovi activity (dobule) without deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: ferdinando
+  - slot_was_set:
+    - name: ferdinando
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: remove_item  # predicted: add_item: aggiungi [camminare](activity) in [salute](category)
+    entities:
+    - activity: camminare
+    - category: salute
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: deny
+  - action: utter_confirm_choice
+  - intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+- story: later presentation and fake rimuovi activity (single) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - slot_was_set:
+    - name: alfredo
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+- story: later presentation and real rimuovi activity (single) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - slot_was_set:
+    - name: alfredo
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: affirm
+  - action: action_remove_item
+- story: presentation and fake rimuovi activity (single) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: ferdinando
+  - slot_was_set:
+    - name: ferdinando
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: affirm  # predicted: deny: no
+  - action: action_remove_item
+- story: presentation and real rimuovi activity (single) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: ferdinando
+  - slot_was_set:
+    - name: ferdinando
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: affirm
+  - action: action_remove_item
+- story: later presentation and fake rimuovi activity (double) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - slot_was_set:
+    - name: ferdinando
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+- story: later presentation and aggiungi activity (single) with deadline 1 with reminder (./tests/test_stories.yml)
+  steps:
+  - intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - slot_was_set:
+    - name: matilde
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: Assistenza sanitaria
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: utter_ask_if_reminder
+  - intent: affirm
+  - action: action_set_reminder_slot
+  - action: action_reminder_item
+- story: later presentation and real rimuovi activity (double) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - slot_was_set:
+    - name: ferdinando
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: affirm
+  - action: action_remove_item
+- story: later presentation and real rimuovi activity (triple) (./tests/test_stories.yml)
+  steps:
+  - intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - slot_was_set:
+    - name: ferdinando
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - slot_was_set:
+    - time: '2022-12-22T00:00:00.000+01:00'
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: affirm
+  - action: action_remove_item
+- story: presentation and real rimuovi activity (triple) (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: ferdinando
+  - slot_was_set:
+    - name: ferdinando
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: remove_item  # predicted: add_item: aggiungi [camminare](activity) in [salute il](category)[il 22 dicembre 2022]{"entity": "time", "value": "2022-12-22T00:00:00.000+01:00"}
+    entities:
+    - activity: camminare
+    - category: salute
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - slot_was_set:
+    - time: '2022-12-22T00:00:00.000+01:00'
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: affirm
+  - action: action_remove_item
+- story: later presentation and fake rimuovi activity (triple) (./tests/test_stories.yml)
+  steps:
+  - intent: remove_item
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - slot_was_set:
+    - name: ferdinando
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - slot_was_set:
+    - time: '2022-12-22T00:00:00.000+01:00'
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+- story: presentation and fake rimuovi activity (triple) (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: ferdinando
+  - slot_was_set:
+    - name: ferdinando
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: remove_item  # predicted: add_item: aggiungi [camminare](activity) in [salute il](category)[il 22 dicembre 2022]{"entity": "time", "value": "2022-12-22T00:00:00.000+01:00"}
+    entities:
+    - activity: camminare
+    - category: salute
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - slot_was_set:
+    - time: '2022-12-22T00:00:00.000+01:00'
+  - action: remove_item_form
+  - active_loop: remove_item_form
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+- story: later presentation and setta Complete (single) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: set_status_activity
+    entities:
+    - activity_status: completata
+  - slot_was_set:
+    - activity_status: completata
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - slot_was_set:
+    - name: alfredo
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: personale
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: action_set_status_activity
+- story: presentation and setta Complete (single) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: ferdinando
+  - slot_was_set:
+    - name: ferdinando
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: set_status_activity
+    entities:
+    - activity_status: completata
+  - slot_was_set:
+    - activity_status: completata
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: personale
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: action_set_status_activity
+- story: later presentation and aggiungi activity (single) with deadline 1 without reminder (./tests/test_stories.yml)
+  steps:
+  - intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - slot_was_set:
+    - name: matilde
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: Assistenza sanitaria
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: utter_ask_if_reminder
+  - intent: deny
+  - action: action_add_item
+- story: later presentation and setta Complete (double) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: set_status_activity
+    entities:
+    - activity_status: completata
+  - slot_was_set:
+    - activity_status: completata
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - slot_was_set:
+    - name: alfredo
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: personale
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: action_set_status_activity
+- story: later presentation and setta Complete (double) without deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: set_status_activity
+    entities:
+    - activity_status: completata
+  - slot_was_set:
+    - activity_status: completata
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - slot_was_set:
+    - name: alfredo
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: personale
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: deny
+  - action: action_set_status_activity
+- story: presentation and setta Complete (double) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: ferdinando
+  - slot_was_set:
+    - name: ferdinando
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: set_status_activity
+    entities:
+    - activity_status: completata
+  - slot_was_set:
+    - activity_status: completata
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: personale
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: action_set_status_activity
+- story: presentation and setta Complete (double) without deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: ferdinando
+  - slot_was_set:
+    - name: ferdinando
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: set_status_activity
+    entities:
+    - activity_status: completata
+  - slot_was_set:
+    - activity_status: completata
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: personale
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: deny
+  - action: action_set_status_activity
+- story: later presentation and setta Complete (all) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: set_status_activity
+    entities:
+    - activity_status: completata
+  - slot_was_set:
+    - activity_status: completata
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - slot_was_set:
+    - name: alfredo
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: personale
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: action_set_status_activity
+- story: presentation and setta Complete (all) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: ferdinando
+  - slot_was_set:
+    - name: ferdinando
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: set_status_activity
+    entities:
+    - activity_status: completata
+  - slot_was_set:
+    - activity_status: completata
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: personale
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: action_set_status_activity
+- story: later presentation and setta incompleta (single) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: set_status_activity
+    entities:
+    - activity_status: incompleta
+  - slot_was_set:
+    - activity_status: incompleta
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - slot_was_set:
+    - name: alfredo
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: personale
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: action_set_status_activity
+- story: presentation and setta incompleta (single) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: ferdinando
+  - slot_was_set:
+    - name: ferdinando
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: set_status_activity
+    entities:
+    - activity_status: incompleta
+  - slot_was_set:
+    - activity_status: incompleta
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: personale
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: action_set_status_activity
+- story: later presentation and setta incompleta (double) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: set_status_activity
+    entities:
+    - activity_status: incompleta
+  - slot_was_set:
+    - activity_status: incompleta
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - slot_was_set:
+    - name: alfredo
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: personale
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: action_set_status_activity
+- story: later presentation and setta incompleta (double) without deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: set_status_activity
+    entities:
+    - activity_status: incompleta
+  - slot_was_set:
+    - activity_status: incompleta
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - slot_was_set:
+    - name: alfredo
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: personale
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: deny
+  - action: action_set_status_activity
+- story: presentation and setta incompleta (double) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: ferdinando
+  - slot_was_set:
+    - name: ferdinando
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: set_status_activity
+    entities:
+    - activity_status: incompleta
+  - slot_was_set:
+    - activity_status: incompleta
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: personale
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: action_set_status_activity
+- story: presentation and setta incompleta (double) without deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: ferdinando
+  - slot_was_set:
+    - name: ferdinando
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: set_status_activity
+    entities:
+    - activity_status: incompleta
+  - slot_was_set:
+    - activity_status: incompleta
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: personale
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: deny
+  - action: action_set_status_activity
+- story: later presentation and setta incompleta (all) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: set_status_activity
+    entities:
+    - activity_status: incompleta
+  - slot_was_set:
+    - activity_status: incompleta
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - slot_was_set:
+    - name: alfredo
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: personale
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: action_set_status_activity
+- story: presentation and setta incompleta (all) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: ferdinando
+  - slot_was_set:
+    - name: ferdinando
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: set_status_activity
+    entities:
+    - activity_status: incompleta
+  - slot_was_set:
+    - activity_status: incompleta
+  - action: set_status_activity_form
+  - active_loop: set_status_activity_form
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: personale
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: action_set_status_activity
+- story: later presentation and modify the category of an activity with deadline (./tests/test_stories.yml)
+  steps:
+  - intent: modify_activity_category
+    entities:
+    - category: corsi
+    - activity: studiare
+    - category: università
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: università
+  - action: modify_activity_category_form
+  - active_loop: modify_activity_category_form
+  - slot_was_set:
+    - name: alfredo
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: action_modify_activity
+- story: presentation and aggiungi activity (single) with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: matilde
+  - slot_was_set:
+    - name: matilde
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: Assistenza sanitaria
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: utter_ask_if_reminder
+  - intent: affirm
+  - action: action_set_reminder_slot
+  - action: action_reminder_item
+- story: presentation and modify the category of an activity with deadline (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: alfredo
+  - slot_was_set:
+    - name: alfredo
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_category
+    entities:
+    - category: corsi
+    - activity: studiare
+    - category: università
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: università
+  - action: modify_activity_category_form
+  - active_loop: modify_activity_category_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: action_modify_activity
+- story: later presentation and aggiungi activity already deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: add_item
+    entities:
+    - activity: corsa
+    - category: giornaliera
+  - slot_was_set:
+    - activity: corsa
+  - slot_was_set:
+    - category: giornaliera
+  - slot_was_set:
+    - time: '2022-12-22T00:00:00.000+01:00'
+  - action: add_item_form
+  - active_loop: add_item_form
+  - slot_was_set:
+    - name: ferdinando
+  - active_loop: null
+  - action: utter_ask_if_reminder
+  - intent: deny
+  - action: action_add_item
+- story: presentation and aggiungi activity already deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: ferdinando
+  - slot_was_set:
+    - name: ferdinando
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: add_item
+    entities:
+    - activity: corsa
+    - category: giornaliera
+  - slot_was_set:
+    - activity: corsa
+  - slot_was_set:
+    - category: giornaliera
+  - slot_was_set:
+    - time: '2022-12-22T00:00:00.000+01:00'
+  - action: add_item_form
+  - active_loop: null
+  - action: utter_ask_if_reminder
+  - intent: deny
+  - action: action_add_item
+- story: presentation and aggiungi activity with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: ferdinando
+  - slot_was_set:
+    - name: ferdinando
+  - action: recognize_user_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_recognize_user
+  - intent: add_item
+    entities:
+    - activity: partita
+    - category: settimanale
+  - slot_was_set:
+    - activity: partita
+  - slot_was_set:
+    - category: settimanale
+  - action: add_item_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm  # predicted: presentation: [yep](name)
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: utter_ask_if_reminder
+  - intent: affirm
+  - action: action_set_reminder_slot
+  - action: action_reminder_item
+- story: presentation and aggiungi activity with deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: alfredo
+  - slot_was_set:
+    - name: alfredo
+  - action: recognize_user_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_recognize_user
+  - intent: add_item
+    entities:
+    - activity: partita
+    - category: settimanale
+  - slot_was_set:
+    - activity: partita
+  - slot_was_set:
+    - category: settimanale
+  - action: add_item_form
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm  # predicted: presentation: [yep](name)
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: utter_ask_if_reminder
+  - intent: deny
+  - action: action_add_item
+- story: test1 for clean complete activities confirmed (./tests/test_stories.yml)
+  steps:
+  - intent: clean_activities
+  - action: clean_activities_form
+  - active_loop: clean_activities_form
+  - slot_was_set:
+    - name: Luca
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: affirm
+  - action: action_clean_all_completed
+- story: test2 for clean complete activities confirmed (./tests/test_stories.yml)
+  steps:
+  - intent: clean_activities
+  - action: clean_activities_form
+  - active_loop: clean_activities_form
+  - slot_was_set:
+    - name: camilla
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: affirm
+  - action: action_clean_all_completed
+- story: test3 for clean complete activities confirmed (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: clean_activities
+  - action: clean_activities_form
+  - active_loop: clean_activities_form
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: affirm
+  - action: action_clean_all_completed
+- story: presentation and aggiungi activity (single) with deadline 1 without deadline (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: matilde
+  - slot_was_set:
+    - name: matilde
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: Assistenza sanitaria
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: utter_ask_if_reminder
+  - intent: deny
+  - action: action_add_item
+- story: test4 for clean complete activities confirmed (./tests/test_stories.yml)
+  steps:
+  - intent: clean_activities  # predicted: nlu_fallback: rimuovi le attività da me completate
+  - action: clean_activities_form
+  - active_loop: clean_activities_form
+  - slot_was_set:
+    - name: Antonio
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: affirm
+  - action: action_clean_all_completed
+- story: test5 for clean complete activities confirmed (./tests/test_stories.yml)
+  steps:
+  - intent: clean_activities
+  - action: clean_activities_form
+  - active_loop: clean_activities_form
+  - slot_was_set:
+    - name: Silvia
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: affirm
+  - action: action_clean_all_completed
+- story: test1 for clean complete activities denied (./tests/test_stories.yml)
+  steps:
+  - intent: clean_activities
+  - action: clean_activities_form
+  - active_loop: clean_activities_form
+  - slot_was_set:
+    - name: Lucia
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+- story: test2 for clean complete activities denied (./tests/test_stories.yml)
+  steps:
+  - intent: clean_activities
+  - action: clean_activities_form
+  - active_loop: clean_activities_form
+  - slot_was_set:
+    - name: Valentina
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+- story: test3 for clean complete activities denied (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: clean_activities
+  - action: clean_activities_form
+  - active_loop: clean_activities_form
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: affirm  # predicted: deny: assolutamente no
+  - action: action_clean_all_completed
+- story: test4 for clean complete activities denied (./tests/test_stories.yml)
+  steps:
+  - intent: clean_activities  # predicted: nlu_fallback: rimuovi le attività da me completate
+  - action: clean_activities_form
+  - active_loop: clean_activities_form
+  - slot_was_set:
+    - name: Francesca
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+- story: test5 for clean complete activities denied (./tests/test_stories.yml)
+  steps:
+  - intent: clean_activities
+  - action: clean_activities_form
+  - active_loop: clean_activities_form
+  - slot_was_set:
+    - name: Vito
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+- story: test1 show activities first request then name (./tests/test_stories.yml)
+  steps:
+  - intent: view_activities
+  - action: view_activities_form
+  - active_loop: view_activities_form
+  - slot_was_set:
+    - name: Gerry
+  - active_loop: null
+  - action: action_view_activities
+- story: later presentation and aggiungi activity (double) without deadline 1 (./tests/test_stories.yml)
+  steps:
+  - intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - slot_was_set:
+    - name: ferdinando
+  - slot_was_set:
+    - activity: camminare
+  - slot_was_set:
+    - category: salute
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: deny
+  - action: action_add_item
+- story: test3 login-signup (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - slot_was_set:
+    - name: Mattia
+  - active_loop: null
+  - action: action_recognize_user
+- story: test1 later login-signup (./tests/test_stories.yml)
+  steps:
+  - intent: greet  # predicted: nlu_fallback: ciao
+  - action: utter_greet
+  - intent: presentation
+    entities:
+    - name: Mattia
+  - slot_was_set:
+    - name: Mattia
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+- story: test1 show categories first request then name (./tests/test_stories.yml)
+  steps:
+  - intent: view_categories
+  - action: view_categories_form
+  - active_loop: view_categories_form
+  - slot_was_set:
+    - name: Gerry
+  - active_loop: null
+  - action: action_view_categories
+- story: test3 add new category passing step by step (./tests/test_stories.yml)
+  steps:
+  - intent: add_category
+  - action: add_category_form
+  - active_loop: add_category_form
+  - slot_was_set:
+    - name: Sara
+  - slot_was_set:
+    - category: salute
+  - active_loop: null
+  - action: action_add_category
+- story: test4 add new category passing all (./tests/test_stories.yml)
+  steps:
+  - intent: add_category  # predicted: nlu_fallback: crea la categoria [sport](category)
+    entities:
+    - category: sport
+  - slot_was_set:
+    - category: sport
+  - action: add_category_form
+  - active_loop: add_category_form
+  - slot_was_set:
+    - name: mario
+  - active_loop: null
+  - action: action_add_category
+- story: later presentation and aggiungi activity (dobule) with deadline 1 with reminder (./tests/test_stories.yml)
+  steps:
+  - intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - slot_was_set:
+    - name: matilde
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: Assistenza sanitaria
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: utter_ask_if_reminder
+  - intent: affirm
+  - action: action_set_reminder_slot
+  - action: action_reminder_item
+- story: test3 modify category passing step by step (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: camilla
+  - slot_was_set:
+    - name: camilla
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_category
+  - action: modify_category_form
+  - active_loop: modify_category_form
+  - slot_was_set:
+    - category: amici
+  - slot_was_set:
+    - category: hobby
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: affirm
+  - action: action_modify_category
+- story: test3 modify category passing step by step (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: camilla
+  - slot_was_set:
+    - name: camilla
+  - action: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_category
+  - action: modify_category_form
+  - active_loop: modify_category_form
+  - slot_was_set:
+    - category: amici
+  - slot_was_set:
+    - category: hobby
+  - active_loop: null
+  - action: utter_confirm_choice
+  - intent: deny
+  - action: utter_deny_choice
+  - action: action_reset_slot
+- story: test1 modify deadline of activity with deadline passing all (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: Carola
+  - slot_was_set:
+    - name: Carola
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_deadline
+    entities:
+    - activity: corsa
+    - category: palestra
+  - slot_was_set:
+    - activity: corsa
+  - slot_was_set:
+    - category: palestra
+  - action: modify_activity_deadline_form
+  - active_loop: modify_activity_deadline_form
+  - active_loop: null
+  - action: action_modify_activity
+- story: test2 modify deadline of activity with deadline passing two of three (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: Alessia
+  - slot_was_set:
+    - name: Alessia
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_deadline
+    entities:
+    - activity: parrucchiere
+    - category: tempo libero
+  - slot_was_set:
+    - activity: parrucchiere
+  - slot_was_set:
+    - category: tempo libero
+  - action: modify_activity_deadline_form
+  - active_loop: modify_activity_deadline_form
+  - active_loop: null
+  - action: action_modify_activity
+- story: test3 modify deadline of activity with deadline passing two of three (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: lorenzo
+  - slot_was_set:
+    - name: lorenzo
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_deadline
+    entities:
+    - activity: andare al mercato
+  - slot_was_set:
+    - activity: andare al mercato
+  - action: modify_activity_deadline_form
+  - active_loop: modify_activity_deadline_form
+  - slot_was_set:
+    - category: faccende domestiche
+  - active_loop: null
+  - action: action_modify_activity
+- story: test4 modify deadline of activity with deadline passing two of three (./tests/test_stories.yml)
+  steps:
+  - intent: presentation
+    entities:
+    - name: camilla
+  - slot_was_set:
+    - name: camilla
+  - action: recognize_user_form
+  - active_loop: recognize_user_form
+  - active_loop: null
+  - action: action_recognize_user
+  - intent: modify_activity_deadline
+    entities:
+    - category: visite mediche
+  - slot_was_set:
+    - category: visite mediche
+  - action: modify_activity_deadline_form
+  - active_loop: modify_activity_deadline_form
+  - slot_was_set:
+    - activity: andare dal dentista
+  - active_loop: null
+  - action: action_modify_activity
+- story: later presentation and aggiungi activity (dobule) with deadline 1 wihout reminder (./tests/test_stories.yml)
+  steps:
+  - intent: add_item
+  - action: add_item_form
+  - active_loop: add_item_form
+  - slot_was_set:
+    - name: matilde
+  - slot_was_set:
+    - activity: studiare
+  - slot_was_set:
+    - category: Assistenza sanitaria
+  - active_loop: null
+  - action: utter_ask_if_deadline
+  - intent: affirm
+  - action: add_deadline_form
+  - active_loop: add_deadline_form
+  - slot_was_set:
+    - time: '2022-09-27T00:00:00.000+02:00'
+  - active_loop: null
+  - action: utter_ask_if_reminder
+  - intent: deny
+  - action: action_add_item
