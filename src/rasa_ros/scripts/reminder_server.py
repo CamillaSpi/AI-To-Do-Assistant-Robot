@@ -6,6 +6,9 @@ The node creates a service that receives a message and an ID, and sends them to 
 using the requests library. The chatbot's response is returned to the service client. The node also creates two 
 publishers, one to send the bot's response to a speech synthesizer, and one to send a message to an external web page. 
 The script also uses the rospy library to initialize the node and handle ROS topics.
+The input to send to Rasa comes from client requests from dialogue_interface node while the responses arrive on a specific local
+port (5034) from the chatbot. It decides wheter to post the response on toSpeech topic or toShow. It analyzes also the presence
+of json informations in the message; when it is present, it sends additional information in addition to the simple answer. 
 """
 
 from rasa_ros.srv import Dialogue, DialogueResponse
@@ -31,7 +34,7 @@ def create_app() -> Sanic:
         rospy.loginfo(text)
         try:
             json_query = request.json.get('custom')['query']
-            print('ho riceuvto ' , json_query)
+            print('ho ricevuto ' , json_query)
             if "js" not in json_query:
                 pub2.publish(f'http://10.0.1.248:80/webPage/index.php?query={json_query}')
                 rospy.loginfo(f'http://10.0.1.248:80/webPage/index.php?query={json_query}')

@@ -15,7 +15,6 @@ from vision_msgs.msg import Detection2DArray
 import cv2
 import ros_numpy # pip3 install git+https://github.com/eric-wieser/ros_numpy
 
-from sensor_msgs.msg import Image
 import os
 
 

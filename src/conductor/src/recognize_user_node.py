@@ -6,7 +6,7 @@ from ros_audio_pkg.msg import RecognizedSpoke
 from pepper_nodes.srv import *
 from ros_audio_pkg.srv import idLabel,Registration
 from face_recognition.srv import video_detect_user
-import time
+
 
 #Creating a publisher on text2answer topic on which we will send the messages to rasa
 pub1 = rospy.Publisher('text2answer', RecognizedSpoke, queue_size=10)
