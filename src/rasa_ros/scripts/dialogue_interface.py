@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Subsequently this node waits for messages on "text2answer" topic, it forwards these messages, 
+This node waits for messages on "text2answer" topic, it forwards these messages, 
 always through the “dialogue_server” service, to the “reminder_server” node that talks with RASA server. 
 If the communication does not work, it returns an error message.
 
@@ -13,7 +13,7 @@ process the previous message before sending the next one. This script is likely 
 """
 import rospy
 from std_msgs.msg import String
-from rasa_ros.srv import Dialogue, DialogueResponse
+from rasa_ros.srv import Dialogue
 from ros_audio_pkg.msg import RecognizedSpoke
 import time
 
