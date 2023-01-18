@@ -9,10 +9,10 @@ from face_recognition.srv import video_detect_user
 
 
 #Creating a publisher on text2answer topic on which we will send the messages to rasa
-pub1 = rospy.Publisher('text2answer', RecognizedSpoke, queue_size=10)
+pub1 = rospy.Publisher('text2answer', RecognizedSpoke, queue_size=1)
 
 #Creating a publisher on startRegistration topic on which we will sent a boolean to start the audio registration, when the user is not recognized
-pub_recogizer_node = rospy.Publisher('startRegistration', Bool, queue_size=10)
+pub_recogizer_node = rospy.Publisher('startRegistration', Bool, queue_size=1)
 
 #Creating a publisher on naturalLearningVoice topic on which we will send the information for the natural learning procedure of speech recognition
 natural_learning_voice = rospy.Publisher('naturalLearningVoice', Int16, queue_size=10)
@@ -70,6 +70,7 @@ def recognize_user(text_to_send):
             toSend.id = id_max
             pub1.publish(toSend)
             rospy.loginfo('Utente riconosciuto')
+            print(str(text_to_send.data))
 
             #if confidence voice prediction is under a certain threshold it's necessary to start natural learning procedure
             if id_voice_prob_arr[id_max] < 0.35:

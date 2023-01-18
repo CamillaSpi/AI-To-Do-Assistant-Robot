@@ -25,9 +25,9 @@ r = sr.Recognizer()
 
 # Init node
 rospy.init_node('speech_recognition', anonymous=True)
-pub1 = rospy.Publisher('RecivedAudio', Int16MultiArray, queue_size=10) #publish the recived audio
-pub2 = rospy.Publisher('InterpretedText', String, queue_size=10) #publish the recognized text
-pubSpeech = rospy.Publisher('toSpeech', String,queue_size=10)
+pub1 = rospy.Publisher('RecivedAudio', Int16MultiArray, queue_size=1) #publish the recived audio
+pub2 = rospy.Publisher('InterpretedText', String, queue_size=1) #publish the recognized text
+pubSpeech = rospy.Publisher('toSpeech', String,queue_size=1)
 
 def callback(audio):
     data = np.array(audio.data,dtype=np.int16)
