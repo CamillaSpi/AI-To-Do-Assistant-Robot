@@ -622,6 +622,10 @@ class Database:
       except sqlite3.IntegrityError:
         return False
 
+# This is a static method called "doesUserExists" that takes in an argument "ID" and checks if a user with that ID exists in the "users" 
+# table of the database. The method uses the SELECT statement to query the database and retrieve all rows where the ID column matches the 
+# provided ID. If there are any rows returned, it means that a user with that ID exists and the method returns True. Otherwise, 
+# it returns False indicating that the user does not exist in the table.
   @staticmethod
   def doesUserExists(ID):
     if ID != None:
@@ -632,6 +636,10 @@ class Database:
         return True
     return False
 
+# This script is a static method called "getName" which takes in a parameter called "ID". 
+# It first checks if the ID is not None. If it is not, it queries the "users" table in the database and selects the "name" 
+# column where the "ID" is equal to the provided ID. The result of the query is saved in a variable called "toReturn". 
+# If there are any rows returned from the query, it returns the first element of the first row (which is the name column) otherwise it returns None.
   @staticmethod
   def getName(ID):
     if ID != None:
