@@ -7,6 +7,16 @@ global toReturn
 
 class Database:
 
+# This script is initializing tables in a SQLite database. 
+# The script first creates a table called "categories" with a column "name" of type VARCHAR with a maximum length of 50, 
+# and sets it as the primary key. Then, it creates a table called "activities" with a similar structure. Next, it creates a table called 
+# "unfoldings" which relates users, activities and categories together. The table has columns "id_unfolding" and "ID" of type INTEGER, 
+# "activity" and "category" of type VARCHAR, "deadline" of type DATETIME, "completed" and "reminder" of type BOOLEAN. 
+# It also sets up foreign key constraints between "ID" and "users" table, "activity" and "activities" table, "category" and "categories" 
+# table, and sets "id_unfolding" as primary key. After that, it creates another table called "possessions" which relates users and categories 
+# together. It has similar structure as unfoldings table, also creates a unique constraint for (ID,category) . Finally, it creates a trigger 
+# called "delete_activities_for_category" which deletes rows from unfoldings table when corresponding rows from possessions table are deleted.
+
   @staticmethod
   def initTable(actual_conn): 
       #categories table
@@ -57,6 +67,13 @@ class Database:
       ''')
       actual_conn.commit()
 
+# This script is initializing a SQLite database.
+# It starts by connecting to either 'data.db' or 'data2.db', depending on the value of the selectedDataBase parameter passed to the function.
+# Then it sets up a cursor object "cur" to perform SQL commands on the database.
+# Next, it sets the 'foreign_keys' pragma to 1, which enables foreign key constraints.
+# It then creates a table named 'users' with two columns: ID and name. 
+# The ID column is set as the primary key and its type is INTEGER for the first database and VARCHAR(256) for the second database.
+# It then calls the initTable method with the database connection as a parameter, which creates several tables within the database.
   @staticmethod
   def initDb(selectedDataBase):
     global conn 
@@ -92,7 +109,11 @@ class Database:
       conn.commit()
     Database.initTable(conn)
 
-
+# This script is a python method that check if a possession for a specific user and category exists in the database.
+# The method takes in two parameters, ID and category, representing the user and the category of possession respectively.
+# It first checks if the category and ID are not None.
+# Then it runs a SELECT query on the 'possessions' table in the database, looking for a record where the ID and category match the passed in parameters.
+# It returns True if a record is found, indicating that the possession exists, otherwise it returns False.
   @staticmethod
   def doesPossessionExists(ID,category):
     if category != None and ID != None:
