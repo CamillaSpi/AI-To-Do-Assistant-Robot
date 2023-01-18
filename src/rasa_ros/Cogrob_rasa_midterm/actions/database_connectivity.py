@@ -84,7 +84,7 @@ class Database:
       conn = sqlite3.connect('data.db')
       cur = conn.cursor()
       conn.execute('''PRAGMA foreign_keys = 1''')
-      conn.commit() #users table
+      conn.commit()
       conn.execute('''
           CREATE TABLE IF NOT EXISTS users (
               ID INTEGER PRIMARY KEY,
@@ -99,7 +99,7 @@ class Database:
       conn.execute('''PRAGMA foreign_keys = 1''')
       conn.commit()
     
-      #users table
+     
       conn.execute('''
           CREATE TABLE IF NOT EXISTS users (
               ID VARCHAR(256) PRIMARY KEY,
@@ -565,10 +565,8 @@ class Database:
       if(len(cur.fetchall()) > 0 ):
         if newcategory != None:
           if newcategory!=None and not Database.doesPossessionExists(ID,newcategory):
-            #Andrebbe comunicato che è stata creata tale category
             Database.insertCategoryAndPossession(ID, newcategory)
           if newactivity!=None and not Database.doesActivityExists(newactivity):
-            #Andrebbe comunicato che è stata creata tale activity
             Database.insertActivity(newactivity)
         paramList = list()
         paramList.append(("activity", newactivity))
