@@ -602,9 +602,7 @@ class actionSetReminderSlot(Action):
 
 #this script clean completed activities action.
 #call a more low level function of database_connectivity.py Database.cleanCompletedActivities(id)
-#it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
 #if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
-# at the end reset all necessary Slot
 
 class actionCleanCompletedActivities(Action):
     def name(self) -> Text:
@@ -634,10 +632,7 @@ class actionCleanCompletedActivities(Action):
     
         return []
 
-#this script perform chatbot reset.
-#append lots of event: sessionStarted, FollowupAction("action_session_start"), and a slotSet for name
-#this operation same times are necessary, in fact is impossible to create a chatbot that is always in a propositive status,
-# if it go in a wrong way with this command return to an operative status
+#this script perform Slots reset.
 
 class actionResetSlot(Action):
     def name(self) -> Text:
@@ -656,6 +651,11 @@ class actionResetSlot(Action):
         SlotSet("activity_status",None)
         ]
 
+#this script perform chatbot reset.
+#append lots of event: sessionStarted, FollowupAction("action_session_start"), and a slotSet for name
+#this operation same times are necessary, in fact is impossible to create a chatbot that is always in a propositive status,
+# if it go in a wrong way with this command return to an operative status
+
 class actionResetConversation(Action):
     def name(self) -> Text:
         return "action_reset_tracker"
@@ -667,6 +667,13 @@ class actionResetConversation(Action):
             return [SessionStarted() ,FollowupAction("action_session_start"),SlotSet("name", 'tmp')]
         else:
             return [SessionStarted() ,FollowupAction("action_session_start"),SlotSet("name", None)]
+
+
+#this script perform reminder update for activities action.
+#it calculate the correct time to be set for the reminder and call a more low level function of database_connectivity.py Database.updateReminder
+#it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
+#if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
+# at the end reset all necessary Slot
 
 class actionRemindItem(Action):
     def name(self) -> Text:
@@ -726,6 +733,11 @@ class actionRemindItem(Action):
         
         return [SlotSet("activity",None), SlotSet("time",None), SlotSet("category",None),SlotSet("reminder",False),reminder]
         
+# this are support script to perform the action of modify the category of an activity,
+# in fact set the correct slot from simple category to category old,
+# in that way the chatbot will ask for category new performing in a good way this operation
+# at the end reset all necessary Slot
+
 class actionAskCategoryOld(Action):
     def name(self) -> Text:
         return "action_ask_category_old"
@@ -742,6 +754,12 @@ class actionAskCategoryOld(Action):
         else:
             dispatcher.utter_message(text=f"Qual è la nuova categoria?")
             return[SlotSet("category_old",category),SlotSet("category",None),SlotSet("category_new",None),SlotSet("requested_slot","category")]    
+
+# this are support script to perform the action of modify the category of an activity,
+# in fact set the correct slot from simple category to category new,
+# in that way the chatbot will performs in a good way this operation
+# at the end reset all necessary Slot
+
 class actionAskCategoryNew(Action):
     def name(self) -> Text:
         return "action_ask_category_new"
@@ -758,6 +776,12 @@ class actionAskCategoryNew(Action):
             return[SlotSet("requested_slot","category")]
         else:
             return[SlotSet("category_new",category),SlotSet("category",None),SlotSet("requested_slot",None)]    
+
+# this are support script to perform the action of modify the name of an activity,
+# in fact set the correct slot from simple activity to activity old,
+# in that way the chatbot will ask for activity new performing in a good way this operation
+# at the end reset all necessary Slot
+
 class actionAskActivityOld(Action):
     def name(self) -> Text:
         return "action_ask_activity_old"
@@ -774,6 +798,11 @@ class actionAskActivityOld(Action):
         else:
             dispatcher.utter_message(text=f"Qual è la nuova attività?")
             return[SlotSet("activity_old",activity),SlotSet("activity",None),SlotSet("activity_new",None),SlotSet("requested_slot","activity")]    
+
+# this are support script to perform the action of modify the name of an activity,
+# in fact set the correct slot from simple activity to activity new,
+# in that way the chatbot will performs in a good way this operation
+# at the end reset all necessary Slot
 
 class actionAskActivityNew(Action):
     def name(self) -> Text:
