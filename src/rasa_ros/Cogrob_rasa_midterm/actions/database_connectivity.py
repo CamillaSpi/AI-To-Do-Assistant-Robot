@@ -650,7 +650,11 @@ class Database:
       if(len( toReturn) > 0 ):
         return toReturn[0][0]
     return None
-    
+
+# This script is a static method called "cleanCompletedActivities" which takes in a parameter called "ID". 
+# It first checks if the ID is not None. If it is not, it delete inside the unfoldings table all the row with that match with the ID and 
+# with the completed value set to true 
+# If the value of ID is not None it return True otherwise it returns None.
   @staticmethod
   def cleanCompletedActivities(ID):
     if ID != None:
@@ -661,7 +665,8 @@ class Database:
       return True
     return None   
 
-
+# This script is a static method called "getAllReminder".
+# It select from the table unfoldings all the rows with the reminder column set to True and return its value.
   @staticmethod
   def getAllReminder():
     cur.execute('''
