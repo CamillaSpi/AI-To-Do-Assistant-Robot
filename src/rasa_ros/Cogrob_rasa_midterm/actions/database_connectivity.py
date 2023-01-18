@@ -357,7 +357,7 @@ class Database:
         SELECT * FROM possessions WHERE category == ? 
       ''', (category,))
     if(len(cur.fetchall()) > 0 ):
-      print("ci sono altri con questa category")
+      print("Altri elementi hanno questa categoria, non la posso rimuovere")
       return
     else:
       conn.execute('''
@@ -393,7 +393,6 @@ class Database:
 ###ERRORI QUI DENTRO 
   @staticmethod
   def modifyCategory(ID, category, category_new):
-    print("query eseguita:", ID, category)
     cur.execute('''
       SELECT * FROM possessions WHERE ID == ? AND category == ?
     ''', (ID, category))
@@ -407,14 +406,27 @@ class Database:
         m.update(str(category_new).encode())
         m.digest()
         id_possession = m.hexdigest()
-        print(category_new)
+
         conn.execute('''
           UPDATE possessions SET id_possession = ?, category = ? WHERE ID == ? AND category == ?;
         ''', (id_possession,category_new,ID,category))
-        ##NON VIENE AGGIORNATO l'ID
-        conn.execute('''
-          UPDATE unfoldings SET category = ? WHERE ID == ? AND category == ?;
-        ''', (category_new,ID,category))
+        
+        cur.execute('''
+          SELECT id_unfolding,ID,activity,category,deadline FROM unfoldings WHERE category = ? AND ID == ? AND category == ?;
+        ''', (category,ID,category))
+        tmp = cur.fetchall()
+        for x in tmp:
+          print(x[1],x[2],x[3],category_new,x[4])
+          m = hashlib.sha256()
+          m.update(str(x[1]).encode())
+          m.update(str(x[2]).encode())
+          m.update(str(category_new).encode())
+          m.update(str(x[4]).encode())
+          m.digest()
+          id_unfolding = m.hexdigest()
+          conn.execute('''
+            UPDATE unfoldings SET id_unfolding = ?, category = ? WHERE id_unfolding == ?;
+          ''', (id_unfolding,category_new,x[0]))
         Database.checkCategoriesTable(category)
         conn.commit()
         return True
