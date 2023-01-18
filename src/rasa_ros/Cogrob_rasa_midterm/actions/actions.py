@@ -122,7 +122,6 @@ class actionCreateUser(Action):
 #it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
 #if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
 # at the end reset all necessary Slot
-
 class actionAddItem(Action):
 
     def name(self) -> Text:
@@ -172,7 +171,6 @@ class actionAddItem(Action):
 #it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
 #if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
 # at the end reset all necessary Slot
-
 class actionRemoveItem(Action):
 
     def name(self) -> Text:
@@ -214,7 +212,6 @@ class actionRemoveItem(Action):
 #it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
 #if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
 # at the end reset all necessary Slot
-
 class actionAddCategory(Action):
 
     def name(self) -> Text:
@@ -254,7 +251,6 @@ class actionAddCategory(Action):
 #it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
 #if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
 # at the end reset all necessary Slot
-
 class actionRemoveCategory(Action):
 
     def name(self) -> Text:
@@ -291,7 +287,6 @@ class actionRemoveCategory(Action):
 #it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
 #if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
 # at the end reset all necessary Slot
-
 class actionSetStatusActivity(Action):
 
     def name(self) -> Text:
@@ -340,7 +335,6 @@ class actionSetStatusActivity(Action):
 #it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
 #if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
 # at the end reset all necessary Slot
-
 class actionSetInComplete(Action):
 
     def name(self) -> Text:
@@ -379,7 +373,6 @@ class actionSetInComplete(Action):
 #if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
 # in fact tells the query that is required to be done to show on Pepper tablet the activities (change based on the user request)
 # at the end reset all necessary Slot
-
 class showActivities(Action):
     def name(self) -> Text:
         return "action_view_activities"
@@ -416,7 +409,6 @@ class showActivities(Action):
 #if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
 # in fact tells the query that is required to be done to show on Pepper tablet the categories (change based on the user request)
 # at the end reset all necessary Slot
-
 class showCategories(Action):
     def name(self) -> Text:
         return "action_view_categories"
@@ -449,7 +441,6 @@ class showCategories(Action):
 #it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
 #if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
 # at the end reset all necessary Slot
-
 class actionModifyCategory(Action):
     def name(self) -> Text:
         return "action_modify_category"
@@ -494,7 +485,6 @@ class actionModifyCategory(Action):
 #it is quite more complex because the modify for the activities could be very different (modify deadline,modify activity name,modify category name, etc..)
 #if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
 # at the end reset all necessary Slot
-
 class actionModifyActivity(Action):
     def name(self) -> Text:
         return "action_modify_activity"
@@ -589,7 +579,6 @@ class actionModifyActivity(Action):
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
 #this script perform set Reminder slot.
-
 class actionSetReminderSlot(Action):
     def name(self) -> Text:
         return "action_set_reminder_slot"
@@ -603,7 +592,6 @@ class actionSetReminderSlot(Action):
 #this script clean completed activities action.
 #call a more low level function of database_connectivity.py Database.cleanCompletedActivities(id)
 #if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
-
 class actionCleanCompletedActivities(Action):
     def name(self) -> Text:
         return "action_clean_all_completed"
@@ -633,7 +621,6 @@ class actionCleanCompletedActivities(Action):
         return []
 
 #this script perform Slots reset.
-
 class actionResetSlot(Action):
     def name(self) -> Text:
         return "action_reset_slot"
@@ -655,7 +642,6 @@ class actionResetSlot(Action):
 #append lots of event: sessionStarted, FollowupAction("action_session_start"), and a slotSet for name
 #this operation same times are necessary, in fact is impossible to create a chatbot that is always in a propositive status,
 # if it go in a wrong way with this command return to an operative status
-
 class actionResetConversation(Action):
     def name(self) -> Text:
         return "action_reset_tracker"
@@ -674,7 +660,6 @@ class actionResetConversation(Action):
 #it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
 #if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
 # at the end reset all necessary Slot
-
 class actionRemindItem(Action):
     def name(self) -> Text:
         return "action_reminder_item"
@@ -737,7 +722,6 @@ class actionRemindItem(Action):
 # in fact set the correct slot from simple category to category old,
 # in that way the chatbot will ask for category new performing in a good way this operation
 # at the end reset all necessary Slot
-
 class actionAskCategoryOld(Action):
     def name(self) -> Text:
         return "action_ask_category_old"
@@ -759,7 +743,6 @@ class actionAskCategoryOld(Action):
 # in fact set the correct slot from simple category to category new,
 # in that way the chatbot will performs in a good way this operation
 # at the end reset all necessary Slot
-
 class actionAskCategoryNew(Action):
     def name(self) -> Text:
         return "action_ask_category_new"
@@ -781,7 +764,6 @@ class actionAskCategoryNew(Action):
 # in fact set the correct slot from simple activity to activity old,
 # in that way the chatbot will ask for activity new performing in a good way this operation
 # at the end reset all necessary Slot
-
 class actionAskActivityOld(Action):
     def name(self) -> Text:
         return "action_ask_activity_old"
