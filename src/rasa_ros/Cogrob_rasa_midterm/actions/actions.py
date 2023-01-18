@@ -31,7 +31,9 @@ id = None
 global rasa_only
 rasa_only = False
 
-
+#this script inizialize the conversation with the chatbot.
+#append lots of event: sessionStarted, all ReminderScheduled, ActionExecuted and eventually a slotSet for name
+#this actions is really important for our applications, also to reload reminders fixed before in last conversations
 class ActionSessionStart(Action):
     def name(self) -> Text:
         return "action_session_start"
@@ -80,6 +82,9 @@ class ActionSessionStart(Action):
 
         return events
 
+#this script create an user in the chatcot.
+#call a more low level function of database_connectivity.py Database.createUser
+#to insert the new user if the operation could not be performed return the name of the already existent ones.
 class actionCreateUser(Action):
 
     def name(self) -> Text:
@@ -111,6 +116,12 @@ class actionCreateUser(Action):
             name = Database.getName(id)
             dispatcher.utter_message(text=f"{name} hai effettuato l'accesso!") 
         return []
+
+#this script perform add activity action.
+#call a more low level function of database_connectivity.py Database.insertItem eventually call also actionAddCategory if the category not exist.
+#it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
+#if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
+# at the end reset all necessary Slot
 
 class actionAddItem(Action):
 
@@ -155,6 +166,13 @@ class actionAddItem(Action):
         
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
+
+#this script perform remove activity action.
+#call a more low level function of database_connectivity.py Database.deleteItem.
+#it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
+#if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
+# at the end reset all necessary Slot
+
 class actionRemoveItem(Action):
 
     def name(self) -> Text:
@@ -190,7 +208,13 @@ class actionRemoveItem(Action):
 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
-    
+
+#this script perform add category action.
+#call a more low level function of database_connectivity.py Database.insertCategoryAndPossession
+#it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
+#if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
+# at the end reset all necessary Slot
+
 class actionAddCategory(Action):
 
     def name(self) -> Text:
@@ -224,7 +248,13 @@ class actionAddCategory(Action):
 
     
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
-    
+
+#this script perform remove category action.
+#call a more low level function of database_connectivity.py Database.deleteCategory
+#it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
+#if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
+# at the end reset all necessary Slot
+
 class actionRemoveCategory(Action):
 
     def name(self) -> Text:
@@ -255,6 +285,12 @@ class actionRemoveCategory(Action):
             dispatcher.utter_message(text=f"{associated_name}, questa categoria non esiste.") 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
+
+#this script perform set complete activity action.
+#call a more low level function of database_connectivity.py Database.setItemStatus
+#it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
+#if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
+# at the end reset all necessary Slot
 
 class actionSetStatusActivity(Action):
 
@@ -299,6 +335,12 @@ class actionSetStatusActivity(Action):
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
+#this script perform set uncompleted activity action.
+#call a more low level function of database_connectivity.py Database.setItemStatus
+#it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
+#if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
+# at the end reset all necessary Slot
+
 class actionSetInComplete(Action):
 
     def name(self) -> Text:
@@ -331,6 +373,13 @@ class actionSetInComplete(Action):
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
+#this script perform show activity action.
+#call a more low level function of database_connectivity.py Database.selectItems
+#it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
+#if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
+# in fact tells the query that is required to be done to show on Pepper tablet the activities (change based on the user request)
+# at the end reset all necessary Slot
+
 class showActivities(Action):
     def name(self) -> Text:
         return "action_view_activities"
@@ -362,6 +411,12 @@ class showActivities(Action):
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
+#this script perform show Categories action.
+#call a more low level function of database_connectivity.py Database.selectPossessions
+#if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
+# in fact tells the query that is required to be done to show on Pepper tablet the categories (change based on the user request)
+# at the end reset all necessary Slot
+
 class showCategories(Action):
     def name(self) -> Text:
         return "action_view_categories"
@@ -388,6 +443,12 @@ class showCategories(Action):
         dispatcher.utter_message(text=text,json_message=json) 
 
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
+
+#this script perform modify Categories action.
+#call a more low level function of database_connectivity.py Database.modifyCategory
+#it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
+#if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
+# at the end reset all necessary Slot
 
 class actionModifyCategory(Action):
     def name(self) -> Text:
@@ -426,6 +487,13 @@ class actionModifyCategory(Action):
             dispatcher.utter_message(text=f"{associated_name} , la categoria {category_new} esiste già.") 
         
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
+
+#this script perform modify Activity action.
+#call a more low level function of database_connectivity.py Database.modifyActivity
+#it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
+#it is quite more complex because the modify for the activities could be very different (modify deadline,modify activity name,modify category name, etc..)
+#if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
+# at the end reset all necessary Slot
 
 class actionModifyActivity(Action):
     def name(self) -> Text:
@@ -520,6 +588,8 @@ class actionModifyActivity(Action):
     
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
 
+#this script perform set Reminder slot.
+
 class actionSetReminderSlot(Action):
     def name(self) -> Text:
         return "action_set_reminder_slot"
@@ -529,6 +599,12 @@ class actionSetReminderSlot(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         return[SlotSet("reminder",True)]
+
+#this script clean completed activities action.
+#call a more low level function of database_connectivity.py Database.cleanCompletedActivities(id)
+#it try to be quite robust to eventually miss understanding of the chatbot, (list of entity etc.)
+#if the operation is performed inform ROS through dispatcher.utter_message it is really important for the tablet functionalities
+# at the end reset all necessary Slot
 
 class actionCleanCompletedActivities(Action):
     def name(self) -> Text:
@@ -557,6 +633,11 @@ class actionCleanCompletedActivities(Action):
             dispatcher.utter_message(text=f"{associated_name} qualcosa è andato storto! Non rho potuto rimuovere le tue attività completate!") #??
     
         return []
+
+#this script perform chatbot reset.
+#append lots of event: sessionStarted, FollowupAction("action_session_start"), and a slotSet for name
+#this operation same times are necessary, in fact is impossible to create a chatbot that is always in a propositive status,
+# if it go in a wrong way with this command return to an operative status
 
 class actionResetSlot(Action):
     def name(self) -> Text:
@@ -643,7 +724,6 @@ class actionRemindItem(Action):
         else:
             actionAddItem.run(self,dispatcher,tracker,domain)
         
-        #aggiunte per reminder
         return [SlotSet("activity",None), SlotSet("time",None), SlotSet("category",None),SlotSet("reminder",False),reminder]
         
 class actionAskCategoryOld(Action):
@@ -713,26 +793,6 @@ class actionAskActivityNew(Action):
             return[SlotSet("activity_new",activity),SlotSet("activity",None),SlotSet("requested_slot",None)]    
         
 
-# class actionDefaultFallBack(Action):
-#     def name(self) -> Text:
-#         return "my_action_fallback"
-    
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-#         dispatcher.utter_message(text=f"Sorry, I lost my mind! Can you repeat?")    
-#         # return [SlotSet("activity_old",None),
-#         # SlotSet("activity",None),
-#         # SlotSet("category_old",None),
-#         # SlotSet("category",None),
-#         # SlotSet("time",None),
-#         # SlotSet("activity_status",None),
-#         # SlotSet("activity_new",None),
-#         # SlotSet("category_new",None)]
-#         return []
-
-
 class ActionReactToReminder(Action):
     """Reminds the user to call someone."""
 
@@ -770,7 +830,6 @@ class ActionReactToReminder(Action):
                 dispatcher.utter_message(text=text,json_message={'query':'js'}) 
             print("sei ancora in tempo per ricordarti", activity, category)
 
-        #aggiunta per far si che una volta notificato un reminder questo non venga più notificato successivamente
         return []
 
 class ActionRecognizeUser(Action):
