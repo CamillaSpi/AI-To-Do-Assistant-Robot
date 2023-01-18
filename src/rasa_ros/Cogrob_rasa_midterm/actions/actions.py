@@ -43,7 +43,6 @@ class ActionSessionStart(Action):
     ) -> List[EventType]:
         global id
         global rasa_only
-        # the session should begin with a `session_started` event
         events = [SessionStarted()]
         amdam_tz = pytz.timezone('Europe/Amsterdam')
         actual_time = datetime.now()
@@ -52,7 +51,7 @@ class ActionSessionStart(Action):
         id=tracker.current_state()["sender_id"]
      
         try:
-            id = int(id) #if yes this id was send trough ros nose
+            id = int(id)
             Database.initDb(0)       
         except:
             rasa_only = True
@@ -75,7 +74,6 @@ class ActionSessionStart(Action):
                 entities = entities,
                 kill_on_user_message = False,
             ))
-        # an `action_listen` should be added at the end as a user message follows
         events.append(ActionExecuted("action_listen"))
         if rasa_only==False:
             events.append(SlotSet("name", 'tmp'))
@@ -135,7 +133,7 @@ class actionAddItem(Action):
             id=int(tracker.current_state()["sender_id"])
 
         associated_name = Database.getName(id)
-        if associated_name == None: # if user ask somethings without previously login
+        if associated_name == None: 
             actionCreateUser.run(self,dispatcher,tracker,domain)
             associated_name = Database.getName(id)
         activity = tracker.get_slot("activity")
