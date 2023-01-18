@@ -75,7 +75,8 @@ class ActionSessionStart(Action):
             ))
         # an `action_listen` should be added at the end as a user message follows
         events.append(ActionExecuted("action_listen"))
-        events.append(SlotSet("name", 'tmp'))
+        if rasa_only==False:
+            events.append(SlotSet("name", 'tmp'))
 
         return events
 
@@ -149,7 +150,7 @@ class actionAddItem(Action):
                 dispatcher.utter_message(text=f"Ops {associated_name}, questa attività esiste già.") 
         else:
             dispatcher.utter_message(text=f"Questa categoria non esisteva, l'ho creata.") 
-            actionAddCategory.run(self, dispatcher,tracker,domain)
+            actionAddCategory.run(self, dispatcher,tracker,domain, sender=False)
             actionAddItem.run(self, dispatcher,tracker,domain)
         
         return [SlotSet("activity", None),SlotSet("activity_old", None),SlotSet("activity_new", None),SlotSet("category", None),SlotSet("category_old", None),SlotSet("category_new", None),SlotSet("time",None),SlotSet("activity_status",None)]
@@ -197,7 +198,7 @@ class actionAddCategory(Action):
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]: 
+            domain: Dict[Text, Any], sender=True) -> List[Dict[Text, Any]]: 
         global id
         if not rasa_only:
             id=int(tracker.current_state()["sender_id"])
@@ -206,6 +207,7 @@ class actionAddCategory(Action):
         if associated_name == None:
             actionCreateUser.run(self,dispatcher,tracker,domain)
             associated_name = Database.getName(id)
+        print("qunato vale sender:", sender)
         category = tracker.get_slot("category")
         if (isinstance(category,list)):
             category = ' '.join([str(elem) for elem in category])
@@ -215,7 +217,8 @@ class actionAddCategory(Action):
             if rasa_only:
                 dispatcher.utter_message(text=text) 
             else:
-                dispatcher.utter_message(text=text,json_message={'query':'js'}) 
+                if sender==True:
+                    dispatcher.utter_message(text=text,json_message={'query':'js'}) 
         else:
             dispatcher.utter_message(text=f"{associated_name}, questa categoria esiste già.") 
 

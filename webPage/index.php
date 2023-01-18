@@ -29,6 +29,7 @@ if (isset($_POST['ajax'])) {
     $id_index = '0';
     $numOldRow = $_POST['numOldRow'];
     $numActualRow = 0;
+    $newCheck = False;
     while ($row = $resultsCount->fetchArray()) {
         ++$numActualRow;
     }
@@ -67,7 +68,7 @@ if (isset($_POST['ajax'])) {
                     echo "<tr id=$id class='active-row'>
                     <td id='index' hidden>".$data[$toAdd][0]."</td>";
                     for($k=1;$k<$length;++$k){
-                        if($row[$k] == $row['deadline']){
+                        if($row[$k] == $row['deadline']  && $row[$k] != "0"){
                             $tmp = explode('T',$row['4']); 
                             echo "<td>"; 
                             if(empty($tmp)){
@@ -89,6 +90,19 @@ if (isset($_POST['ajax'])) {
             }
             ##MODIFY STATEMENT
             if($numOldRow == $numActualRow){
+                $numDataRow = count($data[$count]);
+                if($numDataRow > 3){
+                    if($data[$count][$numDataRow-2] !=  $row['completed'] || $data[$count][$numDataRow-1] != $row['reminder']){
+                        $newCheck = True;
+                    }else{
+                        $newCheck = False;
+                    }
+                    
+                }
+                if($newCheck){
+                    echo "hidden ".$data[$count][0]." restart ".$data[$count][$numDataRow-2].$row['completed'].$data[$count][$numDataRow-1].$row['reminder'];
+                    break;
+                }
                 if($operation == True && $idToCheck == $data[$count][0]){
                     echo "hidden ".$idSus." restart";
                     break;
@@ -174,7 +188,7 @@ if (isset($_POST['ajax'])) {
         #for to create table from db
         echo " <tr id=$id class='active-row'>";
         for($k=1;$k<$length;++$k){
-            if($row[$k] == $row['deadline']){
+            if($row[$k] == $row['deadline'] && $row[$k] != "0"){
                 echo "<td>"; 
                 if(empty($row['deadline'])){
                     echo "{$row[$k]}";
@@ -233,7 +247,6 @@ echo "<script type='text/javascript'>
             dataType: 'html',   //expect html to be returned    
             data: { ajax: 'true', chosenOptionArray: matrix, query: queryString, numOldRow: numRow}, 
             success: function(response){   
-                
                 html = $.parseHTML( response );
                 array = html[0].textContent.split(' ');
                 if(array[0]=='refresh'){
