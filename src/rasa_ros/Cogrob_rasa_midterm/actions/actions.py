@@ -822,6 +822,12 @@ class actionAskActivityNew(Action):
             return[SlotSet("activity_new",activity),SlotSet("activity",None),SlotSet("requested_slot",None)]    
         
 
+# This script perform a React To Reminder actions
+# this function is necessary to go precisely to react to the expiration of the reminder, specifically when a reminder is 
+# triggered this function is called and performs the following things.
+# First of all, update the reminder value in the database, so as not to notify again at the next reboot. 
+# It is then verified whether this reminder has been triggered in the past or not, 
+# if in the past it is notified that this reminder has expired otherwise it is simply notified of its imminent expiration.
 class ActionReactToReminder(Action):
     """Reminds the user to call someone."""
 
@@ -861,6 +867,10 @@ class ActionReactToReminder(Action):
 
         return []
 
+# This script perform a Recognize User operation.
+# Call a more low level function of database_connectivity.py Database.getName to get the name relative to the specific id.
+# If the associated_name is None, he call the method run in actionCreateUser class to create a new account.
+# Then the utter message showed the name of the users and then reset the relative slots.
 class ActionRecognizeUser(Action):
     """Return the name of the user"""
 
