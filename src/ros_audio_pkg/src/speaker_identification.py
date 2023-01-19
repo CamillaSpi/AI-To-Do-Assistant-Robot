@@ -77,8 +77,8 @@ def registration(msg):
         except:
             features_dataBase = np.array([ukn[0]])
         labels.append(number_of_users)
-    pub1.publish("Perfetto, ti ho riconosciuto, ora dimmi il tuo nome!")
-    rospy.loginfo("Perfetto, ti ho riconosciuto, ora dimmi il tuo nome!")
+    pub1.publish("Perfetto, ti ho riconosciuto")
+    rospy.loginfo("Perfetto, ti ho riconosciuto")
     number_of_users+=1
     lock.release()
     return 'ACK'
