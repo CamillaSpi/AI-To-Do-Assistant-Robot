@@ -38,4 +38,5 @@ RoboTo-Do Assistant is a robotic platform developed to assist users in managing 
 
 ## More Information
 for more info click [here](https://github.com/CamillaSpi/DefinitivoCog/blob/main/ReportCRFinaleCognitive.pdf)
+
 Feel free to customize this template according to your project's specific needs.
