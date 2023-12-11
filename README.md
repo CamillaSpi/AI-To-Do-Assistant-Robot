@@ -36,9 +36,9 @@ RoboTo-Do Assistant is a robotic platform developed to assist users in managing 
 - Only one person at a time can interact with the robot.
 - Conversations can occur in both English and Italian.
 
-## [DEMO](https://www.youtube.com/watch?v=NIoZ4qSGSHk)
-
 ## More Information
 for more info click [here](https://github.com/CamillaSpi/DefinitivoCog/blob/main/ReportCRFinaleCognitive.pdf)
 
-Feel free to customize this template according to your project's specific needs.
+## [DEMO](https://www.youtube.com/watch?v=NIoZ4qSGSHk)
+
+Feel free to customize this project according to your project's specific needs.
