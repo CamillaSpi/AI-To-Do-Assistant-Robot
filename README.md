@@ -1,4 +1,4 @@
-# Project RoboTo-Do Assistant
+# AI Robot To-Do Assistant 
 
 ## Overview
 <div align="center">
