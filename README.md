@@ -1,4 +1,4 @@
-# AI Robot To-Do Assistant 
+# AI Robot To-Do Assistant (ROS)
 
 ## Overview
 <div align="center">
